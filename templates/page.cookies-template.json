@@ -1,0 +1,323 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_Vj6zph": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9cejMe": {
+          "type": "heading",
+          "settings": {
+            "title": "Cookies Policy",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9cejMe"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_dHQq7M": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_jzV63T": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Cookies Policy",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_NhaQ6R": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Time Resistance uses cookies to provide you with the best browsing experience. By continuing we assume that you are consenting to all cookies on Time Resistance website. For more information or to deny consent to all or some of the cookies click here.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_3PqqE9": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_UGkJ79": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What are cookies?",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_QQNGEt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our website has cookies – a small text files that are sent from a website and stored in a user's web browser. We use cookies to understand and save your preferences for future visits – to remember whether you are logged in to the site and what items you had in your shopping basket. They are also used to tailor the products and services offered and advertised to you.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_4h3d93": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_JxG4Wk": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What information do they collect?",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_GnyDhh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cookies collect information about pages you viewed, products purchased and searched on the site. All data passed by cookies is anonymous and will never contain individual detail such as your name, address, telephone number or payment information, but may contain our customer reference number that is unique to you. For more detailed information about cookies please visit <a href=\"http://allaboutcookies.org\" target=\"_blank\" title=\"http://allaboutcookies.org\">www.allaboutcookies.org</a>.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_NzPr9m": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_PjhWQA": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What are cookies used for?",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_UzMraj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>· Cookies are important for functional purposes, an effective operation of our website and use of our features, such as „Add to Cart“.· Navigation cookies will remember whether you are registered or not.<br/><br/>· Site analytics cookies are used with our marketing partners to measure and analyze how you use our site, to see what do you like on our website, which pages or functions do you prefer and help us to make them better.<br/><br/>· Customer preference cookies will remember your preferences, such as language, currency and etc., so we can make your shopping experience as good and seamless as possible.<br/><br/>· Targeting or advertising cookies help to offer you the deals that are most relevant to you, based on your browsing activity on our site. They also limit the number of times you see an add and help us measure effectiveness of our marketing campaigns.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_TMh86D": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_gHeiAV": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What type of cookies do we use?",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_N6BtmH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>· Session cookies – they are deleted after each visit to our website. Session cookies allow you to add an item to the shopping chart and the move through the checkout. These cookies will be deleted from your computer as soon as you close your browser. Disallowing these cookies will mean you are unable to place an order on this site.<br/><br/>· Persistent cookies – these cookies remember you for a certain amount of time. For example, they allow you to see what you have previously added to your shopping cart.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_qbGiPA": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_PxneHm": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "How can I turn off/delete cookies?",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_Gw9h3D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Most web browsers will provide the option to turn off or disallow cookies. How you do this depends on the web browser you are using. Instructions for disallowing cookies can usually be found in the browser's 'Help' menu. Cookies can be deleted using your web browser. However, unless they are disallowed they will be re-applied the next time you visit a website. Further details on how to disable cookies for the most popular desktop browsers are set out here (these may vary depending on operating system and browser version):</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_aPeQ8R": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_LfjDdJ": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "For Microsoft Internet Explorer:",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_47gAWQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Choose the menu “Tools” then “Internet Options”<br/>2. Click on the “Privacy” tab<br/>3. Select “Advanced”<br/>4. Choose the appropriate settings</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_JYc8K7": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_8FJdpp": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "For Google Chrome:",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_GM96Mn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Choose “Settings” and click on “Advanced”<br/>2. Under \"Privacy and Security\" click “Content Settings”<br/>3. Click “Cookies”</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_9dDPXJ": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_YRgXxk": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "For Safari:",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_GdDdxF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Choose Preferences &gt; Privacy<br/>2. Click on “Block all cookies”</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_kaWmYJ": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_bRERdV": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "For Mozilla Firefox:",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_prhH3i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Click on the menu icon then select “Options”<br/>2. Click on the icon “Privacy & Security”<br/>3. Find the menu “cookie” and select the relevant options</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_E4g4rq": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "subheading_rWDkfp": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "For Opera 6.0 and later versions:",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_NFDt37": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Choose the menu icon and select “Settings”<br/>2. Click on “Privacy & Security”<br/>3. Choose the appropriate settings</p>",
+            "text_font_class": "fs-body-75"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_jzV63T",
+        "text_NhaQ6R",
+        "spacer_3PqqE9",
+        "subheading_UGkJ79",
+        "text_QQNGEt",
+        "spacer_4h3d93",
+        "subheading_JxG4Wk",
+        "text_GnyDhh",
+        "spacer_NzPr9m",
+        "subheading_PjhWQA",
+        "text_UzMraj",
+        "spacer_TMh86D",
+        "subheading_gHeiAV",
+        "text_N6BtmH",
+        "spacer_qbGiPA",
+        "subheading_PxneHm",
+        "text_Gw9h3D",
+        "spacer_aPeQ8R",
+        "subheading_LfjDdJ",
+        "text_47gAWQ",
+        "spacer_JYc8K7",
+        "subheading_8FJdpp",
+        "text_GM96Mn",
+        "spacer_9dDPXJ",
+        "subheading_YRgXxk",
+        "text_GdDdxF",
+        "spacer_kaWmYJ",
+        "subheading_bRERdV",
+        "text_prhH3i",
+        "spacer_E4g4rq",
+        "subheading_rWDkfp",
+        "text_NFDt37"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_Vj6zph",
+    "rich_text_dHQq7M"
+  ]
+}

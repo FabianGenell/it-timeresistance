@@ -1,0 +1,442 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_rabPjz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_y4rVMb": {
+          "type": "heading",
+          "settings": {
+            "title": "Personalization",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_c9UFAg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Time Resistance, we believe that your leather accessory should be as unique as you are. Our personalization services allow you to add a touch of individuality to your favorite pieces, making them truly yours. Whether you choose laser engraving or a classic monogram, our skilled artisans will create a bespoke item that reflects your personal style and story.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_y4rVMb",
+        "text_c9UFAg"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "grid_P783de": {
+      "type": "grid",
+      "blocks": {
+        "item_Dczn8C": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 400,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/Rectangle_285_27e8c00f-af33-4408-af45-933541a409a4.png",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_center",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#FFFFFF",
+            "button_background_color": "#FFFFFF",
+            "button_text_color": "#000000",
+            "color_overlay": "#000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        },
+        "item_M3hzYF": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 400,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/Rectangle_289_fceac5d8-5ca7-40e3-9167-46d197962425.png",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_center",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#FFFFFF",
+            "button_background_color": "#FFFFFF",
+            "button_text_color": "#000000",
+            "color_overlay": "#000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "item_Dczn8C",
+        "item_M3hzYF"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "content_alignment": "left",
+        "enable_animation": true,
+        "full_width": true,
+        "spacing": 12,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "rich_text_8dVcxm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_836eqe": {
+          "type": "heading",
+          "settings": {
+            "title": "Laser Engraving",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_z4p6gR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Experience the art of precision with our laser engraving service. We can engrave text, symbols, and images onto your chosen leather product, adding a distinctive mark that stands the test of time. To personalize your item with laser engraving, simply select the Personalization option when placing your order and provide the following info in the Order Special Instructions in Your Cart:</p><ul><li>Name/Message: Specify the text you wish to engrave.</li><li>Font Style: Choose from three elegant fonts.</li><li>Preferred Placement: Indicate where you would like the engraving to appear on the product.</li><li>Logo engraving: Image for a logo should be provided as a good quality vector file (PNG format) on a clear or white background via email <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</li></ul><p>Once we receive your order, our team will prepare a suggestion for the placement and size of the engraving and send it to you for approval.</p><p>Font Styles</p><p>We offer three sophisticated font styles to suit your taste and preference.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_836eqe",
+        "text_z4p6gR"
+      ],
+      "custom_css": [
+        "ul {text-align: left;}"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "image_hero_KjifRk": {
+      "type": "image-hero",
+      "settings": {
+        "image_aspect": "original",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "image": "shopify://shop_images/desktop_fonts.webp",
+        "image_mobile": "shopify://shop_images/mobile_fonts2.webp",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "media_link": "",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#FFFFFF",
+        "button_background_color": "#FFFFFF",
+        "button_text_color": "#000000",
+        "color_overlay": "#000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-bottom-only"
+      }
+    },
+    "rich_text_wtR4Am": {
+      "type": "rich-text",
+      "blocks": {
+        "text_EQKKXD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Laser Engraving Examples</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "text_EQKKXD"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-bottom-only",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "image_hero_kmPdjY": {
+      "type": "image-hero",
+      "settings": {
+        "image_aspect": "original",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "image": "shopify://shop_images/Rectangle_290.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_291.webp",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "media_link": "",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#FFFFFF",
+        "button_background_color": "#FFFFFF",
+        "button_text_color": "#000000",
+        "color_overlay": "#000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "rich_text_TUDrhn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jgUYii": {
+          "type": "heading",
+          "settings": {
+            "title": "Monograms (Debossing)",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_MCq79H": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For a timeless and refined touch, consider adding a monogram to your leather accessory. Our debossing service imprints your initials into the leather, creating a subtle yet striking effect. To personalize your item with a monogram, select the Personalization option when placing your order and provide the following details in the Order Special Instructions in Your Cart:</p><ul><li>Initials: Specify up to ten characters in upper case letters.</li><li>Preferred Color: Choose from Clear, Black, Silver, or Gold.</li></ul><p>Our monograms are crafted using the Georgia Standard font, ensuring a classic and sophisticated appearance.</p><p>Monogram/Debossing Examples</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jgUYii",
+        "text_MCq79H"
+      ],
+      "custom_css": [
+        "ul {text-align: left;}"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "image_hero_QEqrdA": {
+      "type": "image-hero",
+      "settings": {
+        "image_aspect": "original",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "image": "shopify://shop_images/Rectangle_292.webp",
+        "image_mobile": "shopify://shop_images/Rectangle_293.webp",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "media_link": "",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#FFFFFF",
+        "button_background_color": "#FFFFFF",
+        "button_text_color": "#000000",
+        "color_overlay": "#000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "rich_text_gcXFfq": {
+      "type": "rich-text",
+      "blocks": {
+        "text_B79bqY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Important Information</p><p>Personalized items are crafted especially for you and cannot be returned. Please ensure that all personalization details are accurate before submitting your order.</p><p>Personalization takes additional 1-2 business days.</p><p>If we do not receive a response to our email regarding personalization suggestions within two weeks, we will proceed with standard product customization.</p><p>Availability</p><p>Please note that the availability of personalization options depends on the specific product and its characteristics. Some products are suitable for laser engraving, while others are best suited for monograms. While adding a product to your cart, the available personalization option for that product will be displayed.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "text_B79bqY"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "media_gallery_Ha6HVM": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_qXPjrr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_cd016d16-0656-4f2e-b4f3-1e7c49915470.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_4VLiWC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/7_014ea005-6657-4b5a-8926-ecce60278c97.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Fkthag": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/6_497d4453-385c-4f8d-83a9-2b57b4dac936.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_FCMwmx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_f8ee373a-46c9-4667-909e-880d14484969.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_4kwngC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5_aec40ea9-0a18-444e-a92b-cdad03205f1a.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_63fh3Q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_f622cb59-c935-44e2-8502-801d3f5c1e82.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_WWXy9U": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_0d42ab5b-f3fd-4224-a8de-97f46ed2ac04.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_zeY8R7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_94fc46bb-e2e7-4aaf-8b88-9065e70ba19a.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_qXPjrr",
+        "image_4VLiWC",
+        "image_Fkthag",
+        "image_FCMwmx",
+        "image_4kwngC",
+        "image_63fh3Q",
+        "image_WWXy9U",
+        "image_zeY8R7"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "columns": "4",
+        "mobile_columns": "1",
+        "loop_carousel": true,
+        "aspect_ratio": "natural",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#fff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_rabPjz",
+    "grid_P783de",
+    "rich_text_8dVcxm",
+    "image_hero_KjifRk",
+    "rich_text_wtR4Am",
+    "image_hero_kmPdjY",
+    "rich_text_TUDrhn",
+    "image_hero_QEqrdA",
+    "rich_text_gcXFfq",
+    "media_gallery_Ha6HVM"
+  ]
+}

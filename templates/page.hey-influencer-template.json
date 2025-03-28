@@ -1,0 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_zfGjE4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rUVqp7": {
+          "type": "heading",
+          "settings": {
+            "title": "Hey, influencer!",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "spacer_Bzdn7H": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "text_Fr9Ty4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Are you a modern gentleman looking to collaborate with an exciting leather and accessory company? We are offering barter partnerships, with the chance for affiliate marketing*. All we ask is that you post images within two weeks of receiving a product, and that you send us good-quality images. This is an incredible opportunity to be part of a growing and thriving company. We are looking for influencers who can showcase our product in an authentic and engaging way. Let's work together and make something amazing!<br/><br/>*Selected candidates only</p>",
+            "text_font_class": "fs-body-75"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rUVqp7",
+        "spacer_Bzdn7H",
+        "text_Fr9Ty4"
+      ],
+      "settings": {
+        "alignment": "center_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "image_hero_Hk44zr": {
+      "type": "image-hero",
+      "settings": {
+        "image_aspect": "original",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "image": "shopify://shop_images/hey_influencer_img.jpg",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "media_link": "",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#FFFFFF",
+        "button_background_color": "#FFFFFF",
+        "button_text_color": "#000000",
+        "color_overlay": "#000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "rich_text_G6RpXH": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_yhTXwx": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "About Time Resistance",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base"
+          }
+        },
+        "text_jBiWkL": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Timeless art of leather.</strong> A Time Resistance bag is not an accessory of the season, but a companion for life. Its skin is an empty canvas, that will get scarred throughout the years, and that is what will make it truly beautiful and unique - the marks from your life and experiences that tell your personal story. Because Time Resistance bags get better with age – like friends, like wine, like you.<br/><br/>Our products are a combination of timeless classic design, artisan craftsmanship and top-quality materials.<br/></p><ul><li>Made in Italy;</li><li>Made of full grain, certified, hand dyed, vegetable tanned Italian leather;</li><li>Classic designs;</li><li>Vintage inspired look combined with modern functionality;</li></ul><p>Please fill in your name, email address and contact number. Also, provide your IG account and address in the message box!</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_yhTXwx",
+        "text_jBiWkL"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "custom_liquid_QmiVFb": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<div contactform-embed='394577'></div>",
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_zfGjE4",
+    "image_hero_Hk44zr",
+    "rich_text_G6RpXH",
+    "custom_liquid_QmiVFb"
+  ]
+}

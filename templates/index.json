@@ -1,0 +1,598 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_hero_split_CQQ9Cm": {
+      "type": "image-hero-split",
+      "blocks": {
+        "image_WG8Cip": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/b_1_f7d1d3de-063f-48dd-86a5-a9b5a39a723b.jpg",
+            "image_mobile": "shopify://shop_images/Rectangle_220_1_eb7114d8-50b4-4afd-8045-975e7080ba91.jpg",
+            "focal_point": "right",
+            "mobile_focal_point": "image_presentation",
+            "title": "Men",
+            "heading_tag": "h2",
+            "text": "",
+            "link": "shopify://collections/men",
+            "link_text": "Explore the collection",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_KTC4iV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/b_4_ec8e3911-c07d-47b9-9a3e-782048fe76a1.jpg",
+            "image_mobile": "shopify://shop_images/Rectangle_221_1_4f7acedc-770a-4bf8-93d7-49fc77017036.jpg",
+            "focal_point": "left",
+            "mobile_focal_point": "image_presentation",
+            "title": "Women",
+            "heading_tag": "h2",
+            "text": "",
+            "link": "shopify://collections/women",
+            "link_text": "Explore the collection",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "image_WG8Cip",
+        "image_KTC4iV"
+      ],
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 100,
+        "mobile_height": 80,
+        "text_position": "flex-end",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": false,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "video_hero_ywYdK8": {
+      "type": "video-hero",
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "video": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
+        "video_mobile": "shopify://files/videos/mobile-video-hero-timeresistance.mp4",
+        "media_link": "",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 40,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-top-only"
+      }
+    },
+    "grid_fRJi4Y": {
+      "type": "grid",
+      "blocks": {
+        "item_LjGhp3": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 800,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_3_4e611fca-e833-4f08-be30-00a85e350a8d.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "Briefcases",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-3-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/briefcases-for-men",
+            "link_text": "Explore the collection",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        },
+        "item_ik7CEz": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 500,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_4_08a54d34-3cdf-4b14-b833-8a927e8f78d1.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "Handbags",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/handbags-for-women",
+            "link_text": "Explore the collection",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "item_LjGhp3",
+        "item_ik7CEz"
+      ],
+      "custom_css": [
+        "h3 {text-transform: uppercase;}",
+        ".btn {background-color: rgba(255, 255, 255, 0.6);}"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "content_alignment": "left",
+        "enable_animation": false,
+        "full_width": true,
+        "spacing": 24,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "featured_collection_slider_RcKQEK": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "collection_iWhJYk": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": false,
+            "collection": "most-loved",
+            "collection_name": "First collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_iWhJYk"
+      ],
+      "settings": {
+        "heading": "Customer Favorites",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "maximum_products": 15,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "grid_dgc6dg": {
+      "type": "grid",
+      "blocks": {
+        "item_kXKMLK": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 800,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_5_ed3a9919-a638-44d1-aac4-ce7588c57694.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "Duffel Bags",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/duffel-bags-for-men",
+            "link_text": "Explore the collection",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
+        },
+        "item_RJ9FmU": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 500,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_6_60103710-3a5e-4756-938e-bd97d8d10462.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "Cross Body Bags",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/cross-body-bags-for-women",
+            "link_text": "Explore the collection",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "item_kXKMLK",
+        "item_RJ9FmU"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "content_alignment": "left",
+        "enable_animation": false,
+        "full_width": true,
+        "spacing": 24,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "featured_collection_slider_UWW9F3": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "collection_eMi8KA": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": false,
+            "collection": "new",
+            "collection_name": "First collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_eMi8KA"
+      ],
+      "settings": {
+        "heading": "Recently Unveiled",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "maximum_products": 15,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "video_hero_hYxzLV": {
+      "type": "video-hero",
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "video": "shopify://files/videos/desktop-video-hero2-timeresistance.mp4",
+        "video_mobile": "shopify://files/videos/mobile-video-hero-timeresistance_5e5b70bf-0509-4694-865c-fe3c8c1a195a.mp4",
+        "media_link": "",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 40,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "grid_WKBgtN": {
+      "type": "grid",
+      "blocks": {
+        "item_WpUwBa": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 800,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_8_fec1ee69-ed64-4b7c-b135-1fd949950e0b.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "Our Leather",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://pages/our-leather",
+            "link_text": "See more",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
+        },
+        "item_rHzUKg": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 500,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/Untitled_design_34_b244f59f-d89c-418e-b4b1-338bbc61b866.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "Laser Engraving",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://pages/laser-engraving",
+            "link_text": "See more",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "item_WpUwBa",
+        "item_rHzUKg"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "content_alignment": "left",
+        "enable_animation": false,
+        "full_width": true,
+        "spacing": 24,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "multi_column_ADfJmX": {
+      "type": "multi-column",
+      "blocks": {
+        "icon_column_U3zYWJ": {
+          "type": "icon_column",
+          "settings": {
+            "icon": "plant",
+            "icon_width": 100,
+            "icon_width_mobile": 100,
+            "custom_icon_image": "shopify://shop_images/italy_9393b344-b474-43c4-bb1b-30d808405a3c.svg",
+            "accent": "",
+            "heading": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Made From a Full-Grain<br/>Italian Leather</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "icon_column_Tfmi4J": {
+          "type": "icon_column",
+          "settings": {
+            "icon": "plant",
+            "icon_width": 100,
+            "icon_width_mobile": 100,
+            "custom_icon_image": "shopify://shop_images/reviews.svg",
+            "accent": "",
+            "heading": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>200 000+ Happy<br/>Customers</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "icon_column_HwgzK7": {
+          "type": "icon_column",
+          "settings": {
+            "icon": "plant",
+            "icon_width": 100,
+            "icon_width_mobile": 100,
+            "custom_icon_image": "shopify://shop_images/shipping.svg",
+            "accent": "",
+            "heading": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Free and Fast Shipping</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "icon_column_VMKd3J": {
+          "type": "icon_column",
+          "settings": {
+            "icon": "plant",
+            "icon_width": 100,
+            "icon_width_mobile": 100,
+            "custom_icon_image": "shopify://shop_images/easy_returns.png",
+            "accent": "",
+            "heading": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Free 30-Day Returns</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "icon_column_U3zYWJ",
+        "icon_column_Tfmi4J",
+        "icon_column_HwgzK7",
+        "icon_column_VMKd3J"
+      ],
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "heading_font_class": "fs-heading-3-base",
+        "heading_alignment": "left",
+        "content_vertical_alignment": "top",
+        "content_background_padding": "medium",
+        "columns": "4",
+        "column_spacing": 28,
+        "row_spacing": 28,
+        "column_alignment": "center",
+        "enable_slider_mobile": false,
+        "columns_mobile": "2",
+        "column_spacing_mobile": 20,
+        "row_spacing_mobile": 20,
+        "column_alignment_mobile": "center",
+        "background_behind_columns": false,
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "metaobject_carousel_L9YFy4": {
+      "type": "metaobject-carousel",
+      "settings": {
+        "heading": "Men Collection",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "collection_type": "mens_collections",
+        "columns": "4",
+        "mobile_columns": "1",
+        "loop_carousel": true,
+        "aspect_ratio": "natural",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "metaobject_carousel_JkTgJD": {
+      "type": "metaobject-carousel",
+      "settings": {
+        "heading": "Women Collection",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "collection_type": "womens_collections",
+        "columns": "4",
+        "mobile_columns": "1",
+        "loop_carousel": true,
+        "aspect_ratio": "natural",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "image_hero_split_CQQ9Cm",
+    "video_hero_ywYdK8",
+    "grid_fRJi4Y",
+    "featured_collection_slider_RcKQEK",
+    "grid_dgc6dg",
+    "featured_collection_slider_UWW9F3",
+    "video_hero_hYxzLV",
+    "grid_WKBgtN",
+    "multi_column_ADfJmX",
+    "metaobject_carousel_L9YFy4",
+    "metaobject_carousel_JkTgJD"
+  ]
+}

@@ -1,0 +1,1350 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_9DJqgc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rx9Uke": {
+          "type": "heading",
+          "settings": {
+            "title": "Gallery",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "spacer_DEKhGR": {
+          "type": "spacer",
+          "settings": {
+            "space": 20
+          }
+        },
+        "text_wctDp6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to our gallery of photoshoots, where you can see our leather bags and accessories in action. We are proud to showcase our products in different settings and styles, from casual to elegant. Our photoshoots capture the essence of our brand: quality, versatility, and sophistication. Browse through our gallery and discover how our leather bags and accessories can complement your look and lifestyle.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rx9Uke",
+        "spacer_DEKhGR",
+        "text_wctDp6"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "media_gallery_UfAVMR": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_Gz3N8B": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/38_7313e8dd-565f-491b-8126-8619df57c104.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_VFjRaj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/41_fbefe00a-f4ba-4e31-ac8d-8ec2057bee63.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_N7p3rj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/33_4a5e898f-ba84-4ed2-b71d-51ee00dd3848.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_ziiGap": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/32_0095599e-aaa7-49eb-a9d8-72b0489ef312.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Lh3Qwf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/39_c2edddc3-ac47-4ab9-a8a6-8c9e5bf53e73.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_grn6mE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/40_5537b7d8-b521-4592-8cbe-cafbbcd38733.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_LyqtFB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/42_1932987d-1658-41a0-b832-2e03b8797904.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_xQjHpV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_f3ba978e-42f9-4061-a93a-8489ab0c8ae9.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_PEHAKM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/37_b9fc8fde-5184-4303-8d7d-95735e5da284.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_CxbHRd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/24_0add907c-aeeb-4cb2-841a-47019af1bcdb.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_WHeMTe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/43_739a4a38-3113-4d8c-94fd-794fb2d6b91b.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wbBH3A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_8720244b-793e-41ed-98b5-03bed175bfc6.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_xUYTy3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_49cb782c-f264-4749-ada9-2d4a966ac2bb.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wHh8Vh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_539b1ae7-9c7c-4c2f-ad8a-704a9bbf1763.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_gw3NUN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/35_a8db2db4-d8f6-43c7-8972-fad320ef99c6.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_x9Qhay": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/31_e1ff9a80-4c59-4525-b89d-9e384dad3747.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_69wFmz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/36_c42207fc-d8fe-41fe-842d-6debe9819e6d.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_Gz3N8B",
+        "image_VFjRaj",
+        "image_N7p3rj",
+        "image_ziiGap",
+        "image_Lh3Qwf",
+        "image_grn6mE",
+        "image_LyqtFB",
+        "image_xQjHpV",
+        "image_PEHAKM",
+        "image_CxbHRd",
+        "image_WHeMTe",
+        "image_wbBH3A",
+        "image_xUYTy3",
+        "image_wHh8Vh",
+        "image_gw3NUN",
+        "image_x9Qhay",
+        "image_69wFmz"
+      ],
+      "settings": {
+        "heading": "Daydreams",
+        "heading_tag": "h2",
+        "subheading": "<p>This season, we drew creative energy from the enchanting Užutrakio Manor near Trakai, a stunning light-colored estate nestled by a serene lake. Užutrakio Manor, built in the late 19th century by the esteemed Polish architect Józef Huss, is a masterpiece of Neo-Renaissance architecture. Its splendid gardens, designed by the renowned French landscape architect Édouard André, feature blooming roses and majestic statues, creating a picturesque setting that beautifully complements our classic leather bags and accessories.<br/><br/>Our pieces, inspired by the intricate artistry of the manor’s architecture and its idyllic surroundings, reflect our dedication to crafting leather masterpieces that stand the test of time. Titled \"Daydreams,\" this shoot encapsulates the ethereal and dreamlike quality of wandering through Užutrakio Manor. The serene lake, lush gardens, and timeless architecture create a sense of being transported to a place where history and imagination intertwine, inspiring a state of daydream-like reverie.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "2",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "beneath",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_HBJ7JA": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_ThYeD8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/39_a2fe68a1-d60e-4aa2-b479-368beefae30a.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_CYP4dy": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_E8jLAY": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_BDn8Ad": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_ThYeD8",
+        "image_CYP4dy",
+        "image_E8jLAY",
+        "image_BDn8Ad"
+      ],
+      "settings": {
+        "heading": "Classic Reimagined",
+        "heading_tag": "h2",
+        "subheading": "<p>At Time Resistance, we craft leather bags and accessories that seamlessly blend classic design with modern sophistication. Our latest photoshoot captures this essence, featuring our new collection against the backdrop of the National Gallery’s minimalistic architecture and an otherworldly, futuristic skate park. These striking locations highlight the timeless elegance and forward-thinking design of our products, showcasing their versatility and enduring appeal. Join us in exploring this visual journey where tradition meets innovation, and discover how our creations transcend time.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_g6RFGt": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_cdzDVn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/13_82d3a5ba-f5a6-4c9d-ab35-517b590db721.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Ft4a6z": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_j9MmYN": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_UaLAxF": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_cdzDVn",
+        "image_Ft4a6z",
+        "image_j9MmYN",
+        "image_UaLAxF"
+      ],
+      "settings": {
+        "heading": "Shapeshifter",
+        "heading_tag": "h2",
+        "subheading": "<p>Inspired by the harmony between the raw beauty of leather and contemporary elements, we focused on the interplay of textures. The studio's large windows and concrete details created a captivating atmosphere, emphasizing beautiful shapes and adding depth to each frame. This collection tells a story of a confident individual navigating the urban landscape, seamlessly integrating our leather accessories into a lifestyle that embraces modernity, elegance, and versatility. The result is a visually striking narrative that invites our audience into the artistic and contemporary world we've crafted.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_raBk6y": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_JamnTD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8_55254cfe-724a-4e31-addc-41f1451dbc2b.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_8VALGN": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_QxEaAr": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_tiKfAQ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_JamnTD",
+        "image_8VALGN",
+        "image_QxEaAr",
+        "image_tiKfAQ"
+      ],
+      "settings": {
+        "heading": "Synagogue",
+        "heading_tag": "h2",
+        "subheading": "<p>In the world of fashion, Time Resistance is redefining artistry with our 'Timeless Art of Leather' philosophy. Our latest photoshoot pays homage to tradition, elegance, and timeless beauty, set in a historic synagogue—a harmonious blend of past and present. Step into a world where fashion becomes art, transcending time and trends, and discover the 'Timeless Art of Leather' with us.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_EpaCEc": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_jWQeBH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/18_0dfa0f01-2b72-4cba-b2dd-b58c2195ed2d.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_H6NHJB": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_nQVeXP": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_JQjxhg": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_jWQeBH",
+        "image_H6NHJB",
+        "image_nQVeXP",
+        "image_JQjxhg"
+      ],
+      "settings": {
+        "heading": "Serenity",
+        "heading_tag": "h2",
+        "subheading": "<p>Our latest photoshoot Serenity is designed to capture the essence of summer. The photoshoot features one of our favorite models Edvina who is the embodiment of this notion. The photoshoot is meant to evoke feelings of warmth, happiness, and relaxation. We have used a variety of artistic techniques to capture the essence of summer in our leather bags. The photoshoot features a range of colors that are reminiscent of the summer season. We have also used lighting techniques to create a warm and inviting atmosphere that is perfect for summer. We hope our artistic take on the summer season and our leather bags will impress you.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_8EXDCF": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_eMQxxJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/15_dffd14d6-b1f2-4f20-beaa-b2dff956b995.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_enBwim": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_BRzQLb": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_tWGf7X": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_eMQxxJ",
+        "image_enBwim",
+        "image_BRzQLb",
+        "image_tWGf7X"
+      ],
+      "settings": {
+        "heading": "Spring Fling",
+        "heading_tag": "h2",
+        "subheading": "<p>This spring, we invite you to experience a new kind of love: a love between you and your bag. Our latest photoshoot is a tribute to this special bond that transcends time and space. Our leather bags are more than just accessories. They are companions, confidants, and soulmates. They reflect your inner beauty and express your outer style. They are with you through thick and thin, through joy and sorrow, through work and play. They are the ones who make you feel alive and complete. Our photoshoot captures the magic of spring: the freshness of the air, the warmth of the sun, the vibrancy of the city. The model is a vision of elegance and charm, wearing a suit that matches his bags and his mood. The background is a stunning contrast of light and dark, with subtle touches of modernity and history. The photoshoot is a romance between you and your bag. It shows that you don’t need anyone else to make you happy. You just need yourself and your bag. So go ahead and indulge in a spring fling with our leather bags.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_PYTnyX": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_PEywmV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/18_b8417786-943b-4f9f-a5f7-7462fd5910c7.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_pwzXJM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_nwQ6Qb": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_dTEdR3": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_PEywmV",
+        "image_pwzXJM",
+        "image_nwQ6Qb",
+        "image_dTEdR3"
+      ],
+      "settings": {
+        "heading": "Old Town Young Soul",
+        "heading_tag": "h2",
+        "subheading": "<p>A new season and a new photoshoot at Time Resistance. Since we constantly update, improve and renew our collection, photo shoots have become an inseparable part of our journey. We have a lot of new leather backpacks, messenger bags, leather briefcases, leather duffel bags and so much more therefore we are really excited for you to finally see them. This time we were really inspired by everyone’s favorite thing – vacation. My favorite type of vacation is not rock climbing in Australia or surfing in Hawaii, my ideal way to relax and rejuvenate is to go to some European town full of life and history; wander around, and sit down for a cup of coffee or a glass of wine, observe the architecture and the people. We found a perfect representation for that - a classic yet youthful gentleman and one of the most authentic capitals in Europe – Vilnius. There are so many beautiful alleys and nooks in the old town that we could be there for days. The funny part was that we actually saw a lot of people there going to their jobs, wearing similar clothes and carrying leather briefcases so that photo shoot seemed very real this time.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_RB8qRX": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_iXYRDh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/14_8e459e55-9bde-4997-90b3-ba784173ca31.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_EiGLFy": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_L966xA": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_d4iwjQ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_iXYRDh",
+        "image_EiGLFy",
+        "image_L966xA",
+        "image_d4iwjQ"
+      ],
+      "settings": {
+        "heading": "Reflections",
+        "heading_tag": "h2",
+        "subheading": "<p>The summer is over, and the fall is upon us. New beginnings, great challenges and amazing rewards. We wanted to inspire you for all those things, whether it’s a new school, company or social circle. For the first time we have decided to use four amazing models instead of one or two like we normally do. It was quite a challenge making sure they work as a team however the results were amazing – a completely different vibe, dynamic shots and lots of fun! Check out how it all turned out in some formal and more casual settings.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_mUxGf9": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_7Ez4yz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/10_2fbe4e3f-9ec6-4e69-8877-dfc9998d92b1.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_pfNyJ6": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_JRnjBg": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_xyNpqM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_7Ez4yz",
+        "image_pfNyJ6",
+        "image_JRnjBg",
+        "image_xyNpqM"
+      ],
+      "settings": {
+        "heading": "Phases",
+        "heading_tag": "h2",
+        "subheading": "<p>Paulius is one of our favorite models. He really embodies Time Resistance brand therefore we have decided to work with him once more. Paulius is not only an amazing model, he actually wears many hats in life. In a way, he has inspired our latest photoshoot. We wanted to show how the same bag can fit in many settings or in different stages of life: a casual stroll, a school or a business trip. Check out some of our favorite shots taken in capital Vilnius.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_jKACzN": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_ALQnEz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_4208f36f-cf73-469f-95cb-8082fb297aa8.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_PLX3Nk": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_iWm9r3": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_jwLbwz": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_ALQnEz",
+        "image_PLX3Nk",
+        "image_iWm9r3",
+        "image_jwLbwz"
+      ],
+      "settings": {
+        "heading": "Sun Kissed Rye",
+        "heading_tag": "h2",
+        "subheading": "<p>Travel is everything! Whether it‘s business or pleasure, it‘s always exciting, especially if the destination is as sunny, warm and fuzzy as our photoshoot Sun Kissed Rye. Fresh, cheerful and full of life – this is what we had in mind introducing the new collection of leather backpacks, totes, and for the very first time – sling bags!</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_6DbBkt": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_BAgAKt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_545c42f5-2104-4bc5-a6fe-5307b15b21d3.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_xk8pAr": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_LcLnNP": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_yEBYge": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_BAgAKt",
+        "image_xk8pAr",
+        "image_LcLnNP",
+        "image_yEBYge"
+      ],
+      "settings": {
+        "heading": "The Voyage",
+        "heading_tag": "h2",
+        "subheading": "<p>In the world of fashion, Time Resistance is redefining artistry with our 'Timeless Art of Leather' philosophy. Our latest photoshoot pays homage to tradition, elegance, and timeless beauty, set in a historic synagogue—a harmonious blend of past and present. Step into a world where fashion becomes art, transcending time and trends, and discover the 'Timeless Art of Leather' with us.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_BwpFeD": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_cYzxFR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/15_b0d6a45d-f6bc-4228-9453-1787bcb79c74.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Q649Rk": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_kFLXWJ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_Rbqx9i": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_cYzxFR",
+        "image_Q649Rk",
+        "image_kFLXWJ",
+        "image_Rbqx9i"
+      ],
+      "settings": {
+        "heading": "Dunes",
+        "heading_tag": "h2",
+        "subheading": "<p>For this photoshoot we have decided to get back to basics and flirt with the concept of „timeless“ which is such a big part of our brand. We still wanted to make it fresh and exciting though. It was decided to go with the idea of creating images that make it difficult to determine the place or time of the scene. Making it really ambiguous: is it the past, present or future? Isn‘t that a true definition of „timeless“?</p><p>Now, it is easier said than done. After discussing various locations it was set to take place at one of local quarries. Nice pastel earthy tones of the sand let our leather briefcases, backpacks, leather travel bags, etc. truly shine.</p><p>We added some carefully selected props like a transparent cube, a chair, mirrors, custom made golden ruins to make the shots more interesting, create an illusion, and also to raise questions: Are they really just walking in a desert at the present time or is this a distant future and the office is underground, underneath the sand?</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_mPaQyC": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_xbJYjn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/9_58132b5e-a002-4d8c-83c7-a98cafe6dc7a.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_4tKtXp": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_EU9EFG": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_e7zHN6": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_xbJYjn",
+        "image_4tKtXp",
+        "image_EU9EFG",
+        "image_e7zHN6"
+      ],
+      "settings": {
+        "heading": "Romantic Getaway",
+        "heading_tag": "h2",
+        "subheading": "<p>Most of our bags and accessories are unisex. We find it edgy, cool and empowering for a women to carry a briefcase even a really masculine looking one, this is how you know she is a real boss. We wanted to utilize both male and female models to show how leather portfolios, classic doctor bags, etc. can be used by both without being a caricature. The tale is as old as time: after a busy work day (of course they look so professional!), a couple meet for a romantic getaway.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_UbBX9U": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_6JHw4J": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8_72349d3c-ae3e-41a9-bee9-2168654a5a81.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_7irxNq": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_HfbDUm": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_NWeFXk": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_6JHw4J",
+        "image_7irxNq",
+        "image_HfbDUm",
+        "image_NWeFXk"
+      ],
+      "settings": {
+        "heading": "King of Shadows",
+        "heading_tag": "h2",
+        "subheading": "<p>A visual masterpiece. This is how we remember the experience from the photoshoot King of Shadows. Cold concrete, strikingly blue sky and the contrast of those two made the images dynamic and magical. A lonesome man in a dystopian world manages to survive with only wisdom in his eyes and reliable leather briefcase in his hands.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_pDrzBQ": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_LwJyLL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5_dc7599f2-4a96-4312-93ef-ea51c77583eb.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_L9FjCe": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_6iBXfz": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_4XpcED": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_LwJyLL",
+        "image_L9FjCe",
+        "image_6iBXfz",
+        "image_4XpcED"
+      ],
+      "settings": {
+        "heading": "Doctor Who",
+        "heading_tag": "h2",
+        "subheading": "<p>We were so excited about the launch of a new travel bag collection. Sleek, sharp, modern yet classic – these words described both, the bags and the atmosphere of the photoshoot. A mysterious man full of class and attitude is a prophet in a new land.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_KJjtge": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_XCdg7Y": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_d4f03950-28f3-4c2a-8e82-335ed337f5bf.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_bJkciL": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_dLQLrD": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_DEQK9H": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_XCdg7Y",
+        "image_bJkciL",
+        "image_dLQLrD",
+        "image_DEQK9H"
+      ],
+      "settings": {
+        "heading": "Wind Master",
+        "heading_tag": "h2",
+        "subheading": "<p>Freedom is the power or right to act, speak, or think as one wants without hindrance or restraint. Freedom is all about having the right to be different. Many grandparents, parents of ours and even us fought for this precious virtue. This is something we always wanted and something we will always strive for. This is what sums up the essence of this photoshoot. Vintage but with a hint of modern – who says you can‘t have it all?</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_rEdjzW": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_mUW3dP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/11_5b058ebf-d53e-4a7b-b42a-62ed69c9ed5f.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_GcjTEi": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_w8KExJ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_LJJYWV": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_mUW3dP",
+        "image_GcjTEi",
+        "image_w8KExJ",
+        "image_LJJYWV"
+      ],
+      "settings": {
+        "heading": "Secret Agent",
+        "heading_tag": "h2",
+        "subheading": "<p>It‘s all about the versatility of leather bags. We really went wild with this one, story-wise of course. He is a secret agent working on one of his cases, infiltrating and observing. Different locations, from corporate headquarters to a train station to an abandoned nuclear plant, perfectly disguised and ready to strike.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "media_gallery_FQLbzx": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_MbnjVX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/11_0dba9caa-fece-48f3-9bf3-34fc64705b35.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_BMaNzg": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_ccM8dQ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_8ihzqa": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_MbnjVX",
+        "image_BMaNzg",
+        "image_ccM8dQ",
+        "image_8ihzqa"
+      ],
+      "settings": {
+        "heading": "Opposites Attract",
+        "heading_tag": "h2",
+        "subheading": "<p>We have always believed that classy leather bags are not for only stuffy business man, cool guys can wear them as well without loosing their swag. This is what we tried to prove with the photoshoot called Opposites Attract. Some shoots were taken in an old manor and the classic design doctor bags really brought us back in time for a moment. Then we moved to a skating park near some office buildings where many young guys like our handsome model actually work. The bags really accustomed to the new habitat and transformed the man into an edgy millennial.</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_9DJqgc",
+    "media_gallery_UfAVMR",
+    "media_gallery_HBJ7JA",
+    "media_gallery_g6RFGt",
+    "media_gallery_raBk6y",
+    "media_gallery_EpaCEc",
+    "media_gallery_8EXDCF",
+    "media_gallery_PYTnyX",
+    "media_gallery_RB8qRX",
+    "media_gallery_mUxGf9",
+    "media_gallery_jKACzN",
+    "media_gallery_6DbBkt",
+    "media_gallery_BwpFeD",
+    "media_gallery_mPaQyC",
+    "media_gallery_UbBX9U",
+    "media_gallery_pDrzBQ",
+    "media_gallery_KJjtge",
+    "media_gallery_rEdjzW",
+    "media_gallery_FQLbzx"
+  ]
+}

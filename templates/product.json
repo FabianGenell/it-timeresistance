@@ -1,0 +1,298 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product--default",
+      "blocks": {
+        "product_header": {
+          "type": "product_header",
+          "settings": {
+            "show_divider": false,
+            "show_vendor": false,
+            "show_sku": false,
+            "show_discount": false,
+            "discount_format": "percent_off",
+            "show_product_rating": true,
+            "show_sale_badge": true,
+            "show_custom_badges": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_popup_option": "Size",
+            "variant_popup_icon": "measuring-tape",
+            "variant_popup_text": "Size guide",
+            "variant_popup_page": "",
+            "swatch_size": "large",
+            "chip_layout": "3col"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "enable_sticky_atc_bar_desktop": true,
+            "enable_sticky_atc_bar_mobile": false,
+            "divider_width": "none"
+          }
+        },
+        "product_callouts-2": {
+          "type": "product_callouts",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "add_box": false,
+            "add_dividers": false,
+            "icon_1": "measuring-tape",
+            "custom_icon_image_1": "shopify://shop_images/shipping.svg",
+            "text_1": "<p>Free and Fast Shipping</p>",
+            "icon_2": "cotton",
+            "custom_icon_image_2": "shopify://shop_images/italy_9393b344-b474-43c4-bb1b-30d808405a3c.svg",
+            "text_2": "<p>Full-Grain Italian Leather</p>",
+            "icon_3": "chat",
+            "custom_icon_image_3": "shopify://shop_images/return.svg",
+            "text_3": "<p>Free 30-Day Returns</p>",
+            "icon_4": "none",
+            "text_4": "",
+            "icon_5": "none",
+            "text_5": "",
+            "icon_6": "none",
+            "text_6": "",
+            "display_as_collapsible_row": false,
+            "expand_by_default": false
+          }
+        },
+        "custom_liquid_jVafcd": {
+          "type": "custom_liquid",
+          "settings": {
+            "column_placement": "right",
+            "custom_liquid": "<span class=\"intro-short-text\">\n        {{ product.metafields.custom.product_design.value | truncate: 142 }}\n      </span>\n      <span class=\"intro-full-text\" style=\"display: none;\">\n        {{ product.metafields.custom.product_design.value }}\n      </span>\n      <button class=\"see-more\" onclick=\"toggleIntroText(this)\">See More</button>"
+          }
+        },
+        "accordion-1": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Features",
+            "heading_tag": "h3",
+            "content": "{{ product.metafields.custom.product_features | metafield_tag }}",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion-2": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Materials",
+            "heading_tag": "h3",
+            "content": "{{ product.metafields.custom.product_materials | metafield_tag }}",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion_47TTrD": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Dimensions",
+            "heading_tag": "h3",
+            "content": "",
+            "page_for_content": "",
+            "custom_liquid": "<img src=\"{{ product.metafields.custom.product_dimensions | img_url: 'master' }}\" alt=\"Bag Dimensions\" style=\"border:0;\" class=\"responsive-img\">"
+          }
+        },
+        "accordion-3": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Personalization",
+            "heading_tag": "h3",
+            "content": "",
+            "page_for_content": "",
+            "custom_liquid": "{% style %}\n.custom-paragraph-body img{\ndisplay:inline;\n}\n.example-image{\n    width: 22%;\n    margin: 1%;\n    vertical-align: middle;\n}\n{% endstyle %}\n\n{% assign page_handle = product.metafields.custom.personalization_page %}\n      {% if page_handle %}\n        {% assign page = pages[page_handle] %}\n        {% if page %}\n          <div class=\"personalization-page-content\">\n            {{ page.content }}\n          </div>\n        {% else %}\n          <p>Page not found.</p>\n        {% endif %}\n      {% else %}\n        <p>No page linked.</p>\n      {% endif %}"
+          }
+        },
+        "accordion_WceBNM": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Shipping and Returns",
+            "heading_tag": "h3",
+            "content": "<p>Add your collapsible row content here.</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_header",
+        "variant_picker",
+        "buy_buttons",
+        "product_callouts-2",
+        "custom_liquid_jVafcd",
+        "accordion-1",
+        "accordion-2",
+        "accordion_47TTrD",
+        "accordion-3",
+        "accordion_WceBNM"
+      ],
+      "custom_css": [
+        ".product__media > :first-child {grid-column: 1 / -1; /* Span across all columns (full-width) */}"
+      ],
+      "settings": {
+        "enable_sticky_product_details": true,
+        "show_breadcrumbs": false,
+        "show_navigation_buttons": false,
+        "show_featured_media_first": false,
+        "gallery_style": "grid",
+        "gallery_style_mobile": "grid",
+        "gallery_size": "medium",
+        "gallery_overflow": "3",
+        "enable_video_looping": true,
+        "enable_product_lightbox": true,
+        "image_aspect_ratio": "natural",
+        "enable_multiple_variant_media": true,
+        "enable_mobile_carousel_looping": true,
+        "show_mobile_carousel_images_full_width": true,
+        "hide_mobile_carousel_dots": false,
+        "enable_gift_card_recipient": true,
+        "enable_animation": true
+      }
+    },
+    "rich_text_khQJKx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yXP96p": {
+          "type": "heading",
+          "settings": {
+            "title": "Tanner Leatherstein Verdict on Time Resistance",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yXP96p"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "video_3rGkkT": {
+      "type": "video",
+      "blocks": {
+        "play_button_mL9VqK": {
+          "type": "play-button",
+          "settings": {
+            "text": "",
+            "button_layout": "full",
+            "icon_style": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "play_button_mL9VqK"
+      ],
+      "settings": {
+        "video_source": "external",
+        "video_url": "https://www.youtube.com/watch?v=Uhd7pr4QNBM",
+        "image": "shopify://shop_images/1500x768.jpg",
+        "loop": false,
+        "media_aspect_ratio": "landscape_wide_alt",
+        "focal_point": "image_presentation",
+        "text_position": "center_center",
+        "text_position_mobile": "center",
+        "button_background_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_text": "#ffffff",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 40,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-bottom-only"
+      }
+    },
+    "17273399003752b51a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_hmzp98": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_hmzp98"
+      ],
+      "settings": {
+        "heading": "",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "17273443262e1c4dc4": {
+      "type": "apps",
+      "blocks": {
+        "xo_gallery_xo_gallery_xQmR49": {
+          "type": "shopify://apps/xo-gallery/blocks/xo-gallery/e61dfbaa-1a75-4e4e-bffc-324f17325251",
+          "settings": {
+            "type": "gallery",
+            "id": 0,
+            "mid": "{{ product.metafields.custom.product_lookbook_id.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "xo_gallery_xo_gallery_xQmR49"
+      ],
+      "custom_css": [],
+      "settings": {
+        "heading": "",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed",
+        "heading_tag": "h2",
+        "subheading": "",
+        "maximum_products": 8,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_khQJKx",
+    "video_3rGkkT",
+    "17273399003752b51a",
+    "17273443262e1c4dc4",
+    "recently-viewed-products"
+  ]
+}

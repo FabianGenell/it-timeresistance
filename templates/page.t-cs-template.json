@@ -1,0 +1,194 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_mfwLhJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cVLeHF": {
+          "type": "heading",
+          "settings": {
+            "title": "Terms & Conditions",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "spacer_NYPLeU": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "subheading_wjb8ya": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "General Conditions",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_mLN4dx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The confirmation and submission of an order by a customer (where \"customer\" means a site user who accesses and checks out of the e-commerce website), indicates the acknowledgment and full acceptance of these terms and conditions of sale by the customer. The sales contract between our company and the customer is considered complete when we accept the order.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_VadcaR": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "subheading_TRpJc7": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Purchase Method",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_gLHLAT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The customer can only purchase the products in the catalog at the time of the order and viewable online. The order will be processed upon receipt of a valid email address by the customer of a confirmation notice regarding the authorization to charge the price and delivery charges to the customer's credit card.<br/><br/>The correct receipt of the order is confirmed by our company by email, sent to the email address supplied by the customer. This confirmation message will contain date and time of order and the customer order number to be used in all further communications with our company. The message will include all data entered by the customer, all the information regarding the characteristics of the goods, the indication of the price, payment methods, the terms and delivery charges and the applicable taxes. The customer must report any necessary corrections. In case of non-acceptance, our company will ensure a timely notification to the customer.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_CqYGdz": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "subheading_BcRQwC": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Prices",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_UUmkPp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The products will be sold at the prices indicated in the online product sheet at the time of confirmation of order by the customer. Delivery is always free, regardless of the destination.</p><p>Before the customer confirms the order by clicking the appropriate button on the web page, a summary of all the prices of the products in the shopping cart will be listed, including taxes and delivery charges. This information will then be automatically reiterated on the order form that the customer sends to our company after confirming the order.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_x4Vtr3": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "subheading_PWCwX4": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Limited Liability",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_rY3347": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Under no circumstance shall Time Resistance be liable, in contractual or non-contractual terms, for any direct or indirect, specific or general damage which may occur due to the use, the non-use and/or due to the performance or defect/error of any Time Resistance product, information or content included in the Site (and the foregoing disregards the fact that Time Resistance was aware or not of the possibility that such damage may occur). Some of the foregoing limitations may not be applicable, since some jurisdictions do not permit the exclusion or limitation of liability for direct or indirect damages.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_9wKYyM": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "subheading_dT8QmB": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Accounting documents, duties and taxes",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_7AYaMt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For all accepted and executed orders, our company will issue an invoice for the ordered material and send it via email to the customer upon request.</p><p>For the issuance of the invoice, the information provided by the customer at the moment of the order will be considered valid. Once it has been issued, no change in the tax document will be possible.</p><p>No responsibility can be attributed to our company in case of delay in the execution or the delivery of the order.</p><p>If you order from our site for delivery outside the United States, you may be liable for import duties and taxes charged by Customs. These additional charges are the customer’s responsibility.</p><p>We guarantee there are no additional fees (import tax, customs duty or other) for clients from the United States.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_Mqqtd7": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "subheading_WW6fYh": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Company details",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_mTr3gG": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Trading Name:</strong> Time Resistance</p><p><strong>Company Name:</strong> UAB Baltic Synergy</p><p><strong>Legal Address:</strong> Baltu pr. 29-77, Kaunas, Lithuania 48244</p><p><strong>Company Number:</strong> 302920865</p><p><strong>CEO:</strong> Arturas Kanapkis <strong>Phone:</strong> +370 635 66288</p><p><strong>Customer Support Email:</strong> <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></p><p><strong>Website:</strong> <a href=\"/\">timeresistance.com</a></p>",
+            "text_font_class": "fs-body-75"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cVLeHF",
+        "spacer_NYPLeU",
+        "subheading_wjb8ya",
+        "text_mLN4dx",
+        "spacer_VadcaR",
+        "subheading_TRpJc7",
+        "text_gLHLAT",
+        "spacer_CqYGdz",
+        "subheading_BcRQwC",
+        "text_UUmkPp",
+        "spacer_x4Vtr3",
+        "subheading_PWCwX4",
+        "text_rY3347",
+        "spacer_9wKYyM",
+        "subheading_dT8QmB",
+        "text_7AYaMt",
+        "spacer_Mqqtd7",
+        "subheading_WW6fYh",
+        "text_mTr3gG"
+      ],
+      "settings": {
+        "alignment": "center_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 700
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_mfwLhJ"
+  ]
+}

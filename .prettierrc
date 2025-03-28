@@ -1,0 +1,29 @@
+{
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 110,
+    "overrides": [
+        {
+            "files": "*.json",
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": "*.liquid",
+            "options": {
+                "tabWidth": 2,
+                "singleQuote": false,
+                "printWidth": 110
+            }
+        },
+        {
+            "files": "*.js",
+            "options": {
+                "singleQuote": true
+            }
+        }
+    ]
+}

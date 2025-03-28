@@ -4,10 +4,8 @@ module.exports = {
     content: ["./**/*.liquid", "./src/**/*.{js,ts,jsx,tsx}", "./templates/**/*.{liquid,json}"],
     theme: {
         extend: {
-            spacing: {
-            },
-            colors: {
-            }
+            spacing: {},
+            colors: {}
         }
     },
     plugins: [],

@@ -1,19 +1,70 @@
 {
   "article": [],
   "blog": [],
-  "brand": [],
-  "collection": [],
+  "collection": [
+    {
+      "key": "menwomen",
+      "namespace": "custom",
+      "name": "menwomen",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "hero_video_desktop",
+      "namespace": "custom",
+      "name": "hero video desktop",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_video_mobile",
+      "namespace": "custom",
+      "name": "hero video mobile",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "company": [],
   "company_location": [],
   "location": [],
-  "market": [],
+  "market": [
+    {
+      "key": "men_s_collections",
+      "namespace": "custom",
+      "name": "Men's Collections",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "women_s_collections",
+      "namespace": "custom",
+      "name": "Women's Collections",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "order": [],
   "page": [],
   "product": [
     {
-      "key": "material",
+      "key": "laptop_size",
       "namespace": "custom",
-      "name": "material",
+      "name": "Laptop Size",
       "description": "",
       "type": {
         "name": "single_line_text_field",
@@ -21,12 +72,162 @@
       }
     },
     {
-      "key": "monteringsanvisning",
+      "key": "product_name_only",
       "namespace": "custom",
-      "name": "monteringsanvisning",
+      "name": "Product name only",
       "description": "",
       "type": {
-        "name": "file_reference",
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "short_product_desc",
+      "namespace": "custom",
+      "name": "Short product desc",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_features",
+      "namespace": "custom",
+      "name": "Product Features",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_design",
+      "namespace": "custom",
+      "name": "Product Design",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_materials",
+      "namespace": "custom",
+      "name": "Product Materials",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_video_youtube_id",
+      "namespace": "custom",
+      "name": "Product video youtube id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "cozy_gallery_id",
+      "namespace": "custom",
+      "name": "Cozy Gallery id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_360_id",
+      "namespace": "custom",
+      "name": "Product 360 id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_360_id2",
+      "namespace": "custom",
+      "name": "Product 360 id2",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "short_product_name",
+      "namespace": "custom",
+      "name": "Short Product Name",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_badge_text",
+      "namespace": "custom",
+      "name": "Product Badge Text",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "rating",
+      "namespace": "reviews",
+      "name": "Product rating",
+      "description": "Average rating from customers",
+      "type": {
+        "name": "rating",
+        "category": "RATING"
+      }
+    },
+    {
+      "key": "product_lookbook_id",
+      "namespace": "custom",
+      "name": "Product Lookbook ID",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products_display",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products settings",
+      "description": "Determines how related products are displayed along with algorithmic product recommendations",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "complementary_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Complementary products",
+      "description": "List of complementary products",
+      "type": {
+        "name": "list.product_reference",
         "category": "REFERENCE"
       }
     },
@@ -51,66 +252,6 @@
       }
     },
     {
-      "key": "related_products_display",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Related products settings",
-      "description": "Determines how related products are displayed along with algorithmic product recommendations",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "complementary_products",
-      "namespace": "shopify--discovery--product_recommendation",
-      "name": "Complementary products",
-      "description": "List of complementary products",
-      "type": {
-        "name": "list.product_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "sektionsbredd",
-      "namespace": "custom",
-      "name": "Sektionsbredd (cm)",
-      "description": "",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "width",
-      "namespace": "custom",
-      "name": "width (cm)",
-      "description": "",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "height",
-      "namespace": "custom",
-      "name": "height (cm)",
-      "description": "",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "depth",
-      "namespace": "custom",
-      "name": "depth (cm)",
-      "description": "",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
       "key": "color-pattern",
       "namespace": "shopify",
       "name": "Color",
@@ -119,19 +260,58 @@
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
-    }
-  ],
-  "variant": [
+    },
     {
-      "key": "images",
-      "namespace": "custom",
-      "name": "images",
-      "description": "",
+      "key": "carry-options",
+      "namespace": "shopify",
+      "name": "Carry options",
+      "description": "Specifies the carrying methods available for items, such as a handle or shoulder strap",
       "type": {
-        "name": "list.file_reference",
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bag-case-material",
+      "namespace": "shopify",
+      "name": "Bag/Case material",
+      "description": "Identifies the main material used in a bag or case, such as leather or canvas",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bag-case-storage-features",
+      "namespace": "shopify",
+      "name": "Bag/Case storage features",
+      "description": "Identifies unique storage elements in bags or cases, such as adjustable dividers or external pockets",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "age-group",
+      "namespace": "shopify",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "target-gender",
+      "namespace": "shopify",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": {
+        "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     }
   ],
+  "variant": [],
   "shop": []
 }

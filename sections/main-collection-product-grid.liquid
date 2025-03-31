@@ -122,13 +122,19 @@
                     "
                   >
                     {% for product in collection.products %}
-                      {% render 'product-item',
-                        prod: product,
-                        product_columns_desktop: section.settings.columns_desktop,
-                        product_columns_mobile: section.settings.columns_mobile,
-                        aspect_ratio: settings.product_listing_aspect_ratio,
-                        has_grid_reveal: true
-                      %}
+                      {%- if section.settings.seperate_variants -%}
+                        {%- render 'product-card', prod: product, split_variants: true -%}
+
+                      {%- else -%}
+                        {% render 'product-item',
+                          prod: product,
+                          product_columns_desktop: section.settings.columns_desktop,
+                          product_columns_mobile: section.settings.columns_mobile,
+                          aspect_ratio: settings.product_listing_aspect_ratio,
+                          has_grid_reveal: true
+                        %}
+                      {%- endif -%}
+
                     {% else %}
                       <div class="collection__empty">
                         <div>{{ 'collections.general.no_products' | t }}</div>
@@ -148,7 +154,11 @@
                       %}
                       <div class="collection__infinite-trigger">
                         {% if paginate.next %}
-                          <a href="{{ paginate.next.url }}" class="btn btn--secondary no-transition" data-click-to-load>
+                          <a
+                            href="{{ paginate.next.url }}"
+                            class="btn btn--secondary no-transition"
+                            data-click-to-load
+                          >
                             {{- 'general.pagination.load_more' | t -}}
                           </a>
                         {% endif %}
@@ -194,7 +204,9 @@
     {%- else -%}
       <div class="collection__empty ta-c">
         <p class="fs-body-100 fs-body-200-ns">{{ 'collections.general.no_matches' | t }}</p>
-        <a class="btn btn--text-link" href="{{ routes.all_products_collection_url }}">{{ 'general.404.link' | t }}</a>
+        <a class="btn btn--text-link" href="{{ routes.all_products_collection_url }}">
+          {{- 'general.404.link' | t -}}
+        </a>
       </div>
     {%- endif -%}
   </div>
@@ -288,6 +300,12 @@
           "label": "t:sections.collection_sections_shared.settings.rows.option_10"
         }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "seperate_variants",
+      "label": "Seperate variants",
+      "default": true
     },
     {
       "type": "checkbox",

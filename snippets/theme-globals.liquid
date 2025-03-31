@@ -9,7 +9,7 @@
     swiper: "{{ 'swiper-chunk.js' | asset_url }}",
     nouislider: "{{ 'nouislider-chunk.js' | asset_url }}",
     polyfillInert: "{{ 'polyfill-inert-chunk.js' | asset_url }}",
-    polyfillResizeObserver: "{{ 'polyfill-resize-observer-chunk.js' | asset_url }}",
+    polyfillResizeObserver: "{{ 'polyfill-resize-observer-chunk.js' | asset_url }}"
   };
 </script>
 
@@ -33,7 +33,7 @@
   <script src="{{ 'custom-events.js' | asset_url }}" defer></script>
   <script>
     window.flu.states = {
-      useCustomEvents: true,
+      useCustomEvents: true
     };
   </script>
 {% endif %}
@@ -48,7 +48,7 @@
   defineVH();
 </script>
 
-{{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'style.bundle.css' | asset_url | stylesheet_tag: preload: true }}
 
 {% if useCustomCSS %}
   {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}

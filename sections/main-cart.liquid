@@ -19,7 +19,7 @@
               <div class="cart__form-item-image">
                 <a href="{{ item.url }}" class="cart__form-item-link">
                   {%-
-                    render 'image' with
+                    render 'legacy-image' with
                     image: item.image,
                     sizes: "120px",
                     prioritize_loading: true
@@ -111,7 +111,9 @@
                   %}
 
                   {% # Compare check allows for sale items to properly show instead of being replaced by text %}
-                  {% if price_content_type == 'price' or item.variant.compare_at_price > item.original_price %}
+                  {% if price_content_type == 'price'
+                    or item.variant.compare_at_price > item.original_price
+                  %}
                     <div class="cart__form-item-price-wrapper fs-body-75">
                       <{{ price_tag_type }} class="cart__form-item-price">
                         {{- item_price | money }}
@@ -221,7 +223,9 @@
                     {% for discount_application in cart.cart_level_discount_applications %}
                       <li class="cart__item-discount fs-body-75">
                         {%- render 'icon' with icon: 'discount-badge' -%}
-                        {{ discount_application.title }} (-{{ discount_application.total_allocated_amount | money }})
+                        {{ discount_application.title }} (-
+                        {{- discount_application.total_allocated_amount | money -}}
+                        )
                       </li>
                     {% endfor %}
                   </ul>
@@ -238,11 +242,17 @@
 
               <p class="cart__footer-tax-note ff-body fs-body-75 t-subdued rte">
                 {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                  {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {{
+                    'cart.general.taxes_included_and_shipping_policy_html'
+                    | t: link: shop.shipping_policy.url
+                  }}
                 {%- elsif cart.taxes_included -%}
                   {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
                 {%- elsif shop.shipping_policy.body != blank -%}
-                  {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                  {{
+                    'cart.general.taxes_and_shipping_policy_at_checkout_html'
+                    | t: link: shop.shipping_policy.url
+                  }}
                 {%- else -%}
                   {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
                 {%- endif -%}
@@ -285,7 +295,9 @@
           Cart empty state
         {% endcomment %}
         <div class="cart__empty-message supports-cookies">
-          <h1 class="cart__empty-message-heading ff-heading fs-heading-2-base">{{ 'cart.general.empty' | t }}</h1>
+          <h1 class="cart__empty-message-heading ff-heading fs-heading-2-base">
+            {{ 'cart.general.empty' | t }}
+          </h1>
           <p class="cart__empty-message-text fs-body-100">{{ 'cart.general.empty_message' | t }}</p>
           {%- assign empty_label = 'cart.general.continue_shopping' | t -%}
           {%-

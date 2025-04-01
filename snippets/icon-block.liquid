@@ -25,12 +25,11 @@
     {%- endif -%}
 
     {%- if custom_icon != blank -%}
-      {%-
-        render 'image',
-        wrapper_class: "icon-block__icon",
+      {%- render 'legacy-image',
+        wrapper_class: 'icon-block__icon',
         image: custom_icon,
         sizes_px: width,
-        aspect_ratio: "natural",
+        aspect_ratio: 'natural'
       -%}
     {%- endif -%}
   </div>

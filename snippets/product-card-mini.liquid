@@ -104,21 +104,19 @@
           aria-label="{{ prod.title }}"
         {% endif %}
       >
-        {%
-          render 'image',
+        {% render 'legacy-image',
           image: image,
           aspect_ratio: aspect_ratio,
           wrapper_class: 'product-card-mini__image',
-          sizes: image_sizes,
+          sizes: image_sizes
         %}
       </a>
     {% else %}
       <div class="product-card-mini__image-link">
-        {%-
-          render 'placeholder-image',
-          wrapper_class: "product-card-mini__image",
+        {%- render 'placeholder-image',
+          wrapper_class: 'product-card-mini__image',
           aspect_ratio: aspect_ratio,
-          placeholder_name: "product-1",
+          placeholder_name: 'product-1'
         -%}
       </div>
     {%- endif -%}

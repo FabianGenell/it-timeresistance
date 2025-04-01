@@ -5,11 +5,11 @@
     assign product_image = block.settings.image
   endif
 
-  if image_size == "small"
+  if image_size == 'small'
     assign image_sizes_fraction = 0.30
-  elsif image_size == "medium"
+  elsif image_size == 'medium'
     assign image_sizes_fraction = 0.40
-  elsif image_size == "large"
+  elsif image_size == 'large'
     assign image_sizes_fraction = 0.50
   endif
 -%}
@@ -31,7 +31,7 @@
 
     <{{ wrapper_tag }} {{ wrapper_attributes }}>
       {%
-        render 'image' with
+        render 'legacy-image' with
         image: product_image,
         wrapper_class: 'testimonials__item-product-image',
         aspect_ratio: block.settings.aspect_ratio,

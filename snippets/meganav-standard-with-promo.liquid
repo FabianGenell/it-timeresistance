@@ -1,6 +1,6 @@
 {%- liquid
   assign overlay_opacity = meganav_settings.overlay_opacity | divided_by: 100.0
-  assign text_position = meganav_settings.text_position | split: "_"
+  assign text_position = meganav_settings.text_position | split: '_'
   assign horizontal_position = text_position | first
   assign vertical_position = text_position | last
 -%}
@@ -26,7 +26,7 @@
         {%- if meganav_settings.link != blank -%}
           <a href="{{ meganav_settings.link }}" class="meganav__promo-image-link">
         {%- endif -%}
-        {%- render 'image' with
+        {%- render 'legacy-image' with
           wrapper_class: "meganav__promo-image",
           image: meganav_settings.image,
           sizes_px: meganav_settings.promo_width,
@@ -62,7 +62,6 @@
 
 {%- endcapture -%}
 
-
 <div
   class="
     meganav
@@ -76,27 +75,30 @@
     {% endif %}
   "
   id="{{ menu_id }}"
-  data-submenu data-hidden="true"
+  data-submenu
+  data-hidden="true"
   data-menu-handle="{{ menu }}"
-  data-meganav-type={{ meganav_type }}
-  {% unless meganav_type == 'full_width_meganav' %}data-align-to-trigger="true"{% endunless %}
+  data-meganav-type="{{ meganav_type }}"
+  {% unless meganav_type == 'full_width_meganav' %}
+    data-align-to-trigger="true"
+  {% endunless %}
   style="
-  --column-count: {{ meganav_settings.column_count }};
-  --columns-width: {{ meganav_settings.columns_width }}px;
-  {% unless meganav_type == 'full_width_meganav' %}--columns-width: {{ meganav_settings.columns_width }}px;{% endunless %}
-  --secondary-width: {{ meganav_settings.promo_width }}px;
-  --color-promo-text: {{ meganav_settings.text_color }};
-  --color-text-overlay-button: {{ meganav_settings.text_color }};
-  --color-background-overlay-button: {{ meganav_settings.text_color }};
-  --color-background-overlay-outline-button-alpha:
-{{ meganav_settings.text_color | color_modify: 'alpha', 0.1 }};
-  --overlay-background: {{ meganav_settings.color_overlay }};
-  {% if meganav_settings.color_overlay_gradient != blank %}
-    --overlay-background-gradient: {{ meganav_settings.color_overlay_gradient }};
-  {% endif %}
-  --overlay-opacity: {{ overlay_opacity }};
+      --column-count: {{ meganav_settings.column_count }};
+      --columns-width: {{ meganav_settings.columns_width }}px;
+      {% unless meganav_type == 'full_width_meganav' %}--columns-width: {{ meganav_settings.columns_width }}px;{% endunless %}
+      --secondary-width: {{ meganav_settings.promo_width }}px;
+      --color-promo-text: {{ meganav_settings.text_color }};
+      --color-text-overlay-button: {{ meganav_settings.text_color }};
+      --color-background-overlay-button: {{ meganav_settings.text_color }};
+      --color-background-overlay-outline-button-alpha:
+    {{ meganav_settings.text_color | color_modify: 'alpha', 0.1 }};
+      --overlay-background: {{ meganav_settings.color_overlay }};
+      {% if meganav_settings.color_overlay_gradient != blank %}
+        --overlay-background-gradient: {{ meganav_settings.color_overlay_gradient }};
+      {% endif %}
+      --overlay-opacity: {{ overlay_opacity }};
   "
-{{ shopify_attributes }}
+  {{ shopify_attributes }}
 >
   <div class="meganav__inner">
     {% if meganav_settings.show_promo and meganav_settings.secondary_position == 'left' %}

@@ -70,7 +70,7 @@
     <div class="slideshow-slide__image-container">
       {%- if block.settings.image_mobile != blank -%}
         {%-
-          render 'image' with
+          render 'legacy-image' with
           wrapper_class: "slideshow-slide__image slideshow-slide__image--mobile",
           image: block.settings.image_mobile,
           sizes: "100vw",
@@ -82,7 +82,7 @@
       {%- endif -%}
 
       {%-
-        render 'image' with
+        render 'legacy-image' with
         wrapper_class: "slideshow-slide__image",
         image: block.settings.image,
         sizes: "100vw",

@@ -67,27 +67,30 @@
   <div class="section__inner">
     <div class="section-introduction animation--section-introduction">
       {%- unless section.settings.heading == blank -%}
-        <{{ section.settings.heading_tag }} class="ff-heading fs-heading-3-base section-introduction__heading">{{ section.settings.heading }}</{{ section.settings.heading_tag }}>
+        <{{ section.settings.heading_tag }} class="ff-heading fs-heading-3-base section-introduction__heading">
+          {{- section.settings.heading -}}
+        </{{ section.settings.heading_tag }}>
       {%- endunless -%}
 
       {%- unless section.settings.subheading == blank -%}
-        <div class="ff-body fs-body-100 rte section-introduction__subheading">{{ section.settings.subheading }}</div>
+        <div class="ff-body fs-body-100 rte section-introduction__subheading">
+          {{ section.settings.subheading }}
+        </div>
       {%- endunless -%}
 
-      {%-
-        render 'button-block'
-        wrapper_class: "section-introduction__button",
+      {%- render 'button-block',
+        wrapper_class: 'section-introduction__button',
         link: section.settings.link,
         label: section.settings.link_text,
         button_style: section.settings.button_style,
-        button_alignment: 'center',
+        button_alignment: 'center'
       -%}
     </div>
 
     <div class="shoppable-image__image-container shoppable__image-container">
       <div class="shoppable-image__image-container-inner">
         <div class="shoppable-image__image-wrapper">
-          {% render 'image',
+          {% render 'legacy-image',
             image: section.settings.image,
             wrapper_class: 'shoppable-image__image',
             focal_point: 'image_presentation',
@@ -102,14 +105,13 @@
       </div>
 
       {%- for block in section.blocks -%}
-        {%
-          render 'shoppable-item',
+        {% render 'shoppable-item',
           block: block,
           index: forloop.index0,
           product_item: block.settings.product_item,
           horizontal_position: block.settings.horizontal_position,
           vertical_position: block.settings.vertical_position,
-          aspect_ratio: section.settings.aspect_ratio,
+          aspect_ratio: section.settings.aspect_ratio
         %}
       {%- endfor -%}
     </div>

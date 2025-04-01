@@ -177,7 +177,11 @@
 >
   <div class="product-item__inner">
     <div class="product-item__media {%- if show_multiple_images %} product-item__media--multiple-images {%- endif %}">
-      <a class="product-item__image-link" href="{{ prod.url | within: collection }}" aria-label="{{ prod.title }}">
+      <a
+        class="product-item__image-link"
+        href="{{ prod.url | within: collection }}"
+        aria-label="{{ prod.title }}"
+      >
         {%- liquid
           assign image_wrapper_class = 'product-item__image'
 
@@ -191,7 +195,7 @@
           endif
         -%}
 
-        {% render 'image',
+        {% render 'legacy-image',
           image: prod.featured_media,
           wrapper_class: image_wrapper_class,
           aspect_ratio: settings.product_listing_aspect_ratio,
@@ -202,7 +206,7 @@
         %}
 
         {%- if show_multiple_images -%}
-          {% render 'image',
+          {% render 'legacy-image',
             image: second_image,
             wrapper_class: 'product-item__image product-item__image--two',
             aspect_ratio: settings.product_listing_aspect_ratio,
@@ -323,7 +327,10 @@
 
             {% if settings.product_listing_show_discount %}
               <span class="displayed-discount fs-body-50">
-                {%- render 'get-display-discount', prod: prod, format: settings.product_listing_discount_format -%}
+                {%- render 'get-display-discount',
+                  prod: prod,
+                  format: settings.product_listing_discount_format
+                -%}
               </span>
             {% endif %}
 

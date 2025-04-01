@@ -43,10 +43,15 @@
               {%- render 'free-shipping-bar' %}
 
               {%- for item in cart.items -%}
-                <div class="quick-cart__item" data-input-item data-id="{{ item.id }}" data-key="{{ item.key }}">
+                <div
+                  class="quick-cart__item"
+                  data-input-item
+                  data-id="{{ item.id }}"
+                  data-key="{{ item.key }}"
+                >
                   <div class="quick-cart__item-image">
                     <a href="{{ item.url }}" class="quick-cart__item-link">
-                      {%- render 'image',
+                      {%- render 'legacy-image',
                         image: item.image,
                         sizes: '120px',
                         prioritize_loading: true,
@@ -62,7 +67,9 @@
                       </h4>
 
                       {% unless item.product.has_only_default_variant %}
-                        <p class="quick-cart__item-variant fs-body-60 t-opacity-60">{{ item.variant.title }}</p>
+                        <p class="quick-cart__item-variant fs-body-60 t-opacity-60">
+                          {{ item.variant.title }}
+                        </p>
                       {% endunless %}
 
                       {% if item.selling_plan_allocation %}
@@ -126,7 +133,9 @@
                       %}
 
                       {% # Compare check allows for sale items to properly show instead of being replaced by text %}
-                      {% if price_content_type == 'price' or item.variant.compare_at_price > item.original_price %}
+                      {% if price_content_type == 'price'
+                        or item.variant.compare_at_price > item.original_price
+                      %}
                         <div class="quick-cart__item-price-wrapper fs-body-75">
                           <{{ price_tag_type }} class="quick-cart__item-price">
                             {{- item_price | money }}
@@ -179,7 +188,10 @@
                           and item_variant.inventory_quantity < settings.low_inventory_warning_threshold
                         -%}
                           <p class="quick-cart__inventory-warning fs-body-50">
-                            {{ 'cart.general.inventory_warning' | t: amount: item_variant.inventory_quantity }}
+                            {{
+                              'cart.general.inventory_warning'
+                              | t: amount: item_variant.inventory_quantity
+                            }}
                           </p>
                         {%- endif -%}
                       {%- endif -%}
@@ -198,12 +210,7 @@
                 </div>
               {%- endfor -%}
               {%- if settings.enable_cross_sells -%}
-                {%-
-                  render 'cross-sells',
-                  cart: cart,
-                  cart_items: cart.items,
-                  is_slider: true,
-                -%}
+                {%- render 'cross-sells', cart: cart, cart_items: cart.items, is_slider: true -%}
               {%- endif -%}
             </div>
             <div class="quick-cart__footer animation--quick-cart-footer">
@@ -242,7 +249,9 @@
                     {% for discount_application in cart.cart_level_discount_applications %}
                       <li class="quick-cart__item-discount fs-body-60">
                         {%- render 'icon', icon: 'discount-badge' -%}
-                        {{ discount_application.title }} (-{{ discount_application.total_allocated_amount | money }})
+                        {{ discount_application.title }} (-
+                        {{- discount_application.total_allocated_amount | money -}}
+                        )
                       </li>
                     {% endfor %}
                   </ul>
@@ -257,11 +266,17 @@
                 </div>
                 <p class="quick-cart__footer-tax-note ff-body fs-body-75 t-subdued">
                   {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                    {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {{
+                      'cart.general.taxes_included_and_shipping_policy_html'
+                      | t: link: shop.shipping_policy.url
+                    }}
                   {%- elsif cart.taxes_included -%}
                     {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
                   {%- elsif shop.shipping_policy.body != blank -%}
-                    {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                    {{
+                      'cart.general.taxes_and_shipping_policy_at_checkout_html'
+                      | t: link: shop.shipping_policy.url
+                    }}
                   {%- else -%}
                     {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
                   {%- endif -%}
@@ -290,13 +305,12 @@
                 </div>
               {%- endif -%}
               {%- for collection in section.settings.collection_list -%}
-                {%-
-                  render 'button-block',
-                  wrapper_class: "quick-cart__empty-state-promo-button",
+                {%- render 'button-block',
+                  wrapper_class: 'quick-cart__empty-state-promo-button',
                   link: collection.url,
                   label: collection.title,
                   button_style: section.settings.collection_list_button_style,
-                  button_alignment: 'center',
+                  button_alignment: 'center'
                 -%}
               {%- endfor -%}
             {%- else -%}

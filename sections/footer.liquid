@@ -39,7 +39,7 @@
         {%- assign rendered_image = blank -%}
         {%- if block.settings.image != blank -%}
           {%- capture rendered_image -%}
-            {%- render 'image' with image: block.settings.image, wrapper_class: 'footer__image', sizes_px: block.settings.image_max_width -%}
+            {%- render 'legacy-image' with image: block.settings.image, wrapper_class: 'footer__image', sizes_px: block.settings.image_max_width -%}
           {%- endcapture -%}
         {%- endif -%}
         <div
@@ -114,7 +114,11 @@
                 <div class="ff-heading fs-body-150 footer__text">{{ block.settings.text }}</div>
 
                 {% form 'customer', class: 'footer__newsletter-form', id: 'footer-subscribe' %}
-                  {% render 'form-status', form: form, form_id: 'footer-subscribe', success_message: success_msg %}
+                  {% render 'form-status',
+                    form: form,
+                    form_id: 'footer-subscribe',
+                    success_message: success_msg
+                  %}
 
                   {%- unless form.posted_successfully? -%}
                     <div class="footer__newsletter-inner">
@@ -174,7 +178,8 @@
         {%- endif -%}
         <div class="footer__credits fs-body-50">
           <p>
-            {{ 'sections.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}.
+            {{ 'sections.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }},
+            {{ shop.name | link_to: '/' }}.
             {{ 'sections.footer.rights' | t }}
             {{ 'sections.footer.see_terms' | t }}
           </p>

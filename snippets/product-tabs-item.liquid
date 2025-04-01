@@ -50,7 +50,7 @@
                 {{ block.settings.image_width_column_1 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
               {%- endcapture -%}
               {%-
-                render 'image' with
+                render 'legacy-image' with
                 wrapper_class: "product-tabs__tab-image",
                 image: block.settings.image_column_1,
                 sizes: image_sizes
@@ -59,7 +59,9 @@
           </figure>
         {%- endcapture -%}
 
-        {%- if block.settings.image_column_1 != blank and block.settings.image_position_column_1 == 'above_text' -%}
+        {%- if block.settings.image_column_1 != blank
+          and block.settings.image_position_column_1 == 'above_text'
+        -%}
           {{ image_figure_column_1 }}
         {%- endif -%}
 
@@ -92,7 +94,9 @@
           {%- endunless -%}
         </div>
 
-        {%- if block.settings.image_column_1 != blank and block.settings.image_position_column_1 == 'below_text' -%}
+        {%- if block.settings.image_column_1 != blank
+          and block.settings.image_position_column_1 == 'below_text'
+        -%}
           {{ image_figure_column_1 }}
         {%- endif -%}
       </div>
@@ -109,7 +113,7 @@
                 {{ block.settings.image_width_column_2 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
               {%- endcapture -%}
               {%-
-                render 'image' with
+                render 'legacy-image' with
                 wrapper_class: "product-tabs__tab-image",
                 image: block.settings.image_column_2,
                 sizes: image_sizes,
@@ -119,7 +123,9 @@
           </figure>
         {%- endcapture -%}
 
-        {%- if block.settings.image_column_2 != blank and block.settings.image_position_column_2 == 'above_text' -%}
+        {%- if block.settings.image_column_2 != blank
+          and block.settings.image_position_column_2 == 'above_text'
+        -%}
           {{ image_figure_column_2 }}
         {%- endif -%}
 
@@ -152,7 +158,9 @@
           {%- endunless -%}
         </div>
 
-        {%- if block.settings.image_column_2 != blank and block.settings.image_position_column_2 == 'below_text' -%}
+        {%- if block.settings.image_column_2 != blank
+          and block.settings.image_position_column_2 == 'below_text'
+        -%}
           {{ image_figure_column_2 }}
         {%- endif -%}
       </div>
@@ -169,7 +177,7 @@
                 {{ block.settings.image_width_column_3 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
               {%- endcapture -%}
               {%-
-                render 'image' with
+                render 'legacy-image' with
                 wrapper_class: "product-tabs__tab-image",
                 image: block.settings.image_column_3,
                 sizes: image_sizes,
@@ -179,7 +187,9 @@
           </figure>
         {%- endcapture -%}
 
-        {%- if block.settings.image_column_3 != blank and block.settings.image_position_column_3 == 'above_text' -%}
+        {%- if block.settings.image_column_3 != blank
+          and block.settings.image_position_column_3 == 'above_text'
+        -%}
           {{ image_figure_column_3 }}
         {%- endif -%}
 
@@ -212,7 +222,9 @@
           {%- endunless -%}
         </div>
 
-        {%- if block.settings.image_column_3 != blank and block.settings.image_position_column_3 == 'below_text' -%}
+        {%- if block.settings.image_column_3 != blank
+          and block.settings.image_position_column_3 == 'below_text'
+        -%}
           {{ image_figure_column_3 }}
         {%- endif -%}
       </div>

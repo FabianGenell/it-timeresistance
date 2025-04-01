@@ -40,7 +40,7 @@
           {%- if settings.quick_search_product_style != 'list' -%}
             <div class="quick-search__result-image-wrapper">
               {%
-                render 'image' with
+                render 'legacy-image' with
                 image: product.featured_media,
                 wrapper_class: 'quick-search__result-image',
                 aspect_ratio: settings.product_listing_aspect_ratio,

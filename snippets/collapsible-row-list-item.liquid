@@ -29,7 +29,7 @@
     >
       {%- if block.settings.custom_icon_image != blank -%}
         {%-
-          render 'image' with
+          render 'legacy-image' with
           wrapper_class: "collapsible-row-list-item__icon",
           image: block.settings.custom_icon_image,
           sizes: "25px",

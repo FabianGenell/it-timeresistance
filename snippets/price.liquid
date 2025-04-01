@@ -1,0 +1,115 @@
+{%- comment -%}
+  Renders a product's price display with support for sale prices, variable pricing, and custom display options.
+
+  Required parameters:
+  - prod* (object): The product object with properties
+  - placeholder (boolean): Show placeholder price if true
+  - current_variant (object): Current variant for unit price display
+
+  Usage:
+  {% render 'price',
+    prod: product,
+    current_variant: product.selected_or_first_available_variant,
+    placeholder: false
+  %}
+{%- endcomment -%}
+
+{% liquid
+  assign price_content_type = 'price'
+
+  if prod.available
+    if prod.price == 0 and prod.price_varies == false
+      if settings.zero_dollar_listing_price_display == 'replace'
+        assign price_content_type = 'custom'
+        assign custom_price_content = 'products.inventory.zero_price_custom_label' | t
+      elsif settings.zero_dollar_listing_price_display == 'hide'
+        assign price_content_type = 'hide'
+        assign custom_price_content = blank
+      endif
+    endif
+  else
+    if settings.sold_out_listing_price_display == 'hide'
+      assign price_content_type = 'hide'
+      assign custom_price_content = blank
+    elsif settings.sold_out_listing_price_display == 'replace'
+      assign price_content_type = 'custom'
+      assign custom_price_content = 'products.inventory.sold_out_price_custom_label' | t
+    endif
+  endif
+%}
+{% if price_content_type == 'price' %}
+  <p class="product-item__price">
+    {% if placeholder %}
+      {{ 9999 | money }}
+
+    {% elsif prod.compare_at_price > prod.price %}
+      <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+
+      {% liquid
+        # Extend Shopify's detection for varied compare_at_price
+        assign has_null_compare_at_price = false
+        for variant in prod.variants
+          if variant.compare_at_price == null
+            assign has_null_compare_at_price = true
+            break
+          endif
+        endfor
+      %}
+
+      {% unless prod.compare_at_price_varies or has_null_compare_at_price %}
+        <s class="t-subdued">{{ prod.compare_at_price | money }}</s>
+      {% endunless %}
+
+      {% if prod.price_varies or prod.compare_at_price_varies or has_null_compare_at_price %}
+        {%- assign sale_price = prod.price | money -%}
+
+        <span class="sale">
+          {{- 'products.product.on_sale_from_html' | t: price: sale_price -}}
+        </span>
+      {% else %}
+        <span class="sale">{{ prod.price | money }}</span>
+      {% endif %}
+
+    {% else %}
+      {% if prod.price_varies %}
+        {%- assign price = prod.price | money -%}
+
+        {{ 'products.product.from_lowest_price_html' | t: lowest_price: price }}
+
+      {% else %}
+        <span class="product-item__price">{{ prod.price | money }}</span>
+      {% endif %}
+    {% endif %}
+
+    {% if settings.product_listing_show_discount %}
+      <span class="displayed-discount fs-body-50">
+        {%- render 'get-display-discount', prod: prod, format: settings.product_listing_discount_format -%}
+      </span>
+    {% endif %}
+
+    {% render 'unit-price', item: current_variant %}
+  </p>
+{% elsif price_content_type == 'custom' %}
+  {% if prod.price_varies and prod.price == 0 %}
+    {%- assign price = prod.price | money -%}
+    {%- assign custom_price_content = 'products.inventory.zero_price_custom_label' | t -%}
+
+    <p class="product-item__price">
+      {% liquid
+        capture from_lowest_price_html
+          echo 'products.product.from_lowest_price_html' | t: lowest_price: custom_price_content
+        endcapture
+
+        if prod.compare_at_price > prod.price
+          echo '<span class="sale">[[flph]]</span>' | replace: '[[flph]]', from_lowest_price_html
+        else
+          echo from_lowest_price_html
+        endif
+      %}
+    </p>
+  {% else %}
+    {% if custom_price_content != blank %}
+      <p class="product-item__price">{{ custom_price_content }}</p>
+    {% endif %}
+  {% endif %}
+{% endif %}

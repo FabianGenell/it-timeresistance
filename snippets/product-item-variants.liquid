@@ -175,10 +175,14 @@
   "
   style="--z-index-item: {{ forloop.index }};"
 >
-{%- render 'button-wishlist', product: prod, variant: var -%}
+  {%- render 'button-wishlist', product: prod, variant: var -%}
   <div class="product-item__inner">
     <div class="product-item__media {%- if show_multiple_images %} product-item__media--multiple-images {%- endif %}">
-      <a class="product-item__image-link" href="{{ var.url | within: collection }}" aria-label="{{ prod.title }}">
+      <a
+        class="product-item__image-link"
+        href="{{ var.url | within: collection }}"
+        aria-label="{{ prod.title }}"
+      >
         {%- liquid
           assign image_wrapper_class = 'product-item__image'
 
@@ -187,14 +191,14 @@
             assign initial_variant_media_index = var.featured_media.position | minus: 1
             assign next_variant_media_index = initial_variant_media_index | plus: 1
             assign second_image = prod.media[next_variant_media_index].preview_image
-            
+
             if prod.featured_media != prod.media[0]
               assign second_image = prod.media[0].preview_image
             endif
           endif
         -%}
 
-        {% render 'image',
+        {% render 'legacy-image',
           image: var.featured_media,
           wrapper_class: image_wrapper_class,
           aspect_ratio: settings.product_listing_aspect_ratio,
@@ -205,7 +209,7 @@
         %}
 
         {%- if show_multiple_images -%}
-          {% render 'image',
+          {% render 'legacy-image',
             image: second_image,
             wrapper_class: 'product-item__image product-item__image--two',
             aspect_ratio: settings.product_listing_aspect_ratio,
@@ -326,7 +330,10 @@
 
             {% if settings.product_listing_show_discount %}
               <span class="displayed-discount fs-body-50">
-                {%- render 'get-display-discount', prod: prod, format: settings.product_listing_discount_format -%}
+                {%- render 'get-display-discount',
+                  prod: prod,
+                  format: settings.product_listing_discount_format
+                -%}
               </span>
             {% endif %}
 

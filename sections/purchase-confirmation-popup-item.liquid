@@ -10,7 +10,7 @@
     >
       <div class="purchase-confirmation-popup__product">
         <div class="purchase-confirmation-popup__product-image">
-          {%- render 'image',
+          {%- render 'legacy-image',
             image: item.image,
             sizes: '120px',
             aspect_ratio: settings.cart_item_aspect_ratio,
@@ -23,7 +23,9 @@
           </h4>
 
           {% unless item.product.has_only_default_variant %}
-            <p class="purchase-confirmation-popup__product-variant fs-body-50 t-opacity-60">{{ item.variant.title }}</p>
+            <p class="purchase-confirmation-popup__product-variant fs-body-50 t-opacity-60">
+              {{ item.variant.title }}
+            </p>
           {% endunless %}
 
           {% if item.selling_plan_allocation %}

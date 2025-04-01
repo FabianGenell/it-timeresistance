@@ -66,7 +66,7 @@
     class="grid-item__inner"
   >
     {%- if block.settings.mobile_image != blank -%}
-      {%- render 'image',
+      {%- render 'legacy-image',
         wrapper_class: 'grid-item__image grid-item__image--mobile',
         focal_point: block.settings.focal_point,
         image: block.settings.mobile_image,
@@ -76,7 +76,7 @@
     {%- endif -%}
 
     {%- if block.settings.image != blank -%}
-      {%- render 'image',
+      {%- render 'legacy-image',
         wrapper_class: 'grid-item__image',
         focal_point: block.settings.focal_point,
         image: block.settings.image,

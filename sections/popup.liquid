@@ -130,7 +130,7 @@
             {%- endunless -%}
 
             {%- unless block.settings.image == blank -%}
-              {%- render 'image',
+              {%- render 'legacy-image',
                 wrapper_class: 'popup__image',
                 image: block.settings.image,
                 sizes: sizes,
@@ -183,11 +183,16 @@
               {%- endunless -%}
 
               {%- unless block.settings.text == blank -%}
-                <div class="popup__text ff-body fs-body-100 rte animation--popup-item">{{ block.settings.text }}</div>
+                <div class="popup__text ff-body fs-body-100 rte animation--popup-item">
+                  {{ block.settings.text }}
+                </div>
               {%- endunless -%}
 
               {%- if is_signup == 'signup' -%}
-                {% form 'customer', class: 'popup__newsletter newsletter-form animation--popup-item', id: block.id %}
+                {% form 'customer',
+                  class: 'popup__newsletter newsletter-form animation--popup-item',
+                  id: block.id
+                %}
                   {%- assign success_msg = 'general.newsletter_form.confirmation' | t -%}
                   {% render 'form-status', form: form, form_id: block.id, success_message: success_msg %}
 
@@ -241,13 +246,12 @@
                   button_alignment: block.settings.content_alignment
                 -%}
               {%- else -%}
-                {%-
-                  render 'button-block',
-                  wrapper_class: "popup__button animation--popup-item",
+                {%- render 'button-block',
+                  wrapper_class: 'popup__button animation--popup-item',
                   link: block.settings.link,
                   label: block.settings.link_text,
                   is_full: true,
-                  is_overlay: true,
+                  is_overlay: true
                 -%}
               {%- endif -%}
 
@@ -322,7 +326,102 @@
       "type": "popup",
       "name": "t:sections.popup.blocks.popup.name",
       "settings": [
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__behavior.content"},{"type":"select","id":"delay","label":"t:sections.popup.blocks.shared.settings.delay.label","options":[{"value":"timer_0","label":"t:sections.popup.blocks.shared.settings.delay.option_immediate"},{"value":"timer_3000","label":"t:sections.popup.blocks.shared.settings.delay.option_3s"},{"value":"timer_5000","label":"t:sections.popup.blocks.shared.settings.delay.option_5s"},{"value":"timer_10000","label":"t:sections.popup.blocks.shared.settings.delay.option_10s"},{"value":"timer_30000","label":"t:sections.popup.blocks.shared.settings.delay.option_30s"},{"value":"timer_60000","label":"t:sections.popup.blocks.shared.settings.delay.option_1m"},{"value":"timer_120000","label":"t:sections.popup.blocks.shared.settings.delay.option_2m"},{"value":"scroll_25","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll25"},{"value":"scroll_50","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll50"},{"value":"scroll_75","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll75"},{"value":"scroll_100","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll100"}],"default":"timer_30000"},{"type":"select","id":"frequency","label":"t:sections.popup.blocks.shared.settings.frequency.label","info":"t:sections.popup.blocks.shared.settings.frequency.info","default":"frequency_100000","options":[{"value":"frequency_100000","label":"t:sections.popup.blocks.shared.settings.frequency.option_once"},{"value":"frequency_1","label":"t:sections.popup.blocks.shared.settings.frequency.option_1"},{"value":"frequency_6","label":"t:sections.popup.blocks.shared.settings.frequency.option_6"},{"value":"frequency_12","label":"t:sections.popup.blocks.shared.settings.frequency.option_12"},{"value":"frequency_24","label":"t:sections.popup.blocks.shared.settings.frequency.option_24"},{"value":"frequency_76","label":"t:sections.popup.blocks.shared.settings.frequency.option_76"},{"value":"frequency_168","label":"t:sections.popup.blocks.shared.settings.frequency.option_168"},{"value":"frequency_336","label":"t:sections.popup.blocks.shared.settings.frequency.option_336"},{"value":"frequency_0","label":"t:sections.popup.blocks.shared.settings.frequency.option_no_limit"}]},{"type":"checkbox","id":"show_on_exit_intent","label":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.label","info":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.info","default":false},{"type":"checkbox","id":"disable_for_account_holders","label":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.label","info":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.info","default":true},{"type":"checkbox","id":"show_on_specific_page","label":"t:sections.popup.blocks.shared.settings.show_on_specific_page.label","default":false},{"type":"url","id":"target_page","label":"t:sections.popup.blocks.shared.settings.target_page.label"},
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__behavior.content" },
+        {
+          "type": "select",
+          "id": "delay",
+          "label": "t:sections.popup.blocks.shared.settings.delay.label",
+          "options": [
+            { "value": "timer_0", "label": "t:sections.popup.blocks.shared.settings.delay.option_immediate" },
+            { "value": "timer_3000", "label": "t:sections.popup.blocks.shared.settings.delay.option_3s" },
+            { "value": "timer_5000", "label": "t:sections.popup.blocks.shared.settings.delay.option_5s" },
+            { "value": "timer_10000", "label": "t:sections.popup.blocks.shared.settings.delay.option_10s" },
+            { "value": "timer_30000", "label": "t:sections.popup.blocks.shared.settings.delay.option_30s" },
+            { "value": "timer_60000", "label": "t:sections.popup.blocks.shared.settings.delay.option_1m" },
+            { "value": "timer_120000", "label": "t:sections.popup.blocks.shared.settings.delay.option_2m" },
+            {
+              "value": "scroll_25",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll25"
+            },
+            {
+              "value": "scroll_50",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll50"
+            },
+            {
+              "value": "scroll_75",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll75"
+            },
+            {
+              "value": "scroll_100",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll100"
+            }
+          ],
+          "default": "timer_30000"
+        },
+        {
+          "type": "select",
+          "id": "frequency",
+          "label": "t:sections.popup.blocks.shared.settings.frequency.label",
+          "info": "t:sections.popup.blocks.shared.settings.frequency.info",
+          "default": "frequency_100000",
+          "options": [
+            {
+              "value": "frequency_100000",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_once"
+            },
+            { "value": "frequency_1", "label": "t:sections.popup.blocks.shared.settings.frequency.option_1" },
+            { "value": "frequency_6", "label": "t:sections.popup.blocks.shared.settings.frequency.option_6" },
+            {
+              "value": "frequency_12",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_12"
+            },
+            {
+              "value": "frequency_24",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_24"
+            },
+            {
+              "value": "frequency_76",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_76"
+            },
+            {
+              "value": "frequency_168",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_168"
+            },
+            {
+              "value": "frequency_336",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_336"
+            },
+            {
+              "value": "frequency_0",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_no_limit"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_exit_intent",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.label",
+          "info": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_for_account_holders",
+          "label": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.label",
+          "info": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_specific_page",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_specific_page.label",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "target_page",
+          "label": "t:sections.popup.blocks.shared.settings.target_page.label"
+        },
         {
           "type": "header",
           "content": "t:sections.popup.blocks.shared.settings.header__content.content"
@@ -476,7 +575,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:sections.popup.blocks.shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -532,7 +638,102 @@
       "type": "flyout",
       "name": "t:sections.popup.blocks.flyout.name",
       "settings": [
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__behavior.content"},{"type":"select","id":"delay","label":"t:sections.popup.blocks.shared.settings.delay.label","options":[{"value":"timer_0","label":"t:sections.popup.blocks.shared.settings.delay.option_immediate"},{"value":"timer_3000","label":"t:sections.popup.blocks.shared.settings.delay.option_3s"},{"value":"timer_5000","label":"t:sections.popup.blocks.shared.settings.delay.option_5s"},{"value":"timer_10000","label":"t:sections.popup.blocks.shared.settings.delay.option_10s"},{"value":"timer_30000","label":"t:sections.popup.blocks.shared.settings.delay.option_30s"},{"value":"timer_60000","label":"t:sections.popup.blocks.shared.settings.delay.option_1m"},{"value":"timer_120000","label":"t:sections.popup.blocks.shared.settings.delay.option_2m"},{"value":"scroll_25","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll25"},{"value":"scroll_50","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll50"},{"value":"scroll_75","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll75"},{"value":"scroll_100","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll100"}],"default":"timer_30000"},{"type":"select","id":"frequency","label":"t:sections.popup.blocks.shared.settings.frequency.label","info":"t:sections.popup.blocks.shared.settings.frequency.info","default":"frequency_100000","options":[{"value":"frequency_100000","label":"t:sections.popup.blocks.shared.settings.frequency.option_once"},{"value":"frequency_1","label":"t:sections.popup.blocks.shared.settings.frequency.option_1"},{"value":"frequency_6","label":"t:sections.popup.blocks.shared.settings.frequency.option_6"},{"value":"frequency_12","label":"t:sections.popup.blocks.shared.settings.frequency.option_12"},{"value":"frequency_24","label":"t:sections.popup.blocks.shared.settings.frequency.option_24"},{"value":"frequency_76","label":"t:sections.popup.blocks.shared.settings.frequency.option_76"},{"value":"frequency_168","label":"t:sections.popup.blocks.shared.settings.frequency.option_168"},{"value":"frequency_336","label":"t:sections.popup.blocks.shared.settings.frequency.option_336"},{"value":"frequency_0","label":"t:sections.popup.blocks.shared.settings.frequency.option_no_limit"}]},{"type":"checkbox","id":"show_on_exit_intent","label":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.label","info":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.info","default":false},{"type":"checkbox","id":"disable_for_account_holders","label":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.label","info":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.info","default":true},{"type":"checkbox","id":"show_on_specific_page","label":"t:sections.popup.blocks.shared.settings.show_on_specific_page.label","default":false},{"type":"url","id":"target_page","label":"t:sections.popup.blocks.shared.settings.target_page.label"},
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__behavior.content" },
+        {
+          "type": "select",
+          "id": "delay",
+          "label": "t:sections.popup.blocks.shared.settings.delay.label",
+          "options": [
+            { "value": "timer_0", "label": "t:sections.popup.blocks.shared.settings.delay.option_immediate" },
+            { "value": "timer_3000", "label": "t:sections.popup.blocks.shared.settings.delay.option_3s" },
+            { "value": "timer_5000", "label": "t:sections.popup.blocks.shared.settings.delay.option_5s" },
+            { "value": "timer_10000", "label": "t:sections.popup.blocks.shared.settings.delay.option_10s" },
+            { "value": "timer_30000", "label": "t:sections.popup.blocks.shared.settings.delay.option_30s" },
+            { "value": "timer_60000", "label": "t:sections.popup.blocks.shared.settings.delay.option_1m" },
+            { "value": "timer_120000", "label": "t:sections.popup.blocks.shared.settings.delay.option_2m" },
+            {
+              "value": "scroll_25",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll25"
+            },
+            {
+              "value": "scroll_50",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll50"
+            },
+            {
+              "value": "scroll_75",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll75"
+            },
+            {
+              "value": "scroll_100",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll100"
+            }
+          ],
+          "default": "timer_30000"
+        },
+        {
+          "type": "select",
+          "id": "frequency",
+          "label": "t:sections.popup.blocks.shared.settings.frequency.label",
+          "info": "t:sections.popup.blocks.shared.settings.frequency.info",
+          "default": "frequency_100000",
+          "options": [
+            {
+              "value": "frequency_100000",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_once"
+            },
+            { "value": "frequency_1", "label": "t:sections.popup.blocks.shared.settings.frequency.option_1" },
+            { "value": "frequency_6", "label": "t:sections.popup.blocks.shared.settings.frequency.option_6" },
+            {
+              "value": "frequency_12",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_12"
+            },
+            {
+              "value": "frequency_24",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_24"
+            },
+            {
+              "value": "frequency_76",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_76"
+            },
+            {
+              "value": "frequency_168",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_168"
+            },
+            {
+              "value": "frequency_336",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_336"
+            },
+            {
+              "value": "frequency_0",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_no_limit"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_exit_intent",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.label",
+          "info": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_for_account_holders",
+          "label": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.label",
+          "info": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_specific_page",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_specific_page.label",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "target_page",
+          "label": "t:sections.popup.blocks.shared.settings.target_page.label"
+        },
         {
           "type": "header",
           "content": "t:sections.popup.blocks.shared.settings.header__content.content"
@@ -647,7 +848,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:sections.popup.blocks.shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -696,7 +904,102 @@
       "type": "popup_signup",
       "name": "t:sections.popup.blocks.popup_sign_up.name",
       "settings": [
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__behavior.content"},{"type":"select","id":"delay","label":"t:sections.popup.blocks.shared.settings.delay.label","options":[{"value":"timer_0","label":"t:sections.popup.blocks.shared.settings.delay.option_immediate"},{"value":"timer_3000","label":"t:sections.popup.blocks.shared.settings.delay.option_3s"},{"value":"timer_5000","label":"t:sections.popup.blocks.shared.settings.delay.option_5s"},{"value":"timer_10000","label":"t:sections.popup.blocks.shared.settings.delay.option_10s"},{"value":"timer_30000","label":"t:sections.popup.blocks.shared.settings.delay.option_30s"},{"value":"timer_60000","label":"t:sections.popup.blocks.shared.settings.delay.option_1m"},{"value":"timer_120000","label":"t:sections.popup.blocks.shared.settings.delay.option_2m"},{"value":"scroll_25","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll25"},{"value":"scroll_50","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll50"},{"value":"scroll_75","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll75"},{"value":"scroll_100","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll100"}],"default":"timer_30000"},{"type":"select","id":"frequency","label":"t:sections.popup.blocks.shared.settings.frequency.label","info":"t:sections.popup.blocks.shared.settings.frequency.info","default":"frequency_100000","options":[{"value":"frequency_100000","label":"t:sections.popup.blocks.shared.settings.frequency.option_once"},{"value":"frequency_1","label":"t:sections.popup.blocks.shared.settings.frequency.option_1"},{"value":"frequency_6","label":"t:sections.popup.blocks.shared.settings.frequency.option_6"},{"value":"frequency_12","label":"t:sections.popup.blocks.shared.settings.frequency.option_12"},{"value":"frequency_24","label":"t:sections.popup.blocks.shared.settings.frequency.option_24"},{"value":"frequency_76","label":"t:sections.popup.blocks.shared.settings.frequency.option_76"},{"value":"frequency_168","label":"t:sections.popup.blocks.shared.settings.frequency.option_168"},{"value":"frequency_336","label":"t:sections.popup.blocks.shared.settings.frequency.option_336"},{"value":"frequency_0","label":"t:sections.popup.blocks.shared.settings.frequency.option_no_limit"}]},{"type":"checkbox","id":"show_on_exit_intent","label":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.label","info":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.info","default":false},{"type":"checkbox","id":"disable_for_account_holders","label":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.label","info":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.info","default":true},{"type":"checkbox","id":"show_on_specific_page","label":"t:sections.popup.blocks.shared.settings.show_on_specific_page.label","default":false},{"type":"url","id":"target_page","label":"t:sections.popup.blocks.shared.settings.target_page.label"},
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__behavior.content" },
+        {
+          "type": "select",
+          "id": "delay",
+          "label": "t:sections.popup.blocks.shared.settings.delay.label",
+          "options": [
+            { "value": "timer_0", "label": "t:sections.popup.blocks.shared.settings.delay.option_immediate" },
+            { "value": "timer_3000", "label": "t:sections.popup.blocks.shared.settings.delay.option_3s" },
+            { "value": "timer_5000", "label": "t:sections.popup.blocks.shared.settings.delay.option_5s" },
+            { "value": "timer_10000", "label": "t:sections.popup.blocks.shared.settings.delay.option_10s" },
+            { "value": "timer_30000", "label": "t:sections.popup.blocks.shared.settings.delay.option_30s" },
+            { "value": "timer_60000", "label": "t:sections.popup.blocks.shared.settings.delay.option_1m" },
+            { "value": "timer_120000", "label": "t:sections.popup.blocks.shared.settings.delay.option_2m" },
+            {
+              "value": "scroll_25",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll25"
+            },
+            {
+              "value": "scroll_50",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll50"
+            },
+            {
+              "value": "scroll_75",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll75"
+            },
+            {
+              "value": "scroll_100",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll100"
+            }
+          ],
+          "default": "timer_30000"
+        },
+        {
+          "type": "select",
+          "id": "frequency",
+          "label": "t:sections.popup.blocks.shared.settings.frequency.label",
+          "info": "t:sections.popup.blocks.shared.settings.frequency.info",
+          "default": "frequency_100000",
+          "options": [
+            {
+              "value": "frequency_100000",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_once"
+            },
+            { "value": "frequency_1", "label": "t:sections.popup.blocks.shared.settings.frequency.option_1" },
+            { "value": "frequency_6", "label": "t:sections.popup.blocks.shared.settings.frequency.option_6" },
+            {
+              "value": "frequency_12",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_12"
+            },
+            {
+              "value": "frequency_24",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_24"
+            },
+            {
+              "value": "frequency_76",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_76"
+            },
+            {
+              "value": "frequency_168",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_168"
+            },
+            {
+              "value": "frequency_336",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_336"
+            },
+            {
+              "value": "frequency_0",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_no_limit"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_exit_intent",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.label",
+          "info": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_for_account_holders",
+          "label": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.label",
+          "info": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_specific_page",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_specific_page.label",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "target_page",
+          "label": "t:sections.popup.blocks.shared.settings.target_page.label"
+        },
         {
           "type": "header",
           "content": "t:sections.popup.blocks.shared.settings.header__content.content"
@@ -852,7 +1155,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:sections.popup.blocks.shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -914,14 +1224,201 @@
           "step": 1,
           "default": 0
         },
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__sticky_tab.content"},{"type":"paragraph","content":"t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"},{"type":"checkbox","id":"enable_tab","label":"t:sections.popup.blocks.shared.settings.enable_tab.label","default":true},{"type":"text","id":"tab_text","label":"t:sections.popup.blocks.shared.settings.text.label","default":"Get 10% Off"},{"type":"select","id":"text_font_class","label":"t:shared.settings.text_font_class.label","default":"fs-body-100","options":[{"value":"fs-body-75","label":"t:shared.settings.text_font_class.option_small"},{"value":"fs-body-100","label":"t:shared.settings.text_font_class.option_regular"},{"value":"fs-body-200","label":"t:shared.settings.text_font_class.option_large"}]},{"type":"select","id":"tab_position","label":"t:sections.popup.blocks.shared.settings.tab_position.label","default":"bottom_left_floating","options":[{"value":"left_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"left_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"bottom_left","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_left_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"}]},{"type":"color","id":"tab_text_color","label":"t:sections.popup.blocks.shared.settings.tab_text_color.label","default":"#000000"},{"type":"color","id":"tab_background_color","label":"t:sections.popup.blocks.shared.settings.tab_background_color.label","default":"#ffffff"}
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__sticky_tab.content" },
+        {
+          "type": "paragraph",
+          "content": "t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_tab",
+          "label": "t:sections.popup.blocks.shared.settings.enable_tab.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "tab_text",
+          "label": "t:sections.popup.blocks.shared.settings.text.label",
+          "default": "Get 10% Off"
+        },
+        {
+          "type": "select",
+          "id": "text_font_class",
+          "label": "t:shared.settings.text_font_class.label",
+          "default": "fs-body-100",
+          "options": [
+            { "value": "fs-body-75", "label": "t:shared.settings.text_font_class.option_small" },
+            { "value": "fs-body-100", "label": "t:shared.settings.text_font_class.option_regular" },
+            { "value": "fs-body-200", "label": "t:shared.settings.text_font_class.option_large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "tab_position",
+          "label": "t:sections.popup.blocks.shared.settings.tab_position.label",
+          "default": "bottom_left_floating",
+          "options": [
+            {
+              "value": "left_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "left_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "bottom_left",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_left_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "tab_text_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_text_color.label",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "tab_background_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_background_color.label",
+          "default": "#ffffff"
+        }
       ]
     },
     {
       "type": "flyout_signup",
       "name": "t:sections.popup.blocks.flyout_sign_up.name",
       "settings": [
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__behavior.content"},{"type":"select","id":"delay","label":"t:sections.popup.blocks.shared.settings.delay.label","options":[{"value":"timer_0","label":"t:sections.popup.blocks.shared.settings.delay.option_immediate"},{"value":"timer_3000","label":"t:sections.popup.blocks.shared.settings.delay.option_3s"},{"value":"timer_5000","label":"t:sections.popup.blocks.shared.settings.delay.option_5s"},{"value":"timer_10000","label":"t:sections.popup.blocks.shared.settings.delay.option_10s"},{"value":"timer_30000","label":"t:sections.popup.blocks.shared.settings.delay.option_30s"},{"value":"timer_60000","label":"t:sections.popup.blocks.shared.settings.delay.option_1m"},{"value":"timer_120000","label":"t:sections.popup.blocks.shared.settings.delay.option_2m"},{"value":"scroll_25","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll25"},{"value":"scroll_50","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll50"},{"value":"scroll_75","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll75"},{"value":"scroll_100","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll100"}],"default":"timer_30000"},{"type":"select","id":"frequency","label":"t:sections.popup.blocks.shared.settings.frequency.label","info":"t:sections.popup.blocks.shared.settings.frequency.info","default":"frequency_100000","options":[{"value":"frequency_100000","label":"t:sections.popup.blocks.shared.settings.frequency.option_once"},{"value":"frequency_1","label":"t:sections.popup.blocks.shared.settings.frequency.option_1"},{"value":"frequency_6","label":"t:sections.popup.blocks.shared.settings.frequency.option_6"},{"value":"frequency_12","label":"t:sections.popup.blocks.shared.settings.frequency.option_12"},{"value":"frequency_24","label":"t:sections.popup.blocks.shared.settings.frequency.option_24"},{"value":"frequency_76","label":"t:sections.popup.blocks.shared.settings.frequency.option_76"},{"value":"frequency_168","label":"t:sections.popup.blocks.shared.settings.frequency.option_168"},{"value":"frequency_336","label":"t:sections.popup.blocks.shared.settings.frequency.option_336"},{"value":"frequency_0","label":"t:sections.popup.blocks.shared.settings.frequency.option_no_limit"}]},{"type":"checkbox","id":"show_on_exit_intent","label":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.label","info":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.info","default":false},{"type":"checkbox","id":"disable_for_account_holders","label":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.label","info":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.info","default":true},{"type":"checkbox","id":"show_on_specific_page","label":"t:sections.popup.blocks.shared.settings.show_on_specific_page.label","default":false},{"type":"url","id":"target_page","label":"t:sections.popup.blocks.shared.settings.target_page.label"},
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__behavior.content" },
+        {
+          "type": "select",
+          "id": "delay",
+          "label": "t:sections.popup.blocks.shared.settings.delay.label",
+          "options": [
+            { "value": "timer_0", "label": "t:sections.popup.blocks.shared.settings.delay.option_immediate" },
+            { "value": "timer_3000", "label": "t:sections.popup.blocks.shared.settings.delay.option_3s" },
+            { "value": "timer_5000", "label": "t:sections.popup.blocks.shared.settings.delay.option_5s" },
+            { "value": "timer_10000", "label": "t:sections.popup.blocks.shared.settings.delay.option_10s" },
+            { "value": "timer_30000", "label": "t:sections.popup.blocks.shared.settings.delay.option_30s" },
+            { "value": "timer_60000", "label": "t:sections.popup.blocks.shared.settings.delay.option_1m" },
+            { "value": "timer_120000", "label": "t:sections.popup.blocks.shared.settings.delay.option_2m" },
+            {
+              "value": "scroll_25",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll25"
+            },
+            {
+              "value": "scroll_50",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll50"
+            },
+            {
+              "value": "scroll_75",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll75"
+            },
+            {
+              "value": "scroll_100",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll100"
+            }
+          ],
+          "default": "timer_30000"
+        },
+        {
+          "type": "select",
+          "id": "frequency",
+          "label": "t:sections.popup.blocks.shared.settings.frequency.label",
+          "info": "t:sections.popup.blocks.shared.settings.frequency.info",
+          "default": "frequency_100000",
+          "options": [
+            {
+              "value": "frequency_100000",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_once"
+            },
+            { "value": "frequency_1", "label": "t:sections.popup.blocks.shared.settings.frequency.option_1" },
+            { "value": "frequency_6", "label": "t:sections.popup.blocks.shared.settings.frequency.option_6" },
+            {
+              "value": "frequency_12",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_12"
+            },
+            {
+              "value": "frequency_24",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_24"
+            },
+            {
+              "value": "frequency_76",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_76"
+            },
+            {
+              "value": "frequency_168",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_168"
+            },
+            {
+              "value": "frequency_336",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_336"
+            },
+            {
+              "value": "frequency_0",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_no_limit"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_exit_intent",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.label",
+          "info": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_for_account_holders",
+          "label": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.label",
+          "info": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_specific_page",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_specific_page.label",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "target_page",
+          "label": "t:sections.popup.blocks.shared.settings.target_page.label"
+        },
         {
           "type": "header",
           "content": "t:sections.popup.blocks.shared.settings.header__content.content"
@@ -1037,7 +1534,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:sections.popup.blocks.shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -1092,7 +1596,99 @@
           "step": 1,
           "default": 0
         },
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__sticky_tab.content"},{"type":"paragraph","content":"t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"},{"type":"checkbox","id":"enable_tab","label":"t:sections.popup.blocks.shared.settings.enable_tab.label","default":true},{"type":"text","id":"tab_text","label":"t:sections.popup.blocks.shared.settings.text.label","default":"Get 10% Off"},{"type":"select","id":"text_font_class","label":"t:shared.settings.text_font_class.label","default":"fs-body-100","options":[{"value":"fs-body-75","label":"t:shared.settings.text_font_class.option_small"},{"value":"fs-body-100","label":"t:shared.settings.text_font_class.option_regular"},{"value":"fs-body-200","label":"t:shared.settings.text_font_class.option_large"}]},{"type":"select","id":"tab_position","label":"t:sections.popup.blocks.shared.settings.tab_position.label","default":"bottom_left_floating","options":[{"value":"left_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"left_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"bottom_left","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_left_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"}]},{"type":"color","id":"tab_text_color","label":"t:sections.popup.blocks.shared.settings.tab_text_color.label","default":"#000000"},{"type":"color","id":"tab_background_color","label":"t:sections.popup.blocks.shared.settings.tab_background_color.label","default":"#ffffff"}
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__sticky_tab.content" },
+        {
+          "type": "paragraph",
+          "content": "t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_tab",
+          "label": "t:sections.popup.blocks.shared.settings.enable_tab.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "tab_text",
+          "label": "t:sections.popup.blocks.shared.settings.text.label",
+          "default": "Get 10% Off"
+        },
+        {
+          "type": "select",
+          "id": "text_font_class",
+          "label": "t:shared.settings.text_font_class.label",
+          "default": "fs-body-100",
+          "options": [
+            { "value": "fs-body-75", "label": "t:shared.settings.text_font_class.option_small" },
+            { "value": "fs-body-100", "label": "t:shared.settings.text_font_class.option_regular" },
+            { "value": "fs-body-200", "label": "t:shared.settings.text_font_class.option_large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "tab_position",
+          "label": "t:sections.popup.blocks.shared.settings.tab_position.label",
+          "default": "bottom_left_floating",
+          "options": [
+            {
+              "value": "left_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "left_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "bottom_left",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_left_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "tab_text_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_text_color.label",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "tab_background_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_background_color.label",
+          "default": "#ffffff"
+        }
       ]
     },
     {
@@ -1247,7 +1843,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:sections.popup.blocks.shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -1303,7 +1906,102 @@
       "type": "popup_countdown_signup",
       "name": "t:sections.popup.blocks.popup_countdown_sign_up.name",
       "settings": [
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__behavior.content"},{"type":"select","id":"delay","label":"t:sections.popup.blocks.shared.settings.delay.label","options":[{"value":"timer_0","label":"t:sections.popup.blocks.shared.settings.delay.option_immediate"},{"value":"timer_3000","label":"t:sections.popup.blocks.shared.settings.delay.option_3s"},{"value":"timer_5000","label":"t:sections.popup.blocks.shared.settings.delay.option_5s"},{"value":"timer_10000","label":"t:sections.popup.blocks.shared.settings.delay.option_10s"},{"value":"timer_30000","label":"t:sections.popup.blocks.shared.settings.delay.option_30s"},{"value":"timer_60000","label":"t:sections.popup.blocks.shared.settings.delay.option_1m"},{"value":"timer_120000","label":"t:sections.popup.blocks.shared.settings.delay.option_2m"},{"value":"scroll_25","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll25"},{"value":"scroll_50","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll50"},{"value":"scroll_75","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll75"},{"value":"scroll_100","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll100"}],"default":"timer_30000"},{"type":"select","id":"frequency","label":"t:sections.popup.blocks.shared.settings.frequency.label","info":"t:sections.popup.blocks.shared.settings.frequency.info","default":"frequency_100000","options":[{"value":"frequency_100000","label":"t:sections.popup.blocks.shared.settings.frequency.option_once"},{"value":"frequency_1","label":"t:sections.popup.blocks.shared.settings.frequency.option_1"},{"value":"frequency_6","label":"t:sections.popup.blocks.shared.settings.frequency.option_6"},{"value":"frequency_12","label":"t:sections.popup.blocks.shared.settings.frequency.option_12"},{"value":"frequency_24","label":"t:sections.popup.blocks.shared.settings.frequency.option_24"},{"value":"frequency_76","label":"t:sections.popup.blocks.shared.settings.frequency.option_76"},{"value":"frequency_168","label":"t:sections.popup.blocks.shared.settings.frequency.option_168"},{"value":"frequency_336","label":"t:sections.popup.blocks.shared.settings.frequency.option_336"},{"value":"frequency_0","label":"t:sections.popup.blocks.shared.settings.frequency.option_no_limit"}]},{"type":"checkbox","id":"show_on_exit_intent","label":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.label","info":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.info","default":false},{"type":"checkbox","id":"disable_for_account_holders","label":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.label","info":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.info","default":true},{"type":"checkbox","id":"show_on_specific_page","label":"t:sections.popup.blocks.shared.settings.show_on_specific_page.label","default":false},{"type":"url","id":"target_page","label":"t:sections.popup.blocks.shared.settings.target_page.label"},
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__behavior.content" },
+        {
+          "type": "select",
+          "id": "delay",
+          "label": "t:sections.popup.blocks.shared.settings.delay.label",
+          "options": [
+            { "value": "timer_0", "label": "t:sections.popup.blocks.shared.settings.delay.option_immediate" },
+            { "value": "timer_3000", "label": "t:sections.popup.blocks.shared.settings.delay.option_3s" },
+            { "value": "timer_5000", "label": "t:sections.popup.blocks.shared.settings.delay.option_5s" },
+            { "value": "timer_10000", "label": "t:sections.popup.blocks.shared.settings.delay.option_10s" },
+            { "value": "timer_30000", "label": "t:sections.popup.blocks.shared.settings.delay.option_30s" },
+            { "value": "timer_60000", "label": "t:sections.popup.blocks.shared.settings.delay.option_1m" },
+            { "value": "timer_120000", "label": "t:sections.popup.blocks.shared.settings.delay.option_2m" },
+            {
+              "value": "scroll_25",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll25"
+            },
+            {
+              "value": "scroll_50",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll50"
+            },
+            {
+              "value": "scroll_75",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll75"
+            },
+            {
+              "value": "scroll_100",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll100"
+            }
+          ],
+          "default": "timer_30000"
+        },
+        {
+          "type": "select",
+          "id": "frequency",
+          "label": "t:sections.popup.blocks.shared.settings.frequency.label",
+          "info": "t:sections.popup.blocks.shared.settings.frequency.info",
+          "default": "frequency_100000",
+          "options": [
+            {
+              "value": "frequency_100000",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_once"
+            },
+            { "value": "frequency_1", "label": "t:sections.popup.blocks.shared.settings.frequency.option_1" },
+            { "value": "frequency_6", "label": "t:sections.popup.blocks.shared.settings.frequency.option_6" },
+            {
+              "value": "frequency_12",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_12"
+            },
+            {
+              "value": "frequency_24",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_24"
+            },
+            {
+              "value": "frequency_76",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_76"
+            },
+            {
+              "value": "frequency_168",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_168"
+            },
+            {
+              "value": "frequency_336",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_336"
+            },
+            {
+              "value": "frequency_0",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_no_limit"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_exit_intent",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.label",
+          "info": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_for_account_holders",
+          "label": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.label",
+          "info": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_specific_page",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_specific_page.label",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "target_page",
+          "label": "t:sections.popup.blocks.shared.settings.target_page.label"
+        },
         {
           "type": "header",
           "content": "t:shared.settings.countdown.header__timer.content"
@@ -1318,28 +2016,159 @@
           "type": "select",
           "id": "month",
           "label": "t:shared.settings.countdown.month.label",
-          "options": [{"value":"january","label":"t:shared.settings.countdown.month.option__january"},{"value":"february","label":"t:shared.settings.countdown.month.option__february"},{"value":"march","label":"t:shared.settings.countdown.month.option__march"},{"value":"april","label":"t:shared.settings.countdown.month.option__april"},{"value":"may","label":"t:shared.settings.countdown.month.option__may"},{"value":"june","label":"t:shared.settings.countdown.month.option__june"},{"value":"july","label":"t:shared.settings.countdown.month.option__july"},{"value":"august","label":"t:shared.settings.countdown.month.option__august"},{"value":"september","label":"t:shared.settings.countdown.month.option__september"},{"value":"october","label":"t:shared.settings.countdown.month.option__october"},{"value":"november","label":"t:shared.settings.countdown.month.option__november"},{"value":"december","label":"t:shared.settings.countdown.month.option__december"}],
+          "options": [
+            { "value": "january", "label": "t:shared.settings.countdown.month.option__january" },
+            { "value": "february", "label": "t:shared.settings.countdown.month.option__february" },
+            { "value": "march", "label": "t:shared.settings.countdown.month.option__march" },
+            { "value": "april", "label": "t:shared.settings.countdown.month.option__april" },
+            { "value": "may", "label": "t:shared.settings.countdown.month.option__may" },
+            { "value": "june", "label": "t:shared.settings.countdown.month.option__june" },
+            { "value": "july", "label": "t:shared.settings.countdown.month.option__july" },
+            { "value": "august", "label": "t:shared.settings.countdown.month.option__august" },
+            { "value": "september", "label": "t:shared.settings.countdown.month.option__september" },
+            { "value": "october", "label": "t:shared.settings.countdown.month.option__october" },
+            { "value": "november", "label": "t:shared.settings.countdown.month.option__november" },
+            { "value": "december", "label": "t:shared.settings.countdown.month.option__december" }
+          ],
           "default": "january"
         },
         {
           "type": "select",
           "id": "day",
           "label": "t:shared.settings.countdown.day.label",
-          "options": [{"value":"1","label":"t:shared.settings.countdown.day.option__1"},{"value":"2","label":"t:shared.settings.countdown.day.option__2"},{"value":"3","label":"t:shared.settings.countdown.day.option__3"},{"value":"4","label":"t:shared.settings.countdown.day.option__4"},{"value":"5","label":"t:shared.settings.countdown.day.option__5"},{"value":"6","label":"t:shared.settings.countdown.day.option__6"},{"value":"7","label":"t:shared.settings.countdown.day.option__7"},{"value":"8","label":"t:shared.settings.countdown.day.option__8"},{"value":"9","label":"t:shared.settings.countdown.day.option__9"},{"value":"10","label":"t:shared.settings.countdown.day.option__10"},{"value":"11","label":"t:shared.settings.countdown.day.option__11"},{"value":"12","label":"t:shared.settings.countdown.day.option__12"},{"value":"13","label":"t:shared.settings.countdown.day.option__13"},{"value":"14","label":"t:shared.settings.countdown.day.option__14"},{"value":"15","label":"t:shared.settings.countdown.day.option__15"},{"value":"16","label":"t:shared.settings.countdown.day.option__16"},{"value":"17","label":"t:shared.settings.countdown.day.option__17"},{"value":"18","label":"t:shared.settings.countdown.day.option__18"},{"value":"19","label":"t:shared.settings.countdown.day.option__19"},{"value":"20","label":"t:shared.settings.countdown.day.option__20"},{"value":"21","label":"t:shared.settings.countdown.day.option__21"},{"value":"22","label":"t:shared.settings.countdown.day.option__22"},{"value":"23","label":"t:shared.settings.countdown.day.option__23"},{"value":"24","label":"t:shared.settings.countdown.day.option__24"},{"value":"25","label":"t:shared.settings.countdown.day.option__25"},{"value":"26","label":"t:shared.settings.countdown.day.option__26"},{"value":"27","label":"t:shared.settings.countdown.day.option__27"},{"value":"28","label":"t:shared.settings.countdown.day.option__28"},{"value":"29","label":"t:shared.settings.countdown.day.option__29"},{"value":"30","label":"t:shared.settings.countdown.day.option__30"},{"value":"31","label":"t:shared.settings.countdown.day.option__31"}],
+          "options": [
+            { "value": "1", "label": "t:shared.settings.countdown.day.option__1" },
+            { "value": "2", "label": "t:shared.settings.countdown.day.option__2" },
+            { "value": "3", "label": "t:shared.settings.countdown.day.option__3" },
+            { "value": "4", "label": "t:shared.settings.countdown.day.option__4" },
+            { "value": "5", "label": "t:shared.settings.countdown.day.option__5" },
+            { "value": "6", "label": "t:shared.settings.countdown.day.option__6" },
+            { "value": "7", "label": "t:shared.settings.countdown.day.option__7" },
+            { "value": "8", "label": "t:shared.settings.countdown.day.option__8" },
+            { "value": "9", "label": "t:shared.settings.countdown.day.option__9" },
+            { "value": "10", "label": "t:shared.settings.countdown.day.option__10" },
+            { "value": "11", "label": "t:shared.settings.countdown.day.option__11" },
+            { "value": "12", "label": "t:shared.settings.countdown.day.option__12" },
+            { "value": "13", "label": "t:shared.settings.countdown.day.option__13" },
+            { "value": "14", "label": "t:shared.settings.countdown.day.option__14" },
+            { "value": "15", "label": "t:shared.settings.countdown.day.option__15" },
+            { "value": "16", "label": "t:shared.settings.countdown.day.option__16" },
+            { "value": "17", "label": "t:shared.settings.countdown.day.option__17" },
+            { "value": "18", "label": "t:shared.settings.countdown.day.option__18" },
+            { "value": "19", "label": "t:shared.settings.countdown.day.option__19" },
+            { "value": "20", "label": "t:shared.settings.countdown.day.option__20" },
+            { "value": "21", "label": "t:shared.settings.countdown.day.option__21" },
+            { "value": "22", "label": "t:shared.settings.countdown.day.option__22" },
+            { "value": "23", "label": "t:shared.settings.countdown.day.option__23" },
+            { "value": "24", "label": "t:shared.settings.countdown.day.option__24" },
+            { "value": "25", "label": "t:shared.settings.countdown.day.option__25" },
+            { "value": "26", "label": "t:shared.settings.countdown.day.option__26" },
+            { "value": "27", "label": "t:shared.settings.countdown.day.option__27" },
+            { "value": "28", "label": "t:shared.settings.countdown.day.option__28" },
+            { "value": "29", "label": "t:shared.settings.countdown.day.option__29" },
+            { "value": "30", "label": "t:shared.settings.countdown.day.option__30" },
+            { "value": "31", "label": "t:shared.settings.countdown.day.option__31" }
+          ],
           "default": "1"
         },
         {
           "type": "select",
           "id": "hour",
           "label": "t:shared.settings.countdown.hour.label",
-          "options": [{"value":"0","label":"t:shared.settings.countdown.hour.option__0"},{"value":"1","label":"t:shared.settings.countdown.hour.option__1"},{"value":"2","label":"t:shared.settings.countdown.hour.option__2"},{"value":"3","label":"t:shared.settings.countdown.hour.option__3"},{"value":"4","label":"t:shared.settings.countdown.hour.option__4"},{"value":"5","label":"t:shared.settings.countdown.hour.option__5"},{"value":"6","label":"t:shared.settings.countdown.hour.option__6"},{"value":"7","label":"t:shared.settings.countdown.hour.option__7"},{"value":"8","label":"t:shared.settings.countdown.hour.option__8"},{"value":"9","label":"t:shared.settings.countdown.hour.option__9"},{"value":"10","label":"t:shared.settings.countdown.hour.option__10"},{"value":"11","label":"t:shared.settings.countdown.hour.option__11"},{"value":"12","label":"t:shared.settings.countdown.hour.option__12"},{"value":"13","label":"t:shared.settings.countdown.hour.option__13"},{"value":"14","label":"t:shared.settings.countdown.hour.option__14"},{"value":"15","label":"t:shared.settings.countdown.hour.option__15"},{"value":"16","label":"t:shared.settings.countdown.hour.option__16"},{"value":"17","label":"t:shared.settings.countdown.hour.option__17"},{"value":"18","label":"t:shared.settings.countdown.hour.option__18"},{"value":"19","label":"t:shared.settings.countdown.hour.option__19"},{"value":"20","label":"t:shared.settings.countdown.hour.option__20"},{"value":"21","label":"t:shared.settings.countdown.hour.option__21"},{"value":"22","label":"t:shared.settings.countdown.hour.option__22"},{"value":"23","label":"t:shared.settings.countdown.hour.option__23"}],
+          "options": [
+            { "value": "0", "label": "t:shared.settings.countdown.hour.option__0" },
+            { "value": "1", "label": "t:shared.settings.countdown.hour.option__1" },
+            { "value": "2", "label": "t:shared.settings.countdown.hour.option__2" },
+            { "value": "3", "label": "t:shared.settings.countdown.hour.option__3" },
+            { "value": "4", "label": "t:shared.settings.countdown.hour.option__4" },
+            { "value": "5", "label": "t:shared.settings.countdown.hour.option__5" },
+            { "value": "6", "label": "t:shared.settings.countdown.hour.option__6" },
+            { "value": "7", "label": "t:shared.settings.countdown.hour.option__7" },
+            { "value": "8", "label": "t:shared.settings.countdown.hour.option__8" },
+            { "value": "9", "label": "t:shared.settings.countdown.hour.option__9" },
+            { "value": "10", "label": "t:shared.settings.countdown.hour.option__10" },
+            { "value": "11", "label": "t:shared.settings.countdown.hour.option__11" },
+            { "value": "12", "label": "t:shared.settings.countdown.hour.option__12" },
+            { "value": "13", "label": "t:shared.settings.countdown.hour.option__13" },
+            { "value": "14", "label": "t:shared.settings.countdown.hour.option__14" },
+            { "value": "15", "label": "t:shared.settings.countdown.hour.option__15" },
+            { "value": "16", "label": "t:shared.settings.countdown.hour.option__16" },
+            { "value": "17", "label": "t:shared.settings.countdown.hour.option__17" },
+            { "value": "18", "label": "t:shared.settings.countdown.hour.option__18" },
+            { "value": "19", "label": "t:shared.settings.countdown.hour.option__19" },
+            { "value": "20", "label": "t:shared.settings.countdown.hour.option__20" },
+            { "value": "21", "label": "t:shared.settings.countdown.hour.option__21" },
+            { "value": "22", "label": "t:shared.settings.countdown.hour.option__22" },
+            { "value": "23", "label": "t:shared.settings.countdown.hour.option__23" }
+          ],
           "default": "0"
         },
         {
           "id": "minute",
           "type": "select",
           "label": "t:shared.settings.countdown.minute.label",
-          "options": [{"value":"0","label":"t:shared.settings.countdown.minute.option__0"},{"value":"1","label":"t:shared.settings.countdown.minute.option__1"},{"value":"2","label":"t:shared.settings.countdown.minute.option__2"},{"value":"3","label":"t:shared.settings.countdown.minute.option__3"},{"value":"4","label":"t:shared.settings.countdown.minute.option__4"},{"value":"5","label":"t:shared.settings.countdown.minute.option__5"},{"value":"6","label":"t:shared.settings.countdown.minute.option__6"},{"value":"7","label":"t:shared.settings.countdown.minute.option__7"},{"value":"8","label":"t:shared.settings.countdown.minute.option__8"},{"value":"9","label":"t:shared.settings.countdown.minute.option__9"},{"value":"10","label":"t:shared.settings.countdown.minute.option__10"},{"value":"11","label":"t:shared.settings.countdown.minute.option__11"},{"value":"12","label":"t:shared.settings.countdown.minute.option__12"},{"value":"13","label":"t:shared.settings.countdown.minute.option__13"},{"value":"14","label":"t:shared.settings.countdown.minute.option__14"},{"value":"15","label":"t:shared.settings.countdown.minute.option__15"},{"value":"16","label":"t:shared.settings.countdown.minute.option__16"},{"value":"17","label":"t:shared.settings.countdown.minute.option__17"},{"value":"18","label":"t:shared.settings.countdown.minute.option__18"},{"value":"19","label":"t:shared.settings.countdown.minute.option__19"},{"value":"20","label":"t:shared.settings.countdown.minute.option__20"},{"value":"21","label":"t:shared.settings.countdown.minute.option__21"},{"value":"22","label":"t:shared.settings.countdown.minute.option__22"},{"value":"23","label":"t:shared.settings.countdown.minute.option__23"},{"value":"24","label":"t:shared.settings.countdown.minute.option__24"},{"value":"25","label":"t:shared.settings.countdown.minute.option__25"},{"value":"26","label":"t:shared.settings.countdown.minute.option__26"},{"value":"27","label":"t:shared.settings.countdown.minute.option__27"},{"value":"28","label":"t:shared.settings.countdown.minute.option__28"},{"value":"29","label":"t:shared.settings.countdown.minute.option__29"},{"value":"30","label":"t:shared.settings.countdown.minute.option__30"},{"value":"31","label":"t:shared.settings.countdown.minute.option__31"},{"value":"32","label":"t:shared.settings.countdown.minute.option__32"},{"value":"33","label":"t:shared.settings.countdown.minute.option__33"},{"value":"34","label":"t:shared.settings.countdown.minute.option__34"},{"value":"35","label":"t:shared.settings.countdown.minute.option__35"},{"value":"36","label":"t:shared.settings.countdown.minute.option__36"},{"value":"37","label":"t:shared.settings.countdown.minute.option__37"},{"value":"38","label":"t:shared.settings.countdown.minute.option__38"},{"value":"39","label":"t:shared.settings.countdown.minute.option__39"},{"value":"40","label":"t:shared.settings.countdown.minute.option__40"},{"value":"41","label":"t:shared.settings.countdown.minute.option__41"},{"value":"42","label":"t:shared.settings.countdown.minute.option__42"},{"value":"43","label":"t:shared.settings.countdown.minute.option__43"},{"value":"44","label":"t:shared.settings.countdown.minute.option__44"},{"value":"45","label":"t:shared.settings.countdown.minute.option__45"},{"value":"46","label":"t:shared.settings.countdown.minute.option__46"},{"value":"47","label":"t:shared.settings.countdown.minute.option__47"},{"value":"48","label":"t:shared.settings.countdown.minute.option__48"},{"value":"49","label":"t:shared.settings.countdown.minute.option__49"},{"value":"50","label":"t:shared.settings.countdown.minute.option__50"},{"value":"51","label":"t:shared.settings.countdown.minute.option__51"},{"value":"52","label":"t:shared.settings.countdown.minute.option__52"},{"value":"53","label":"t:shared.settings.countdown.minute.option__53"},{"value":"54","label":"t:shared.settings.countdown.minute.option__54"},{"value":"55","label":"t:shared.settings.countdown.minute.option__55"},{"value":"56","label":"t:shared.settings.countdown.minute.option__56"},{"value":"57","label":"t:shared.settings.countdown.minute.option__57"},{"value":"58","label":"t:shared.settings.countdown.minute.option__58"},{"value":"59","label":"t:shared.settings.countdown.minute.option__59"}],
+          "options": [
+            { "value": "0", "label": "t:shared.settings.countdown.minute.option__0" },
+            { "value": "1", "label": "t:shared.settings.countdown.minute.option__1" },
+            { "value": "2", "label": "t:shared.settings.countdown.minute.option__2" },
+            { "value": "3", "label": "t:shared.settings.countdown.minute.option__3" },
+            { "value": "4", "label": "t:shared.settings.countdown.minute.option__4" },
+            { "value": "5", "label": "t:shared.settings.countdown.minute.option__5" },
+            { "value": "6", "label": "t:shared.settings.countdown.minute.option__6" },
+            { "value": "7", "label": "t:shared.settings.countdown.minute.option__7" },
+            { "value": "8", "label": "t:shared.settings.countdown.minute.option__8" },
+            { "value": "9", "label": "t:shared.settings.countdown.minute.option__9" },
+            { "value": "10", "label": "t:shared.settings.countdown.minute.option__10" },
+            { "value": "11", "label": "t:shared.settings.countdown.minute.option__11" },
+            { "value": "12", "label": "t:shared.settings.countdown.minute.option__12" },
+            { "value": "13", "label": "t:shared.settings.countdown.minute.option__13" },
+            { "value": "14", "label": "t:shared.settings.countdown.minute.option__14" },
+            { "value": "15", "label": "t:shared.settings.countdown.minute.option__15" },
+            { "value": "16", "label": "t:shared.settings.countdown.minute.option__16" },
+            { "value": "17", "label": "t:shared.settings.countdown.minute.option__17" },
+            { "value": "18", "label": "t:shared.settings.countdown.minute.option__18" },
+            { "value": "19", "label": "t:shared.settings.countdown.minute.option__19" },
+            { "value": "20", "label": "t:shared.settings.countdown.minute.option__20" },
+            { "value": "21", "label": "t:shared.settings.countdown.minute.option__21" },
+            { "value": "22", "label": "t:shared.settings.countdown.minute.option__22" },
+            { "value": "23", "label": "t:shared.settings.countdown.minute.option__23" },
+            { "value": "24", "label": "t:shared.settings.countdown.minute.option__24" },
+            { "value": "25", "label": "t:shared.settings.countdown.minute.option__25" },
+            { "value": "26", "label": "t:shared.settings.countdown.minute.option__26" },
+            { "value": "27", "label": "t:shared.settings.countdown.minute.option__27" },
+            { "value": "28", "label": "t:shared.settings.countdown.minute.option__28" },
+            { "value": "29", "label": "t:shared.settings.countdown.minute.option__29" },
+            { "value": "30", "label": "t:shared.settings.countdown.minute.option__30" },
+            { "value": "31", "label": "t:shared.settings.countdown.minute.option__31" },
+            { "value": "32", "label": "t:shared.settings.countdown.minute.option__32" },
+            { "value": "33", "label": "t:shared.settings.countdown.minute.option__33" },
+            { "value": "34", "label": "t:shared.settings.countdown.minute.option__34" },
+            { "value": "35", "label": "t:shared.settings.countdown.minute.option__35" },
+            { "value": "36", "label": "t:shared.settings.countdown.minute.option__36" },
+            { "value": "37", "label": "t:shared.settings.countdown.minute.option__37" },
+            { "value": "38", "label": "t:shared.settings.countdown.minute.option__38" },
+            { "value": "39", "label": "t:shared.settings.countdown.minute.option__39" },
+            { "value": "40", "label": "t:shared.settings.countdown.minute.option__40" },
+            { "value": "41", "label": "t:shared.settings.countdown.minute.option__41" },
+            { "value": "42", "label": "t:shared.settings.countdown.minute.option__42" },
+            { "value": "43", "label": "t:shared.settings.countdown.minute.option__43" },
+            { "value": "44", "label": "t:shared.settings.countdown.minute.option__44" },
+            { "value": "45", "label": "t:shared.settings.countdown.minute.option__45" },
+            { "value": "46", "label": "t:shared.settings.countdown.minute.option__46" },
+            { "value": "47", "label": "t:shared.settings.countdown.minute.option__47" },
+            { "value": "48", "label": "t:shared.settings.countdown.minute.option__48" },
+            { "value": "49", "label": "t:shared.settings.countdown.minute.option__49" },
+            { "value": "50", "label": "t:shared.settings.countdown.minute.option__50" },
+            { "value": "51", "label": "t:shared.settings.countdown.minute.option__51" },
+            { "value": "52", "label": "t:shared.settings.countdown.minute.option__52" },
+            { "value": "53", "label": "t:shared.settings.countdown.minute.option__53" },
+            { "value": "54", "label": "t:shared.settings.countdown.minute.option__54" },
+            { "value": "55", "label": "t:shared.settings.countdown.minute.option__55" },
+            { "value": "56", "label": "t:shared.settings.countdown.minute.option__56" },
+            { "value": "57", "label": "t:shared.settings.countdown.minute.option__57" },
+            { "value": "58", "label": "t:shared.settings.countdown.minute.option__58" },
+            { "value": "59", "label": "t:shared.settings.countdown.minute.option__59" }
+          ],
           "default": "0"
         },
         {
@@ -1541,7 +2370,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:sections.popup.blocks.shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -1603,14 +2439,201 @@
           "step": 1,
           "default": 0
         },
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__sticky_tab.content"},{"type":"paragraph","content":"t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"},{"type":"checkbox","id":"enable_tab","label":"t:sections.popup.blocks.shared.settings.enable_tab.label","default":true},{"type":"text","id":"tab_text","label":"t:sections.popup.blocks.shared.settings.text.label","default":"Upcoming event"},{"type":"select","id":"text_font_class","label":"t:shared.settings.text_font_class.label","default":"fs-body-100","options":[{"value":"fs-body-75","label":"t:shared.settings.text_font_class.option_small"},{"value":"fs-body-100","label":"t:shared.settings.text_font_class.option_regular"},{"value":"fs-body-200","label":"t:shared.settings.text_font_class.option_large"}]},{"type":"select","id":"tab_position","label":"t:sections.popup.blocks.shared.settings.tab_position.label","default":"bottom_left_floating","options":[{"value":"left_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"left_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"bottom_left","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_left_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"}]},{"type":"color","id":"tab_text_color","label":"t:sections.popup.blocks.shared.settings.tab_text_color.label","default":"#000000"},{"type":"color","id":"tab_background_color","label":"t:sections.popup.blocks.shared.settings.tab_background_color.label","default":"#ffffff"}
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__sticky_tab.content" },
+        {
+          "type": "paragraph",
+          "content": "t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_tab",
+          "label": "t:sections.popup.blocks.shared.settings.enable_tab.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "tab_text",
+          "label": "t:sections.popup.blocks.shared.settings.text.label",
+          "default": "Upcoming event"
+        },
+        {
+          "type": "select",
+          "id": "text_font_class",
+          "label": "t:shared.settings.text_font_class.label",
+          "default": "fs-body-100",
+          "options": [
+            { "value": "fs-body-75", "label": "t:shared.settings.text_font_class.option_small" },
+            { "value": "fs-body-100", "label": "t:shared.settings.text_font_class.option_regular" },
+            { "value": "fs-body-200", "label": "t:shared.settings.text_font_class.option_large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "tab_position",
+          "label": "t:sections.popup.blocks.shared.settings.tab_position.label",
+          "default": "bottom_left_floating",
+          "options": [
+            {
+              "value": "left_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "left_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "bottom_left",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_left_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "tab_text_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_text_color.label",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "tab_background_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_background_color.label",
+          "default": "#ffffff"
+        }
       ]
     },
     {
       "type": "flyout_countdown_signup",
       "name": "t:sections.popup.blocks.flyout_countdown_sign_up.name",
       "settings": [
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__behavior.content"},{"type":"select","id":"delay","label":"t:sections.popup.blocks.shared.settings.delay.label","options":[{"value":"timer_0","label":"t:sections.popup.blocks.shared.settings.delay.option_immediate"},{"value":"timer_3000","label":"t:sections.popup.blocks.shared.settings.delay.option_3s"},{"value":"timer_5000","label":"t:sections.popup.blocks.shared.settings.delay.option_5s"},{"value":"timer_10000","label":"t:sections.popup.blocks.shared.settings.delay.option_10s"},{"value":"timer_30000","label":"t:sections.popup.blocks.shared.settings.delay.option_30s"},{"value":"timer_60000","label":"t:sections.popup.blocks.shared.settings.delay.option_1m"},{"value":"timer_120000","label":"t:sections.popup.blocks.shared.settings.delay.option_2m"},{"value":"scroll_25","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll25"},{"value":"scroll_50","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll50"},{"value":"scroll_75","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll75"},{"value":"scroll_100","label":"t:sections.popup.blocks.shared.settings.delay.option_scroll100"}],"default":"timer_30000"},{"type":"select","id":"frequency","label":"t:sections.popup.blocks.shared.settings.frequency.label","info":"t:sections.popup.blocks.shared.settings.frequency.info","default":"frequency_100000","options":[{"value":"frequency_100000","label":"t:sections.popup.blocks.shared.settings.frequency.option_once"},{"value":"frequency_1","label":"t:sections.popup.blocks.shared.settings.frequency.option_1"},{"value":"frequency_6","label":"t:sections.popup.blocks.shared.settings.frequency.option_6"},{"value":"frequency_12","label":"t:sections.popup.blocks.shared.settings.frequency.option_12"},{"value":"frequency_24","label":"t:sections.popup.blocks.shared.settings.frequency.option_24"},{"value":"frequency_76","label":"t:sections.popup.blocks.shared.settings.frequency.option_76"},{"value":"frequency_168","label":"t:sections.popup.blocks.shared.settings.frequency.option_168"},{"value":"frequency_336","label":"t:sections.popup.blocks.shared.settings.frequency.option_336"},{"value":"frequency_0","label":"t:sections.popup.blocks.shared.settings.frequency.option_no_limit"}]},{"type":"checkbox","id":"show_on_exit_intent","label":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.label","info":"t:sections.popup.blocks.shared.settings.show_on_exit_intent.info","default":false},{"type":"checkbox","id":"disable_for_account_holders","label":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.label","info":"t:sections.popup.blocks.shared.settings.disable_for_account_holders.info","default":true},{"type":"checkbox","id":"show_on_specific_page","label":"t:sections.popup.blocks.shared.settings.show_on_specific_page.label","default":false},{"type":"url","id":"target_page","label":"t:sections.popup.blocks.shared.settings.target_page.label"},
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__behavior.content" },
+        {
+          "type": "select",
+          "id": "delay",
+          "label": "t:sections.popup.blocks.shared.settings.delay.label",
+          "options": [
+            { "value": "timer_0", "label": "t:sections.popup.blocks.shared.settings.delay.option_immediate" },
+            { "value": "timer_3000", "label": "t:sections.popup.blocks.shared.settings.delay.option_3s" },
+            { "value": "timer_5000", "label": "t:sections.popup.blocks.shared.settings.delay.option_5s" },
+            { "value": "timer_10000", "label": "t:sections.popup.blocks.shared.settings.delay.option_10s" },
+            { "value": "timer_30000", "label": "t:sections.popup.blocks.shared.settings.delay.option_30s" },
+            { "value": "timer_60000", "label": "t:sections.popup.blocks.shared.settings.delay.option_1m" },
+            { "value": "timer_120000", "label": "t:sections.popup.blocks.shared.settings.delay.option_2m" },
+            {
+              "value": "scroll_25",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll25"
+            },
+            {
+              "value": "scroll_50",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll50"
+            },
+            {
+              "value": "scroll_75",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll75"
+            },
+            {
+              "value": "scroll_100",
+              "label": "t:sections.popup.blocks.shared.settings.delay.option_scroll100"
+            }
+          ],
+          "default": "timer_30000"
+        },
+        {
+          "type": "select",
+          "id": "frequency",
+          "label": "t:sections.popup.blocks.shared.settings.frequency.label",
+          "info": "t:sections.popup.blocks.shared.settings.frequency.info",
+          "default": "frequency_100000",
+          "options": [
+            {
+              "value": "frequency_100000",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_once"
+            },
+            { "value": "frequency_1", "label": "t:sections.popup.blocks.shared.settings.frequency.option_1" },
+            { "value": "frequency_6", "label": "t:sections.popup.blocks.shared.settings.frequency.option_6" },
+            {
+              "value": "frequency_12",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_12"
+            },
+            {
+              "value": "frequency_24",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_24"
+            },
+            {
+              "value": "frequency_76",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_76"
+            },
+            {
+              "value": "frequency_168",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_168"
+            },
+            {
+              "value": "frequency_336",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_336"
+            },
+            {
+              "value": "frequency_0",
+              "label": "t:sections.popup.blocks.shared.settings.frequency.option_no_limit"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_exit_intent",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.label",
+          "info": "t:sections.popup.blocks.shared.settings.show_on_exit_intent.info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_for_account_holders",
+          "label": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.label",
+          "info": "t:sections.popup.blocks.shared.settings.disable_for_account_holders.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_specific_page",
+          "label": "t:sections.popup.blocks.shared.settings.show_on_specific_page.label",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "target_page",
+          "label": "t:sections.popup.blocks.shared.settings.target_page.label"
+        },
         {
           "type": "header",
           "content": "t:shared.settings.countdown.header__timer.content"
@@ -1625,28 +2648,159 @@
           "type": "select",
           "id": "month",
           "label": "t:shared.settings.countdown.month.label",
-          "options": [{"value":"january","label":"t:shared.settings.countdown.month.option__january"},{"value":"february","label":"t:shared.settings.countdown.month.option__february"},{"value":"march","label":"t:shared.settings.countdown.month.option__march"},{"value":"april","label":"t:shared.settings.countdown.month.option__april"},{"value":"may","label":"t:shared.settings.countdown.month.option__may"},{"value":"june","label":"t:shared.settings.countdown.month.option__june"},{"value":"july","label":"t:shared.settings.countdown.month.option__july"},{"value":"august","label":"t:shared.settings.countdown.month.option__august"},{"value":"september","label":"t:shared.settings.countdown.month.option__september"},{"value":"october","label":"t:shared.settings.countdown.month.option__october"},{"value":"november","label":"t:shared.settings.countdown.month.option__november"},{"value":"december","label":"t:shared.settings.countdown.month.option__december"}],
+          "options": [
+            { "value": "january", "label": "t:shared.settings.countdown.month.option__january" },
+            { "value": "february", "label": "t:shared.settings.countdown.month.option__february" },
+            { "value": "march", "label": "t:shared.settings.countdown.month.option__march" },
+            { "value": "april", "label": "t:shared.settings.countdown.month.option__april" },
+            { "value": "may", "label": "t:shared.settings.countdown.month.option__may" },
+            { "value": "june", "label": "t:shared.settings.countdown.month.option__june" },
+            { "value": "july", "label": "t:shared.settings.countdown.month.option__july" },
+            { "value": "august", "label": "t:shared.settings.countdown.month.option__august" },
+            { "value": "september", "label": "t:shared.settings.countdown.month.option__september" },
+            { "value": "october", "label": "t:shared.settings.countdown.month.option__october" },
+            { "value": "november", "label": "t:shared.settings.countdown.month.option__november" },
+            { "value": "december", "label": "t:shared.settings.countdown.month.option__december" }
+          ],
           "default": "january"
         },
         {
           "type": "select",
           "id": "day",
           "label": "t:shared.settings.countdown.day.label",
-          "options": [{"value":"1","label":"t:shared.settings.countdown.day.option__1"},{"value":"2","label":"t:shared.settings.countdown.day.option__2"},{"value":"3","label":"t:shared.settings.countdown.day.option__3"},{"value":"4","label":"t:shared.settings.countdown.day.option__4"},{"value":"5","label":"t:shared.settings.countdown.day.option__5"},{"value":"6","label":"t:shared.settings.countdown.day.option__6"},{"value":"7","label":"t:shared.settings.countdown.day.option__7"},{"value":"8","label":"t:shared.settings.countdown.day.option__8"},{"value":"9","label":"t:shared.settings.countdown.day.option__9"},{"value":"10","label":"t:shared.settings.countdown.day.option__10"},{"value":"11","label":"t:shared.settings.countdown.day.option__11"},{"value":"12","label":"t:shared.settings.countdown.day.option__12"},{"value":"13","label":"t:shared.settings.countdown.day.option__13"},{"value":"14","label":"t:shared.settings.countdown.day.option__14"},{"value":"15","label":"t:shared.settings.countdown.day.option__15"},{"value":"16","label":"t:shared.settings.countdown.day.option__16"},{"value":"17","label":"t:shared.settings.countdown.day.option__17"},{"value":"18","label":"t:shared.settings.countdown.day.option__18"},{"value":"19","label":"t:shared.settings.countdown.day.option__19"},{"value":"20","label":"t:shared.settings.countdown.day.option__20"},{"value":"21","label":"t:shared.settings.countdown.day.option__21"},{"value":"22","label":"t:shared.settings.countdown.day.option__22"},{"value":"23","label":"t:shared.settings.countdown.day.option__23"},{"value":"24","label":"t:shared.settings.countdown.day.option__24"},{"value":"25","label":"t:shared.settings.countdown.day.option__25"},{"value":"26","label":"t:shared.settings.countdown.day.option__26"},{"value":"27","label":"t:shared.settings.countdown.day.option__27"},{"value":"28","label":"t:shared.settings.countdown.day.option__28"},{"value":"29","label":"t:shared.settings.countdown.day.option__29"},{"value":"30","label":"t:shared.settings.countdown.day.option__30"},{"value":"31","label":"t:shared.settings.countdown.day.option__31"}],
+          "options": [
+            { "value": "1", "label": "t:shared.settings.countdown.day.option__1" },
+            { "value": "2", "label": "t:shared.settings.countdown.day.option__2" },
+            { "value": "3", "label": "t:shared.settings.countdown.day.option__3" },
+            { "value": "4", "label": "t:shared.settings.countdown.day.option__4" },
+            { "value": "5", "label": "t:shared.settings.countdown.day.option__5" },
+            { "value": "6", "label": "t:shared.settings.countdown.day.option__6" },
+            { "value": "7", "label": "t:shared.settings.countdown.day.option__7" },
+            { "value": "8", "label": "t:shared.settings.countdown.day.option__8" },
+            { "value": "9", "label": "t:shared.settings.countdown.day.option__9" },
+            { "value": "10", "label": "t:shared.settings.countdown.day.option__10" },
+            { "value": "11", "label": "t:shared.settings.countdown.day.option__11" },
+            { "value": "12", "label": "t:shared.settings.countdown.day.option__12" },
+            { "value": "13", "label": "t:shared.settings.countdown.day.option__13" },
+            { "value": "14", "label": "t:shared.settings.countdown.day.option__14" },
+            { "value": "15", "label": "t:shared.settings.countdown.day.option__15" },
+            { "value": "16", "label": "t:shared.settings.countdown.day.option__16" },
+            { "value": "17", "label": "t:shared.settings.countdown.day.option__17" },
+            { "value": "18", "label": "t:shared.settings.countdown.day.option__18" },
+            { "value": "19", "label": "t:shared.settings.countdown.day.option__19" },
+            { "value": "20", "label": "t:shared.settings.countdown.day.option__20" },
+            { "value": "21", "label": "t:shared.settings.countdown.day.option__21" },
+            { "value": "22", "label": "t:shared.settings.countdown.day.option__22" },
+            { "value": "23", "label": "t:shared.settings.countdown.day.option__23" },
+            { "value": "24", "label": "t:shared.settings.countdown.day.option__24" },
+            { "value": "25", "label": "t:shared.settings.countdown.day.option__25" },
+            { "value": "26", "label": "t:shared.settings.countdown.day.option__26" },
+            { "value": "27", "label": "t:shared.settings.countdown.day.option__27" },
+            { "value": "28", "label": "t:shared.settings.countdown.day.option__28" },
+            { "value": "29", "label": "t:shared.settings.countdown.day.option__29" },
+            { "value": "30", "label": "t:shared.settings.countdown.day.option__30" },
+            { "value": "31", "label": "t:shared.settings.countdown.day.option__31" }
+          ],
           "default": "1"
         },
         {
           "type": "select",
           "id": "hour",
           "label": "t:shared.settings.countdown.hour.label",
-          "options": [{"value":"0","label":"t:shared.settings.countdown.hour.option__0"},{"value":"1","label":"t:shared.settings.countdown.hour.option__1"},{"value":"2","label":"t:shared.settings.countdown.hour.option__2"},{"value":"3","label":"t:shared.settings.countdown.hour.option__3"},{"value":"4","label":"t:shared.settings.countdown.hour.option__4"},{"value":"5","label":"t:shared.settings.countdown.hour.option__5"},{"value":"6","label":"t:shared.settings.countdown.hour.option__6"},{"value":"7","label":"t:shared.settings.countdown.hour.option__7"},{"value":"8","label":"t:shared.settings.countdown.hour.option__8"},{"value":"9","label":"t:shared.settings.countdown.hour.option__9"},{"value":"10","label":"t:shared.settings.countdown.hour.option__10"},{"value":"11","label":"t:shared.settings.countdown.hour.option__11"},{"value":"12","label":"t:shared.settings.countdown.hour.option__12"},{"value":"13","label":"t:shared.settings.countdown.hour.option__13"},{"value":"14","label":"t:shared.settings.countdown.hour.option__14"},{"value":"15","label":"t:shared.settings.countdown.hour.option__15"},{"value":"16","label":"t:shared.settings.countdown.hour.option__16"},{"value":"17","label":"t:shared.settings.countdown.hour.option__17"},{"value":"18","label":"t:shared.settings.countdown.hour.option__18"},{"value":"19","label":"t:shared.settings.countdown.hour.option__19"},{"value":"20","label":"t:shared.settings.countdown.hour.option__20"},{"value":"21","label":"t:shared.settings.countdown.hour.option__21"},{"value":"22","label":"t:shared.settings.countdown.hour.option__22"},{"value":"23","label":"t:shared.settings.countdown.hour.option__23"}],
+          "options": [
+            { "value": "0", "label": "t:shared.settings.countdown.hour.option__0" },
+            { "value": "1", "label": "t:shared.settings.countdown.hour.option__1" },
+            { "value": "2", "label": "t:shared.settings.countdown.hour.option__2" },
+            { "value": "3", "label": "t:shared.settings.countdown.hour.option__3" },
+            { "value": "4", "label": "t:shared.settings.countdown.hour.option__4" },
+            { "value": "5", "label": "t:shared.settings.countdown.hour.option__5" },
+            { "value": "6", "label": "t:shared.settings.countdown.hour.option__6" },
+            { "value": "7", "label": "t:shared.settings.countdown.hour.option__7" },
+            { "value": "8", "label": "t:shared.settings.countdown.hour.option__8" },
+            { "value": "9", "label": "t:shared.settings.countdown.hour.option__9" },
+            { "value": "10", "label": "t:shared.settings.countdown.hour.option__10" },
+            { "value": "11", "label": "t:shared.settings.countdown.hour.option__11" },
+            { "value": "12", "label": "t:shared.settings.countdown.hour.option__12" },
+            { "value": "13", "label": "t:shared.settings.countdown.hour.option__13" },
+            { "value": "14", "label": "t:shared.settings.countdown.hour.option__14" },
+            { "value": "15", "label": "t:shared.settings.countdown.hour.option__15" },
+            { "value": "16", "label": "t:shared.settings.countdown.hour.option__16" },
+            { "value": "17", "label": "t:shared.settings.countdown.hour.option__17" },
+            { "value": "18", "label": "t:shared.settings.countdown.hour.option__18" },
+            { "value": "19", "label": "t:shared.settings.countdown.hour.option__19" },
+            { "value": "20", "label": "t:shared.settings.countdown.hour.option__20" },
+            { "value": "21", "label": "t:shared.settings.countdown.hour.option__21" },
+            { "value": "22", "label": "t:shared.settings.countdown.hour.option__22" },
+            { "value": "23", "label": "t:shared.settings.countdown.hour.option__23" }
+          ],
           "default": "0"
         },
         {
           "id": "minute",
           "type": "select",
           "label": "t:shared.settings.countdown.minute.label",
-          "options": [{"value":"0","label":"t:shared.settings.countdown.minute.option__0"},{"value":"1","label":"t:shared.settings.countdown.minute.option__1"},{"value":"2","label":"t:shared.settings.countdown.minute.option__2"},{"value":"3","label":"t:shared.settings.countdown.minute.option__3"},{"value":"4","label":"t:shared.settings.countdown.minute.option__4"},{"value":"5","label":"t:shared.settings.countdown.minute.option__5"},{"value":"6","label":"t:shared.settings.countdown.minute.option__6"},{"value":"7","label":"t:shared.settings.countdown.minute.option__7"},{"value":"8","label":"t:shared.settings.countdown.minute.option__8"},{"value":"9","label":"t:shared.settings.countdown.minute.option__9"},{"value":"10","label":"t:shared.settings.countdown.minute.option__10"},{"value":"11","label":"t:shared.settings.countdown.minute.option__11"},{"value":"12","label":"t:shared.settings.countdown.minute.option__12"},{"value":"13","label":"t:shared.settings.countdown.minute.option__13"},{"value":"14","label":"t:shared.settings.countdown.minute.option__14"},{"value":"15","label":"t:shared.settings.countdown.minute.option__15"},{"value":"16","label":"t:shared.settings.countdown.minute.option__16"},{"value":"17","label":"t:shared.settings.countdown.minute.option__17"},{"value":"18","label":"t:shared.settings.countdown.minute.option__18"},{"value":"19","label":"t:shared.settings.countdown.minute.option__19"},{"value":"20","label":"t:shared.settings.countdown.minute.option__20"},{"value":"21","label":"t:shared.settings.countdown.minute.option__21"},{"value":"22","label":"t:shared.settings.countdown.minute.option__22"},{"value":"23","label":"t:shared.settings.countdown.minute.option__23"},{"value":"24","label":"t:shared.settings.countdown.minute.option__24"},{"value":"25","label":"t:shared.settings.countdown.minute.option__25"},{"value":"26","label":"t:shared.settings.countdown.minute.option__26"},{"value":"27","label":"t:shared.settings.countdown.minute.option__27"},{"value":"28","label":"t:shared.settings.countdown.minute.option__28"},{"value":"29","label":"t:shared.settings.countdown.minute.option__29"},{"value":"30","label":"t:shared.settings.countdown.minute.option__30"},{"value":"31","label":"t:shared.settings.countdown.minute.option__31"},{"value":"32","label":"t:shared.settings.countdown.minute.option__32"},{"value":"33","label":"t:shared.settings.countdown.minute.option__33"},{"value":"34","label":"t:shared.settings.countdown.minute.option__34"},{"value":"35","label":"t:shared.settings.countdown.minute.option__35"},{"value":"36","label":"t:shared.settings.countdown.minute.option__36"},{"value":"37","label":"t:shared.settings.countdown.minute.option__37"},{"value":"38","label":"t:shared.settings.countdown.minute.option__38"},{"value":"39","label":"t:shared.settings.countdown.minute.option__39"},{"value":"40","label":"t:shared.settings.countdown.minute.option__40"},{"value":"41","label":"t:shared.settings.countdown.minute.option__41"},{"value":"42","label":"t:shared.settings.countdown.minute.option__42"},{"value":"43","label":"t:shared.settings.countdown.minute.option__43"},{"value":"44","label":"t:shared.settings.countdown.minute.option__44"},{"value":"45","label":"t:shared.settings.countdown.minute.option__45"},{"value":"46","label":"t:shared.settings.countdown.minute.option__46"},{"value":"47","label":"t:shared.settings.countdown.minute.option__47"},{"value":"48","label":"t:shared.settings.countdown.minute.option__48"},{"value":"49","label":"t:shared.settings.countdown.minute.option__49"},{"value":"50","label":"t:shared.settings.countdown.minute.option__50"},{"value":"51","label":"t:shared.settings.countdown.minute.option__51"},{"value":"52","label":"t:shared.settings.countdown.minute.option__52"},{"value":"53","label":"t:shared.settings.countdown.minute.option__53"},{"value":"54","label":"t:shared.settings.countdown.minute.option__54"},{"value":"55","label":"t:shared.settings.countdown.minute.option__55"},{"value":"56","label":"t:shared.settings.countdown.minute.option__56"},{"value":"57","label":"t:shared.settings.countdown.minute.option__57"},{"value":"58","label":"t:shared.settings.countdown.minute.option__58"},{"value":"59","label":"t:shared.settings.countdown.minute.option__59"}],
+          "options": [
+            { "value": "0", "label": "t:shared.settings.countdown.minute.option__0" },
+            { "value": "1", "label": "t:shared.settings.countdown.minute.option__1" },
+            { "value": "2", "label": "t:shared.settings.countdown.minute.option__2" },
+            { "value": "3", "label": "t:shared.settings.countdown.minute.option__3" },
+            { "value": "4", "label": "t:shared.settings.countdown.minute.option__4" },
+            { "value": "5", "label": "t:shared.settings.countdown.minute.option__5" },
+            { "value": "6", "label": "t:shared.settings.countdown.minute.option__6" },
+            { "value": "7", "label": "t:shared.settings.countdown.minute.option__7" },
+            { "value": "8", "label": "t:shared.settings.countdown.minute.option__8" },
+            { "value": "9", "label": "t:shared.settings.countdown.minute.option__9" },
+            { "value": "10", "label": "t:shared.settings.countdown.minute.option__10" },
+            { "value": "11", "label": "t:shared.settings.countdown.minute.option__11" },
+            { "value": "12", "label": "t:shared.settings.countdown.minute.option__12" },
+            { "value": "13", "label": "t:shared.settings.countdown.minute.option__13" },
+            { "value": "14", "label": "t:shared.settings.countdown.minute.option__14" },
+            { "value": "15", "label": "t:shared.settings.countdown.minute.option__15" },
+            { "value": "16", "label": "t:shared.settings.countdown.minute.option__16" },
+            { "value": "17", "label": "t:shared.settings.countdown.minute.option__17" },
+            { "value": "18", "label": "t:shared.settings.countdown.minute.option__18" },
+            { "value": "19", "label": "t:shared.settings.countdown.minute.option__19" },
+            { "value": "20", "label": "t:shared.settings.countdown.minute.option__20" },
+            { "value": "21", "label": "t:shared.settings.countdown.minute.option__21" },
+            { "value": "22", "label": "t:shared.settings.countdown.minute.option__22" },
+            { "value": "23", "label": "t:shared.settings.countdown.minute.option__23" },
+            { "value": "24", "label": "t:shared.settings.countdown.minute.option__24" },
+            { "value": "25", "label": "t:shared.settings.countdown.minute.option__25" },
+            { "value": "26", "label": "t:shared.settings.countdown.minute.option__26" },
+            { "value": "27", "label": "t:shared.settings.countdown.minute.option__27" },
+            { "value": "28", "label": "t:shared.settings.countdown.minute.option__28" },
+            { "value": "29", "label": "t:shared.settings.countdown.minute.option__29" },
+            { "value": "30", "label": "t:shared.settings.countdown.minute.option__30" },
+            { "value": "31", "label": "t:shared.settings.countdown.minute.option__31" },
+            { "value": "32", "label": "t:shared.settings.countdown.minute.option__32" },
+            { "value": "33", "label": "t:shared.settings.countdown.minute.option__33" },
+            { "value": "34", "label": "t:shared.settings.countdown.minute.option__34" },
+            { "value": "35", "label": "t:shared.settings.countdown.minute.option__35" },
+            { "value": "36", "label": "t:shared.settings.countdown.minute.option__36" },
+            { "value": "37", "label": "t:shared.settings.countdown.minute.option__37" },
+            { "value": "38", "label": "t:shared.settings.countdown.minute.option__38" },
+            { "value": "39", "label": "t:shared.settings.countdown.minute.option__39" },
+            { "value": "40", "label": "t:shared.settings.countdown.minute.option__40" },
+            { "value": "41", "label": "t:shared.settings.countdown.minute.option__41" },
+            { "value": "42", "label": "t:shared.settings.countdown.minute.option__42" },
+            { "value": "43", "label": "t:shared.settings.countdown.minute.option__43" },
+            { "value": "44", "label": "t:shared.settings.countdown.minute.option__44" },
+            { "value": "45", "label": "t:shared.settings.countdown.minute.option__45" },
+            { "value": "46", "label": "t:shared.settings.countdown.minute.option__46" },
+            { "value": "47", "label": "t:shared.settings.countdown.minute.option__47" },
+            { "value": "48", "label": "t:shared.settings.countdown.minute.option__48" },
+            { "value": "49", "label": "t:shared.settings.countdown.minute.option__49" },
+            { "value": "50", "label": "t:shared.settings.countdown.minute.option__50" },
+            { "value": "51", "label": "t:shared.settings.countdown.minute.option__51" },
+            { "value": "52", "label": "t:shared.settings.countdown.minute.option__52" },
+            { "value": "53", "label": "t:shared.settings.countdown.minute.option__53" },
+            { "value": "54", "label": "t:shared.settings.countdown.minute.option__54" },
+            { "value": "55", "label": "t:shared.settings.countdown.minute.option__55" },
+            { "value": "56", "label": "t:shared.settings.countdown.minute.option__56" },
+            { "value": "57", "label": "t:shared.settings.countdown.minute.option__57" },
+            { "value": "58", "label": "t:shared.settings.countdown.minute.option__58" },
+            { "value": "59", "label": "t:shared.settings.countdown.minute.option__59" }
+          ],
           "default": "0"
         },
         {
@@ -1815,7 +2969,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:sections.popup.blocks.shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -1870,7 +3031,99 @@
           "step": 1,
           "default": 0
         },
-        {"type":"header","content":"t:sections.popup.blocks.shared.settings.header__sticky_tab.content"},{"type":"paragraph","content":"t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"},{"type":"checkbox","id":"enable_tab","label":"t:sections.popup.blocks.shared.settings.enable_tab.label","default":true},{"type":"text","id":"tab_text","label":"t:sections.popup.blocks.shared.settings.text.label","default":"Upcoming event"},{"type":"select","id":"text_font_class","label":"t:shared.settings.text_font_class.label","default":"fs-body-100","options":[{"value":"fs-body-75","label":"t:shared.settings.text_font_class.option_small"},{"value":"fs-body-100","label":"t:shared.settings.text_font_class.option_regular"},{"value":"fs-body-200","label":"t:shared.settings.text_font_class.option_large"}]},{"type":"select","id":"tab_position","label":"t:sections.popup.blocks.shared.settings.tab_position.label","default":"bottom_left_floating","options":[{"value":"left_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"left_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"right_bottom","label":"t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom","group":"t:sections.popup.blocks.shared.settings.tab_position.group_sides"},{"value":"bottom_left","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_left_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_center","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"},{"value":"bottom_right_floating","label":"t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating","group":"t:sections.popup.blocks.shared.settings.tab_position.group_bottom"}]},{"type":"color","id":"tab_text_color","label":"t:sections.popup.blocks.shared.settings.tab_text_color.label","default":"#000000"},{"type":"color","id":"tab_background_color","label":"t:sections.popup.blocks.shared.settings.tab_background_color.label","default":"#ffffff"}
+        { "type": "header", "content": "t:sections.popup.blocks.shared.settings.header__sticky_tab.content" },
+        {
+          "type": "paragraph",
+          "content": "t:sections.popup.blocks.shared.settings.paragraph__sticky_tab.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_tab",
+          "label": "t:sections.popup.blocks.shared.settings.enable_tab.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "tab_text",
+          "label": "t:sections.popup.blocks.shared.settings.text.label",
+          "default": "Upcoming event"
+        },
+        {
+          "type": "select",
+          "id": "text_font_class",
+          "label": "t:shared.settings.text_font_class.label",
+          "default": "fs-body-100",
+          "options": [
+            { "value": "fs-body-75", "label": "t:shared.settings.text_font_class.option_small" },
+            { "value": "fs-body-100", "label": "t:shared.settings.text_font_class.option_regular" },
+            { "value": "fs-body-200", "label": "t:shared.settings.text_font_class.option_large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "tab_position",
+          "label": "t:sections.popup.blocks.shared.settings.tab_position.label",
+          "default": "bottom_left_floating",
+          "options": [
+            {
+              "value": "left_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "left_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_left_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "right_bottom",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_right_bottom",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_sides"
+            },
+            {
+              "value": "bottom_left",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_left_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_left_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_center",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_center",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            },
+            {
+              "value": "bottom_right_floating",
+              "label": "t:sections.popup.blocks.shared.settings.tab_position.option_bottom_right_floating",
+              "group": "t:sections.popup.blocks.shared.settings.tab_position.group_bottom"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "tab_text_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_text_color.label",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "tab_background_color",
+          "label": "t:sections.popup.blocks.shared.settings.tab_background_color.label",
+          "default": "#ffffff"
+        }
       ]
     }
   ]

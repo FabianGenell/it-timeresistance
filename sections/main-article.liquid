@@ -122,7 +122,7 @@
               >
                 <div class="article__image-container">
                   {%-
-                    render 'image' with
+                    render 'legacy-image' with
                     wrapper_class: "article__image-inner",
                     image: article.image,
                     sizes: "100vw",
@@ -382,8 +382,14 @@
           "id": "image_aspect",
           "label": "t:sections.main_article.blocks.featured_image.settings.image_aspect.label",
           "options": [
-            { "value": "custom", "label": "t:sections.main_article.blocks.featured_image.settings.image_aspect.option_custom" },
-            { "value": "original", "label": "t:sections.main_article.blocks.featured_image.settings.image_aspect.option_original" }
+            {
+              "value": "custom",
+              "label": "t:sections.main_article.blocks.featured_image.settings.image_aspect.option_custom"
+            },
+            {
+              "value": "original",
+              "label": "t:sections.main_article.blocks.featured_image.settings.image_aspect.option_original"
+            }
           ],
           "default": "custom"
         },
@@ -411,7 +417,14 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         }
       ]

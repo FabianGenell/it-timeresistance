@@ -40,7 +40,7 @@
     {%- endcapture -%}
 
     <{{ media_link_element }} {{ media_atributes }}>
-      {% render 'image',
+      {% render 'legacy-image',
         image: media,
         aspect_ratio: aspect_ratio,
         sizes: sizes,
@@ -80,7 +80,10 @@
         class="mobile-media-carousel__poster"
         style="background-image: url({{ media.preview_image | image_url }})"
       >
-        <button class="mobile-media-carousel__play-icon" aria-label="{{ 'general.accessibility.open_modal' | t }}">
+        <button
+          class="mobile-media-carousel__play-icon"
+          aria-label="{{ 'general.accessibility.open_modal' | t }}"
+        >
           {% render 'icon', icon: 'play-badge' %}
         </button>
       </div>

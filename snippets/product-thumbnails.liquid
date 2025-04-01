@@ -44,7 +44,7 @@
               aria-label="{{ 'general.accessibility.image_thumbail' | t: number: forloop.index }}"
             >
               {%
-                render 'image' with
+                render 'legacy-image' with
                 image: media.preview_image,
                 id: media.id,
                 wrapper_class: 'product-thumbnails__item-image',

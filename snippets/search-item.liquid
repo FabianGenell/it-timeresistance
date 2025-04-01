@@ -26,7 +26,7 @@
   {%- if item.image != blank -%}
     <div class="search-item__image-wrapper">
       {%
-        render 'image' with
+        render 'legacy-image' with
         image: item.image,
         wrapper_class: 'search-item__image',
         aspect_ratio: 'landscape_alt',

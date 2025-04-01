@@ -32,7 +32,7 @@
   >
     <div class="event-item__image-wrapper">
       {%- unless block.settings.image == blank -%}
-        {%- render 'image',
+        {%- render 'legacy-image',
           wrapper_class: 'event-item__image',
           image: block.settings.image,
           sizes: image_sizes,
@@ -55,7 +55,9 @@
     </div>
     <div class="event-item__details">
       {%- unless block.settings.name == blank -%}
-        <{{ block.settings.name_tag }} class="event-item__name ff-heading fs-heading-5-base">{{ block.settings.name }}</{{ block.settings.name_tag }}>
+        <{{ block.settings.name_tag }} class="event-item__name ff-heading fs-heading-5-base">
+          {{- block.settings.name -}}
+        </{{ block.settings.name_tag }}>
       {%- endunless -%}
       {%- unless block.settings.date == blank -%}
         <p class="event-item__date fs-body-75">{{ block.settings.date }}</p>

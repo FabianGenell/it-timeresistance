@@ -98,7 +98,7 @@
               <div class="image-compare__image-after" {{ block.shopify_attributes }}>
             {%- endif -%}
               {%
-                render 'image' with
+                render 'legacy-image' with
                 image: block.settings.image,
                 wrapper_class: 'image-compare__image',
                 aspect_ratio: section.settings.aspect_ratio,

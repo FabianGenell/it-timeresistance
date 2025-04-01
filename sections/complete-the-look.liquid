@@ -74,7 +74,7 @@
                 animate: true
               %}
             {%- elsif section.settings.image -%}
-              {% render 'image',
+              {% render 'legacy-image',
                 image: section.settings.image,
                 wrapper_class: 'complete-the-look__image',
                 focal_point: 'image_presentation',
@@ -102,8 +102,7 @@
               data-index="{{ forloop.index0 }}"
               data-image-size="{{ section.settings.product_image_size }}"
             >
-              {%
-                render 'product-card-mini',
+              {% render 'product-card-mini',
                 block: block,
                 prod: block.settings.product_item,
                 index: forloop.index,
@@ -111,7 +110,7 @@
                 aspect_ratio: settings.product_listing_aspect_ratio,
                 render_shopify_attributes: true,
                 custom_product_image: block.settings.custom_product_image,
-                image_sizes: image_sizes,
+                image_sizes: image_sizes
               %}
             </div>
           {%- endfor -%}

@@ -30,6 +30,11 @@
     class="drawer-menu__link-thumbnail"
     style="--thumbnail-width:{{ thumbnail_width }}px"
   >
-    {% render 'image', image: thumbnail_image, aspect_ratio: aspect_ratio, sizes: '200px', src_set_type: 'thumbnail' %}
+    {% render 'legacy-image',
+      image: thumbnail_image,
+      aspect_ratio: aspect_ratio,
+      sizes: '200px',
+      src_set_type: 'thumbnail'
+    %}
   </div>
 {% endif %}

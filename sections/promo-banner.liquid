@@ -44,7 +44,7 @@
   <div class="promo-banner__inner">
     {%- if section.settings.mobile_image != blank -%}
       {%-
-        render 'image' with
+        render 'legacy-image' with
         wrapper_class: "promo-banner__image promo-banner__image--mobile",
         image: section.settings.mobile_image,
         focal_point: section.settings.mobile_focal_point,
@@ -54,7 +54,7 @@
 
     {%- if section.settings.image != blank -%}
       {%-
-        render 'image' with
+        render 'legacy-image' with
         wrapper_class: "promo-banner__image",
         image: section.settings.image,
         focal_point: section.settings.focal_point,
@@ -435,14 +435,28 @@
       "id": "focal_point",
       "type": "select",
       "label": "t:shared.settings.focal_point.label",
-      "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+      "options": [
+        { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+        { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+        { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+        { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+        { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+        { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+      ],
       "default": "image_presentation"
     },
     {
       "id": "mobile_focal_point",
       "type": "select",
       "label": "t:shared.settings.banners.mobile_focal_point.label",
-      "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+      "options": [
+        { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+        { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+        { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+        { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+        { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+        { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+      ],
       "default": "image_presentation"
     },
     {
@@ -525,16 +539,20 @@
       "default": "section--vertical-padding-top-bottom",
       "options": [
         {
-          "label": "t:shared.settings.section_style.section_padding.option_none", "value": "section--vertical-padding-none"
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
         },
         {
-          "label": "t:shared.settings.section_style.section_padding.option_both", "value": "section--vertical-padding-top-bottom"
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
         },
         {
-          "label": "t:shared.settings.section_style.section_padding.option_top", "value": "section--vertical-padding-top-only"
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
         },
         {
-          "label": "t:shared.settings.section_style.section_padding.option_bottom", "value": "section--vertical-padding-bottom-only"
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
         }
       ]
     }

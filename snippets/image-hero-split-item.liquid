@@ -27,7 +27,7 @@
   <div class="image-hero-split-item__image-container">
     {%- if block.settings.image_mobile != blank -%}
       {%-
-        render 'image' with
+        render 'legacy-image' with
         wrapper_class: "image-hero-split-item__image image-hero-split-item__image--mobile",
         image: block.settings.image_mobile,
         sizes: "100vw",
@@ -45,7 +45,7 @@
     -%}
 
     {%-
-      render 'image' with
+      render 'legacy-image' with
       wrapper_class: "image-hero-split-item__image image-hero-split-item__image--desktop",
       image: block.settings.image,
       sizes: "(max-width: 45em) 100vw, (max-width: 45em) 50vw",

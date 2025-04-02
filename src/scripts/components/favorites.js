@@ -154,7 +154,9 @@ class AddFavorite extends HTMLElement {
     }
 
     get isFavorite() {
-        return favoriteHandler.favorites.some((favorite) => favorite.handle === this.productHandle);
+        return favoriteHandler.favorites.some(
+            (favorite) => JSON.stringify(favorite) === JSON.stringify(this.favoriteItem)
+        );
     }
 
     handleClick() {

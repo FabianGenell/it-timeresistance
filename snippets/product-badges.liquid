@@ -1,9 +1,10 @@
 {%- liquid
   assign badge = prod.metafields.custom.product_badge_text
 -%}
-
-{%- if badge != blank -%}
-  <div class="w-fit text-xs leading-none bg-black text-white px-2 py-1 rounded-full">
-    {{ badge }}
-  </div>
-{%- endif -%}
+<div class="flex flex-wrap gap-1">
+  {%- if badge != blank -%}
+    <div class="w-fit text-xs leading-none bg-black text-white px-2 py-1 rounded-full">
+      {{ badge }}
+    </div>
+  {%- endif -%}
+</div>

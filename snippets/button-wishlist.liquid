@@ -1,33 +1,9 @@
-{% comment %}
-  Shopify Wishlist
-  Usage:
-    - Markup: {%- render 'button-wishlist', product: product -%}
-    - Place this snippet inside your existing product card snippet
-
-  Parameters:
-    - product: <Shopify product> (required)
-{% endcomment %}
-{%- if product.handle != blank -%}
-  {% comment %}
-    <button
-      type="button"
-      aria-label="Add to wishlist"
-      class="button-wishlist group"
-      button-wishlist
-      data-product-handle="{{ product.handle }}"
-      data-variant-id="{{ variant.id }}"
-    >
-      {%- render 'icon-heart',
-        class: 'fill-transparent stroke-black transition-[fill] duration-300 ease-in-out group-[added]:fill-red-500 group-[added]:stroke-black'
-      -%}
-    </button>
-  {% endcomment %}
-
+{%- if prod.handle != blank -%}
   <add-favorite
     class="cursor-pointer group"
-    data-product-handle="{{ product.handle }}"
-    {% if variant.id != blank %}
-      data-variant-id="{{ variant.id }}"
+    data-product-handle="{{ prod.handle }}"
+    {% if var.id != blank %}
+      data-variant-id="{{ var.id }}"
     {% endif %}
   >
     {%- render 'icon-heart',

@@ -151,12 +151,13 @@
                         {%- case item.object_type -%}
                           {%- when 'product' -%}
                             {%
-                              render 'product-item' with
+                              render 'product-variant-items' with
                               prod: item,
                               product_columns_desktop: section.settings.columns_desktop,
                               product_columns_mobile: section.settings.columns_mobile,
                               aspect_ratio: settings.product_listing_aspect_ratio,
-                              has_grid_reveal: true
+                              has_grid_reveal: true,
+                              filters: search.filters
                             %}
                           {%- else -%}
                             {%

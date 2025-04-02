@@ -54,7 +54,7 @@
       }
     },
     "product-grid": {
-      "type": "main-collection-variant-grid",
+      "type": "main-collection-product-grid",
       "settings": {
         "columns_desktop": "4",
         "columns_mobile": "2",

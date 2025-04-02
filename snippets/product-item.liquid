@@ -1,9 +1,12 @@
+<!-- snippets/product-item.liquid -->
+
 {%- liquid
   comment
     pass in :
 
     * prod (product but avoiding collision with globally scoped product)
-    show_quick_buy
+    * show_quick_buy
+    * var (variant)
   endcomment
 
   assign show_multiple_images = false
@@ -16,6 +19,14 @@
   assign mobile_column_count = 2
   if product_columns_mobile == 1
     assign mobile_column_count = 1
+  endif
+
+  if var != blank
+    assign current_object = var
+    assign using_variant = true
+  else
+    assign current_object = prod
+    assign using_variant = false
   endif
 
   case product_columns_desktop
@@ -176,13 +187,17 @@
   "
   style="--z-index-item: {{ forloop.index }};"
 >
-  {%- render 'button-wishlist', product: prod, variant: var -%}
-
-  <div class="product-item__inner">
+  <div class="product-item__inner z-0">
     <div class="product-item__media {%- if show_multiple_images %} product-item__media--multiple-images {%- endif %}">
+      <div class="absolute top-0 left-0 flex justify-between items-center w-full z-10 p-1">
+        {% unless placeholder %}
+          {%- render 'product-badges', prod: prod -%}
+        {% endunless %}
+        {%- render 'button-wishlist', product: prod, variant: var -%}
+      </div>
       <a
         class="product-item__image-link"
-        href="{{ prod.url | within: collection }}"
+        href="{{ current_object.url | within: collection }}"
         aria-label="{{ prod.title }}"
       >
         {%- liquid
@@ -190,7 +205,14 @@
 
           if show_multiple_images
             assign image_wrapper_class = image_wrapper_class | append: ' product-item__image--one'
-            assign second_image = prod.media[1].preview_image
+
+            if using_variant
+              assign initial_variant_media_index = var.featured_media.position | minus: 1
+              assign next_variant_media_index = initial_variant_media_index | plus: 1
+              assign second_image = prod.media[next_variant_media_index].preview_image
+            else
+              assign second_image = prod.media[1].preview_image
+            endif
 
             if prod.featured_media != prod.media[0]
               assign second_image = prod.media[0].preview_image
@@ -199,7 +221,7 @@
         -%}
 
         {% render 'legacy-image',
-          image: prod.featured_media,
+          image: current_object.featured_media,
           wrapper_class: image_wrapper_class,
           aspect_ratio: settings.product_listing_aspect_ratio,
           object_fit: settings.product_listing_media_fit,
@@ -221,14 +243,6 @@
           %}
         {%- endif -%}
       </a>
-      {% unless placeholder %}
-        {%- render 'product-badges',
-          prod: prod,
-          show_sale_badge: settings.product_listing_show_sale_badge,
-          show_custom_badges: settings.product_listing_show_custom_badges,
-          show_sold_out_badge: settings.product_listing_show_sold_out_badge
-        -%}
-      {% endunless %}
 
       {% if quick_shop_type != 'none' and quick_view_is_beneath != true %}
         <div class="product-item__hover-action-wrap">

@@ -123,8 +123,13 @@
                   >
                     {% for product in collection.products %}
                       {%- if section.settings.seperate_variants -%}
-                        {%- render 'product-card', prod: product, split_variants: true -%}
-
+                        {%- render 'product-variant-items',
+                          prod: product,
+                          product_columns_desktop: section.settings.columns_desktop,
+                          product_columns_mobile: section.settings.columns_mobile,
+                          aspect_ratio: settings.product_listing_aspect_ratio,
+                          has_grid_reveal: true
+                        -%}
                       {%- else -%}
                         {% render 'product-item',
                           prod: product,
@@ -134,15 +139,17 @@
                           has_grid_reveal: true
                         %}
                       {%- endif -%}
+                    {% endfor %}
 
-                    {% else %}
+                    {% comment %}
+                      {% else %}
                       <div class="collection__empty">
                         <div>{{ 'collections.general.no_products' | t }}</div>
                         <button type="button" class="btn btn--text-link" data-clear-all-filters>
                           {{ 'filters.clear_filters' | t }}
                         </button>
                       </div>
-                    {% endfor %}
+                    {% endcomment %}
                   </div>
 
                   {% unless paginated %}

@@ -1,0 +1,47 @@
+<!-- snippets/product-variant-items.liquid -->
+
+{%- liquid
+  assign filters = filters | default: collection.filters
+
+  assign show_all_variants = true
+  assign selected_colors = ''
+
+  for filter in filters
+    if filter.label == 'Color' or filter.label == 'Colour'
+      if filter.active_values.size > 0
+        assign show_all_variants = false
+        assign selected_colors = filter.active_values | map: 'value' | join: ','
+      endif
+    endif
+  endfor
+
+  # Split the selected colors into an array
+  assign color_array = selected_colors | split: ','
+-%}
+
+{% for variant in prod.variants %}
+  {%- liquid
+    assign show_variant = false
+    if show_all_variants
+      assign show_variant = true
+    else
+      # Check if any variant option matches any selected color
+      for color in color_array
+        if variant.option1 == color or variant.option2 == color or variant.option3 == color
+          assign show_variant = true
+          break
+        endif
+      endfor
+    endif
+  -%}
+  {%- if show_variant -%}
+    {% render 'product-item',
+      prod: prod,
+      var: variant,
+      product_columns_desktop: product_columns_desktop,
+      product_columns_mobile: product_columns_mobile,
+      aspect_ratio: aspect_ratio,
+      has_grid_reveal: has_grid_reveal
+    %}
+  {%- endif -%}
+{% endfor %}

@@ -4,8 +4,22 @@ module.exports = {
     content: ["./**/*.liquid", "./src/**/*.{js,ts,jsx,tsx}", "./templates/**/*.{liquid,json}"],
     theme: {
         extend: {
-            spacing: {},
-            colors: {}
+            colors: {
+                text: "var(--color-text)",
+                textLink: "var(--color-text-link)",
+                textError: "var(--color-text-error)",
+                textSuccess: "var(--color-text-success)",
+                background: "var(--color-background)",
+                border: "var(--color-border)",
+                textButton: "var(--color-text-button)",
+                backgroundButton: "var(--color-background-button)",
+                backgroundButtonHover: "var(--color-background-button-hover)"
+            },
+            fontFamily: {
+                logo: "var(--font-logo)",
+                heading: "var(--font-heading)",
+                body: "var(--font-body)"
+            }
         }
     },
     plugins: [],

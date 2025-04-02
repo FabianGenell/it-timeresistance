@@ -7,20 +7,32 @@
   Parameters:
     - product: <Shopify product> (required)
 {% endcomment %}
-{%- if product.handle != blank and variant.id != blank -%}
-  <button type="button" aria-label="Add to wishlist" class="button-wishlist" button-wishlist data-product-handle="{{ product.handle }}" data-variant-id="{{ variant.id }}">
-    <style scoped>
-      .icon {
-        fill: transparent;
-        stroke: #000000;
-        transition: fill 0.3s ease;
-      }
+{%- if product.handle != blank -%}
+  {% comment %}
+    <button
+      type="button"
+      aria-label="Add to wishlist"
+      class="button-wishlist group"
+      button-wishlist
+      data-product-handle="{{ product.handle }}"
+      data-variant-id="{{ variant.id }}"
+    >
+      {%- render 'icon-heart',
+        class: 'fill-transparent stroke-black transition-[fill] duration-300 ease-in-out group-[added]:fill-red-500 group-[added]:stroke-black'
+      -%}
+    </button>
+  {% endcomment %}
 
-      .active .icon {
-        fill: red;
-        stroke: #000000;
-      }
-    </style>
-    {%- render 'icon-heart' -%}
-  </button>
+  <add-favorite
+    class="absolute top-[10px] right-[10px] z-50 cursor-pointer group"
+    data-product-handle="{{ product.handle }}"
+    {% if variant.id != blank %}
+      data-variant-id="{{ variant.id }}"
+    {% endif %}
+  >
+    {%- render 'icon-heart',
+      class: 'fill-transparent stroke-black transition-[fill] duration-300 ease-in-out 
+      group-[[added]]:fill-red-500 group-[[added]]:stroke-black'
+    -%}
+  </add-favorite>
 {%- endif -%}

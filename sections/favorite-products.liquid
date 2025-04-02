@@ -1,0 +1,36 @@
+<favorite-products
+  style="min-height: 100vh"
+  class="block h-full relative container mt-12 main-products-grid main-products-grid__results"
+  data-layout="grid"
+>
+  <div
+    data-product-grid
+    class="grid grid-cols-2 md:grid-cols-4 gap-6"
+  ></div>
+  <div data-spinner class="flex justify-center my-8">
+    <div
+      class="loading-spinner w-12 h-12 rounded-full border-4 border-indigo-300 border-t-indigo-600 animate-spin"
+      role="status"
+      aria-label="Loading"
+    ></div>
+  </div>
+  <div
+    data-empty-state
+    class="hidden"
+  >
+    <h3>Empty</h3>
+  </div>
+</favorite-products>
+
+{% schema %}
+{
+  "name": "Favorite Products",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Favorite Products"
+    }
+  ]
+}
+{% endschema %}

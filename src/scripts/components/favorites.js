@@ -1,0 +1,174 @@
+class FavoriteHandler {
+    constructor() {
+        this.favorites = this.fetchFavorites();
+        console.debug('Favorites', this.favorites);
+    }
+
+    fetchFavorites() {
+        const storedFavorites = localStorage.getItem('favorites');
+        let favorites = [];
+        if (storedFavorites) {
+            try {
+                const parsed = JSON.parse(storedFavorites);
+                if (Array.isArray(parsed)) {
+                    favorites = parsed;
+                }
+            } catch (error) {
+                console.error('Error parsing favorites from localStorage', error);
+            }
+        }
+        return favorites;
+    }
+
+    removeFavorite(favoriteItem) {
+        this.favorites = this.favorites.filter((favorite) => favorite.handle !== favoriteItem.handle);
+        console.debug('Favorites after removal', this.favorites);
+        this.updateLocalStorage(this.favorites);
+    }
+
+    addFavorite(favoriteItem) {
+        this.favorites.push(favoriteItem);
+        console.debug('Favorites after addition', this.favorites);
+        this.updateLocalStorage(this.favorites);
+    }
+
+    updateLocalStorage(favorites) {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+}
+
+const favoriteHandler = new FavoriteHandler();
+
+/**
+ * Represents the MainFavorites custom element.
+ * @class
+ * @extends HTMLElement
+ */
+class FavoriteProducts extends HTMLElement {
+    constructor() {
+        super();
+
+        this.productGrid = this.querySelector('[data-product-grid]');
+        this.spinner = this.querySelector('[data-spinner]');
+        this.emptyStateEl = this.querySelector('[data-empty-state]');
+
+        console.debug('FavoriteProducts', this.productGrid, this.spinner, this.emptyStateEl);
+
+        if (favoriteHandler.favorites.length > 0) {
+            this.fetchProducts();
+        } else {
+            this.emptyStateEl.classList.remove('hidden');
+            this.spinner.classList.add('hidden');
+        }
+    }
+
+    /**
+     * Fetches the HTML content of a product using its handle and variant ID if available.
+     *
+     * @param {Object} favorite - The favorite object containing handle and optional variantId.
+     * @returns {Promise<HTMLLIElement>} - A promise that resolves to an HTML list item element containing the fetched product HTML.
+     */
+    async fetchProductHTML(favorite) {
+        console.debug('fetchProductHTML', favorite);
+        let url = `/products/${favorite.handle}?view=card`;
+
+        if (favorite.variantId) {
+            url += `&variant=${favorite.variantId}`;
+        }
+
+        const productHTML = await fetch(url).then((res) => res.text());
+
+        console.debug('productHTML', productHTML);
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(productHTML, 'text/html');
+        const favoritesResult = doc.querySelector('.product-item');
+
+        console.debug('favoritesResult', favoritesResult);
+
+        return favoritesResult;
+    }
+
+    batchArray(arr, size) {
+        const batchedArray = [];
+        for (let i = 0; i < arr.length; i += size) {
+            batchedArray.push(arr.slice(i, i + size));
+        }
+        return batchedArray;
+    }
+
+    /**
+     * Fetches products and appends them to the product grid.
+     * @returns {Promise<Array<HTMLElement>>} An array of HTML elements representing the fetched products.
+     */
+    async fetchProducts() {
+        const batchedFavorites = this.batchArray(favoriteHandler.favorites, 4);
+        await Promise.all(
+            batchedFavorites.map(async (favoritesArray) => {
+                const productsHTML = await Promise.all(
+                    favoritesArray.map(async (favorite) => this.fetchProductHTML(favorite))
+                );
+                productsHTML.forEach((el) => {
+                    try {
+                        return this.productGrid.appendChild(el);
+                    } catch (error) {}
+                });
+                return productsHTML;
+            })
+        );
+        this.spinner.classList.add('hidden');
+    }
+}
+
+customElements.define('favorite-products', FavoriteProducts);
+
+class AddFavorite extends HTMLElement {
+    constructor() {
+        super();
+
+        this.productHandle = this.dataset.productHandle;
+        this.variantId = this.dataset.variantId;
+
+        this.favoriteItem = {
+            handle: this.productHandle
+        };
+
+        if (this.variantId) {
+            this.favoriteItem.variantId = this.variantId;
+        }
+
+        this.addEventListener('click', this.handleClick.bind(this));
+        this.updateState();
+    }
+
+    get isFavorite() {
+        return favoriteHandler.favorites.some((favorite) => favorite.handle === this.productHandle);
+    }
+
+    handleClick() {
+        if (this.isFavorite) {
+            this.removeFavorite();
+        } else {
+            this.addFavorite();
+        }
+        this.updateState();
+    }
+
+    removeFavorite() {
+        favoriteHandler.removeFavorite(this.favoriteItem);
+    }
+
+    addFavorite() {
+        favoriteHandler.addFavorite(this.favoriteItem);
+    }
+
+    updateState() {
+        if (this.isFavorite) {
+            this.setAttribute('added', '');
+        } else {
+            this.removeAttribute('added');
+        }
+    }
+}
+
+customElements.define('add-favorite', AddFavorite);

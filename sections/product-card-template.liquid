@@ -6,15 +6,15 @@
 {% endcomment %}
 {%- assign variant_id = request.parameters.variant -%}
 {%- if variant_id -%}
-  {%- assign variant = product.variants | where: "id", variant_id | first -%}
+  {%- assign variant = product.variants | where: 'id', variant_id | first -%}
 {%- else -%}
   {%- assign variant = product.selected_or_first_available_variant -%}
 {%- endif -%}
 
-{%- render 'product-item-wishlist', prod: product, var: variant -%}
+{%- render 'product-item', prod: product, var: variant, show_quick_buy: true -%}
 
 {% schema %}
-  {
-    "name": "Product Card Template"
-  }
+{
+  "name": "Product Card Template"
+}
 {% endschema %}

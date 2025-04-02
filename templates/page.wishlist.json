@@ -8,10 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "wrapper": "div#wishlist.wishlist",
   "sections": {
     "main": {
-      "type": "wishlist-template",
+      "type": "favorite-products",
       "settings": {}
     }
   },

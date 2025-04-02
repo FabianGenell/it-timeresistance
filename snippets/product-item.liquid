@@ -3,6 +3,7 @@
     pass in :
 
     * prod (product but avoiding collision with globally scoped product)
+    show_quick_buy
   endcomment
 
   assign show_multiple_images = false
@@ -175,6 +176,8 @@
   "
   style="--z-index-item: {{ forloop.index }};"
 >
+  {%- render 'button-wishlist', product: prod, variant: var -%}
+
   <div class="product-item__inner">
     <div class="product-item__media {%- if show_multiple_images %} product-item__media--multiple-images {%- endif %}">
       <a
@@ -408,5 +411,13 @@
       {%- endif -%}
     </div>
     <div class="product-item__hover-container"></div>
+    {%- if show_quick_buy -%}
+      {% render 'product-form',
+        prod: prod,
+        current_variant: var,
+        show_dynamic_checkout: false,
+        is_quick: is_quick
+      %}
+    {%- endif -%}
   </div>
 </div>

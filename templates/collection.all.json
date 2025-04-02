@@ -218,14 +218,14 @@
       }
     },
     "metaobject_carousel_P4pVcm": {
-      "type": "metaobject-carousel",
+      "type": "gallery-carousel",
       "settings": {
         "heading": "All Men Categories",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
         "link_text": "",
-        "collection_type": "mens_collections",
+        "metaobject_type": "mens_collections",
         "columns": "4",
         "mobile_columns": "1",
         "loop_carousel": true,
@@ -241,14 +241,14 @@
       }
     },
     "metaobject_carousel_pUTPPV": {
-      "type": "metaobject-carousel",
+      "type": "gallery-carousel",
       "settings": {
         "heading": "All Women Categories",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
         "link_text": "",
-        "collection_type": "womens_collections",
+        "metaobject_type": "womens_collections",
         "columns": "4",
         "mobile_columns": "1",
         "loop_carousel": true,

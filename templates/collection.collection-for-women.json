@@ -190,14 +190,14 @@
       }
     },
     "metaobject_carousel_NYLNYB": {
-      "type": "metaobject-carousel",
+      "type": "gallery-carousel",
       "settings": {
         "heading": "All Women Categories",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
         "link_text": "",
-        "collection_type": "womens_collections",
+        "metaobject_type": "womens_collections",
         "columns": "4",
         "mobile_columns": "2",
         "loop_carousel": true,

@@ -536,8 +536,14 @@
       }
     },
     "metaobject_carousel_L9YFy4": {
-      "type": "metaobject-carousel",
+      "type": "gallery-carousel",
+      "disabled": true,
       "settings": {
+        "metaobject_type": "mens_collections",
+        "collections": [
+          "all-bags-for-men",
+          "backpacks-for-men"
+        ],
         "heading": "Men Collection",
         "heading_tag": "h2",
         "subheading": "",
@@ -559,14 +565,17 @@
       }
     },
     "metaobject_carousel_JkTgJD": {
-      "type": "metaobject-carousel",
+      "type": "gallery-carousel",
+      "disabled": true,
       "settings": {
+        "metaobject_type": "womens_collections",
+        "collections": [],
         "heading": "Women Collection",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
         "link_text": "",
-        "collection_type": "womens_collections",
+        "collection_type": "mens_collections",
         "columns": "4",
         "mobile_columns": "1",
         "loop_carousel": true,
@@ -576,6 +585,71 @@
         "overlay_text_background_style": "gradient",
         "overlay_text_color": "#ffffff",
         "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "collection_list_slider_YxQqqa": {
+      "type": "collection-list-slider",
+      "settings": {
+        "heading": "Men Collection",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "shopify://collections",
+        "link_text": "",
+        "columns": "4",
+        "mobile_columns": "2",
+        "collection_list": [
+          "all-bags-for-men",
+          "backpacks-for-men",
+          "briefcases-for-men",
+          "clutches-for-men",
+          "document-cases-for-men",
+          "duffel-bags-for-men",
+          "laptop-bags-for-men",
+          "messenger-bags-for-men",
+          "sling-bags-for-men",
+          "small-leather-goods-for-men",
+          "wallets-for-men",
+          "toiletry-bags-for-men"
+        ],
+        "collection_listing_aspect_ratio": "portrait",
+        "label_style": "overlay",
+        "overlay_title_background_style": "gradient",
+        "overlay_text_color": "#fff",
+        "overlay_title_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "collection_list_slider_Tkx4c6": {
+      "type": "collection-list-slider",
+      "settings": {
+        "heading": "Women Collections",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "shopify://collections",
+        "link_text": "",
+        "columns": "4",
+        "mobile_columns": "2",
+        "collection_list": [
+          "all-bags-for-women",
+          "backpacks-for-women",
+          "business-briefcases-for-women",
+          "cross-body-bags-for-women",
+          "handbags-for-women",
+          "jewelry-boxes-for-women",
+          "small-leather-goods-for-women",
+          "travel-bags-for-women",
+          "top-handle-bags-for-women"
+        ],
+        "collection_listing_aspect_ratio": "portrait",
+        "label_style": "overlay",
+        "overlay_title_background_style": "gradient",
+        "overlay_text_color": "#fff",
+        "overlay_title_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
@@ -593,6 +667,8 @@
     "grid_WKBgtN",
     "multi_column_ADfJmX",
     "metaobject_carousel_L9YFy4",
-    "metaobject_carousel_JkTgJD"
+    "metaobject_carousel_JkTgJD",
+    "collection_list_slider_YxQqqa",
+    "collection_list_slider_Tkx4c6"
   ]
 }

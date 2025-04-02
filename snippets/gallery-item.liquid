@@ -4,6 +4,8 @@
   Required:
 
   * block: Current block
+  * title: String
+  * image: Image
   * aspect_ratio: String
   * label_style: String
   * label_size: String
@@ -14,6 +16,9 @@
 {%- endcomment -%}
 
 {%- liquid
+  assign title = title | default: metaobject.collection_title.value
+  assign image = image | default: metaobject.grid_image.value
+
   assign label_is_overlay = false
 
   if label_style == 'overlay'
@@ -23,8 +28,8 @@
 
 {% capture item_label %}
   <div class="gallery-item__label {{ label_size }} ff-body">
-    {%- if block.settings.title != blank -%}
-      <h4 class="gallery-item__title fs-heading-5-base ff-heading">{{ block.settings.title }}</h4>
+    {%- if title != blank -%}
+      <h4 class="gallery-item__title fs-heading-5-base ff-heading">{{ title }}</h4>
     {% endif %}
     {{ block.settings.text }}
   </div>
@@ -48,7 +53,7 @@
 >
   <div class="gallery-item__image-wrapper hover">
     {% render 'legacy-image',
-      image: block.settings.image,
+      image: image,
       wrapper_class: 'gallery-item__image',
       aspect_ratio: aspect_ratio,
       focal_point: block.settings.focal_point,

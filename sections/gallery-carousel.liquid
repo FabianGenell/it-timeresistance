@@ -3,6 +3,13 @@
   calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ section.settings.mobile_columns }})
 {%- endcapture -%}
 
+{%- liquid
+  assign metaobject_key = section.settings.metaobject_type
+  if metaobject_key != blank
+    assign metaobjects = shop.metaobjects[metaobject_key].values
+  endif
+-%}
+
 <div
   class="
     gallery-carousel
@@ -56,21 +63,63 @@
       "
     >
       <div class="gallery-carousel__items carousel__wrapper swiper-wrapper">
-        {%- for block in section.blocks -%}
-          <div class="gallery-carousel__item carousel__slide swiper-slide">
-            {%
-              render 'gallery-item',
-              block: block,
+        {%- if section.settings.collection_list.size > 0 -%}
+          {% for collection in section.settings.collection_list %}
+            {%- liquid
+              assign title = collection.title
+              assign image = collection.image
+              assign url = collection.url
+            -%}
+            {% render 'gallery-item',
+              title: title,
+              image: image,
+              url: url,
               aspect_ratio: section.settings.aspect_ratio,
               label_style: section.settings.image_caption_style,
               label_size: section.settings.image_caption_size,
               overlay_text_color: section.settings.overlay_text_color,
               overlay_text_background: section.settings.overlay_text_background,
-              overlay_text_background_style: section.settings.overlay_text_background_style
-              image_sizes: image_sizes,
+              overlay_text_background_style: section.settings.overlay_text_background_style,
+              image_sizes: image_sizes
             %}
-          </div>
-        {%- endfor -%}
+          {% endfor %}
+        {% elsif metaobjects %}
+          {% for metaobject in metaobjects %}
+            {%- liquid
+              assign title = metaobject.collection_title.value
+              assign image = metaobject.grid_image.value
+            -%}
+            <div class="gallery-carousel__item carousel__slide swiper-slide">
+              {% render 'gallery-item',
+                title: title,
+                image: image,
+                url: metaobject.url.value,
+                aspect_ratio: section.settings.aspect_ratio,
+                label_style: section.settings.image_caption_style,
+                label_size: section.settings.image_caption_size,
+                overlay_text_color: section.settings.overlay_text_color,
+                overlay_text_background: section.settings.overlay_text_background,
+                overlay_text_background_style: section.settings.overlay_text_background_style,
+                image_sizes: image_sizes
+              %}
+            </div>
+          {%- endfor -%}
+        {% else %}
+          {%- for block in section.blocks -%}
+            <div class="gallery-carousel__item carousel__slide swiper-slide">
+              {% render 'gallery-item',
+                block: block,
+                aspect_ratio: section.settings.aspect_ratio,
+                label_style: section.settings.image_caption_style,
+                label_size: section.settings.image_caption_size,
+                overlay_text_color: section.settings.overlay_text_color,
+                overlay_text_background: section.settings.overlay_text_background,
+                overlay_text_background_style: section.settings.overlay_text_background_style,
+                image_sizes: image_sizes
+              %}
+            </div>
+          {%- endfor -%}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -78,12 +127,35 @@
 
 {% schema %}
 {
-  "name": "t:sections.gallery_carousel.name",
+  "name": "MO Gallery Carousel",
   "tag": "section",
   "disabled_on": {
     "groups": ["header", "custom.overlay"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Use Metaobjects"
+    },
+    {
+      "type": "text",
+      "id": "metaobject_type",
+      "label": "Metaobject Type"
+    },
+    {
+      "type": "paragraph",
+      "content": "Using metaobjects will override the blocks, leave empty to disable"
+    },
+    {
+      "type": "header",
+      "content": "Use Collections"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Collections",
+      "limit": 50
+    },
     {
       "type": "text",
       "id": "heading",
@@ -136,6 +208,16 @@
       "id": "link_text",
       "type": "text",
       "label": "t:shared.settings.button_link_text.label"
+    },
+    {
+      "type": "select",
+      "id": "collection_type",
+      "label": "Collection Type",
+      "options": [
+        { "value": "womens_collections", "label": "Women's Collections" },
+        { "value": "mens_collections", "label": "Men's Collections" }
+      ],
+      "default": "mens_collections"
     },
     {
       "type": "header",
@@ -335,55 +417,9 @@
       ]
     }
   ],
-  "blocks": [
-    {
-      "type": "image",
-      "name": "t:sections.gallery_carousel.blocks.image.name",
-      "settings": [
-        {
-          "id": "image",
-          "type": "image_picker",
-          "label": "t:sections.gallery_carousel.blocks.image.name"
-        },
-        {
-          "id": "focal_point",
-          "type": "select",
-          "label": "t:shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
-          "default": "image_presentation"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "t:sections.gallery_carousel.blocks.image.settings.title.label",
-          "default": "Image with caption"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "t:sections.gallery_carousel.blocks.image.settings.text.label",
-          "default": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
-        }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "t:sections.gallery_carousel.presets.name",
-      "blocks": [
-        {
-          "type": "image"
-        },
-        {
-          "type": "image"
-        },
-        {
-          "type": "image"
-        },
-        {
-          "type": "image"
-        }
-      ]
+      "name": "MO Gallery Carousel"
     }
   ]
 }

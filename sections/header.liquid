@@ -136,58 +136,58 @@
 {%- endcapture -%}
 
 {%- capture currency_icon -%}
-<select id="marketSelector">
-    <option value="au">Australia / AUD</option>
-    <option value="us">United States / USD</option>
-    <option value="global">Global / USD</option>
-    <option value="eu">European Union / EUR</option>
-    <option value="uk">United Kingdom / GBP</option>
-    <!-- <option value="de">Germany / EUR</option> -->
-    <option value="ca">Canada / CAD</option>
-    <option value="sg">Singapore / SGD</option>
-</select>
+  <select id="marketSelector">
+      <option value="au">Australia / AUD</option>
+      <option value="us">United States / USD</option>
+      <option value="global">Global / USD</option>
+      <option value="eu">European Union / EUR</option>
+      <option value="uk">United Kingdom / GBP</option>
+      <!-- <option value="de">Germany / EUR</option> -->
+      <option value="ca">Canada / CAD</option>
+      <option value="sg">Singapore / SGD</option>
+  </select>
 
-<script>
-    // JavaScript code to handle market selection
-    document.getElementById('marketSelector').addEventListener('change', function() {
-        var selectedMarket = this.value;
-        var currentUrl = window.location.href;
-        var newDomain;
+  <script>
+      // JavaScript code to handle market selection
+      document.getElementById('marketSelector').addEventListener('change', function() {
+          var selectedMarket = this.value;
+          var currentUrl = window.location.href;
+          var newDomain;
 
-        switch (selectedMarket) {
-            case 'au':
-                // No need to change the URL for US
-                return;
-            case 'us':
-                newDomain = 'us-timeresistance.myshopify.com';
-                break;
-            case 'global':
-                newDomain = 'global.timeresistance.com';
-                break;
-            case 'eu':
-                newDomain = 'eu.timeresistance.com';
-                break;
-            case 'uk':
-                newDomain = 'uk-timeresistance.myshopify.com';
-                break;
-            case 'de':
-                newDomain = 'de-timeresistance.myshopify.com';
-                break;
-            case 'ca':
-                newDomain = 'ca-timeresistance.myshopify.com';
-                break;
-            case 'sg':
-                newDomain = 'sg-timeresistance.myshopify.com';
-                break;
-        }
+          switch (selectedMarket) {
+              case 'au':
+                  // No need to change the URL for US
+                  return;
+              case 'us':
+                  newDomain = 'us-timeresistance.myshopify.com';
+                  break;
+              case 'global':
+                  newDomain = 'global.timeresistance.com';
+                  break;
+              case 'eu':
+                  newDomain = 'eu.timeresistance.com';
+                  break;
+              case 'uk':
+                  newDomain = 'uk-timeresistance.myshopify.com';
+                  break;
+              case 'de':
+                  newDomain = 'de-timeresistance.myshopify.com';
+                  break;
+              case 'ca':
+                  newDomain = 'ca-timeresistance.myshopify.com';
+                  break;
+              case 'sg':
+                  newDomain = 'sg-timeresistance.myshopify.com';
+                  break;
+          }
 
-        // Replace the domain part of the current URL
-        var newUrl = currentUrl.replace(/^(https?:\/\/)?[^\/]+/, 'https://' + newDomain);
+          // Replace the domain part of the current URL
+          var newUrl = currentUrl.replace(/^(https?:\/\/)?[^\/]+/, 'https://' + newDomain);
 
-        // Redirect to the new URL
-        window.location.href = newUrl;
-    });
-</script>
+          // Redirect to the new URL
+          window.location.href = newUrl;
+      });
+  </script>
 
 
  
@@ -195,17 +195,16 @@
 
 {%- capture wishlist_icon -%}
   <a
-    class="
-      header__icon-touch
-      
-    "
+    class="header__icon-touch"
     href="/pages/about-brand?view=wishlist"
-
-
-
     aria-expanded="false"
   >
-    {% render 'icon-heart' %}
+    {% render 'icon-heart', class: 'fill-none' %}
+
+    <span data-js-favorites-count class="count-icon left-[1px] bottom-[1px] opacity-0 transition-opacity duration-300">
+
+    </span>
+
 
   </a>
 {%- endcapture -%}
@@ -251,7 +250,7 @@
     {% assign cart_icon_name = 'header-shopping-[[ci]]' | replace: '[[ci]]', section.settings.cart_icon %}
     {% render 'icon-button', icon: cart_icon_name %}
 
-    <span data-js-cart-count>{{ cart.item_count }}</span>
+    <span data-js-cart-count class="count-icon">{{ cart.item_count }}</span>
   </a>
 {%- endcapture -%}
 

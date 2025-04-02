@@ -1,6 +1,11 @@
 class FavoriteHandler {
     constructor() {
         this.favorites = this.fetchFavorites();
+
+        this.displayCountEls = document.querySelectorAll('[data-js-favorites-count]');
+
+        this.updateDisplayCount();
+
         console.debug('Favorites', this.favorites);
     }
 
@@ -24,12 +29,26 @@ class FavoriteHandler {
         this.favorites = this.favorites.filter((favorite) => favorite.handle !== favoriteItem.handle);
         console.debug('Favorites after removal', this.favorites);
         this.updateLocalStorage(this.favorites);
+        this.updateDisplayCount();
     }
 
     addFavorite(favoriteItem) {
         this.favorites.push(favoriteItem);
         console.debug('Favorites after addition', this.favorites);
         this.updateLocalStorage(this.favorites);
+        this.updateDisplayCount();
+    }
+
+    updateDisplayCount() {
+        this.displayCountEls.forEach((el) => {
+            el.textContent = this.favorites.length;
+
+            if (this.favorites.length === 0) {
+                el.classList.add('opacity-0');
+            } else {
+                el.classList.remove('opacity-0');
+            }
+        });
     }
 
     updateLocalStorage(favorites) {
@@ -52,8 +71,6 @@ class FavoriteProducts extends HTMLElement {
         this.spinner = this.querySelector('[data-spinner]');
         this.emptyStateEl = this.querySelector('[data-empty-state]');
 
-        console.debug('FavoriteProducts', this.productGrid, this.spinner, this.emptyStateEl);
-
         if (favoriteHandler.favorites.length > 0) {
             this.fetchProducts();
         } else {
@@ -69,7 +86,6 @@ class FavoriteProducts extends HTMLElement {
      * @returns {Promise<HTMLLIElement>} - A promise that resolves to an HTML list item element containing the fetched product HTML.
      */
     async fetchProductHTML(favorite) {
-        console.debug('fetchProductHTML', favorite);
         let url = `/products/${favorite.handle}?view=card`;
 
         if (favorite.variantId) {
@@ -78,13 +94,9 @@ class FavoriteProducts extends HTMLElement {
 
         const productHTML = await fetch(url).then((res) => res.text());
 
-        console.debug('productHTML', productHTML);
-
         const parser = new DOMParser();
         const doc = parser.parseFromString(productHTML, 'text/html');
         const favoritesResult = doc.querySelector('.product-item');
-
-        console.debug('favoritesResult', favoritesResult);
 
         return favoritesResult;
     }

@@ -2652,7 +2652,7 @@ header[data-navigation-position="left"][data-logo-position="center"].is-sticky
 [data-js-cart-icon] {
     position: relative;
 }
-[data-js-cart-count] {
+.count-icon {
     background-color: var(--color-text-header);
     color: var(--color-background-header);
     border-radius: 9px;
@@ -2674,7 +2674,7 @@ header[data-navigation-position="left"][data-logo-position="center"].is-sticky
     opacity: 1;
 }
 @media (max-width: 479px) {
-    [data-js-cart-count] {
+    .count-icon {
         min-width: 14px;
         height: 14px;
         line-height: 14px;

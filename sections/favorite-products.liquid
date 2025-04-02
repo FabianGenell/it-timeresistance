@@ -1,8 +1,10 @@
 <favorite-products
   style="min-height: 100vh"
-  class="block h-full relative container mt-12 main-products-grid main-products-grid__results"
+  class="block h-full relative container mt-12"
   data-layout="grid"
 >
+  <h1 class="text-2xl block w-full mb-6 pb-2 border-b border-gray-200">Favorite Products</h1>
+
   <div
     data-product-grid
     class="grid grid-cols-2 md:grid-cols-4 gap-6"
@@ -25,6 +27,7 @@
 {% schema %}
 {
   "name": "Favorite Products",
+  "class": "section",
   "tag": "section",
   "settings": [],
   "presets": [

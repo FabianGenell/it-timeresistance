@@ -312,6 +312,17 @@
       }
     }
   ],
-  "variant": [],
+  "variant": [
+    {
+      "key": "gallery_media",
+      "namespace": "custom",
+      "name": "Gallery Media",
+      "description": "This will be shown at the bottom of the product page In the Gallery Slider",
+      "type": {
+        "name": "list.file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "shop": []
 }

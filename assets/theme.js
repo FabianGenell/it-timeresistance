@@ -1,5 +1,7 @@
 var SECTION_ID_ATTR$1 = 'data-section-id';
 
+console.log('loaded theme.js')
+
 function Section(container, properties) {
     this.container = validateContainerElement(container);
     this.id = container.getAttribute(SECTION_ID_ATTR$1);
@@ -7075,6 +7077,8 @@ class Product {
         const imagesWraps = t$2('.product__media', this.container);
         imagesWraps.forEach((imagesWrap) => switchImage(imagesWrap, id));
     }
+
+    //this function is called to change out all variant images
     _refreshOverviewWithVariant(variant_id) {
         const requestURL = ''
             .concat(window.location.pathname, '?section_id=')
@@ -7085,6 +7089,7 @@ class Product {
             ''.concat(selectors$G.photosDesktop, ', ').concat(selectors$G.photosMobile),
             target
         );
+
         mediaContainers.forEach((container) => {
             u$1(container, 'loading');
         });
@@ -7193,6 +7198,7 @@ class Product {
         this.formElement.dispatchEvent(new Event('change'));
 
         // Update selected variant image and thumb
+
         if (variant.featured_media) {
             if (
                 this.enableMultipleVariantMedia === 'true' &&

@@ -3,6 +3,18 @@
     calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ section.settings.mobile_columns }})
   {%- endcapture -%}
 
+{%- liquid
+  if section.settings.use_variant_images
+    assign variant = product.selected_variant
+    assign variant_images = variant.metafields.custom.gallery_media
+    assign variant_images_val = variant_images.value
+
+    if variant_images != blank
+      assign use_variant_images = true
+    endif
+  endif
+-%}
+
 <div
   class="
     gallery-carousel
@@ -55,23 +67,42 @@
       "
     >
       <div class="gallery-carousel__items carousel__wrapper swiper-wrapper">
-        {%- for block in section.blocks -%}
-          <div
-            {{ block.shopify_attributes }}
-            class="gallery-carousel__item carousel__slide swiper-slide"
-          >
-            {% render 'gallery-media',
-              block: block,
-              aspect_ratio: section.settings.aspect_ratio,
-              label_style: section.settings.image_caption_style,
-              label_size: section.settings.image_caption_size,
-              overlay_text_color: section.settings.overlay_text_color,
-              overlay_text_background: section.settings.overlay_text_background,
-              overlay_text_background_style: section.settings.overlay_text_background_style,
-              image_sizes: image_sizes
-            %}
-          </div>
-        {%- endfor -%}
+        {%- if use_variant_images -%}
+          {%- for image in variant_images_val -%}
+            <div
+              class="gallery-carousel__item carousel__slide swiper-slide"
+            >
+              {%- render 'gallery-item',
+                image: image,
+                aspect_ratio: section.settings.aspect_ratio,
+                label_style: section.settings.image_caption_style,
+                label_size: section.settings.image_caption_size,
+                overlay_text_color: section.settings.overlay_text_color,
+                overlay_text_background: section.settings.overlay_text_background,
+                overlay_text_background_style: section.settings.overlay_text_background_style,
+                image_sizes: image_sizes
+              -%}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for block in section.blocks -%}
+            <div
+              {{ block.shopify_attributes }}
+              class="gallery-carousel__item carousel__slide swiper-slide"
+            >
+              {% render 'gallery-media',
+                block: block,
+                aspect_ratio: section.settings.aspect_ratio,
+                label_style: section.settings.image_caption_style,
+                label_size: section.settings.image_caption_size,
+                overlay_text_color: section.settings.overlay_text_color,
+                overlay_text_background: section.settings.overlay_text_background,
+                overlay_text_background_style: section.settings.overlay_text_background_style,
+                image_sizes: image_sizes
+              %}
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     </div>
     {%- render 'carousel-navigation', wrapper_class: 'animation--controls' %}
@@ -86,6 +117,16 @@
     "groups": ["header", "custom.overlay"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Use variant images"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_variant_images",
+      "label": "Use variant images",
+      "default": false
+    },
     {
       "type": "text",
       "id": "heading",
@@ -377,6 +418,12 @@
     }
   ],
   "presets": [
+    {
+      "name": "Variant Media Gallery",
+      "settings": {
+        "use_variant_images": true
+      }
+    },
     {
       "name": "Media Gallery",
       "blocks": [

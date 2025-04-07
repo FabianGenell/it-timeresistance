@@ -111,6 +111,7 @@ window.Shopify = window.Shopify || {};
 window.Shopify.theme = window.Shopify.theme || {};
 window.Shopify.theme.sections = window.Shopify.theme.sections || {};
 
+
 var registered = (window.Shopify.theme.sections.registered =
     window.Shopify.theme.sections.registered || {});
 var instances = (window.Shopify.theme.sections.instances =
@@ -141,6 +142,8 @@ function register(type, properties) {
 
     return (registered[type] = TypedSection);
 }
+
+window.Shopify.theme.sections.register = register
 
 function load(types, containers) {
     types = normalizeType(types);
@@ -182,6 +185,9 @@ function load(types, containers) {
     });
 }
 
+window.Shopify.theme.sections.load = load
+
+
 function unload(selector) {
     var instancesToUnload = getInstances(selector);
 
@@ -195,6 +201,9 @@ function unload(selector) {
         instance.onUnload();
     });
 }
+
+window.Shopify.theme.sections.unload = unload
+
 
 function getInstances(selector) {
     var filteredInstances = [];
@@ -232,6 +241,9 @@ function getInstances(selector) {
     return filteredInstances;
 }
 
+window.Shopify.theme.sections.getInstances = getInstances
+
+
 function getInstanceById(id) {
     var instance;
 
@@ -243,6 +255,9 @@ function getInstanceById(id) {
     }
     return instance;
 }
+
+window.Shopify.theme.sections.getInstanceById = getInstanceById
+
 
 function isInstance(selector) {
     return getInstances(selector).length > 0;
@@ -297,6 +312,7 @@ function normalizeContainers(containers) {
 
     return containers;
 }
+
 
 if (window.Shopify.designMode) {
     document.addEventListener('shopify:section:load', function (event) {
@@ -10152,6 +10168,9 @@ register('featured-product', {
 
 register('gallery-carousel', {
     onLoad() {
+
+        console.debug('gallery-carousel onLoad');
+
         const { loopCarousel, productsPerView, mobileProductsPerView } = this.container.dataset;
 
         // Convert loop setting string into boolean
@@ -10188,6 +10207,9 @@ register('gallery-carousel', {
         });
     },
     onUnload() {
+
+        console.debug('gallery-carousel onUnload');
+
         var _this$carousel, _this$animateListSlid;
         (_this$carousel = this.carousel) === null ||
             _this$carousel === void 0 ||

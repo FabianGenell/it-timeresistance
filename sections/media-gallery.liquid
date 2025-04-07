@@ -8,106 +8,118 @@
     assign variant = product.selected_variant
     assign variant_images = variant.metafields.custom.gallery_media
     assign variant_images_val = variant_images.value
+    if variant_images_val == blank
+      for variant in product.variants
+        assign variant_images = variant.metafields.custom.gallery_media
+        assign variant_images_val = variant_images.value
+        if variant_images_val != blank
+          break
+        endif
+      endfor
+    endif
 
     if variant_images != blank
       assign use_variant_images = true
     endif
   endif
 -%}
-
-<div
-  class="
-    gallery-carousel
-    section
-    section--divider-{{ section.settings.divider_style }}
-    {{ section.settings.section_padding }}
-    {% if settings.enable_section_animations and section.settings.enable_animation %}
-      animation
-      animation--gallery-carousel
-    {% endif %}
-  "
-  data-section-id="{{ section.id }}"
-  data-section-type="gallery-carousel"
-  data-loop-carousel="{{ section.settings.loop_carousel }}"
-  data-products-per-view="{{ section.settings.columns }}"
-  data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
->
-  <div class="gallery-carousel__inner">
-    <div class="gallery-carousel__meta carousel__navigation-wrapper">
-      <div class="section-introduction animation--section-introduction">
-        {%- unless section.settings.heading == blank -%}
-          <{{ section.settings.heading_tag }} class="gallery-carousel__heading ff-heading fs-heading-3-base section-introduction__heading">
-            {{ section.settings.heading }}
-          </{{ section.settings.heading_tag }}>
-        {%- endunless -%}
-
-        {%- unless section.settings.subheading == blank -%}
-          <div class="gallery-carousel__subheading ff-body fs-body-100 rte section-introduction__subheading">
-            {{ section.settings.subheading }}
-          </div>
-        {%- endunless -%}
-
-        {%- render 'button-block',
-          wrapper_class: 'gallery-carousel__button section-introduction__button',
-          link: section.settings.link,
-          label: section.settings.link_text,
-          button_style: 'btn--callout'
-        -%}
-      </div>
-    </div>
-
+{%- unless section.settings.use_variant_images and variant_images_val == blank -%}
+  <reload-on-event data-event="product:variant-change">
     <div
       class="
-        gallery-carousel__content
-        carousel
-        carousel--per-view-{{ section.settings.columns }}
-        carousel--mobile-per-view-{{ section.settings.mobile_columns }}
-        swiper
-        lightbox-media-container
+        gallery-carousel
+        section
+        section--divider-{{ section.settings.divider_style }}
+        {{ section.settings.section_padding }}
+        {% if settings.enable_section_animations and section.settings.enable_animation %}
+          animation
+          animation--gallery-carousel
+        {% endif %}
       "
+      data-section-id="{{ section.id }}"
+      data-section-type="gallery-carousel"
+      data-loop-carousel="{{ section.settings.loop_carousel }}"
+      data-products-per-view="{{ section.settings.columns }}"
+      data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
     >
-      <div class="gallery-carousel__items carousel__wrapper swiper-wrapper">
-        {%- if use_variant_images -%}
-          {%- for image in variant_images_val -%}
-            <div
-              class="gallery-carousel__item carousel__slide swiper-slide"
-            >
-              {%- render 'gallery-item',
-                image: image,
-                aspect_ratio: section.settings.aspect_ratio,
-                label_style: section.settings.image_caption_style,
-                label_size: section.settings.image_caption_size,
-                overlay_text_color: section.settings.overlay_text_color,
-                overlay_text_background: section.settings.overlay_text_background,
-                overlay_text_background_style: section.settings.overlay_text_background_style,
-                image_sizes: image_sizes
-              -%}
-            </div>
-          {%- endfor -%}
-        {%- else -%}
-          {%- for block in section.blocks -%}
-            <div
-              {{ block.shopify_attributes }}
-              class="gallery-carousel__item carousel__slide swiper-slide"
-            >
-              {% render 'gallery-media',
-                block: block,
-                aspect_ratio: section.settings.aspect_ratio,
-                label_style: section.settings.image_caption_style,
-                label_size: section.settings.image_caption_size,
-                overlay_text_color: section.settings.overlay_text_color,
-                overlay_text_background: section.settings.overlay_text_background,
-                overlay_text_background_style: section.settings.overlay_text_background_style,
-                image_sizes: image_sizes
-              %}
-            </div>
-          {%- endfor -%}
-        {%- endif -%}
+      <div class="gallery-carousel__inner">
+        <div class="gallery-carousel__meta carousel__navigation-wrapper">
+          <div class="section-introduction animation--section-introduction">
+            {%- unless section.settings.heading == blank -%}
+              <{{ section.settings.heading_tag }} class="gallery-carousel__heading ff-heading fs-heading-3-base section-introduction__heading">
+                {{ section.settings.heading }}
+              </{{ section.settings.heading_tag }}>
+            {%- endunless -%}
+
+            {%- unless section.settings.subheading == blank -%}
+              <div class="gallery-carousel__subheading ff-body fs-body-100 rte section-introduction__subheading">
+                {{ section.settings.subheading }}
+              </div>
+            {%- endunless -%}
+
+            {%- render 'button-block',
+              wrapper_class: 'gallery-carousel__button section-introduction__button',
+              link: section.settings.link,
+              label: section.settings.link_text,
+              button_style: 'btn--callout'
+            -%}
+          </div>
+          {%- render 'carousel-navigation', wrapper_class: 'animation--controls' %}
+        </div>
+
+        <div
+          class="
+            gallery-carousel__content
+            carousel
+            carousel--per-view-{{ section.settings.columns }}
+            carousel--mobile-per-view-{{ section.settings.mobile_columns }}
+            swiper
+            lightbox-media-container
+          "
+        >
+          <div class="gallery-carousel__items carousel__wrapper swiper-wrapper">
+            {%- if use_variant_images -%}
+              {%- for image in variant_images_val -%}
+                <div
+                  class="gallery-carousel__item carousel__slide swiper-slide"
+                >
+                  {%- render 'gallery-item',
+                    image: image,
+                    aspect_ratio: section.settings.aspect_ratio,
+                    label_style: section.settings.image_caption_style,
+                    label_size: section.settings.image_caption_size,
+                    overlay_text_color: section.settings.overlay_text_color,
+                    overlay_text_background: section.settings.overlay_text_background,
+                    overlay_text_background_style: section.settings.overlay_text_background_style,
+                    image_sizes: image_sizes
+                  -%}
+                </div>
+              {%- endfor -%}
+            {%- else -%}
+              {%- for block in section.blocks -%}
+                <div
+                  {{ block.shopify_attributes }}
+                  class="gallery-carousel__item carousel__slide swiper-slide"
+                >
+                  {% render 'gallery-media',
+                    block: block,
+                    aspect_ratio: section.settings.aspect_ratio,
+                    label_style: section.settings.image_caption_style,
+                    label_size: section.settings.image_caption_size,
+                    overlay_text_color: section.settings.overlay_text_color,
+                    overlay_text_background: section.settings.overlay_text_background,
+                    overlay_text_background_style: section.settings.overlay_text_background_style,
+                    image_sizes: image_sizes
+                  %}
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
       </div>
     </div>
-    {%- render 'carousel-navigation', wrapper_class: 'animation--controls' %}
-  </div>
-</div>
+  </reload-on-event>
+{%- endunless -%}
 
 {% schema %}
 {

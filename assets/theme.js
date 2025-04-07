@@ -4006,17 +4006,34 @@ const prefersReducedMotion = () => {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 };
 function backgroundVideoHandler(container) {
-    const pause = n$2('.video-pause', container);
+    const pause = n$2('[data-toggle-play]', container);
+    const sound = n$2('[data-toggle-sound]', container);
+
+    const playIcon = n$2('[data-toggle-play] .icon', container);
+    const soundIcon = n$2('[data-toggle-sound] .icon-sound', container);
+    const soundOffIcon = n$2('[data-toggle-sound] .icon-sound-off', container);
+
     const video = container.getElementsByTagName('VIDEO')[0];
     if (!pause || !video) return;
     const pauseVideo = () => {
         video.pause();
-        pause.innerText = strings$7.play_video;
+        playIcon.classList.remove('hidden');
     };
+    
     const playVideo = () => {
         video.play();
-        pause.innerText = strings$7.pause_video;
+        playIcon.classList.add('hidden');
     };
+
+    const toggleSound = () => {
+        const muted = video.muted;
+        video.muted = !muted;
+        if (soundIcon && soundOffIcon) {
+            soundIcon.classList.toggle('hidden', !muted);
+            soundOffIcon.classList.toggle('hidden', muted);
+        }
+    };
+
     if (prefersReducedMotion()) {
         pauseVideo();
     }
@@ -4028,8 +4045,15 @@ function backgroundVideoHandler(container) {
             pauseVideo();
         }
     });
-    return () => pauseListener();
-}
+    const soundListener = e$2(sound, 'click', (e) => {
+        e.preventDefault();
+        toggleSound();
+    });
+    return () => {
+        pauseListener();
+        soundListener();
+    };
+};
 
 const classes$t = {
     hidden: 'hidden'

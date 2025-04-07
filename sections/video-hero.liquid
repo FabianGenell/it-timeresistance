@@ -104,7 +104,7 @@
       {% render 'overlay-button-vars', color_button_text: section.settings.button_text_color, color_button_background: section.settings.button_background_color %}
   "
 >
-  <div class="video-hero__inner">
+  <div class="video-hero__inner z-0">
     <div
       class="video-hero__media-container"
       data-video-loading="false"
@@ -121,6 +121,29 @@
         {% endif %}
       "
     >
+      <!-- Video Controls -->
+
+      <div data-toggle-play class="absolute w-full h-full z-10 flex items-center justify-center">
+        <button
+          class="video-hero__control video-hero__control--play"
+        >
+          <div class="w-8">
+            {% render 'icon', icon: 'play', class: 'hidden w-full h-auto' %}
+          </div>
+        </button>
+      </div>
+
+      <div class="absolute bottom-0 right-0 p-3 z-20">
+        <button
+          data-toggle-sound
+          class=""
+        >
+          {% render 'icon', icon: 'sound', class: 'hidden' %}
+
+          {% render 'icon', icon: 'sound-off' %}
+        </button>
+      </div>
+
       {%- if has_video or has_mobile_video -%}
         <div class="video-hero__video-wrapper">
           {%- if has_mobile_video or has_video -%}

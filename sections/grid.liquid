@@ -147,10 +147,12 @@
       "default": "none",
       "options": [
         {
-          "label": "t:shared.settings.section_style.divider_style.option_none", "value": "none"
+          "label": "t:shared.settings.section_style.divider_style.option_none",
+          "value": "none"
         },
         {
-          "label": "t:shared.settings.section_style.divider_style.option_solid", "value": "solid"
+          "label": "t:shared.settings.section_style.divider_style.option_solid",
+          "value": "solid"
         }
       ]
     },
@@ -188,7 +190,7 @@
           "id": "width",
           "label": "t:sections.grid.blocks.item.settings.width.label",
           "type": "select",
-          "default": "100",
+          "default": "25",
           "options": [
             {
               "value": "100",
@@ -220,7 +222,7 @@
           "min": 300,
           "max": 800,
           "step": 20,
-          "default": 500
+          "default": 400
         },
         {
           "type": "range",
@@ -260,14 +262,28 @@
           "id": "focal_point",
           "type": "select",
           "label": "t:shared.settings.focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
           "id": "mobile_focal_point",
           "type": "select",
           "label": "t:sections.grid.blocks.item.settings.mobile_focal_point.label",
-          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
           "default": "image_presentation"
         },
         {
@@ -279,17 +295,35 @@
           "type": "select",
           "label": "t:sections.grid.blocks.item.settings.text_position.label",
           "options": [
-            { "label": "t:shared.settings.alignment_matrix.option_top_left", "value": "flex-start_flex-start" },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_top_left",
+              "value": "flex-start_flex-start"
+            },
             { "label": "t:shared.settings.alignment_matrix.option_top_center", "value": "center_flex-start" },
-            { "label": "t:shared.settings.alignment_matrix.option_top_right", "value": "flex-end_flex-start" },
-            { "label": "t:shared.settings.alignment_matrix.option_middle_left", "value": "flex-start_center" },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_top_right",
+              "value": "flex-end_flex-start"
+            },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_middle_left",
+              "value": "flex-start_center"
+            },
             { "label": "t:shared.settings.alignment_matrix.option_middle_center", "value": "center_center" },
             { "label": "t:shared.settings.alignment_matrix.option_middle_right", "value": "flex-end_center" },
-            { "label": "t:shared.settings.alignment_matrix.option_bottom_left", "value": "flex-start_flex-end" },
-            { "label": "t:shared.settings.alignment_matrix.option_bottom_center", "value": "center_flex-end" },
-            { "label": "t:shared.settings.alignment_matrix.option_bottom_right", "value": "flex-end_flex-end" }
+            {
+              "label": "t:shared.settings.alignment_matrix.option_bottom_left",
+              "value": "flex-start_flex-end"
+            },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_bottom_center",
+              "value": "center_flex-end"
+            },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_bottom_right",
+              "value": "flex-end_flex-end"
+            }
           ],
-          "default": "center_center"
+          "default": "center_flex-end"
         },
         {
           "id": "accent",
@@ -446,7 +480,8 @@
         {
           "id": "link_text",
           "type": "text",
-          "label": "t:sections.grid.blocks.item.settings.link_text.label"
+          "label": "t:sections.grid.blocks.item.settings.link_text.label",
+          "default": "View All"
         },
         {
           "type": "select",
@@ -514,7 +549,7 @@
           "min": 0,
           "max": 100,
           "step": 1,
-          "default": 30
+          "default": 0
         }
       ]
     }

@@ -7,12 +7,12 @@
   if section.settings.use_variant_images
     assign variant = product.selected_variant
     assign variant_images = variant.metafields.custom.gallery_media
-    assign variant_images_val = variant_images.value
-    if variant_images_val == blank
+    assign variant_media_val = variant_images.value
+    if variant_media_val == blank
       for variant in product.variants
         assign variant_images = variant.metafields.custom.gallery_media
-        assign variant_images_val = variant_images.value
-        if variant_images_val != blank
+        assign variant_media_val = variant_images.value
+        if variant_media_val != blank
           break
         endif
       endfor
@@ -22,8 +22,18 @@
       assign use_variant_images = true
     endif
   endif
+
+  assign loop_carousel = section.settings.loop_carousel
+
+  if use_variant_images
+    assign variant_images_size = variant_images.value | split: ',' | size
+    if variant_images_size < 3
+      assign loop_carousel = false
+    endif
+  endif
 -%}
-{%- unless section.settings.use_variant_images and variant_images_val == blank -%}
+
+{%- unless section.settings.use_variant_images and variant_media_val == blank -%}
   <reload-on-event data-event="product:variant-change">
     <div
       class="
@@ -38,7 +48,7 @@
       "
       data-section-id="{{ section.id }}"
       data-section-type="gallery-carousel"
-      data-loop-carousel="{{ section.settings.loop_carousel }}"
+      data-loop-carousel="{{ loop_carousel }}"
       data-products-per-view="{{ section.settings.columns }}"
       data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
     >
@@ -64,6 +74,7 @@
               button_style: 'btn--callout'
             -%}
           </div>
+
           {%- render 'carousel-navigation', wrapper_class: 'animation--controls' %}
         </div>
 
@@ -79,12 +90,12 @@
         >
           <div class="gallery-carousel__items carousel__wrapper swiper-wrapper">
             {%- if use_variant_images -%}
-              {%- for image in variant_images_val -%}
+              {%- for media in variant_media_val -%}
                 <div
                   class="gallery-carousel__item carousel__slide swiper-slide"
                 >
                   {%- render 'gallery-item',
-                    image: image,
+                    media: media,
                     aspect_ratio: section.settings.aspect_ratio,
                     label_style: section.settings.image_caption_style,
                     label_size: section.settings.image_caption_size,

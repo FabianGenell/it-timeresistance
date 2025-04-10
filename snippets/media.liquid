@@ -52,7 +52,7 @@
     </{{ media_link_element }}>
 
   {%- elsif media.media_type == 'video' -%}
-    {{ media | video_tag: image_size: '1024x' }}
+    {{ media | video_tag: image_size: '1024x', autoplay: true, muted: true }}
 
   {%- elsif media.media_type == 'external_video' -%}
     {% # external_video_tag will include the wrong origin parameter when viewing a shopify preview URL, the replace here is to work around that %}

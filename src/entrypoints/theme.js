@@ -3,7 +3,7 @@ import '../scripts/utils/theme-functions.js';
 import '../scripts/utils/css-helpers.js';
 */
 
-window.theme = {};
+window.theme = window.theme || {};
 
 import '../scripts/components/';
 import '../scripts/utils/lazy-images.js';

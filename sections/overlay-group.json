@@ -14,16 +14,16 @@
     "quick-cart": {
       "type": "quick-cart",
       "settings": {
-        "enable_quick_cart": true,
+        "enable_quick_cart": false,
         "show_product_currency": true,
-        "promotion_text": "<p>Check out these collections.<\/p>",
+        "promotion_text": "<p>Check out these collections.</p>",
+        "collection_list": [],
         "collection_list_button_style": "btn--secondary"
       }
     },
     "popup": {
       "type": "popup",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

@@ -18,6 +18,7 @@
       - focal_alignment: { String } The focal alignment ('object-position') of the image (based on the focal point
         source). Used for cropping.
       - wrapper_class: { String } A custom class to be applied to the image wrapper.
+      - image_class: { String } A custom class to be applied to the image.
       - prioritize_loading: { Boolean } If 'true', the `loading="lazy"` attribute won't be added to the image.
       - animate: { Boolean } Whether the image should be animated.
       - include_placeholder: { Boolean } Whether a placeholder should be rendered if no image is provided.
@@ -85,7 +86,8 @@
       no_crop: no_crop,
       object_fit: object_fit,
       fallback_alt: fallback_alt,
-      src_set_type: src_set_type
+      src_set_type: src_set_type,
+      class_name: image_class
     %}
   </div>
 {%- elsif include_placeholder -%}

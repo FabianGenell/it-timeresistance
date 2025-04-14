@@ -109,7 +109,7 @@
 
 <{{ tag_name }}
   alt="{{ alt | escape }}"{{ ' ' }}
-  class="image__img{%- if class_name -%} {{ class_name }}{%- endif -%}"{{ ' ' }}
+  class="image__img{%- if class_name %} {{ class_name }}{%- endif -%}"{{ ' ' }}
   {% if prioritize_loading %}fetchpriority="high"{% else %}loading="lazy"{{ ' ' }}{% endif %}
   width="{{ image.width }}"{{ ' ' }}
   height="{{ image.height }}"{{ ' ' }}

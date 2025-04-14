@@ -17,6 +17,8 @@
 
   # Split the selected colors into an array
   assign color_array = selected_colors | split: ','
+
+  assign show_unavailable_variants = false
 -%}
 
 {% for variant in prod.variants %}
@@ -28,8 +30,10 @@
       # Check if any variant option matches any selected color
       for color in color_array
         if variant.option1 == color or variant.option2 == color or variant.option3 == color
-          assign show_variant = true
-          break
+          if variant.available or show_unavailable_variants
+            assign show_variant = true
+            break
+          endif
         endif
       endfor
     endif

@@ -1,6 +1,6 @@
 {%- if prod.handle != blank -%}
   <add-favorite
-    class="cursor-pointer group"
+    class="cursor-pointer flex group {{ class }}"
     data-product-handle="{{ prod.handle }}"
     {% if var.id != blank %}
       data-variant-id="{{ var.id }}"

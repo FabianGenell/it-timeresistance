@@ -138,13 +138,17 @@
   {%- endif %}
 
   <div
-    class="product-form__controls-group product-form__controls-group--submit"
+    class="
+      product-form__controls-group product-form__controls-group--submit
+      flex gap-2 items-center
+    "
     {% if block %}
       {{- block.shopify_attributes -}}
     {% endif %}
   >
     <div
       class="
+              w-full
         product-form__item product-form__item--submit
         {%- if show_dynamic_checkout %} product-form__item--payment-button {%- endif -%}
         {%- if prod.has_only_default_variant %} product-form__item--no-variants {%- endif -%}
@@ -195,6 +199,10 @@
         ></div>
       {%- endunless -%}
     </div>
+
+    {%- if show_favorites -%}
+      {%- render 'button-wishlist', prod: prod -%}
+    {%- endif -%}
   </div>
 
   {%- if block.settings.enable_sticky_atc_bar_desktop or block.settings.enable_sticky_atc_bar_mobile -%}

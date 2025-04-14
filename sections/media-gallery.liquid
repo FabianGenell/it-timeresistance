@@ -132,6 +132,59 @@
   </reload-on-event>
 {%- endunless -%}
 
+<script>
+  async function initLightbox() {
+    const { PhotoSwipeLightbox, PhotoSwipe } = await import(flu.chunks.photoswipe);
+
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+
+    const lightbox = new PhotoSwipeLightbox({
+      mainClass: 'pswp--product-lightbox',
+      pswpModule: PhotoSwipe,
+      showHideAnimationType: 'zoom',
+      bgOpacity: 1,
+      onClick: (e) => {
+        console.log('Click event:', e);
+      },
+      dataSource: galleryItems.map((item) => {
+        const data = {
+          src: item.getAttribute('data-pswp-src'),
+          width: parseInt(item.getAttribute('data-pswp-width') || '0'),
+          height: parseInt(item.getAttribute('data-pswp-height') || '0')
+        };
+        return data;
+      }),
+      arrowPrevSVG: window.theme.icons.chevron,
+      arrowNextSVG: window.theme.icons.chevron,
+      closeSVG: window.theme.icons.close,
+      zoomSVG: window.theme.icons.zoom
+    });
+
+    lightbox.init();
+
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        lightbox.loadAndOpen(index);
+      });
+    });
+  }
+
+  document.addEventListener('reload-on-event:loaded', ({ detail }) => {
+    const SECTION_ID = '{{ section.id }}';
+    if (detail.shopifySectionId === SECTION_ID) {
+      initLightbox();
+    }
+  });
+
+  if (document.readyState === 'complete') {
+    initLightbox();
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      initLightbox();
+    });
+  }
+</script>
+
 {% schema %}
 {
   "name": "Media Gallery",

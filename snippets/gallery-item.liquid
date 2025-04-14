@@ -55,6 +55,10 @@
     --label-gradient-mid: {{ overlay_text_background | color_modify: 'alpha', 0.2 }};
     --label-gradient-end: {{ overlay_text_background | color_modify: 'alpha', 0 }};
   "
+
+  data-pswp-src="{{ media | image_url }}"
+  data-pswp-width="{{ media.width }}"
+  data-pswp-height="{{ media.height }}"
 >
   <div class="gallery-item__image-wrapper hover">
     {%- if media.media_type == 'video' -%}

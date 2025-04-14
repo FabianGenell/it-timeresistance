@@ -52,6 +52,16 @@ class ReloadOnEvent extends HTMLElement {
         this.container = newContainer;
 
         window.Shopify.theme.sections.load(this.sectionType, this.container);
+
+        this.dispatchEvent(
+            new CustomEvent('reload-on-event:loaded', {
+                bubbles: true,
+                detail: {
+                    sectionId: this.sectionId,
+                    shopifySectionId: this.shopifySectionId
+                }
+            })
+        );
     }
 
     async setNewHTML() {

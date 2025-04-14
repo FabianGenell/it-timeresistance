@@ -31,7 +31,7 @@
 {% assign useCustomCSS = true %}
 
 {% if useCustomEvents %}
-  <script src="{{ 'custom-events.js' | asset_url }}" defer></script>
+  {% comment %} <script src="{{ 'custom-events.js' | asset_url }}" defer></script> {% endcomment %}
   <script>
     window.flu.states = {
       useCustomEvents: true

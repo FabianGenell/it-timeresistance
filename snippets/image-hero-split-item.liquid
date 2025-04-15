@@ -1,8 +1,5 @@
 {% liquid
-  assign prioritize_loading = false
-  if section.index == 1 and index == 1
-    assign prioritize_loading = true
-  endif
+  assign image = block.settings.image_xl | default: block.settings.image
 %}
 {%- capture tag -%}
   {%- if block.settings.link_text == blank and block.settings.link != blank -%}a{%- else -%}div{%- endif -%}
@@ -17,6 +14,7 @@
 <{{ tag }}
   {{ attributes }}
   class="
+      group
     image-hero-split-item
     image-hero-split-item--{{ index }}
     image-hero-split-item--image-aspect-{{ image_aspect }}
@@ -24,37 +22,50 @@
   "
   style="    --text-vertical-position: {{ text_position }};"
 >
-  <div class="image-hero-split-item__image-container">
-    {%- if block.settings.image_mobile != blank -%}
+  <div class="image-hero-split-item__image-container ">
+    {% comment %}
+      {%- if block.settings.image_mobile != blank -%}
+        {%-
+          render 'legacy-image' with
+          wrapper_class: "image-hero-split-item__image image-hero-split-item__image--mobile",
+          image: block.settings.image_mobile,
+          sizes: "100vw",
+          focal_point: block.settings.mobile_focal_point,
+          animate: true
+        -%}
+      {%- endif -%}
+
+      {%- liquid
+        assign placeholder_aspect_ratio = 'no-ratio'
+
+        if image_aspect == 'original' and index == 1
+          assign placeholder_aspect_ratio = 'square'
+        endif
+      -%}
+
       {%-
         render 'legacy-image' with
-        wrapper_class: "image-hero-split-item__image image-hero-split-item__image--mobile",
-        image: block.settings.image_mobile,
-        sizes: "100vw",
-        focal_point: block.settings.mobile_focal_point,
-        animate: true
+        wrapper_class: "image-hero-split-item__image image-hero-split-item__image--desktop",
+        image: block.settings.image,
+        sizes: "(max-width: 45em) 100vw, (max-width: 45em) 50vw",
+        focal_point: block.settings.focal_point,
+        include_placeholder: true,
+        placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+        animate: false,
+        prioritize_loading: prioritize_loading
       -%}
-    {%- endif -%}
+    {% endcomment %}
 
-    {%- liquid
-      assign placeholder_aspect_ratio = 'no-ratio'
-
-      if image_aspect == 'original' and index == 1
-        assign placeholder_aspect_ratio = 'square'
-      endif
-    -%}
-
-    {%-
-      render 'legacy-image' with
-      wrapper_class: "image-hero-split-item__image image-hero-split-item__image--desktop",
-      image: block.settings.image,
-      sizes: "(max-width: 45em) 100vw, (max-width: 45em) 50vw",
-      focal_point: block.settings.focal_point,
-      include_placeholder: true,
-      placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
-      animate: false,
-      prioritize_loading: prioritize_loading
-    -%}
+    {%- render 'pictures',
+      breakpoints: '719, 1920',
+      image: image,
+      image_719: block.settings.image_mobile,
+      image_1920: block.settings.image,
+      sizes: '(max-width: 719px) 100vw, 50vw',
+      widths: '390, 719, 1920, 3000',
+      class: 'img-fit img-fit--zoom group-hover:scale-105',
+      section_index: section.index
+    %}
   </div>
   <div class="image-hero-split-item__text-container">
     <div class="image-hero-split-item__text-container-inner section-blocks animation--section-blocks">

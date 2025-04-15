@@ -1,0 +1,295 @@
+{%- comment -%}theme-check-disable ImgLazyLoading{%- endcomment -%}
+{%- comment -%}
+  Parameters:
+  - image {Object} - Image object (largest viewpoint, desktop)
+  - widths {Array} - Array of widths with width and srcset
+  - breakpoints {Array} - Array of breakpoints (min-width) with width and srcset
+  - image_{breakpoint} {Object} - Image object for the breakpoint
+  - src_width {Number} - Width of the image
+  - sizes {String} - Sizes attribute for the image
+  - class {String} - Class name(s) for the 'class' attribute (optional).
+  - attributes {String} - Additional attributes (optional).
+  - alt_text {String} - Custom text for the 'alt' attribute (optional).
+  - disable_focal_point {Boolean} - Disables the focussing of a spot on the image (optional, default is false).
+  - section_index {Number} - If passed, image lazy load will be prevented if it's the first section
+  - lazy_load {Boolean} - Image should be lazy load (optional, default is true).
+  - lazy_type {String} - [dom, load, manual] sets when to load the image
+
+  Usage:
+  {% render 'pictures',
+    breakpoints: '400, 800, 1200, 3000',
+    image_400: image_400,
+    image_800: image_800,
+    image_1200: image_1200,
+    image_3000: image_3000,
+    widths: '400, 600, 800, 1200, 2000, 3000',
+    sizes: sizes,
+    class: 'img-fit',
+    src_width: 1000
+  %}
+{%- endcomment -%}
+
+{%- liquid
+  assign input_image = image
+  assign input_srcset = widths | remove: ' ' | split: ','
+  assign raw_breakpoints = breakpoints | replace: ' ', '' | split: ','
+  assign cleaned_breakpoints = ''
+
+  for breakpoint in raw_breakpoints
+    assign image_source_name = 'image_' | append: breakpoint
+    assign image = [image_source_name]
+
+    if image != blank
+      assign cleaned_breakpoints = cleaned_breakpoints | append: ',' | append: breakpoint
+    endif
+  endfor
+
+  assign breakpoints = cleaned_breakpoints | remove_first: ',' | split: ',' | sort
+  assign js_class = class
+
+  unless lazy_load == false or section_index == 1
+    assign lazy_load = true
+
+    if class
+      assign js_class = class | append: ' no-js-hidden'
+    else
+      assign js_class = 'no-js-hidden'
+    endif
+  endunless
+
+  assign disable_focal_point = disable_focal_point | default: false
+-%}
+
+<picture>
+  {%- for breakpoint in breakpoints reversed -%}
+    {%- liquid
+      assign image_source_name = 'image_' | append: breakpoint
+      assign image = [image_source_name]
+      assign output_srcset = ''
+      assign srcset_entries = ''
+
+      if input_srcset[0] != blank
+        for size in input_srcset
+          assign size_int = size | times: 1
+
+          if size_int <= 5760 and size_int > 0
+            if image.width >= size_int
+              assign output_srcset = output_srcset | append: size | append: ','
+
+              # Build srcset entry
+              capture new_srcset_entry
+                echo image | image_url: width: size_int
+                echo ' '
+                echo size_int
+                echo 'w'
+              endcapture
+
+              if srcset_entries != blank
+                assign srcset_entries = srcset_entries | append: ', '
+              endif
+              assign srcset_entries = srcset_entries | append: new_srcset_entry
+            endif
+          endif
+        endfor
+      else
+        assign img_width = image.width
+
+        if img_width > 5760
+          assign img_width = 5760
+        endif
+
+        assign output_srcset = img_width | append: ','
+
+        capture srcset_entries
+          echo image | image_url: width: img_width
+          echo ' '
+          echo img_width
+          echo 'w'
+        endcapture
+      endif
+
+      assign output_srcset = output_srcset | remove_last: ',' | split: ','
+
+      unless src_width and src_width <= 5760
+        assign src_width = output_srcset.last | default: '1920'
+      endunless
+
+      assign output_image_width = output_srcset.last
+    -%}
+    {%- capture script -%}
+      {{ script }}
+        <script>
+            (() => {
+              const imageInfo = {
+                output_image_width: {{ output_image_width | json}},
+                srcset: {{ srcset_entries | json}},
+                src_width: {{ src_width | json}},
+                image: {
+                  'width': {{ image.width | json}},
+                  'height': {{ image.height | json}},
+                  'src': {{ image | json}}
+                },
+                breakpoint: {{ breakpoint | json}},
+                input_srcset: {{ input_srcset | json}},
+                output_srcset: {{ output_srcset | json}},
+                image_source_name: {{ image_source_name | json }},
+                lazy_load: {{ lazy_load | json }},
+                sizes: {{ sizes | json }}
+              }
+
+              // Validation function to check image data
+              function validateImageInfo(info) {
+                const errors = [];
+
+                // Check required properties
+                if (!info.output_image_width) errors.push('Missing output_image_width');
+                if (!info.src_width) errors.push('Missing src_width');
+                if (!info.breakpoint) errors.push('Missing breakpoint');
+
+                // Validate dimensions
+                if (info.output_image_width > 5760) errors.push('output_image_width exceeds Shopify limit of 5760px');
+                if (info.src_width > 5760) errors.push('src_width exceeds Shopify limit of 5760px');
+
+                // Validate image object
+                if (!info.image || typeof info.image !== 'object') {
+                  errors.push('Invalid image object');
+                } else {
+                  if (!info.image.width) errors.push('Missing image.width');
+                  if (info.image.width > 5760) errors.push('Image width exceeds Shopify limit of 5760px');
+                  if (!info.image.src) errors.push('Missing image.src');
+                }
+
+                // Validate srcset format if present
+                if (info.srcset) {
+                  const srcsetEntries = info.srcset.split(',').map(s => s.trim()).filter(Boolean);
+                  if (srcsetEntries.length === 0) {
+                    errors.push('Empty srcset');
+                  } else {
+                    srcsetEntries.forEach(entry => {
+                      const [url, size] = entry.split(' ');
+                      if (!url || !size) {
+                        errors.push(`Invalid srcset entry: ${entry}`);
+                      } else if (!size.endsWith('w')) {
+                        errors.push(`Invalid size descriptor in srcset: ${size}`);
+                      } else {
+                        const width = parseInt(size.replace('w', ''));
+                        if (isNaN(width) || width > 5760) {
+                          errors.push(`Invalid width in srcset: ${width}`);
+                        }
+                      }
+                    });
+                  }
+                }
+
+                // Validate input_srcset array
+                if (!Array.isArray(info.input_srcset)) {
+                  errors.push('input_srcset is not an array');
+                } else if (info.input_srcset.length === 0) {
+                  errors.push('Empty input_srcset array');
+                } else {
+                  info.input_srcset.forEach(size => {
+                    const width = parseInt(size);
+                    if (isNaN(width) || width > 5760) {
+                      errors.push(`Invalid width in input_srcset: ${size}`);
+                    }
+                  });
+                }
+
+                // Validate output_srcset array
+                if (!Array.isArray(info.output_srcset)) {
+                  errors.push('output_srcset is not an array');
+                } else if (info.output_srcset.length === 0) {
+                  errors.push('Empty output_srcset array');
+                } else {
+                  info.output_srcset.forEach(size => {
+                    const width = parseInt(size);
+                    if (isNaN(width) || width > 5760) {
+                      errors.push(`Invalid width in output_srcset: ${size}`);
+                    }
+                  });
+                }
+
+                // Validate sizes attribute if present
+                if (info.sizes && typeof info.sizes !== 'string') {
+                  errors.push('Invalid sizes attribute format');
+                }
+
+                return errors;
+              }
+
+              const validationErrors = validateImageInfo(imageInfo);
+
+              console.log('Image Info:', imageInfo);
+              if (validationErrors.length > 0) {
+                console.error('Image Validation Errors:', validationErrors);
+                // Add a visual indicator for developers
+                document.currentScript.insertAdjacentHTML('afterend',
+                  `<div style="display: none; background: #ffebee; color: #c62828; padding: 10px; margin: 10px 0; border: 1px solid #ef5350;">
+                    <strong>Image Validation Errors:</strong><br>
+                    ${validationErrors.join('<br>')}
+                  </div>`
+                );
+              }
+            })();
+        </script>
+    {%- endcapture -%}
+
+    <!-- Breakpoint: {{ breakpoint }} -->
+    <source
+      {% if srcset_entries != blank %}
+        {%- if lazy_load %}data-{% endif -%}
+        srcset="{{ srcset_entries }}"
+      {% endif -%}
+
+      {% if sizes and srcset_entries != blank %}
+        sizes="{{ sizes }}"
+      {% endif -%}
+
+      {% if lazy_load %}
+        data-
+      {%- endif -%}
+      src="{{ image | image_url: width: src_width }}"
+
+      {% if attributes %}
+        {{- attributes }}
+      {% endif -%}
+
+      {%- if lazy_type and lazy_load -%}
+        data-load-{{ lazy_type }}
+      {%- endif -%}
+
+      {% if disable_focal_point == false and image.presentation.focal_point %}
+        style="object-position: {{ image.presentation.focal_point }}"
+      {% endif -%}
+
+      width="{{ output_image_width }}"
+      height="{{ image.height | default: '' }}"
+      {%- unless lazy_load -%}
+        fetchpriority="high"
+      {%- endunless -%}
+
+      media="(max-width: {{ breakpoint }}px)"
+    >
+  {%- endfor -%}
+
+  <!-- Normal image (desktop) -->
+
+  {%- render 'image',
+    image: input_image,
+    src_width: src_width,
+    sizes: sizes,
+    widths: widths,
+    class: class,
+    attributes: attributes,
+    alt_text: alt_text,
+    disable_focal_point: disable_focal_point,
+    lazy_load: lazy_load,
+    lazy_type: lazy_type
+  -%}
+</picture>
+
+{{ script }}
+
+<script>
+  console.log('breakpoints', {{ breakpoints | json }})
+</script>

@@ -15,3 +15,13 @@
 .img-fit--contain {
     object-fit: contain;
 }
+
+.img-fit--zoom {
+    transition: transform 2s ease;
+}
+
+@media (hover: hover) {
+    .img-fit--zoom:hover {
+        transform: scale(1.05);
+    }
+}

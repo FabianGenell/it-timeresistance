@@ -106,3 +106,5 @@ export function loadManualImages(container = document) {
 
 afterCallstack(initLazyImages);
 document.addEventListener('DOMContentLoaded', initLazyImages);
+
+document.addEventListener('shopify:section:load', () => afterCallstack(initLazyImages));

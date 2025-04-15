@@ -196,9 +196,15 @@
       data-load-{{ lazy_type }}
     {%- endif -%}
 
-    {% if disable_focal_point == false and image.presentation %}
-      style="object-position: {{ image.presentation.focal_point }}"
+    {% if focal_alignment %}
+      style="
+        --focal-alignment: {{ focal_alignment }};
+        object-position: {{ focal_alignment }};
+      "
+    {% elsif disable_focal_point == false and image.presentation.focal_point %}
+      style="object-position: {{ image.presentation.focal_point }};"
     {% endif -%}
+
     loading="{% if lazy_load %}lazy{% else %}eager{% endif %}"
     width="{{ image_width }}"
     height="{{ image_height }}"

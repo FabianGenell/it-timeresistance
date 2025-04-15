@@ -10,6 +10,7 @@
   - class {String} - Class name(s) for the 'class' attribute (optional).
   - attributes {String} - Additional attributes (optional).
   - alt_text {String} - Custom text for the 'alt' attribute (optional).
+  - focal_point {String} - Focal point for the image (optional, default is 'center').
   - disable_focal_point {Boolean} - Disables the focussing of a spot on the image (optional, default is false).
   - section_index {Number} - If passed, image lazy load will be prevented if it's the first section
   - lazy_load {Boolean} - Image should be lazy load (optional, default is true).
@@ -58,6 +59,18 @@
   endunless
 
   assign disable_focal_point = disable_focal_point | default: false
+
+  if focal_point == 'image_presentation' and image.presentation.focal_point == '50.0% 50.0%'
+    assign focal_point = 'center'
+  endif
+
+  if focal_point
+    if focal_point == 'image_presentation'
+      assign focal_alignment = image.presentation.focal_point
+    else
+      assign focal_alignment = focal_point | replace: '_', ' '
+    endif
+  endif
 -%}
 
 <picture>
@@ -115,6 +128,14 @@
       endunless
 
       assign output_image_width = output_srcset.last
+
+      if focal_point
+        if focal_point == 'image_presentation'
+          assign focal_alignment = image.presentation.focal_point
+        else
+          assign focal_alignment = focal_point | replace: '_', ' '
+        endif
+      endif
     -%}
     {%- capture script -%}
       {{ script }}
@@ -258,8 +279,14 @@
         data-load-{{ lazy_type }}
       {%- endif -%}
 
-      {% if disable_focal_point == false and image.presentation.focal_point %}
-        style="object-position: {{ image.presentation.focal_point }}"
+      {% if focal_alignment %}
+        style="
+          --focal-alignment: {{ focal_alignment }};
+          object-position: {{ focal_alignment }};
+        "
+
+      {% elsif disable_focal_point == false and image.presentation.focal_point %}
+        style="object-position: {{ image.presentation.focal_point }};"
       {% endif -%}
 
       width="{{ output_image_width }}"
@@ -282,14 +309,11 @@
     class: class,
     attributes: attributes,
     alt_text: alt_text,
+    focal_alignment: focal_alignment,
     disable_focal_point: disable_focal_point,
     lazy_load: lazy_load,
     lazy_type: lazy_type
   -%}
 </picture>
 
-{{ script }}
-
-<script>
-  console.log('breakpoints', {{ breakpoints | json }})
-</script>
+{% comment %} {{ script }} {% endcomment %}

@@ -31,6 +31,7 @@
 
 <div
   class="
+      group
     grid-item
     grid-item--width-{{ block.settings.width }}
     grid-item--text-{{ text_position_modifier }}
@@ -65,23 +66,25 @@
     {{ wrapping_attributes }}
     class="grid-item__inner"
   >
-    {%- if block.settings.mobile_image != blank -%}
-      {%- render 'legacy-image',
-        wrapper_class: 'grid-item__image grid-item__image--mobile',
-        focal_point: block.settings.focal_point,
-        image: block.settings.mobile_image,
-        sizes: '100vw',
-        animate: true
-      -%}
-    {%- endif -%}
+    {%- liquid
+      assign image = block.settings.image_xl | default: block.settings.image
+      assign class = 'img-fit img-fit--zoom group-hover:scale-105'
+      if block.settings.media_fit == 'contain'
+        assign class = class | append: ' img-fit--contain'
+      endif
+    -%}
 
-    {%- if block.settings.image != blank -%}
-      {%- render 'legacy-image',
-        wrapper_class: 'grid-item__image',
+    {%- if image != blank -%}
+      {%- render 'pictures',
+        breakpoints: '719, 1920',
+        image: image,
+        image_719: block.settings.mobile_image,
+        image_1920: block.settings.image,
+        sizes: '(max-width: 719px) 100vw, 50vw',
+        widths: '390, 719, 1920, 3000',
+        class: 'img-fit img-fit--zoom group-hover:scale-105',
         focal_point: block.settings.focal_point,
-        image: block.settings.image,
-        sizes: image_sizes,
-        animate: true
+        section_index: section.index
       -%}
     {%- elsif has_background_color == false -%}
       {%- render 'placeholder-image',
@@ -90,7 +93,6 @@
         natural_fallback_ratio: 'natural'
       -%}
     {%- endif -%}
-
     <div class="grid-item__overlay"></div>
 
     <div class="grid-item__text-container-wrapper">

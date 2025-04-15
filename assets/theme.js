@@ -10091,7 +10091,6 @@ register('featured-collection-slider', {
                         },
                         2400: {
                             spaceBetween: 25,
-                            // matches product grid
                             slidesPerView: Math.abs(this.perView * 1.5)
                         }
                     }

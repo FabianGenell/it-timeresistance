@@ -9900,6 +9900,7 @@ register('collection-list-slider', {
         this.carousel = Carousel(this.container, {
             slidesPerView: this.mobilePerView,
             spaceBetween: 12,
+            loop: true,
             breakpoints: {
                 720: {
                     spaceBetween: 16,
@@ -9908,6 +9909,10 @@ register('collection-list-slider', {
                 1200: {
                     spaceBetween: 24,
                     slidesPerView: this.perView
+                },
+                2400: {
+                    spaceBetween: 24,
+                    slidesPerView: Math.abs(this.perView * 1.5)
                 }
             }
         });
@@ -10072,6 +10077,7 @@ register('featured-collection-slider', {
                         nextEl: nextButton,
                         prevEl: prevButton
                     },
+                    loop: true,
                     breakpoints: {
                         720: {
                             spaceBetween: 17,
@@ -10082,6 +10088,11 @@ register('featured-collection-slider', {
                             spaceBetween: 25,
                             // matches product grid
                             slidesPerView: this.perView
+                        },
+                        2400: {
+                            spaceBetween: 25,
+                            // matches product grid
+                            slidesPerView: Math.abs(this.perView * 1.5)
                         }
                     }
                 })

@@ -1,3 +1,5 @@
+<!-- sections/collection-list-slider.liquid -->
+
 {%- capture image_sizes -%}
   (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ section.settings.columns }}),
   calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ section.settings.mobile_columns }})
@@ -7,6 +9,8 @@
   class="
     collection-list-slider
     section
+    section--full-width
+    md:!px-6 !px-3
     section--divider-{{ section.settings.divider_style }}
     {{ section.settings.section_padding }}
     {% if settings.enable_section_animations and section.settings.enable_animation %}

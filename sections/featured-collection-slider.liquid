@@ -1,3 +1,5 @@
+<!-- sections/featured-collection-slider.liquid -->
+
 {%- liquid
   assign max_products = section.settings.maximum_products
 -%}
@@ -89,6 +91,8 @@
     featured-collection-slider--mobile-per-view-{{ section.settings.mobile_columns }}
     featured-collection-slider--per-view-{{ section.settings.mobile_columns }}
     section
+    section--full-width
+    md:!px-6 !px-3
     section--includes-product-items
     section--divider-{{ section.settings.divider_style }}
     {{ section.settings.section_padding }}

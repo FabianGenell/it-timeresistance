@@ -1,0 +1,28 @@
+<a
+  href="#main"
+  class="
+    cursor-pointer bg-[#322820] p-2 uppercase
+    text-white flex items-center justify-center gap-2
+  "
+>
+  Scroll to Top
+  <span class="-rotate-90">
+    {%- render 'icon' with 'arrow-short', class: 'size-3' -%}
+  </span>
+</a>
+
+{% schema %}
+{
+  "name": "Scroll to Top",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Scroll to Top"
+    }
+  ]
+}
+{% endschema %}

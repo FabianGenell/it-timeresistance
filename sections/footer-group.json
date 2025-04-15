@@ -11,14 +11,9 @@
   "type": "footer",
   "name": "t:groups.footer_group.name",
   "sections": {
-    "custom_liquid_3A6mgw": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div style=\"text-align: center;background:#322820;padding:5px;\">\n  <a href=\"#main\" style=\"text-decoration: none;color:white;font-size:16px;\">\n    SCROLL TO TOP\n    <img src=\"https://cdn.shopify.com/s/files/1/0886/3576/9135/files/ph_arrow-up.png?v=1720464076\" alt=\"Arrow Icon\" style=\"width: 24px; height: 24px; vertical-align: top; margin-left: 5px;\">\n  </a>\n</div>",
-        "full_width": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
-      }
+    "scroll_to_top_yxkybJ": {
+      "type": "scroll-to-top",
+      "settings": {}
     },
     "promotion_bar_WrWBVJ": {
       "type": "promotion-bar",
@@ -123,7 +118,7 @@
     }
   },
   "order": [
-    "custom_liquid_3A6mgw",
+    "scroll_to_top_yxkybJ",
     "promotion_bar_WrWBVJ",
     "footer"
   ]

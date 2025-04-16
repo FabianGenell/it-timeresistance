@@ -38,7 +38,6 @@
           "settings": {
             "image": "shopify://shop_images/07_16_1_710e4ced-d4be-436b-9c7c-8d377108e58c.jpg",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "title": "Briefcases",
             "heading_tag": "h2",
             "text": "",
@@ -52,7 +51,6 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_253.jpg",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "title": "Backpacks",
             "heading_tag": "h2",
             "text": "",
@@ -71,10 +69,10 @@
         "desktop_height": 100,
         "mobile_height": 70,
         "text_position": "flex-end",
-        "text_color": "#FFFFFF",
-        "button_background_color": "#FFFFFF",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
         "button_text_color": "#000000",
-        "color_overlay": "#000",
+        "color_overlay": "#000000",
         "color_overlay_gradient": "",
         "overlay_opacity": 30,
         "enable_animation": true,
@@ -84,6 +82,7 @@
     "collection_list_grid_hYH44C": {
       "type": "collection-list-grid",
       "settings": {
+        "full_width": true,
         "heading": "",
         "heading_tag": "h2",
         "subheading": "",
@@ -100,7 +99,7 @@
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",
         "overlay_title_background_style": "gradient",
-        "overlay_text_color": "#fff",
+        "overlay_text_color": "#ffffff",
         "overlay_title_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
@@ -119,7 +118,6 @@
             "image": "shopify://shop_images/07_16_3_dc536f15-687e-4f6a-9dff-96b55d0be0ae.jpg",
             "media_fit": "cover",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text_position": "center_flex-end",
             "accent": "",
             "title": "",
@@ -134,10 +132,10 @@
             "link_text": "View All",
             "button_style": "btn--primary",
             "background_color": "",
-            "text_color": "#FFFFFF",
-            "button_background_color": "#FFFFFF",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000",
+            "color_overlay": "#000000",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
@@ -151,7 +149,6 @@
             "image": "shopify://shop_images/07_16_4_167793c9-e1ff-45fa-a59d-e9b11117bfec.jpg",
             "media_fit": "cover",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text_position": "center_flex-end",
             "accent": "",
             "title": "",
@@ -166,10 +163,10 @@
             "link_text": "View All",
             "button_style": "btn--primary",
             "background_color": "",
-            "text_color": "#FFFFFF",
-            "button_background_color": "#FFFFFF",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000",
+            "color_overlay": "#000000",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
@@ -183,7 +180,6 @@
             "mobile_height": 500,
             "media_fit": "cover",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text_position": "center_center",
             "accent": "",
             "title": "Grid item",
@@ -198,10 +194,10 @@
             "link_text": "",
             "button_style": "btn--primary",
             "background_color": "",
-            "text_color": "#FFFFFF",
-            "button_background_color": "#FFFFFF",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000",
+            "color_overlay": "#000000",
             "color_overlay_gradient": "",
             "overlay_opacity": 30
           }
@@ -218,7 +214,7 @@
         "subheading": "",
         "content_alignment": "left",
         "enable_animation": true,
-        "full_width": false,
+        "full_width": true,
         "spacing": 24,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
@@ -227,6 +223,7 @@
     "collection_list_grid_n3jTNw": {
       "type": "collection-list-grid",
       "settings": {
+        "full_width": true,
         "heading": "",
         "heading_tag": "h2",
         "subheading": "",
@@ -243,7 +240,7 @@
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "beneath",
         "overlay_title_background_style": "gradient",
-        "overlay_text_color": "#fff",
+        "overlay_text_color": "#ffffff",
         "overlay_title_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",

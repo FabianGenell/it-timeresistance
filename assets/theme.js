@@ -6712,36 +6712,157 @@ function stickyScroll(node) {
 }
 
 const { icons: icons$1 } = window.theme;
+/**
+ * Initializes a PhotoSwipe lightbox for product media.
+ * Requires PhotoSwipe modules via dynamic import (`flu.chunks.photoswipe`),
+ * an icons object (`icons$1`), and specific data attributes on '.lightbox-image' elements.
+ * Assumes a DOM query function `t$2` exists globally or is imported.
+ */
 function productLightbox() {
-    const lightboxImages = t$2('.lightbox-image', document);
-    if (!lightboxImages.length) return;
-    let productLightbox;
-    import(flu.chunks.photoswipe).then((_ref) => {
-        let { PhotoSwipeLightbox, PhotoSwipe } = _ref;
-        productLightbox = new PhotoSwipeLightbox({
-            gallery: '.lightbox-media-container',
-            children: '.lightbox-image',
-            showHideAnimationType: 'zoom',
-            pswpModule: PhotoSwipe,
-            mainClass: 'pswp--product-lightbox',
-            bgOpacity: 1,
-            arrowPrevSVG: icons$1.chevron,
-            arrowNextSVG: icons$1.chevron,
-            closeSVG: icons$1.close,
-            zoomSVG: icons$1.zoom
-        });
-        productLightbox.init();
+    const lightboxElements = document.querySelectorAll('.lightbox-image');
+    if (!lightboxElements.length) {
+        return;
+    }
 
-        // Hide nav ui elements if single image
-        productLightbox.on('firstUpdate', () => {
-            const { pswp, options } = productLightbox;
-            const productImageCount = options.dataSource.items.length;
-            if (productImageCount === 1) {
-                u$1(pswp.element, 'pswp--is-single-image');
+    const createDataSourceItem = (element) => {
+        const type = element.dataset.pswpType || 'image';
+        const width = parseInt(element.dataset.pswpWidth, 10);
+        const height = parseInt(element.dataset.pswpHeight, 10);
+
+        if (isNaN(width) || isNaN(height)) {
+            console.warn("Lightbox element missing valid width/height data attributes:", element);
+        }
+
+        const itemData = {
+            type,
+            width: width || 0,
+            height: height || 0,
+            element // Store element reference for later use (e.g., video source)
+        };
+
+        if (type === 'video') {
+            return itemData; // Video src retrieved later in contentLoad
+        } else {
+            itemData.src = element.getAttribute('href') || element.dataset.pswpSrc;
+            if (!itemData.src) {
+                console.warn("Image lightbox element missing href and data-pswp-src:", element);
             }
+            return itemData;
+        }
+    };
+
+    const dataSource = Array.from(lightboxElements).map(createDataSourceItem);
+
+    import(flu.chunks.photoswipe) // Assumed path to PhotoSwipe module
+        .then((pswpModule) => {
+            const { PhotoSwipeLightbox, PhotoSwipe } = pswpModule;
+
+            if (!PhotoSwipeLightbox || !PhotoSwipe) {
+                console.error("PhotoSwipe modules not found in the imported chunk.");
+                return;
+            }
+
+            const lightbox = new PhotoSwipeLightbox({
+                gallery: '.lightbox-media-container',
+                children: '.lightbox-image',
+                showHideAnimationType: 'zoom',
+                pswpModule: PhotoSwipe,
+                mainClass: 'pswp--product-lightbox',
+                bgOpacity: 1,
+                // Assumes icons$1 provides SVG strings
+                arrowPrevSVG: icons$1?.chevron,
+                arrowNextSVG: icons$1?.chevron,
+                closeSVG: icons$1?.close,
+                zoomSVG: icons$1?.zoom,
+                dataSource: dataSource
+            });
+
+            const createVideoElement = (videoSrc) => {
+                const container = document.createElement('div');
+                container.className = 'pswp__video-wrapper';
+                Object.assign(container.style, {
+                    width: '100%', height: '100%', display: 'flex',
+                    justifyContent: 'center', alignItems: 'center', background: '#000'
+                });
+
+                const video = document.createElement('video');
+                video.src = videoSrc;
+                video.controls = true;
+                video.autoplay = true;
+                video.playsInline = true; // Required for iOS inline playback
+                Object.assign(video.style, {
+                    maxWidth: '100%', maxHeight: '100%', display: 'block'
+                });
+
+                container.appendChild(video);
+                return container;
+            };
+
+            const setupVideoEvents = (video, content) => {
+                let loaded = false;
+                const onLoaded = () => {
+                    if (loaded) return;
+                    loaded = true;
+                    content.onLoaded();
+                };
+                const onError = (event) => {
+                    console.error(`PhotoSwipe: Video loading failed for src: ${video.src}`, event);
+                    content.onError();
+                };
+
+                video.addEventListener('loadeddata', onLoaded);
+                video.addEventListener('canplay', onLoaded);
+                video.addEventListener('error', onError);
+                video.addEventListener('stalled', onError);
+
+                if (video.readyState >= 3) { // HAVE_FUTURE_DATA or higher
+                    onLoaded();
+                }
+            };
+
+            lightbox.on('contentLoad', (e) => {
+                const { content } = e;
+                const item = content.data;
+
+                if (item.type === 'video') {
+                    const videoElement = item.element;
+                    const videoSrc = videoElement?.dataset.pswpVideo || videoElement?.getAttribute('href');
+
+                    if (videoElement && videoSrc) {
+                        e.preventDefault();
+                        content.element = createVideoElement(videoSrc);
+                        const video = content.element.querySelector('video');
+
+                        if (video) {
+                            content.state = 'loading';
+                            setupVideoEvents(video, content);
+                        } else {
+                            console.error("PhotoSwipe: Failed to find video element within the created container.");
+                            content.state = 'error';
+                            content.onError();
+                        }
+                    } else {
+                        console.warn(`PhotoSwipe: Video item type detected, but failed to find video source on element:`, videoElement);
+                        content.state = 'error';
+                    }
+                }
+                // Default image handling by PhotoSwipe suffices for other types with 'src'
+            });
+
+            try {
+                lightbox.init();
+            } catch (initError) {
+                console.error('PhotoSwipe: Failed to initialize lightbox.', initError);
+            }
+        })
+        .catch(error => {
+            console.error("PhotoSwipe: Failed to dynamically load PhotoSwipe module:", error);
         });
-    });
 }
+
+
+
+
 
 const selectors$H = {
     unitPriceContainer: '[data-unit-price-container]',

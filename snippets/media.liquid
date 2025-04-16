@@ -52,8 +52,16 @@
     </{{ media_link_element }}>
 
   {%- elsif media.media_type == 'video' -%}
-    {{ media | video_tag: image_size: '1024x', autoplay: true, muted: true }}
-
+    <a
+      href="{{ media.sources[1].url }}"
+      class="lightbox-image no-transition"
+      data-pswp-type="video"
+      data-pswp-video="{{ media.sources[1].url }}"
+      data-pswp-width="{{ media.preview_image.width }}"
+      data-pswp-height="{{ media.preview_image.height }}"
+    >
+      {{ media | video_tag: image_size: '1024x', autoplay: true, muted: true }}
+    </a>
   {%- elsif media.media_type == 'external_video' -%}
     {% # external_video_tag will include the wrong origin parameter when viewing a shopify preview URL, the replace here is to work around that %}
     {% assign shop_domain = shop.secure_url | replace: 'https://', '' %}

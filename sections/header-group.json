@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "title": "<p>FREE SHIPPING & EASY RETURNS<\/p>",
+            "title": "<p>FREE SHIPPING & EASY RETURNS</p>",
             "title_mobile": "",
             "link": ""
           }
@@ -25,7 +25,7 @@
         "announcement-bar-1": {
           "type": "announcement",
           "settings": {
-            "title": "<p>10% OFF WITH CODE ITALY10<\/p>",
+            "title": "<p>10% OFF WITH CODE ITALY10</p>",
             "title_mobile": "",
             "link": ""
           }
@@ -56,10 +56,10 @@
             "promo_width": 700,
             "promo_height": 400,
             "secondary_position": "left",
-            "image": "shopify:\/\/shop_images\/men_mega.jpg",
+            "image": "shopify://shop_images/men_mega.jpg",
             "focal_point": "image_presentation",
             "promo_text": "Men",
-            "link": "shopify:\/\/collections\/men",
+            "link": "shopify://collections/men",
             "link_text": "Explore the collection",
             "text_position": "center_flex-end",
             "text_color": "#ffffff",
@@ -78,10 +78,10 @@
             "promo_width": 700,
             "promo_height": 400,
             "secondary_position": "left",
-            "image": "shopify:\/\/shop_images\/women_mega.jpg",
+            "image": "shopify://shop_images/women_mega.jpg",
             "focal_point": "image_presentation",
             "promo_text": "Women",
-            "link": "shopify:\/\/collections\/women",
+            "link": "shopify://collections/women",
             "link_text": "Explore the collection",
             "text_position": "center_flex-end",
             "text_color": "#ffffff",
@@ -89,11 +89,33 @@
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
+        },
+        "full_width_meganav_48XeGe": {
+          "type": "full_width_meganav",
+          "settings": {
+            "dropdown_parent_link": "",
+            "column_count": 3,
+            "show_column_borders": true,
+            "show_promo": true,
+            "promo_width": 440,
+            "promo_height": 250,
+            "secondary_position": "right",
+            "focal_point": "image_presentation",
+            "promo_text": "Newest Releases",
+            "link": "shopify://collections/all",
+            "link_text": "Discover",
+            "text_position": "flex-start_flex-end",
+            "text_color": "#FFFFFF",
+            "color_overlay": "#000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "meganav-0",
-        "full_width_meganav_GkPhnJ"
+        "full_width_meganav_GkPhnJ",
+        "full_width_meganav_48XeGe"
       ],
       "settings": {
         "layout": "logo-center_nav-left",
@@ -104,7 +126,7 @@
         "enable_country_selector": false,
         "show_social_media": false,
         "show_social_media_mobile": true,
-        "logo": "shopify:\/\/shop_images\/tr_logo_new_no_padding.png",
+        "logo": "shopify://shop_images/tr_logo_new_no_padding.png",
         "logo_width": 120,
         "mobile_logo_width": 90,
         "menu": "main",

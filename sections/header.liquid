@@ -26,7 +26,8 @@
 -%}
 
 <script>
-  {% # This is done here AND in the JS so it's responsive in the theme editor before the JS is loaded %}
+  // This is done here AND in the JS so it's responsive in the theme editor before the JS is loaded
+
   {% if section.settings.enable_sticky_header %}
     document.documentElement.classList.add("sticky-header-enabled");
   {% endif %}
@@ -987,6 +988,170 @@
           "type": "text",
           "label": "t:shared.settings.button_link_text.label",
           "default": "Discover"
+        },
+        {
+          "id": "text_position",
+          "type": "select",
+          "label": "t:sections.grid.blocks.item.settings.text_position.label",
+          "options": [
+            {
+              "label": "t:shared.settings.alignment_matrix.option_top_left",
+              "value": "flex-start_flex-start"
+            },
+            { "label": "t:shared.settings.alignment_matrix.option_top_center", "value": "center_flex-start" },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_top_right",
+              "value": "flex-end_flex-start"
+            },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_middle_left",
+              "value": "flex-start_center"
+            },
+            { "label": "t:shared.settings.alignment_matrix.option_middle_center", "value": "center_center" },
+            { "label": "t:shared.settings.alignment_matrix.option_middle_right", "value": "flex-end_center" },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_bottom_left",
+              "value": "flex-start_flex-end"
+            },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_bottom_center",
+              "value": "center_flex-end"
+            },
+            {
+              "label": "t:shared.settings.alignment_matrix.option_bottom_right",
+              "value": "flex-end_flex-end"
+            }
+          ],
+          "default": "flex-start_flex-end"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "t:shared.settings.text_color.label",
+          "default": "#FFFFFF"
+        },
+        {
+          "id": "color_overlay",
+          "type": "color",
+          "label": "t:shared.settings.color_overlay.label",
+          "default": "#000"
+        },
+        {
+          "id": "color_overlay_gradient",
+          "type": "color_background",
+          "label": "t:shared.settings.color_overlay_gradient.label"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "t:shared.settings.overlay_opacity.label",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 30
+        }
+      ]
+    },
+    {
+      "type": "meganav_double_banner",
+      "name": "Meganav (Double Banner)",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "WARNING: this will not show any normal menu items. It will only show the double banner."
+        },
+        {
+          "type": "text",
+          "id": "dropdown_parent_link",
+          "label": "t:sections.meganav.settings.dropdown_parent_link.label",
+          "info": "t:sections.meganav.settings.dropdown_parent_link.info"
+        },
+        {
+          "type": "header",
+          "content": "Promo 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "t:sections.meganav.settings.image.label"
+        },
+        {
+          "id": "focal_point_1",
+          "type": "select",
+          "label": "t:shared.settings.focal_point.label",
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
+          "default": "image_presentation"
+        },
+        {
+          "id": "promo_text_1",
+          "type": "text",
+          "label": "t:sections.meganav.settings.promo_text.label",
+          "default": "Newest Releases"
+        },
+        {
+          "id": "link_1",
+          "type": "url",
+          "label": "t:shared.settings.button_link.label",
+          "default": "/collections/all"
+        },
+        {
+          "id": "link_text_1",
+          "type": "text",
+          "label": "t:shared.settings.button_link_text.label",
+          "default": "Discover"
+        },
+        {
+          "type": "header",
+          "content": "Promo 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "t:sections.meganav.settings.image.label"
+        },
+        {
+          "id": "focal_point_2",
+          "type": "select",
+          "label": "t:shared.settings.focal_point.label",
+          "options": [
+            { "label": "t:shared.settings.focal_point.option_image", "value": "image_presentation" },
+            { "label": "t:shared.settings.focal_point.option_center", "value": "center" },
+            { "label": "t:shared.settings.focal_point.option_top", "value": "top" },
+            { "label": "t:shared.settings.focal_point.option_bottom", "value": "bottom" },
+            { "label": "t:shared.settings.focal_point.option_left", "value": "left" },
+            { "label": "t:shared.settings.focal_point.option_right", "value": "right" }
+          ],
+          "default": "image_presentation"
+        },
+        {
+          "id": "promo_text_2",
+          "type": "text",
+          "label": "t:sections.meganav.settings.promo_text.label",
+          "default": "Popular Now"
+        },
+        {
+          "id": "link_2",
+          "type": "url",
+          "label": "t:shared.settings.button_link.label",
+          "default": "/collections/all"
+        },
+        {
+          "id": "link_text_2",
+          "type": "text",
+          "label": "t:shared.settings.button_link_text.label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "header",
+          "content": "Promo config"
         },
         {
           "id": "text_position",

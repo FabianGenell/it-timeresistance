@@ -12,7 +12,45 @@
 {%- endcapture -%}
 
 {%- capture meganav_secondary -%}
-  {%- if meganav_settings.show_promo -%}
+  {%- liquid
+    assign image = meganav_settings.image
+    assign link = meganav_settings.link
+    assign promo_text = meganav_settings.promo_text
+    assign link_text = meganav_settings.link_text
+    assign focal_point = meganav_settings.focal_point
+
+    assign promo_height = meganav_settings.promo_height
+    assign promo_width = meganav_settings.promo_width
+
+    assign show_promo = meganav_settings.show_promo
+
+    if show_promo 
+      assign promos = 1
+    elsif meganav_type == 'meganav_double_banner'
+      assign promos = 2
+    endif
+  -%}
+
+
+  {%- for i in (1..promos) -%}
+    {%- liquid
+      if meganav_type == 'meganav_double_banner'
+        assign image_key = 'image_' | append: i
+        assign link_key = 'link_' | append: i
+        assign promo_text_key = 'promo_text_' | append: i
+        assign link_text_key = 'link_text_' | append: i
+        assign focal_point_key = 'focal_point_' | append: i
+
+        assign image = meganav_settings[image_key]
+        assign link = meganav_settings[link_key]
+        assign promo_text = meganav_settings[promo_text_key]
+        assign link_text = meganav_settings[link_text_key]
+        assign focal_point = meganav_settings[focal_point_key]
+
+        assign promo_height = 200
+        assign promo_width = 200
+      endif
+    -%}
     <div class="meganav__secondary">
       <div
         {{ wrapping_attributes }}
@@ -20,35 +58,35 @@
         style="
           --text-horizontal-position: {{ horizontal_position }};
           --text-vertical-position: {{ vertical_position }};
-          --min-promo-height: {{ meganav_settings.promo_height }}px;
+          --min-promo-height: {{ promo_height }}px;
         "
       >
-        {%- if meganav_settings.link != blank -%}
-          <a href="{{ meganav_settings.link }}" class="meganav__promo-image-link">
+        {%- if link != blank -%}
+          <a href="{{ link }}" class="meganav__promo-image-link">
         {%- endif -%}
         {%- render 'legacy-image' with
           wrapper_class: "meganav__promo-image",
-          image: meganav_settings.image,
-          sizes_px: meganav_settings.promo_width,
-          focal_point: meganav_settings.focal_point,
+          image: image,
+          sizes_px: promo_width,
+          focal_point: focal_point,
           include_placeholder: true,
           aspect_ratio: "externally_set"
         -%}
-        {%- if meganav_settings.link != blank -%}
+        {%- if link != blank -%}
           </a>
         {%- endif -%}
 
         <div class="meganav__secondary-promo-overlay"></div>
 
         <div class="meganav__secondary-promo-text">
-          {% unless meganav_settings.promo_text == blank %}
-            <h3 class="ff-heading fs-heading-4-base meganav__secondary-promo-text-heading">{{ meganav_settings.promo_text }}</h3>
+          {% unless promo_text == blank %}
+            <h3 class="ff-heading fs-heading-4-base meganav__secondary-promo-text-heading">{{ promo_text }}</h3>
           {% endunless %}
-          {% if meganav_settings.link and meganav_settings.link != blank %}
+          {% if link and link != blank %}
             {%- render 'button-block' with
               wrapper_class: "meganav__secondary-promo-text-button",
-              label: meganav_settings.link_text,
-              link: meganav_settings.link,
+              label: link_text,
+              link: link,
               button_style: 'btn--secondary',
               is_overlay: true,
               is_x_small: true,
@@ -58,7 +96,7 @@
         </div>
       </div>
     </div>
-  {%- endif -%}
+  {%- endfor -%}
 
 {%- endcapture -%}
 
@@ -100,13 +138,19 @@
   "
   {{ shopify_attributes }}
 >
-  <div class="meganav__inner">
-    {% if meganav_settings.show_promo and meganav_settings.secondary_position == 'left' %}
+  {% if meganav_type == 'meganav_double_banner' %}
+    <div class="w-full grid grid-cols-2 min-h-80">
       {{ meganav_secondary }}
-    {% endif %}
-    {{ meganav_primary }}
-    {% if meganav_settings.show_promo and meganav_settings.secondary_position == 'right' %}
-      {{ meganav_secondary }}
-    {% endif %}
-  </div>
+    </div>
+  {%- else -%}
+    <div class="meganav__inner">
+      {% if meganav_settings.show_promo and meganav_settings.secondary_position == 'left' %}
+        {{ meganav_secondary }}
+      {% endif %}
+      {{ meganav_primary }}
+      {% if meganav_settings.show_promo and meganav_settings.secondary_position == 'right' %}
+        {{ meganav_secondary }}
+      {% endif %}
+    </div>
+  {% endif %}
 </div>

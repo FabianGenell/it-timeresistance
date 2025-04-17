@@ -135,64 +135,6 @@
   </{{ logo_tag_type }}>
 {%- endcapture -%}
 
-{%- capture currency_icon -%}
-  <select id="marketSelector">
-      <option value="au">Australia / AUD</option>
-      <option value="us">United States / USD</option>
-      <option value="global">Global / USD</option>
-      <option value="eu">European Union / EUR</option>
-      <option value="uk">United Kingdom / GBP</option>
-      <!-- <option value="de">Germany / EUR</option> -->
-      <option value="ca">Canada / CAD</option>
-      <option value="sg">Singapore / SGD</option>
-  </select>
-
-  <script>
-      // JavaScript code to handle market selection
-      document.getElementById('marketSelector').addEventListener('change', function() {
-          var selectedMarket = this.value;
-          var currentUrl = window.location.href;
-          var newDomain;
-
-          switch (selectedMarket) {
-              case 'au':
-                  // No need to change the URL for US
-                  return;
-              case 'us':
-                  newDomain = 'us-timeresistance.myshopify.com';
-                  break;
-              case 'global':
-                  newDomain = 'global.timeresistance.com';
-                  break;
-              case 'eu':
-                  newDomain = 'eu.timeresistance.com';
-                  break;
-              case 'uk':
-                  newDomain = 'uk-timeresistance.myshopify.com';
-                  break;
-              case 'de':
-                  newDomain = 'de-timeresistance.myshopify.com';
-                  break;
-              case 'ca':
-                  newDomain = 'ca-timeresistance.myshopify.com';
-                  break;
-              case 'sg':
-                  newDomain = 'sg-timeresistance.myshopify.com';
-                  break;
-          }
-
-          // Replace the domain part of the current URL
-          var newUrl = currentUrl.replace(/^(https?:\/\/)?[^\/]+/, 'https://' + newDomain);
-
-          // Redirect to the new URL
-          window.location.href = newUrl;
-      });
-  </script>
-
-
- 
-{%- endcapture -%}
-
 {%- capture wishlist_icon -%}
   <a
     class="header__icon-touch"
@@ -469,7 +411,7 @@
 
       <div class="header__row-segment header__row-segment-desktop right">
         {%- unless logo_position == 'center' and navigation_position == 'below' -%}
-          {{ currency_icon }}
+          {%- render 'currency-selector', class: 'hidden md:block' -%}
           {{ wishlist_icon }}
           {{ search_icon }}
         {%- endunless -%}
@@ -489,7 +431,7 @@
         {{ header_logo }}
 
         <div class="header__row-segment right">
-          {{ currency_icon }}
+          {%- render 'currency-selector', class: 'hidden md:block' -%}
           {{ wishlist_icon }}
           {{ search_icon }}
           {%- if shop.customer_accounts_enabled -%}
@@ -503,7 +445,7 @@
         </div>
 
         <div class="header__row-segment right">
-          {{ currency_icon }}
+          {%- render 'currency-selector', class: 'hidden md:block' -%}
           {{ wishlist_icon }}
           {{ search_icon }}
           {{ cart_icon }}

@@ -117,6 +117,7 @@
               </div>
             {% endif %}
           </div>
+          {%- render 'currency-selector', class: 'p-[18px]' -%}
         </div>
 
         {%- if locale_selector or country_selector -%}
@@ -180,7 +181,9 @@
                 <li class="drawer-menu__item localization-item-trigger" data-list-item>
                   <a class="drawer-menu__link fs-body-50" href="#" data-item="viewLanguage">
                     {% render 'icon', icon: 'globe' %}
-                    <span class="drawer-menu__link--label">{{ form.current_locale.endonym_name | capitalize }}</span>
+                    <span class="drawer-menu__link--label">
+                      {{- form.current_locale.endonym_name | capitalize -}}
+                    </span>
                   </a>
                   <ul class="drawer-menu__list drawer-menu__list--sub drawer-menu__list--language-selector">
                     <li class="drawer-menu__item drawer-menu__item--heading">

@@ -12,20 +12,22 @@
       if link.links.size > 0 and can_show_children
         assign has_children = true
       endif
+
+      assign show_meganav = false
+
+      if blocks.size > 0
+        for block in blocks
+          assign meganav_trigger_handle = block.settings.dropdown_parent_link | handle | strip
+          if link.handle == meganav_trigger_handle and has_children
+            assign show_meganav = true
+            assign meganav_settings = block.settings
+            assign meganav_type = block.type
+            assign meganav_handle = meganav_trigger_handle
+            assign meganav_shopify_attributes = block.shopify_attributes
+          endif
+        endfor
+      endif
     -%}
-    {% assign show_meganav = false %}
-    {% if blocks.size > 0 %}
-      {% for block in blocks %}
-        {% assign meganav_trigger_handle = block.settings.dropdown_parent_link | handle | strip %}
-        {% if link.handle == meganav_trigger_handle and has_children %}
-          {% assign show_meganav = true %}
-          {% assign meganav_settings = block.settings %}
-          {% assign meganav_type = block.type %}
-          {% assign meganav_handle = meganav_trigger_handle %}
-          {% assign meganav_shopify_attributes = block.shopify_attributes %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
 
     <li
       {% if has_children and can_show_children %}

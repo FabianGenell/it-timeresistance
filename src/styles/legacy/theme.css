@@ -15862,7 +15862,7 @@ body.header-transparent
     position: relative;
     margin: calc(4px * 2);
     margin: var(--spacing-2);
-    border: solid 1px var(--color-border);
+    /*border: solid 1px var(--color-border);*/
 }
 .filter-group.filter-group--active {
     z-index: 1300;

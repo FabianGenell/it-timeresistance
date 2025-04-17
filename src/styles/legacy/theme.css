@@ -15093,7 +15093,7 @@ html.sticky-header-active .quick-search {
     align-items: center;
     padding: calc(4px * 3) calc(4px * 5);
     padding: var(--spacing-3) var(--spacing-5);
-    border: 1px solid var(--color-background-overlay-button-alpha, var(--color-background-button-alpha));
+    /*border: 1px solid var(--color-background-overlay-button-alpha, var(--color-background-button-alpha));*/
     color: var(--color-background-overlay-button, var(--color-background-button));
     transition:
         box-shadow 0.2s ease,

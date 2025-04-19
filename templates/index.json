@@ -125,6 +125,7 @@
             "height": 500,
             "mobile_height": 500,
             "image": "shopify://shop_images/07_16_4_08a54d34-3cdf-4b14-b833-8a927e8f78d1.jpg",
+            "image_xl": "shopify://shop_images/b_3_57a7fc1d-0899-49d6-81fd-92a1c9272891.jpg",
             "media_fit": "cover",
             "focal_point": "image_presentation",
             "text_position": "center_flex-end",

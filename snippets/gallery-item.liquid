@@ -1,3 +1,5 @@
+<!-- snippets/gallery-item.liquid -->
+
 {%- comment -%}
   Pass these variables into snippet:
 
@@ -17,6 +19,10 @@
 {%- endcomment -%}
 
 {%- liquid
+  if block and media == blank
+    assign media = block.settings.image
+  endif
+
   if media.media_type == 'image'
     assign image = media
   endif

@@ -1,0 +1,80 @@
+<div
+  {% comment %} class="quick-search" {% endcomment %}
+  data-quick-search
+  aria-hidden="true"
+  class="fixed z-[10000] group w-full hidden [&.active]:block top-0"
+>
+  <button
+    data-overlay
+    type="button"
+    class="quick-search__overlay group-[.quick-search--visible]:opacity-100"
+    aria-label="{{ 'general.accessibility.close_modal' | t }}"
+    data-close-icon
+  >
+    {% comment %} {% render 'icon-button' with small: true, icon: 'close' %} {% endcomment %}
+  </button>
+  <div
+    class="
+      bg-white relative -translate-y-full
+      group-[.quick-search--visible]:translate-y-0 transition-transform duration-300
+    "
+  >
+    <form
+      action="{{ routes.search_url }}"
+      class="w-full mx-auto xl:max-w-[max(50vw,800px)] relative"
+      autocomplete="off"
+      data-quick-search-form
+      data-scroll-lock-ignore
+    >
+      <!-- Search input -->
+      <div class="py-1 px-[18px] xl:p-0">
+        <label for="search" class="visually-hidden" aria-label="{{ 'search.placeholder' | t }}"></label>
+        <div class="relative  py-1">
+          <div class="absolute right-0 p-4 top-1/2 -translate-y-1/2 flex gap-2 z-1">
+            <button class="fs-body-50" type="button" data-clear>
+              {{ 'search.clear_search' | t }}
+            </button>
+
+            <button
+              class=" flex"
+              type="submit"
+              aria-label="{{ 'search.search' | t }}"
+            >
+              {% render 'icon' with icon: 'search' %}
+            </button>
+          </div>
+          <input
+            class="w-full p-4 border-gray-400"
+            id="search"
+            type="text"
+            name="q"
+            placeholder="{{ 'search.placeholder' | t }}"
+            data-input
+          >
+        </div>
+
+        <input type="hidden" name="options[prefix]" value="last">
+        <div class=""></div>
+      </div>
+
+      <!-- Search results -->
+
+      <div
+        class="
+          quick-search__results top-full bg-white block
+          -translate-y-full overflow-y-auto
+          group-[.quick-search--visible]:translate-y-0 transition-transform duration-300
+        "
+        data-results
+      ></div>
+
+      {%- if settings.quick_search_suggested_links != blank -%}
+        <div class="">
+          <div class="">
+            {% render 'search-suggested-links' %}
+          </div>
+        </div>
+      {%- endif -%}
+    </form>
+  </div>
+</div>

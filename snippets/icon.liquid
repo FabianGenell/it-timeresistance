@@ -1,7 +1,6 @@
 <span class="icon icon-new icon-{{ icon }} {{ class }}">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     {%- case icon -%}
-
       {%- comment -%}Header icons - these follow specific inner whitespace and should only be used in the header{%- endcomment -%}
       {%- when 'header-account' -%}
         <path d="M12 12.413a4.358 4.358 0 1 0 0-8.715 4.358 4.358 0 0 0 0 8.715zM3.488 20.857c0-3.085 1.594-5.61 5.26-5.61h6.503c3.667 0 5.261 2.525 5.261 5.61" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10"/>
@@ -20,8 +19,6 @@
 
       {%- when 'header-menu' -%}
         <path d="M3.692 12.646h16.616M3.692 5.762h16.616M3.692 19.608h16.616" stroke="currentColor" stroke-width="1.2"/>
-
-      {%- comment -%}TODO: Add once mobile menu has been plugged in{%- endcomment -%}
       {%- when 'header-menu-close' -%}
         <path d="M18.462 6.479 5.538 19.402M5.538 6.479l12.924 12.923" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="6.667" stroke-linejoin="round"/>
 
@@ -50,8 +47,6 @@
 
       {%- when 'chevron-small' -%}
         <path d="M1.875 7.438 12 17.563 22.125 7.438" stroke="currentColor" stroke-width="2.75"/>
-
-      {%- comment -%}TODO: to be added to the mobile menu language selector{%- endcomment -%}
       {%- when 'globe' -%}
         <path d="M12 22.305c5.692 0 10.305-4.614 10.305-10.305S17.692 1.695 12 1.695C6.31 1.695 1.695 6.309 1.695 12S6.309 22.305 12 22.305zM2.454 8.826h19.092M2.454 15.174h19.092" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10"/>
         <path d="M12 1.518c5.256 6.988 5.256 13.975 0 20.965M12 1.518c-5.255 6.988-5.255 13.975 0 20.965" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10"/>

@@ -1,3 +1,15 @@
+{%- comment -%}
+  Variables that can be passed to this snippet:
+  - prod: (object) The product object to display variants for
+  - filters: (object) Optional. Collection filters, defaults to collection.filters
+  - product_columns_desktop: (number) Number of columns to display on desktop
+  - product_columns_mobile: (number) Number of columns to display on mobile
+  - aspect_ratio: (string) Aspect ratio for the product images
+  - has_grid_reveal: (boolean) Whether to enable grid reveal animation
+  - show_price: (boolean) Whether to show the price
+  - show_favorite_button: (boolean) Whether to show the favorite button
+{%- endcomment -%}
+
 <!-- snippets/product-variant-items.liquid -->
 
 {%- liquid
@@ -45,7 +57,9 @@
       product_columns_desktop: product_columns_desktop,
       product_columns_mobile: product_columns_mobile,
       aspect_ratio: aspect_ratio,
-      has_grid_reveal: has_grid_reveal
+      has_grid_reveal: has_grid_reveal,
+      show_favorite_button: show_favorite_button,
+      show_price: show_price
     %}
   {%- endif -%}
 {% endfor %}

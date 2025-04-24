@@ -1,0 +1,138 @@
+{%- liquid
+  assign total_results = predictive_search.resources.products.size | plus: predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size
+
+  assign sizes = '80px'
+  if settings.quick_search_product_style == 'columns'
+    assign sizes = '200px'
+  endif
+
+  assign class = ''
+
+  if predictive_search.resources.products.size > 0
+    assign class = 'grid md:grid-cols-[1fr_3fr] gap-4'
+  endif
+-%}
+
+{%- if predictive_search.performed -%}
+  {%- if total_results > 0 -%}
+    <div class="{{ class }}">
+      <div class="">
+        {%- if predictive_search.resources.queries.size > 0 -%}
+          <h4 class="quick-search__header ff-body text-sm">
+            <span class="t-subdued">{{ 'search.suggestions' | t }}</span>
+          </h4>
+          <ul class="quick-search__suggested-queries-list list-reset">
+            {%- for query in predictive_search.resources.queries -%}
+              <li class="quick-search__suggested-queries-list-item">
+                <a href="{{ query.url }}" class="quick-search__result ff-body fs-body-50">
+                  <p
+                    class="quick-search__result-details quick-search__result-details--query"
+                    aria-label="{{ query.text }}"
+                  >
+                    {{ query.styled_text }}
+                  </p>
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if predictive_search.resources.collections.size > 0 -%}
+          <h4 class="quick-search__header ff-body text-sm">
+            <span class="t-subdued">{{ 'search.headings.collections' | t }}</span>
+          </h4>
+
+          {%- for collection in predictive_search.resources.collections -%}
+            <a class="quick-search__result" href="{{ collection.url }}">
+              <div class="quick-search__result-heading whitespace-normal ff-body fs-body-50">
+                {{ collection.title }}
+              </div>
+            </a>
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- if predictive_search.resources.pages.size > 0 -%}
+          <h4 class="quick-search__header ff-body text-sm">
+            <span class="t-subdued">{{ 'search.headings.pages' | t }}</span>
+          </h4>
+
+          {%- for page in predictive_search.resources.pages -%}
+            <a class="quick-search__result" href="{{ page.url }}">
+              <div class="quick-search__result-heading whitespace-normal ff-body fs-body-50">
+                {{ page.title }}
+              </div>
+            </a>
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- if predictive_search.resources.articles.size > 0 -%}
+          <h4 class="quick-search__header ff-body text-sm">
+            <span class="t-subdued">{{ 'search.headings.articles' | t }}</span>
+          </h4>
+
+          {%- for article in predictive_search.resources.articles -%}
+            <a class="quick-search__result" href="{{ article.url }}">
+              <div class="quick-search__result-heading whitespace-normal ff-body fs-body-50">
+                {{ article.title }}
+              </div>
+            </a>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+      <div class="flex flex-col">
+        {%- if predictive_search.resources.products.size > 0 -%}
+          <h4 class="quick-search__header ff-body text-base leading-[20px]">
+            <span class="t-subdued">{{ 'search.headings.products' | t }}</span>
+          </h4>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 ">
+            {%- assign variants_displayed = 0 -%}
+            {%- for product in predictive_search.resources.products -%}
+              {% for variant in product.variants %}
+                {%- if variants_displayed < 6 -%}
+                  <a
+                    href="{{ variant.url }}"
+                    class="
+                      grid grid-cols-[1fr_2fr] gap-2 p-4
+                      hover:bg-gray-100 rounded-md transition-colors duration-200
+                    "
+                  >
+                    <div class="media w-full pb-[100%] h-0">
+                      {%- render 'image',
+                        image: variant.featured_image,
+                        src_width: 80,
+                        sizes: '80px',
+                        class: 'img-fit',
+                        lazy_load: false
+                      -%}
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <span class="text-xs">{{ product.title }}</span>
+                      <span class="text-xs font-bold">{{ variant.price | money }}</span>
+                    </div>
+                  </a>
+                  {%- assign variants_displayed = variants_displayed | plus: 1 -%}
+                {% endif %}
+              {% endfor %}
+            {%- endfor -%}
+          </div>
+
+          <div class="flex h-full justify-center items-end">
+            <button
+              class="btn btn--primary btn--full btn--small mt-6 "
+              type="submit"
+            >
+              View all
+              {% render 'icon' with 'arrow-short', class: 'size-3 ml-2' %}
+            </button>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- else -%}
+    <h4 class="quick-search__no-results-header ff-body fs-body-200">
+      {{ 'search.no_results_html' | t: terms: predictive_search.terms }}
+    </h4>
+    <p class="quick-search__no-results t-subdued">{{ 'search.check_spelling' | t }}</p>
+  {%- endif -%}
+{%- endif -%}

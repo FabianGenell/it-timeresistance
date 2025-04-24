@@ -7875,7 +7875,7 @@ function PredictiveSearch(resultsContainer) {
             return;
         }
         const params = new URLSearchParams();
-        params.set('section_id', 'predictive-search');
+        params.set('section_id', 'predictive-search-v2');
         params.set('q', searchTerm);
         if (window.theme.searchableFields) {
             params.set('resources[options][fields]', window.theme.searchableFields);
@@ -7892,7 +7892,7 @@ function PredictiveSearch(resultsContainer) {
             .then((text) => {
                 let resultsMarkup = new DOMParser()
                     .parseFromString(text, 'text/html')
-                    .querySelector('#shopify-section-predictive-search').innerHTML;
+                    .querySelector('#shopify-section-predictive-search-v2').innerHTML;
 
                 // Cache results
                 cachedResults[queryKey] = resultsMarkup;

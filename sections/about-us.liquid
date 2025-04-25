@@ -4,21 +4,23 @@
   assign categories = 'Team,Products,Timeline,International' | split: ','
 %}
 
-{%- render 'section-tab-navigator',
-  array: categories,
-  class: 'border-b border-[#e0c398] pb-1 text-sm top-0 sticky z-10',
-  blob_class: 'h-[3px] bottom-0 bg-black hidden md:block',
-  button_class: 'md:px-4 py-2',
-  active_text_class: 'font-bold'
--%}
 <div class="section">
+  {%- render 'section-tab-navigator',
+    array: categories,
+    class: 'border-b border-[#e0c398] pb-1 text-sm top-0 sticky z-10 mb-4',
+    blob_class: 'h-[3px] bottom-0 bg-black md:block',
+    button_class: 'md:px-4 p-2',
+    active_text_class: 'font-bold',
+    list_class: 'flex'
+  -%}
+
   <!-- Team -->
   <div
     class="text-center"
     data-tab="team"
   >
     <p
-      class="my-10 font-xl font-bold mx-auto max-w-[800px]"
+      class="md:my-10 mb-10 font-xl font-bold mx-auto max-w-[800px]"
     >
       {{ section.settings.team_title }}
     </p>
@@ -140,6 +142,77 @@
       sizes: '100vw',
       class: 'w-full h-full'
     -%}
+  </div>
+
+  <!-- International -->
+  <div
+    class=""
+    data-tab="international"
+  >
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="">
+        <p>We serve customers from over 90 countries.</p>
+        <p>Time Resistance partners with carefully selected brand ambassadors.</p>
+        <p>
+          We exhibit at various trade shows around the world including Liberty Fairs NY (USA), Mipel (Italy),
+          Nordic Shoe and Bag Fair (Sweden), and ILM (Germany).<br>
+          ILM is a trade fair that takes place in Offenbach am Main, Germany. It is one of the largest and
+          most important trade fairs for high-quality leather goods, luggage, bags and accessories.<br>
+          Mipel is another trade show that takes place in Milan, Italy. It is an international event that
+          showcases leather goods and fashion accessories.<br>
+          Nordic Shoe and Bag Fair is a trade show that takes place in Stockholm, Sweden. It is a platform for
+          Scandinavian shoe and bag brands to showcase their products.<br>
+          Liberty Fairs NY is a trade show that takes place in New York City, USA. It is a contemporary
+          fashion trade show that showcases men’s and women’s apparel, footwear, accessories and lifestyle
+          brands.
+        </p>
+        <p>
+          Our participation in trade shows allows us to showcase our products to a wider audience and to
+          connect with other industry professionals. It also gives us an opportunity to stay up-to-date with
+          the latest trends and developments in the industry.
+        </p>
+        <p>Time Resistance is registered in the EU, the US, China and Australia.</p>
+        <div class="flex flex-wrap gap-2">
+          <img
+            class="image-1"
+            src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/USA_Certificate.jpg?v=1682590950"
+            alt="USA Certificate"
+            width="auto"
+            height="auto"
+          >
+          <img
+            class="image-2"
+            src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/China_Certificate.jpg?v=1682590998"
+            alt="China Certificate"
+            width="auto"
+            height="auto"
+          >
+          <img
+            class="image-3"
+            src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Lithuania_Certificate.jpg?v=1682591025"
+            alt="Lithuania Certificate"
+            width="auto"
+            height="auto"
+          >
+        </div>
+      </div>
+      <div class="">
+        <img
+          class="image-4"
+          src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_1.jpg?v=1682591083"
+          alt="Mipel Trade Show"
+          width="auto"
+          height="auto"
+        >
+        <img
+          class="image-5"
+          src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_2.jpg?v=1682591083"
+          alt="Mipel Trade Show"
+          width="auto"
+          height="auto"
+        >
+      </div>
+    </div>
   </div>
 </div>
 

@@ -20,6 +20,10 @@
     assign blob_class = 'h-full top-0 bg-black rounded-full'
   endif
 
+  if list_class == blank
+    assign list_class = 'flex flex-col md:flex-row md:flex-wrap'
+  endif
+
   if include_all
     assign array = array | join: ',' | prepend: 'All,' | split: ','
   endif
@@ -37,7 +41,7 @@
   <div
     class="background-blob absolute -z-10 transition-all {{ blob_class }}"
   ></div>
-  <ul class="flex flex-col md:flex-row md:flex-wrap">
+  <ul class="{{ list_class }}">
     {%- for item in array -%}
       <li>
         <button

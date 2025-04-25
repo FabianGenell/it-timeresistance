@@ -51,7 +51,7 @@
   <!-- Products -->
 
   <div
-    class="grid md:grid-cols-[11fr_5fr]"
+    class="grid md:grid-cols-[11fr_5fr] gap-6 md:gap-10"
     data-tab="products"
   >
     {%- if section.settings.video != blank -%}
@@ -126,6 +126,20 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Timeline -->
+  <div
+    class=""
+    data-tab="timeline"
+  >
+    {%- render 'image',
+      image: section.settings.timeline_image,
+      src_width: 1280,
+      widths: '320,640,960,1280',
+      sizes: '100vw',
+      class: 'w-full h-full'
+    -%}
   </div>
 </div>
 

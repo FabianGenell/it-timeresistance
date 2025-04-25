@@ -195,7 +195,8 @@
           "settings": {
             "image": "shopify://shop_images/brand_manager.jpg",
             "name": "Donatas",
-            "role": "BRAND MANAGER"
+            "role": "BRAND MANAGER",
+            "full_row": false
           }
         },
         "team_member_evelina": {
@@ -203,7 +204,8 @@
           "settings": {
             "image": "shopify://shop_images/evelina.jpg",
             "name": "Evelina",
-            "role": "E-COMMERCE"
+            "role": "E-COMMERCE",
+            "full_row": false
           }
         },
         "team_member_sandra": {
@@ -211,7 +213,8 @@
           "settings": {
             "image": "shopify://shop_images/sandra.jpg",
             "name": "Sandra",
-            "role": "B2B"
+            "role": "B2B",
+            "full_row": false
           }
         },
         "team_member_justina": {
@@ -219,7 +222,8 @@
           "settings": {
             "image": "shopify://shop_images/justina.jpg",
             "name": "Justina",
-            "role": "VISUAL AIDS"
+            "role": "VISUAL AIDS",
+            "full_row": false
           }
         },
         "team_member_vaidas": {
@@ -227,7 +231,8 @@
           "settings": {
             "image": "shopify://shop_images/logistics-IT.jpg",
             "name": "Vaidas",
-            "role": "LOGISTICS / IT"
+            "role": "LOGISTICS / IT",
+            "full_row": false
           }
         },
         "team_member_vaida": {
@@ -235,7 +240,8 @@
           "settings": {
             "image": "shopify://shop_images/vaida.jpg",
             "name": "Vaida",
-            "role": "QUALITY CONTROL"
+            "role": "QUALITY CONTROL",
+            "full_row": false
           }
         },
         "team_member_neringa": {
@@ -243,7 +249,8 @@
           "settings": {
             "image": "shopify://shop_images/neringa.jpg",
             "name": "Neringa",
-            "role": "HEAD OF PRODUCTION AND PROTOTYPING"
+            "role": "HEAD OF PRODUCTION AND PROTOTYPING",
+            "full_row": false
           }
         },
         "team_member_emilija": {
@@ -251,7 +258,8 @@
           "settings": {
             "image": "shopify://shop_images/emilija.jpg",
             "name": "Emilija",
-            "role": "ASSISTANT TO THE BRAND MANAGER"
+            "role": "ASSISTANT TO THE BRAND MANAGER",
+            "full_row": false
           }
         },
         "team_member_jolanta": {
@@ -259,7 +267,8 @@
           "settings": {
             "image": "shopify://shop_images/designer.jpg",
             "name": "Jolanta",
-            "role": "DESIGNER"
+            "role": "DESIGNER",
+            "full_row": false
           }
         },
         "team_member_roberta": {
@@ -267,7 +276,8 @@
           "settings": {
             "image": "shopify://shop_images/roberta.jpg",
             "name": "Roberta",
-            "role": "MARKETPLACES"
+            "role": "MARKETPLACES",
+            "full_row": false
           }
         }
       },
@@ -288,6 +298,8 @@
       "settings": {
         "team_title": "Meet our core team, the people behind the scenes who make our company run smoothly and successfully.",
         "video_title": "",
+        "video": "shopify://files/videos/about-us-products-timeresistance.mp4",
+        "timeline_image": "shopify://shop_images/timeline2022_1_8f800810-7b95-44dd-8508-6d17839bc13b.webp",
         "timeline_title": ""
       }
     },

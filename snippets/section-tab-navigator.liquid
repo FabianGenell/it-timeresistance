@@ -1,0 +1,52 @@
+{%- comment -%}
+  Parameters:
+  - array {Array} - An array of items to be displayed as buttons in the navigation. Each item in the array will be used as the button text and data attribute.
+  - include_all {Boolean} - If true, includes an "All" button in the navigation (optional).
+  - class {String} - class to apply to section-tab-navigator
+  - blob_class {String} - class to apply to blob
+  - button_class {String} - class to apply to button
+  Usage:
+  {% render 'section-tab-navigator', include_all: true, array: ['Home', 'About', 'Services', 'Contact'] %}
+
+  To toggle different elements based on tab simply add data-tab="tab-handle"
+
+  example:
+  <li data-tab="home">Home</li>
+  <li data-tab="about-us">About us</li>
+{%- endcomment -%}
+
+{%- liquid
+  if blob_class == blank
+    assign blob_class = 'h-full top-0 bg-black rounded-full'
+  endif
+
+  if include_all
+    assign array = array | join: ',' | prepend: 'All,' | split: ','
+  endif
+
+  if active_text_class == null
+    assign active_text_class = 'text-white'
+  endif
+-%}
+
+<section-tab-navigator
+  class="relative block z-0 {{ class }} overflow-x-auto"
+  data-section-id="shopify-section-{{ section.id }}"
+  data-active-text-class="{{ active_text_class }}"
+>
+  <div
+    class="background-blob absolute -z-10 transition-all {{ blob_class }}"
+  ></div>
+  <ul class="flex flex-col md:flex-row md:flex-wrap">
+    {%- for item in array -%}
+      <li>
+        <button
+          class="{{ button_class }}"
+          data-navigate-tab="{{ item | handle }}"
+        >
+          {{ item }}
+        </button>
+      </li>
+    {%- endfor -%}
+  </ul>
+</section-tab-navigator>

@@ -1,0 +1,215 @@
+<!-- sections/about-us.liquid -->
+
+{% liquid
+  assign categories = 'Team,Products,Timeline,International' | split: ','
+%}
+
+{%- render 'section-tab-navigator',
+  array: categories,
+  class: 'border-b border-[#e0c398] pb-1 text-sm top-0 sticky z-10',
+  blob_class: 'h-[3px] bottom-0 bg-black hidden md:block',
+  button_class: 'md:px-4 py-2',
+  active_text_class: 'font-bold'
+-%}
+<div class="section">
+  <!-- Team -->
+  <div
+    class="text-center"
+    data-tab="team"
+  >
+    <p
+      class="my-10 font-xl font-bold mx-auto max-w-[800px]"
+    >
+      {{ section.settings.team_title }}
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign class = ''
+          if block.settings.full_row
+            assign class = 'col-span-2 md:col-span-5 '
+          endif
+        -%}
+        <div class="group {{ class }} mx-auto flex flex-col items-center  w-full max-w-[150px]">
+          <div class="media w-full pb-[100%] rounded-full overflow-hidden">
+            {% render 'image',
+              image: block.settings.image,
+              src_width: 300,
+              widths: '150,300',
+              sizes: '150px',
+              class: 'img-fit img-fit--zoom img-fit--group-zoom'
+            %}
+          </div>
+          <p class="font-lg font-bold mt-2">{{ block.settings.name }}</p>
+          <p class="text-sm uppercase tracking-wider">{{ block.settings.role }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Products -->
+
+  <div
+    class="grid md:grid-cols-[11fr_5fr]"
+    data-tab="products"
+  >
+    {%- if section.settings.video != blank -%}
+      <div class="">
+        <p class="font-lg font-bold">{{ section.settings.video_title }}</p>
+        {% render 'video',
+          video: section.settings.video,
+          wrapper_class: 'w-full h-full',
+          aspect_ratio: '16/9',
+          controls: true,
+          loop: true
+        %}
+      </div>
+    {%- endif -%}
+
+    <div class="">
+      <p class="font-lg font-bold">Features</p>
+      <div class="product-text">
+        <div id="features_div">
+          <ul class="list-none">
+            <li class="flex items-center">
+              <img
+                class="pr-2"
+                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/made_in_italy.svg?v=1683187137"
+                alt="Icon"
+                width="24"
+                height="24"
+
+              >Made in Italy
+            </li>
+            <li class="flex items-center">
+              <img
+                class="pr-2"
+                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/classic_design.svg?v=1683186411"
+                alt="Icon"
+                width="24"
+                height="24"
+
+              >Classic design
+            </li>
+            <li class="flex items-center">
+              <img
+                class="pr-2"
+                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/full_grain.svg?v=1683186410"
+                alt="Icon"
+                width="24"
+                height="24"
+
+              >Full-grain, hand-dyed, vegetable-tanned leather
+            </li>
+            <li class="flex items-center">
+              <img
+                class="pr-2"
+                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/hand_made.svg?v=1683186411"
+                alt="Icon"
+                width="24"
+                height="24"
+
+              >Hand made
+            </li>
+            <li class="flex items-center">
+              <img
+                class="pr-2"
+                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/fashion.svg?v=1683186411"
+                alt="Icon"
+                width="24"
+                height="24"
+
+              >"Slow fashion" mindset
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About Us",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Team"
+    },
+    {
+      "type": "text",
+      "id": "team_title",
+      "label": "Team Title"
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Video Title"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "header",
+      "content": "Timeline"
+    },
+    {
+      "type": "image_picker",
+      "id": "timeline_image",
+      "label": "Timeline Image"
+    },
+    {
+      "type": "text",
+      "id": "timeline_title",
+      "label": "Timeline Title"
+    },
+    {
+      "type": "header",
+      "content": "International"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Team Member",
+      "type": "team_member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_row",
+          "label": "Full row",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

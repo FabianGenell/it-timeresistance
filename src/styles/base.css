@@ -16,12 +16,18 @@
     object-fit: contain;
 }
 
+.img-fit--group-zoom,
 .img-fit--zoom {
     transition: transform 2s ease;
 }
 
 @media (hover: hover) {
+    .group:hover .img-fit--group-zoom,
     .img-fit--zoom:hover {
         transform: scale(1.05);
     }
+}
+
+.js-hidden {
+    display: none;
 }

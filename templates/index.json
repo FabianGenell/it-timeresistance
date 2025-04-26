@@ -48,9 +48,9 @@
         "image_KTC4iV"
       ],
       "settings": {
-        "image_aspect": "original",
+        "image_aspect": "custom",
         "desktop_height": 100,
-        "mobile_height": 80,
+        "mobile_height": 50,
         "text_position": "flex-end",
         "text_color": "#ffffff",
         "button_background_color": "#ffffff",

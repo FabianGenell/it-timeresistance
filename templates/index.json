@@ -125,7 +125,7 @@
           "type": "item",
           "settings": {
             "width": "50",
-            "height": 500,
+            "height": 800,
             "mobile_height": 500,
             "image": "shopify://shop_images/KKB1008_x_1104.jpg",
             "mobile_image": "shopify://shop_images/KKB1040_x_1576.jpg",
@@ -380,7 +380,7 @@
           "type": "item",
           "settings": {
             "width": "50",
-            "height": 500,
+            "height": 800,
             "mobile_height": 500,
             "image": "shopify://shop_images/Untitled_design_34_b244f59f-d89c-418e-b4b1-338bbc61b866.jpg",
             "media_fit": "cover",

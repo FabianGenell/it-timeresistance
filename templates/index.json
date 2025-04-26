@@ -49,7 +49,7 @@
       ],
       "settings": {
         "image_aspect": "custom",
-        "desktop_height": 100,
+        "desktop_height": 85,
         "mobile_height": 50,
         "text_position": "flex-end",
         "text_color": "#ffffff",

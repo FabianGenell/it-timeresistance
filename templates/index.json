@@ -15,7 +15,7 @@
         "image_WG8Cip": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/A2152_x_1680_1_1.jpg",
+            "image": "shopify://shop_images/KKA1008_x_1104_2.jpg",
             "image_mobile": "shopify://shop_images/A_1040_x_1576.jpg",
             "image_xl": "shopify://shop_images/A2152_x_1680_1.jpg",
             "focal_point": "image_presentation",
@@ -55,7 +55,7 @@
         "text_color": "#ffffff",
         "button_background_color": "#ffffff",
         "button_text_color": "#000000",
-        "color_overlay": "#000000",
+        "color_overlay": "rgba(0,0,0,0)",
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": false,
@@ -78,7 +78,7 @@
         "text_color": "#ffffff",
         "button_background_color": "#ffffff",
         "button_text_color": "#000000",
-        "color_overlay": "#000000",
+        "color_overlay": "rgba(0,0,0,0)",
         "color_overlay_gradient": "",
         "overlay_opacity": 40,
         "enable_animation": true,
@@ -116,7 +116,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
@@ -149,7 +149,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
@@ -235,7 +235,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 30
           }
@@ -268,7 +268,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 30
           }
@@ -335,7 +335,7 @@
         "text_color": "#ffffff",
         "button_background_color": "#ffffff",
         "button_text_color": "#000000",
-        "color_overlay": "#000000",
+        "color_overlay": "rgba(0,0,0,0)",
         "color_overlay_gradient": "",
         "overlay_opacity": 40,
         "enable_animation": true,
@@ -351,7 +351,8 @@
             "width": "50",
             "height": 800,
             "mobile_height": 500,
-            "image": "shopify://shop_images/07_16_8_fec1ee69-ed64-4b7c-b135-1fd949950e0b.jpg",
+            "image": "shopify://shop_images/07_16_8_0327f91d-ec0f-4b58-9ab5-8f5880af1b8f.jpg",
+            "image_xl": "shopify://shop_images/b_8_cb071964-e6cc-42ed-a779-cc9867ef2c6f.jpg",
             "media_fit": "cover",
             "focal_point": "image_presentation",
             "text_position": "center_flex-end",
@@ -371,7 +372,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 30
           }
@@ -402,7 +403,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 30
           }

@@ -48,7 +48,7 @@
         "image_KTC4iV"
       ],
       "settings": {
-        "image_aspect": "custom",
+        "image_aspect": "original",
         "desktop_height": 100,
         "mobile_height": 80,
         "text_position": "flex-end",

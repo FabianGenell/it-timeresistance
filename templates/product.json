@@ -42,7 +42,8 @@
             "show_dynamic_checkout": false,
             "enable_sticky_atc_bar_desktop": true,
             "enable_sticky_atc_bar_mobile": false,
-            "divider_width": "none"
+            "divider_width": "none",
+            "show_favorites": true
           }
         },
         "product_callouts-2": {
@@ -223,7 +224,7 @@
         "text_position": "center_center",
         "text_position_mobile": "center",
         "button_background_color": "#ffffff",
-        "color_overlay": "#000000",
+        "color_overlay": "rgba(0,0,0,0)",
         "color_overlay_text": "#ffffff",
         "color_overlay_gradient": "",
         "overlay_opacity": 40,
@@ -278,7 +279,6 @@
         "xo_gallery_xo_gallery_xQmR49": {
           "type": "shopify://apps/xo-gallery/blocks/xo-gallery/e61dfbaa-1a75-4e4e-bffc-324f17325251",
           "settings": {
-            "type": "gallery",
             "id": 0,
             "mid": "{{ product.metafields.custom.product_lookbook_id.value }}"
           }

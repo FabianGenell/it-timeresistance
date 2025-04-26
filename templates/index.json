@@ -211,7 +211,7 @@
           "type": "item",
           "settings": {
             "width": "50",
-            "height": 500,
+            "height": 800,
             "mobile_height": 500,
             "image": "shopify://shop_images/C1008_x_1104_1d524f94-2bad-4df5-a600-7e62017b59ce.jpg",
             "mobile_image": "shopify://shop_images/KC1040_x_1576.jpg",
@@ -244,7 +244,7 @@
           "type": "item",
           "settings": {
             "width": "50",
-            "height": 500,
+            "height": 800,
             "mobile_height": 500,
             "image": "shopify://shop_images/KD1008_x_1104.jpg",
             "mobile_image": "shopify://shop_images/D1040_x_1576jpg.jpg",

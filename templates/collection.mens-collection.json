@@ -76,7 +76,7 @@
         "text_color": "#ffffff",
         "button_background_color": "#ffffff",
         "button_text_color": "#000000",
-        "color_overlay": "#000000",
+        "color_overlay": "rgba(0,0,0,0)",
         "color_overlay_gradient": "",
         "overlay_opacity": 30,
         "enable_animation": true,
@@ -104,7 +104,7 @@
         "label_style": "overlay",
         "overlay_title_background_style": "gradient",
         "overlay_text_color": "#ffffff",
-        "overlay_title_background": "#000000",
+        "overlay_title_background": "rgba(0,0,0,0)",
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
@@ -139,7 +139,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
@@ -170,7 +170,7 @@
             "text_color": "#ffffff",
             "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
@@ -242,10 +242,10 @@
           "all-bags-for-men"
         ],
         "collection_listing_aspect_ratio": "portrait",
-        "label_style": "beneath",
+        "label_style": "overlay",
         "overlay_title_background_style": "gradient",
         "overlay_text_color": "#ffffff",
-        "overlay_title_background": "#000000",
+        "overlay_title_background": "rgba(0,0,0,0)",
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"

@@ -38,10 +38,10 @@
           "settings": {
             "image": "shopify://shop_images/07_16_1_710e4ced-d4be-436b-9c7c-8d377108e58c.jpg",
             "focal_point": "image_presentation",
-            "title": "Briefcases",
+            "title": "Handbags",
             "heading_tag": "h2",
             "text": "",
-            "link": "shopify://collections/briefcases-for-men",
+            "link": "shopify://collections/handbags-for-women",
             "link_text": "View all",
             "button_style": "btn--primary"
           }
@@ -54,7 +54,7 @@
             "title": "Backpacks",
             "heading_tag": "h2",
             "text": "",
-            "link": "shopify://collections/backpacks-for-men",
+            "link": "shopify://collections/backpacks-for-women",
             "link_text": "View All",
             "button_style": "btn--primary"
           }
@@ -86,21 +86,21 @@
         "heading": "",
         "heading_tag": "h2",
         "subheading": "",
-        "link": "shopify://collections",
+        "link": "",
         "link_text": "",
         "columns": "4",
         "mobile_columns": "2",
         "collection_list": [
-          "clutches-for-men",
-          "sling-bags-for-men",
-          "document-cases-for-men",
-          "wallets-for-men"
+          "top-handle-bags-for-women",
+          "business-briefcases-for-women",
+          "jewelry-boxes-for-women",
+          "small-leather-goods-for-women"
         ],
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",
         "overlay_title_background_style": "gradient",
         "overlay_text_color": "#ffffff",
-        "overlay_title_background": "#000000",
+        "overlay_title_background": "rgba(0,0,0,0)",
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
@@ -220,8 +220,91 @@
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
+    "grid_jzhFze": {
+      "type": "grid",
+      "blocks": {
+        "item_qe7UXd": {
+          "type": "item",
+          "settings": {
+            "width": "100",
+            "height": 660,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_3_dc536f15-687e-4f6a-9dff-96b55d0be0ae.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "<p>MESSENGER BAGS</p>",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/messenger-bags-for-men",
+            "link_text": "View All",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        },
+        "item_J94Kib": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "width": "100",
+            "height": 500,
+            "mobile_height": 500,
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "text_position": "center_center",
+            "accent": "",
+            "title": "Grid item",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "<p>Perfect for lookbooks and editorial photography</p>",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "item_qe7UXd",
+        "item_J94Kib"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "content_alignment": "left",
+        "enable_animation": true,
+        "full_width": true,
+        "spacing": 24,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
     "collection_list_grid_n3jTNw": {
       "type": "collection-list-grid",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "heading": "",
@@ -391,6 +474,7 @@
     "image_hero_split_TMYQrD",
     "collection_list_grid_hYH44C",
     "grid_XHcE3W",
+    "grid_jzhFze",
     "collection_list_grid_n3jTNw",
     "product-grid",
     "multi_column_pWTiRm"

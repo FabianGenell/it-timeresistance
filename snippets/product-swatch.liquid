@@ -31,16 +31,20 @@
     if sibling_swatch_type == 'image' and sibling_product.featured_media != blank
       echo sibling_product.featured_media | image_url: width: swatch_image_width | image_tag: alt: option_value, loading: 'lazy', role: 'presentation'
     else
-      if settings.use_variant_image_swatches
-        assign variant_swatch_image = blank
+      assign variant_swatch_image = blank
 
-        for variant in prod.variants
-          if variant.options[option_index0] == option_value and variant.image
+      for variant in prod.variants
+        if variant.options[option_index0] == option_value and variant.image != blank
+          if settings.use_variant_image_swatches
             assign variant_swatch_image = variant.image
             break
+          else
+            assign var = variant
+            assign image_name = var.title | replace: ' ', '_' | append: '_swatch-color-product-page.jpg'
+            assign variant_swatch_image = images[image_name]
           endif
-        endfor
-      endif
+        endif
+      endfor
 
       if variant_swatch_image != blank
         echo variant_swatch_image | image_url: width: swatch_image_width | image_tag: alt: option_value, loading: 'lazy', role: 'presentation'

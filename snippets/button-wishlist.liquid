@@ -1,14 +1,16 @@
 {%- if prod.handle != blank -%}
   <add-favorite
-    class="cursor-pointer flex group {{ class }}"
+    class="cursor-pointer group block w-6 {{ class }}"
     data-product-handle="{{ prod.handle }}"
     {% if var.id != blank %}
       data-variant-id="{{ var.id }}"
     {% endif %}
   >
-    {%- render 'icon-heart',
-      class: 'fill-transparent stroke-black transition-[fill] duration-300 ease-in-out 
-      group-[[added]]:fill-black group-[[added]]:stroke-black'
-    -%}
+    <div class="media w-full pb-[100%] h-0">
+      {%- render 'icon-heart',
+        class: 'fill-transparent stroke-black transition-[fill] duration-300 ease-in-out 
+      group-[[added]]:fill-black group-[[added]]:stroke-black img-fit'
+      -%}
+    </div>
   </add-favorite>
 {%- endif -%}

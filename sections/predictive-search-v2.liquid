@@ -90,27 +90,31 @@
             {%- for product in predictive_search.resources.products -%}
               {% for variant in product.variants %}
                 {%- if variants_displayed < 6 -%}
-                  <a
-                    href="{{ variant.url }}"
-                    class="
-                      grid grid-cols-[1fr_2fr] gap-2 p-4
-                      hover:bg-gray-100 rounded-md transition-colors duration-200
-                    "
-                  >
-                    <div class="media w-full pb-[100%] h-0">
-                      {%- render 'image',
-                        image: variant.featured_image,
-                        src_width: 80,
-                        sizes: '80px',
-                        class: 'img-fit',
-                        lazy_load: false
-                      -%}
-                    </div>
-                    <div class="flex flex-col gap-2">
-                      <span class="text-xs">{{ product.title }}</span>
-                      <span class="text-xs font-bold">{{ variant.price | money }}</span>
-                    </div>
-                  </a>
+                  <div class="relative group/variant hover:bg-gray-100 rounded-md transition-colors duration-200">
+                    {%- render 'button-wishlist',
+                      prod: product,
+                      var: variant,
+                      class: 'absolute top-1 right-1 w-4 opacity-0 group-hover/variant:opacity-100 transition-opacity duration-200s'
+                    -%}
+                    <a
+                      href="{{ variant.url }}"
+                      class="                        grid grid-cols-[1fr_2fr] gap-2 p-4"
+                    >
+                      <div class="media w-full pb-[100%] h-0">
+                        {%- render 'image',
+                          image: variant.featured_image,
+                          src_width: 80,
+                          sizes: '80px',
+                          class: 'img-fit',
+                          lazy_load: false
+                        -%}
+                      </div>
+                      <div class="flex flex-col gap-2">
+                        <span class="text-xs">{{ product.title }}</span>
+                        <span class="text-xs font-bold">{{ variant.price | money }}</span>
+                      </div>
+                    </a>
+                  </div>
                   {%- assign variants_displayed = variants_displayed | plus: 1 -%}
                 {% endif %}
               {% endfor %}

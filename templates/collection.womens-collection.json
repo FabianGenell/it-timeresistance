@@ -51,7 +51,9 @@
         "image_cBe8bV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_253.jpg",
+            "image": "shopify://shop_images/07_16_2_ee0c95d3-b300-48ac-a7b9-7da4cd7c3b12.jpg",
+            "image_mobile": "shopify://shop_images/Rectangle_228_04e182d9-c91a-4896-9797-cc6b6cdeb57b.jpg",
+            "image_xl": "shopify://shop_images/d_2_f3afcfef-0981-44e8-b6e0-6e116dd64d87.jpg",
             "focal_point": "image_presentation",
             "title": "Backpacks",
             "heading_tag": "h2",
@@ -235,9 +237,9 @@
             "width": "100",
             "height": 660,
             "mobile_height": 500,
-            "image": "shopify://shop_images/KD1008_x_1104_e868176f-3023-4566-9b51-94799087bf20.jpg",
-            "mobile_image": "shopify://shop_images/D1040_x_1576jpg_1.jpg",
-            "image_xl": "shopify://shop_images/KD2152_x_1680_277b7648-d975-4403-bbb6-e649e0c4830b.jpg",
+            "image": "shopify://shop_images/desktop_full_all_bags_3a2f8dc1-ac2b-4dfd-985f-6f77c469030d.webp",
+            "mobile_image": "shopify://shop_images/Rectangle_232_c385cba8-3326-4c92-9d15-11bf873ee75e.jpg",
+            "image_xl": "shopify://shop_images/large_full_all_bags_1.webp",
             "media_fit": "cover",
             "focal_point": "image_presentation",
             "text_position": "center_flex-end",

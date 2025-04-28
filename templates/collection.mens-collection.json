@@ -36,7 +36,9 @@
         "image_XeWM6D": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/07_16_1_710e4ced-d4be-436b-9c7c-8d377108e58c.jpg",
+            "image": "shopify://shop_images/A1008_x_1104_2bec12c3-daa6-4f4b-b97c-dd27f132a4ee.jpg",
+            "image_mobile": "shopify://shop_images/A1040_x_1576_81fd0802-e6e3-4cc7-b794-ee93953747f8.jpg",
+            "image_xl": "shopify://shop_images/A2152_x_1680_143b3914-bfb6-474c-b2e3-9bba49c89c50.jpg",
             "focal_point": "image_presentation",
             "title": "Briefcases",
             "heading_tag": "h2",
@@ -49,7 +51,9 @@
         "image_cBe8bV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/07_16_2_4e1fdea7-d4d8-4c2f-9c83-cbf7d56c8115.jpg",
+            "image": "shopify://shop_images/C1008_x_1104_34c111f3-4766-4b54-99fc-ba9a066ca05e.jpg",
+            "image_mobile": "shopify://shop_images/KC1040_x_1576_da53ddea-976a-4995-90cc-b4f801b01268.jpg",
+            "image_xl": "shopify://shop_images/KC2152_x_1680.jpg",
             "focal_point": "image_presentation",
             "title": "Backpacks",
             "heading_tag": "h2",

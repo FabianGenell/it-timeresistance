@@ -59,6 +59,7 @@
         "columns_desktop": "4",
         "columns_mobile": "2",
         "rows": "4",
+        "seperate_variants": true,
         "show_item_count": false,
         "show_sort": true,
         "show_filters": true,
@@ -192,12 +193,17 @@
     "metaobject_carousel_NYLNYB": {
       "type": "gallery-carousel",
       "settings": {
+        "metaobject_type": "mens_collections",
+        "collections": [
+          "briefcases-for-men",
+          "clutches-for-men"
+        ],
         "heading": "All Men Categories",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
         "link_text": "",
-        "metaobject_type": "mens_collections",
+        "collection_type": "mens_collections",
         "columns": "4",
         "mobile_columns": "2",
         "loop_carousel": true,
@@ -205,7 +211,7 @@
         "image_caption_style": "overlay",
         "image_caption_size": "fs-body-100",
         "overlay_text_background_style": "gradient",
-        "overlay_text_color": "#fff",
+        "overlay_text_color": "#ffffff",
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",

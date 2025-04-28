@@ -203,7 +203,7 @@
   "
   style="--z-index-item: {{ forloop.index }};"
 >
-  <div class="product-item__inner z-0">
+  <div class="product-item__inner h-full z-0 flex flex-col">
     <div class="product-item__media {%- if show_multiple_images %} product-item__media--multiple-images {%- endif %}">
       <div class="absolute top-0 left-0 flex justify-between items-center w-full z-10 p-1">
         {% unless placeholder %}
@@ -273,7 +273,7 @@
       {% endif %}
     </div>
 
-    <div class="product-item__meta">
+    <div class="product-item__meta flex-grow">
       <div class="product-item__text ta-c ">
         <h4 class="ff-body product-item__product-title fs-product-card-title">
           {%- if placeholder -%}

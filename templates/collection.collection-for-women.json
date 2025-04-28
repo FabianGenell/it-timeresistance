@@ -59,6 +59,7 @@
         "columns_desktop": "4",
         "columns_mobile": "2",
         "rows": "4",
+        "seperate_variants": true,
         "show_item_count": false,
         "show_sort": true,
         "show_filters": true,
@@ -191,13 +192,16 @@
     },
     "metaobject_carousel_NYLNYB": {
       "type": "gallery-carousel",
+      "disabled": true,
       "settings": {
+        "metaobject_type": "womens_collections",
+        "collections": [],
         "heading": "All Women Categories",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
         "link_text": "",
-        "metaobject_type": "womens_collections",
+        "collection_type": "mens_collections",
         "columns": "4",
         "mobile_columns": "2",
         "loop_carousel": true,
@@ -211,6 +215,38 @@
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
       }
+    },
+    "collection_list_slider_aGmKJQ": {
+      "type": "collection-list-slider",
+      "name": "t:sections.collection_list_slider.presets.name",
+      "settings": {
+        "heading": "All Women Categories",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "shopify://collections",
+        "link_text": "",
+        "columns": "4",
+        "mobile_columns": "2",
+        "collection_list": [
+          "handbags-for-women",
+          "backpacks-for-women",
+          "cross-body-bags-for-women",
+          "travel-bags-for-women",
+          "top-handle-bags-for-women",
+          "business-briefcases-for-women",
+          "jewelry-boxes-for-women",
+          "small-leather-goods-for-women",
+          "all-bags-for-women"
+        ],
+        "collection_listing_aspect_ratio": "portrait",
+        "label_style": "overlay",
+        "overlay_title_background_style": "gradient",
+        "overlay_text_color": "#fff",
+        "overlay_title_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
     }
   },
   "order": [
@@ -218,6 +254,7 @@
     "video_hero_MkXiD8",
     "product-grid",
     "multi_column_pWTiRm",
-    "metaobject_carousel_NYLNYB"
+    "metaobject_carousel_NYLNYB",
+    "collection_list_slider_aGmKJQ"
   ]
 }

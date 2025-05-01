@@ -40,7 +40,16 @@
             break
           else
             assign var = variant
-            assign image_name = var.title | replace: ' ', '_' | append: '_swatch-color-product-page.jpg'
+
+            assign var_title_handle = var.title | handleize
+            assign var_parts = var_title_handle | split: '-'
+            capture image_name
+              for part in var_parts
+                echo part | capitalize | append: '_'
+              endfor
+              echo 'swatch-color-product-page.jpg'
+            endcapture
+
             assign variant_swatch_image = images[image_name]
           endif
         endif
@@ -88,6 +97,16 @@
     endif
   endif
 %}
+
+{%- liquid
+  assign var_title_handle = var.title | handleize
+  assign var_parts = var_title_handle | split: '_'
+  capture image_name
+    for part in var_parts
+      echo part | capitalize | append: '_'
+    endfor
+  endcapture
+-%}
 
 {% case context %}
   {% when 'product-item' %}

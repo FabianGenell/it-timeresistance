@@ -41,7 +41,7 @@
           "settings": {
             "show_dynamic_checkout": false,
             "enable_sticky_atc_bar_desktop": true,
-            "enable_sticky_atc_bar_mobile": false,
+            "enable_sticky_atc_bar_mobile": true,
             "divider_width": "none",
             "show_favorites": true
           }

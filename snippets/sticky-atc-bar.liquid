@@ -59,7 +59,7 @@
       </div>
 
       <div class="sticky-atc-bar__meta">
-        <h5 class="ff-heading fs-heading-5-base">{{ prod.title }}</h5>
+        <h5 class="ff-heading fs-heading-5-base md:inline hidden">{{ prod.title }}</h5>
 
         {%- unless prod.has_only_default_variant %}
           <span class="sticky-atc-bar__meta-options fs-body-75 t-opacity-60">{{ options_csl }}</span>
@@ -97,7 +97,7 @@
       </div>
     </div>
 
-    <div class="sticky-atc-bar__button">
+    <div class="sticky-atc-bar__button lg:w-[400px]">
       <button
         type="submit"
         name="add"

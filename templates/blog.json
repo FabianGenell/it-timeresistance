@@ -12,6 +12,15 @@
     "main": {
       "type": "main-blog",
       "settings": {
+        "show_tag_nav": false,
+        "article_per_page": 12,
+        "show_tags": false,
+        "show_author": false,
+        "show_date": true,
+        "show_excerpt": true,
+        "show_featured_image": true,
+        "aspect_ratio": "landscape",
+        "enable_animation": true
       }
     }
   },

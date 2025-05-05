@@ -90,20 +90,41 @@
             "overlay_opacity": 0
           }
         },
-        "meganav_double_banner_CaRGfT": {
+        "full_width_meganav_48XeGe": {
+          "type": "full_width_meganav",
+          "settings": {
+            "dropdown_parent_link": "",
+            "column_count": 3,
+            "show_column_borders": true,
+            "show_promo": true,
+            "promo_width": 440,
+            "promo_height": 250,
+            "secondary_position": "right",
+            "focal_point": "image_presentation",
+            "promo_text": "Newest Releases",
+            "link": "shopify://collections/all",
+            "link_text": "Discover",
+            "text_position": "flex-start_flex-end",
+            "text_color": "#ffffff",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
+        },
+        "meganav_double_banner_cCA3yF": {
           "type": "meganav_double_banner",
           "settings": {
-            "dropdown_parent_link": "gift ideas",
+            "dropdown_parent_link": "Gift Ideas",
             "image_1": "shopify://shop_images/him.jpg",
             "focal_point_1": "image_presentation",
             "promo_text_1": "For Him",
             "link_1": "shopify://collections/gift-ideas-for-him",
-            "link_text_1": "Explore the collection",
+            "link_text_1": "Explore the Collection",
             "image_2": "shopify://shop_images/her.jpg",
             "focal_point_2": "image_presentation",
             "promo_text_2": "For Her",
             "link_2": "shopify://collections/gift-ideas-for-her",
-            "link_text_2": "Explore the collection",
+            "link_text_2": "Explore the Collection",
             "text_position": "flex-start_flex-end",
             "text_color": "#ffffff",
             "color_overlay": "#000000",
@@ -115,7 +136,8 @@
       "block_order": [
         "meganav-0",
         "full_width_meganav_GkPhnJ",
-        "meganav_double_banner_CaRGfT"
+        "full_width_meganav_48XeGe",
+        "meganav_double_banner_cCA3yF"
       ],
       "settings": {
         "layout": "logo-center_nav-left",

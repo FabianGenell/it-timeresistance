@@ -355,7 +355,7 @@
             "mobile_image": "shopify://shop_images/Untitled_design_34_a0c952c3-3c32-44e2-92ce-540d003000a0.jpg",
             "image_xl": "shopify://shop_images/b_8_cb071964-e6cc-42ed-a779-cc9867ef2c6f.jpg",
             "media_fit": "cover",
-            "focal_point": "image_presentation",
+            "focal_point": "bottom",
             "text_position": "center_flex-end",
             "accent": "",
             "title": "OUR LEATHER",

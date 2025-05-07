@@ -125,7 +125,7 @@
             "promo_text_2": "For Her",
             "link_2": "shopify://collections/gift-ideas-for-her",
             "link_text_2": "Explore the Collection",
-            "text_position": "flex-start_flex-end",
+            "text_position": "center_flex-end",
             "text_color": "#ffffff",
             "color_overlay": "#000000",
             "color_overlay_gradient": "",

@@ -65,7 +65,7 @@
     "video_hero_ywYdK8": {
       "type": "video-hero",
       "settings": {
-        "image_aspect": "custom",
+        "image_aspect": "original",
         "desktop_height": 100,
         "mobile_height": 100,
         "video": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
@@ -322,11 +322,11 @@
     "video_hero_hYxzLV": {
       "type": "video-hero",
       "settings": {
-        "image_aspect": "custom",
+        "image_aspect": "original",
         "desktop_height": 100,
         "mobile_height": 100,
-        "video": "shopify://files/videos/desktop-video-hero2-timeresistance.mp4",
-        "video_mobile": "shopify://files/videos/mobile-video-hero-timeresistance_5e5b70bf-0509-4694-865c-fe3c8c1a195a.mp4",
+        "video": "shopify://files/videos/VID LRG.mp4",
+        "video_mobile": "shopify://files/videos/cd7586dc84cc41c1b4e0dbafa451962d.mp4",
         "media_link": "",
         "focal_point": "image_presentation",
         "focal_point_mobile": "image_presentation",

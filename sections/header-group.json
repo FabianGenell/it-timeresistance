@@ -127,9 +127,9 @@
             "link_text_2": "Explore the Collection",
             "text_position": "center_flex-end",
             "text_color": "#ffffff",
-            "color_overlay": "#000000",
+            "color_overlay": "#ffffff",
             "color_overlay_gradient": "",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         }
       },

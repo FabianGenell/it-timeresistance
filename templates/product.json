@@ -134,8 +134,8 @@
             "column_placement": "right",
             "heading": "Shipping and Returns",
             "heading_tag": "h3",
-            "content": "<p>Add your collapsible row content here.</p>",
-            "page_for_content": "",
+            "content": "",
+            "page_for_content": "shipping-and-returns",
             "custom_liquid": ""
           }
         }

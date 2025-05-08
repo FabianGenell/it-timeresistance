@@ -36,7 +36,7 @@
         "announcement-bar-1"
       ],
       "settings": {
-        "enable_sticky_announcement_bar": "never",
+        "enable_sticky_announcement_bar": "desktop-and-mobile",
         "autoplay_enabled": true,
         "autoplay_delay": 4,
         "color_background": "#000000",

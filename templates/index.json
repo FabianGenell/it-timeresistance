@@ -18,11 +18,11 @@
             "width": "50",
             "height": 800,
             "mobile_height": 500,
-            "image": "shopify://shop_images/A1040_x_1576_81fd0802-e6e3-4cc7-b794-ee93953747f8.jpg",
-            "mobile_image": "shopify://shop_images/A1040_x_1576.jpg",
-            "image_xl": "shopify://shop_images/A2152_x_1680_6a794602-f575-4d72-9bf0-d2a4c9f96089.jpg",
+            "image": "shopify://shop_images/A_1040_x_1576_1.jpg",
+            "mobile_image": "shopify://shop_images/A_1040_x_1576.jpg",
+            "image_xl": "shopify://shop_images/A2152_x_1680_2.jpg",
             "media_fit": "contain",
-            "focal_point": "image_presentation",
+            "focal_point": "right",
             "text_position": "center_flex-end",
             "accent": "",
             "title": "MEN",
@@ -51,11 +51,11 @@
             "width": "50",
             "height": 800,
             "mobile_height": 500,
-            "image": "shopify://shop_images/KKB1040_x_1576.jpg",
-            "mobile_image": "shopify://shop_images/KKB1040_x_1576.jpg",
-            "image_xl": "shopify://shop_images/AKB2152_x_1680.jpg",
+            "image": "shopify://shop_images/B_1040_x_1576_1_43028a33-2c85-4141-b64c-516e8c29b9c3.jpg",
+            "mobile_image": "shopify://shop_images/B_1040_x_1576_1.jpg",
+            "image_xl": "shopify://shop_images/B2152_x_1680.jpg",
             "media_fit": "contain",
-            "focal_point": "image_presentation",
+            "focal_point": "left",
             "text_position": "center_flex-end",
             "accent": "",
             "title": "WOMEN",
@@ -90,9 +90,9 @@
         "content_alignment": "left",
         "enable_animation": false,
         "full_width": true,
-        "spacing": 24,
+        "spacing": 0,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
+        "section_padding": "section--vertical-padding-bottom-only"
       }
     },
     "image_hero_split_CQQ9Cm": {
@@ -167,9 +167,9 @@
         "button_text_color": "#000000",
         "color_overlay": "rgba(0,0,0,0)",
         "color_overlay_gradient": "",
-        "overlay_opacity": 40,
+        "overlay_opacity": 0,
         "enable_animation": true,
-        "section_padding": "section--vertical-padding-top-only"
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "grid_fRJi4Y": {

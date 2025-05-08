@@ -22,7 +22,7 @@
     "color_products_stock_good": "#3C9342",
     "font_logo": "itc_clearface_n4",
     "capitalize_logo": true,
-    "logo_base_size": 44,
+    "logo_base_size": 40,
     "logo_mobile_base_scale": 100,
     "font_heading": "playfair_display_n4",
     "capitalize_headings": false,

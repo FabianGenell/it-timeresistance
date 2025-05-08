@@ -17,7 +17,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 800,
+            "mobile_height": 660,
             "image": "shopify://shop_images/A_1040_x_1576_1.jpg",
             "mobile_image": "shopify://shop_images/A_1040_x_1576.jpg",
             "image_xl": "shopify://shop_images/A2152_x_1680_2.jpg",
@@ -50,7 +50,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 800,
+            "mobile_height": 660,
             "image": "shopify://shop_images/B_1040_x_1576_1_43028a33-2c85-4141-b64c-516e8c29b9c3.jpg",
             "mobile_image": "shopify://shop_images/B_1040_x_1576_1.jpg",
             "image_xl": "shopify://shop_images/B2152_x_1680.jpg",
@@ -180,7 +180,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 800,
+            "mobile_height": 660,
             "image": "shopify://shop_images/A1040_x_1576_81fd0802-e6e3-4cc7-b794-ee93953747f8.jpg",
             "mobile_image": "shopify://shop_images/A1040_x_1576.jpg",
             "image_xl": "shopify://shop_images/A2152_x_1680_6a794602-f575-4d72-9bf0-d2a4c9f96089.jpg",
@@ -213,7 +213,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 800,
+            "mobile_height": 660,
             "image": "shopify://shop_images/KKB1040_x_1576.jpg",
             "mobile_image": "shopify://shop_images/KKB1040_x_1576.jpg",
             "image_xl": "shopify://shop_images/AKB2152_x_1680.jpg",
@@ -299,7 +299,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 800,
+            "mobile_height": 660,
             "image": "shopify://shop_images/KC1040_x_1576_1.jpg",
             "mobile_image": "shopify://shop_images/AKC1040X1576.jpg",
             "image_xl": "shopify://shop_images/KC2152_x_1680_1.jpg",
@@ -332,7 +332,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 800,
+            "mobile_height": 660,
             "image": "shopify://shop_images/KD1008_x_1104.jpg",
             "mobile_image": "shopify://shop_images/D1040_x_1576jpg.jpg",
             "image_xl": "shopify://shop_images/KD2152_x_1680.jpg",

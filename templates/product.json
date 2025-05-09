@@ -85,7 +85,7 @@
             "expand_by_default": false,
             "column_placement": "right",
             "heading": "Features",
-            "heading_tag": "h3",
+            "heading_tag": "h6",
             "content": "{{ product.metafields.custom.product_features | metafield_tag }}",
             "page_for_content": "",
             "custom_liquid": ""
@@ -97,7 +97,7 @@
             "expand_by_default": false,
             "column_placement": "right",
             "heading": "Materials",
-            "heading_tag": "h3",
+            "heading_tag": "h6",
             "content": "{{ product.metafields.custom.product_materials | metafield_tag }}",
             "page_for_content": "",
             "custom_liquid": ""
@@ -109,7 +109,7 @@
             "expand_by_default": false,
             "column_placement": "right",
             "heading": "Dimensions",
-            "heading_tag": "h3",
+            "heading_tag": "h6",
             "content": "",
             "page_for_content": "",
             "custom_liquid": "<img src=\"{{ product.metafields.custom.product_dimensions | img_url: 'master' }}\" alt=\"Bag Dimensions\" style=\"border:0;\" class=\"responsive-img\">"
@@ -121,7 +121,7 @@
             "expand_by_default": false,
             "column_placement": "right",
             "heading": "Personalization",
-            "heading_tag": "h3",
+            "heading_tag": "h6",
             "content": "",
             "page_for_content": "",
             "custom_liquid": "{% style %}\n.custom-paragraph-body img{\ndisplay:inline;\n}\n.example-image{\n    width: 22%;\n    margin: 1%;\n    vertical-align: middle;\n}\n{% endstyle %}\n\n{% assign page_handle = product.metafields.custom.personalization_page %}\n      {% if page_handle %}\n        {% assign page = pages[page_handle] %}\n        {% if page %}\n          <div class=\"personalization-page-content\">\n            {{ page.content }}\n          </div>\n        {% else %}\n          <p>Page not found.</p>\n        {% endif %}\n      {% else %}\n        <p>No page linked.</p>\n      {% endif %}"
@@ -133,7 +133,7 @@
             "expand_by_default": false,
             "column_placement": "right",
             "heading": "Shipping and Returns",
-            "heading_tag": "h3",
+            "heading_tag": "h6",
             "content": "",
             "page_for_content": "shipping-and-returns",
             "custom_liquid": ""

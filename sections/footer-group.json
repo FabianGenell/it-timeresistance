@@ -98,7 +98,7 @@
             "show_title_on_desktop": true,
             "text": "<p>Get 10% off straight to your inbox</p>",
             "show_social_icons": true,
-            "enable_follow_on_shop": true
+            "enable_follow_on_shop": false
           }
         }
       },

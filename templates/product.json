@@ -88,7 +88,7 @@
             "heading_tag": "h6",
             "content": "{{ product.metafields.custom.product_features | metafield_tag }}",
             "page_for_content": "",
-            "custom_liquid": "<div class=\"container\">\n<div class=\"custom-paragraph\">\n<h6 class=\"custom-paragraph-heading\">Delivery Time</h6>\n<ul>\n<li><strong>Australia:</strong> 3-8 business days <strong>free</strong> delivery</li>\n<li><strong>Rest of the world:</strong> 1-8 business days <strong>free</strong> delivery</li>\n</ul>\n</div>\n<div class=\"custom-paragraph\">\n<h6 class=\"custom-paragraph-heading\">Duties and Taxes</h6>\n<ul>\n<li><strong>Australia:</strong> We guarantee no additional taxes, duties, or customs fees for customers from Australia.</li>\n<li><strong>Other Countries:</strong> Customers outside of Australia may be liable for import duties and taxes charged by Customs. These additional charges are the customer’s responsibility.</li>\n</ul>\n<p class=\"custom-paragraph-body\">A confirmation email with UPS, FedEx, or DHL tracking information will be sent once your order has been dispatched.</p>\n</div>\n<div class=\"custom-paragraph\">\n<h6 class=\"custom-paragraph-heading\">Return policy</h6>\n<p class=\"custom-paragraph-body\">You may return your purchase within 30 days of the delivery date, no questions asked. Enjoy free returns! For further details, please refer to our <a href=\"/pages/shipping-and-returns\" title=\"shipping and return policies\" target=\"_blank\">shipping and return policies</a>.</p>\n</div>\n<div class=\"custom-paragraph\"><br></div>\n</div>"
+            "custom_liquid": ""
           }
         },
         "accordion-2": {

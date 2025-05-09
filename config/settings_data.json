@@ -30,7 +30,7 @@
     "heading_base_size": 46,
     "heading_mobile_base_scale": 90,
     "font_body": "montserrat_n4",
-    "body_letter_spacing": 0,
+    "body_letter_spacing": 10,
     "body_base_size": 16,
     "body_mobile_base_scale": 95,
     "capitalize_navigation": false,

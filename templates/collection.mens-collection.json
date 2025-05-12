@@ -111,7 +111,7 @@
         "full_width": true,
         "spacing": 0,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-only"
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "image_hero_split_TMYQrD": {

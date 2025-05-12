@@ -37,8 +37,8 @@
           "type": "item",
           "settings": {
             "width": "50",
-            "height": 660,
-            "mobile_height": 500,
+            "height": 800,
+            "mobile_height": 800,
             "image": "shopify://shop_images/07_16_3_dc536f15-687e-4f6a-9dff-96b55d0be0ae.jpg",
             "media_fit": "cover",
             "focal_point": "image_presentation",
@@ -68,8 +68,8 @@
           "type": "item",
           "settings": {
             "width": "50",
-            "height": 500,
-            "mobile_height": 500,
+            "height": 800,
+            "mobile_height": 800,
             "image": "shopify://shop_images/07_16_4_167793c9-e1ff-45fa-a59d-e9b11117bfec.jpg",
             "media_fit": "cover",
             "focal_point": "image_presentation",

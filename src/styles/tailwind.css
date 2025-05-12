@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.rte ul {
+    @apply list-disc pl-4;
+}
+
+.rte ol {
+    @apply list-decimal pl-4;
+}

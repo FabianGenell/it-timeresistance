@@ -39,7 +39,9 @@
             "width": "50",
             "height": 800,
             "mobile_height": 800,
-            "image": "shopify://shop_images/07_16_3_dc536f15-687e-4f6a-9dff-96b55d0be0ae.jpg",
+            "image": "shopify://shop_images/A2152_x_1680_662abd51-f4a4-42b2-8eaf-af6807f6872e.jpg",
+            "mobile_image": "shopify://shop_images/A1040_x_1576_74b66192-ab18-4f34-b453-aa45d6ebd83d.jpg",
+            "image_xl": "shopify://shop_images/A2152_x_1680_5a6e687f-fa6d-4660-87a9-c22e21ba4908.jpg",
             "media_fit": "cover",
             "focal_point": "image_presentation",
             "text_position": "center_flex-end",
@@ -94,43 +96,11 @@
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
-        },
-        "item_4fNyfB": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "width": "100",
-            "height": 500,
-            "mobile_height": 500,
-            "media_fit": "cover",
-            "focal_point": "image_presentation",
-            "text_position": "center_center",
-            "accent": "",
-            "title": "Grid item",
-            "heading_tag": "h3",
-            "heading_font_class": "fs-heading-2-base",
-            "subheading": "<p>Perfect for lookbooks and editorial photography</p>",
-            "subheading_tag": "h4",
-            "subheading_font_class": "fs-heading-5-base",
-            "text": "",
-            "text_font_class": "fs-body-100",
-            "link": "",
-            "link_text": "",
-            "button_style": "btn--primary",
-            "background_color": "",
-            "text_color": "#ffffff",
-            "button_background_color": "#ffffff",
-            "button_text_color": "#000000",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
         }
       },
       "block_order": [
         "item_r4wyNU",
-        "item_Qfrdwy",
-        "item_4fNyfB"
+        "item_Qfrdwy"
       ],
       "settings": {
         "heading": "",

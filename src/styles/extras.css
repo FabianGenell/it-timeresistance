@@ -1,0 +1,7 @@
+.accordion__label .icon.icon-chevron {
+    @apply transition-transform duration-300;
+}
+
+.accordion__label[aria-expanded="true"] .icon.icon-chevron {
+    @apply rotate-180;
+}

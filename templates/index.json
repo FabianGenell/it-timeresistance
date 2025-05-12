@@ -299,7 +299,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 660,
+            "mobile_height": 800,
             "image": "shopify://shop_images/KC1040_x_1576_1.jpg",
             "mobile_image": "shopify://shop_images/AKC1040X1576.jpg",
             "image_xl": "shopify://shop_images/KC2152_x_1680_1.jpg",
@@ -332,7 +332,7 @@
           "settings": {
             "width": "50",
             "height": 800,
-            "mobile_height": 660,
+            "mobile_height": 800,
             "image": "shopify://shop_images/KD1008_x_1104.jpg",
             "mobile_image": "shopify://shop_images/D1040_x_1576jpg.jpg",
             "image_xl": "shopify://shop_images/KD2152_x_1680.jpg",

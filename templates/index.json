@@ -92,7 +92,7 @@
         "full_width": true,
         "spacing": 0,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-bottom-only"
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "image_hero_split_CQQ9Cm": {
@@ -169,7 +169,7 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
-        "section_padding": "section--vertical-padding-none"
+        "section_padding": "section--vertical-padding-top-only"
       }
     },
     "grid_fRJi4Y": {

@@ -52,8 +52,7 @@
 
       {%- when 'variant_picker' -%}
         {%- if prod != blank -%}
-          {%-
-            render 'product-block-variant-picker',
+          {%- render 'product-block-variant-picker',
             product: prod,
             block: block,
             block_settings: block.settings,
@@ -74,11 +73,7 @@
         {%- endif -%}
 
       {%- when 'custom_option' -%}
-        {%-
-          render 'product-block-custom-option',
-          block: block,
-          field_type: block.settings.field_type,
-        -%}
+        {%- render 'product-block-custom-option', block: block, field_type: block.settings.field_type -%}
 
       {%- when 'buy_buttons' -%}
         {%- if prod != blank -%}
@@ -120,9 +115,12 @@
         -%}
 
       {%- when 'product_callouts' -%}
+        <!-- Product Callouts -->
         {%- render 'product-block-callouts' with block: block, block_settings: block.settings %}
 
       {%- when 'product_callouts_mini' -%}
+        <!-- Product Callouts MIni -->
+
         {%- render 'product-block-callouts-mini' with block: block, block_settings: block.settings %}
 
       {%- when 'text' -%}
@@ -143,7 +141,10 @@
             endif
           -%}
 
-          <div class="product-block-social-share product__block product__block--medium" {{ block.shopify_attributes }}>
+          <div
+            class="product-block-social-share product__block product__block--medium"
+            {{ block.shopify_attributes }}
+          >
             {% render 'social-share',
               url: product_url,
               title: product.title,
@@ -165,17 +166,19 @@
         {%- endif -%}
 
       {%- when 'accordion' -%}
-        {%-
-          render 'product-block-accordion',
+        {%- render 'product-block-accordion',
           block: block,
           block_settings: block.settings,
           heading: block.settings.heading,
-          content: block.settings.content,
+          content: block.settings.content
         -%}
 
       {%- when 'custom_liquid' -%}
         {%- unless block.settings.custom_liquid == blank -%}
-          <div class="product-block-custom-liquid product__block product__block--medium" {{ block.shopify_attributes }}>
+          <div
+            class="product-block-custom-liquid product__block product__block--medium"
+            {{ block.shopify_attributes }}
+          >
             {{ block.settings.custom_liquid }}
           </div>
         {%- endunless -%}
@@ -218,11 +221,10 @@
         </div>
 
       {%- when 'secure_payment' -%}
-        {%-
-          render 'product-block-secure-payment',
+        {%- render 'product-block-secure-payment',
           product: prod,
           block: block,
-          block_settings: block.settings,
+          block_settings: block.settings
         -%}
     {%- endcase -%}
   {% endif %}

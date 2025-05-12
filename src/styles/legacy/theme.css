@@ -4573,11 +4573,7 @@ html.no-js .product__media-show-more {
     margin-bottom: calc(4px * 4);
     margin-bottom: var(--spacing-4);
 }
-.product__callouts-item {
-    display: flex;
-    padding: calc(4px * 2) 0;
-    padding: var(--spacing-2) 0;
-}
+
 .product__callouts-item-icon,
 .product__callouts-item-icon.icon,
 .product__callouts-item-icon.image {

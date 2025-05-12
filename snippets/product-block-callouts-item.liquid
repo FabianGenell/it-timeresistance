@@ -1,18 +1,18 @@
 {% if text != blank and text != '' %}
-  <div class="product__callouts-item fs-body-75">
+  <div class="flex gap-2 items-center pb-2 text-base">
     {%- if custom_icon_image != blank -%}
       {%-
         render 'legacy-image' with
-        wrapper_class: "product__callouts-item-icon",
+        wrapper_class: "w-9",
         image: custom_icon_image,
         sizes: "32px",
       -%}
     {%- else -%}
       {% if icon and icon != 'none' %}
-        {% render 'icon-editorial' with class: "product__callouts-item-icon", icon: icon %}
+        {% render 'icon-editorial' with class: "", icon: icon %}
       {% endif %}
     {%- endif -%}
-    <div class="product__callouts-item-text rte">
+    <div class=" rte ">
       {{ text }}
     </div>
   </div>

@@ -30,6 +30,201 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
+    "grid_wjQaAw": {
+      "type": "grid",
+      "blocks": {
+        "item_r4wyNU": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 660,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_3_dc536f15-687e-4f6a-9dff-96b55d0be0ae.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "<p>MESSENGER BAGS</p>",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/messenger-bags-for-men",
+            "link_text": "View All",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        },
+        "item_Qfrdwy": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 500,
+            "mobile_height": 500,
+            "image": "shopify://shop_images/07_16_4_167793c9-e1ff-45fa-a59d-e9b11117bfec.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-3-base",
+            "subheading": "<p>DUFFEL BAGS</p>",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/duffel-bags-for-men",
+            "link_text": "View All",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        },
+        "item_4fNyfB": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "width": "100",
+            "height": 500,
+            "mobile_height": 500,
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "text_position": "center_center",
+            "accent": "",
+            "title": "Grid item",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base",
+            "subheading": "<p>Perfect for lookbooks and editorial photography</p>",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "item_r4wyNU",
+        "item_Qfrdwy",
+        "item_4fNyfB"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "content_alignment": "left",
+        "enable_animation": true,
+        "full_width": true,
+        "spacing": 0,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only"
+      }
+    },
+    "image_hero_split_TMYQrD": {
+      "type": "image-hero-split",
+      "blocks": {
+        "image_XeWM6D": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/A1008_x_1104_2bec12c3-daa6-4f4b-b97c-dd27f132a4ee.jpg",
+            "image_mobile": "shopify://shop_images/A1040_x_1576_81fd0802-e6e3-4cc7-b794-ee93953747f8.jpg",
+            "image_xl": "shopify://shop_images/A2152_x_1680_143b3914-bfb6-474c-b2e3-9bba49c89c50.jpg",
+            "focal_point": "image_presentation",
+            "title": "BRIEFCASES",
+            "heading_tag": "h2",
+            "text": "",
+            "link": "shopify://collections/briefcases-for-men",
+            "link_text": "View all",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_cBe8bV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/C1008_x_1104_34c111f3-4766-4b54-99fc-ba9a066ca05e.jpg",
+            "image_mobile": "shopify://shop_images/KC1040_x_1576_da53ddea-976a-4995-90cc-b4f801b01268.jpg",
+            "image_xl": "shopify://shop_images/KC2152_x_1680.jpg",
+            "focal_point": "center",
+            "title": "Backpacks",
+            "heading_tag": "h2",
+            "text": "",
+            "link": "shopify://collections/backpacks-for-men",
+            "link_text": "View All",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "image_XeWM6D",
+        "image_cBe8bV"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "text_position": "flex-end",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "rgba(0,0,0,0)",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "collection_list_grid_hYH44C": {
+      "type": "collection-list-grid",
+      "settings": {
+        "full_width": true,
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "shopify://collections",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "collection_list": [
+          "clutches-for-men",
+          "sling-bags-for-men",
+          "document-cases-for-men",
+          "wallets-for-men"
+        ],
+        "collection_listing_aspect_ratio": "portrait",
+        "label_style": "overlay",
+        "overlay_title_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_title_background": "rgba(0,0,0,0)",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only"
+      }
+    },
     "grid_XHcE3W": {
       "type": "grid",
       "blocks": {
@@ -140,86 +335,6 @@
         "enable_animation": true,
         "full_width": true,
         "spacing": 10,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-only"
-      }
-    },
-    "image_hero_split_TMYQrD": {
-      "type": "image-hero-split",
-      "blocks": {
-        "image_XeWM6D": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/A1008_x_1104_2bec12c3-daa6-4f4b-b97c-dd27f132a4ee.jpg",
-            "image_mobile": "shopify://shop_images/A1040_x_1576_81fd0802-e6e3-4cc7-b794-ee93953747f8.jpg",
-            "image_xl": "shopify://shop_images/A2152_x_1680_143b3914-bfb6-474c-b2e3-9bba49c89c50.jpg",
-            "focal_point": "image_presentation",
-            "title": "BRIEFCASES",
-            "heading_tag": "h2",
-            "text": "",
-            "link": "shopify://collections/briefcases-for-men",
-            "link_text": "View all",
-            "button_style": "btn--primary"
-          }
-        },
-        "image_cBe8bV": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/C1008_x_1104_34c111f3-4766-4b54-99fc-ba9a066ca05e.jpg",
-            "image_mobile": "shopify://shop_images/KC1040_x_1576_da53ddea-976a-4995-90cc-b4f801b01268.jpg",
-            "image_xl": "shopify://shop_images/KC2152_x_1680.jpg",
-            "focal_point": "center",
-            "title": "Backpacks",
-            "heading_tag": "h2",
-            "text": "",
-            "link": "shopify://collections/backpacks-for-men",
-            "link_text": "View All",
-            "button_style": "btn--primary"
-          }
-        }
-      },
-      "block_order": [
-        "image_XeWM6D",
-        "image_cBe8bV"
-      ],
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "text_position": "flex-end",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "rgba(0,0,0,0)",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": true,
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
-    "collection_list_grid_hYH44C": {
-      "type": "collection-list-grid",
-      "settings": {
-        "full_width": true,
-        "heading": "",
-        "heading_tag": "h2",
-        "subheading": "",
-        "link": "shopify://collections",
-        "link_text": "",
-        "columns": "4",
-        "mobile_columns": "2",
-        "collection_list": [
-          "clutches-for-men",
-          "sling-bags-for-men",
-          "document-cases-for-men",
-          "wallets-for-men"
-        ],
-        "collection_listing_aspect_ratio": "portrait",
-        "label_style": "overlay",
-        "overlay_title_background_style": "gradient",
-        "overlay_text_color": "#ffffff",
-        "overlay_title_background": "rgba(0,0,0,0)",
-        "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-only"
       }
@@ -392,6 +507,7 @@
   },
   "order": [
     "banner",
+    "grid_wjQaAw",
     "image_hero_split_TMYQrD",
     "collection_list_grid_hYH44C",
     "grid_XHcE3W",

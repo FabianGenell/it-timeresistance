@@ -6719,10 +6719,11 @@ const { icons: icons$1 } = window.theme;
  * Assumes a DOM query function `t$2` exists globally or is imported.
  */
 function productLightbox() {
-    const lightboxElements = document.querySelectorAll('.lightbox-image');
-    if (!lightboxElements.length) {
-        return;
-    }
+    return window.customLightbox({
+        childSelector: '.lightbox-image',
+        galerySelector: '.lightbox-media-container',
+        mainClass: 'pswp--product-lightbox'
+    });
 
     const createDataSourceItem = (element) => {
         const type = element.dataset.pswpType || 'image';
@@ -7210,7 +7211,11 @@ class Product {
         this.mediaContainers = Media(this.desktopMedia);
         this.mediaContainersMobile = Media(this.mobileMedia);
         this._initThumbnails();
-        productLightbox();
+        // Load productlightbox
+        document.addEventListener('theme:loaded', () => {
+            productLightbox();
+        });
+
         if (this.isFullProduct && this.mobileQuery.matches) {
             this._initPhotoCarousel();
         }
@@ -14508,7 +14513,9 @@ handleTab();
 sectionClasses();
 
 // Load productlightbox
-productLightbox();
+document.addEventListener('theme:loaded', () => {
+    productLightbox();
+});
 
 // Quick view modal
 const quickViewModalElement = qs('[data-quick-view-modal]', document);

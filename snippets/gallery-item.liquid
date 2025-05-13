@@ -25,6 +25,15 @@
 
   if media.media_type == 'image'
     assign image = media
+    assign media_src = media | image_url
+    assign media_width = media.width
+    assign media_height = media.height
+
+  elsif media.media_type == 'video'
+    assign mp4_source = media.sources | where: 'mime_type', 'video/mp4' | first
+    assign media_src = mp4_source.url
+    assign media_width = mp4_source.width
+    assign media_height = mp4_source.height
   endif
 
   assign title = title | default: metaobject.collection_title.value
@@ -62,10 +71,12 @@
     --label-gradient-end: {{ overlay_text_background | color_modify: 'alpha', 0 }};
   "
 
-  {% if media.media_type == 'image' %}
-    data-pswp-src="{{ media | image_url }}"
-    data-pswp-width="{{ media.width }}"
-    data-pswp-height="{{ media.height }}"
+  {% if media %}
+    data-pswp-src="{{ media_src }}"
+    data-pswp-width="{{ media_width }}"
+    data-pswp-height="{{ media_height }}"
+    data-pswp-type="{{ media.media_type }}"
+    data-pswp-video="{{ media_src }}"
   {% endif %}
 >
   <div class="gallery-item__image-wrapper hover">

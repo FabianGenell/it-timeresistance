@@ -8,6 +8,7 @@ window.theme = window.theme || {};
 import '../scripts/components/';
 import '../scripts/utils/lazy-images.js';
 import '../scripts/utils/theme-helpers.js';
+import '../scripts/utils/lightbox-custom.js';
 
 console.log('main.bundle.js loaded');
 

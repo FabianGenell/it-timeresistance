@@ -140,7 +140,7 @@
   <div
     class="
       product-form__controls-group product-form__controls-group--submit
-      flex gap-2 items-center
+      flex items-center
     "
     {% if block %}
       {{- block.shopify_attributes -}}
@@ -201,7 +201,7 @@
     </div>
 
     {%- if show_favorites -%}
-      {%- render 'button-wishlist', prod: prod -%}
+      {%- render 'button-wishlist', prod: prod, class: 'p-3 mx-2' -%}
     {%- endif -%}
   </div>
 

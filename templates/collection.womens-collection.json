@@ -30,6 +30,92 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
+    "grid_Rppr8W": {
+      "type": "grid",
+      "blocks": {
+        "item_KxXDgD": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 800,
+            "mobile_height": 800,
+            "image": "shopify://shop_images/KKB1008_x_1104_1.jpg",
+            "mobile_image": "shopify://shop_images/KKB1040_x_1576_48274dd8-8f6b-41e8-9fb0-cf75035d68ca.jpg",
+            "image_xl": "shopify://shop_images/KB2152_x_1680_54715e0d-13f6-499c-9bb3-4ff4da4e55ce.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "HANDBAGS",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-3-base",
+            "subheading": "",
+            "subheading_tag": "h4",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/handbags-for-women",
+            "link_text": "View All",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        },
+        "item_fAUNN4": {
+          "type": "item",
+          "settings": {
+            "width": "50",
+            "height": 800,
+            "mobile_height": 800,
+            "image": "shopify://shop_images/07_16_2_336ce653-bbc6-4c7c-abde-a924473f25ca.jpg",
+            "mobile_image": "shopify://shop_images/Rectangle_228_a2cab7b3-e73a-476e-bd0d-4f9a9a9596e5.jpg",
+            "image_xl": "shopify://shop_images/d_2_b73d38ff-e79e-4a9d-a2da-2a2c72542d26.jpg",
+            "media_fit": "cover",
+            "focal_point": "image_presentation",
+            "text_position": "center_flex-end",
+            "accent": "",
+            "title": "BACKPACKS",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-3-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link": "shopify://collections/backpacks-for-women",
+            "link_text": "View All",
+            "button_style": "btn--primary",
+            "background_color": "",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "rgba(0,0,0,0)",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "item_KxXDgD",
+        "item_fAUNN4"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_tag": "h2",
+        "subheading": "",
+        "content_alignment": "left",
+        "enable_animation": true,
+        "full_width": true,
+        "spacing": 24,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
     "image_hero_split_TMYQrD": {
       "type": "image-hero-split",
       "blocks": {
@@ -68,6 +154,7 @@
         "image_XeWM6D",
         "image_cBe8bV"
       ],
+      "disabled": true,
       "settings": {
         "image_aspect": "custom",
         "desktop_height": 100,
@@ -178,43 +265,11 @@
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
-        },
-        "item_Wptb8B": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "width": "100",
-            "height": 500,
-            "mobile_height": 500,
-            "media_fit": "cover",
-            "focal_point": "image_presentation",
-            "text_position": "center_center",
-            "accent": "",
-            "title": "Grid item",
-            "heading_tag": "h3",
-            "heading_font_class": "fs-heading-2-base",
-            "subheading": "<p>Perfect for lookbooks and editorial photography</p>",
-            "subheading_tag": "h4",
-            "subheading_font_class": "fs-heading-5-base",
-            "text": "",
-            "text_font_class": "fs-body-100",
-            "link": "",
-            "link_text": "",
-            "button_style": "btn--primary",
-            "background_color": "",
-            "text_color": "#ffffff",
-            "button_background_color": "#ffffff",
-            "button_text_color": "#000000",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
         }
       },
       "block_order": [
         "item_7AGywC",
-        "item_mMa6PN",
-        "item_Wptb8B"
+        "item_mMa6PN"
       ],
       "settings": {
         "heading": "",
@@ -481,6 +536,7 @@
   },
   "order": [
     "banner",
+    "grid_Rppr8W",
     "image_hero_split_TMYQrD",
     "collection_list_grid_hYH44C",
     "grid_XHcE3W",

@@ -13,12 +13,12 @@
   endif
 -%}
 {%- if rating_count > 0 -%}
-  <div class="product-rating {{ variant }}">
+  <a href="#judgeme_product_reviews" class="product-rating {{ variant }}">
     <div class="product-rating__stars">
       {%- render 'star-rating', rating: rating -%}
     </div>
-    <div class="product-rating__count t-opacity-60 fs-body-50">
+    <div class="product-rating__count text-[18px] mt-[3px] ml-2 t-opacity-60">
       <span>{{ rating }}</span> <span>({{ rating_count }})</span>
     </div>
-  </div>
+  </a>
 {%- endif -%}

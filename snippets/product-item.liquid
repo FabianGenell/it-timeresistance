@@ -277,7 +277,7 @@
 
     <div class="product-item__meta flex-grow">
       <div class="product-item__text ta-c ">
-        <h4 class="">
+        <h4 class="text-base">
           {%- if placeholder -%}
             {{ 'homepage.onboarding.product_title' | t }}
           {%- else -%}
@@ -319,7 +319,7 @@
             endif
           %}
           {% if price_content_type == 'price' %}
-            <p class="product-item__price">
+            <p class="product-item__price text-xl">
               {% if placeholder %}
                 {{ 9999 | money }}
 

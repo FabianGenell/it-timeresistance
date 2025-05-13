@@ -39,7 +39,7 @@
             "accent": "",
             "heading": "",
             "heading_font_class": "fs-heading-3-base",
-            "text": "<p>This lookbook explores the pieces you’ll find in our collection right now and what’s to come as we move through the season. This page demonstrates how you can use Stiletto's sections to create Lookbook pages like this.<\/p>",
+            "text": "<p>This lookbook explores the pieces you’ll find in our collection right now and what’s to come as we move through the season. This page demonstrates how you can use Stiletto's sections to create Lookbook pages like this.</p>",
             "text_font_class": "fs-body-100",
             "text_max_width": 100,
             "link": "",
@@ -348,7 +348,6 @@
             "mobile_height": 500,
             "media_fit": "cover",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text_position": "flex-start_flex-end",
             "accent": "",
             "title": "",
@@ -372,7 +371,6 @@
             "mobile_height": 500,
             "media_fit": "cover",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text_position": "flex-start_flex-end",
             "accent": "",
             "title": "",
@@ -492,23 +490,19 @@
       "blocks": {
         "block-0": {
           "type": "product",
-          "settings": {
-          }
+          "settings": {}
         },
         "block-1": {
           "type": "product",
-          "settings": {
-          }
+          "settings": {}
         },
         "block-2": {
           "type": "product",
-          "settings": {
-          }
+          "settings": {}
         },
         "block-3": {
           "type": "product",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -580,7 +574,6 @@
             "mobile_height": 500,
             "media_fit": "cover",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text_position": "flex-start_flex-start",
             "accent": "",
             "title": "",
@@ -606,7 +599,6 @@
             "mobile_height": 500,
             "media_fit": "cover",
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text_position": "flex-start_flex-end",
             "accent": "",
             "title": "",
@@ -892,7 +884,6 @@
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text": "",
             "button_style": "btn--primary"
           }
@@ -901,7 +892,6 @@
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text": "",
             "button_style": "btn--primary"
           }

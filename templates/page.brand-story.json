@@ -65,8 +65,7 @@
     "main": {
       "type": "main-page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "rich-text-1": {
       "type": "rich-text",
@@ -145,7 +144,7 @@
         "block-4": {
           "type": "button",
           "settings": {
-            "link": "shopify:\/\/collections",
+            "link": "shopify://collections",
             "link_text": "View our collections",
             "button_style": "btn--callout"
           }
@@ -373,7 +372,7 @@
       ],
       "settings": {
         "title": "",
-        "subheading": "<p>As seen in:<\/p>",
+        "subheading": "<p>As seen in:</p>",
         "heading_font_class": "fs-heading-3-base",
         "heading_alignment": "center",
         "content_vertical_alignment": "center",
@@ -415,7 +414,7 @@
           "type": "button",
           "disabled": true,
           "settings": {
-            "link": "shopify:\/\/collections\/all",
+            "link": "shopify://collections/all",
             "link_text": "Our latest collection",
             "button_style": "btn--callout"
           }
@@ -592,7 +591,7 @@
         "block-2": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this text area to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "text": "<p>Use this text area to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "text_font_class": "fs-body-100"
           }
         },
@@ -639,7 +638,6 @@
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text": "",
             "link_text": "Read the story",
             "button_style": "btn--primary"
@@ -649,7 +647,6 @@
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
             "text": "",
             "link_text": "Read the story",
             "button_style": "btn--primary"

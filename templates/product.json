@@ -79,6 +79,18 @@
             "custom_liquid": "<span class=\"intro-short-text\">\n        {{ product.metafields.custom.product_design.value | truncate: 142 }}\n      </span>\n      <span class=\"intro-full-text\" style=\"display: none;\">\n        {{ product.metafields.custom.product_design.value }}\n      </span>\n      <button class=\"see-more\" onclick=\"toggleIntroText(this)\">See More</button>"
           }
         },
+        "expand_text_T9Jqwb": {
+          "type": "expand_text",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "lines_to_show": 3,
+            "use_product_description": false,
+            "content": "<p>{{ product.metafields.custom.product_design.value }}</p>",
+            "text_font_class": "fs-body-100",
+            "column_placement": "right"
+          }
+        },
         "accordion-1": {
           "type": "accordion",
           "settings": {
@@ -146,6 +158,7 @@
         "buy_buttons",
         "product_callouts-2",
         "custom_liquid_jVafcd",
+        "expand_text_T9Jqwb",
         "accordion-1",
         "accordion-2",
         "accordion_47TTrD",

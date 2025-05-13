@@ -1,4 +1,4 @@
-import { afterCallstack } from './utils.js';
+import { afterCallstack } from '../utils.js';
 
 /**
  * Checks if a lazy load image has alternate <source> elements and copies the

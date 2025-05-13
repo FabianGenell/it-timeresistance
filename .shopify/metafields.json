@@ -330,6 +330,26 @@
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "material",
+      "namespace": "shopify",
+      "name": "Material",
+      "description": "Defines a product's primary material, such as cotton or wool",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "watch-accessory-style",
+      "namespace": "shopify",
+      "name": "Watch accessory style",
+      "description": "Defines the style of watch accessories, e.g. sporty, modern",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [

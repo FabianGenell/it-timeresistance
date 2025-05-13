@@ -129,6 +129,8 @@
   else
     assign quick_shop_type = 'none'
   endif
+
+  assign product_title = prod.metafields.custom.short_product_name | default: prod.title
 -%}
 
 {% if quick_shop_type != 'none' %}
@@ -275,11 +277,11 @@
 
     <div class="product-item__meta flex-grow">
       <div class="product-item__text ta-c ">
-        <h4 class="ff-body product-item__product-title fs-product-card-title">
+        <h4 class="">
           {%- if placeholder -%}
             {{ 'homepage.onboarding.product_title' | t }}
           {%- else -%}
-            <a href="{{ prod.url | within: collection }}">{{ prod.title }}</a>
+            <a href="{{ prod.url | within: collection }}"> {{ product_title }}</a>
           {%- endif -%}
         </h4>
 

@@ -94,11 +94,13 @@
       class="product__price-and-ratings"
       data-show-product-rating="{{ block_settings.show_product_rating }}"
     >
-      <div class="product__price fs-body-100">
+      <div class="product__price text-[28px]">
         {%- if product != blank -%}
           <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
           <s data-compare-price>
-            {%- if price_content_type == 'price' and current_variant.compare_at_price > current_variant.price -%}
+            {%- if price_content_type == 'price'
+              and current_variant.compare_at_price > current_variant.price
+            -%}
               {{- current_variant.compare_at_price | money -}}
             {%- endif -%}
           </s>
@@ -147,7 +149,10 @@
     {%- endif -%}
 
     {%- if is_quick -%}
-      <a class="quick-view-view-product-details-link btn btn--text-link" href="{{ product.url | within: collection }}">
+      <a
+        class="quick-view-view-product-details-link btn btn--text-link"
+        href="{{ product.url | within: collection }}"
+      >
         {{ 'products.product.quick_view_product_link' | t }}
         {% render 'icon', icon: 'arrow-long-small' %}
       </a>

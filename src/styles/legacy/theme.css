@@ -1797,8 +1797,7 @@ input.input + label {
         cursor: initial;
     }
 }
-.footer__heading {
-}
+
 .footer__arrow {
     display: block;
     transition: transform 0.25s;

@@ -61,11 +61,11 @@
         >
           {%- if block.settings.title != blank -%}
             <h4 class="footer__header ff-body{% if block.settings.collapse_on_mobile %} footer__header--collapsed{% endif %}">
-              <span class="footer__heading font-bold fs-accent">{{ block.settings.title }}</span>
+              <span class="text-sm font-bold fs-accent">{{ block.settings.title }}</span>
             </h4>
             {%- if block.settings.collapse_on_mobile -%}
               <button type="button" class="footer__header ff-body" data-header>
-                <span class="footer__heading font-bold fs-accent">{{ block.settings.title }}</span>
+                <span class="text-sm font-bold fs-accent">{{ block.settings.title }}</span>
                 <span class="footer__arrow">{% render 'icon', icon: 'chevron-small' %}</span>
               </button>
             {%- endif -%}

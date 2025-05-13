@@ -7,10 +7,10 @@
   # Note: these two classes must also be applied to the icon wrapper for vertical alignment
 
   unless label_font
-    assign label_font = 'ff-heading'
+    assign label_font = ''
   endunless
   unless label_font_size
-    assign label_font_size = 'fs-heading-5-base'
+    assign label_font_size = 'text-[18px]'
   endunless
 
   if block_settings.page_for_content
@@ -29,7 +29,7 @@
 {% if content != blank or request.design_mode %}
   <div class="accordion {{ classes }}" {{ block.shopify_attributes }}>
     <div
-      class="accordion__inner"
+      class="accordion__inner "
       data-index="{{ forloop.index0 }}"
       data-open="{% if open %}true{% else %}false{% endif %}"
       {{ block.shopify_attributes }}

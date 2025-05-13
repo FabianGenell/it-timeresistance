@@ -76,7 +76,11 @@
                 {{ rendered_image }}
               {%- endif -%}
               {%- if block.type == 'text' -%}
-                <div class="fs-body-100 footer__text">{{ block.settings.text }}</div>
+                <div class="fs-body-100 footer__text">
+                  <expand-text data-lines="{{ block.settings.lines_to_show | default: 3 }}">
+                    {{ block.settings.text }}
+                  </expand-text>
+                </div>
                 {%- if rendered_image and block.settings.image_placement == 'below_text' -%}
                   {{ rendered_image }}
                 {%- endif -%}
@@ -330,6 +334,15 @@
             }
           ],
           "default": "below_text"
+        },
+        {
+          "id": "lines_to_show",
+          "type": "range",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "label": "Lines to show in expand text",
+          "default": 3
         },
         {
           "type": "header",

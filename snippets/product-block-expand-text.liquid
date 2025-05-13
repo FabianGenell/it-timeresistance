@@ -1,0 +1,41 @@
+{% comment %}
+  Product Block: Expand Text
+
+  This block allows for collapsible text in product descriptions.
+
+  Parameters:
+  - block: The block object
+  - block_settings: Block settings (content, title, lines_to_show)
+  - product: The product object
+{% endcomment %}
+
+{%- liquid
+  assign title = block_settings.title
+  assign title_tag = block_settings.title_tag | default: 'h3'
+  assign lines_to_show = block_settings.lines_to_show | default: 3
+  assign content = block_settings.content
+  assign text_font_class = block_settings.text_font_class | default: 'fs-body-100'
+
+  # Use product description if no custom content is provided
+  if content == blank and block_settings.use_product_description
+    assign content = product.description
+  endif
+-%}
+
+<div class="product-block product-block--expand-text" {{ block.shopify_attributes }}>
+  {% if title != blank %}
+    <{{ title_tag }} class="product-block__title">
+      {{ title }}
+    </{{ title_tag }}>
+  {% endif %}
+
+  <div class="{{ text_font_class }}">
+    <expand-text data-lines="{{ lines_to_show }}">
+      {% if content != blank %}
+        {{ content }}
+      {% else %}
+        <p>placeholder</p>
+      {% endif %}
+    </expand-text>
+  </div>
+</div>

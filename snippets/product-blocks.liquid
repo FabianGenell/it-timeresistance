@@ -27,6 +27,14 @@
     {%- case block.type -%}
       {%- when '@app' -%}
         {% render block %}
+        
+      {%- when 'expand_text' -%}
+        {%-
+          render 'product-block-expand-text' with
+          product: prod,
+          block: block,
+          block_settings: block.settings
+        -%}
 
       {%- when 'product_header' -%}
         {% if is_quick %}<div class="quick-product--header-block-wrap">{% endif %}

@@ -2954,6 +2954,104 @@
           "content": "t:shared.section_blocks.heading.settings.heading_tag.info"
         }
       ]
+    },
+    {
+      "type": "expand_text",
+      "name": "Expand Text",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "default": "Details"
+        },
+        {
+          "id": "title_tag",
+          "type": "select",
+          "label": "Title tag",
+          "default": "h3",
+          "options": [
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ]
+        },
+        {
+          "id": "lines_to_show",
+          "type": "range",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "label": "Lines to show",
+          "default": 3
+        },
+        {
+          "id": "use_product_description",
+          "type": "checkbox",
+          "label": "Use product description",
+          "default": true,
+          "info": "If checked, the product description will be used as content"
+        },
+        {
+          "id": "content",
+          "type": "richtext",
+          "label": "Custom content",
+          "info": "If provided, this will override product description"
+        },
+        {
+          "type": "select",
+          "id": "text_font_class",
+          "label": "Text size",
+          "default": "fs-body-100",
+          "options": [
+            {
+              "value": "fs-body-75",
+              "label": "Small"
+            },
+            {
+              "value": "fs-body-100",
+              "label": "Regular"
+            },
+            {
+              "value": "fs-body-200",
+              "label": "Large"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "column_placement",
+          "label": "Column placement",
+          "default": "right",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

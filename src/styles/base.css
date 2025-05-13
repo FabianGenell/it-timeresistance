@@ -18,7 +18,7 @@
 
 .img-fit--group-zoom,
 .img-fit--zoom {
-    transition: transform 2s ease;
+    transition: transform var(--duration-slow) var(--easing);
 }
 
 @media (hover: hover) {

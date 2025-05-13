@@ -30,7 +30,7 @@
   {% endif %}
 
   <div class="{{ text_font_class }}">
-    <expand-text data-lines="{{ lines_to_show }}">
+    <expand-text {% if block_settings.use_character_limit %}data-chars="{{ block_settings.character_limit | default: 160 }}"{% else %}data-lines="{{ lines_to_show }}"{% endif %}>
       {% if content != blank %}
         {{ content }}
       {% else %}

@@ -43,6 +43,7 @@
           {%- endcapture -%}
         {%- endif -%}
         <div
+          {{ block.shopify_attributes }}
           class="
             footer__group
             footer__group--{{ block.type }}
@@ -77,7 +78,7 @@
               {%- endif -%}
               {%- if block.type == 'text' -%}
                 <div class="fs-body-100 footer__text">
-                  <expand-text data-lines="{{ block.settings.lines_to_show | default: 3 }}">
+                  <expand-text data-chars="{{ block.settings.character_limit | default: 187 }}">
                     {{ block.settings.text }}
                   </expand-text>
                 </div>
@@ -336,13 +337,14 @@
           "default": "below_text"
         },
         {
-          "id": "lines_to_show",
+          "id": "character_limit",
           "type": "range",
-          "min": 1,
-          "max": 10,
+          "min": 100,
+          "max": 200,
           "step": 1,
-          "label": "Lines to show in expand text",
-          "default": 3
+          "label": "Character limit for text",
+          "default": 187,
+          "info": "Text will be truncated after this many characters"
         },
         {
           "type": "header",

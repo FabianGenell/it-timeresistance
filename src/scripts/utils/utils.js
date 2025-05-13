@@ -124,3 +124,8 @@ export function formatMoney(cents, format = window.themeVariables.moneyFormat) {
 
     return format.replace(placeholderRegex, value);
 }
+
+export function truncateText(text, maxLength) {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + '...';
+}

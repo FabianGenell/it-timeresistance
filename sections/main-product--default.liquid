@@ -2994,13 +2994,31 @@
           ]
         },
         {
+          "id": "use_character_limit",
+          "type": "checkbox",
+          "label": "Use character limit instead of lines",
+          "default": false,
+          "info": "When enabled, text will be truncated after a specified number of characters"
+        },
+        {
           "id": "lines_to_show",
           "type": "range",
           "min": 1,
           "max": 10,
           "step": 1,
           "label": "Lines to show",
-          "default": 3
+          "default": 3,
+          "info": "Used when character limit is disabled"
+        },
+        {
+          "id": "character_limit",
+          "type": "range",
+          "min": 50,
+          "max": 500,
+          "step": 5,
+          "label": "Character limit",
+          "default": 160,
+          "info": "Used when character limit is enabled"
         },
         {
           "id": "use_product_description",

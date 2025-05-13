@@ -1,22 +1,26 @@
 /**
  * ExpandText Component
  * 
- * A custom element that collapses text to a specified number of lines and adds a "See more" button
- * to expand the full text when clicked.
+ * A custom element that collapses text to a specified number of lines or characters
+ * and adds a "See more" button to expand the full text when clicked.
  * 
  * Usage:
  * <expand-text data-lines="3">
  *   <p>Your content here...</p>
  * </expand-text>
  * 
+ * OR:
+ * 
+ * <expand-text data-chars="158">
+ *   <p>Your content here...</p>
+ * </expand-text>
+ * 
  * Attributes:
  * - data-lines: Number of lines to show before collapsing (default: 3)
- * 
- * Features:
- * - Automatically hides the "See more" button if content is shorter than the specified lines
- * - Toggles between expanded and collapsed states
- * - Uses Tailwind classes for styling
+ * - data-chars: Maximum number of characters to show before collapsing (overrides data-lines if both are provided)
  */
+import { truncateText } from '../utils/utils.js';
+
 class ExpandText extends HTMLElement {
   constructor() {
     super();
@@ -24,109 +28,151 @@ class ExpandText extends HTMLElement {
   }
 
   connectedCallback() {
+    // Check whether to use character-based or line-based truncation
+    this.chars = parseInt(this.dataset.chars, 10) || null;
     this.lines = parseInt(this.dataset.lines || 3, 10);
     this.init();
   }
 
   init() {
-    // Create container for the text with line clamp
-    this.contentContainer = document.createElement('div');
-    this.contentContainer.classList.add(
-      'overflow-hidden',
-      'transition-all',
-      'duration-300',
-      'relative'
-    );
-
-    // Create ellipsis element to show when text is truncated
-    this.ellipsis = document.createElement('span');
-    this.ellipsis.textContent = '...';
-    this.ellipsis.classList.add(
-      'inline-block',
-      'ml-1',
-      'align-bottom',
-      'hidden'
-    );
-
-    // Move all content to the container
-    while (this.firstChild) {
-      this.contentContainer.appendChild(this.firstChild);
-    }
+    // Save original content
+    this.originalContent = this.innerHTML;
     
-    this.contentContainer.appendChild(this.ellipsis);
-    this.appendChild(this.contentContainer);
-
-    // Create "See more" button
+    // Create wrapper for the component
+    this.wrapper = document.createElement('div');
+    this.wrapper.classList.add('expand-text-wrapper');
+    
+    // Create content element
+    this.contentEl = document.createElement('div');
+    this.contentEl.classList.add('expand-text-content');
+    
+    // Create button element
     this.button = document.createElement('button');
     this.button.type = 'button';
     this.button.classList.add(
+      'expand-text-toggle',
       'mt-2',
       'text-sm',
       'font-medium',
       'underline',
       'focus:outline-none',
-      'transition-opacity',
-      'duration-300'
+      'hidden'
     );
     this.button.textContent = 'See more';
-    this.button.addEventListener('click', this.toggleExpand.bind(this));
-    this.appendChild(this.button);
-
-    // Check if content needs expansion
-    this.checkContentHeight();
-  }
-
-  checkContentHeight() {
-    // Get line height to calculate total height
-    const style = window.getComputedStyle(this.contentContainer);
-    const lineHeight = parseInt(style.lineHeight, 10) || 
-                       parseInt(style.fontSize, 10) * 1.5;
+    this.button.addEventListener('click', () => this.toggleExpand());
     
-    // Calculate max height based on number of lines
-    const maxHeight = this.lines * lineHeight;
+    let maxChars;
     
-    // Get the scrollHeight of the content
-    const contentHeight = this.contentContainer.scrollHeight - this.ellipsis.offsetHeight; // Adjust for ellipsis
-    
-    if (contentHeight <= maxHeight) {
-      // Content is shorter than max lines, no need for expand functionality
-      this.button.classList.add('hidden');
-      this.ellipsis.classList.add('hidden');
-      return;
+    // If character limit is directly specified, use that
+    if (this.chars !== null) {
+      maxChars = this.chars;
+    } else {
+      // Otherwise calculate based on lines
+      // Create temporary measurement element
+      const measureEl = document.createElement('div');
+      measureEl.style.position = 'absolute';
+      measureEl.style.visibility = 'hidden';
+      measureEl.style.width = 'auto';
+      measureEl.style.height = 'auto';
+      measureEl.innerHTML = this.originalContent;
+      document.body.appendChild(measureEl);
+      
+      // Calculate width for determining chars per line
+      const parentWidth = this.parentElement ? this.parentElement.offsetWidth : 500;
+      measureEl.style.width = `${parentWidth}px`;
+      
+      // Measure a sample text to determine chars per line
+      const sampleText = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789';
+      const sampleEl = document.createElement('div');
+      sampleEl.textContent = sampleText;
+      sampleEl.style.whiteSpace = 'nowrap';
+      measureEl.appendChild(sampleEl);
+      
+      // Calculate chars per line based on width
+      const charsPerSample = sampleText.length;
+      const sampleWidth = sampleEl.offsetWidth;
+      const charsPerLine = Math.floor((parentWidth / sampleWidth) * charsPerSample);
+      
+      // Calculate total allowed characters
+      maxChars = charsPerLine * this.lines;
+      
+      // Cleanup measurement elements
+      document.body.removeChild(measureEl);
     }
     
-    // Apply line clamp
-    this.contentContainer.style.maxHeight = `${maxHeight}px`;
-    this.contentContainer.classList.add('line-clamp-' + this.lines);
+    // Initial setup - show truncated content if needed
+    this.setupContent(maxChars);
     
-    // Show the button and ellipsis
-    this.button.classList.remove('hidden');
-    this.ellipsis.classList.remove('hidden');
-    
-    // Store original height for expansion
-    this.fullHeight = contentHeight;
+    // Clear original content and build component
+    this.innerHTML = '';
+    this.wrapper.appendChild(this.contentEl);
+    this.appendChild(this.wrapper);
+    this.appendChild(this.button);
   }
-
+  
+  setupContent(maxChars) {
+    // Get plain text content to measure length
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = this.originalContent;
+    const textContent = tempDiv.textContent || tempDiv.innerText || '';
+    
+    // Check if truncation is needed
+    const needsTruncation = textContent.length > maxChars;
+    
+    if (needsTruncation) {
+      // Store original content for expanded state
+      this.fullContent = this.originalContent;
+      
+      // Try to find a word boundary near the maxChars position
+      let truncatePosition = maxChars;
+      while (truncatePosition > 0 && 
+             textContent.charAt(truncatePosition) !== ' ' && 
+             textContent.charAt(truncatePosition) !== '.') {
+        truncatePosition--;
+      }
+      
+      // If we couldn't find a good break point, use the max
+      if (truncatePosition === 0) {
+        truncatePosition = maxChars;
+      }
+      
+      // Use the utility function to truncate at the word boundary
+      const truncatedText = truncateText(textContent, truncatePosition);
+      
+      // Set truncated content
+      this.contentEl.textContent = truncatedText;
+      
+      // Show the toggle button
+      this.button.classList.remove('hidden');
+      this.truncated = true;
+      
+      // Store maxChars for toggle
+      this.maxChars = truncatePosition;
+    } else {
+      // No truncation needed, just set the content
+      this.contentEl.innerHTML = this.originalContent;
+      this.truncated = false;
+    }
+  }
+  
   toggleExpand() {
     this.expanded = !this.expanded;
     
     if (this.expanded) {
-      // Expand the content
-      this.contentContainer.style.maxHeight = `${this.fullHeight}px`;
-      this.contentContainer.classList.remove('line-clamp-' + this.lines);
+      // Show full content (with HTML)
+      this.contentEl.innerHTML = this.originalContent; 
       this.button.textContent = 'See less';
-      this.ellipsis.classList.add('hidden'); // Hide ellipsis when expanded
     } else {
-      // Collapse the content
-      const style = window.getComputedStyle(this.contentContainer);
-      const lineHeight = parseInt(style.lineHeight, 10) || 
-                         parseInt(style.fontSize, 10) * 1.5;
-      const maxHeight = this.lines * lineHeight;
+      // Show truncated content
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = this.originalContent;
+      const textContent = tempDiv.textContent || tempDiv.innerText || '';
       
-      this.contentContainer.style.maxHeight = `${maxHeight}px`;
-      this.contentContainer.classList.add('line-clamp-' + this.lines);
+      // Use the utility function to truncate
+      const truncatedText = truncateText(textContent, this.maxChars);
+      this.contentEl.textContent = truncatedText;
+      
       this.button.textContent = 'See more';
-      this.ellipsis.classList.remove('hidden'); // Show ellipsis when collapsed
     }
   }
 }

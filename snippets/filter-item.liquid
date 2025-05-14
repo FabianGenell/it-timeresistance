@@ -83,7 +83,20 @@
               assign filter_swatch_style = filter_swatch_style | append: ' background-image: url([[csi]]);' | replace: '[[csi]]', image_url
             endif
           else
-            assign custom_swatch_image = filter_value.label | handle | append: '.png'
+            assign handle = filter_value.label | handleize
+            assign parts = handle | split: '-'
+            capture image_name
+              for part in parts
+                echo part | capitalize | append: '_'
+              endfor
+              echo 'swatch-color-product-page.jpg'
+            endcapture
+
+            assign custom_swatch_image = image_name
+
+            if custom_swatch_image == blank
+              assign custom_swatch_image = filter_value.label | handle | append: '.png'
+            endif
 
             if custom_color_key_map contains filter_value.label
               for color_name in custom_color_key_map
@@ -102,7 +115,6 @@
             endif
           endif
         -%}
-
         <div
           class="filter-item__swatch"
           data-shape="{{ settings.swatch_shape }}"

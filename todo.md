@@ -1,2 +1,1 @@
-
--   [X] Make variant images in image gallery change w variant change
+-   [x] Make variant images in image gallery change w variant change

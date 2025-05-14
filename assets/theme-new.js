@@ -6470,14 +6470,21 @@ function stickyAtcBar(container) {
         optionValues: '.sticky-atc-bar__meta-options',
         pageFooter: 'footer',
         stickyAtcBar: '.sticky-atc-bar',
-        variantSelector: '.product__variants-wrapper'
+        variantSelector: '.product__variants-wrapper',
+        formElement: '.product-form',
+        submitButton: '.product-form__cart-submit'
     };
     const elements = {
         buyButtons: qs(selectors.buyButtons, container),
         pageFooter: qs(selectors.pageFooter, document),
         stickyAtcBar: qs(selectors.stickyAtcBar, container),
-        variantSelector: qs(selectors.variantSelector, container)
+        variantSelector: qs(selectors.variantSelector, container),
+        formElement: qs(selectors.formElement, container),
+        submitButton: qs(selectors.submitButton, container)
     };
+
+    console.log(`lookinged for sticky atc bar in`, container, elements.stickyAtcBar);
+
     if (elements.stickyAtcBar == null) return;
     elements.imageWrap = qs(selectors.imageWrap, elements.stickyAtcBar);
     elements.optionValues = qs(selectors.optionValues, elements.stickyAtcBar);
@@ -6487,22 +6494,29 @@ function stickyAtcBar(container) {
         events.push(listen(elements.changeOptionButton, 'click', () => scrollToVariantSelector()));
     }
     let widthWatcher;
-    const buyButtonsObserver = new IntersectionObserver((_ref) => {
-        let [{ isIntersecting: visible }] = _ref;
-        if (visible) {
-            hideBar();
-        } else {
-            showBar();
+
+    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let mainBuyButtonsInView = true; // Assume visible until observer states otherwise
+    let footerInView = false; // Assume not visible until observer states otherwise
+
+    const buyButtonsObserver = new IntersectionObserver(([{ isIntersecting: visible }]) => {
+        mainBuyButtonsInView = visible;
+        if (mainBuyButtonsInView) {
+            hideBar(); // If main buttons are in view, sticky bar should be hidden
         }
+        // If main buttons are not in view, handleScroll will decide to show based on scroll direction
     });
     const footerObserver = new IntersectionObserver(
-        (_ref2) => {
-            let [{ isIntersecting: visible }] = _ref2;
-            if (visible) {
+        ([{ isIntersecting: visible }]) => {
+            footerInView = visible;
+            if (footerInView) {
                 buyButtonsObserver.disconnect();
                 hideBar();
             } else {
-                buyButtonsObserver.observe(elements.buyButtons);
+                // Ensure buyButtons element exists before observing
+                if (elements.buyButtons) {
+                    buyButtonsObserver.observe(elements.buyButtons);
+                }
             }
         },
         {
@@ -6510,6 +6524,47 @@ function stickyAtcBar(container) {
         }
     );
     footerObserver.observe(elements.pageFooter);
+
+    const handleScroll = () => {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollThreshold = 5; // px, to prevent flickering on minor scrolls
+
+        if (!elements.stickyAtcBar) return; // Safety check
+
+        const scrollingDown = currentScrollTop > lastScrollTop + scrollThreshold;
+        const scrollingUp = currentScrollTop < lastScrollTop - scrollThreshold;
+
+        if (!footerInView) {
+            if (scrollingDown && !mainBuyButtonsInView) {
+                if (elements.stickyAtcBar.classList.contains(classes.hidden)) {
+                    showBar();
+                }
+            } else if (scrollingUp) {
+                if (!elements.stickyAtcBar.classList.contains(classes.hidden)) {
+                    hideBar();
+                }
+            }
+        } else { // Footer is in view
+            if (!elements.stickyAtcBar.classList.contains(classes.hidden)) {
+                hideBar(); // Ensure bar is hidden if footer is visible
+            }
+        }
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    };
+
+    const handleSubmit = (e) => {
+        console.log('submit sticky atc bar', e);
+        e.preventDefault();
+
+        elements.formElement.submit();
+    };
+
+    const scrollListenerInstance = listen(window, 'scroll', handleScroll, { passive: true });
+    events.push(scrollListenerInstance); // Add to events array for cleanup
+
+    const submitListenerInstance = listen(elements.submitButton, 'click', handleSubmit, { passive: true });
+    events.push(submitListenerInstance); // Add to events array for cleanup
+
     const showBar = () => {
         removeClass(elements.stickyAtcBar, classes.hidden);
         setHeightVariable();
@@ -6560,7 +6615,8 @@ function stickyAtcBar(container) {
     return {
         switchCurrentImage,
         unload,
-        updateOptionValues
+        updateOptionValues,
+        buyButtons: elements.buyButtons
     };
 }
 
@@ -7098,6 +7154,11 @@ class Product {
         if (this.isFullProduct && this.productHandle !== null) {
             updateRecentProducts(this.productHandle);
         }
+
+        // Sticky ATC Bar
+        this.stickyAtcBar = stickyAtcBar(this.document);
+
+
         this._loadMedia();
         this._initEvents();
 
@@ -7110,8 +7171,7 @@ class Product {
         // Gift card recipient
         this.giftCardRecipient = giftCardRecipient(this.container);
 
-        // Sticky ATC Bar
-        this.stickyAtcBar = stickyAtcBar(this.container);
+      
     }
     _initEvents() {
         this.events = [
@@ -7125,6 +7185,7 @@ class Product {
                 switchImage(this.desktopMedia, dataset.thumbnailId, this.viewInYourSpace);
             })
         ];
+
 
         // Adds listeners for each custom option, to sync input changes
         if (this.customOptionInputs) {

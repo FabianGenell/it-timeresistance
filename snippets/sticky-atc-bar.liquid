@@ -32,7 +32,11 @@
 -%}
 
 <div
-  class="sticky-atc-bar hidden"
+  class="
+    sticky-atc-bar hidden z-[600] md:bottom-auto
+    md:top-[calc(var(--header-desktop-sticky-position,0px)+var(--announcement-height))]
+  "
+
   {{ divider_style }}
   data-divider-style="{{ local_settings.divider_width }}"
   data-show-desktop="{{ local_settings.enable_sticky_atc_bar_desktop }}"

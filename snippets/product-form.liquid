@@ -204,16 +204,4 @@
       {%- render 'button-wishlist', prod: prod, class: 'p-3 mx-2' -%}
     {%- endif -%}
   </div>
-
-  {%- if block.settings.enable_sticky_atc_bar_desktop or block.settings.enable_sticky_atc_bar_mobile -%}
-    {% render 'sticky-atc-bar',
-      local_settings: block.settings,
-      prod: prod,
-      current_variant: current_variant,
-      featured_media: featured_media,
-      aspect_ratio: aspect_ratio,
-      price_content_type: price_content_type,
-      custom_price_content: custom_price_content
-    %}
-  {%- endif -%}
 {%- endform -%}

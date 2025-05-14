@@ -22,6 +22,8 @@
   if show_item_count or filters_valid or show_sort
     assign filter_bar_enabled = true
   endif
+
+  assign enabled_sort_options = 'manual,best-selling,price-ascending,price-descending' | split: ','
 -%}
 
 <form
@@ -117,8 +119,10 @@
           {%- liquid
             assign sort_by = results.sort_by | default: results.default_sort_by
             for option in results.sort_options
-              if option.value == sort_by
-                assign sort_by = option.name
+              if enabled_sort_options contains option.value
+                if option.value == sort_by
+                  assign sort_by = option.name
+                endif
               endif
             endfor
           -%}
@@ -143,6 +147,9 @@
           >
             <ul class="filter-group__list filter-group__list--sort">
               {%- for option in results.sort_options -%}
+                {%- unless enabled_sort_options contains option.value -%}
+                  {%- continue -%}
+                {%- endunless -%}
                 {%- liquid
                   assign is_active = false
                   if results.sort_by != blank
@@ -239,7 +246,9 @@
 
                 {%- if filter.type == 'list' or filter.type == 'boolean' -%}
                   {%- if group_active_count > 0 -%}
-                    <span class="filter-group__label-count" data-group-active-count>{{ group_active_count }}</span>
+                    <span class="filter-group__label-count" data-group-active-count>
+                      {{- group_active_count -}}
+                    </span>
                   {%- endif -%}
                 {%- elsif filter.type == 'price_range' -%}
                   {%- if filter.min_value.value > 0 or filter.max_value.value < filter.range_max -%}
@@ -259,7 +268,10 @@
                 data-filter-group-values
                 aria-hidden="true"
               >
-                <div class="filter-group__values-header" data-group-values-header="{{ filter.label | url_escape }}">
+                <div
+                  class="filter-group__values-header"
+                  data-group-values-header="{{ filter.label | url_escape }}"
+                >
                   <span class="filter-group__values-active-values fs-body-50">
                     {%- case filter.type -%}
                       {%- when 'boolean', 'list' -%}

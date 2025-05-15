@@ -12,36 +12,46 @@
     "main": {
       "type": "main-cart",
       "blocks": {
+        "point_zMyKky": {
+          "type": "point",
+          "settings": {
+            "text": "100% Secure Payments",
+            "icon": "checked-box"
+          }
+        },
         "point_HrnHFQ": {
           "type": "point",
           "settings": {
             "text": "Covered by Lifetime Warranty",
-            "icon": "security-badge"
+            "icon": "checked-box"
           }
         },
         "point_bchE8C": {
           "type": "point",
           "settings": {
             "text": "Free 30-Day Returns",
-            "icon": "package-open"
+            "icon": "checked-box"
           }
         },
-        "point_zMyKky": {
+        "point_aeFVrq": {
           "type": "point",
           "settings": {
-            "text": "100% Secure Payments",
-            "icon": "padlock"
+            "text": "All Taxes Included for Australian Customers",
+            "icon": "checked-box"
           }
         }
       },
       "block_order": [
+        "point_zMyKky",
         "point_HrnHFQ",
         "point_bchE8C",
-        "point_zMyKky"
+        "point_aeFVrq"
       ],
       "settings": {
         "show_product_currency": true,
-        "cross_sells_position": "below-line-items"
+        "cross_sells_position": "below-line-items",
+        "show_additional_checkout_buttons": false,
+        "show_payment_methods": true
       }
     }
   },

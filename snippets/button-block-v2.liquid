@@ -27,30 +27,9 @@
     settings_key: 'button_1'
   %}
 {% enddoc %}
-
-{%- liquid
-  if settings_object != blank and settings_key != blank
-    assign style_properties = 'padding,border,border_radius$px,opacity$%,font_size$px' | split: ','
-    capture style
-      for style_property in style_properties
-        assign style_property_parts = style_property | split: '$'
-        assign style_property_key = style_property_parts[0]
-        assign style_property_unit = style_property_parts[1]
-
-        assign style_key = settings_key | append: '_' | append: style_property_key
-
-        assign style_value = settings_object[style_key]
-
-        if style_value != blank
-          echo style_property_key | replace: '_', '-'
-          echo ': '
-          echo style_value | append: style_property_unit
-          echo '; '
-        endif
-      endfor
-    endcapture
-  endif
--%}
+{%- capture style -%}
+  {%- render 'button-style', settings_object: settings_object, settings_key: settings_key -%}
+{%- endcapture -%}
 
 {% comment %}
   <script>

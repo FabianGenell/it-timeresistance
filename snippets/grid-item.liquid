@@ -131,7 +131,14 @@
 
           {%- if block.settings.link_text != blank and block.settings.link != blank -%}
             <div class="grid-item__button section-blocks__button">
-              <div class="btn btn--overlay {{ block.settings.button_style }}{% if use_small_button_above_960 %} btn--small-above-960{% endif %}">
+              {%- capture style -%}
+                {%- render 'button-style', settings_object: block.settings, settings_key: 'button' -%}
+              {%- endcapture -%}
+
+              <div
+                style="{{ style }}"
+                class="btn btn--overlay {{ block.settings.button_style }}{% if use_small_button_above_960 %} btn--small-above-960{% endif %}"
+              >
                 <span>{{ block.settings.link_text }}</span>
               </div>
             </div>

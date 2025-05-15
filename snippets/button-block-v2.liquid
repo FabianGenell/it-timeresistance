@@ -1,0 +1,140 @@
+{% doc %}
+  Renders a configurable button element that can be either a link or button.
+
+  @param {string} label - The text to display in the button
+  @param {string} link - The URL the button links to
+  @param {object} [shopify_attributes] - Required for Shopify editor functionality
+  @param {string} [wrapper_class] - Additional CSS classes for the wrapper element
+  @param {string} [button_style] - Style variant for the button
+  @param {boolean} [is_full] - Whether button should be full width
+  @param {boolean} [is_small] - Whether button should be small size
+  @param {boolean} [is_x_small] - Whether button should be extra small size
+  @param {boolean} is_overlay - Whether button should have overlay styling
+  @param {boolean} [allow_linkless] - Whether to allow buttons without links
+  @param {boolean} [buttons_can_inline] - Whether buttons can display inline based on block order
+  @param {object} [forloop] - Required if buttons_can_inline is true
+  @param {string} [button_attributes] - Optional additional button attributes
+  @param {object} [settings_object] - Optional settings object (section or) for extra button config
+  @param {string} [settings_key] - Optional settings key for extra button config
+  @param {string} [type] - Type attribute for linkless buttons ("button" or "submit")
+
+  @example
+  {% render 'button-block-v2',
+    label: 'Shop Now',
+    link: '/collections/all',
+    button_style: 'primary',
+    is_small: true,
+    settings_key: 'button_1'
+  %}
+{% enddoc %}
+
+{%- liquid
+  if settings_object != blank and settings_key != blank
+    assign style_properties = 'padding,border,border_radius$px,opacity$%,font_size$px' | split: ','
+    capture style
+      for style_property in style_properties
+        assign style_property_parts = style_property | split: '$'
+        assign style_property_key = style_property_parts[0]
+        assign style_property_unit = style_property_parts[1]
+
+        assign style_key = settings_key | append: '_' | append: style_property_key
+
+        assign style_value = settings_object[style_key]
+
+        if style_value != blank
+          echo style_property_key | replace: '_', '-'
+          echo ': '
+          echo style_value | append: style_property_unit
+          echo '; '
+        endif
+      endfor
+    endcapture
+  endif
+-%}
+
+{% comment %}
+  <script>
+    (() => {
+      const obj = {
+        settingsObject: JSON.parse(`{{ settings_object | json }}`),
+        style_properties: '{{ style_properties | json }}',
+        settingsKey: '{{ settings_key }}',
+        lastValue: '{{ value }}',
+        lastStyleKey: '{{ style_key }}',
+        lastStyleValue: '{{ style_value }}',
+        style: `{{ style }}`
+      };
+
+      console.log(obj);
+    })();
+  </script>
+{% endcomment %}
+
+{%- liquid
+  assign prev_index = null
+  assign next_index = null
+  if type == null
+    assign type = 'button'
+  endif
+  if button_alignment_mobile == null
+    assign button_alignment_mobile = button_alignment
+  endif
+-%}
+
+{% unless label == blank %}
+  {% if buttons_can_inline %}
+    {%- liquid
+      assign prev_index = forloop.index0 | minus: 1
+      assign next_index = forloop.index0 | plus: 1
+    -%}
+
+    {%- if section.blocks[next_index].type == 'button' -%}
+      <div
+        class="button-block__inline-wrapper button-block__inline-wrapper--justify-{{ button_alignment }} button-block__inline-wrapper--justify-mobile-{{ button_alignment_mobile }} section-blocks__inline-buttons"
+      >
+    {%- endif -%}
+  {% endif %}
+
+  <div
+    class="button-block__button button-block__button--justify-{{ button_alignment }} button-block__button--justify-mobile-{{ button_alignment_mobile }} {{ wrapper_class }}"
+    {{ shopify_attributes }}
+  >
+    {%- capture button_tag -%}{% if link == blank %}button{% else %}a{% endif %}{%- endcapture -%}
+    {%- capture button_attributes -%}{{ button_attributes }}
+      {% if link == blank %}
+        type="{{ type }}"
+        {% unless allow_linkless %}
+          data-flash-trigger data-flash-message="{{ 'general.flash_alert.no_link' | t }}"
+        {% endunless %}
+      {% else %}
+        href="{{ link }}"
+      {% endif %}
+    {%- endcapture -%}
+    <{{ button_tag }}
+      {{ button_attributes }}
+      style="{{ style }}"
+      class="
+        btn
+        {% if is_overlay %}
+          btn--overlay
+        {% endif %}
+        {% if is_full %}
+          btn--full
+        {% endif %}
+        {% if is_small %}
+          btn--small
+        {% endif %}
+        {% if is_x_small %}
+          btn--x-small
+        {% endif %}
+        {{ button_style | default: 'btn--primary' }}
+      "
+    >
+      <span>{{ label }}</span>
+    </{{ button_tag }}>
+  </div>
+
+  {% if buttons_can_inline and prev_index > -1 and section.blocks[prev_index].type == 'button' %}
+    </div>
+  {% endif %}
+{% endunless %}

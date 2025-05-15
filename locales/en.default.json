@@ -57,7 +57,9 @@
     "general": {
       "add": "Add",
       "cart": "Your cart",
-      "checkout": "Checkout",
+      "discount_code": "Got a discount code? Add it at the next step",
+      "we_accept": "We accept:",
+      "checkout": "🔒 Secure Checkout",
       "confirmation_popup_heading": "Added to cart",
       "continue_shopping": "Continue shopping",
       "cookies_required": "Enable cookies to use the shopping cart",

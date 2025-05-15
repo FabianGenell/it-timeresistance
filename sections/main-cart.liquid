@@ -1,3 +1,13 @@
+{%- liquid
+  assign show_cart_points = false
+  assign footer_cols = 2
+
+  if section.blocks.size > 0
+    assign show_cart_points = true
+    assign footer_cols = 3
+  endif
+-%}
+
 <div
   class="cart page"
   data-section-id="{{ section.id }}"
@@ -6,13 +16,15 @@
   <div class="cart__container page__inner">
     {%- if cart.item_count >= 1 -%}
       <form action="{{ routes.cart_url }}" method="post" data-form novalidate class="cart__form">
-        <div class="cart__form-items" js-cart-items>
+        <div class="cart__form-items border-b" js-cart-items>
           <div class="cart__form-header">
             <h1 class="cart__form-title ff-heading fs-heading-1-base">{{ 'cart.general.title' | t }}</h1>
             <span class="cart__form-item-count fs-body-100">
               {{- 'cart.general.items_with_count' | t: count: cart.item_count -}}
             </span>
           </div>
+
+          {%- render 'free-shipping-bar' %}
 
           {%- for item in cart.items -%}
             <div class="cart__form-item" data-input-item data-id="{{ item.id }}" data-key="{{ item.key }}">
@@ -31,7 +43,7 @@
               <div class="cart__form-item-details">
                 <div class="cart__form-item-info-wrapper">
                   <div class="cart__form-item-info">
-                    <h4 class="cart__form-item-title fs-product-card-title">
+                    <h4 class="text-base">
                       <a href="{{ item.url }}">{{ item.product.title }}</a>
                     </h4>
 
@@ -179,41 +191,39 @@
           {%- endif -%}
         </div>
 
-        <div class="cart__footer-wrapper">
-          <div class="cart__footer">
-            {%- render 'free-shipping-bar' %}
+        <div class="cart__footer-wrapper mt-6 md:mt-12 grid gap-6 md:gap-10 md:grid-cols-{{ footer_cols }}">
+          {%- if settings.show_cart_notes -%}
+            <div class="">
+              <label for="CartSpecialInstructions" class="fs-body-100">
+                {{- 'cart.general.order_note_label' | t -}}
+              </label>
+              <textarea
+                name="note"
+                id="CartSpecialInstructions"
+                style="background-color: var(--color-background);"
+                class="input"
+                placeholder="{{ 'cart.general.order_note_placeholder' | t }}"
+              >{{ cart.note }}</textarea>
+            </div>
+          {%- endif -%}
 
-            <div class="cart__footer-inner">
-              {%- if settings.show_cart_notes -%}
-                <div class="cart__footer-order-note-wrapper" aria-expanded="false" aria-hidden="true">
-                  <button
-                    type="button"
-                    class="cart__footer-order-note-trigger fs-body-75 btn btn--text-link"
-                    data-order-note-trigger
-                  >
-                    <div class="cart__footer-order-note-trigger-icons">
-                      {% render 'icon', with icon: 'plus-small' %}
-                      {% render 'icon', with icon: 'minus-small', class: 'hidden' %}
-                    </div>
-                    <span class="cart__footer-order-note-trigger-text" data-cart-not-trigger-text>
-                      {{ 'cart.general.order_note_button_add' | t }}
+          {%- if show_cart_points -%}
+            <ul class="hidden md:flex flex-col gap-4 md:pt-6">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'point' -%}
+                  <li {{ block.shopify_attributes }} class="flex gap-2 items-center">
+                    {% render 'icon-editorial' with class: "size-7", icon: block.settings.icon %}
+                    <span class="text-lg">
+                      {{- block.settings.text -}}
                     </span>
-                  </button>
-                  <div class="cart__footer-order-note-input" cart-note-input>
-                    <label for="CartSpecialInstructions" class="fs-body-100">
-                      {{- 'cart.general.order_note_label' | t -}}
-                    </label>
-                    <textarea
-                      name="note"
-                      id="CartSpecialInstructions"
-                      style="background-color: var(--color-background);"
-                      class="input"
-                      placeholder="{{ 'cart.general.order_note_placeholder' | t }}"
-                    >{{ cart.note }}</textarea>
-                  </div>
-                </div>
-              {%- endif -%}
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
 
+          <div class="cart__footer">
+            <div class="cart__footer-inner">
               <div
                 class="cart__footer-subtotal-wrapper {% if  cart.cart_level_discount_applications.size > 0 %}cart__footer-subtotal-wrapper--has-discount{% endif %}"
                 js-cart-footer-subtotal-wrapper
@@ -277,8 +287,19 @@
                 </button>
               </div>
 
-              {%- if additional_checkout_buttons -%}
-                <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
+              <p class="t-subdued mt-2">
+                {{- 'cart.general.discount_code' | t -}}
+              </p>
+
+              {%- if section.settings.show_payment_methods -%}
+                <p class="t-subdued mt-2">
+                  {{- 'cart.general.we_accept' | t -}}
+                </p>
+                {%- render 'payment-icons' -%}
+              {%- endif -%}
+
+              {%- if additional_checkout_buttons and section.settings.show_additional_checkout_buttons -%}
+                <div class="additional-checkout-buttons additional-checkout-buttons--vertical mt-2">
                   {{ content_for_additional_checkout_buttons }}
                 </div>
               {%- endif -%}
@@ -361,6 +382,80 @@
         {
           "value": "below-line-items",
           "label": "t:sections.main_cart.settings.cross_sells_position.option_2"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_additional_checkout_buttons",
+      "label": "Show additional checkout buttons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_methods",
+      "label": "Show payment methods",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "none", "label": "t:shared.settings.icon.option_none" },
+            { "value": "bank", "label": "t:shared.settings.icon.option_bank" },
+            { "value": "bill", "label": "t:shared.settings.icon.option_bill" },
+            { "value": "bottle", "label": "t:shared.settings.icon.option_bottle" },
+            { "value": "chat", "label": "t:shared.settings.icon.option_chat" },
+            { "value": "chat-empty", "label": "t:shared.settings.icon.option_chat_empty" },
+            { "value": "checked-box", "label": "t:shared.settings.icon.option_checked_box" },
+            { "value": "clothes-button", "label": "t:shared.settings.icon.option_clothes_button" },
+            { "value": "clothes-hanger", "label": "t:shared.settings.icon.option_clothes_hanger" },
+            { "value": "cotton", "label": "t:shared.settings.icon.option_cotton" },
+            { "value": "envelope", "label": "t:shared.settings.icon.option_envelope" },
+            { "value": "globe", "label": "t:shared.settings.icon.option_globe" },
+            { "value": "hand-washing", "label": "t:shared.settings.icon.option_hand_washing" },
+            { "value": "heart", "label": "t:shared.settings.icon.option_heart" },
+            { "value": "laundry-dryer", "label": "t:shared.settings.icon.option_laundry_dryer" },
+            { "value": "laundry-washer", "label": "t:shared.settings.icon.option_laundry_washer" },
+            { "value": "leaf", "label": "t:shared.settings.icon.option_leaf" },
+            { "value": "lipstick", "label": "t:shared.settings.icon.option_lipstick" },
+            { "value": "measuring-tape", "label": "t:shared.settings.icon.option_measuring_tape" },
+            { "value": "model-silhouette", "label": "t:shared.settings.icon.option_silhouette" },
+            { "value": "money-bills", "label": "t:shared.settings.icon.option_money_bills" },
+            { "value": "moving-truck", "label": "t:shared.settings.icon.option_moving_truck" },
+            { "value": "package-open", "label": "t:shared.settings.icon.option_package_open" },
+            { "value": "package-closed", "label": "t:shared.settings.icon.option_package_closed" },
+            { "value": "padlock", "label": "t:shared.settings.icon.option_padlock" },
+            { "value": "paper-airplane", "label": "t:shared.settings.icon.option_paper_airplane" },
+            { "value": "paw-print", "label": "t:shared.settings.icon.option_paw_print" },
+            { "value": "plant", "label": "t:shared.settings.icon.option_plant" },
+            { "value": "price-tag", "label": "t:shared.settings.icon.option_price_tag" },
+            { "value": "question-mark", "label": "t:shared.settings.icon.option_question_mark" },
+            { "value": "recycle-symbol", "label": "t:shared.settings.icon.option_recycle_symbol" },
+            { "value": "ruler", "label": "t:shared.settings.icon.option_ruler" },
+            { "value": "scissors", "label": "t:shared.settings.icon.option_scissors" },
+            { "value": "security-badge", "label": "t:shared.settings.icon.option_security_badge" },
+            { "value": "stiletto", "label": "t:shared.settings.icon.option_stiletto" },
+            { "value": "stopwatch", "label": "t:shared.settings.icon.option_stopwatch" },
+            { "value": "sunflower", "label": "t:shared.settings.icon.option_sunflower" },
+            { "value": "t-shirt", "label": "t:shared.settings.icon.option_tshirt" },
+            { "value": "washing-symbol", "label": "t:shared.settings.icon.option_washing_symbol" },
+            { "value": "water-bottle", "label": "t:shared.settings.icon.option_water_bottle" }
+          ],
+
+          "default": "none"
         }
       ]
     }

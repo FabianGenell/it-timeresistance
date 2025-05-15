@@ -11,7 +11,37 @@
   "sections": {
     "main": {
       "type": "main-cart",
+      "blocks": {
+        "point_HrnHFQ": {
+          "type": "point",
+          "settings": {
+            "text": "Covered by Lifetime Warranty",
+            "icon": "security-badge"
+          }
+        },
+        "point_bchE8C": {
+          "type": "point",
+          "settings": {
+            "text": "Free 30-Day Returns",
+            "icon": "package-open"
+          }
+        },
+        "point_zMyKky": {
+          "type": "point",
+          "settings": {
+            "text": "100% Secure Payments",
+            "icon": "padlock"
+          }
+        }
+      },
+      "block_order": [
+        "point_HrnHFQ",
+        "point_bchE8C",
+        "point_zMyKky"
+      ],
       "settings": {
+        "show_product_currency": true,
+        "cross_sells_position": "below-line-items"
       }
     }
   },

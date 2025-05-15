@@ -2926,14 +2926,7 @@ html:not(.no-js)
     margin-bottom: calc(4px * 3);
     margin-bottom: var(--spacing-3);
 }
-.cart__form {
-    display: flex;
-}
-@media (max-width: 959px) {
-    .cart__form {
-        flex-wrap: wrap;
-    }
-}
+
 .cart__form-header {
     display: flex;
     justify-content: space-between;
@@ -3082,15 +3075,7 @@ html:not(.no-js)
 .cart__footer {
     width: 100%;
 }
-@media (min-width: 960px) {
-    .cart__footer {
-        position: sticky;
-        top: calc(0 + (4px * 10));
-        top: calc(0 + calc(4px * 10));
-        top: calc(var(--header-desktop-sticky-height, 0) + var(--spacing-10));
-        max-width: var(--side-bar-width);
-    }
-}
+
 .cart__footer-inner {
     position: relative;
     padding: calc(4px * 6);

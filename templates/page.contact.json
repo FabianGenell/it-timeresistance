@@ -20,9 +20,9 @@
     },
     "custom_liquid_HhNUfx": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
-        "custom_liquid": "<div contactform-embed='394574'></div>",
+        "custom_liquid": "<div contactform-embed='428252'></div>",
+        "full_width": false,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
       }
@@ -70,6 +70,7 @@
         "telephone_7NgFjg",
         "text_area_jcYXeK"
       ],
+      "disabled": true,
       "settings": {
         "alignment": "left_left",
         "heading": "Contact us",

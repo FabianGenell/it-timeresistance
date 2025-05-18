@@ -69,10 +69,10 @@
         "media_link": "",
         "text_position": "center_center",
         "text_position_mobile": "center_center",
-        "text_color": "#FFFFFF",
-        "button_background_color": "#FFFFFF",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
         "button_text_color": "#000000",
-        "color_overlay": "#000",
+        "color_overlay": "#000000",
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
@@ -115,7 +115,8 @@
       "type": "custom-liquid",
       "custom_css": [],
       "settings": {
-        "custom_liquid": "<div contactform-embed='394577'></div>",
+        "custom_liquid": "<div contactform-embed='428249'></div>",
+        "full_width": false,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
       }

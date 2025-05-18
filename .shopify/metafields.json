@@ -31,6 +31,16 @@
         "name": "file_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "short_name",
+      "namespace": "custom",
+      "name": "Short name",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
     }
   ],
   "company": [],

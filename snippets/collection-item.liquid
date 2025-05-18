@@ -1,3 +1,4 @@
+<!-- - snippets/collection-item.liquid - -->
 {%- comment -%}
   Pass these variables into snippet:
 
@@ -21,29 +22,45 @@
   if label_style == 'overlay'
     assign label_is_overlay = true
   endif
+
+  assign title = collection.metafields.custom.short_name | default: collection.title
 -%}
 {% capture collection_label %}
   <div class="collection-item__label">
-    <h4 class="collection-item__title fs-body-100 {% if label_is_overlay %}ff-heading{% else %}ff-body{% endif %}">
+    <div class="collection-item__title pb-4">
       {%- if label_is_overlay -%}
-        <span>
+      <h4 class="text-2xl uppercase text-center mb-4 ff-heading">
           {%- if placeholder -%}
             {{ 'collections.general.collection_label' | t }}
           {%- else -%}
-            {{ collection.title }}
+            {{ title }}
           {%- endif -%}
-        </span>
-        <span class="collection-item__icon">
-          {%- render 'icon' with icon: 'arrow-short' -%}
-        </span>
-      {%- else -%}
-        {%- if placeholder -%}
-          {{ 'collections.general.collection_label' | t }}
-        {%- else -%}
-          <a href="{{ collection.url }}">{{ collection.title }}</a>
+        </h4>
+        {%- if section.settings.button_text != blank -%}
+            {%- capture style -%}
+              {%- render 'button-style', settings_object: section.settings, settings_key: 'button' -%}
+            {%- endcapture -%}
+
+            <div
+              style="{{ style }}"
+              class="btn btn--overlay 
+              {{ section.settings.button_style }}{% if use_small_button_above_960 %} btn--small-above-960{% endif %}
+              w-fit mx-auto 
+              "
+            >
+              <span>{{ section.settings.button_text }}</span>
+            </div>
         {%- endif -%}
+      {%- else -%}
+        <h4>
+          {%- if placeholder -%}
+            {{ 'collections.general.collection_label' | t }}
+          {%- else -%}
+            <a href="{{ collection.url }}">{{ collection.title }}</a>
+          {%- endif -%}
+        </h4>
       {%- endif -%}
-    </h4>
+    </div>
   </div>
 {% endcapture %}
 

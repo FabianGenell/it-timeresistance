@@ -18,6 +18,12 @@
       animation--list-slider
     {% endif %}
   "
+  style="
+    {% render 'overlay-button-vars' with
+    color_button_text: section.settings.button_text_color,
+    color_button_background: section.settings.button_background_color %}
+  "
+
   data-section-id="{{ section.id }}"
   data-section-type="collection-list-slider"
   data-products-per-view="{{ section.settings.columns }}"
@@ -325,6 +331,89 @@
           "value": "section--vertical-padding-bottom-only"
         }
       ]
+    },
+    {
+      "id": "button_text",
+      "type": "text",
+      "label": "t:sections.grid.blocks.item.settings.link_text.label",
+      "default": "View All"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "t:shared.settings.button_style.label",
+      "options": [
+        {
+          "value": "btn--primary",
+          "label": "t:shared.settings.button_style.option_solid"
+        },
+        {
+          "value": "btn--secondary",
+          "label": "t:shared.settings.button_style.option_outline"
+        },
+        {
+          "value": "btn--callout",
+          "label": "t:shared.settings.button_style.option_text"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Button Config"
+    },
+    {
+      "type": "text",
+      "id": "button_padding",
+      "label": "Button Padding",
+      "info": "Enter the padding for the Button. (e.g. 10px 20px)"
+    },
+    {
+      "type": "text",
+      "id": "button_border",
+      "label": "Button Border",
+      "info": "Enter the border for the Button. (e.g. 1px solid #000)"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Button Border Radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Button Opacity",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "default": 16
     }
   ],
   "presets": [

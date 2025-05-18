@@ -10200,12 +10200,7 @@ html.no-js .product-tabs__tab-item {
     );
     padding-top: 100px;
 }
-.collection-item__image-wrapper .collection-item__label .collection-item__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    word-break: break-word;
-}
+
 .collection-item__image-wrapper .collection-item__label .collection-item__icon {
     margin-bottom: 6px;
     margin-left: calc(4px * 3);

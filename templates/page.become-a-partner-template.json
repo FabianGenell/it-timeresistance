@@ -11,6 +11,9 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "custom_css": [
+        "div.tooltip {margin: 4px !important;}"
+      ],
       "settings": {
         "enable_animation": true,
         "content_width": "full",

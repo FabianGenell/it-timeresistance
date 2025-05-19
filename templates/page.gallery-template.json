@@ -1463,6 +1463,7 @@
         "image_yc3LDy": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---17.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1471,6 +1472,7 @@
         "image_TFyiPe": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---18.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1479,6 +1481,7 @@
         "image_fDq9RQ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---19.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1487,6 +1490,7 @@
         "image_pGHEf7": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---20.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1495,6 +1499,43 @@
         "image_MFtqVJ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---21.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_NecF8y": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---22.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_GqHwFQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---23.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_PhA3eq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---24.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_mzQBwp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---25.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1503,6 +1544,7 @@
         "image_yFFmjm": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---26.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1531,6 +1573,10 @@
         "image_fDq9RQ",
         "image_pGHEf7",
         "image_MFtqVJ",
+        "image_NecF8y",
+        "image_GqHwFQ",
+        "image_PhA3eq",
+        "image_mzQBwp",
         "image_yFFmjm"
       ],
       "settings": {

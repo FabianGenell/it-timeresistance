@@ -1786,6 +1786,34 @@
         "image_zmwCUN": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Spring_Fling---21.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_NHUB4B": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Spring_Fling---22.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_xgaTyU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Spring_Fling---23.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_hBaEpQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Spring_Fling---24.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1794,6 +1822,7 @@
         "image_tWGf7X": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Spring_Fling---25.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1822,6 +1851,9 @@
         "image_dTteAC",
         "image_jj33Cm",
         "image_zmwCUN",
+        "image_NHUB4B",
+        "image_xgaTyU",
+        "image_hBaEpQ",
         "image_tWGf7X"
       ],
       "settings": {

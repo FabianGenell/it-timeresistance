@@ -865,6 +865,109 @@
         "image_UaLAxF": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---11.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_8RkHA4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---12.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_MdCPUb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---13.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_9GrhJB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---14.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_CnQ9Gm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---15.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_yDibyL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---16.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_xinG68": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---17.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_87Yi9B": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_QrpwG3": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Fet9hT": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wtxz8j": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Ce6QTY": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_34LtYH": {
+          "type": "image",
+          "settings": {
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -882,7 +985,19 @@
         "image_GbEgyc",
         "image_TrNFfd",
         "image_j9MmYN",
-        "image_UaLAxF"
+        "image_UaLAxF",
+        "image_8RkHA4",
+        "image_MdCPUb",
+        "image_9GrhJB",
+        "image_CnQ9Gm",
+        "image_yDibyL",
+        "image_xinG68",
+        "image_87Yi9B",
+        "image_QrpwG3",
+        "image_Fet9hT",
+        "image_wtxz8j",
+        "image_Ce6QTY",
+        "image_34LtYH"
       ],
       "settings": {
         "use_variant_images": false,

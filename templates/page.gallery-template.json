@@ -1373,6 +1373,7 @@
         "image_qx4m9V": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---7.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1381,6 +1382,7 @@
         "image_wDtpnb": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---8.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1389,6 +1391,7 @@
         "image_GH33ki": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---9.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1397,12 +1400,107 @@
         "image_fr3det": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---10.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
           }
         },
         "image_JQjxhg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---11.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Bw6YNz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---12.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_9BiBPa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---13.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_RtGLVm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---14.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_tAUQam": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---15.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_FQNrqN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---16.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_yc3LDy": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_TFyiPe": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_fDq9RQ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_pGHEf7": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_MFtqVJ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_yFFmjm": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
@@ -1422,7 +1520,18 @@
         "image_wDtpnb",
         "image_GH33ki",
         "image_fr3det",
-        "image_JQjxhg"
+        "image_JQjxhg",
+        "image_Bw6YNz",
+        "image_9BiBPa",
+        "image_RtGLVm",
+        "image_tAUQam",
+        "image_FQNrqN",
+        "image_yc3LDy",
+        "image_TFyiPe",
+        "image_fDq9RQ",
+        "image_pGHEf7",
+        "image_MFtqVJ",
+        "image_yFFmjm"
       ],
       "settings": {
         "use_variant_images": false,

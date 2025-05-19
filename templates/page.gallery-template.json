@@ -928,6 +928,7 @@
         "image_87Yi9B": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---18.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -936,6 +937,7 @@
         "image_QrpwG3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---19.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -944,6 +946,7 @@
         "image_Fet9hT": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---20.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -952,6 +955,7 @@
         "image_wtxz8j": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---21.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -960,6 +964,7 @@
         "image_Ce6QTY": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---22.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -968,6 +973,34 @@
         "image_34LtYH": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---23.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_WWmqfk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---24.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wnaqwd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---25.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_NWwPgV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---26.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -997,7 +1030,10 @@
         "image_Fet9hT",
         "image_wtxz8j",
         "image_Ce6QTY",
-        "image_34LtYH"
+        "image_34LtYH",
+        "image_WWmqfk",
+        "image_wnaqwd",
+        "image_NWwPgV"
       ],
       "settings": {
         "use_variant_images": false,

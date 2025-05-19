@@ -1892,25 +1892,103 @@
         "image_pwzXJM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Old_Town_Young_Soul---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_nwQ6Qb": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Old_Town_Young_Soul---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_aE8AJY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Old_Town_Young_Soul---4.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_74YczN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Old_Town_Young_Soul---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_DWgHdi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Old_Town_Young_Soul---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Yzy6gk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Old_Town_Young_Soul---7.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_bW89dK": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_kWryHF": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_AGamFM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_De4PdL": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_4VH9hM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         },
         "image_dTEdR3": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -1918,6 +1996,15 @@
         "image_PEywmV",
         "image_pwzXJM",
         "image_nwQ6Qb",
+        "image_aE8AJY",
+        "image_74YczN",
+        "image_DWgHdi",
+        "image_Yzy6gk",
+        "image_bW89dK",
+        "image_kWryHF",
+        "image_AGamFM",
+        "image_De4PdL",
+        "image_4VH9hM",
         "image_dTEdR3"
       ],
       "settings": {

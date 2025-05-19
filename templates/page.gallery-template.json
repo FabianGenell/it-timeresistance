@@ -1179,12 +1179,64 @@
         "image_jiP4YH": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---14.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
           }
         },
         "image_tiKfAQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---15.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_UXa9bk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---16.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_EzLY9w": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---17.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_aNRRA9": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_XdBe4X": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_kqQm8B": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_TpDyEb": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
@@ -1208,7 +1260,13 @@
         "image_EajKmz",
         "image_gmgKh8",
         "image_jiP4YH",
-        "image_tiKfAQ"
+        "image_tiKfAQ",
+        "image_UXa9bk",
+        "image_EzLY9w",
+        "image_aNRRA9",
+        "image_XdBe4X",
+        "image_kqQm8B",
+        "image_TpDyEb"
       ],
       "settings": {
         "use_variant_images": false,
@@ -1243,6 +1301,14 @@
             "text": ""
           }
         },
+        "image_GygjAF": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
         "image_H6NHJB": {
           "type": "image",
           "settings": {
@@ -1270,6 +1336,7 @@
       },
       "block_order": [
         "image_jWQeBH",
+        "image_GygjAF",
         "image_H6NHJB",
         "image_nQVeXP",
         "image_JQjxhg"

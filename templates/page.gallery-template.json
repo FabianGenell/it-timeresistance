@@ -317,9 +317,10 @@
         "image_CYP4dy": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_E8jLAY": {

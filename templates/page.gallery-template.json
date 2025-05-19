@@ -1116,12 +1116,67 @@
         "image_z4WGXJ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---7.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
           }
         },
         "image_ARdqXP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---8.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_7QJQQQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---9.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_gJGatM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---10.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_zQtJYy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---11.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_EajKmz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---12.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_gmgKh8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---13.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_jiP4YH": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
@@ -1147,6 +1202,12 @@
         "image_Kz6kUm",
         "image_z4WGXJ",
         "image_ARdqXP",
+        "image_7QJQQQ",
+        "image_gJGatM",
+        "image_zQtJYy",
+        "image_EajKmz",
+        "image_gmgKh8",
+        "image_jiP4YH",
         "image_tiKfAQ"
       ],
       "settings": {

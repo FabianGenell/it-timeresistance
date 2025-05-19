@@ -838,6 +838,7 @@
         "image_GbEgyc": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---8.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -846,6 +847,7 @@
         "image_TrNFfd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---9.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -854,6 +856,7 @@
         "image_j9MmYN": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Shapeshifter---10.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""

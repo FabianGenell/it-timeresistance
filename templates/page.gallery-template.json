@@ -326,17 +326,52 @@
         "image_E8jLAY": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_BDn8Ad": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_brz6CN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_8Vdfbc": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_4QUYyd": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_BCrX7m": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -344,7 +379,11 @@
         "image_ThYeD8",
         "image_CYP4dy",
         "image_E8jLAY",
-        "image_BDn8Ad"
+        "image_BDn8Ad",
+        "image_brz6CN",
+        "image_8Vdfbc",
+        "image_4QUYyd",
+        "image_BCrX7m"
       ],
       "settings": {
         "use_variant_images": false,

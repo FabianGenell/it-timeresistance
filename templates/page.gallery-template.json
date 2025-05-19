@@ -353,6 +353,7 @@
         "image_8Vdfbc": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/6.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -361,12 +362,55 @@
         "image_4QUYyd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/7.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
           }
         },
         "image_BCrX7m": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_CcQ6Qh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/9.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_iYLdq7": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_DGV9jh": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_jWjEG3": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Pmx48P": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
@@ -383,7 +427,12 @@
         "image_brz6CN",
         "image_8Vdfbc",
         "image_4QUYyd",
-        "image_BCrX7m"
+        "image_BCrX7m",
+        "image_CcQ6Qh",
+        "image_iYLdq7",
+        "image_DGV9jh",
+        "image_jWjEG3",
+        "image_Pmx48P"
       ],
       "settings": {
         "use_variant_images": false,

@@ -1215,6 +1215,7 @@
         "image_aNRRA9": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---18.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1223,6 +1224,7 @@
         "image_XdBe4X": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---19.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1231,6 +1233,7 @@
         "image_kqQm8B": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---20.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1239,6 +1242,25 @@
         "image_TpDyEb": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---21.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_PzWQKy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---22.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_EUUe9N": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---23.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -1266,7 +1288,9 @@
         "image_aNRRA9",
         "image_XdBe4X",
         "image_kqQm8B",
-        "image_TpDyEb"
+        "image_TpDyEb",
+        "image_PzWQKy",
+        "image_EUUe9N"
       ],
       "settings": {
         "use_variant_images": false,

@@ -784,31 +784,100 @@
         "image_Ft4a6z": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/2_68bb8a60-2450-4bdc-855b-4501a5b32fa5.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Hg7HGJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---3.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_3NXPqC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---4.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_6Y88YV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_zdrf7X": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_VPQEED": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Shapeshifter---7.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_GbEgyc": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_TrNFfd": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         },
         "image_j9MmYN": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_UaLAxF": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         }
       },
       "block_order": [
         "image_cdzDVn",
         "image_Ft4a6z",
+        "image_Hg7HGJ",
+        "image_3NXPqC",
+        "image_6Y88YV",
+        "image_zdrf7X",
+        "image_VPQEED",
+        "image_GbEgyc",
+        "image_TrNFfd",
         "image_j9MmYN",
         "image_UaLAxF"
       ],

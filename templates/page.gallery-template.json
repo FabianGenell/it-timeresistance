@@ -389,6 +389,7 @@
         "image_iYLdq7": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/10.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""

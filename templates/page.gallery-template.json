@@ -668,6 +668,7 @@
         "image_hjyjg6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/41.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -676,6 +677,7 @@
         "image_atPc9B": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/42.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -684,6 +686,7 @@
         "image_kiEHdf": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/43.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -692,6 +695,7 @@
         "image_q8p4Tn": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/44.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""

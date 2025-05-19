@@ -1328,33 +1328,86 @@
         "image_GygjAF": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_H6NHJB": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_nQVeXP": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Serenity---4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_KPaT6P": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_d3NprE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Serenity---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_qx4m9V": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wDtpnb": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_GH33ki": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_fr3det": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         },
         "image_JQjxhg": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -1363,6 +1416,12 @@
         "image_GygjAF",
         "image_H6NHJB",
         "image_nQVeXP",
+        "image_KPaT6P",
+        "image_d3NprE",
+        "image_qx4m9V",
+        "image_wDtpnb",
+        "image_GH33ki",
+        "image_fr3det",
         "image_JQjxhg"
       ],
       "settings": {

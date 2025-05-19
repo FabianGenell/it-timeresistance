@@ -1071,25 +1071,70 @@
         "image_8VALGN": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_QxEaAr": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Synagogue---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_FTaUwr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---4.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_9HNz8x": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Kz6kUm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Synagogue---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_z4WGXJ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_ARdqXP": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         },
         "image_tiKfAQ": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -1097,6 +1142,11 @@
         "image_JamnTD",
         "image_8VALGN",
         "image_QxEaAr",
+        "image_FTaUwr",
+        "image_9HNz8x",
+        "image_Kz6kUm",
+        "image_z4WGXJ",
+        "image_ARdqXP",
         "image_tiKfAQ"
       ],
       "settings": {

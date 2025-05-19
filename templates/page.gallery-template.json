@@ -488,6 +488,83 @@
         "image_yTQAxT": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/21.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_GMVUdP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/22.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_XxBXmV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/23.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_QCRwj7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/24.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_9U6NBp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/25.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_D4pWJm": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_HyTMJB": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_kp6Kqn": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_NngMRU": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_hjyjg6": {
+          "type": "image",
+          "settings": {
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -515,7 +592,16 @@
         "image_qmKFYr",
         "image_ggxXqP",
         "image_9yEHRG",
-        "image_yTQAxT"
+        "image_yTQAxT",
+        "image_GMVUdP",
+        "image_XxBXmV",
+        "image_QCRwj7",
+        "image_9U6NBp",
+        "image_D4pWJm",
+        "image_HyTMJB",
+        "image_kp6Kqn",
+        "image_NngMRU",
+        "image_hjyjg6"
       ],
       "settings": {
         "use_variant_images": false,

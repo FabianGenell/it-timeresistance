@@ -74,6 +74,7 @@
         },
         "custom_liquid_jVafcd": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "column_placement": "right",
             "custom_liquid": "<span class=\"intro-short-text\">\n        {{ product.metafields.custom.product_design.value | truncate: 142 }}\n      </span>\n      <span class=\"intro-full-text\" style=\"display: none;\">\n        {{ product.metafields.custom.product_design.value }}\n      </span>\n      <button class=\"see-more\" onclick=\"toggleIntroText(this)\">See More</button>"

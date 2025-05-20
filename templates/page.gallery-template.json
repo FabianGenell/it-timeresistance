@@ -2976,25 +2976,93 @@
         "image_xk8pAr": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_LcLnNP": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_yEBYge": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_P7JhjU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_Voyage---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_rpTrMM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_LaCXmF": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_QyXB8j": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_tBg9GC": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_8e7Rhq": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_FMBeKa": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_YdmLCy": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -3002,7 +3070,15 @@
         "image_BAgAKt",
         "image_xk8pAr",
         "image_LcLnNP",
-        "image_yEBYge"
+        "image_yEBYge",
+        "image_P7JhjU",
+        "image_rpTrMM",
+        "image_LaCXmF",
+        "image_QyXB8j",
+        "image_tBg9GC",
+        "image_8e7Rhq",
+        "image_FMBeKa",
+        "image_YdmLCy"
       ],
       "settings": {
         "use_variant_images": false,

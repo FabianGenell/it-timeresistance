@@ -759,11 +759,11 @@
         "button_style": "btn--primary",
         "button_text_color": "#000000",
         "button_background_color": "#ffffff",
-        "button_padding": "",
+        "button_padding": "8px 30px",
         "button_border": "",
         "button_border_radius": 0,
-        "button_opacity": 100,
-        "button_font_size": 16
+        "button_opacity": 70,
+        "button_font_size": 18
       }
     },
     "collection_list_slider_Tkx4c6": {
@@ -799,11 +799,11 @@
         "button_style": "btn--primary",
         "button_text_color": "#000000",
         "button_background_color": "#ffffff",
-        "button_padding": "",
+        "button_padding": "8px 30px",
         "button_border": "",
         "button_border_radius": 0,
-        "button_opacity": 100,
-        "button_font_size": 16
+        "button_opacity": 70,
+        "button_font_size": 18
       }
     }
   },

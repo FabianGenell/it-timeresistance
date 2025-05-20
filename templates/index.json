@@ -105,8 +105,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -148,6 +149,7 @@
         "image_WG8Cip",
         "image_KTC4iV"
       ],
+      "disabled": true,
       "settings": {
         "image_aspect": "custom",
         "desktop_height": 100,
@@ -163,8 +165,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -191,8 +194,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-only"
       }
     },
@@ -296,8 +300,9 @@
         "enable_section_style": true,
         "section_padding_top": 40,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -330,8 +335,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -431,8 +437,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -465,8 +472,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -493,8 +501,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -594,8 +603,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -712,8 +722,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -746,8 +757,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -777,8 +789,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -816,8 +829,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "button_text": "View All",
         "button_style": "btn--primary",
@@ -861,8 +875,9 @@
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "section_padding_top_desktop": 0,
-        "section_padding_bottom_desktop": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "button_text": "View All",
         "button_style": "btn--primary",

@@ -2501,6 +2501,7 @@
         "image_gpyqpQ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Phases---11.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2509,6 +2510,7 @@
         "image_G6JKpG": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Phases---12.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2517,6 +2519,7 @@
         "image_rV78cR": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Phases---13.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2525,6 +2528,7 @@
         "image_JdG3EQ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Phases---14.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2533,6 +2537,7 @@
         "image_RNRrXg": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Phases---15.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""

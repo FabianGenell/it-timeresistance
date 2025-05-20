@@ -2206,6 +2206,7 @@
         "image_L966xA": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---3.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2214,6 +2215,7 @@
         "image_NWt4jc": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---4.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2222,6 +2224,7 @@
         "image_N8tfpL": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---5.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2230,6 +2233,7 @@
         "image_4rtTkb": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---6.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2238,6 +2242,7 @@
         "image_8J9HP9": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---7.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2246,6 +2251,7 @@
         "image_8Mc9P3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---8.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2254,6 +2260,7 @@
         "image_yRTTJ6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---9.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2262,6 +2269,61 @@
         "image_wEeyVM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---10.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_x6F4AB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---11.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_PEx47A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---12.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_7VTCiw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---13.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_CmpwTY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---14.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_QDW8t3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---15.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_biLL7r": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---16.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2270,6 +2332,25 @@
         "image_d4iwjQ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---17.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_eGXGeP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---18.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_z7Teh6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reflections---19.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2287,7 +2368,15 @@
         "image_8Mc9P3",
         "image_yRTTJ6",
         "image_wEeyVM",
-        "image_d4iwjQ"
+        "image_x6F4AB",
+        "image_PEx47A",
+        "image_7VTCiw",
+        "image_CmpwTY",
+        "image_QDW8t3",
+        "image_biLL7r",
+        "image_d4iwjQ",
+        "image_eGXGeP",
+        "image_z7Teh6"
       ],
       "settings": {
         "use_variant_images": false,

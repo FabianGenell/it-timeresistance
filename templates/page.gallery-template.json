@@ -3012,6 +3012,7 @@
         "image_rpTrMM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---6.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3020,6 +3021,7 @@
         "image_LaCXmF": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---7.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3028,6 +3030,7 @@
         "image_QyXB8j": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---8.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3036,6 +3039,7 @@
         "image_tBg9GC": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---9.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3044,6 +3048,7 @@
         "image_8e7Rhq": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---10.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3052,6 +3057,52 @@
         "image_FMBeKa": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---11.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_AV8Bfq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_Voyage---12.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_mxBGX3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_Voyage---13.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_dfjNic": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_Voyage---14.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_qhGNd9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_Voyage---15.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_gBxeT6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_Voyage---16.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3060,6 +3111,7 @@
         "image_YdmLCy": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/The_Voyage---17.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3078,6 +3130,11 @@
         "image_tBg9GC",
         "image_8e7Rhq",
         "image_FMBeKa",
+        "image_AV8Bfq",
+        "image_mxBGX3",
+        "image_dfjNic",
+        "image_qhGNd9",
+        "image_gBxeT6",
         "image_YdmLCy"
       ],
       "settings": {

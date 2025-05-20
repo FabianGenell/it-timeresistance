@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 <script>
   {% # This is done here AND in the JS so it's responsive in the theme editor before the JS is loaded %}
   document.documentElement.setAttribute("data-enable-sticky-announcement-bar", "{{ section.settings.sticky_enabled }}");
@@ -59,7 +62,10 @@
     <div class="ui-overlap-wrap">
       <div class="ui-overlap">
         <div class="fader left">
-          <button class="slider-nav-button slider-nav-button-prev" title="{{ 'general.accessibility.previous' | t }}">
+          <button
+            class="slider-nav-button slider-nav-button-prev"
+            title="{{ 'general.accessibility.previous' | t }}"
+          >
             {% render 'icon' with icon: 'chevron' %}
           </button>
         </div>
@@ -67,7 +73,10 @@
           {{ items }}
         </div>
         <div class="fader right">
-          <button class="slider-nav-button slider-nav-button-next" title="{{ 'general.accessibility.next' | t }}">
+          <button
+            class="slider-nav-button slider-nav-button-next"
+            title="{{ 'general.accessibility.next' | t }}"
+          >
             {% render 'icon' with icon: 'chevron' %}
           </button>
         </div>

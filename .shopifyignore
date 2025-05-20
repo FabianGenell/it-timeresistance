@@ -16,3 +16,4 @@ node_modules
 .git/*
 .github/*
 todo.md
+*.sh

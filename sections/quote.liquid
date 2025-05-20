@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 <div
   data-section-id="{{ section.id }}"
   data-section-type="quote"
@@ -23,7 +26,10 @@
     >
       <div class="slider-fade-out left"></div>
       {% if section.blocks.size > 1 %}
-        <button class="slider-nav-button slider-nav-button-prev" title="{{ 'general.accessibility.previous' | t }}">
+        <button
+          class="slider-nav-button slider-nav-button-prev"
+          title="{{ 'general.accessibility.previous' | t }}"
+        >
           {% render 'icon' with icon: 'chevron' %}
         </button>
       {% endif %}
@@ -65,7 +71,10 @@
       </div>
       <div class="slider-fade-out right"></div>
       {% if section.blocks.size > 1 %}
-        <button class="slider-nav-button slider-nav-button-next" title="{{ 'general.accessibility.next' | t }}">
+        <button
+          class="slider-nav-button slider-nav-button-next"
+          title="{{ 'general.accessibility.next' | t }}"
+        >
           {% render 'icon' with icon: 'chevron' %}
         </button>
       {% endif %}
@@ -168,10 +177,56 @@
       ]
     },
     {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style",
+      "label": "Enable Custom Padding",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top",
+      "label": "Padding Top",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style_mobile",
+      "label": "Enable Custom Padding (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
       "type": "select",
       "id": "section_padding",
       "label": "t:shared.settings.section_style.section_padding.label",
       "default": "section--vertical-padding-top-bottom",
+      "visible_if": "{{ section.settings.enable_section_style == false }}",
       "options": [
         {
           "label": "t:shared.settings.section_style.section_padding.option_none",

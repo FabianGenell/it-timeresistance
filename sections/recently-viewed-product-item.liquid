@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {%- if product -%}
   <div
     data-section-type="recently-viewed-item"

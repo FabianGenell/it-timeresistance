@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {{ 'partial-shopify-product-reviews.css' | asset_url | stylesheet_tag }}
 
 {% liquid

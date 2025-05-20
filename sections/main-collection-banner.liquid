@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {%- liquid
   assign show_collection_image = section.settings.show_collection_image
   assign collection_image = blank
@@ -288,6 +291,51 @@
       "label": "t:shared.settings.section_style.enable_animation.label",
       "info": "t:shared.settings.section_style.enable_animation.info",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style",
+      "label": "Enable Custom Padding",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top",
+      "label": "Padding Top",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style_mobile",
+      "label": "Enable Custom Padding (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
     },
     {
       "type": "select",

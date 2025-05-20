@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {%- capture image_sizes -%}
   (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ section.settings.columns }}),
   calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ section.settings.mobile_columns }})
@@ -393,10 +396,56 @@
       ]
     },
     {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style",
+      "label": "Enable Custom Padding",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top",
+      "label": "Padding Top",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style_mobile",
+      "label": "Enable Custom Padding (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
       "type": "select",
       "id": "section_padding",
       "label": "t:shared.settings.section_style.section_padding.label",
       "default": "section--vertical-padding-top-bottom",
+      "visible_if": "{{ section.settings.enable_section_style == false }}",
       "options": [
         {
           "label": "t:shared.settings.section_style.section_padding.option_none",

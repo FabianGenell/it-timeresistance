@@ -1,0 +1,29 @@
+{%- liquid
+  assign padding_top = section.settings.section_padding_top
+  assign padding_bottom = section.settings.section_padding_bottom
+  assign padding_top_mobile = section.settings.section_padding_top_mobile | default: padding_top
+  assign padding_bottom_mobile = section.settings.section_padding_bottom_mobile | default: padding_bottom
+-%}
+<style>
+    #shopify-section-{{ section.id }} > .section {
+      {%- if padding_top != blank -%}
+        padding-top: {{ padding_top }}px;
+      {%- endif -%}
+      {%- if padding_bottom != blank -%}
+        padding-bottom: {{ padding_bottom }}px;
+      {%- endif -%}
+    }
+
+    {%- if section.settings.enable_section_style_mobile %}
+      @media (max-width: 768px) {
+        #shopify-section-{{ section.id }} > .section {
+          {%- if padding_top_mobile != blank -%}
+            padding-top: {{ padding_top_mobile }}px;
+          {%- endif -%}
+          {%- if padding_bottom_mobile != blank -%}
+            padding-bottom: {{ padding_bottom_mobile }}px;
+          {%- endif -%}
+        }
+      }
+  {%- endif -%}
+</style>

@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {%- comment -%}
   TO-DO: Whitespace cleanup
 {%- endcomment -%}
@@ -431,7 +434,48 @@
           "id": "variant_popup_icon",
           "label": "t:sections.main_product_overview.blocks.variant_picker.settings.variant_popup_icon.label",
           "default": "none",
-          "options": [{"value":"none","label":"t:shared.settings.icon.option_none"},{"value":"bank","label":"t:shared.settings.icon.option_bank"},{"value":"bill","label":"t:shared.settings.icon.option_bill"},{"value":"bottle","label":"t:shared.settings.icon.option_bottle"},{"value":"chat","label":"t:shared.settings.icon.option_chat"},{"value":"chat-empty","label":"t:shared.settings.icon.option_chat_empty"},{"value":"checked-box","label":"t:shared.settings.icon.option_checked_box"},{"value":"clothes-button","label":"t:shared.settings.icon.option_clothes_button"},{"value":"clothes-hanger","label":"t:shared.settings.icon.option_clothes_hanger"},{"value":"cotton","label":"t:shared.settings.icon.option_cotton"},{"value":"envelope","label":"t:shared.settings.icon.option_envelope"},{"value":"globe","label":"t:shared.settings.icon.option_globe"},{"value":"hand-washing","label":"t:shared.settings.icon.option_hand_washing"},{"value":"heart","label":"t:shared.settings.icon.option_heart"},{"value":"laundry-dryer","label":"t:shared.settings.icon.option_laundry_dryer"},{"value":"laundry-washer","label":"t:shared.settings.icon.option_laundry_washer"},{"value":"leaf","label":"t:shared.settings.icon.option_leaf"},{"value":"lipstick","label":"t:shared.settings.icon.option_lipstick"},{"value":"measuring-tape","label":"t:shared.settings.icon.option_measuring_tape"},{"value":"model-silhouette","label":"t:shared.settings.icon.option_silhouette"},{"value":"money-bills","label":"t:shared.settings.icon.option_money_bills"},{"value":"moving-truck","label":"t:shared.settings.icon.option_moving_truck"},{"value":"package-open","label":"t:shared.settings.icon.option_package_open"},{"value":"package-closed","label":"t:shared.settings.icon.option_package_closed"},{"value":"padlock","label":"t:shared.settings.icon.option_padlock"},{"value":"paper-airplane","label":"t:shared.settings.icon.option_paper_airplane"},{"value":"paw-print","label":"t:shared.settings.icon.option_paw_print"},{"value":"plant","label":"t:shared.settings.icon.option_plant"},{"value":"price-tag","label":"t:shared.settings.icon.option_price_tag"},{"value":"question-mark","label":"t:shared.settings.icon.option_question_mark"},{"value":"recycle-symbol","label":"t:shared.settings.icon.option_recycle_symbol"},{"value":"ruler","label":"t:shared.settings.icon.option_ruler"},{"value":"scissors","label":"t:shared.settings.icon.option_scissors"},{"value":"security-badge","label":"t:shared.settings.icon.option_security_badge"},{"value":"stiletto","label":"t:shared.settings.icon.option_stiletto"},{"value":"stopwatch","label":"t:shared.settings.icon.option_stopwatch"},{"value":"sunflower","label":"t:shared.settings.icon.option_sunflower"},{"value":"t-shirt","label":"t:shared.settings.icon.option_tshirt"},{"value":"washing-symbol","label":"t:shared.settings.icon.option_washing_symbol"},{"value":"water-bottle","label":"t:shared.settings.icon.option_water_bottle"}]
+          "options": [
+            { "value": "none", "label": "t:shared.settings.icon.option_none" },
+            { "value": "bank", "label": "t:shared.settings.icon.option_bank" },
+            { "value": "bill", "label": "t:shared.settings.icon.option_bill" },
+            { "value": "bottle", "label": "t:shared.settings.icon.option_bottle" },
+            { "value": "chat", "label": "t:shared.settings.icon.option_chat" },
+            { "value": "chat-empty", "label": "t:shared.settings.icon.option_chat_empty" },
+            { "value": "checked-box", "label": "t:shared.settings.icon.option_checked_box" },
+            { "value": "clothes-button", "label": "t:shared.settings.icon.option_clothes_button" },
+            { "value": "clothes-hanger", "label": "t:shared.settings.icon.option_clothes_hanger" },
+            { "value": "cotton", "label": "t:shared.settings.icon.option_cotton" },
+            { "value": "envelope", "label": "t:shared.settings.icon.option_envelope" },
+            { "value": "globe", "label": "t:shared.settings.icon.option_globe" },
+            { "value": "hand-washing", "label": "t:shared.settings.icon.option_hand_washing" },
+            { "value": "heart", "label": "t:shared.settings.icon.option_heart" },
+            { "value": "laundry-dryer", "label": "t:shared.settings.icon.option_laundry_dryer" },
+            { "value": "laundry-washer", "label": "t:shared.settings.icon.option_laundry_washer" },
+            { "value": "leaf", "label": "t:shared.settings.icon.option_leaf" },
+            { "value": "lipstick", "label": "t:shared.settings.icon.option_lipstick" },
+            { "value": "measuring-tape", "label": "t:shared.settings.icon.option_measuring_tape" },
+            { "value": "model-silhouette", "label": "t:shared.settings.icon.option_silhouette" },
+            { "value": "money-bills", "label": "t:shared.settings.icon.option_money_bills" },
+            { "value": "moving-truck", "label": "t:shared.settings.icon.option_moving_truck" },
+            { "value": "package-open", "label": "t:shared.settings.icon.option_package_open" },
+            { "value": "package-closed", "label": "t:shared.settings.icon.option_package_closed" },
+            { "value": "padlock", "label": "t:shared.settings.icon.option_padlock" },
+            { "value": "paper-airplane", "label": "t:shared.settings.icon.option_paper_airplane" },
+            { "value": "paw-print", "label": "t:shared.settings.icon.option_paw_print" },
+            { "value": "plant", "label": "t:shared.settings.icon.option_plant" },
+            { "value": "price-tag", "label": "t:shared.settings.icon.option_price_tag" },
+            { "value": "question-mark", "label": "t:shared.settings.icon.option_question_mark" },
+            { "value": "recycle-symbol", "label": "t:shared.settings.icon.option_recycle_symbol" },
+            { "value": "ruler", "label": "t:shared.settings.icon.option_ruler" },
+            { "value": "scissors", "label": "t:shared.settings.icon.option_scissors" },
+            { "value": "security-badge", "label": "t:shared.settings.icon.option_security_badge" },
+            { "value": "stiletto", "label": "t:shared.settings.icon.option_stiletto" },
+            { "value": "stopwatch", "label": "t:shared.settings.icon.option_stopwatch" },
+            { "value": "sunflower", "label": "t:shared.settings.icon.option_sunflower" },
+            { "value": "t-shirt", "label": "t:shared.settings.icon.option_tshirt" },
+            { "value": "washing-symbol", "label": "t:shared.settings.icon.option_washing_symbol" },
+            { "value": "water-bottle", "label": "t:shared.settings.icon.option_water_bottle" }
+          ]
         },
         {
           "type": "image_picker",

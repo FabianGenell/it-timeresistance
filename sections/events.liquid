@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {%- liquid
   assign has_background_color = false
   assign badge_color = section.settings.text_color
@@ -95,11 +98,10 @@
         {%- if section.settings.access_token == blank -%}
           <ul class="events__list">
             {%- for block in section.blocks -%}
-              {%-
-                render 'event-item',
+              {%- render 'event-item',
                 block: block,
                 columns: section.settings.columns,
-                mobile_columns: section.settings.mobile_columns,
+                mobile_columns: section.settings.mobile_columns
               -%}
             {%- endfor -%}
           </ul>
@@ -343,10 +345,56 @@
       ]
     },
     {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style",
+      "label": "Enable Custom Padding",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top",
+      "label": "Padding Top",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style_mobile",
+      "label": "Enable Custom Padding (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
       "type": "select",
       "id": "section_padding",
       "label": "t:shared.settings.section_style.section_padding.label",
       "default": "section--vertical-padding-top-bottom",
+      "visible_if": "{{ section.settings.enable_section_style == false }}",
       "options": [
         {
           "label": "t:shared.settings.section_style.section_padding.option_none",

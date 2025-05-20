@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {{ 'template-blog.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -102,8 +105,7 @@
       <ul class="blog__article-list">
         {%- for article in blog.articles -%}
           <li class="blog__article-item">
-            {%
-              render 'article-item',
+            {% render 'article-item',
               blog_article: article,
               blog: blog,
               aspect_ratio: section.settings.aspect_ratio,
@@ -111,7 +113,7 @@
               show_date: section.settings.show_date,
               show_tags: section.settings.show_tags,
               show_excerpt: section.settings.show_excerpt,
-              show_featured_image: section.settings.show_featured_image,
+              show_featured_image: section.settings.show_featured_image
             %}
           </li>
         {%- endfor -%}

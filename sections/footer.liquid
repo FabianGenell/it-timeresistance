@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 {%- liquid
   assign enable_locale_selector = section.settings.enable_locale_selector
   assign enable_country_selector = section.settings.enable_country_selector

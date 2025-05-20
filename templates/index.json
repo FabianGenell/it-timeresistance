@@ -102,6 +102,11 @@
         "full_width": true,
         "spacing": 0,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -155,6 +160,11 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": false,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -178,6 +188,11 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-only"
       }
     },
@@ -278,6 +293,11 @@
         "full_width": true,
         "spacing": 24,
         "divider_style": "none",
+        "enable_section_style": true,
+        "section_padding_top": 40,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -307,6 +327,11 @@
         "mobile_columns": "2",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -403,6 +428,11 @@
         "full_width": true,
         "spacing": 24,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -432,6 +462,11 @@
         "mobile_columns": "2",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -455,6 +490,11 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 40,
         "enable_animation": true,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -551,6 +591,11 @@
         "full_width": true,
         "spacing": 24,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -664,6 +709,11 @@
         "button_text_color": "#ffffff",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -693,6 +743,11 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -719,6 +774,11 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -753,6 +813,11 @@
         "overlay_title_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "button_text": "View All",
         "button_style": "btn--primary",
@@ -793,6 +858,11 @@
         "overlay_title_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "section_padding_top_desktop": 0,
+        "section_padding_bottom_desktop": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "button_text": "View All",
         "button_style": "btn--primary",

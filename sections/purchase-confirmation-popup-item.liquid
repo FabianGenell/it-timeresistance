@@ -1,3 +1,6 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
 <form action="{{ routes.cart_url }}" method="post" data-form novalidate data-scroll-lock-ignore>
   <h3 class="purchase-confirmation-popup__heading ff-heading fs-heading-5-base animation--purchase-confirmation-item">
     {{ 'cart.general.confirmation_popup_heading' | t }}

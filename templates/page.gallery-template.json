@@ -2862,6 +2862,16 @@
         "image_M8wAXJ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Sun_Kissed_Rye---23.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_DeH77f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Sun_Kissed_Rye---24.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2870,6 +2880,7 @@
         "image_TkCCPj": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Sun_Kissed_Rye---25.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2878,6 +2889,7 @@
         "image_BEt4hJ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Sun_Kissed_Rye---26.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2886,6 +2898,7 @@
         "image_jwLbwz": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Sun_Kissed_Rye---27.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -2916,6 +2929,7 @@
         "image_T4Jx3q",
         "image_VJi9P6",
         "image_M8wAXJ",
+        "image_DeH77f",
         "image_TkCCPj",
         "image_BEt4hJ",
         "image_jwLbwz"

@@ -251,7 +251,16 @@
         "overlay_title_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
+        "section_padding": "section--vertical-padding-top-bottom",
+        "button_text": "View All",
+        "button_style": "btn--primary",
+        "button_text_color": "#000000",
+        "button_background_color": "#ffffff",
+        "button_padding": "8px 30px",
+        "button_border": "",
+        "button_border_radius": 0,
+        "button_opacity": 70,
+        "button_font_size": 16
       }
     }
   },

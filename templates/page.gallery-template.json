@@ -52,6 +52,12 @@
         "alignment": "left_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700
@@ -299,6 +305,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -766,6 +778,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -1053,6 +1071,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -1310,6 +1334,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -1597,6 +1627,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -1874,6 +1910,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2131,6 +2173,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2149,25 +2197,82 @@
         "image_EiGLFy": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Reflections---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_L966xA": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_NWt4jc": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_N8tfpL": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_4rtTkb": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_8J9HP9": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_8Mc9P3": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_yRTTJ6": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wEeyVM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         },
         "image_d4iwjQ": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -2175,6 +2280,13 @@
         "image_iXYRDh",
         "image_EiGLFy",
         "image_L966xA",
+        "image_NWt4jc",
+        "image_N8tfpL",
+        "image_4rtTkb",
+        "image_8J9HP9",
+        "image_8Mc9P3",
+        "image_yRTTJ6",
+        "image_wEeyVM",
         "image_d4iwjQ"
       ],
       "settings": {
@@ -2195,6 +2307,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2259,6 +2377,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2323,6 +2447,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2387,6 +2517,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2451,6 +2587,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2515,6 +2657,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2579,6 +2727,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2643,6 +2797,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2707,6 +2867,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2771,6 +2937,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -2835,6 +3007,12 @@
         "overlay_text_background": "#000000",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     }

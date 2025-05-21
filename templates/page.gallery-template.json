@@ -4034,25 +4034,112 @@
         "image_GcjTEi": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Secret_Agent---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_w8KExJ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Secret_Agent---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_LJJYWV": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Secret_Agent---4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Km499a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Secret_Agent---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_E8aMQw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Secret_Agent---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_E6tiqU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Secret_Agent---7.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_9eEJtt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Secret_Agent---8.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_9JrNCP": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_HHUqxP": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_kjbQ6m": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_NjTyGM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_cP3Xf7": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_Chyfqk": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -4060,7 +4147,17 @@
         "image_mUW3dP",
         "image_GcjTEi",
         "image_w8KExJ",
-        "image_LJJYWV"
+        "image_LJJYWV",
+        "image_Km499a",
+        "image_E8aMQw",
+        "image_E6tiqU",
+        "image_9eEJtt",
+        "image_9JrNCP",
+        "image_HHUqxP",
+        "image_kjbQ6m",
+        "image_NjTyGM",
+        "image_cP3Xf7",
+        "image_Chyfqk"
       ],
       "settings": {
         "use_variant_images": false,

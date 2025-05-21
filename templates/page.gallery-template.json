@@ -3891,25 +3891,91 @@
         "image_bJkciL": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Wind_Master---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_dLQLrD": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Wind_Master---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_DEQK9H": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Wind_Master---4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_WDQHke": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wind_Master---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_nHbjH4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wind_Master---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_ReC9Bw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wind_Master---7.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_HXCpDg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wind_Master---8.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_y7kbQL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wind_Master---9.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_6dRYrb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wind_Master---10.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_p6ahF6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wind_Master---11.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -3917,7 +3983,14 @@
         "image_XCdg7Y",
         "image_bJkciL",
         "image_dLQLrD",
-        "image_DEQK9H"
+        "image_DEQK9H",
+        "image_WDQHke",
+        "image_nHbjH4",
+        "image_ReC9Bw",
+        "image_HXCpDg",
+        "image_y7kbQL",
+        "image_6dRYrb",
+        "image_p6ahF6"
       ],
       "settings": {
         "use_variant_images": false,

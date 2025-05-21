@@ -3179,25 +3179,77 @@
         "image_Q649Rk": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_kFLXWJ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_Rbqx9i": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_eDC9yT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_R7nRbk": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_gMrRKA": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_fAPdFh": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_aAJpQM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_EeVYfW": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -3205,7 +3257,13 @@
         "image_cYzxFR",
         "image_Q649Rk",
         "image_kFLXWJ",
-        "image_Rbqx9i"
+        "image_Rbqx9i",
+        "image_eDC9yT",
+        "image_R7nRbk",
+        "image_gMrRKA",
+        "image_fAPdFh",
+        "image_aAJpQM",
+        "image_EeVYfW"
       ],
       "settings": {
         "use_variant_images": false,

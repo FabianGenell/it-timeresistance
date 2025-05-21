@@ -3402,25 +3402,127 @@
         "image_4tKtXp": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_EU9EFG": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_e7zHN6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_aM6kff": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_zJnRUV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_qfAT7E": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---7.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_FKQBQU": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_MBqXWX": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_7pzqpd": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_nT3mcY": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_cHAFqE": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_LdQkGJ": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_irtkGy": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_PdxG7c": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_URyiJq": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -3428,7 +3530,19 @@
         "image_xbJYjn",
         "image_4tKtXp",
         "image_EU9EFG",
-        "image_e7zHN6"
+        "image_e7zHN6",
+        "image_aM6kff",
+        "image_zJnRUV",
+        "image_qfAT7E",
+        "image_FKQBQU",
+        "image_MBqXWX",
+        "image_7pzqpd",
+        "image_nT3mcY",
+        "image_cHAFqE",
+        "image_LdQkGJ",
+        "image_irtkGy",
+        "image_PdxG7c",
+        "image_URyiJq"
       ],
       "settings": {
         "use_variant_images": false,

@@ -3625,31 +3625,94 @@
         "image_7irxNq": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_qUpATX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---3.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_LYU94r": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---4.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_AykFLd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_83ArEQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_VL8dqN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---7.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_jeCeN4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---8.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         },
         "image_HfbDUm": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---9.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_NWeFXk": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/King_of_Shadows---10.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         }
       },
       "block_order": [
         "image_6JHw4J",
         "image_7irxNq",
+        "image_qUpATX",
+        "image_LYU94r",
+        "image_AykFLd",
+        "image_83ArEQ",
+        "image_VL8dqN",
+        "image_jeCeN4",
         "image_HfbDUm",
         "image_NWeFXk"
       ],

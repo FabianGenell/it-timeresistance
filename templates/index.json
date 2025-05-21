@@ -171,33 +171,33 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "video_hero_ywYdK8": {
-      "type": "video-hero",
+    "custom_video_MN3FLx": {
+      "type": "custom-video",
+      "blocks": {
+      },
+      "block_order": [
+      ],
+      "name": "Custom Video",
       "settings": {
-        "image_aspect": "original",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "video": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
+        "video_desktop": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
         "video_mobile": "shopify://files/videos/mobilevid1.mp4",
-        "media_link": "",
-        "focal_point": "image_presentation",
-        "focal_point_mobile": "image_presentation",
-        "text_position": "center_center",
-        "text_position_mobile": "center_center",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "rgba(0,0,0,0)",
+        "video_large": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
+        "pause_outside_viewport": true,
+        "viewport_threshold": 50,
+        "color_overlay": "#000000",
         "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": true,
+        "overlay_opacity": 30,
+        "text_color": "#ffffff",
+        "text_align": "center",
+        "link": "",
+        "link_text": "",
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-only"
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "grid_fRJi4Y": {
@@ -894,7 +894,7 @@
   "order": [
     "grid_LHtfVf",
     "image_hero_split_CQQ9Cm",
-    "video_hero_ywYdK8",
+    "custom_video_MN3FLx",
     "grid_fRJi4Y",
     "featured_collection_slider_RcKQEK",
     "grid_dgc6dg",

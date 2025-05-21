@@ -1,0 +1,257 @@
+{%- if section.settings.enable_section_style -%}
+  {%- render 'section-style', section: section -%}
+{%- endif -%}
+{%- liquid
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+  assign text_align = section.settings.text_align
+
+  # Create URLs from video assets
+  assign mobile_video_url = ''
+  if section.settings.video_mobile != blank
+    assign mobile_video = section.settings.video_mobile
+    assign mobile_poster_image = section.settings.mobile_poster_image | default: mobile_video.preview_image
+    assign mobile_aspect_ratio = mobile_video.aspect_ratio
+    for source in mobile_video.sources
+      if source.format == 'mp4'
+        assign mobile_video_url = source.url
+      endif
+    endfor
+  endif
+
+  assign desktop_video_url = ''
+  if section.settings.video_desktop != blank
+    assign desktop_video = section.settings.video_desktop
+    assign desktop_poster_image = section.settings.desktop_poster_image | default: desktop_video.preview_image
+    assign desktop_aspect_ratio = desktop_video.aspect_ratio
+    for source in desktop_video.sources
+      if source.format == 'mp4'
+        assign desktop_video_url = source.url
+      endif
+    endfor
+  endif
+
+  assign large_video_url = ''
+  if section.settings.video_large != blank
+    assign large_video = section.settings.video_large
+    assign large_poster_image = section.settings.large_poster_image | default: large_video.preview_image
+    assign large_aspect_ratio = large_video.aspect_ratio
+    for source in large_video.sources
+      if source.format == 'mp4'
+        assign large_video_url = source.url
+      endif
+    endfor
+  endif
+
+  # Determine aspect ratios for different sources
+  assign desktop_aspect_ratio = desktop_video.aspect_ratio | default: 1.77
+  assign mobile_aspect_ratio = mobile_video.aspect_ratio | default: desktop_aspect_ratio
+  assign large_aspect_ratio = large_video.aspect_ratio | default: desktop_aspect_ratio
+-%}
+
+<div
+  class="
+    relative w-full
+    section section--full-width {{ section.settings.section_padding }}
+    {% if settings.enable_section_animations and section.settings.enable_animation -%}
+      animation animation--custom-video
+    {%- endif -%}
+  "
+  data-section-id="{{ section.id }}"
+>
+  <div class="relative w-full">
+    <!-- Video Container with Responsive Video Component -->
+    <responsive-video
+      class="relative w-full overflow-hidden"
+      {% if section.settings.autoplay %}
+        autoplay
+      {% endif %}
+      {% if section.settings.pause_outside_viewport != blank %}
+        data-pause-outside-viewport="{{ section.settings.pause_outside_viewport }}"
+      {% endif %}
+      {% if section.settings.viewport_threshold != blank %}
+        data-viewport-threshold="{{ section.settings.viewport_threshold }}"
+      {% endif %}
+    >
+      <div class="responsive-video-wrapper relative w-full overflow-hidden cursor-pointer">
+        <!-- Poster Image - Sets Aspect Ratio -->
+        <div class="poster-image relative w-full transition-opacity duration-500">
+          {%- render 'pictures',
+            breakpoints: '719, 1920',
+            image: desktop_poster_image,
+            image_719: mobile_poster_image,
+            image_1920: large_poster_image,
+            sizes: '100vw',
+            widths: '390, 719, 1200, 1600, 1920, 3000',
+            section_index: section.index
+          -%}
+        </div>
+
+        <!-- Video Element - Hidden Until Loaded -->
+        <video 
+          muted 
+          loop 
+          playsinline 
+          class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 opacity-0"
+        >
+          <source
+            src="{{ desktop_video_url }}"
+            type="video/mp4"
+            data-aspect-ratio="{{ desktop_aspect_ratio }}"
+          >
+          {% if mobile_video_url != blank %}
+            <source
+              src="{{ mobile_video_url }}"
+              type="video/mp4"
+              media="(max-width: 719px)"
+              data-aspect-ratio="{{ mobile_aspect_ratio }}"
+            >
+          {% endif %}
+          {% if large_video_url != blank %}
+            <source
+              src="{{ large_video_url }}"
+              type="video/mp4"
+              media="(min-width: 1920px)"
+              data-aspect-ratio="{{ large_aspect_ratio }}"
+            >
+          {% endif %}
+        </video>
+
+        <!-- Video Controls -->
+        <div
+          class="
+            absolute top-0 left-0 w-full h-full flex items-center
+            justify-center z-10 pointer-events-none
+          "
+        >
+          <!-- Only play button, no pause button -->
+          <div
+            class="
+              text-white w-16 h-16 flex items-center justify-center
+              transition-opacity duration-300
+            "
+            data-play-toggle
+            aria-label="{{ 'general.accessibility.play_video' | t }}"
+          >
+            <div class="w-8 md:w-14">
+              <svg
+                data-icon-play
+                class="icon icon-play w-full h-auto"
+                viewBox="0 0 102 118"
+              >
+                <polygon fill="currentColor" points="0,0 102,59 0,118" />
+              </svg>
+            </div>
+          </div>
+
+          <button
+            class="
+              absolute bottom-3 right-3 text-white
+              rounded-full w-10 h-10 flex items-center justify-center cursor-pointer
+              opacity-70 hover:opacity-100 transition-opacity duration-300 pointer-events-auto
+            "
+            data-sound-toggle
+            aria-label="{{ 'general.accessibility.toggle_sound' | t }}"
+          >
+            <div data-icon-sound-on class="hidden">
+              {% render 'icon', icon: 'sound' %}
+            </div>
+            <div data-icon-sound-off>
+              {% render 'icon', icon: 'sound-off' %}
+            </div>
+          </button>
+        </div>
+      </div>
+    </responsive-video>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Video",
+  "tag": "section",
+  "class": "shopify-section--full-width",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video sources"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Desktop video",
+      "info": "Main video for desktop screens"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Mobile video",
+      "info": "Optional optimized video for mobile screens"
+    },
+    {
+      "type": "video",
+      "id": "video_large",
+      "label": "Large screen video",
+      "info": "Optional high-resolution video for large screens"
+    },
+    {
+      "type": "header",
+      "content": "Video Poster Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_poster_image",
+      "label": "Desktop poster image",
+      "info": "Main poster image for desktop screens"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_poster_image",
+      "label": "Mobile poster image",
+      "info": "Optional poster image for mobile screens",
+      "visible_if": "{{ section.settings.video_mobile != blank }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "large_poster_image",
+      "label": "Large screen poster image",
+      "info": "Optional poster image for large screens",
+      "visible_if": "{{ section.settings.video_large != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "Playback Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay video when in viewport",
+      "default": true,
+      "info": "Video will play automatically when it comes into view (muted)"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_outside_viewport",
+      "label": "Pause video when not in view",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "viewport_threshold",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Viewport threshold",
+      "default": 50,
+      "info": "Percentage of video visible before play/pause occurs"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Custom Video",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

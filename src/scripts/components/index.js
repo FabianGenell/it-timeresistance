@@ -3,3 +3,4 @@ import './reload-on-event.js';
 import './currency-selector.js';
 import './section-tab-navigator.js';
 import './expand-text.js';
+import './responsive-video.js';

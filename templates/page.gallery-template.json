@@ -4207,25 +4207,112 @@
         "image_BMaNzg": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Opposites_Attract---2.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_ccM8dQ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Opposites_Attract---3.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
           }
         },
         "image_8ihzqa": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Opposites_Attract---4.webp",
             "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_qqxybb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Opposites_Attract---5.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_kTD98Q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Opposites_Attract---6.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_pFyUU9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Opposites_Attract---7.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wTRqL3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Opposites_Attract---8.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_aAHkBU": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_nmP3yp": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_3Cf4tN": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_WdtiKM": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_6qUMnA": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_brckHX": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -4233,7 +4320,17 @@
         "image_MbnjVX",
         "image_BMaNzg",
         "image_ccM8dQ",
-        "image_8ihzqa"
+        "image_8ihzqa",
+        "image_qqxybb",
+        "image_kTD98Q",
+        "image_pFyUU9",
+        "image_wTRqL3",
+        "image_aAHkBU",
+        "image_nmP3yp",
+        "image_3Cf4tN",
+        "image_WdtiKM",
+        "image_6qUMnA",
+        "image_brckHX"
       ],
       "settings": {
         "use_variant_images": false,

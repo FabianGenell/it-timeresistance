@@ -3215,6 +3215,7 @@
         "image_R7nRbk": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---6.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3223,6 +3224,7 @@
         "image_gMrRKA": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---7.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3231,12 +3233,58 @@
         "image_fAPdFh": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---8.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
           }
         },
         "image_aAJpQM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---9.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_pky9P3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---10.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_rVAyWi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---11.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_6Daczc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---12.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_aWhDBh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---13.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_QhffzB": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
@@ -3263,6 +3311,11 @@
         "image_gMrRKA",
         "image_fAPdFh",
         "image_aAJpQM",
+        "image_pky9P3",
+        "image_rVAyWi",
+        "image_6Daczc",
+        "image_aWhDBh",
+        "image_QhffzB",
         "image_EeVYfW"
       ],
       "settings": {

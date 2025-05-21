@@ -3519,6 +3519,34 @@
         "image_PdxG7c": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---15.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_t3dNAT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---16.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_MNwJeA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---17.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_PbU9mj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---18.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3527,6 +3555,7 @@
         "image_URyiJq": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Romantic_Getaway---19.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3549,6 +3578,9 @@
         "image_LdQkGJ",
         "image_irtkGy",
         "image_PdxG7c",
+        "image_t3dNAT",
+        "image_MNwJeA",
+        "image_PbU9mj",
         "image_URyiJq"
       ],
       "settings": {

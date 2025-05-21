@@ -3287,6 +3287,43 @@
         "image_QhffzB": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---14.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_wfHhaQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---15.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_ctKhei": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---16.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_bjaXEk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---17.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_WLyEg8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dunes---18.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3295,6 +3332,7 @@
         "image_EeVYfW": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Dunes---19.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -3316,6 +3354,10 @@
         "image_6Daczc",
         "image_aWhDBh",
         "image_QhffzB",
+        "image_wfHhaQ",
+        "image_ctKhei",
+        "image_bjaXEk",
+        "image_WLyEg8",
         "image_EeVYfW"
       ],
       "settings": {

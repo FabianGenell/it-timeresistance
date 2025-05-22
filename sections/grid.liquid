@@ -110,6 +110,8 @@
       "type": "select",
       "label": "t:shared.section_blocks.heading.settings.heading_tag.label",
       "default": "h2",
+      "info": "t:shared.section_blocks.heading.settings.heading_tag.info",
+      "visible_if": "{{ section.settings.heading != blank }}",
       "options": [
         {
           "value": "h2",
@@ -134,10 +136,6 @@
       ]
     },
     {
-      "type": "paragraph",
-      "content": "t:shared.section_blocks.heading.settings.heading_tag.info"
-    },
-    {
       "type": "richtext",
       "id": "subheading",
       "label": "t:sections.grid.settings.subheading.label"
@@ -146,6 +144,7 @@
       "type": "select",
       "id": "content_alignment",
       "label": "t:sections.grid.settings.content_alignment.label",
+      "visible_if": "{{ section.settings.heading != blank or section.settings.subheading != blank }}",
       "default": "left",
       "options": [
         {
@@ -466,6 +465,8 @@
           "id": "heading_tag",
           "type": "select",
           "label": "t:shared.section_blocks.heading.settings.heading_tag.label",
+          "visible_if": "{{ block.settings.heading != blank }}",
+          "info": "t:shared.section_blocks.heading.settings.heading_tag.info",
           "default": "h3",
           "options": [
             {
@@ -491,13 +492,10 @@
           ]
         },
         {
-          "type": "paragraph",
-          "content": "t:shared.section_blocks.heading.settings.heading_tag.info"
-        },
-        {
           "type": "select",
           "id": "heading_font_class",
           "label": "t:shared.settings.heading_font_class.label",
+          "visible_if": "{{ block.settings.heading != blank }}",
           "default": "fs-heading-2-base",
           "options": [
             {
@@ -524,6 +522,8 @@
           "type": "select",
           "label": "t:shared.section_blocks.subheading.settings.subheading_tag.label",
           "default": "h4",
+          "visible_if": "{{ block.settings.subheading != blank }}",
+          "info": "t:shared.section_blocks.subheading.settings.subheading_tag.info",
           "options": [
             {
               "value": "h2",
@@ -548,14 +548,11 @@
           ]
         },
         {
-          "type": "paragraph",
-          "content": "t:shared.section_blocks.subheading.settings.subheading_tag.info"
-        },
-        {
           "type": "select",
           "id": "subheading_font_class",
           "label": "t:shared.settings.subheading_font_class.label",
           "default": "fs-heading-5-base",
+          "visible_if": "{{ block.settings.subheading != blank }}",
           "options": [
             {
               "value": "fs-heading-6-base",
@@ -580,6 +577,7 @@
           "type": "select",
           "id": "text_font_class",
           "label": "t:shared.settings.text_font_class.label",
+          "visible_if": "{{ block.settings.text != blank }}",
           "default": "fs-body-100",
           "options": [
             {
@@ -603,15 +601,23 @@
           "info": "t:sections.grid.blocks.item.settings.link.info"
         },
         {
+          "type": "header",
+          "content": "Button",
+          "visible_if": "{{ block.settings.link != blank }}"
+        },
+        {
           "id": "link_text",
           "type": "text",
           "label": "t:sections.grid.blocks.item.settings.link_text.label",
-          "default": "View All"
+          "default": "View All",
+          "info": "Button only visible if link text is set & link is set",
+          "visible_if": "{{ block.settings.link != blank }}"
         },
         {
           "type": "select",
           "id": "button_style",
           "label": "t:shared.settings.button_style.label",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
           "options": [
             {
               "value": "btn--primary",
@@ -628,19 +634,17 @@
           ]
         },
         {
-          "type": "header",
-          "content": "Button Config"
-        },
-        {
           "type": "text",
           "id": "button_padding",
           "label": "Button Padding",
-          "info": "Enter the padding for the Button. (e.g. 10px 20px)"
+          "info": "Enter the padding for the Button. (e.g. 10px 20px)",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}"
         },
         {
           "type": "text",
           "id": "button_border",
           "label": "Button Border",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
           "info": "Enter the border for the Button. (e.g. 1px solid #000)"
         },
         {
@@ -651,6 +655,7 @@
           "step": 1,
           "unit": "%",
           "label": "Button Border Radius",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
           "default": 0
         },
         {
@@ -661,6 +666,7 @@
           "step": 1,
           "unit": "%",
           "label": "Button Opacity",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
           "default": 100
         },
         {
@@ -671,6 +677,7 @@
           "step": 1,
           "unit": "px",
           "label": "Button Font Size",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
           "default": 16
         },
         {

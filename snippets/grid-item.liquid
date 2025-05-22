@@ -17,14 +17,30 @@
     assign text_position_modifier = 'right'
   endif
 
+  if section.settings.set_block_padding_globally
+    assign block_padding = section.settings.block_padding
+    assign block_padding_mobile = section.settings.block_padding_mobile
+  else
+    assign block_padding = block.settings.padding
+    assign block_padding_mobile = block.settings.padding_mobile
+  endif
+
+  if section.settings.set_block_width_globally
+    assign block_width = section.settings.block_width
+    assign block_width_mobile = section.settings.block_width_mobile
+  else
+    assign block_width = block.settings.width
+    assign block_width_mobile = block.settings.width_mobile
+  endif
+
   assign use_small_button_above_960 = false
 
-  if block.settings.width == '33' or block.settings.width == '25'
+  if block_width == '33' or block_width == '25'
     assign use_small_button_above_960 = true
   endif
 
-  assign image_size_desktop = block.settings.width | split: '-' | last
-  assign image_size_mobile = block.settings.width_mobile | split: '-' | last
+  assign image_size_desktop = block_width | split: '-' | last
+  assign image_size_mobile = block_width_mobile | split: '-' | last
 -%}
 
 {%- capture image_sizes -%}
@@ -35,11 +51,13 @@
   class="
       group
     grid-item
-    {{ block.settings.width }}
-    {{ block.settings.width_mobile }}
+    {{ block_width }}
+    {{ block_width_mobile }}
     grid-item--text-{{ text_position_modifier }}
   "
   style="
+    --padding: {{ block_padding }};
+    --padding-mobile: {{ block_padding_mobile }};
     --media-fit: {{ block.settings.media_fit }};
     --text-horizontal-position: {{ horizontal_position }};
     --text-vertical-position: {{ vertical_position }};
@@ -101,7 +119,14 @@
     {%- endif -%}
     <div class="grid-item__overlay"></div>
 
-    <div class="grid-item__text-container-wrapper absolute top-0 left-0 w-full h-full">
+    <div
+      class="
+        grid-item__text-container-wrapper
+        p-[var(--padding-mobile)]
+        md:p-[var(--padding)]
+        absolute top-0 left-0 w-full h-full
+      "
+    >
       <div class="grid-item__text-container">
         <div class="grid-item__text-container-inner  section-blocks animation--section-blocks">
           {%- unless block.settings.accent == blank -%}

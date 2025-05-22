@@ -216,6 +216,84 @@
     },
     {
       "type": "header",
+      "content": "Block Settings"
+    },
+    {
+      "type": "text",
+      "id": "block_padding",
+      "label": "Block Padding",
+      "default": "36px",
+      "visible_if": "{{ section.settings.set_block_padding_globally == true }}"
+    },
+    {
+      "type": "text",
+      "id": "block_padding_mobile",
+      "label": "Block Padding (Mobile)",
+      "default": "28px",
+      "visible_if": "{{ section.settings.set_block_padding_globally == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "set_block_padding_globally",
+      "label": "Set Block Padding Globally",
+      "default": true
+    },
+
+    {
+      "id": "block_width",
+      "label": "Block Width",
+      "type": "select",
+      "default": "md:w-1/4",
+      "visible_if": "{{ section.settings.set_block_width_globally == true }}",
+      "options": [
+        {
+          "value": "md:w-full",
+          "label": "t:sections.grid.blocks.item.settings.width.option_100"
+        },
+        {
+          "value": "md:w-2/3",
+          "label": "t:sections.grid.blocks.item.settings.width.option_66"
+        },
+        {
+          "value": "md:w-1/2",
+          "label": "t:sections.grid.blocks.item.settings.width.option_50"
+        },
+        {
+          "value": "md:w-1/3",
+          "label": "t:sections.grid.blocks.item.settings.width.option_33"
+        },
+        {
+          "value": "md:w-1/4",
+          "label": "t:sections.grid.blocks.item.settings.width.option_25"
+        }
+      ]
+    },
+    {
+      "id": "block_width_mobile",
+      "label": "Mobile Block Width",
+      "type": "select",
+      "default": "w-1/2",
+      "visible_if": "{{ section.settings.set_block_width_globally == true }}",
+      "options": [
+        {
+          "value": "w-full",
+          "label": "t:sections.grid.blocks.item.settings.width.option_100"
+        },
+        {
+          "value": "w-1/2",
+          "label": "t:sections.grid.blocks.item.settings.width.option_50"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "set_block_width_globally",
+      "label": "Set Block Width Globally",
+      "default": false
+    },
+
+    {
+      "type": "header",
       "content": "Aspect Ratio"
     },
     {
@@ -328,6 +406,7 @@
           "label": "t:sections.grid.blocks.item.settings.width.label",
           "type": "select",
           "default": "md:w-1/4",
+          "visible_if": "{{ section.settings.set_block_width_globally == false }}",
           "options": [
             {
               "value": "md:w-full",
@@ -356,6 +435,7 @@
           "label": "Mobile width",
           "type": "select",
           "default": "w-1/2",
+          "visible_if": "{{ section.settings.set_block_width_globally == false }}",
           "options": [
             {
               "value": "w-full",
@@ -366,6 +446,20 @@
               "label": "t:sections.grid.blocks.item.settings.width.option_50"
             }
           ]
+        },
+        {
+          "type": "text",
+          "id": "padding",
+          "label": "Padding",
+          "default": "36px",
+          "visible_if": "{{ section.settings.set_block_padding_globally == false }}"
+        },
+        {
+          "type": "text",
+          "id": "padding_mobile",
+          "label": "Padding (Mobile)",
+          "default": "28px",
+          "visible_if": "{{ section.settings.set_block_padding_globally == false }}"
         },
         {
           "type": "header",

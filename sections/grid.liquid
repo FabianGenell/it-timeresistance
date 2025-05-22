@@ -395,6 +395,101 @@
       "default": "text-xl",
       "visible_if": "{{ section.settings.set_header_size_globally == true }}"
     },
+    {
+      "type": "header",
+      "content": "Block Button Settings",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "set_button_text_globally",
+      "label": "Set Button Label Globally",
+      "default": true
+    },
+    {
+      "id": "block_link_text",
+      "type": "text",
+      "label": "t:sections.grid.blocks.item.settings.link_text.label",
+      "default": "View All",
+      "info": "Button only visible if link text is set & link is set",
+      "visible_if": "{{ section.settings.set_button_text_globally == true }}"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "set_button_style_globally",
+      "label": "Set Button Style Globally",
+      "default": true
+    },
+
+    {
+      "type": "select",
+      "id": "block_button_style",
+      "label": "t:shared.settings.button_style.label",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "options": [
+        {
+          "value": "btn--primary",
+          "label": "t:shared.settings.button_style.option_solid"
+        },
+        {
+          "value": "btn--secondary",
+          "label": "t:shared.settings.button_style.option_outline"
+        },
+        {
+          "value": "btn--callout",
+          "label": "t:shared.settings.button_style.option_text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "block_button_padding",
+      "label": "Button Padding",
+      "info": "Enter the padding for the Button. (e.g. 10px 20px)",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "default": "10px 40px"
+    },
+    {
+      "type": "text",
+      "id": "block_button_border",
+      "label": "Button Border",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "info": "Enter the border for the Button. (e.g. 1px solid #000)"
+    },
+    {
+      "type": "range",
+      "id": "block_button_border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Button Border Radius",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "block_button_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Button Opacity",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "block_button_font_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "default": 18
+    },
 
     {
       "type": "header",
@@ -878,7 +973,7 @@
         {
           "type": "header",
           "content": "Button",
-          "visible_if": "{{ block.settings.link != blank }}"
+          "visible_if": "{{ block.settings.link != blank and section.settings.set_button_text_globally == false }}"
         },
         {
           "id": "link_text",
@@ -886,13 +981,13 @@
           "label": "t:sections.grid.blocks.item.settings.link_text.label",
           "default": "View All",
           "info": "Button only visible if link text is set & link is set",
-          "visible_if": "{{ block.settings.link != blank }}"
+          "visible_if": "{{ block.settings.link != blank and section.settings.set_button_text_globally == false }}"
         },
         {
           "type": "select",
           "id": "button_style",
           "label": "t:shared.settings.button_style.label",
-          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank and section.settings.set_button_style_globally == false }}",
           "options": [
             {
               "value": "btn--primary",
@@ -913,13 +1008,13 @@
           "id": "button_padding",
           "label": "Button Padding",
           "info": "Enter the padding for the Button. (e.g. 10px 20px)",
-          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}"
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank and section.settings.set_button_style_globally == false }}"
         },
         {
           "type": "text",
           "id": "button_border",
           "label": "Button Border",
-          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank and section.settings.set_button_style_globally == false }}",
           "info": "Enter the border for the Button. (e.g. 1px solid #000)"
         },
         {
@@ -930,7 +1025,7 @@
           "step": 1,
           "unit": "%",
           "label": "Button Border Radius",
-          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank and section.settings.set_button_style_globally == false }}",
           "default": 0
         },
         {
@@ -941,7 +1036,7 @@
           "step": 1,
           "unit": "%",
           "label": "Button Opacity",
-          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank and section.settings.set_button_style_globally == false }}",
           "default": 100
         },
         {
@@ -952,7 +1047,7 @@
           "step": 1,
           "unit": "px",
           "label": "Button Font Size",
-          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank }}",
+          "visible_if": "{{ block.settings.link_text != blank and block.settings.link != blank and section.settings.set_button_style_globally == false }}",
           "default": 16
         },
         {
@@ -1009,19 +1104,73 @@
   ],
   "presets": [
     {
-      "name": "t:sections.grid.presets.name",
+      "name": "Grid 4 Column",
+      "settings": {
+        "full_width": true,
+        "spacing": 24,
+        "spacing_mobile": 8,
+        "set_block_padding_globally": true,
+        "block_padding": "36px",
+        "block_padding_mobile": "28px",
+        "set_block_width_globally": true,
+        "block_width": "md:w-1/4",
+        "block_width_mobile": "w-1/2",
+        "set_header_size_globally": true,
+        "block_header_size": "md:text-2xl",
+        "block_header_size_mobile": "text-xl",
+        "block_button_font_size": 18,
+        "use_first_image_aspect_ratio": true,
+        "enable_section_style": true,
+        "section_padding_top": 24,
+        "section_padding_bottom": 24,
+        "enable_section_style_mobile": true,
+        "section_padding_top_mobile": 8,
+        "section_padding_bottom_mobile": 8,
+        "section_padding": "section--vertical-padding-none"
+      },
       "blocks": [
         {
-          "type": "item",
-          "settings": {
-            "width": "50"
-          }
+          "type": "item"
         },
         {
-          "type": "item",
-          "settings": {
-            "width": "50"
-          }
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    },
+    {
+      "name": "Grid 2 Column",
+      "settings": {
+        "full_width": true,
+        "spacing": 24,
+        "spacing_mobile": 8,
+        "set_block_padding_globally": true,
+        "block_padding": "36px",
+        "block_padding_mobile": "28px",
+        "set_block_width_globally": true,
+        "block_width": "md:w-1/2",
+        "block_width_mobile": "w-full",
+        "set_header_size_globally": true,
+        "block_header_size": "md:text-4xl",
+        "block_header_size_mobile": "text-3xl",
+        "block_button_font_size": 18,
+        "use_first_image_aspect_ratio": true,
+        "enable_section_style": true,
+        "section_padding_top": 24,
+        "section_padding_bottom": 24,
+        "enable_section_style_mobile": true,
+        "section_padding_top_mobile": 8,
+        "section_padding_bottom_mobile": 8,
+        "section_padding": "section--vertical-padding-none"
+      },
+      "blocks": [
+        {
+          "type": "item"
         },
         {
           "type": "item"

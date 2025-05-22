@@ -17,6 +17,14 @@
     assign text_position_modifier = 'right'
   endif
 
+  if section.settings.set_header_size_globally
+    assign block_header_size = section.settings.block_header_size
+    assign block_header_size_mobile = section.settings.block_header_size_mobile
+  else
+    assign block_header_size = block.settings.header_size
+    assign block_header_size_mobile = block.settings.header_size_mobile
+  endif
+
   if section.settings.set_block_padding_globally
     assign block_padding = section.settings.block_padding
     assign block_padding_mobile = section.settings.block_padding_mobile
@@ -140,7 +148,8 @@
               class="
                 grid-item__heading
                 ff-heading
-                {{ block.settings.heading_font_class }}
+                {{ block_header_size }}
+                {{ block_header_size_mobile }}
                 section-blocks__heading
               "
             >

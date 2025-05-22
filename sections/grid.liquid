@@ -219,6 +219,12 @@
       "content": "Block Settings"
     },
     {
+      "type": "checkbox",
+      "id": "set_block_padding_globally",
+      "label": "Set Block Padding Globally",
+      "default": true
+    },
+    {
       "type": "text",
       "id": "block_padding",
       "label": "Block Padding",
@@ -234,11 +240,10 @@
     },
     {
       "type": "checkbox",
-      "id": "set_block_padding_globally",
-      "label": "Set Block Padding Globally",
-      "default": true
+      "id": "set_block_width_globally",
+      "label": "Set Block Width Globally",
+      "default": false
     },
-
     {
       "id": "block_width",
       "label": "Block Width",
@@ -285,11 +290,110 @@
         }
       ]
     },
+
     {
       "type": "checkbox",
-      "id": "set_block_width_globally",
-      "label": "Set Block Width Globally",
-      "default": false
+      "id": "set_header_size_globally",
+      "label": "Set Header Size Globally",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "block_header_size",
+      "label": "Header Size",
+      "options": [
+        {
+          "value": "md:text-base",
+          "label": "Small"
+        },
+        {
+          "value": "md:text-lg",
+          "label": "Medium"
+        },
+        {
+          "value": "md:text-xl",
+          "label": "Large"
+        },
+        {
+          "value": "md:text-2xl",
+          "label": "2xl"
+        },
+        {
+          "value": "md:text-3xl",
+          "label": "3xl"
+        },
+        {
+          "value": "md:text-4xl",
+          "label": "4xl"
+        },
+        {
+          "value": "md:text-5xl",
+          "label": "5xl"
+        },
+        {
+          "value": "md:text-6xl",
+          "label": "6xl"
+        },
+        {
+          "value": "md:text-7xl",
+          "label": "7xl"
+        },
+        {
+          "value": "md:text-8xl",
+          "label": "8xl"
+        }
+      ],
+      "default": "md:text-2xl",
+      "visible_if": "{{ section.settings.set_header_size_globally == true }}"
+    },
+    {
+      "type": "select",
+      "id": "block_header_size_mobile",
+      "label": "Header Size (Mobile)",
+      "options": [
+        {
+          "value": "text-base",
+          "label": "Small"
+        },
+        {
+          "value": "text-lg",
+          "label": "Medium"
+        },
+        {
+          "value": "text-xl",
+          "label": "Large"
+        },
+        {
+          "value": "text-2xl",
+          "label": "2xl"
+        },
+        {
+          "value": "text-3xl",
+          "label": "3xl"
+        },
+        {
+          "value": "text-4xl",
+          "label": "4xl"
+        },
+        {
+          "value": "text-5xl",
+          "label": "5xl"
+        },
+        {
+          "value": "text-6xl",
+          "label": "6xl"
+        },
+        {
+          "value": "text-7xl",
+          "label": "7xl"
+        },
+        {
+          "value": "text-8xl",
+          "label": "8xl"
+        }
+      ],
+      "default": "text-xl",
+      "visible_if": "{{ section.settings.set_header_size_globally == true }}"
     },
 
     {
@@ -559,7 +663,7 @@
           "id": "heading_tag",
           "type": "select",
           "label": "t:shared.section_blocks.heading.settings.heading_tag.label",
-          "visible_if": "{{ block.settings.heading != blank }}",
+          "visible_if": "{{ block.settings.title != blank }}",
           "info": "t:shared.section_blocks.heading.settings.heading_tag.info",
           "default": "h3",
           "options": [
@@ -587,24 +691,101 @@
         },
         {
           "type": "select",
-          "id": "heading_font_class",
-          "label": "t:shared.settings.heading_font_class.label",
-          "visible_if": "{{ block.settings.heading != blank }}",
-          "default": "fs-heading-2-base",
+          "id": "header_size",
+          "label": "Header Size",
           "options": [
             {
-              "value": "fs-heading-3-base",
-              "label": "t:shared.settings.heading_font_class.option_small"
+              "value": "md:text-base",
+              "label": "Small"
             },
             {
-              "value": "fs-heading-2-base",
-              "label": "t:shared.settings.heading_font_class.option_medium"
+              "value": "md:text-lg",
+              "label": "Medium"
             },
             {
-              "value": "fs-heading-1-base",
-              "label": "t:shared.settings.heading_font_class.option_large"
+              "value": "md:text-xl",
+              "label": "Large"
+            },
+            {
+              "value": "md:text-2xl",
+              "label": "2xl"
+            },
+            {
+              "value": "md:text-3xl",
+              "label": "3xl"
+            },
+            {
+              "value": "md:text-4xl",
+              "label": "4xl"
+            },
+            {
+              "value": "md:text-5xl",
+              "label": "5xl"
+            },
+            {
+              "value": "md:text-6xl",
+              "label": "6xl"
+            },
+            {
+              "value": "md:text-7xl",
+              "label": "7xl"
+            },
+            {
+              "value": "md:text-8xl",
+              "label": "8xl"
             }
-          ]
+          ],
+          "default": "md:text-2xl",
+          "visible_if": "{{ section.settings.set_header_size_globally == false }}"
+        },
+        {
+          "type": "select",
+          "id": "header_size_mobile",
+          "label": "Header Size (Mobile)",
+          "options": [
+            {
+              "value": "text-base",
+              "label": "Small"
+            },
+            {
+              "value": "text-lg",
+              "label": "Medium"
+            },
+            {
+              "value": "text-xl",
+              "label": "Large"
+            },
+            {
+              "value": "text-2xl",
+              "label": "2xl"
+            },
+            {
+              "value": "text-3xl",
+              "label": "3xl"
+            },
+            {
+              "value": "text-4xl",
+              "label": "4xl"
+            },
+            {
+              "value": "text-5xl",
+              "label": "5xl"
+            },
+            {
+              "value": "text-6xl",
+              "label": "6xl"
+            },
+            {
+              "value": "text-7xl",
+              "label": "7xl"
+            },
+            {
+              "value": "text-8xl",
+              "label": "8xl"
+            }
+          ],
+          "default": "text-xl",
+          "visible_if": "{{ section.settings.set_header_size_globally == false }}"
         },
         {
           "id": "subheading",

@@ -22,11 +22,13 @@
   if block.settings.width == '33' or block.settings.width == '25'
     assign use_small_button_above_960 = true
   endif
+
+  assign image_size_desktop = block.settings.width | split: '-' | last
+  assign image_size_mobile = block.settings.width_mobile | split: '-' | last
 -%}
 
 {%- capture image_sizes -%}
-  (min-width: 960px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) *
-  {{ block.settings.width | divided_by: 100.00 }}), calc(100vw - calc(2 * 3.3vw))
+  {{ image_size_desktop }}vw, (max-width: 719px) {{ image_size_mobile }}vw
 {%- endcapture -%}
 
 <div
@@ -38,8 +40,6 @@
     grid-item--text-{{ text_position_modifier }}
   "
   style="
-    --height: {{ block.settings.height }}px;
-    --mobile-height: {{ block.settings.mobile_height }}px;
     --media-fit: {{ block.settings.media_fit }};
     --text-horizontal-position: {{ horizontal_position }};
     --text-vertical-position: {{ vertical_position }};
@@ -65,7 +65,12 @@
   {%- endcapture -%}
   <{{ wrapping_tag }}
     {{ wrapping_attributes }}
-    class="grid-item__inner"
+    class="
+      grid-item__inner
+      pb-[var(--aspect-ratio-mobile)]
+      md:pb-[var(--aspect-ratio)]
+      2xl:pb-[var(--aspect-ratio-xl)]
+    "
   >
     {%- liquid
       assign image = block.settings.image_xl | default: block.settings.image
@@ -77,12 +82,12 @@
 
     {%- if image != blank -%}
       {%- render 'pictures',
-        breakpoints: '719, 1920',
+        breakpoints: '719, 1536',
         image: image,
         image_719: block.settings.mobile_image,
-        image_1920: block.settings.image,
-        sizes: '(max-width: 719px) 100vw, 50vw',
-        widths: '390, 719, 1200, 1600, 1920, 3000',
+        image_1536: block.settings.image_xl,
+        sizes: image_sizes,
+        widths: '390, 719, 1200, 1536, 1920, 3000',
         class: 'img-fit img-fit--zoom group-hover:scale-105',
         focal_point: block.settings.focal_point,
         section_index: section.index
@@ -96,7 +101,7 @@
     {%- endif -%}
     <div class="grid-item__overlay"></div>
 
-    <div class="grid-item__text-container-wrapper">
+    <div class="grid-item__text-container-wrapper absolute top-0 left-0 w-full h-full">
       <div class="grid-item__text-container">
         <div class="grid-item__text-container-inner  section-blocks animation--section-blocks">
           {%- unless block.settings.accent == blank -%}

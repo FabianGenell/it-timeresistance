@@ -35,6 +35,7 @@
   assign input_srcset = widths | remove: ' ' | split: ','
   assign raw_breakpoints = breakpoints | replace: ' ', '' | split: ','
   assign cleaned_breakpoints = ''
+  assign src_width = input_srcset.last
 
   for breakpoint in raw_breakpoints
     assign image_source_name = 'image_' | append: breakpoint

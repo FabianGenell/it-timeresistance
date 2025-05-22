@@ -58,12 +58,12 @@
     {% endcomment %}
 
     {%- render 'pictures',
-      breakpoints: '719, 1920',
+      breakpoints: '719, 1536',
       image: image,
       image_719: block.settings.image_mobile,
-      image_1920: block.settings.image,
+      image_1536: block.settings.image,
       sizes: '(max-width: 719px) 100vw, 50vw',
-      widths: '390, 719, 1920, 3000',
+      widths: '390, 719, 1536, 1920, 3000',
       class: 'img-fit img-fit--zoom group-hover:scale-105',
       section_index: section.index
     %}

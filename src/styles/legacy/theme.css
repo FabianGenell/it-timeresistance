@@ -7870,6 +7870,14 @@ body.header-transparent #main > .shopify-section:first-child .video-hero .video-
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    width: calc(100% + (4px * 6));
+    width: calc(100% + calc(4px * 6));
+    width: calc(100% + var(--grid-spacing-mobile, var(--spacing-6)));
+    height: calc(100% + (4px * 6));
+    height: calc(100% + calc(4px * 6));
+    height: calc(100% + var(--grid-spacing-mobile, var(--spacing-6)));
+    margin: calc((calc(4px * 6) / 2) * -1);
+    margin: calc((var(--grid-spacing-mobile, var(--spacing-6)) / 2) * -1);
 }
 @media (min-width: 960px) {
     .grid__inner {
@@ -15427,12 +15435,11 @@ body.header-transparent
 }
 .grid-item {
     display: block;
-    min-height: var(--mobile-height);
     color: var(--color-text);
+    padding: calc(var(--grid-spacing-mobile, var(--spacing-4)) / 2);
 }
 @media (min-width: 960px) {
     .grid-item {
-        min-height: var(--height);
         padding: calc((4px * 6) / 2);
         padding: calc(calc(4px * 6) / 2);
         padding: calc(var(--grid-spacing, var(--spacing-6)) / 2);

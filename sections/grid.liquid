@@ -1,6 +1,47 @@
 {%- if section.settings.enable_section_style -%}
   {%- render 'section-style', section: section -%}
 {%- endif -%}
+
+{%- liquid
+  if section.settings.use_first_image_aspect_ratio
+    assign first_settings = section.blocks.first.settings
+
+    assign first_mobile_image = first_settings.mobile_image
+    assign first_image = first_settings.image
+    assign first_image_xl = first_settings.image_xl
+
+    assign aspect_ratio = first_image.aspect_ratio
+    assign aspect_ratio = 1 | divided_by: aspect_ratio | times: 100
+
+    if first_mobile_image != blank
+      assign aspect_ratio_mobile = first_mobile_image.aspect_ratio
+      assign aspect_ratio_mobile = 1 | divided_by: aspect_ratio_mobile | times: 100
+    else
+      assign aspect_ratio_mobile = aspect_ratio
+    endif
+
+    if first_image_xl != blank
+      assign aspect_ratio_xl = first_image_xl.aspect_ratio
+      assign aspect_ratio_xl = 1 | divided_by: aspect_ratio_xl | times: 100
+    else
+      assign aspect_ratio_xl = aspect_ratio
+    endif
+
+  else
+    assign aspect_ratio = section.settings.aspect_ratio | default: 100
+    assign aspect_ratio_mobile = section.settings.aspect_ratio_mobile | default: 140
+    assign aspect_ratio_xl = section.settings.aspect_ratio_xl | default: 60
+  endif
+-%}
+{% comment %}
+  <p>using first image aspect ratio: {{ section.settings.use_first_image_aspect_ratio }}</p>
+  <p>first image: {{ first_image }}</p>
+  <p>first mobile image: {{ first_mobile_image }}</p>
+  <p>first image xl: {{ first_image_xl }}</p>
+  <p>aspect ratio: {{ aspect_ratio }}</p>
+  <p>aspect ratio mobile: {{ aspect_ratio_mobile }}</p>
+  <p>aspect ratio xl: {{ aspect_ratio_xl }}</p>
+{% endcomment %}
 <!-- sections/grid.liquid -->
 <div
   class="
@@ -17,7 +58,11 @@
     {% endif %}
   "
   style="
+    --aspect-ratio: {{ aspect_ratio }}%;
+    --aspect-ratio-mobile: {{ aspect_ratio_mobile }}%;
+    --aspect-ratio-xl: {{ aspect_ratio_xl }}%;
     --grid-spacing: {{ section.settings.spacing }}px;
+    --grid-spacing-mobile: {{ section.settings.spacing_mobile }}px;
     --text-align: {{ section.settings.content_alignment }};
   "
   data-section-id="{{ section.id }}"
@@ -145,6 +190,16 @@
       "default": 24
     },
     {
+      "type": "range",
+      "id": "spacing_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Spacing",
+      "default": 8
+    },
+    {
       "type": "select",
       "id": "divider_style",
       "label": "t:shared.settings.section_style.divider_style.label",
@@ -160,6 +215,39 @@
         }
       ]
     },
+    {
+      "type": "header",
+      "content": "Aspect Ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_first_image_aspect_ratio",
+      "label": "Use First Image Aspect Ratio",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "aspect_ratio",
+      "label": "Aspect Ratio",
+      "visible_if": "{{ section.settings.use_first_image_aspect_ratio == false }}",
+      "default": 100
+    },
+    {
+      "type": "number",
+      "id": "aspect_ratio_mobile",
+      "label": "Aspect Ratio (Mobile)",
+      "visible_if": "{{ section.settings.use_first_image_aspect_ratio == false }}",
+      "default": 140
+    },
+    {
+      "type": "number",
+      "id": "aspect_ratio_xl",
+      "label": "Aspect Ratio (XL)",
+      "visible_if": "{{ section.settings.use_first_image_aspect_ratio == false }}",
+      "default": 60,
+      "info": "This image will be used on desktop screens larger than 1536px"
+    },
+
     {
       "type": "header",
       "content": "Section Padding"
@@ -281,26 +369,6 @@
           ]
         },
         {
-          "type": "range",
-          "id": "height",
-          "label": "t:sections.grid.blocks.item.settings.height.label",
-          "unit": "px",
-          "min": 300,
-          "max": 800,
-          "step": 20,
-          "default": 400
-        },
-        {
-          "type": "range",
-          "id": "mobile_height",
-          "label": "t:sections.grid.blocks.item.settings.mobile_height.label",
-          "unit": "px",
-          "min": 300,
-          "max": 800,
-          "step": 20,
-          "default": 500
-        },
-        {
           "type": "header",
           "content": "t:sections.grid.blocks.item.settings.header__image.content"
         },
@@ -318,7 +386,7 @@
           "type": "image_picker",
           "id": "image_xl",
           "label": "Image XL",
-          "info": "This image will be used on desktop screens larger than 1920px"
+          "info": "This image will be used on desktop screens larger than 1536px"
         },
         {
           "id": "media_fit",
@@ -449,8 +517,7 @@
         {
           "id": "subheading",
           "type": "richtext",
-          "label": "t:sections.grid.blocks.item.settings.subheading.label",
-          "default": "<p>Perfect for lookbooks and editorial photography</p>"
+          "label": "t:sections.grid.blocks.item.settings.subheading.label"
         },
         {
           "id": "subheading_tag",

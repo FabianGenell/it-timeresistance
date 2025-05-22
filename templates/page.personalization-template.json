@@ -56,7 +56,7 @@
         "item_Dczn8C": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 400,
             "mobile_height": 500,
             "image": "shopify://shop_images/Rectangle_285_27e8c00f-af33-4408-af45-933541a409a4.png",
@@ -87,7 +87,7 @@
         "item_M3hzYF": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 400,
             "mobile_height": 500,
             "image": "shopify://shop_images/Rectangle_289_fceac5d8-5ca7-40e3-9167-46d197962425.png",

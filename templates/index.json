@@ -15,7 +15,7 @@
         "item_ALMiQA": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/KKA1008_x_1104_31000a87-1955-442a-9abb-7de2ef52bded.jpg",
@@ -53,7 +53,7 @@
         "item_9GhmiV": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/KB1008_x_1104_8c205c29-efc0-4763-9a3b-8b1c600e2b22.jpg",
@@ -173,31 +173,13 @@
     },
     "custom_video_MN3FLx": {
       "type": "custom-video",
-      "blocks": {
-      },
-      "block_order": [
-      ],
       "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
         "video_mobile": "shopify://files/videos/mobilevid1.mp4",
         "video_large": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
         "pause_outside_viewport": true,
-        "viewport_threshold": 50,
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 30,
-        "text_color": "#ffffff",
-        "text_align": "center",
-        "link": "",
-        "link_text": "",
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-none"
+        "viewport_threshold": 50
       }
     },
     "grid_fRJi4Y": {
@@ -206,7 +188,7 @@
         "item_LjGhp3": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/A1008_x_1104_32c55c38-e739-4a40-a06a-947b7f361d7d.jpg",
@@ -244,7 +226,7 @@
         "item_ik7CEz": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/KKB1008_x_1104_76969f63-d7ca-4de6-97a7-31f2a51601ff.jpg",
@@ -347,7 +329,7 @@
         "item_kXKMLK": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/C1008_x_1104_b6244653-5c20-4497-af2c-8421253975b4.jpg",
@@ -385,7 +367,7 @@
         "item_RJ9FmU": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/KD1008_x_1104.jpg",
@@ -513,7 +495,7 @@
         "item_WpUwBa": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/07_16_8_38d095f1-ec10-4ac6-a11a-214dde53e775.jpg",
@@ -551,7 +533,7 @@
         "item_rHzUKg": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/Untitled_design_34_0a03c0f4-a264-4b0e-abaa-07b7ae2f045a.jpg",

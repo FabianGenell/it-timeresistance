@@ -27,6 +27,12 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 30,
         "enable_animation": true,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -36,7 +42,8 @@
         "item_r4wyNU": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
+            "width_mobile": "w-full",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/A1008_x_1104_1.jpg",
@@ -74,7 +81,8 @@
         "item_Qfrdwy": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
+            "width_mobile": "w-full",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/C1008_x_1104_1.jpg",
@@ -123,6 +131,12 @@
         "full_width": true,
         "spacing": 0,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -177,6 +191,12 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -204,6 +224,12 @@
         "overlay_title_background": "rgba(0,0,0,0)",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-only"
       }
     },
@@ -213,7 +239,8 @@
         "item_7AGywC": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
+            "width_mobile": "w-full",
             "height": 660,
             "mobile_height": 500,
             "image": "shopify://shop_images/07_16_3_1d212618-d50a-4020-944e-8e0968baf9c3.jpg",
@@ -251,7 +278,8 @@
         "item_mMa6PN": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
+            "width_mobile": "w-full",
             "height": 500,
             "mobile_height": 500,
             "image": "shopify://shop_images/07_16_4_5ab3657f-976d-4b67-bb57-ee540a138403.jpg",
@@ -300,6 +328,12 @@
         "full_width": true,
         "spacing": 10,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-only"
       }
     },
@@ -327,6 +361,12 @@
         "overlay_title_background": "rgba(0,0,0,0)",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-only"
       }
     },
@@ -465,6 +505,12 @@
         "button_text_color": "#ffffff",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     }

@@ -7850,8 +7850,7 @@ body.header-transparent #main > .shopify-section:first-child .video-hero .video-
     }
 }
 @media (max-width: 959px) {
-    .grid.section,
-    .grid.section.section--full-width {
+    .grid.section {
         padding-right: min(calc((4px * 6) / 2), 3.3vw);
         padding-right: min(calc(calc(4px * 6) / 2), 3.3vw);
         padding-right: min(calc(var(--grid-spacing, var(--spacing-6)) / 2), var(--space-outer));
@@ -7860,14 +7859,12 @@ body.header-transparent #main > .shopify-section:first-child .video-hero .video-
         padding-left: min(calc(var(--grid-spacing, var(--spacing-6)) / 2), var(--space-outer));
     }
 }
-@media (min-width: 960px) {
-    .grid.section.section--full-width {
-        padding-right: min(calc(4px * 6), 3.3vw);
-        padding-right: min(var(--grid-spacing, var(--spacing-6)), var(--space-outer));
-        padding-left: min(calc(4px * 6), 3.3vw);
-        padding-left: min(var(--grid-spacing, var(--spacing-6)), var(--space-outer));
-    }
+
+.grid.section.section--full-width {
+    padding-right: 0;
+    padding-left: 0;
 }
+
 .grid__inner {
     display: flex;
     justify-content: center;
@@ -15500,13 +15497,13 @@ body.header-transparent
 .grid-item.grid-item--text-right {
     text-align: right;
 }
-@media (max-width: 959px) {
+/* @media (max-width: 959px) {
     .grid-item + .grid-item {
         margin-top: calc((4px * 6) / 2);
         margin-top: calc(calc(4px * 6) / 2);
         margin-top: calc(var(--grid-spacing, var(--spacing-6)) / 2);
     }
-}
+} */
 .grid-item__inner {
     display: block;
     width: 100%;

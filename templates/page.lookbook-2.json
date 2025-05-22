@@ -343,7 +343,7 @@
         "block-0": {
           "type": "item",
           "settings": {
-            "width": "33",
+            "width": "md:w-1/3",
             "height": 640,
             "mobile_height": 500,
             "media_fit": "cover",
@@ -366,7 +366,7 @@
         "block-1": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 720,
             "mobile_height": 500,
             "media_fit": "cover",
@@ -569,7 +569,7 @@
         "block-0": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 760,
             "mobile_height": 500,
             "media_fit": "cover",
@@ -594,7 +594,7 @@
         "block-1": {
           "type": "item",
           "settings": {
-            "width": "33",
+            "width": "md:w-1/3",
             "height": 600,
             "mobile_height": 500,
             "media_fit": "cover",

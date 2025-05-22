@@ -42,7 +42,7 @@
         "item_KxXDgD": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/KKB1008_x_1104_1.jpg",
@@ -80,7 +80,7 @@
         "item_fAUNN4": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 800,
             "mobile_height": 800,
             "image": "shopify://shop_images/07_16_2_336ce653-bbc6-4c7c-abde-a924473f25ca.jpg",
@@ -237,7 +237,7 @@
         "item_7AGywC": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 660,
             "mobile_height": 500,
             "image": "shopify://shop_images/KD1008_x_1104_e868176f-3023-4566-9b51-94799087bf20.jpg",
@@ -275,7 +275,7 @@
         "item_mMa6PN": {
           "type": "item",
           "settings": {
-            "width": "50",
+            "width": "md:w-1/2",
             "height": 500,
             "mobile_height": 500,
             "image": "shopify://shop_images/07_16_4_a9015f96-6d27-4cba-a816-b804f015d50f.jpg",
@@ -339,7 +339,7 @@
         "item_qe7UXd": {
           "type": "item",
           "settings": {
-            "width": "100",
+            "width": "md:w-full",
             "height": 660,
             "mobile_height": 500,
             "image": "shopify://shop_images/desktop_full_all_bags_3a2f8dc1-ac2b-4dfd-985f-6f77c469030d.webp",
@@ -378,7 +378,7 @@
           "type": "item",
           "disabled": true,
           "settings": {
-            "width": "100",
+            "width": "md:w-full",
             "height": 500,
             "mobile_height": 500,
             "media_fit": "cover",

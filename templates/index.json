@@ -205,6 +205,9 @@
         "video_desktop": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
         "video_mobile": "shopify://files/videos/mobilevid1.mp4",
         "video_large": "shopify://files/videos/0be0bf80bcee432fb269796b0e65345d.mp4",
+        "desktop_poster_image": "shopify://shop_images/desktop.webp",
+        "mobile_poster_image": "shopify://shop_images/mobile_cover.webp",
+        "large_poster_image": "shopify://shop_images/large.webp",
         "autoplay": true,
         "pause_outside_viewport": true,
         "viewport_threshold": 50

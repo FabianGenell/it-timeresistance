@@ -18,6 +18,7 @@
     assign promo_text = meganav_settings.promo_text
     assign link_text = meganav_settings.link_text
     assign focal_point = meganav_settings.focal_point
+    assign button_style = meganav_settings.button_style
 
     assign link_key = 'link'
 
@@ -42,12 +43,14 @@
         assign promo_text_key = 'promo_text_' | append: i
         assign link_text_key = 'link_text_' | append: i
         assign focal_point_key = 'focal_point_' | append: i
+        assign button_style_key = 'button_style_' | append: i
 
         assign image = meganav_settings[image_key]
         assign link = meganav_settings[link_key]
         assign promo_text = meganav_settings[promo_text_key]
         assign link_text = meganav_settings[link_text_key]
         assign focal_point = meganav_settings[focal_point_key]
+        assign button_style = meganav_settings[button_style_key]
 
         assign promo_height = 400
         assign promo_width = 800
@@ -79,7 +82,6 @@
         {%- endif -%}
 
         <div class="meganav__secondary-promo-overlay"></div>
-        <p>link key: {{ link_key }}</p>
         <div class="meganav__secondary-promo-text">
           {% unless promo_text == blank %}
             <h3 class="ff-heading fs-heading-4-base meganav__secondary-promo-text-heading">{{ promo_text }}</h3>
@@ -89,7 +91,7 @@
               wrapper_class: "meganav__secondary-promo-text-button",
               label: link_text,
               link: link,
-              button_style: 'btn--secondary',
+              button_style: button_style,
               is_overlay: true,
               is_x_small: true,
               allow_linkless: true,

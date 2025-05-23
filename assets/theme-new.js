@@ -10951,7 +10951,18 @@ register('video', {
                                 onReady: () => {
                                     console.log('youtube video ready', player)
 
-                                    player.getIframe().tabIndex = '-1';
+                                    const iframe = player.getIframe();
+                                    iframe.tabIndex = '-1';
+                                    
+                                    // Copy data attributes to iframe for identification
+                                    iframe.dataset.videoProvider = 'youtube';
+                                    iframe.dataset.videoId = videoId;
+                                    
+                                    // Dispatch custom event for pause-outside-videos.js
+                                    window.dispatchEvent(new CustomEvent('youtube-player-ready', {
+                                        detail: { element: iframe, player }
+                                    }));
+                                    
                                     this.events.push(
                                         listen(playTrigger, 'click', () => {
                                             console.log('clicked playvideo')
@@ -10988,16 +10999,6 @@ register('video', {
                                                             }
                                                         }, 500);
                                                     }
-                                                    
-                                                    // Additional fallback for Brave
-                                                    if (isBrave && state !== 1) {
-                                                        setTimeout(() => {
-                                                            if (player.getPlayerState() !== 1) {
-                                                                console.log('Brave: Opening video in new tab');
-                                                                window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
-                                                            }
-                                                        }, 1000);
-                                                    }
                                                 }, 200);
                                             } catch (error) {
                                                 console.error('Error playing video:', error);
@@ -11023,19 +11024,6 @@ register('video', {
                                     if (error.data === 101 || error.data === 150) {
                                         console.error('This video cannot be embedded. Check video privacy settings.');
                                     }
-                                    
-                                    // Fallback for Brave or other privacy-focused browsers
-                                    if (error.data === 5 || error.data === 0) {
-                                        console.log('Attempting fallback for privacy-focused browser');
-                                        const fallbackLink = document.createElement('a');
-                                        fallbackLink.href = `https://www.youtube.com/watch?v=${videoId}`;
-                                        fallbackLink.target = '_blank';
-                                        fallbackLink.rel = 'noopener noreferrer';
-                                        fallbackLink.className = 'video-fallback-link';
-                                        fallbackLink.textContent = 'Watch on YouTube';
-                                        fallbackLink.style.cssText = 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #ff0000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; z-index: 10;';
-                                        videoExternal.parentElement.appendChild(fallbackLink);
-                                    }
                                 }
                             }
                         });
@@ -11052,6 +11040,16 @@ register('video', {
                         if (loop === 'true') {
                             player.setLoop(1);
                         }
+                        
+                        // Copy data attributes to iframe for identification
+                        player.element.dataset.videoProvider = 'vimeo';
+                        player.element.dataset.videoId = videoId;
+                        
+                        // Dispatch custom event for pause-outside-videos.js
+                        window.dispatchEvent(new CustomEvent('vimeo-player-ready', {
+                            detail: { element: player.element, player }
+                        }));
+                        
                         this.events.push(
                             listen(playTrigger, 'click', () => {
                                 player.play();

@@ -2,10 +2,8 @@
 {%- if section.settings.enable_section_style -%}
   {%- render 'section-style', section: section -%}
 {%- endif -%}
-{%- liquid
-  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
-  assign text_align = section.settings.text_align
 
+{%- liquid
   # Create URLs from video assets
   assign mobile_video_url = ''
   if section.settings.video_mobile != blank
@@ -151,7 +149,7 @@
               opacity-70 hover:opacity-100 transition-opacity duration-300 pointer-events-auto
             "
             data-sound-toggle
-            aria-label="{{ 'general.accessibility.toggle_sound' | t }}"
+            aria-label="Toggle sound"
           >
             <div data-icon-sound-on class="hidden">
               {% render 'icon', icon: 'sound' %}
@@ -245,6 +243,76 @@
       "label": "Viewport threshold",
       "default": 50,
       "info": "Percentage of video visible before play/pause occurs"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style",
+      "label": "Enable Custom Padding",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top",
+      "label": "Padding Top",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section_style_mobile",
+      "label": "Enable Custom Padding (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style == true }}",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "visible_if": "{{ section.settings.enable_section_style_mobile == true and section.settings.enable_section_style == true }}",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "visible_if": "{{ section.settings.enable_section_style == false }}",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        }
+      ]
     }
   ],
 

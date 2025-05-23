@@ -2718,40 +2718,6 @@ const modal = (node) => {
     };
 };
 
-var AnimateProductItem = (items) => {
-    const events = [];
-    items.forEach((item) => {
-        const imageOne = qs('.product-item__image--one', item);
-        const imageTwo = qs('.product-item__image--two', item);
-        qsa('.product-item-options__list', item);
-        events.push(
-            listen(item, 'mouseenter', () => {
-                enterItemAnimation(imageOne, imageTwo);
-            })
-        );
-        events.push(
-            listen(item, 'mouseleave', () => {
-                leaveItemAnimation(imageOne, imageTwo);
-            })
-        );
-    });
-    function enterItemAnimation(imageOne, imageTwo, optionsElements) {
-        if (imageTwo) {
-            addClass(imageTwo, 'active');
-        }
-    }
-    function leaveItemAnimation(imageOne, imageTwo, optionsElements) {
-        if (imageTwo) {
-            removeClass(imageTwo, 'active');
-        }
-    }
-    return {
-        destroy() {
-            events.forEach((unsubscribe) => unsubscribe());
-        }
-    };
-};
-
 function getMediaQuery(querySize) {
     const value = getComputedStyle(document.documentElement).getPropertyValue(
         '--media-'.concat(querySize)
@@ -5874,7 +5840,6 @@ function ProductItem(container) {
 
     // Add z-index for quick-buy overlap
     items.forEach((item, i) => item.style.setProperty('--z-index-item', items.length - i));
-    const productItemAnimations = AnimateProductItem(items);
     const quickAddButtons = qsa(selectors$N.quickAddButton, container);
     const quickViewButtons = qsa(selectors$N.quickViewButton, container);
     const quickCart = qs(selectors$N.quickCart, document);
@@ -5918,7 +5883,6 @@ function ProductItem(container) {
         })
     ];
     const unload = () => {
-        productItemAnimations.destroy();
         events.forEach((unsubscribe) => unsubscribe());
     };
     return {

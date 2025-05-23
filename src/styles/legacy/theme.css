@@ -11300,7 +11300,7 @@ html.no-js .product-tabs__tab-item {
         opacity var(--duration-fast) var(--easing),
         transform var(--duration-fast) var(--easing);
 }
-.product-item__image--two.image.active {
+.product-item__media:hover .product-item__image--two.image {
     transform: scale(1);
     opacity: 1;
     transition:

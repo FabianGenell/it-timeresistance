@@ -1,3 +1,5 @@
+<!-- - snippet/filter-drawer.liquid - -->
+
 {%- liquid
   assign results_count = 0
   if results.products_count != blank
@@ -5,6 +7,8 @@
   elsif results.results_count != blank
     assign results_count = results.results_count
   endif
+
+  assign enabled_sort_options = 'manual,best-selling,price-ascending,price-descending' | split: ','
 -%}
 
 {%- if results.filters != empty or show_sort -%}
@@ -158,32 +162,44 @@
           <div class="filter-drawer__group animation--filter-drawer-item">
             <ul class="filter-drawer__list">
               {%- for option in results.sort_options -%}
-                {%- assign is_active = false -%}
-                {%- if option.value == results.sort_by -%}
-                  {%- assign is_active = true -%}
-                {%- endif -%}
-                <li class="filter-item">
-                  <label data-sort for="filter-{{ option.name | handleize }}--mobile" class="filter-item__content">
-                    <input
-                      type="radio"
-                      name="sort_by"
-                      {% if is_active %}
-                        checked="checked"
-                      {% endif %}
-                      value="{{ option.value }}"
-                      data-value-escaped="{{ option.value | url_escape }}"
-                      id="filter-{{ option.name | escape | handleize }}--mobile"
-                      class="filter-item__radio visually-hidden"
-                    >
+                {%- if enabled_sort_options contains option.value -%}
+                  {%- liquid
+                    assign is_active = false
+                    if option.value == results.sort_by
+                      assign is_active = true
+                    endif
 
-                    <div class="filter-item__content-inner">
-                      <div class="filter-input__input">
-                        <div class="indicator"></div>
+                    assign locale_key = option.value | escape | handleize | replace: '-', '_'
+                    assign name = 'filters.' | append: locale_key
+                  -%}
+
+                  <li class="filter-item">
+                    <label
+                      data-sort
+                      for="filter-{{ option.name | handleize }}--mobile"
+                      class="filter-item__content"
+                    >
+                      <input
+                        type="radio"
+                        name="sort_by"
+                        {% if is_active %}
+                          checked="checked"
+                        {% endif %}
+                        value="{{ option.value }}"
+                        data-value-escaped="{{ option.value | url_escape }}"
+                        id="filter-{{ option.name | escape | handleize }}--mobile"
+                        class="filter-item__radio visually-hidden"
+                      >
+
+                      <div class="filter-item__content-inner">
+                        <div class="filter-input__input">
+                          <div class="indicator"></div>
+                        </div>
+                        <span class="filter-item__label">{{ name | t | default: option.name }}</span>
                       </div>
-                      <span class="filter-item__label">{{ option.name }}</span>
-                    </div>
-                  </label>
-                </li>
+                    </label>
+                  </li>
+                {%- endif -%}
               {%- endfor -%}
             </ul>
           </div>

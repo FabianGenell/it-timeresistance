@@ -231,7 +231,13 @@
     "sort_title": "Sort",
     "title": "Filter",
     "to": "To",
-    "zero_selected": "0 selected"
+    "zero_selected": "0 selected",
+    "manual": "Our Favorites",
+    "best_selling": "Best Selling",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "price_ascending": "Price: Low to High",
+    "price_descending": "Price: High to Low"
   },
   "general": {
     "404": {

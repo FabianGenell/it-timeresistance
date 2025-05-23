@@ -122,6 +122,8 @@
               if enabled_sort_options contains option.value
                 if option.value == sort_by
                   assign sort_by = option.name
+                  assign locale_key = option.value | escape | handleize | replace: '-', '_'
+                  assign name = 'filters.' | append: locale_key
                 endif
               endif
             endfor
@@ -135,7 +137,7 @@
             aria-expanded="false"
             aria-controls="filter-bar-sort"
           >
-            <span data-sort-label>{{ 'filters.sort_title' | t }}: {{ sort_by }}</span>
+            <span data-sort-label>{{ 'filters.sort_title' | t }}: {{ name | t | default: sort_by }}</span>
             {% render 'icon' with icon: 'chevron-small' %}
           </button>
 
@@ -159,6 +161,9 @@
                   elsif option.value == collection.default_sort_by
                     assign is_active = true
                   endif
+
+                  assign locale_key = option.value | escape | handleize | replace: '-', '_'
+                  assign name = 'filters.' | append: locale_key
                 -%}
                 <li class="filter-item">
                   <label data-sort for="filter-{{ option.name | handleize }}" class="filter-item__content">
@@ -179,7 +184,7 @@
                       <div class="filter-input__input">
                         <div class="indicator"></div>
                       </div>
-                      <span class="filter-item__label">{{ option.name }}</span>
+                      <span class="filter-item__label">{{ name | t | default: option.name }}</span>
                     </div>
                   </label>
                 </li>

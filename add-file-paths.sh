@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Script to add file path comments to all .liquid files
+# Script to add file path comments to .liquid files in the sections directory only
 # Creates an HTML comment at the beginning of each file with its path
 
 # Color codes for output
@@ -13,11 +13,11 @@ NC='\033[0m' # No Color
 processed=0
 skipped=0
 
-echo "Adding file path comments to .liquid files..."
+echo "Adding file path comments to .liquid files in sections/ directory..."
 echo "==========================================="
 
-# Find all .liquid files in the current directory and subdirectories
-find . -name "*.liquid" -type f | while read -r file; do
+# Find all .liquid files in the sections directory only
+find ./sections -name "*.liquid" -type f | while read -r file; do
     # Remove leading ./ from the path
     clean_path="${file#./}"
     

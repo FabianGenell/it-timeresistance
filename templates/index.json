@@ -105,17 +105,17 @@
         "enable_animation": false,
         "full_width": true,
         "spacing": 0,
-        "spacing_mobile": 8,
+        "spacing_mobile": 0,
         "divider_style": "none",
         "set_block_padding_globally": true,
-        "block_padding": "36px",
-        "block_padding_mobile": "28px",
+        "block_padding": "60px",
+        "block_padding_mobile": "0px",
         "set_block_width_globally": false,
         "block_width": "md:w-1/4",
         "block_width_mobile": "w-1/2",
         "set_header_size_globally": true,
         "block_header_size": "md:text-2xl",
-        "block_header_size_mobile": "text-xl",
+        "block_header_size_mobile": "text-2xl",
         "set_button_text_globally": true,
         "block_link_text": "View All",
         "set_button_style_globally": true,
@@ -129,67 +129,7 @@
         "aspect_ratio": 100,
         "aspect_ratio_mobile": 140,
         "aspect_ratio_xl": 60,
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
-    "image_hero_split_CQQ9Cm": {
-      "type": "image-hero-split",
-      "blocks": {
-        "image_WG8Cip": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/A2152_x_1680_2.jpg",
-            "image_mobile": "shopify://shop_images/A_1040_x_1576.jpg",
-            "image_xl": "shopify://shop_images/A2152_x_1680_1.jpg",
-            "focal_point": "image_presentation",
-            "title": "MEN",
-            "heading_tag": "h2",
-            "text": "",
-            "link": "shopify://collections/men",
-            "link_text": "Explore the collection",
-            "button_style": "btn--primary"
-          }
-        },
-        "image_KTC4iV": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/B2152_x_1680_1.jpg",
-            "image_mobile": "shopify://shop_images/B_1040_x_1576_1.jpg",
-            "image_xl": "shopify://shop_images/B2152_x_1680.jpg",
-            "focal_point": "image_presentation",
-            "title": "WOMEN",
-            "heading_tag": "h2",
-            "text": "",
-            "link": "shopify://collections/women",
-            "link_text": "Explore the collection",
-            "button_style": "btn--primary"
-          }
-        }
-      },
-      "block_order": [
-        "image_WG8Cip",
-        "image_KTC4iV"
-      ],
-      "disabled": true,
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 85,
-        "text_position": "flex-end",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "rgba(0,0,0,0)",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": false,
-        "enable_section_style": false,
+        "enable_section_style": true,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
         "enable_section_style_mobile": false,
@@ -316,8 +256,8 @@
         "spacing_mobile": 8,
         "divider_style": "none",
         "set_block_padding_globally": true,
-        "block_padding": "36px",
-        "block_padding_mobile": "28px",
+        "block_padding": "60px",
+        "block_padding_mobile": "0px",
         "set_block_width_globally": false,
         "block_width": "md:w-1/4",
         "block_width_mobile": "w-1/2",
@@ -337,13 +277,13 @@
         "aspect_ratio": 100,
         "aspect_ratio_mobile": 140,
         "aspect_ratio_xl": 60,
-        "enable_section_style": true,
+        "enable_section_style": false,
         "section_padding_top": 40,
         "section_padding_bottom": 0,
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-bottom"
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "featured_collection_slider_RcKQEK": {
@@ -479,7 +419,7 @@
         "spacing": 24,
         "spacing_mobile": 8,
         "divider_style": "none",
-        "set_block_padding_globally": true,
+        "set_block_padding_globally": false,
         "block_padding": "36px",
         "block_padding_mobile": "28px",
         "set_block_width_globally": false,
@@ -1003,7 +943,6 @@
   },
   "order": [
     "grid_LHtfVf",
-    "image_hero_split_CQQ9Cm",
     "custom_video_MN3FLx",
     "grid_fRJi4Y",
     "featured_collection_slider_RcKQEK",

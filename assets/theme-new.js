@@ -10847,9 +10847,9 @@ register('slideshow', {
             _this$footerObserver.disconnect();
     }
 });
-
 let loaded$1 = null;
 function loadYouTubeAPI() {
+    console.log('loadYouTubeAPI')
     // Loading was triggered by a previous call to function
     if (loaded$1 !== null) return loaded$1;
 
@@ -10917,8 +10917,19 @@ register('video', {
             switch (videoProvider) {
                 case 'youtube':
                     loadYouTubeAPI().then(() => {
+                        console.log('youtube video loaded video', window.YT)
+                        console.log('Video ID:', videoId, 'Loop:', loop);
+                        console.log('Video element:', videoExternal);
+                        
+                        // Check if we're in Brave browser
+                        const isBrave = window.navigator.brave && window.navigator.brave.isBrave;
+                        if (isBrave) {
+                            console.log('Brave browser detected - using privacy-friendly settings');
+                        }
+                        
                         const player = new window.YT.Player(videoExternal, {
                             videoId,
+                            host: 'https://www.youtube-nocookie.com',
                             playerVars: {
                                 autohide: 0,
                                 cc_load_policy: 0,
@@ -10927,22 +10938,103 @@ register('video', {
                                 modestbranding: 1,
                                 playsinline: 1,
                                 rel: 0,
-                                loop: loop,
-                                playlist: videoId
+                                loop: loop === 'true' ? 1 : 0,
+                                playlist: loop === 'true' ? videoId : undefined,
+                                origin: window.location.origin,
+                                widget_referrer: window.location.href,
+                                enablejsapi: 1,
+                                autoplay: 0,
+                                fs: 1,
+                                disablekb: 0
                             },
                             events: {
                                 onReady: () => {
+                                    console.log('youtube video ready', player)
+
                                     player.getIframe().tabIndex = '-1';
                                     this.events.push(
                                         listen(playTrigger, 'click', () => {
-                                            player.playVideo();
+                                            console.log('clicked playvideo')
+                                            try {
+                                                // First, ensure the iframe is focused
+                                                const iframe = player.getIframe();
+                                                if (iframe) {
+                                                    iframe.focus();
+                                                }
+                                                
+                                                // Try to play with sound first
+                                                player.playVideo();
+                                                
+                                                // If autoplay is blocked, try different strategies
+                                                setTimeout(() => {
+                                                    const state = player.getPlayerState();
+                                                    console.log('Player state after play attempt:', state);
+                                                    
+                                                    if (state === -1 || state === 5) { // Unstarted or cued
+                                                        console.log('Attempting to cue and play');
+                                                        player.cueVideoById(videoId);
+                                                        setTimeout(() => {
+                                                            player.playVideo();
+                                                        }, 100);
+                                                    } else if (state !== 1) { // Not playing
+                                                        console.log('Attempting muted playback');
+                                                        player.mute();
+                                                        player.playVideo();
+                                                        
+                                                        // Unmute after starting if successful
+                                                        setTimeout(() => {
+                                                            if (player.getPlayerState() === 1) {
+                                                                player.unMute();
+                                                            }
+                                                        }, 500);
+                                                    }
+                                                    
+                                                    // Additional fallback for Brave
+                                                    if (isBrave && state !== 1) {
+                                                        setTimeout(() => {
+                                                            if (player.getPlayerState() !== 1) {
+                                                                console.log('Brave: Opening video in new tab');
+                                                                window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+                                                            }
+                                                        }, 1000);
+                                                    }
+                                                }, 200);
+                                            } catch (error) {
+                                                console.error('Error playing video:', error);
+                                            }
                                         })
                                     );
                                 },
                                 onStateChange: (event) => {
-                                    if (event.data == YT.PlayerState.PLAYING) {
+                                    console.log('onStateChange', event)
+                                    // YT.PlayerState: -1=unstarted, 0=ended, 1=playing, 2=paused, 3=buffering, 5=cued
+                                    if (event.data === 1) {
                                         player.getIframe().tabIndex = '0';
                                         hideCover();
+                                    } else if (event.data === -1) {
+                                        console.log('Video unstarted - may need user interaction');
+                                    } else if (event.data === 5) {
+                                        console.log('Video cued and ready');
+                                    }
+                                },
+                                onError: (error) => {
+                                    console.error('YouTube player error:', error);
+                                    // Error codes: 2=invalid param, 5=HTML5 player error, 100=video not found, 101/150=embed not allowed
+                                    if (error.data === 101 || error.data === 150) {
+                                        console.error('This video cannot be embedded. Check video privacy settings.');
+                                    }
+                                    
+                                    // Fallback for Brave or other privacy-focused browsers
+                                    if (error.data === 5 || error.data === 0) {
+                                        console.log('Attempting fallback for privacy-focused browser');
+                                        const fallbackLink = document.createElement('a');
+                                        fallbackLink.href = `https://www.youtube.com/watch?v=${videoId}`;
+                                        fallbackLink.target = '_blank';
+                                        fallbackLink.rel = 'noopener noreferrer';
+                                        fallbackLink.className = 'video-fallback-link';
+                                        fallbackLink.textContent = 'Watch on YouTube';
+                                        fallbackLink.style.cssText = 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #ff0000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; z-index: 10;';
+                                        videoExternal.parentElement.appendChild(fallbackLink);
                                     }
                                 }
                             }

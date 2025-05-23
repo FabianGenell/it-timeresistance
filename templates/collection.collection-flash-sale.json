@@ -321,8 +321,6 @@
           "type": "item",
           "settings": {
             "width": "md:w-1/3",
-            "height": 500,
-            "mobile_height": 360,
             "media_fit": "cover",
             "focal_point": "image_presentation",
             "text_position": "flex-start_flex-end",
@@ -347,8 +345,6 @@
           "type": "item",
           "settings": {
             "width": "md:w-1/3",
-            "height": 500,
-            "mobile_height": 360,
             "media_fit": "cover",
             "focal_point": "image_presentation",
             "text_position": "flex-start_flex-end",
@@ -373,8 +369,6 @@
           "type": "item",
           "settings": {
             "width": "md:w-1/3",
-            "height": 500,
-            "mobile_height": 360,
             "media_fit": "cover",
             "focal_point": "image_presentation",
             "text_position": "flex-start_flex-end",

@@ -261,7 +261,7 @@
         "set_block_width_globally": true,
         "block_width": "md:w-1/2",
         "block_width_mobile": "w-full",
-        "set_header_size_globally": true,
+        "set_header_size_globally": false,
         "block_header_size": "md:text-2xl",
         "block_header_size_mobile": "text-xl",
         "set_button_text_globally": true,

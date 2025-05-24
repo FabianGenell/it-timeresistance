@@ -486,10 +486,10 @@
         "divider_style": "none",
         "enable_section_style": true,
         "section_padding_top": 12,
-        "section_padding_bottom": 0,
+        "section_padding_bottom": 12,
         "enable_section_style_mobile": true,
         "section_padding_top_mobile": 12,
-        "section_padding_bottom_mobile": 0,
+        "section_padding_bottom_mobile": 12,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -906,7 +906,7 @@
         "button_border": "",
         "button_border_radius": 0,
         "button_opacity": 70,
-        "button_font_size": 18
+        "button_font_size": 16
       }
     },
     "collection_list_slider_Tkx4c6": {
@@ -952,7 +952,7 @@
         "button_border": "",
         "button_border_radius": 0,
         "button_opacity": 70,
-        "button_font_size": 18
+        "button_font_size": 16
       }
     }
   },

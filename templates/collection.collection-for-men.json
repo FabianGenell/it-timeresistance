@@ -39,7 +39,7 @@
     "video_hero_MkXiD8": {
       "type": "video-hero",
       "settings": {
-        "image_aspect": "custom",
+        "image_aspect": "original",
         "desktop_height": 50,
         "mobile_height": 50,
         "video": "{{ collection.metafields.custom.hero_video_desktop.value }}",

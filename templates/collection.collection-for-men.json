@@ -40,7 +40,7 @@
       "type": "video-hero",
       "settings": {
         "image_aspect": "original",
-        "desktop_height": 50,
+        "desktop_height": 100,
         "mobile_height": 50,
         "video": "{{ collection.metafields.custom.hero_video_desktop.value }}",
         "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",

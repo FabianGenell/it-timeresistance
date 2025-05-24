@@ -50,7 +50,7 @@
             "mobile_image": "shopify://shop_images/KKB1040_x_1576_48274dd8-8f6b-41e8-9fb0-cf75035d68ca.jpg",
             "image_xl": "shopify://shop_images/KB2152_x_1680_54715e0d-13f6-499c-9bb3-4ff4da4e55ce.jpg",
             "media_fit": "cover",
-            "focal_point": "right",
+            "focal_point": "image_presentation",
             "text_position": "center_flex-end",
             "accent": "",
             "title": "HANDBAGS",

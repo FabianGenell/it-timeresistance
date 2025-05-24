@@ -364,7 +364,7 @@
         "section_padding_top": 12,
         "section_padding_bottom": 0,
         "enable_section_style_mobile": true,
-        "section_padding_top_mobile": 6,
+        "section_padding_top_mobile": 4,
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
@@ -493,7 +493,7 @@
         "section_padding_top": 12,
         "section_padding_bottom": 0,
         "enable_section_style_mobile": true,
-        "section_padding_top_mobile": 6,
+        "section_padding_top_mobile": 4,
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
@@ -699,8 +699,8 @@
         "section_padding_top": 12,
         "section_padding_bottom": 12,
         "enable_section_style_mobile": true,
-        "section_padding_top_mobile": 6,
-        "section_padding_bottom_mobile": 6,
+        "section_padding_top_mobile": 4,
+        "section_padding_bottom_mobile": 4,
         "section_padding": "section--vertical-padding-none"
       }
     },

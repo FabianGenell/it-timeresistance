@@ -472,7 +472,7 @@
         "enable_animation": true,
         "full_width": true,
         "spacing": 12,
-        "spacing_mobile": 0,
+        "spacing_mobile": 4,
         "divider_style": "none",
         "set_block_padding_globally": true,
         "block_padding": "36px",
@@ -497,11 +497,11 @@
         "aspect_ratio_mobile": 140,
         "aspect_ratio_xl": 60,
         "enable_section_style": true,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
+        "section_padding_top": 12,
+        "section_padding_bottom": 12,
         "enable_section_style_mobile": true,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
+        "section_padding_top_mobile": 4,
+        "section_padding_bottom_mobile": 4,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -547,49 +547,10 @@
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
-        },
-        "item_J94Kib": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "width": "md:w-full",
-            "width_mobile": "w-1/2",
-            "padding": "36px",
-            "padding_mobile": "28px",
-            "media_fit": "cover",
-            "focal_point": "image_presentation",
-            "text_position": "center_center",
-            "accent": "",
-            "title": "Grid item",
-            "heading_tag": "h3",
-            "header_size": "md:text-2xl",
-            "header_size_mobile": "text-xl",
-            "subheading": "<p>Perfect for lookbooks and editorial photography</p>",
-            "subheading_tag": "h4",
-            "subheading_font_class": "fs-heading-5-base",
-            "text": "",
-            "text_font_class": "fs-body-100",
-            "link": "",
-            "link_text": "",
-            "button_style": "btn--primary",
-            "button_padding": "",
-            "button_border": "",
-            "button_border_radius": 0,
-            "button_opacity": 100,
-            "button_font_size": 16,
-            "background_color": "",
-            "text_color": "#ffffff",
-            "button_background_color": "#ffffff",
-            "button_text_color": "#000000",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
         }
       },
       "block_order": [
-        "item_qe7UXd",
-        "item_J94Kib"
+        "item_qe7UXd"
       ],
       "settings": {
         "heading": "",
@@ -625,10 +586,10 @@
         "aspect_ratio_xl": 60,
         "enable_section_style": true,
         "section_padding_top": 0,
-        "section_padding_bottom": 0,
+        "section_padding_bottom": 12,
         "enable_section_style_mobile": true,
         "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
+        "section_padding_bottom_mobile": 4,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -748,8 +709,8 @@
         "heading_tag": "h2",
         "subheading": "",
         "heading_font_class": "fs-heading-3-base",
-        "heading_alignment": "left",
-        "content_vertical_alignment": "top",
+        "heading_alignment": "center",
+        "content_vertical_alignment": "center",
         "content_background_padding": "medium",
         "columns": "4",
         "column_spacing": 28,
@@ -759,7 +720,7 @@
         "columns_mobile": "2",
         "column_spacing_mobile": 20,
         "row_spacing_mobile": 20,
-        "column_alignment_mobile": "left",
+        "column_alignment_mobile": "center",
         "background_behind_columns": false,
         "background_color": "",
         "text_color": "#000000",

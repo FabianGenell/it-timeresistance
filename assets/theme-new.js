@@ -10037,7 +10037,7 @@ register('collection-list-slider', {
         // settings, with the exception of 5, which then shrinks down to 4 across.
         this.carousel = Carousel(this.container, {
             slidesPerView: this.mobilePerView,
-            spaceBetween: this.spaceBetween,
+            spaceBetween: this.spaceBetweenMobile,
             loop: true,
             breakpoints: {
                 720: {

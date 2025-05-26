@@ -10024,8 +10024,8 @@ register('collection-list-slider', {
         // we call on carousel.  Can also simplify the config that we pass in
         // to something like perViewSmall, perViewMedium, perViewLarge and same with
         // spaceBetween?
-        this.spaceBetween = spaceBetween;
-        this.spaceBetweenMobile = spaceBetweenMobile;
+        this.spaceBetween = parseInt(spaceBetween, 10);
+        this.spaceBetweenMobile = parseInt(spaceBetweenMobile, 10);
         this.mobilePerView = parseInt(mobileProductsPerView, 10) * 1.05;
         this._initCarousel();
         if (shouldAnimate(this.container)) {

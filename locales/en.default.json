@@ -74,14 +74,14 @@
         "one": "{{ count }} item",
         "other": "{{ count }} items"
       },
-      "order_note_button_add": "Add order notes",
-      "order_note_button_edit": "Edit order notes",
-      "order_note_label": "Order note",
+      "order_note_button_add": "Add Order special instructions",
+      "order_note_button_edit": "Edit order special instructions",
+      "order_note_label": "Order special instructions",
       "order_note_placeholder": "Add special instructions for the seller...",
       "remove": "Remove",
       "subtotal": "Subtotal",
       "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout",
       "taxes_included_and_shipping_policy_html": "All taxes included",
       "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
       "title": "Your cart",
@@ -109,7 +109,7 @@
       "name": "Name",
       "phone": "Phone",
       "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
-      "recaptcha_terms_html": "This site is protected by reCAPTCHA and the Google <a href='https:\/\/policies.google.com\/privacy'>Privacy Policy<\/a> and <a href='https:\/\/policies.google.com\/terms'>Terms of Service<\/a> apply.",
+      "recaptcha_terms_html": "This site is protected by reCAPTCHA and the Google <a href='https://policies.google.com/privacy'>Privacy Policy</a> and <a href='https://policies.google.com/terms'>Terms of Service</a> apply.",
       "submit": "Submit"
     }
   },
@@ -135,7 +135,7 @@
       "cancel": "Cancel",
       "city": "City",
       "company": "Company",
-      "country": "Country\/Region",
+      "country": "Country/Region",
       "default": "Default",
       "delete": "Delete",
       "delete_confirm": "Are you sure you wish to delete this address?",
@@ -148,7 +148,7 @@
       "set_default": "Set as default address",
       "title": "Your addresses",
       "update": "Update address",
-      "zip": "Postal\/Zip Code"
+      "zip": "Postal/Zip Code"
     },
     "login": {
       "email": "Email",
@@ -341,7 +341,7 @@
       "viewing": "You’re viewing {{ of }} of {{ total }}"
     },
     "password_page": {
-      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"btn btn--text-link\">Log in here<\/a>",
+      "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"btn btn--text-link\">Log in here</a>",
       "login_form_heading": "Enter store using password:",
       "login_form_password_placeholder": "Your password",
       "login_form_submit": "Enter",
@@ -436,7 +436,7 @@
         "zero": "No {{ chip_name }}s"
       },
       "choose_options": "Choose options",
-      "country_placeholder": "Country\/Region",
+      "country_placeholder": "Country/Region",
       "description": "Description",
       "estimate_shipping": "Estimate shipping",
       "from_lowest_price_html": "from {{ lowest_price }}",
@@ -464,7 +464,7 @@
       "regular_price": "Regular price",
       "reviews": "Customer reviews",
       "sale_price": "Sale price",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
       "sku": "SKU",
       "sku_with_value": "SKU: {{ value }}",
       "sold_out": "Sold out",
@@ -523,7 +523,7 @@
     "drawer_menu": {
       "account": {
         "logged_in": "My Account",
-        "logged_out": "Register \/ Login",
+        "logged_out": "Register / Login",
         "logout": "Logout"
       },
       "currency": "Currency",
@@ -558,8 +558,8 @@
     "sales_banner": {
       "sale_units": {
         "off": "off",
-        "per_month": "\/mo",
-        "per_year": "\/yr",
+        "per_month": "/mo",
+        "per_year": "/yr",
         "percent": "%"
       }
     },

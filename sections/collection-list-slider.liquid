@@ -32,6 +32,8 @@
   data-section-type="collection-list-slider"
   data-products-per-view="{{ section.settings.columns }}"
   data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
+  data-space-between="{{ section.settings.space_between }}"
+  data-space-between-mobile="{{ section.settings.space_between_mobile }}"
 >
   <div class="collection-list-slider__inner">
     <div class="collection-list-slider__meta carousel__navigation-wrapper">
@@ -207,6 +209,26 @@
           "label": "t:shared.settings.column_count.columns.option_2"
         }
       ]
+    },
+    {
+      "type": "range",
+      "id": "space_between",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Space Between",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "space_between_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Space Between (Mobile)",
+      "default": 12
     },
     {
       "id": "collection_list",

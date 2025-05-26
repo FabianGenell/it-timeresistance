@@ -29,6 +29,8 @@
       endunless
     endfor
   endcapture
+
+  assign product_title = prod.metafields.custom.short_product_name | default: prod.title
 -%}
 
 <div
@@ -63,7 +65,7 @@
       </div>
 
       <div class="sticky-atc-bar__meta">
-        <h5 class="ff-heading fs-heading-5-base md:inline hidden">{{ prod.title }}</h5>
+        <h5 class="ff-heading text-xl">{{ product_title }}</h5>
 
         {%- unless prod.has_only_default_variant %}
           <span class="sticky-atc-bar__meta-options fs-body-75 t-opacity-60">{{ options_csl }}</span>

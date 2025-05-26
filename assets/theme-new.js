@@ -6487,33 +6487,13 @@ function stickyAtcBar(container) {
             threshold: 0.8
         }
     );
-    footerObserver.observe(elements.pageFooter);
+    buyButtonsObserver.observe(elements.buyButtons);
 
     const handleScroll = () => {
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollThreshold = 5; // px, to prevent flickering on minor scrolls
-
-        if (!elements.stickyAtcBar) return; // Safety check
-
-        const scrollingDown = currentScrollTop > lastScrollTop + scrollThreshold;
-        const scrollingUp = currentScrollTop < lastScrollTop - scrollThreshold;
-
-        if (!footerInView) {
-            if (scrollingDown && !mainBuyButtonsInView) {
-                if (elements.stickyAtcBar.classList.contains(classes.hidden)) {
-                    showBar();
-                }
-            } else if (scrollingUp) {
-                if (!elements.stickyAtcBar.classList.contains(classes.hidden)) {
-                    hideBar();
-                }
-            }
-        } else { // Footer is in view
-            if (!elements.stickyAtcBar.classList.contains(classes.hidden)) {
-                hideBar(); // Ensure bar is hidden if footer is visible
-            }
+        if(!mainBuyButtonsInView) {
+            showBar();
         }
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        
     };
 
     const handleSubmit = (e) => {
@@ -10031,7 +10011,7 @@ register('collapsible-row-list', {
 
 register('collection-list-slider', {
     onLoad() {
-        const { productsPerView, mobileProductsPerView } = this.container.dataset;
+        const { productsPerView, mobileProductsPerView, spaceBetween, spaceBetweenMobile } = this.container.dataset;
         this.events = [];
         this.perView = parseInt(productsPerView, 10);
         // 1.05 factor gives us a "peek" without CSS hacks
@@ -10039,6 +10019,8 @@ register('collection-list-slider', {
         // we call on carousel.  Can also simplify the config that we pass in
         // to something like perViewSmall, perViewMedium, perViewLarge and same with
         // spaceBetween?
+        this.spaceBetween = spaceBetween;
+        this.spaceBetweenMobile = spaceBetweenMobile;
         this.mobilePerView = parseInt(mobileProductsPerView, 10) * 1.05;
         this._initCarousel();
         if (shouldAnimate(this.container)) {
@@ -10050,19 +10032,19 @@ register('collection-list-slider', {
         // settings, with the exception of 5, which then shrinks down to 4 across.
         this.carousel = Carousel(this.container, {
             slidesPerView: this.mobilePerView,
-            spaceBetween: 12,
+            spaceBetween: this.spaceBetween,
             loop: true,
             breakpoints: {
                 720: {
-                    spaceBetween: 16,
+                    spaceBetween: this.spaceBetweenMobile,
                     slidesPerView: this.perView === 5 ? this.perView - 1 : this.perView
                 },
                 1200: {
-                    spaceBetween: 24,
+                    spaceBetween: this.spaceBetween,
                     slidesPerView: this.perView
                 },
                 2400: {
-                    spaceBetween: 24,
+                    spaceBetween: this.spaceBetween,
                     slidesPerView: Math.abs(this.perView * 1.5)
                 }
             }

@@ -36,8 +36,28 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
+    "custom_video_iLPyBA": {
+      "type": "custom-video",
+      "name": "Custom Video",
+      "settings": {
+        "video_desktop": "{{ collection.metafields.custom.hero_video_desktop.value }}",
+        "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
+        "video_large": "{{ collection.metafields.custom.hero_video_desktop.value }}",
+        "autoplay": true,
+        "pause_outside_viewport": true,
+        "viewport_threshold": 50,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
     "video_hero_MkXiD8": {
       "type": "video-hero",
+      "disabled": true,
       "settings": {
         "image_aspect": "original",
         "desktop_height": 100,
@@ -254,6 +274,8 @@
         "link_text": "",
         "columns": "4",
         "mobile_columns": "2",
+        "space_between": 12,
+        "space_between_mobile": 12,
         "collection_list": [
           "briefcases-for-men",
           "clutches-for-men",
@@ -296,6 +318,7 @@
   },
   "order": [
     "banner",
+    "custom_video_iLPyBA",
     "video_hero_MkXiD8",
     "product-grid",
     "multi_column_pWTiRm",

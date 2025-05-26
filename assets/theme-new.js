@@ -7217,9 +7217,14 @@ class Product {
         this.mediaContainersMobile = Media(this.mobileMedia);
         this._initThumbnails();
         // Load productlightbox
-        document.addEventListener('theme:loaded', () => {
+        if(!window.theme.loaded ){
+            document.addEventListener('theme:loaded', () => {
+                productLightbox();
+            });
+        }else {
             productLightbox();
-        });
+        }
+
 
         if (this.isFullProduct && this.mobileQuery.matches) {
             this._initPhotoCarousel();

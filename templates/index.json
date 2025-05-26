@@ -870,6 +870,8 @@
         "link_text": "",
         "columns": "4",
         "mobile_columns": "2",
+        "space_between": 4,
+        "space_between_mobile": 12,
         "collection_list": [
           "briefcases-for-men",
           "clutches-for-men",
@@ -919,6 +921,8 @@
         "link_text": "",
         "columns": "4",
         "mobile_columns": "2",
+        "space_between": 4,
+        "space_between_mobile": 12,
         "collection_list": [
           "handbags-for-women",
           "backpacks-for-women",

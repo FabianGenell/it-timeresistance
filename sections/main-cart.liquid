@@ -212,17 +212,20 @@
           {%- endif -%}
 
           {%- if show_cart_points -%}
-            <ul class="hidden md:flex flex-col gap-4 md:pt-6">
+            <ul class="hidden md:flex flex-col gap-4 md:pt-6 text-base [&>svg]:size-7">
+              {% capture cart_points %}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'point' -%}
                   <li {{ block.shopify_attributes }} class="flex gap-2 items-center">
-                    {% render 'icon-editorial' with class: "size-7", icon: block.settings.icon %}
-                    <span class="text-lg">
+                    {% render 'icon-editorial' with icon: block.settings.icon %}
+                    <span class="">
                       {{- block.settings.text -}}
                     </span>
                   </li>
                 {%- endif -%}
               {%- endfor -%}
+            {% endcapture %}
+              {{ cart_points }}
             </ul>
           {%- endif -%}
 
@@ -290,6 +293,12 @@
                   {{ 'cart.general.checkout' | t }}
                 </button>
               </div>
+
+              {%- if show_cart_points -%}
+                <ul class="md:hidden flex flex-col gap-4 mb-4 text-sm [&>svg]:size-5">
+                  {{ cart_points }}
+                </ul>
+              {%- endif -%}
 
               <p class="t-subdued mt-2">
                 {{- 'cart.general.discount_code' | t -}}

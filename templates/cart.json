@@ -16,28 +16,28 @@
           "type": "point",
           "settings": {
             "text": "100% Secure Payments",
-            "icon": "checked-box"
+            "icon": "checked-circle"
           }
         },
         "point_HrnHFQ": {
           "type": "point",
           "settings": {
             "text": "Covered by Lifetime Warranty",
-            "icon": "checked-box"
+            "icon": "checked-circle"
           }
         },
         "point_bchE8C": {
           "type": "point",
           "settings": {
             "text": "Free 30-Day Returns",
-            "icon": "checked-box"
+            "icon": "checked-circle"
           }
         },
         "point_aeFVrq": {
           "type": "point",
           "settings": {
             "text": "All Taxes Included for Australian Customers",
-            "icon": "checked-box"
+            "icon": "checked-circle"
           }
         }
       },

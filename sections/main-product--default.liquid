@@ -185,6 +185,10 @@
   assign media_show_limit = media_show_limit | plus: initial_variant_media_index
 
   # Account for gutter between columns and page outer space
+
+  capture first_desktop_image_sizes_attribute
+    echo desktop_image_container_percentage | append: 'vw'
+  endcapture
   capture desktop_image_sizes_attribute
     echo desktop_image_percentage_width | append: 'vw'
   endcapture
@@ -449,12 +453,20 @@
                 continue
               endif
 
+              # If it's a variants first image then load 2x the size
+              if media_delimiters_positions contains media.position
+                assign sizes = first_desktop_image_sizes_attribute
+              else
+                assign sizes = desktop_image_sizes_attribute
+              endif
+
               assign media_aspect_ratio = image_aspect_ratio
 
               if media.media_type == 'model'
                 assign media_aspect_ratio = 'square'
               endif
             -%}
+
             <div
               class="
                 product__media-item
@@ -476,7 +488,7 @@
                 enable_product_lightbox: section.settings.enable_product_lightbox,
                 loop_video: section.settings.enable_video_looping,
                 aspect_ratio: media_aspect_ratio,
-                sizes: '50vw',
+                sizes: sizes,
                 animate: true,
                 within_carousel: false
               %}

@@ -130,7 +130,7 @@
                   {% if price_content_type == 'price'
                     or item.variant.compare_at_price > item.original_price
                   %}
-                    <div class="cart__form-item-price-wrapper fs-body-75">
+                    <div class="cart__form-item-price-wrapper text-lg md:text-xl">
                       <{{ price_tag_type }} class="cart__form-item-price">
                         {{- item_price | money }}
                         {{ iso_code -}}
@@ -249,8 +249,8 @@
                 {%- endif -%}
 
                 <div class="cart__footer-subtotal">
-                  <h3 class="ff-body fs-body-200">{{ 'cart.general.subtotal' | t }}</h3>
-                  <span class="ff-body fs-body-200">
+                  <h3 class="ff-body text-xl">{{ 'cart.general.subtotal' | t }}</h3>
+                  <span class="ff-body text-xl">
                     {{- cart.total_price | money -}}
                     {%- if section.settings.show_product_currency %} {{ cart.currency.iso_code }}{% endif -%}
                   </span>

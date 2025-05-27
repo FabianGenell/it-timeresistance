@@ -229,7 +229,7 @@
         "desktop_height": 100,
         "mobile_height": 100,
         "image": "shopify://shop_images/engraving_new_website_1.svg",
-        "image_mobile": "shopify://shop_images/mobile_fonts2.webp",
+        "image_mobile": "shopify://shop_images/engraving_new_website_mobile.svg",
         "focal_point": "image_presentation",
         "mobile_focal_point": "image_presentation",
         "media_link": "",

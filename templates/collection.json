@@ -36,7 +36,7 @@
       "settings": {
         "video_desktop": "{{ collection.metafields.custom.hero_video_desktop.value }}",
         "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
-        "video_large": "{{ collection.metafields.custom.hero_video_desktop.value }}",
+        "video_large": "{{ collection.metafields.custom.hero_video_large.value }}",
         "autoplay": true,
         "pause_outside_viewport": true,
         "viewport_threshold": 50,

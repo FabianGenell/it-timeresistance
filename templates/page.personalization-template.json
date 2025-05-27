@@ -309,6 +309,59 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
+    "video_cetFC4": {
+      "type": "video",
+      "blocks": {
+        "heading_DkLDby": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Video",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-2"
+          }
+        },
+        "text_whUxtM": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this section to promote a particular feature with editorial video.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "play_button_wBdQLh": {
+          "type": "play-button",
+          "settings": {
+            "text": "",
+            "button_layout": "full",
+            "icon_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DkLDby",
+        "text_whUxtM",
+        "play_button_wBdQLh"
+      ],
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "video_source": "shopify",
+        "video": "shopify://files/videos/05_26_graviravimas.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "loop": false,
+        "media_aspect_ratio": "landscape_ultrawide_alt",
+        "focal_point": "image_presentation",
+        "text_position": "center_center",
+        "text_position_mobile": "center",
+        "button_background_color": "#FFF",
+        "color_overlay": "#000",
+        "color_overlay_text": "#FFF",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
     "rich_text_TUDrhn": {
       "type": "rich-text",
       "blocks": {
@@ -583,6 +636,7 @@
     "image_hero_KjifRk",
     "rich_text_wtR4Am",
     "image_hero_kmPdjY",
+    "video_cetFC4",
     "rich_text_TUDrhn",
     "image_hero_QEqrdA",
     "video_a3cwmp",

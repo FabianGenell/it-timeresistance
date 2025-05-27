@@ -5,6 +5,9 @@ module.exports = {
     safelist: ["grid-cols-3", "grid-cols-2"],
     theme: {
         extend: {
+            screens: {
+                xlg: "1800px"
+            },
             colors: {
                 text: "var(--color-text)",
                 textLink: "var(--color-text-link)",

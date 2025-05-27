@@ -75,10 +75,10 @@
         <!-- Poster Image - Sets Aspect Ratio -->
         <div class="poster-image relative w-full transition-opacity duration-500">
           {%- render 'pictures',
-            breakpoints: '719, 1536',
+            breakpoints: '719, 1800',
             image: desktop_poster_image,
             image_719: mobile_poster_image,
-            image_1536: large_poster_image,
+            image_1800: large_poster_image,
             sizes: '100vw',
             widths: '390, 719, 1200, 1600, 1920, 3000',
             section_index: section.index
@@ -109,7 +109,7 @@
             <source
               src="{{ large_video_url }}"
               type="video/mp4"
-              media="(min-width: 1536px)"
+              media="(min-width: 1800px)"
               data-aspect-ratio="{{ large_aspect_ratio }}"
             >
           {% endif %}

@@ -275,7 +275,7 @@
         "columns": "4",
         "mobile_columns": "2",
         "space_between": 12,
-        "space_between_mobile": 12,
+        "space_between_mobile": 4,
         "collection_list": [
           "briefcases-for-men",
           "clutches-for-men",

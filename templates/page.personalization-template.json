@@ -427,7 +427,7 @@
         "color_overlay": "#000",
         "color_overlay_text": "#FFF",
         "color_overlay_gradient": "",
-        "overlay_opacity": 40,
+        "overlay_opacity": 0,
         "enable_animation": true,
         "section_padding": "section--vertical-padding-top-bottom"
       }

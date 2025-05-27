@@ -6490,10 +6490,26 @@ function stickyAtcBar(container) {
     buyButtonsObserver.observe(elements.buyButtons);
 
     const handleScroll = () => {
-        if(!mainBuyButtonsInView) {
-            showBar();
-        }
-        
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollThreshold = 5; // px, to prevent flickering on minor scrolls
+
+        if (!elements.stickyAtcBar) return; // Safety check
+
+        const scrollingDown = currentScrollTop > lastScrollTop + scrollThreshold;
+        const scrollingUp = currentScrollTop < lastScrollTop - scrollThreshold;
+
+
+            if (scrollingDown && !mainBuyButtonsInView) {
+                if (elements.stickyAtcBar.classList.contains(classes.hidden)) {
+                    showBar();
+                }
+            } else if (scrollingUp) {
+                if (!elements.stickyAtcBar.classList.contains(classes.hidden)) {
+                    hideBar();
+                }
+            }
+       
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     };
 
     const handleSubmit = (e) => {

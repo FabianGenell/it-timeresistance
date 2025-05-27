@@ -27,19 +27,6 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 30,
         "enable_animation": true,
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
-    "custom_video": {
-      "type": "custom-video",
-      "name": "Custom Video",
-      "settings": {
-        "video_desktop": "{{ collection.metafields.custom.hero_video_desktop.value }}",
-        "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
-        "video_large": "{{ collection.metafields.custom.hero_video_large.value }}",
-        "autoplay": true,
-        "pause_outside_viewport": true,
-        "viewport_threshold": 50,
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
@@ -70,6 +57,34 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "custom_video": {
+      "type": "custom-video",
+      "name": "Custom Video",
+      "settings": {
+        "video_desktop": "{{ collection.metafields.custom.hero_video_desktop.value }}",
+        "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
+        "video_large": "{{ collection.metafields.custom.hero_video_large.value }}",
+        "desktop_poster_image": "{{ collection.metafields.custom.hero_poster_desktop.value }}",
+        "mobile_poster_image": "{{ collection.metafields.custom.hero_poster_mobile.value }}",
+        "large_poster_image": "{{ collection.metafields.custom.hero_poster_large.value }}",
+        "autoplay": true,
+        "pause_outside_viewport": true,
+        "viewport_threshold": 50,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -207,6 +222,12 @@
         "button_text_color": "#ffffff",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     }

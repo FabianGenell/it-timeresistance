@@ -41,6 +41,46 @@
         "name": "single_line_text_field",
         "category": "TEXT"
       }
+    },
+    {
+      "key": "hero_video_large",
+      "namespace": "custom",
+      "name": "hero video large",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_poster_mobile",
+      "namespace": "custom",
+      "name": "hero poster mobile",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_poster_desktop",
+      "namespace": "custom",
+      "name": "hero poster desktop",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_poster_large",
+      "namespace": "custom",
+      "name": "hero poster large",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "company": [],

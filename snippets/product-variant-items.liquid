@@ -7,7 +7,7 @@
   @param {object} [filters] - Collection filters, defaults to collection.filters
   @param {number} product_columns_desktop - Number of columns to display on desktop
   @param {number} product_columns_mobile - Number of columns to display on mobile
-  @param {string} aspect_ratio - Aspect ratio for the product images
+  @param {string} aspect_ratio - Aspect ratio for the product images [portrait, landscape, square, portrait_alt, landscape_alt, landscape_wide_alt]
   @param {boolean} has_grid_reveal - Whether to enable grid reveal animation
   @param {boolean} [show_price] - Whether to show the price
   @param {boolean} [show_favorite_button] - Whether to show the favorite button
@@ -19,7 +19,7 @@
     filters: collection.filters,
     product_columns_desktop: 4,
     product_columns_mobile: 1,
-    aspect_ratio: '4:3',
+    aspect_ratio: 'landscape',
     has_grid_reveal: false,
     show_price: true,
     show_favorite_button: true,

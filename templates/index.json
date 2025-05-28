@@ -141,7 +141,6 @@
     "custom_video_MN3FLx": {
       "type": "custom-video",
       "custom_css": [],
-      "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
         "video_mobile": "shopify://files/videos/mobilevid1.mp4",
@@ -495,7 +494,6 @@
     },
     "custom_video_ic4gYR": {
       "type": "custom-video",
-      "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/9ce6d6481af048a48f9baac7766df782.mp4",
         "video_mobile": "shopify://files/videos/cd7586dc84cc41c1b4e0dbafa451962d_f5c043c6-97be-4e00-a968-cd543d4c14e6.mp4",
@@ -602,7 +600,7 @@
             "focal_point": "image_presentation",
             "text_position": "center_flex-end",
             "accent": "",
-            "title": "LASER ENGRAVING",
+            "title": "PERSONALIZATION",
             "heading_tag": "h3",
             "header_size": "md:text-2xl",
             "header_size_mobile": "text-xl",
@@ -611,7 +609,7 @@
             "subheading_font_class": "fs-heading-5-base",
             "text": "",
             "text_font_class": "fs-body-100",
-            "link": "shopify://pages/laser-engraving",
+            "link": "shopify://pages/personalization",
             "link_text": "See more",
             "button_style": "btn--primary",
             "button_padding": "10px 40px",

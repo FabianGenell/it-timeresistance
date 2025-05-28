@@ -7412,30 +7412,28 @@ class Product {
                         this.mobileSwiper.slideTo(targetSlideIndex);
                     }
                 } else {
-                    const imagesWrap = qs('.product__media-container.above-mobile');
-                    if (imagesWrap.dataset.galleryStyle === 'thumbnails') {
-                        switchImage(this.desktopMedia, variant.featured_media.id, this.viewInYourSpace);
-                        this.highlightActiveThumbnail(this.desktopMedia, variant);
-                        this.scrollThumbnails(variant);
-                    } else {
-                        if (this.isFeaturedProduct) {
-                            this._switchCurrentImage(variant.featured_media.id);
-                        } else {
+                    // Check if we're on mobile or desktop view
+                    const isMobileView = this.mobileQuery.matches;
+                    
+                    if (isMobileView) {
+                        // Handle mobile non-carousel view
+                        const mobileImagesWrap = qs('.product__media-container.below-mobile');
+                        if (mobileImagesWrap) {
                             const targetImage = qs(
-                                '.product__media-container.above-mobile [data-media-id="'.concat(
-                                    variant.featured_media.id,
-                                    '"]'
-                                )
+                                '[data-media-id="'.concat(variant.featured_media.id, '"]'),
+                                mobileImagesWrap
                             );
-                            const moreMediaButton = qs(selectors$G.moreMediaButton, this.container);
-                            const productMedia = qs(selectors$G.productMedia, this.container);
+                            const moreMediaButton = qs(selectors$G.moreMediaButton, mobileImagesWrap);
+                            const productMedia = qs(selectors$G.productMedia, mobileImagesWrap);
                             let visibleVariantImage = true;
-                            if (moreMediaButton) {
-                                const mediaLimit = parseInt(productMedia.dataset.mediaLimit);
+                            
+                            if (moreMediaButton && productMedia) {
+                                const mediaLimit = parseInt(productMedia.dataset.mediaLimitMobile || productMedia.dataset.mediaLimit);
                                 visibleVariantImage =
                                     productMedia.dataset.productMedia === 'open' ||
                                     mediaLimit >= variant.featured_media.position;
                             }
+                            
                             if (!moreMediaButton || visibleVariantImage) {
                                 targetImage === null ||
                                     targetImage === void 0 ||
@@ -7444,8 +7442,47 @@ class Product {
                                         block: 'nearest',
                                         inline: 'nearest'
                                     });
-                            } else if (!visibleVariantImage) {
-                                this.desktopMoreMedia.open(targetImage, true);
+                            } else if (!visibleVariantImage && this.mobileMoreMedia) {
+                                this.mobileMoreMedia.open(targetImage, true);
+                            }
+                        }
+                    } else {
+                        // Handle desktop view
+                        const imagesWrap = qs('.product__media-container.above-mobile');
+                        if (imagesWrap.dataset.galleryStyle === 'thumbnails') {
+                            switchImage(this.desktopMedia, variant.featured_media.id, this.viewInYourSpace);
+                            this.highlightActiveThumbnail(this.desktopMedia, variant);
+                            this.scrollThumbnails(variant);
+                        } else {
+                            if (this.isFeaturedProduct) {
+                                this._switchCurrentImage(variant.featured_media.id);
+                            } else {
+                                const targetImage = qs(
+                                    '.product__media-container.above-mobile [data-media-id="'.concat(
+                                        variant.featured_media.id,
+                                        '"]'
+                                    )
+                                );
+                                const moreMediaButton = qs(selectors$G.moreMediaButton, imagesWrap);
+                                const productMedia = qs(selectors$G.productMedia, imagesWrap);
+                                let visibleVariantImage = true;
+                                if (moreMediaButton && productMedia) {
+                                    const mediaLimit = parseInt(productMedia.dataset.mediaLimit);
+                                    visibleVariantImage =
+                                        productMedia.dataset.productMedia === 'open' ||
+                                        mediaLimit >= variant.featured_media.position;
+                                }
+                                if (!moreMediaButton || visibleVariantImage) {
+                                    targetImage === null ||
+                                        targetImage === void 0 ||
+                                        targetImage.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'nearest',
+                                            inline: 'nearest'
+                                        });
+                                } else if (!visibleVariantImage) {
+                                    this.desktopMoreMedia.open(targetImage, true);
+                                }
                             }
                         }
                     }

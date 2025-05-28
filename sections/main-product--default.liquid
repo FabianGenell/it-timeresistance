@@ -18,7 +18,7 @@
   assign gallery_style_mobile = section.settings.gallery_style_mobile
   assign gallery_size = section.settings.gallery_size
   assign gallery_overflow = section.settings.gallery_overflow
-  assign gallery_overflow_mobile = section.settings.gallery_overflow
+  assign gallery_overflow_mobile = section.settings.gallery_overflow_mobile
   assign image_aspect_ratio = section.settings.image_aspect_ratio
   assign header_block = section.blocks | where: 'type', 'product_header'
 
@@ -356,6 +356,8 @@
         >
           <div
             class="product__media"
+            data-media-limit="{{ media_limit }}"
+            data-media-limit-mobile="{{ media_limit_mobile }}"
             {% if over_media_show_limit_mobile %}
               data-product-media="closed"
               style="
@@ -439,6 +441,7 @@
         <div
           class="product__media"
           data-media-limit="{{ media_limit }}"
+          data-media-limit-mobile="{{ media_limit_mobile }}"
           {% if over_media_show_limit -%}
             data-product-media="closed"
             style="
@@ -785,6 +788,30 @@
       "id": "gallery_overflow",
       "label": "t:sections.main_product_overview.settings.gallery_overflow.label",
       "default": "2",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main_product_overview.settings.gallery_overflow.option_1_row"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main_product_overview.settings.gallery_overflow.option_2_rows"
+        },
+        {
+          "value": "3",
+          "label": "t:sections.main_product_overview.settings.gallery_overflow.option_3_rows"
+        },
+        {
+          "value": "never",
+          "label": "t:sections.main_product_overview.settings.gallery_overflow.option_never"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "gallery_overflow_mobile",
+      "label": "Hide gallery media after (mobile)",
+      "default": "3",
       "options": [
         {
           "value": "1",

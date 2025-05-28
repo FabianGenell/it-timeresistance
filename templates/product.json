@@ -101,9 +101,9 @@
             "column_placement": "right",
             "heading": "Features",
             "heading_tag": "h6",
-            "content": "{{ product.metafields.custom.product_features | metafield_tag }}",
+            "content": "",
             "page_for_content": "",
-            "custom_liquid": ""
+            "custom_liquid": "{{ product.metafields.custom.product_features | metafield_tag }}\n\n<reload-on-event\n  class=\"block mt-2\"\n  id=\"reload-product-item-{{ prod.handle }}\"\n  data-event=\"product:variant-change\"\n  data-reload-section=\"false\"\n>\n  {%- if product.selected_or_first_available_variant -%}\n    <p class=\"mt-1\">SKU: {{ product.selected_or_first_available_variant.sku }}</p>\n  {%- endif -%}\n</reload-on-event>"
           }
         },
         "accordion-2": {
@@ -180,6 +180,7 @@
         "gallery_style_mobile": "grid",
         "gallery_size": "medium",
         "gallery_overflow": "never",
+        "gallery_overflow_mobile": "3",
         "enable_video_looping": true,
         "enable_product_lightbox": true,
         "image_aspect_ratio": "natural",

@@ -282,7 +282,7 @@
       "type": "media-gallery",
       "settings": {
         "use_variant_images": true,
-        "heading": "Gallery carousel",
+        "heading": "Our Community - {{ product.metafields.custom.product_name_only.value }}",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",

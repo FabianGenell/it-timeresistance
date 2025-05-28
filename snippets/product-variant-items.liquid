@@ -1,14 +1,31 @@
-{%- comment -%}
-  Variables that can be passed to this snippet:
-  - prod: (object) The product object to display variants for
-  - filters: (object) Optional. Collection filters, defaults to collection.filters
-  - product_columns_desktop: (number) Number of columns to display on desktop
-  - product_columns_mobile: (number) Number of columns to display on mobile
-  - aspect_ratio: (string) Aspect ratio for the product images
-  - has_grid_reveal: (boolean) Whether to enable grid reveal animation
-  - show_price: (boolean) Whether to show the price
-  - show_favorite_button: (boolean) Whether to show the favorite button
-{%- endcomment -%}
+{% doc %}
+  Product variant items snippet
+  
+  Renders product variants as individual product items, with optional filtering by color.
+
+  @param {object} prod - The product object to display variants for
+  @param {object} [filters] - Collection filters, defaults to collection.filters
+  @param {number} product_columns_desktop - Number of columns to display on desktop
+  @param {number} product_columns_mobile - Number of columns to display on mobile
+  @param {string} aspect_ratio - Aspect ratio for the product images
+  @param {boolean} has_grid_reveal - Whether to enable grid reveal animation
+  @param {boolean} [show_price] - Whether to show the price
+  @param {boolean} [show_favorite_button] - Whether to show the favorite button
+  @param {boolean} [show_unavailable_variants] - Whether to show unavailable variants (default: false)
+
+  @example
+  {% render 'product-variant-items',
+    prod: product,
+    filters: collection.filters,
+    product_columns_desktop: 4,
+    product_columns_mobile: 1,
+    aspect_ratio: '4:3',
+    has_grid_reveal: false,
+    show_price: true,
+    show_favorite_button: true,
+    show_unavailable_variants: false
+  %}
+{% enddoc %}
 
 <!-- snippets/product-variant-items.liquid -->
 
@@ -30,7 +47,7 @@
   # Split the selected colors into an array
   assign color_array = selected_colors | split: ','
 
-  assign show_unavailable_variants = false
+  assign show_unavailable_variants = show_unavailable_variants | default: false
 -%}
 
 {% for variant in prod.variants %}
@@ -42,24 +59,29 @@
       # Check if any variant option matches any selected color
       for color in color_array
         if variant.option1 == color or variant.option2 == color or variant.option3 == color
-          if variant.available or show_unavailable_variants
-            assign show_variant = true
-            break
-          endif
+          assign show_variant = true
+          break
         endif
       endfor
     endif
+
+    if variant.available == false and show_unavailable_variants != true
+      assign show_variant = false
+    endif
+
+    if show_variant == false
+      continue
+    endif
   -%}
-  {%- if show_variant -%}
-    {% render 'product-item',
-      prod: prod,
-      var: variant,
-      product_columns_desktop: product_columns_desktop,
-      product_columns_mobile: product_columns_mobile,
-      aspect_ratio: aspect_ratio,
-      has_grid_reveal: has_grid_reveal,
-      show_favorite_button: show_favorite_button,
-      show_price: show_price
-    %}
-  {%- endif -%}
+
+  {% render 'product-item',
+    prod: prod,
+    var: variant,
+    product_columns_desktop: product_columns_desktop,
+    product_columns_mobile: product_columns_mobile,
+    aspect_ratio: aspect_ratio,
+    has_grid_reveal: has_grid_reveal,
+    show_favorite_button: show_favorite_button,
+    show_price: show_price
+  %}
 {% endfor %}

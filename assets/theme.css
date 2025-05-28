@@ -13966,39 +13966,7 @@ html.sticky-header-active[data-enable-sticky-announcement-bar*="mobile"] .quick-
       padding:calc(4px * 2) calc(4px * 5) calc(4px * 2) calc(4px * 2);
       padding:var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-2);
     }
-.play-button-block.play-button-block--icon-style-dark .icon{
-      color:black;
-    }
-.play-button-block.play-button-block--icon-style-dark .icon circle{
-        fill:black;
-        fill-opacity:1;
-      }
-.play-button-block.play-button-block--icon-style-dark .icon path{
-        fill:white;
-      }
-.play-button-block.play-button-block--icon-style-light .icon{
-      color:white;
-    }
-.play-button-block.play-button-block--icon-style-light .icon circle{
-        fill:white;
-        fill-opacity:1;
-      }
-.play-button-block.play-button-block--icon-style-light .icon path{
-        fill:black;
-      }
-.play-button-block .icon{
-    width:34px;
-    height:34px;
-    display:flex;
-    align-items:center;
-  }
-.play-button-block .icon circle{
-      fill:var(
-        --color-background-overlay-button,
-        var(--color-background-button)
-      );
-      fill-opacity:0.05;
-    }
+
 .play-button-block__inner{
   position:relative;
   display:flex;

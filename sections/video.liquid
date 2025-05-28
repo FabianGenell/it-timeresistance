@@ -182,7 +182,7 @@
                 {{ block.shopify_attributes }}
               >
                 <button
-                  class="play-button-block__inner"
+                  class=""
                   type="button"
                   data-play-button-block
                   {% if block.settings.text == blank %}
@@ -192,8 +192,14 @@
                     data-flash-trigger data-flash-message="{{ 'general.flash_alert.no_video' | t }}"
                   {% endif %}
                 >
-                  <div class="play-button-block-left">
-                    {% render 'icon', icon: 'play-arrow' %}
+                  <div class="play-button-block-left w-8 md:w-14">
+                    <svg
+                      data-icon-play
+                      class="icon icon-play w-full h-auto"
+                      viewBox="0 0 102 118"
+                    >
+                      <polygon fill="white" points="0,0 102,59 0,118" />
+                    </svg>
                   </div>
 
                   {%- if block.settings.text != blank and block.settings.button_layout == 'full' -%}

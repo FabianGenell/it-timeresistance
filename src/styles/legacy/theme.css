@@ -2013,7 +2013,7 @@ html.sticky-header-enabled .shopify-section.header__outer-wrapper {
     html.sticky-header-enabled[data-enable-sticky-announcement-bar*="desktop"]
         .shopify-section.header__outer-wrapper {
         top: calc(0px + var(--announcement-height));
-        top: calc(var(--header-desktop-sticky-position, 0px) + var(--announcement-height));
+        top: var(--announcement-height);
     }
 }
 html.sticky-header-active body.scroll-lock .shopify-section.header__outer-wrapper {
@@ -2048,8 +2048,7 @@ html.sticky-header-active body.scroll-lock .shopify-section.header__outer-wrappe
 }
 @media (min-width: 960px) {
     .header {
-        padding-top: calc(4px * 3);
-        padding-top: var(--spacing-3);
+        padding-top: 8px;
     }
 }
 .header .image {

@@ -49,7 +49,8 @@ class ResponsiveVideo extends HTMLElement {
         if (this.autoplay && this.video) {
             // We don't set the autoplay attribute directly because browsers block it
             // Instead we'll manually call play() after loading
-            this.video.muted = true; // Must be muted for autoplay to work
+            this.video.dataset.autoplay = 'true';
+            this.video.muted = true;
         }
 
         // Get video sources

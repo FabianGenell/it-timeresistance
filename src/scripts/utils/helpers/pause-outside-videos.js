@@ -42,13 +42,13 @@ class VideoViewportManager {
         // Listen for YouTube player ready events
         window.addEventListener('youtube-player-ready', (event) => {
             const { element, player } = event.detail;
-            
+
             // Store the player
             this.externalPlayers.set(element, {
                 player,
                 type: 'youtube'
             });
-            
+
             // Start observing the iframe if not already observed
             if (!this.videoStates.has(element)) {
                 this.observer.observe(element);
@@ -63,13 +63,13 @@ class VideoViewportManager {
         // Listen for Vimeo player ready events
         window.addEventListener('vimeo-player-ready', (event) => {
             const { element, player } = event.detail;
-            
+
             // Store the player
             this.externalPlayers.set(element, {
                 player,
                 type: 'vimeo'
             });
-            
+
             // Start observing the iframe if not already observed
             if (!this.videoStates.has(element)) {
                 this.observer.observe(element);
@@ -105,7 +105,7 @@ class VideoViewportManager {
                 state.timeoutId = null;
             }
 
-            if (video.dataset.autoPaused === 'true') {
+            if (video.dataset.autoPaused === 'true' || video.dataset.autoplay === 'true') {
                 video.play();
                 video.dataset.autoPaused = false;
             }
@@ -159,7 +159,7 @@ class VideoViewportManager {
                     }, this.timeoutDuration);
                 }
             } else if (type === 'vimeo') {
-                player.getPaused().then(paused => {
+                player.getPaused().then((paused) => {
                     if (!paused) {
                         player.pause();
                         element.dataset.autoPaused = true;
@@ -177,7 +177,7 @@ class VideoViewportManager {
     // Method to observe new videos added dynamically
     observeNewVideos() {
         let newVideosFound = 0;
-        
+
         // Find and observe new HTML5 videos
         document.querySelectorAll('video').forEach((video) => {
             if (!this.videoStates.has(video)) {
@@ -202,11 +202,9 @@ class VideoViewportManager {
                 newVideosFound++;
             }
         });
-        
     }
 
     destroy() {
-        
         // Clear all timeouts
         this.videoStates.forEach((state) => {
             if (state.timeoutId) {
@@ -218,11 +216,10 @@ class VideoViewportManager {
         this.observer.disconnect();
         this.videoStates.clear();
         this.externalPlayers.clear();
-        
+
         // Remove event listeners
         window.removeEventListener('youtube-player-ready', this.listenForExternalPlayers);
         window.removeEventListener('vimeo-player-ready', this.listenForExternalPlayers);
-        
     }
 }
 

@@ -26,7 +26,20 @@ class FavoriteHandler {
     }
 
     removeFavorite(favoriteItem) {
-        this.favorites = this.favorites.filter((favorite) => favorite.handle !== favoriteItem.handle);
+        this.favorites = this.favorites.filter((favorite) => {
+            if (favorite.variantId) {
+                if (favorite.variantId === favoriteItem.variantId) {
+                    return false;
+                }
+            } else {
+                if (favorite.handle === favoriteItem.handle) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
         console.debug('Favorites after removal', this.favorites);
         this.updateLocalStorage(this.favorites);
         this.updateDisplayCount();

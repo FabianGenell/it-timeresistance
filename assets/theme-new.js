@@ -6447,8 +6447,6 @@ function stickyAtcBar(container) {
         submitButton: qs(selectors.submitButton, container)
     };
 
-    console.log(`lookinged for sticky atc bar in`, container, elements.stickyAtcBar);
-
     if (elements.stickyAtcBar == null) return;
     elements.imageWrap = qs(selectors.imageWrap, elements.stickyAtcBar);
     elements.optionValues = qs(selectors.optionValues, elements.stickyAtcBar);
@@ -10853,7 +10851,6 @@ register('slideshow', {
 });
 let loaded$1 = null;
 function loadYouTubeAPI() {
-    console.log('loadYouTubeAPI')
     // Loading was triggered by a previous call to function
     if (loaded$1 !== null) return loaded$1;
 
@@ -10921,9 +10918,7 @@ register('video', {
             switch (videoProvider) {
                 case 'youtube':
                     loadYouTubeAPI().then(() => {
-                        console.log('youtube video loaded video', window.YT)
-                        console.log('Video ID:', videoId, 'Loop:', loop);
-                        console.log('Video element:', videoExternal);
+
                         
                         // Check if we're in Brave browser
                         const isBrave = window.navigator.brave && window.navigator.brave.isBrave;

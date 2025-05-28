@@ -137,7 +137,9 @@ customElements.define('favorite-products', FavoriteProducts);
 class AddFavorite extends HTMLElement {
     constructor() {
         super();
+    }
 
+    connectedCallback() {
         this.productHandle = this.dataset.productHandle;
         this.variantId = this.dataset.variantId;
 

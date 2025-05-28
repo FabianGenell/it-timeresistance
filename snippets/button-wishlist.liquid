@@ -1,5 +1,11 @@
 {%- if prod.handle != blank -%}
+  {%- capture id -%}
+    add-favorite-{{ prod.handle }}{%- if var.id != blank -%}
+      -{{ var.id }}
+    {%- endif -%}
+  {%- endcapture -%}
   <add-favorite
+    id="{{ id }}"
     class="cursor-pointer group block  {{ class }}"
     data-product-handle="{{ prod.handle }}"
     {% if var.id != blank %}

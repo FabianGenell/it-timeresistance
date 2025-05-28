@@ -40,7 +40,10 @@
 -%}
 
 {%- unless section.settings.use_variant_images and variant_media_val == blank -%}
-  <reload-on-event data-event="product:variant-change">
+  <reload-on-event
+    id="reload-media-gallery-{{ section.id }}"
+    data-event="product:variant-change"
+  >
     <div
       class="
         gallery-carousel

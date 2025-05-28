@@ -199,9 +199,14 @@
         ></div>
       {%- endunless -%}
     </div>
-
-    {%- if show_favorites -%}
-      {%- render 'button-wishlist', prod: prod, class: 'p-3 mx-2' -%}
-    {%- endif -%}
+    <reload-on-event
+      id="reload-button-wishlist-{{ prod.handle }}"
+      data-event="product:variant-change"
+      data-reload-section="false"
+    >
+      {%- if show_favorites -%}
+        {%- render 'button-wishlist', prod: prod, class: 'p-3 mx-2', var: current_variant -%}
+      {%- endif -%}
+    </reload-on-event>
   </div>
 {%- endform -%}

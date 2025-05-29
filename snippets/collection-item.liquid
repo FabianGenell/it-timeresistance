@@ -24,6 +24,8 @@
   endif
 
   assign title = collection.metafields.custom.short_name | default: collection.title
+
+  assign button_id = 'button-' | append: collection.id | append: '-' | append: section.id
 -%}
 {% capture collection_label %}
   <div class="collection-item__label">
@@ -37,12 +39,20 @@
           {%- endif -%}
         </h4>
         {%- if section.settings.button_text != blank -%}
-            {%- capture style -%}
-              {%- render 'button-style', settings_object: section.settings, settings_key: 'button' -%}
-            {%- endcapture -%}
 
+            {%- style -%}
+                #{{ button_id }} {
+                  {%- render 'button-style', settings_object: section.settings, settings_key: 'button' -%}
+                }
+
+                @media (max-width: 768px) {
+
+                  #{{ button_id }} {
+                    {%- render 'button-style', settings_object: section.settings, settings_key: 'button_mobile' -%}
+                  }
+              {%- endstyle -%}
             <div
-              style="{{ style }}"
+              id="{{ button_id }}"
               class="btn btn--overlay 
               {{ section.settings.button_style }}{% if use_small_button_above_960 %} btn--small-above-960{% endif %}
               w-fit mx-auto 

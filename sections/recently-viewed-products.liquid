@@ -9,7 +9,6 @@
     carousel--mobile-per-view-{{ section.settings.mobile_columns }}
     carousel--per-view-{{ section.settings.mobile_columns }}
     section
-    md:!px-6 !px-3
     section--includes-product-items
     section--divider-{{ section.settings.divider_style }}
     {{ section.settings.section_padding }}
@@ -25,7 +24,7 @@
   data-products-per-view="{{ section.settings.columns }}"
   data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
 >
-  <div class="section__inner" data-recently-viewed>
+  <div class="section__inner overflow-hidden" data-recently-viewed>
     <div class="carousel__navigation-wrapper">
       <div class="section-introduction animation--section-introduction">
         {%- unless section.settings.title == blank -%}

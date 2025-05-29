@@ -6514,7 +6514,47 @@ function stickyAtcBar(container) {
         console.log('submit sticky atc bar', e);
         e.preventDefault();
 
-        elements.formElement.submit();
+        // Check for purchase confirmation popup and quick cart
+        const purchaseConfirmation = qs('[data-purchase-confirmation-popup]', document);
+        const quickCart = qs('[data-quick-cart]', document);
+        
+        // Get the sticky ATC button and add loading state
+        const stickyButton = qs('[data-add-to-cart]', elements.stickyAtcBar);
+        if (stickyButton) {
+            addClass(stickyButton, 'loading');
+        }
+
+        // if quick cart and confirmation popup are disabled, use standard form submit
+        if (!purchaseConfirmation && !quickCart) {
+            elements.formElement.submit();
+            return;
+        }
+
+        // Use the same cart.addItem method as the main form
+        cart.addItem(elements.formElement)
+            .then((_ref) => {
+                let { item } = _ref;
+                if (stickyButton) {
+                    removeClass(stickyButton, 'loading');
+                }
+                if (purchaseConfirmation) {
+                    r$1('confirmation-popup:open', null, {
+                        product: item
+                    });
+                } else {
+                    r$1('quick-cart:updated');
+                    // Need a delay to allow quick-cart to refresh
+                    setTimeout(() => {
+                        r$1('quick-cart:open');
+                    }, 300);
+                }
+            })
+            .catch((error) => {
+                console.error('Error adding to cart:', error);
+                if (stickyButton) {
+                    removeClass(stickyButton, 'loading');
+                }
+            });
     };
 
     const scrollListenerInstance = listen(window, 'scroll', handleScroll, { passive: true });

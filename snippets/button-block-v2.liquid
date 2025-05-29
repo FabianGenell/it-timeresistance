@@ -27,9 +27,6 @@
     settings_key: 'button_1'
   %}
 {% enddoc %}
-{%- capture style -%}
-  {%- render 'button-style', settings_object: settings_object, settings_key: settings_key -%}
-{%- endcapture -%}
 
 {% comment %}
   <script>
@@ -58,6 +55,10 @@
   if button_alignment_mobile == null
     assign button_alignment_mobile = button_alignment
   endif
+
+  assign render_time = 'now' | date: '%N'
+  assign link_handle = link | handleize
+  assign button_id = 'button-' | append: render_time | append: link_handle | append: '-' | append: section.id
 -%}
 
 {% unless label == blank %}
@@ -78,6 +79,22 @@
     class="button-block__button button-block__button--justify-{{ button_alignment }} button-block__button--justify-mobile-{{ button_alignment_mobile }} {{ wrapper_class }}"
     {{ shopify_attributes }}
   >
+    <style>
+      #{{ button_id }} {
+        {%- render 'button-style', settings_object: settings_object, settings_key: settings_key -%}
+
+      }
+
+      @media (max-width: 768px) {
+        {%- assign settings_key_mobile = settings_key | append: '_mobile' %}
+        #{{ button_id }} {
+          {%- render 'button-style',
+            settings_object: settings_object,
+            settings_key: settings_key_mobile
+          -%}
+        }
+    </style>
+
     {%- capture button_tag -%}{% if link == blank %}button{% else %}a{% endif %}{%- endcapture -%}
     {%- capture button_attributes -%}{{ button_attributes }}
       {% if link == blank %}
@@ -91,7 +108,7 @@
     {%- endcapture -%}
     <{{ button_tag }}
       {{ button_attributes }}
-      style="{{ style }}"
+      id="{{ button_id }}"
       class="
         btn
         {% if is_overlay %}

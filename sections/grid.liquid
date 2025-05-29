@@ -245,6 +245,7 @@
       "label": "Set Block Width Globally",
       "default": false
     },
+
     {
       "id": "block_width",
       "label": "Block Width",
@@ -453,6 +454,14 @@
     },
     {
       "type": "text",
+      "id": "block_button_mobile_padding",
+      "label": "Button Padding (Mobile)",
+      "info": "Enter the padding for the Button. (e.g. 10px 20px)",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "default": "10px 40px"
+    },
+    {
+      "type": "text",
       "id": "block_button_border",
       "label": "Button Border",
       "visible_if": "{{ section.settings.set_button_style_globally == true }}",
@@ -488,6 +497,17 @@
       "step": 1,
       "unit": "px",
       "label": "Button Font Size",
+      "visible_if": "{{ section.settings.set_button_style_globally == true }}",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "block_button_mobile_font_size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size (Mobile)",
       "visible_if": "{{ section.settings.set_button_style_globally == true }}",
       "default": 18
     },

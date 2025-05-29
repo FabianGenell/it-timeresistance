@@ -190,12 +190,26 @@
 
           {%- if block.settings.link_text != blank and block.settings.link != blank -%}
             <div class="grid-item__button section-blocks__button">
-              {%- capture style -%}
-                {%- render 'button-style', settings_object: button_style_settings, settings_key: button_style_settings_key -%}
-              {%- endcapture -%}
+              {%- style -%}
+                #button-{{ block.id }} {
+                  {%- render 'button-style',
+                    settings_object: button_style_settings,
+                    settings_key: button_style_settings_key
+                  -%}
+                }
+
+                @media (max-width: 768px) {
+                  {%- assign button_style_settings_key_mobile = button_style_settings_key | append: '_mobile' %}
+                  #button-{{ block.id }} {
+                    {%- render 'button-style',
+                      settings_object: button_style_settings,
+                      settings_key: button_style_settings_key_mobile
+                    -%}
+                  }
+              {%- endstyle -%}
 
               <div
-                style="{{ style }}"
+                id="button-{{ block.id }}"
                 class="btn btn--overlay {{ button_style }}{% if use_small_button_above_960 %} btn--small-above-960{% endif %}"
               >
                 <span>{{ block.settings.link_text }}</span>

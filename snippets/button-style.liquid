@@ -1,3 +1,20 @@
+{% doc %}
+  Renders CSS styles for a button based on settings object properties.
+
+  @param {object} [settings_object] - Object containing button style settings
+  @param {string} [settings_key] - Key prefix for accessing style settings
+
+  The snippet looks for the following properties in settings_object: - {settings_key}_padding -
+  {settings_key}_border - {settings_key}_border_radius (with px unit) - {settings_key}_opacity (with % unit) -
+  {settings_key}_font_size (with px unit)
+
+  @example
+  {%- render 'button-style',
+    settings_object: section.settings,
+    settings_key: 'button_1'
+  -%}
+{% enddoc %}
+
 {%- liquid
   if settings_object != blank and settings_key != blank
     assign style_properties = 'padding,border,border_radius$px,opacity$%,font_size$px' | split: ','
@@ -7,14 +24,14 @@
       assign style_property_key = style_property_parts[0]
       assign style_property_unit = style_property_parts[1]
 
-      assign style_key = settings_key | append: '_' | append: style_property_key
+      assign style_key_dektop = settings_key | append: '_' | append: style_property_key
 
-      assign style_value = settings_object[style_key]
+      assign style_value_desktop = settings_object[style_key_dektop]
 
-      if style_value != blank
+      if style_value_desktop != blank
         echo style_property_key | replace: '_', '-'
         echo ': '
-        echo style_value | append: style_property_unit
+        echo style_value_desktop | append: style_property_unit
         echo '; '
       endif
     endfor

@@ -6,6 +6,7 @@
   style="min-height: 100vh"
   class="block h-full relative"
   data-layout="grid"
+  data-hide-on-removal="{{ section.settings.hide_on_removal }}"
 >
   <h1 class="text-2xl block w-full mb-6 pb-2 border-b border-gray-200">Favorite Products</h1>
 
@@ -22,9 +23,10 @@
   </div>
   <div
     data-empty-state
-    class="hidden"
+    class="hidden mt-14"
   >
-    <h3>Empty</h3>
+    <h3 class="text-center fs-heading-3-base ff-heading">No favorites yet</h3>
+    <p class="text-center">Add products to your favorites to see them here.</p>
   </div>
 </favorite-products>
 
@@ -33,7 +35,14 @@
   "name": "Favorite Products",
   "class": "section",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_on_removal",
+      "label": "Hide on removal",
+      "default": true
+    }
+  ],
   "presets": [
     {
       "name": "Favorite Products"

@@ -43,6 +43,15 @@ class FavoriteHandler {
         console.debug('Favorites after removal', this.favorites);
         this.updateLocalStorage(this.favorites);
         this.updateDisplayCount();
+
+        document.dispatchEvent(
+            new CustomEvent('favorites:removed', {
+                detail: {
+                    favoriteItem: favoriteItem,
+                    favorites: this.favorites
+                }
+            })
+        );
     }
 
     addFavorite(favoriteItem) {
@@ -50,6 +59,15 @@ class FavoriteHandler {
         console.debug('Favorites after addition', this.favorites);
         this.updateLocalStorage(this.favorites);
         this.updateDisplayCount();
+
+        document.dispatchEvent(
+            new CustomEvent('favorites:added', {
+                detail: {
+                    favoriteItem: favoriteItem,
+                    favorites: this.favorites
+                }
+            })
+        );
     }
 
     updateDisplayCount() {
@@ -87,8 +105,11 @@ class FavoriteProducts extends HTMLElement {
         if (favoriteHandler.favorites.length > 0) {
             this.fetchProducts();
         } else {
-            this.emptyStateEl.classList.remove('hidden');
-            this.spinner.classList.add('hidden');
+            this.showEmptyState();
+        }
+
+        if (this.dataset.hideOnRemoval === 'true') {
+            document.addEventListener('favorites:removed', this.handleFavoritesRemoved.bind(this));
         }
     }
 
@@ -142,6 +163,37 @@ class FavoriteProducts extends HTMLElement {
             })
         );
         this.spinner.classList.add('hidden');
+    }
+
+    showEmptyState() {
+        this.emptyStateEl.classList.remove('hidden');
+        this.spinner.classList.add('hidden');
+    }
+
+    handleFavoritesRemoved(event) {
+        const { favoriteItem } = event.detail;
+
+        let selector = '';
+
+        if (event.detail.favoriteItem.variantId) {
+            selector = `add-favorite[data-variant-id="${favoriteItem.variantId}"]`;
+        } else {
+            selector = `add-favorite[data-product-handle="${favoriteItem.handle}"]`;
+        }
+
+        const favoriteButton = this.productGrid.querySelector(selector);
+
+        const productCard = favoriteButton.closest('.product-item');
+
+        if (productCard) {
+            productCard.remove();
+        } else {
+            console.debug('Product not found', selector);
+        }
+
+        if (favoriteHandler.favorites.length === 0) {
+            this.showEmptyState();
+        }
     }
 }
 

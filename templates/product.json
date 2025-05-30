@@ -340,7 +340,7 @@
     "recently-viewed-products": {
       "type": "recently-viewed-products",
       "settings": {
-        "title": "Recently viewed",
+        "title": "Recently Viewed",
         "heading_tag": "h2",
         "subheading": "",
         "maximum_products": 8,

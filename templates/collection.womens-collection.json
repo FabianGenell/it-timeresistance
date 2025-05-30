@@ -360,7 +360,7 @@
         "block_link_text": "View All",
         "set_button_style_globally": true,
         "block_button_style": "btn--primary",
-        "block_button_padding": "8px 40px",
+        "block_button_padding": "8px 30px",
         "block_button_mobile_padding": "8px 24px",
         "block_button_border": "",
         "block_button_border_radius": 0,

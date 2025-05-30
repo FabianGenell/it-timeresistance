@@ -211,13 +211,13 @@
         "alignment": "center_center",
         "enable_animation": true,
         "divider_style": "none",
-        "enable_section_style": false,
+        "enable_section_style": true,
         "section_padding_top": 0,
-        "section_padding_bottom": 0,
+        "section_padding_bottom": 24,
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-bottom",
+        "section_padding": "section--vertical-padding-bottom-only",
         "content_width": "full",
         "custom_content_width": 700
       }

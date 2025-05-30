@@ -17823,8 +17823,14 @@ html.theme-editor .popup__tab {
 .fs-heading-2-base {
     font-size: var(--font-size-heading-2-base);
 }
+.template-product .section-introduction {
+    width: 100%;
+}
+.template-product .fs-heading-3-base {
+    @apply text-center;
+}
 .fs-heading-3-base {
-    font-size: var(--font-size-heading-3-base);
+    @apply text-2xl md:text-[32px];
 }
 .fs-heading-4-base {
     font-size: var(--font-size-heading-4-base);

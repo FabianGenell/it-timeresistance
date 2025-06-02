@@ -2,7 +2,8 @@ import { qs, qsa, listen, addClass, removeClass, hasClass } from '../utils.js';
 
 const selectors$M = {
     sliderContainer: '.swiper',
-    visibleSlides: '.swiper-slide-visible'
+    visibleSlides: '.swiper-slide-visible',
+    pagination: '.swiper-pagination'
 };
 const classes$o = {
     overflow: 'has-overflow',
@@ -32,6 +33,8 @@ export default function Carousel(node) {
     const nextButton = qs('[data-next]', node);
     const prevButton = qs('[data-prev]', node);
     const useNav = nextButton && prevButton;
+    const paginationContainer = qs(selectors$M.pagination, node);
+    const usePagination = paginationContainer;
 
     // Account for additional padding if slides overflow container
     const handleOverflow = (slides) => {
@@ -63,23 +66,35 @@ export default function Carousel(node) {
         }
     }
     import(flu.chunks.swiper).then((_ref) => {
-        let { Swiper, Navigation } = _ref;
+        let { Swiper, Navigation, Pagination } = _ref;
         let swiperOptions = Object.assign(defaultSwiperOptions, options);
+        let modules = [];
 
         // nextEl and prevEl can be passed in check if they are before
         // using the defaults
         if ('navigation' in swiperOptions) {
-            swiperOptions = Object.assign(swiperOptions, {
-                modules: [Navigation]
-            });
+            modules.push(Navigation);
         } else if (useNav) {
-            swiperOptions = Object.assign(swiperOptions, {
-                modules: [Navigation],
-                navigation: {
-                    nextEl: nextButton,
-                    prevEl: prevButton
-                }
-            });
+            modules.push(Navigation);
+            swiperOptions.navigation = {
+                nextEl: nextButton,
+                prevEl: prevButton
+            };
+        }
+
+        // Add pagination if container exists
+        if (usePagination) {
+            modules.push(Pagination);
+            swiperOptions.pagination = {
+                el: paginationContainer,
+                clickable: true,
+                bulletClass: 'swiper-pagination-bullet',
+                bulletActiveClass: 'swiper-pagination-bullet-active'
+            };
+        }
+
+        if (modules.length > 0) {
+            swiperOptions.modules = modules;
         }
         carousel = new Swiper(swiperContainer, swiperOptions);
         events.push(listen(swiperContainer, 'focusin', handleFocus));

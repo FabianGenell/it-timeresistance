@@ -17830,7 +17830,7 @@ html.theme-editor .popup__tab {
     @apply text-center;
 }
 .fs-heading-3-base {
-    @apply text-2xl md:text-[32px];
+    @apply text-[28px] md:text-[32px];
 }
 .fs-heading-4-base {
     font-size: var(--font-size-heading-4-base);

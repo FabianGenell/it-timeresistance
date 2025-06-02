@@ -5,11 +5,6 @@
 {%- liquid
   assign total_results = predictive_search.resources.products.size | plus: predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size
 
-  assign sizes = '80px'
-  if settings.quick_search_product_style == 'columns'
-    assign sizes = '200px'
-  endif
-
   assign class = ''
 
   if predictive_search.resources.products.size > 0
@@ -89,33 +84,51 @@
             <span class="t-subdued">{{ 'search.headings.products' | t }}</span>
           </h4>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 ">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
             {%- assign variants_displayed = 0 -%}
             {%- for product in predictive_search.resources.products -%}
               {% for variant in product.variants %}
                 {%- if variants_displayed < 6 -%}
-                  <div class="relative group/variant hover:bg-gray-100 rounded-md transition-colors duration-200">
+                  {%- liquid
+                    assign product_title = product.metafields.custom.short_product_name | default: product.title
+                  -%}
+                  <div class="relative group/variant rounded-lg transition-colors duration-200 overflow-hidden">
+                    <div class="absolute top-2 left-2 flex gap-1 z-20">
+                      {%- render 'product-badges', prod: product -%}
+                    </div>
                     {%- render 'button-wishlist',
                       prod: product,
                       var: variant,
-                      class: 'absolute top-1 right-1 w-4 opacity-0 group-hover/variant:opacity-100 transition-opacity duration-200s'
+                      class: 'absolute top-2 right-2 w-5 h-5 z-20 opacity-0 group-hover/variant:opacity-100 transition-opacity duration-200'
                     -%}
                     <a
                       href="{{ variant.url }}"
-                      class="                        grid grid-cols-[1fr_2fr] gap-2 p-4"
+                      class="block p-3 h-full"
                     >
-                      <div class="media w-full pb-[100%] h-0">
+                      <div class="media aspect-square w-full mb-3 overflow-hidden rounded-md bg-gray-50">
                         {%- render 'image',
                           image: variant.featured_image,
-                          src_width: 80,
-                          sizes: '80px',
+                          src_width: 450,
+                          widths: '150, 300, 450',
+                          sizes: '150px',
                           class: 'img-fit',
                           lazy_load: false
                         -%}
                       </div>
-                      <div class="flex flex-col gap-2">
-                        <span class="text-xs">{{ product.title }}</span>
-                        <span class="text-xs font-bold">{{ variant.price | money }}</span>
+                      <div class="flex flex-col gap-1">
+                        <h5 class="text-xs font-medium leading-tight line-clamp-2">{{ product_title }}</h5>
+                        {%- if product.compare_at_price > product.price -%}
+                          <div class="flex items-center gap-1">
+                            <span class="text-xs text-gray-500 line-through">
+                              {{- product.compare_at_price | money -}}
+                            </span>
+                            <span class="text-xs font-semibold text-red-600">
+                              {{- variant.price | money -}}
+                            </span>
+                          </div>
+                        {%- else -%}
+                          <span class="text-xs font-semibold">{{ variant.price | money }}</span>
+                        {%- endif -%}
                       </div>
                     </a>
                   </div>

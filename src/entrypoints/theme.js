@@ -7,6 +7,7 @@ window.theme = window.theme || {};
 
 import '../scripts/components/';
 import '../scripts/utils/helpers';
+import '../scripts/legacy/theme-new.js';
 console.log('main.bundle.js loaded');
 
 // Dispatch event when theme bundle is loaded

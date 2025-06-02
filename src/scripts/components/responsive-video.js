@@ -56,16 +56,6 @@ class ResponsiveVideo extends HTMLElement {
         // Get video sources
         this.sources = Array.from(this.video?.querySelectorAll('source') || []);
 
-        // Log all sources for debugging
-        this.sources.forEach((source, index) => {
-            const media = source.getAttribute('media') || 'default';
-            console.log(`[ResponsiveVideo] Source ${index}:`, {
-                src: source.src,
-                media: media,
-                type: source.type
-            });
-        });
-
         // Initially hide video until loaded
         if (this.video) {
             this.video.style.opacity = '0';
@@ -93,7 +83,7 @@ class ResponsiveVideo extends HTMLElement {
 
             const maxWidth = parseInt(match[0]);
             const isActive = viewportWidth <= maxWidth;
-            console.log(`[ResponsiveVideo] Checking mobile source (max-width: ${maxWidth}px): ${isActive}`);
+
             return isActive;
         });
 
@@ -111,7 +101,7 @@ class ResponsiveVideo extends HTMLElement {
 
             const minWidth = parseInt(match[0]);
             const isActive = viewportWidth >= minWidth;
-            console.log(`[ResponsiveVideo] Checking large source (min-width: ${minWidth}px): ${isActive}`);
+
             return isActive;
         });
 

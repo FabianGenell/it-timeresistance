@@ -14,13 +14,15 @@
 </script>
 
 {% # Set the following line to true to use the unminified javascript file theme.js %}
-{% assign useUnminThemeJS = true %}
+{% comment %}
+  {% assign useUnminThemeJS = true %}
 
-{% if useUnminThemeJS %}
-  <script type="module" src="{{ 'theme-new.js' | asset_url }}"></script>
-{% else %}
-  <script type="module" src="{{ 'theme.min.js' | asset_url }}"></script>
-{% endif %}
+  {% if useUnminThemeJS %}
+    <script type="module" src="{{ 'theme-new.js' | asset_url }}"></script>
+  {% else %}
+    <script type="module" src="{{ 'theme.min.js' | asset_url }}"></script>
+  {% endif %}
+{% endcomment %}
 
 <script defer src="{{ 'main.bundle.js' | asset_url }}"></script>
 

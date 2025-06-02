@@ -106,28 +106,52 @@
                       class="block p-3 h-full"
                     >
                       <div class="media aspect-square w-full mb-3 overflow-hidden rounded-md bg-gray-50">
+                        {%- liquid
+                          assign first_image = variant.featured_image | default: product.featured_image
+                          assign second_image = null
+                          
+                          if variant.featured_media
+                            assign initial_variant_media_index = variant.featured_media.position | minus: 1
+                            assign next_variant_media_index = initial_variant_media_index | plus: 1
+                            assign second_image = product.media[next_variant_media_index].preview_image
+                          else
+                            assign second_image = product.images[1]
+                          endif
+                        -%}
+                        
                         {%- render 'image',
-                          image: variant.featured_image,
+                          image: first_image,
                           src_width: 450,
                           widths: '150, 300, 450',
-                          sizes: '150px',
-                          class: 'img-fit',
+                          sizes: '(max-width: 768px) 50vw,(max-width: 1200px) 25vw, 300px',
+                          class: 'img-fit transition-opacity duration-300 group-hover/variant:opacity-0',
                           lazy_load: false
                         -%}
+                        
+                        {%- if second_image -%}
+                          {%- render 'image',
+                            image: second_image,
+                            src_width: 450,
+                            widths: '150, 300, 450',
+                            sizes: '(max-width: 768px) 50vw,(max-width: 1200px) 25vw, 300px',
+                            class: 'img-fit absolute inset-0 opacity-0 group-hover/variant:opacity-100 transition-opacity duration-300',
+                            lazy_load: false
+                          -%}
+                        {%- endif -%}
                       </div>
-                      <div class="flex flex-col gap-1">
-                        <h5 class="text-xs font-medium leading-tight line-clamp-2">{{ product_title }}</h5>
+                      <div class="flex flex-col gap-1 text-center">
+                        <h5 class="leading-tight line-clamp-2" style="font-size: 14px;">{{ product_title }}</h5>
                         {%- if product.compare_at_price > product.price -%}
-                          <div class="flex items-center gap-1">
-                            <span class="text-xs text-gray-500 line-through">
+                          <div class="flex items-center justify-center gap-1">
+                            <span class="text-gray-500 line-through" style="font-size: 18px;">
                               {{- product.compare_at_price | money -}}
                             </span>
-                            <span class="text-xs font-semibold text-red-600">
+                            <span class="text-red-600" style="font-size: 18px;">
                               {{- variant.price | money -}}
                             </span>
                           </div>
                         {%- else -%}
-                          <span class="text-xs font-semibold">{{ variant.price | money }}</span>
+                          <span style="font-size: 18px;">{{ variant.price | money }}</span>
                         {%- endif -%}
                       </div>
                     </a>

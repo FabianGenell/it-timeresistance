@@ -41,8 +41,8 @@
       "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/MEN All bags for men 1920x500.mp4",
-        "video_mobile": "shopify://files/videos/MEN- Laptop Bags 1000 x 600.mp4",
-        "video_large": "shopify://files/videos/MEN- Laptop Bags 4096 x 1000.mp4",
+        "video_mobile": "shopify://files/videos/MEN All bags for men 1000x600.mp4",
+        "video_large": "shopify://files/videos/MEN All bags for men 4096x1000.mp4",
         "desktop_poster_image": "{{ collection.metafields.custom.hero_poster_desktop.value }}",
         "mobile_poster_image": "{{ collection.metafields.custom.hero_poster_mobile.value }}",
         "large_poster_image": "{{ collection.metafields.custom.hero_poster_large.value }}",

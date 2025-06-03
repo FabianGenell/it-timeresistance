@@ -201,7 +201,7 @@
         "text_z4p6gR": {
           "type": "text",
           "settings": {
-            "text": "<p>Experience the art of precision with our laser engraving service. We can engrave text, symbols, and logo onto your chosen leather product, adding a distinctive mark that stands the test of time. To personalize your item with laser engraving, simply select the Personalization option when placing your order and provide the following info in the Order Special Instructions in Your Cart:</p><ul><li>Message: Specify the text you wish to engrave.</li><li>Font Style: Choose from three elegant fonts.</li><li>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</li></ul><p>Once we receive your order, our team will prepare a suggestion for the placement and size of the engraving and send it to you for approval.</p><p>Font Styles</p><p>We offer three sophisticated font styles to suit your taste and preference.</p>",
+            "text": "<p>Experience the art of precision with our laser engraving service. We can engrave text, symbols, and logo onto your chosen leather product, adding a distinctive mark that stands the test of time. To personalize your item with laser engraving, simply select the Personalization option when placing your order and provide the following info in the Order Special Instructions in Your Cart:</p><ul><li>Message: Specify the text you wish to engrave.</li></ul>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -223,7 +223,7 @@
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-bottom",
+        "section_padding": "section--vertical-padding-top-only",
         "content_width": "full",
         "custom_content_width": 700
       }
@@ -254,7 +254,36 @@
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-bottom-only"
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "rich_text_dKBNLr": {
+      "type": "rich-text",
+      "blocks": {
+        "text_969QY7": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</li></ul><p>Once we receive your order, our team will prepare a suggestion for the placement and size of the engraving and send it to you for approval.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "text_969QY7"
+      ],
+      "settings": {
+        "alignment": "center_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-bottom-only",
+        "content_width": "full",
+        "custom_content_width": 700
       }
     },
     "rich_text_wtR4Am": {
@@ -634,6 +663,45 @@
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
+    },
+    "rich_text_7njpJB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4VTgXb": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_RtXfU9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text area to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4VTgXb",
+        "text_RtXfU9"
+      ],
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
     }
   },
   "order": [
@@ -642,6 +710,7 @@
     "grid_P783de",
     "rich_text_8dVcxm",
     "image_hero_KjifRk",
+    "rich_text_dKBNLr",
     "rich_text_wtR4Am",
     "image_hero_kmPdjY",
     "video_cetFC4",
@@ -649,6 +718,7 @@
     "image_hero_QEqrdA",
     "video_a3cwmp",
     "rich_text_gcXFfq",
-    "media_gallery_Ha6HVM"
+    "media_gallery_Ha6HVM",
+    "rich_text_7njpJB"
   ]
 }

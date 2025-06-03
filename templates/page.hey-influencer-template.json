@@ -52,6 +52,12 @@
         "alignment": "center_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700
@@ -76,6 +82,12 @@
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -106,6 +118,12 @@
         "alignment": "left_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700
@@ -118,7 +136,13 @@
         "custom_liquid": "<div contactform-embed='428249'></div>",
         "full_width": false,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-none"
       }
     }
   },

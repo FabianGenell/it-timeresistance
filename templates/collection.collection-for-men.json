@@ -40,7 +40,7 @@
       "type": "custom-video",
       "name": "Custom Video",
       "settings": {
-        "video_desktop": "shopify://files/videos/MEN- Laptop Bags 1920x500.mp4",
+        "video_desktop": "shopify://files/videos/MEN All bags for men 1920x500.mp4",
         "video_mobile": "shopify://files/videos/MEN- Laptop Bags 1000 x 600.mp4",
         "video_large": "shopify://files/videos/MEN- Laptop Bags 4096 x 1000.mp4",
         "desktop_poster_image": "{{ collection.metafields.custom.hero_poster_desktop.value }}",

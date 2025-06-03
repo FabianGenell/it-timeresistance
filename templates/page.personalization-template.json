@@ -263,7 +263,7 @@
         "text_969QY7": {
           "type": "text",
           "settings": {
-            "text": "<ul><li>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</li></ul><p>Once we receive your order, our team will prepare a suggestion for the placement and size of the engraving and send it to you for approval.</p>",
+            "text": "<ul><li>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</li></ul>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -281,8 +281,38 @@
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-bottom-only",
+        "section_padding": "section--vertical-padding-none",
         "content_width": "full",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_7njpJB": {
+      "type": "rich-text",
+      "blocks": {
+        "text_RtXfU9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Once we receive your order, our team will prepare a suggestion for the placement and size of the engraving and send it to you for approval.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "text_RtXfU9"
+      ],
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": true,
+        "section_padding_top": 11,
+        "section_padding_bottom": 30,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
         "custom_content_width": 700
       }
     },
@@ -344,10 +374,10 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "rich_text_7njpJB": {
+    "rich_text_F3iqqc": {
       "type": "rich-text",
       "blocks": {
-        "text_RtXfU9": {
+        "text_VYj9Mm": {
           "type": "text",
           "settings": {
             "text": "<p>Laser engraving reacts with the leather surface, producing a unique shade each time that depends on the leather’s color; the engraving color is determined by the leather and cannot be freely selected.</p>",
@@ -356,7 +386,7 @@
         }
       },
       "block_order": [
-        "text_RtXfU9"
+        "text_VYj9Mm"
       ],
       "name": "t:sections.rich_text.presets.name",
       "settings": {
@@ -702,9 +732,10 @@
     "rich_text_8dVcxm",
     "image_hero_KjifRk",
     "rich_text_dKBNLr",
+    "rich_text_7njpJB",
     "rich_text_wtR4Am",
     "image_hero_kmPdjY",
-    "rich_text_7njpJB",
+    "rich_text_F3iqqc",
     "video_cetFC4",
     "rich_text_TUDrhn",
     "image_hero_QEqrdA",

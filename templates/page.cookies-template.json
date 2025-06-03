@@ -37,6 +37,12 @@
         "alignment": "center_center",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "custom",
         "custom_content_width": 700
@@ -119,7 +125,7 @@
         "text_UzMraj": {
           "type": "text",
           "settings": {
-            "text": "<p>· Cookies are important for functional purposes, an effective operation of our website and use of our features, such as „Add to Cart“.· Navigation cookies will remember whether you are registered or not.<br/><br/>· Site analytics cookies are used with our marketing partners to measure and analyze how you use our site, to see what do you like on our website, which pages or functions do you prefer and help us to make them better.<br/><br/>· Customer preference cookies will remember your preferences, such as language, currency and etc., so we can make your shopping experience as good and seamless as possible.<br/><br/>· Targeting or advertising cookies help to offer you the deals that are most relevant to you, based on your browsing activity on our site. They also limit the number of times you see an add and help us measure effectiveness of our marketing campaigns.</p>",
+            "text": "<ul><li>Cookies are important for functional purposes, an effective operation of our website and use of our features, such as „Add to Cart“.· Navigation cookies will remember whether you are registered or not.</li><li>Site analytics cookies are used with our marketing partners to measure and analyze how you use our site, to see what do you like on our website, which pages or functions do you prefer and help us to make them better.</li><li>Customer preference cookies will remember your preferences, such as language, currency and etc., so we can make your shopping experience as good and seamless as possible.</li><li>Targeting or advertising cookies help to offer you the deals that are most relevant to you, based on your browsing activity on our site. They also limit the number of times you see an add and help us measure effectiveness of our marketing campaigns.</li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -140,7 +146,7 @@
         "text_N6BtmH": {
           "type": "text",
           "settings": {
-            "text": "<p>· Session cookies – they are deleted after each visit to our website. Session cookies allow you to add an item to the shopping chart and the move through the checkout. These cookies will be deleted from your computer as soon as you close your browser. Disallowing these cookies will mean you are unable to place an order on this site.<br/><br/>· Persistent cookies – these cookies remember you for a certain amount of time. For example, they allow you to see what you have previously added to your shopping cart.</p>",
+            "text": "<ul><li>Session cookies – they are deleted after each visit to our website. Session cookies allow you to add an item to the shopping chart and the move through the checkout. These cookies will be deleted from your computer as soon as you close your browser. Disallowing these cookies will mean you are unable to place an order on this site.</li><li> Persistent cookies – these cookies remember you for a certain amount of time. For example, they allow you to see what you have previously added to your shopping cart.</li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -309,6 +315,12 @@
         "alignment": "left_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700

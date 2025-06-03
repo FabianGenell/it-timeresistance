@@ -84,11 +84,10 @@
         <div class="meganav__secondary-promo-overlay"></div>
         <div class="meganav__secondary-promo-text">
           {% unless promo_text == blank %}
-            <h3 class="ff-heading fs-heading-4-base meganav__secondary-promo-text-heading">{{ promo_text }}</h3>
+            <h3 class="ff-heading fs-heading-4-base meganav__secondary-promo-text-heading mb-2">{{ promo_text }}</h3>
           {% endunless %}
           {% if link and link != blank %}
             {%- render 'button-block-v2' with
-              wrapper_class: "meganav__secondary-promo-text-button",
               label: link_text,
               link: link,
               button_style: button_style,
@@ -132,10 +131,10 @@
       {% unless meganav_type == 'full_width_meganav' %}--columns-width: {{ meganav_settings.columns_width }}px;{% endunless %}
       --secondary-width: {{ meganav_settings.promo_width }}px;
       --color-promo-text: {{ meganav_settings.text_color }};
-      --color-text-overlay-button: {{ meganav_settings.text_color }};
-      --color-background-overlay-button: {{ meganav_settings.text_color }};
+      --color-text-overlay-button: {{ meganav_settings.button_text_color | default: meganav_settings.text_color }};
+      --color-background-overlay-button: {{ meganav_settings.button_background_color | default: meganav_settings.text_color }};
       --color-background-overlay-outline-button-alpha:
-    {{ meganav_settings.text_color | color_modify: 'alpha', 0.1 }};
+    {{ meganav_settings.button_background_color | default: meganav_settings.text_color | color_modify: 'alpha', 0.1 }};
       --overlay-background: {{ meganav_settings.color_overlay }};
       {% if meganav_settings.color_overlay_gradient != blank %}
         --overlay-background-gradient: {{ meganav_settings.color_overlay_gradient }};

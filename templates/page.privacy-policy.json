@@ -40,7 +40,7 @@
         "text_byzVCf": {
           "type": "text",
           "settings": {
-            "text": "<p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our services. We use your information only to process your order and transactions, personalize your customer experience, improve our website, and for our customer service to reach out to you if there is an issue.</p>",
+            "text": "<p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our services. We use your information only to process your order and transactions, personalize your customer experience, improve our website, and for  our customer service to reach out to you if there is an issue.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -82,7 +82,7 @@
         "text_3TUkTh": {
           "type": "text",
           "settings": {
-            "text": "<p>We use your data primarily to:</p><p></p><ul><li> Provide our services and warranties to you</li><li>Manage your account</li><li>Tailor the site and advertising to enhance your browsing experience</li><li>Send order progress and updates via email</li><li>Contact you if there is an issue with your order</li><li>If you subscribe to our newsletter, we will use your email to send you the best offers and discounts. You can opt out of receiving promotional communications at any time by:</li><li>Informing us that you wish to change your marketing preferences by contacting our customer support team at <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></li><li>Using the “unsubscribe” link in emails</li></ul><p><em>This may not stop service messages such as order updates.</em></p>",
+            "text": "<p>We use your data primarily to:</p><p></p><ul><li> Provide our services and warranties to you</li><li>Manage your account</li><li>Tailor the site and advertising to enhance your browsing experience</li><li>Send order progress and updates via email</li><li>Contact you if there is an issue with your order</li></ul><p>If you subscribe to our newsletter, we will use your email to send you the best offers and discounts. You can opt out of receiving promotional communications at any time by:</p><ul><li>Informing us that you wish to change your marketing preferences by contacting our customer support team at <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></li><li>Using the “unsubscribe” link in emails</li></ul><p><em>This may not stop service messages such as order updates.</em></p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -124,7 +124,7 @@
         "text_PVFBzR": {
           "type": "text",
           "settings": {
-            "text": "<p>We do not sell, trade, or transfer your personal information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, as long as those parties have confirmed they apply appropriate data protection and security controls and use your personal data only to provide certain services (such as shipping). We share data with:</p><p>• UPS, DHL, and FedEx – to ship your order quickly and ensure the best customer experience</p><p>• Airwallex, Stripe, and PayPal – to securely process your payment</p><p>• Google Analytics – to help us better understand your preferences on our site (only anonymous data, not personal data)</p><p>• Our legal and professional advisers, accountants, and auditors</p><p>• Government bodies – to comply with our legal obligations</p><p>Customer information will not be sold, exchanged, transferred, or given to any other company for any reason other than for the purpose of delivering the purchased product or service requested.</p>",
+            "text": "<p>We do not sell, trade, or transfer your personal information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, as long as those parties have confirmed they apply appropriate data protection and security controls and use your personal data only to provide certain services (such as shipping). We share data with:</p><ul><li>UPS, DHL, and FedEx – to ship your order quickly and ensure the best customer experience</li><li>Airwallex, Stripe, and PayPal – to securely process your payment</li><li>Google Analytics – to help us better understand your preferences on our site (only anonymous data, not personal data)</li><li>Our legal and professional advisers, accountants, and auditors</li><li>Government bodies – to comply with our legal obligations</li></ul><p>Customer information will not be sold, exchanged, transferred, or given to any other company for any reason other than for the purpose of delivering the purchased product or service requested.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -145,7 +145,7 @@
         "text_FLeNzj": {
           "type": "text",
           "settings": {
-            "text": "<p>Time Resistance is committed to keeping your personal data safe and secure. However, remember that no method of transmission over the internet or method of electronic storage is 100% secure. Our security measures include:<br/><br/>• Encryption of data<br/><br/>• Regular planning to ensure we are prepared to respond to cybersecurity attacks and data security incidents<br/><br/>• Security controls to protect our IT systems and premises from external attacks and unauthorized access<br/><br/>• Internal policies outlining our data security rules for personnel<br/><br/>• Regular training for our employees</p>",
+            "text": "<p>Time Resistance is committed to keeping your personal data safe and secure. However, remember that no method of transmission over the internet or method of electronic storage is 100% secure. Our security measures include:</p><ul><li>Encryption of data</li><li>Regular planning to ensure we are prepared to respond to cybersecurity attacks and data security incidents</li><li>Security controls to protect our IT systems and premises from external attacks and unauthorized access</li><li>Internal policies outlining our data security rules for personnel</li><li>Regular training for our employees</li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -318,6 +318,12 @@
         "alignment": "center_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700

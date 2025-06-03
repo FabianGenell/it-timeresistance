@@ -130,7 +130,7 @@
         "text_7AYaMt": {
           "type": "text",
           "settings": {
-            "text": "<p>For all accepted and executed orders, our company will issue an invoice for the ordered material and send it via email to the customer upon request.</p><p>For the issuance of the invoice, the information provided by the customer at the moment of the order will be considered valid. Once it has been issued, no change in the tax document will be possible.</p><p>No responsibility can be attributed to our company in case of delay in the execution or the delivery of the order.</p><p>If you order from our site for delivery outside the United States, you may be liable for import duties and taxes charged by Customs. These additional charges are the customer’s responsibility.</p><p>We guarantee there are no additional fees (import tax, customs duty or other) for clients from the United States.</p>",
+            "text": "<p>For all accepted and executed orders, our company will issue an invoice for the ordered material and send it via email to the customer upon request.</p><p>For the issuance of the invoice, the information provided by the customer at the moment of the order will be considered valid. Once it has been issued, no change in the tax document will be possible.</p><p>No responsibility can be attributed to our company in case of delay in the execution or the delivery of the order.</p><p>If you order from our site for delivery outside of Australia, you may be liable for import duties and taxes charged by Customs. These additional charges are the customer’s responsibility.</p><p>We guarantee there are no additional fees (import tax, customs duty or other) for clients from Australia.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -151,7 +151,7 @@
         "text_mTr3gG": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Trading Name:</strong> Time Resistance</p><p><strong>Company Name:</strong> UAB Baltic Synergy</p><p><strong>Legal Address:</strong> Baltu pr. 29-77, Kaunas, Lithuania 48244</p><p><strong>Company Number:</strong> 302920865</p><p><strong>CEO:</strong> Arturas Kanapkis <strong>Phone:</strong> +370 635 66288</p><p><strong>Customer Support Email:</strong> <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></p><p><strong>Website:</strong> <a href=\"/\">timeresistance.com</a></p>",
+            "text": "<p><strong>Trading Name:</strong> Time Resistance</p><p><strong>Company Name:</strong> UAB Baltic Synergy</p><p><strong>Legal Address:</strong> Baltu pr. 29-77, Kaunas, Lithuania 48244</p><p><strong>Company Number:</strong> 302920865</p><p><strong>CEO:</strong> Arturas Kanapkis <strong>Phone:</strong> +370 635 66288</p><p><strong>Customer Support Email:</strong> <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></p><p><strong>Website:</strong> <a href=\"/\" target=\"_blank\">au.timeresistance.com</a></p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -181,6 +181,12 @@
         "alignment": "center_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700

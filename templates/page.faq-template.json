@@ -44,12 +44,13 @@
           "settings": {
             "expand_by_default": false,
             "icon": "none",
-            "title": "Do you ship worldwide and how much does it cost?",
+            "title": "How long does shipping take, and is it free?",
             "text": "<p>Shipping is free. Always. Anywhere.</p><p>Delivery within Australia takes 3-8 business days, while delivery to other countries takes 1-8 business days.</p><p>We use DHL, FedEx, or UPS courier for all deliveries.</p>"
           }
         },
         "item_E6AL68": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "expand_by_default": false,
             "icon": "none",
@@ -72,7 +73,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "How do I return or exchange an item?",
-            "text": "<p>You may return your purchase within 30 days of the delivery date, no questions asked.</p><p>Enjoy free returns! For further details, please refer to our <a href=\"https://us-timeresistance.myshopify.com/pages/shipping-and-returns\" title=\"Shipping and Return policies\">shipping and return policies</a>.</p>"
+            "text": "<p>You may return your purchase within 30 days of the delivery date, no questions asked.</p><p>Enjoy free returns! For further details, please refer to our <a href=\"https://au-timeresistance.myshopify.com/pages/shipping-and-returns\" target=\"_blank\" title=\"Shipping and Return policies\">Shipping and Return policies</a>.<br/><br/></p>"
           }
         },
         "item_PV8pLA": {
@@ -81,7 +82,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "My bag is faulty, what do I do?",
-            "text": "<p>In the event of a defect, first make contact at <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a> and we will take care of all the shipping procedures ourselves.</p><p>After receiving our goods back, we will refund you within 2 business days or send a replacement.</p>"
+            "text": "<p>In the event of a defect, first make contact at <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"care@timeresistance.com\">care@timeresistance.com</a> and we will take care of all the shipping procedures ourselves.</p><p>After receiving our goods back, we will refund you within 2 business days or send a replacement.</p>"
           }
         },
         "item_WyzKG6": {
@@ -90,7 +91,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "Do your products have a warranty?",
-            "text": "<p>At Time Resistance, we are dedicated to crafting leather goods that stand the test of time. Our products are made with the highest quality materials and traditional craftsmanship, designed to accompany you for a lifetime. Because we believe in the durability and enduring appeal of our products, we are proud to offer a <a href=\"https://timeresistance.com/pages/warranty\" title=\"Lifetime warranty\">lifetime warranty</a> on our leather bags and accessories.</p><p>Each product may vary slightly in color or texture, due to the particularity of the tanning process and the natural products used. We do not consider it a defect, but rather a token of uniqueness. To ensure the authenticity of our products, we provide a Certificate of Guarantee. This guarantees that our leather has been tanned exclusively with natural tannins of vegetable origin and does not contain substances prohibited by law. Tannin extracts are the fundamental ingredients of the slow tanning process and give the best quality. Each item is carefully crafted and undergoes accurate quality control. Small veins, wrinkles and imperceptible scratches that eventually present on the leather prove its naturalness, rendering each skin one of a kind.</p>"
+            "text": "<p>At Time Resistance, we are dedicated to crafting leather goods that stand the test of time. Our products are made with the highest quality materials and traditional craftsmanship, designed to accompany you for a lifetime. Because we believe in the durability and enduring appeal of our products, we are proud to offer a <a href=\"/pages/warranty\" target=\"_blank\" title=\"Warranty\">lifetime warranty</a> on our leather bags and accessories.</p><p>Each product may vary slightly in color or texture, due to the particularity of the tanning process and the natural products used. We do not consider it a defect, but rather a token of uniqueness. To ensure the authenticity of our products, we provide a Certificate of Guarantee. This guarantees that our leather has been tanned exclusively with natural tannins of vegetable origin and does not contain substances prohibited by law. Tannin extracts are the fundamental ingredients of the slow tanning process and give the best quality. Each item is carefully crafted and undergoes accurate quality control. Small veins, wrinkles and imperceptible scratches that eventually present on the leather prove its naturalness, rendering each skin one of a kind.</p>"
           }
         },
         "item_9QpzBk": {
@@ -108,7 +109,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "What payment methods do you accept and is it safe?",
-            "text": "<p>You can pay with credit/debit card, PayPal, PayPal Express Checkout, or Klarna.</p><p>We accept Visa, MasterCard, American Express, Apple Pay and Google Pay.</p><p>We use SSL certificates to protect our check-out pages.</p><p>Additional payment methods may be available in the future.</p>"
+            "text": "<p>You can pay with credit/debit card, PayPal, PayPal Express Checkout.</p><p>We accept Visa, MasterCard, American Express, Apple Pay and Google Pay.</p><p>We use SSL certificates to protect our check-out pages.</p><p>Additional payment methods may be available in the future.</p>"
           }
         },
         "item_m3JUKH": {
@@ -153,7 +154,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "How can I get in touch with Time Resistance?",
-            "text": "<p>You can email us at <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com </a>or use the <a href=\"https://timeresistance.com/pages/contact-us\" title=\"Contact Form\">Contact Form</a></p>"
+            "text": "<p>You can email us at<a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>or use the <a href=\"/pages/contact-us\" target=\"_blank\" title=\"Contact Us\">Contact Form</a></p>"
           }
         }
       },

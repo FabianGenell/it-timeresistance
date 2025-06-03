@@ -142,15 +142,13 @@
 
 {%- capture wishlist_icon -%}
   <a
-    class="header__icon-touch"
+    class="header__icon-touch relative"
     href="/pages/wishlist"
     aria-expanded="false"
   >
     {% render 'icon-heart', class: 'fill-none w-[22px]' %}
 
-    <span data-js-favorites-count class="count-icon left-[1px] bottom-[1px] opacity-0 transition-opacity duration-300">
-
-    </span>
+    <span data-js-favorites-count class="count-icon opacity-0 transition-opacity duration-300" style="left: 1px; bottom: 1px; box-shadow: none;"></span>
 
 
   </a>

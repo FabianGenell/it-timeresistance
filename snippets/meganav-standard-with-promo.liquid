@@ -133,6 +133,7 @@
       --color-promo-text: {{ meganav_settings.text_color }};
       --color-text-overlay-button: {{ meganav_settings.button_text_color | default: meganav_settings.text_color }};
       --color-background-overlay-button: {{ meganav_settings.button_background_color | default: meganav_settings.text_color }};
+      --color-background-overlay-button-hover: {{ meganav_settings.button_hover_background_color | default: meganav_settings.button_background_color | default: meganav_settings.text_color }};
       --color-background-overlay-outline-button-alpha:
     {{ meganav_settings.button_background_color | default: meganav_settings.text_color | color_modify: 'alpha', 0.1 }};
       --overlay-background: {{ meganav_settings.color_overlay }};

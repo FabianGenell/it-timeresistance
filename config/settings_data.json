@@ -117,6 +117,46 @@
           "storefront_layout_drawer_width": 400,
           "storefront_layout_as_section_page": ""
         }
+      },
+      "17676059084223943535": {
+        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
+        "disabled": false,
+        "settings": {}
+      },
+      "10864971697205422121": {
+        "type": "shopify://apps/gorgias-live-chat-helpdesk/blocks/gorgias/a66db725-7b96-4e3f-916e-6c8e6f87aaaa",
+        "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "12142455316664340074": {
+        "type": "shopify://apps/digital-darts-hreflang-tags/blocks/hreglang_tag/9a38367c-c3ce-4d6e-93ea-48ab8009c8a5",
+        "disabled": false,
+        "settings": {}
+      },
+      "14327677521557774844": {
+        "type": "shopify://apps/simprosys-google-shopping-feed/blocks/core_settings_block/1f0b859e-9fa6-4007-97e8-4513aff5ff3b",
+        "disabled": false,
+        "settings": {}
+      },
+      "4804304946286255945": {
+        "type": "shopify://apps/avada-cookie-consent/blocks/app-embed/deacc407-65bc-4a4e-84d9-f90e9e492cf3",
+        "disabled": false,
+        "settings": {}
+      },
+      "2102808784413787648": {
+        "type": "shopify://apps/kbite/blocks/main-app-embed/147a6f7f-6771-4f9b-8dc6-c14e6b24f32c",
+        "disabled": false,
+        "settings": {}
+      },
+      "4015264832934714879": {
+        "type": "shopify://apps/ecomsend-popups/blocks/app/a5670cf8-5705-4b01-ad9e-447033feae26",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

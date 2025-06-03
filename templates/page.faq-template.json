@@ -27,7 +27,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "Do you offer engraving?",
-            "text": "<p>Yes, we offer laser engraving. We can engrave initials, symbols, shapes or longer text in various fonts (if it’s in the Microsoft Office package then it is doable).</p><p>Contact us at <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>. It will add 1-2 business days to the waiting time.</p>"
+            "text": "<p>Yes, we offer laser engraving. We can engrave initials, symbols, shapes or longer text in various fonts (if it’s in the Microsoft Office package then it is doable).</p><p>Contact us at <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"care@timeresistance.com\">care@timeresistance.com</a>. It will add 1-2 business days to the waiting time.</p>"
           }
         },
         "item_VUKdzA": {
@@ -36,7 +36,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "How much will I have to pay in duties and taxes?",
-            "text": "<p>We guarantee that that there will be no additional taxes, duties or customs fees for customers from the European Union, USA or Australia.<br/><br/>If you are located outside of these places, you may be liable for import duties and taxes charged by Customs. These additional charges are the customer’s responsibility.</p>"
+            "text": "<p>We guarantee that there will be no additional taxes, duties, or customs fees for customers from Australia. The price you see is the price you pay.<br/><br/>For customers outside of Australia, you may be liable for import duties and taxes charged by Customs in your country. These additional charges are the customer's responsibility.</p>"
           }
         },
         "item_Tw8jV4": {
@@ -45,7 +45,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "Do you ship worldwide and how much does it cost?",
-            "text": "<p>Yes, we ship worldwide via DHL, FedEx or UPS courier.</p><p>The shipping is free. Always. Anywhere.</p>"
+            "text": "<p>Shipping is free. Always. Anywhere.</p><p>Delivery within Australia takes 3-8 business days, while delivery to other countries takes 1-8 business days.</p><p>We use DHL, FedEx, or UPS courier for all deliveries.</p>"
           }
         },
         "item_E6AL68": {
@@ -185,6 +185,12 @@
         "item_heading_font": "body",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700

@@ -179,7 +179,7 @@
         "gallery_style": "grid",
         "gallery_style_mobile": "grid",
         "gallery_size": "medium",
-        "gallery_overflow": "never",
+        "gallery_overflow": "4",
         "gallery_overflow_mobile": "4",
         "enable_video_looping": true,
         "enable_product_lightbox": true,

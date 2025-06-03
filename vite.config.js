@@ -6,7 +6,14 @@ export default defineConfig({
         chunkSizeWarningLimit: 3000,
         outDir: 'assets',
         emptyOutDir: false,
-        minify: true,
+        minify: 'terser',
+        terserOptions: {
+            mangle: false, // Disable all mangling to prevent conflicts
+            compress: {
+                keep_fnames: true,
+                keep_classnames: true
+            }
+        },
         sourcemap: true,
         rollupOptions: {
             input: {
@@ -16,9 +23,8 @@ export default defineConfig({
             output: {
                 entryFileNames: '[name].bundle.js',
                 assetFileNames: '[name].bundle.css',
-                chunkFileNames: '[name].js',
-                manualChunks: undefined, // Disable code splitting
-                inlineDynamicImports: false // Disable code splitting
+                chunkFileNames: '[name]-chunk.js',
+                manualChunks: () => undefined // Force everything into entry chunks
             }
         }
     },

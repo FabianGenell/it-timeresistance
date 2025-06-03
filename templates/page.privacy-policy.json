@@ -229,7 +229,7 @@
         "text_bPW3dq": {
           "type": "text",
           "settings": {
-            "text": "<p>You have the following rights:</p><ul><li>The right to be informed about our processing of your personal data</li><li>The right to access the personal data we hold about you at any time</li><li>The right to portability – to have your personal data provided to you by us in a structured, commonly used, and machine-readable format and transferred to you or another party</li><li>The right to rectification – to ask us to update and correct any out-of-date or incorrect personal data that we hold about you</li><li>The right to erasure – to delete any personal data processed by Time Resistance, except in certain circumstances (e.g., ongoing customer service issues, open orders, legal obligations)</li><li>The right to object to the processing of your personal data and/or to withdraw any consent you have given us</li><li>The right to restriction – to prevent any data processing likely to cause damage or distress</li></ul><p>If you wish to exercise any of the above rights, you can contact us by email at <a href=\"mailto:care@timeresistance.com\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</p>",
+            "text": "<p>You have the following rights:</p><ul><li>The right to be informed about our processing of your personal data</li><li>The right to access the personal data we hold about you at any time</li><li>The right to portability – to have your personal data provided to you by us in a structured, commonly used, and machine-readable format and transferred to you or another party</li><li>The right to rectification – to ask us to update and correct any out-of-date or incorrect personal data that we hold about you</li><li>The right to erasure – to delete any personal data processed by Time Resistance, except in certain circumstances (e.g., ongoing customer service issues, open orders, legal obligations)</li><li>The right to object to the processing of your personal data and/or to withdraw any consent you have given us</li><li>The right to restriction – to prevent any data processing likely to cause damage or distress</li></ul><p>If you wish to exercise any of the above rights, you can contact us by email at <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -271,7 +271,7 @@
         "text_jwUiNc": {
           "type": "text",
           "settings": {
-            "text": "<p>By using our site, you consent to our privacy policy. If you have any questions regarding this privacy policy or terms and conditions, you may contact us at:</p><p>• Email: <a href=\"mailto:care@timeresistance.com\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a><br/>• Website: <a href=\"/\" title=\"/\">timeresistance.com</a></p>",
+            "text": "<p>By using our site, you consent to our privacy policy. If you have any questions regarding this privacy policy or terms and conditions, you may contact us at:</p><ul><li>Email: <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></li><li>Website: <a href=\"/\" target=\"_blank\" title=\"/\">au.timeresistance.com</a></li></ul>",
             "text_font_class": "fs-body-75"
           }
         }

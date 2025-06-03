@@ -40,9 +40,9 @@
       "type": "custom-video",
       "name": "Custom Video",
       "settings": {
-        "video_desktop": "{{ collection.metafields.custom.hero_video_desktop.value }}",
-        "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
-        "video_large": "{{ collection.metafields.custom.hero_video_large.value }}",
+        "video_desktop": "shopify://files/videos/MEN- Laptop Bags 1920x500.mp4",
+        "video_mobile": "shopify://files/videos/MEN- Laptop Bags 1000 x 600.mp4",
+        "video_large": "shopify://files/videos/MEN- Laptop Bags 4096 x 1000.mp4",
         "desktop_poster_image": "{{ collection.metafields.custom.hero_poster_desktop.value }}",
         "mobile_poster_image": "{{ collection.metafields.custom.hero_poster_mobile.value }}",
         "large_poster_image": "{{ collection.metafields.custom.hero_poster_large.value }}",
@@ -312,10 +312,12 @@
         "button_text_color": "#000000",
         "button_background_color": "#ffffff",
         "button_padding": "6px 20px",
+        "button_mobile_padding": "",
         "button_border": "",
         "button_border_radius": 0,
         "button_opacity": 70,
-        "button_font_size": 16
+        "button_font_size": 16,
+        "button_mobile_font_size": 16
       }
     }
   },

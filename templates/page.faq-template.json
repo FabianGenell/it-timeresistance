@@ -154,7 +154,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "How can I get in touch with Time Resistance?",
-            "text": "<p>You can email us at<a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>or use the <a href=\"/pages/contact-us\" target=\"_blank\" title=\"Contact Us\">Contact Form</a></p>"
+            "text": "<p>You can email us at <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>or use the <a href=\"/pages/contact-us\" target=\"_blank\" title=\"Contact Us\">Contact Form</a></p>"
           }
         }
       },

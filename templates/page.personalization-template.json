@@ -306,7 +306,7 @@
         "enable_animation": true,
         "divider_style": "none",
         "enable_section_style": true,
-        "section_padding_top": 11,
+        "section_padding_top": 15,
         "section_padding_bottom": 30,
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,

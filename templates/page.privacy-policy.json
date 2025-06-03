@@ -166,7 +166,7 @@
         "text_kgXH8H": {
           "type": "text",
           "settings": {
-            "text": "<p>You should always be cautious when sharing your personal data. No one from our company will ever ask you to confirm any bank account or credit card details via email. If you receive an email claiming to be from Time Resistance asking for such information, please ignore it and do not respond.</p><p>If you are using a computing device in a public location, log out and close the website browser when you complete your session. Additionally, take the following security measures to enhance your online safety:<br/><br/>• Keep your account passwords private<br/><br/>• Use a difficult word/number combination of at least 8 characters for your password and change it frequently<br/><br/>• Avoid using the same password for different online accounts</p>",
+            "text": "<p>You should always be cautious when sharing your personal data. No one from our company will ever ask you to confirm any bank account or credit card details via email. If you receive an email claiming to be from Time Resistance asking for such information, please ignore it and do not respond.</p><p>If you are using a computing device in a public location, log out and close the website browser when you complete your session. Additionally, take the following security measures to enhance your online safety:<br/></p><ul><li>Keep your account passwords private</li><li>Use a difficult word/number combination of at least 8 characters for your password and change it frequently</li><li>Avoid using the same password for different online accounts</li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -208,7 +208,7 @@
         "text_igBfUz": {
           "type": "text",
           "settings": {
-            "text": "<p>We may store and process your information through third-party hosting services in the EU and other jurisdictions. As a result, we may transfer your personal information to a jurisdiction with different data protection and government surveillance laws than your jurisdiction. If we transfer information about you outside of the US, we rely on Privacy Shield as the legal basis for the transfer, as Google Cloud is Privacy Shield certified.</p>",
+            "text": "<p>We may store and process your information through third-party hosting services in the EU and other jurisdictions. As a result, we may transfer your personal information to a jurisdiction with different data protection and government surveillance laws than your jurisdiction. If we transfer information about you outside of Australia, we rely on Privacy Shield as the legal basis for the transfer, as Google Cloud is Privacy Shield certified.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -229,7 +229,7 @@
         "text_bPW3dq": {
           "type": "text",
           "settings": {
-            "text": "<p>You have the following rights:<br/><br/>• The right to be informed about our processing of your personal data<br/><br/>• The right to access the personal data we hold about you at any time<br/><br/>• The right to portability – to have your personal data provided to you by us in a structured, commonly used, and machine-readable format and transferred to you or another party<br/><br/>• The right to rectification – to ask us to update and correct any out-of-date or incorrect personal data that we hold about you<br/><br/>• The right to erasure – to delete any personal data processed by Time Resistance, except in certain circumstances (e.g., ongoing customer service issues, open orders, legal obligations)<br/><br/>• The right to object to the processing of your personal data and/or to withdraw any consent you have given us<br/><br/>• The right to restriction – to prevent any data processing likely to cause damage or distress<br/><br/>If you wish to exercise any of the above rights, you can contact us by email at <a href=\"mailto:care@timeresistance.com\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</p>",
+            "text": "<p>You have the following rights:</p><ul><li>The right to be informed about our processing of your personal data</li><li>The right to access the personal data we hold about you at any time</li><li>The right to portability – to have your personal data provided to you by us in a structured, commonly used, and machine-readable format and transferred to you or another party</li><li>The right to rectification – to ask us to update and correct any out-of-date or incorrect personal data that we hold about you</li><li>The right to erasure – to delete any personal data processed by Time Resistance, except in certain circumstances (e.g., ongoing customer service issues, open orders, legal obligations)</li><li>The right to object to the processing of your personal data and/or to withdraw any consent you have given us</li><li>The right to restriction – to prevent any data processing likely to cause damage or distress</li></ul><p>If you wish to exercise any of the above rights, you can contact us by email at <a href=\"mailto:care@timeresistance.com\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</p>",
             "text_font_class": "fs-body-75"
           }
         },

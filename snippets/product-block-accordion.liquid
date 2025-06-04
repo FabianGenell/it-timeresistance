@@ -1,3 +1,24 @@
+{% doc %}
+  Renders an accordion block for product pages with collapsible content
+
+  @param {object} [block] - Section block with settings and attributes
+  @param {object} [block_settings] - Block settings object
+  @param {string} heading - Accordion heading text (required)
+  @param {string} content - Accordion content (required)
+  @param {boolean} [expand_by_default] - Whether accordion should be open by default
+  @param {string} [label_font] - Font family class for the heading
+  @param {string} [label_font_size] - Font size class for the heading (default: 'text-[18px]')
+  @param {string} [classes] - Additional CSS classes
+  @param {boolean} [disable_rte] - Disable rich text editor styling
+
+  @example
+  Basic accordion
+  {% render 'product-block-accordion', heading: 'Product Details', content: product.description, block: block %}
+  @example
+  With custom styling
+  {% render 'product-block-accordion', heading: 'Shipping Info', content: 'Free shipping details', expand_by_default: true, label_font: 'font-bold' %}
+{% enddoc %}
+
 {%- liquid
   assign open = false
   if block_settings.expand_by_default or expand_by_default

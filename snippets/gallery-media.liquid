@@ -1,17 +1,21 @@
-{%- comment -%}
-  Pass these variables into snippet:
+{% doc %}
+  Renders a gallery media item with image/video and optional overlay label
 
-  Required:
+  @param {object} block - Current block with settings (required)
+  @param {string} aspect_ratio - Aspect ratio for the media (required)
+  @param {string} label_style - Label positioning: 'overlay' or other (required)
+  @param {string} label_size - Size class for the label text (required)
+  @param {string} overlay_text_color - Text color for overlay labels (required)
+  @param {string} overlay_text_background - Background color for overlay labels (required)
+  @param {string} overlay_text_background_style - Background style for overlay labels (required)
+  @param {string} image_sizes - Sizes attribute for responsive images (required)
+  @param {string} [media_aspect_ratio] - Specific aspect ratio for media rendering
+  @param {boolean} [prioritize_loading] - Whether to prioritize loading this media
 
-  * block: Current block
-  * aspect_ratio: String
-  * label_style: String
-  * label_size: String
-  * overlay_text_color: Color_picker value
-  * overlay_text_background: Color_picker value
-  * overlay_text_background_style: String
-  * image_sizes: String (passed to image as sizes attribute)
-{%- endcomment -%}
+  @example
+  Basic gallery media
+  {% render 'gallery-media', block: block, aspect_ratio: 'landscape', label_style: 'overlay', label_size: 'medium', overlay_text_color: '#ffffff', overlay_text_background: '#000000', overlay_text_background_style: 'solid', image_sizes: '50vw' %}
+{% enddoc %}
 
 {%- liquid
   assign label_is_overlay = false

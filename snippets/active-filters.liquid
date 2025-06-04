@@ -1,3 +1,17 @@
+{% doc %}
+  Renders active filter tags with remove functionality
+
+  @param {object} results - Collection or search results object containing filters (required)
+  @param {boolean} [show_swatch_filters] - Whether to show color swatches for swatch filters
+
+  @example
+  Basic active filters
+  {% render 'active-filters', results: collection %}
+  @example
+  With swatch display
+  {% render 'active-filters', results: search, show_swatch_filters: true %}
+{% enddoc %}
+
 {%- liquid
   assign file_extension = 'png'
   assign swatch_options = settings.swatch_options | downcase | split: ', '

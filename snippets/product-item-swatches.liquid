@@ -1,14 +1,22 @@
+{% doc %}
+  Renders swatches for product item hover display with support for regular and sibling swatches
+
+  @param {object} prod - Product object containing swatches (required)
+  @param {string} option_name - Option name for swatch display (required)
+  @param {boolean} [show_sibling_swatches] - Whether sibling swatches are enabled
+  @param {array} [sibling_products] - Array of sibling product objects
+
+  @example
+  Basic product swatches
+  {% render 'product-item-swatches', prod: product, option_name: 'color' %}
+  @example
+  Sibling product swatches
+  {% render 'product-item-swatches', prod: product, option_name: 'style', show_sibling_swatches: true, sibling_products: related_products %}
+{% enddoc %}
+
 {%- liquid
   comment
-    Renders swatches for the product-item hover display.
-
-    Required parameters:
-      - prod: { Object } The product that the swatches are associated with.
-      - option_name: { String } The option name whose values should display as swatches. Is downcased and has newlines stripped.
-
-    Optional parameters:
-      - show_sibling_swatches: { Boolean } Whether sibling swatches are enabled.
-      - sibling_products: { Object } A list of sibling products.
+    Legacy comment structure preserved for reference
   endcomment
 
   case settings.product_card_swatch_size

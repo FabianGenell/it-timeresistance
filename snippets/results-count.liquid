@@ -1,3 +1,13 @@
+{% doc %}
+  Renders the results count message for collection/search pages
+
+  @param {number} results_count - Number of results found (required)
+
+  @example
+  Basic usage
+  {% render 'results-count', results_count: collection.products_count %}
+{% enddoc %}
+
 {%- if results_count == 1 -%}
   {{ 'filters.one_result_html' | t: value: results_count }}
 {%- elsif results_count > 1 -%}

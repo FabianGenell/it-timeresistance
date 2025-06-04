@@ -1,3 +1,23 @@
+{% doc %}
+  Renders a filter item with support for checkboxes, swatches, and chips
+
+  @param {object} filter_value - Filter value object containing label, count, and active state (required)
+  @param {string} type - Type of filter item: 'checkbox', 'swatch', or 'chip' (required)
+  @param {string} [scope] - Scope identifier for filter grouping
+  @param {string} [key] - Data attribute key
+  @param {string} [val] - Data attribute value
+
+  @example
+  Checkbox filter
+  {% render 'filter-item', filter_value: value, type: 'checkbox' %}
+  @example
+  Color swatch filter
+  {% render 'filter-item', filter_value: color_value, type: 'swatch', scope: 'color' %}
+  @example
+  Chip filter for active filters
+  {% render 'filter-item', filter_value: active_value, type: 'chip' %}
+{% enddoc %}
+
 {%- liquid
   assign file_extension = 'png'
 

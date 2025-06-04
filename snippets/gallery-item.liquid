@@ -3,28 +3,35 @@
 {% doc %}
   Renders a gallery item with media, title, and optional text content
 
-  @param {object} block - Current block with settings
-  @param {string} title - Title text for the gallery item
-  @param {object} media - Media object (image or video)
-  @param {string} [text] - Optional text content
+  @param {object} [block] - Current block with settings
+  @param {string} [title] - Title text for the gallery item
+  @param {object} [media] - Media object (image or video)
+  @param {object} [image] - Image object (fallback if media not provided)
   @param {string} [aspect_ratio] - Aspect ratio for the media
-  @param {boolean} [enable_lightbox] - Whether to enable lightbox functionality
+  @param {string} [label_style] - Label style ('overlay' or other positions)
+  @param {string} [label_size] - Size class for the label text
+  @param {string} [overlay_text_color] - Text color for overlay labels
+  @param {string} [overlay_text_background] - Background color for overlay labels
+  @param {string} [overlay_text_background_style] - Background style for overlay labels
+  @param {string} [image_sizes] - Sizes attribute for responsive images
+  @param {object} [metaobject] - Metaobject with fallback values
 
-  @example
-  Basic usage
+  @example Basic usage
   {% render 'gallery-item',
     block: block,
     title: 'Gallery Title',
-    media: block.settings.image
+    media: block.settings.image,
+    aspect_ratio: 'landscape'
   %}
-  @example
-  With text and lightbox
+
+  @example With overlay styling
   {% render 'gallery-item',
     block: block,
     title: 'Product Feature',
     media: block.settings.video,
-    text: 'Detailed description...',
-    enable_lightbox: true
+    label_style: 'overlay',
+    overlay_text_color: '#ffffff',
+    overlay_text_background: '#000000'
   %}
 {% enddoc %}
 

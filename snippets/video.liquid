@@ -1,15 +1,22 @@
-{%- comment -%}
-  inline video element essentially video 'image'
+{% doc %}
+  Renders an inline video element with wrapper and controls
 
-  Pass in:
-  video: URL
-  controls: Bool (optional)
-  loop: Bool (optional)
-  wrapper_class: String
-  aspect_ratio: String
-  focal_alignment: String
-  animate: Bool (optional)
-{%- endcomment -%}
+  @param {object} video - Video object or URL (required)
+  @param {boolean} [controls] - Whether to show video controls
+  @param {boolean} [loop] - Whether video should loop (default: true)
+  @param {string} [wrapper_class] - CSS classes for the wrapper element
+  @param {string} [aspect_ratio] - Aspect ratio for the video
+  @param {string} [focal_point] - Focal point for video positioning
+  @param {string} [focal_alignment] - Manual focal alignment override
+  @param {boolean} [animate] - Whether to add animation classes
+
+  @example
+  Basic video
+  {% render 'video', video: section.settings.video %}
+  @example
+  With controls and custom aspect ratio
+  {% render 'video', video: product_video, controls: true, aspect_ratio: 'landscape', wrapper_class: 'product-video' %}
+{% enddoc %}
 {%- liquid
   if focal_point
     assign focal_alignment = focal_point | replace: '_', ' '

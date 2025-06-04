@@ -1,15 +1,19 @@
-{%- comment -%}
-  Pass these variables into snippet:
-  Required:
+{% doc %}
+  Renders product media thumbnails for product pages with scrollable navigation
 
-  * featured_media: { Object } Used to highlight the initial selected thumbnail.
-  * aspect_ratio: { String } Applies the media's aspect ratio setting to the thumbnails.
+  @param {object} featured_media - Currently selected media object to highlight (required)
+  @param {string} aspect_ratio - Aspect ratio setting for thumbnails (required)
+  @param {number} [initial_variant_media_position] - First media index for variant range
+  @param {number} [next_variant_media_index] - Last media index for variant range
+  @param {object} [product] - Product object containing media (uses global product if not provided)
 
-  Optional:
-
-  * initial_variant_media_position: { Number } The first of a variant's media range. Used in conjunction with `next_variant_media_index` for multiple variant media.
-  * next_variant_media_index: { Number } The last of a variant's media range. Used in conjunction with `initial_variant_media_position` for multiple variant media.
-{%- endcomment -%}
+  @example
+  Basic product thumbnails
+  {% render 'product-thumbnails', featured_media: product.selected_or_first_available_variant.featured_media, aspect_ratio: 'square' %}
+  @example
+  With variant media range
+  {% render 'product-thumbnails', featured_media: current_media, aspect_ratio: 'landscape', initial_variant_media_position: 2, next_variant_media_index: 5 %}
+{% enddoc %}
 
 {% if product.media.size > 1 %}
   <div

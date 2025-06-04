@@ -1,22 +1,28 @@
+{% doc %}
+  Renders a product swatch with support for colors, images, and variant selection
+
+  @param {string} context - Rendering context: 'product-page' or 'product-item' (required)
+  @param {object} prod - Product object associated with the swatch (required)
+  @param {number} forloop_index - Index from option value loop (required)
+  @param {string} option_name - Option name for swatch display (required)
+  @param {number} option_index - 1-based option index in product options (required)
+  @param {string} option_value - Option value to render as swatch (required)
+  @param {number} [swatch_size] - Width of the swatch
+  @param {number} [swatch_image_width] - Width of swatch image source
+  @param {object} [sibling_product] - Sibling product object for product image swatches
+  @param {string} [selected_value] - Currently selected option value
+
+  @example
+  Basic color swatch
+  {% render 'product-swatch', context: 'product-page', prod: product, forloop_index: 1, option_name: 'color', option_index: 1, option_value: 'Red' %}
+  @example
+  Sibling product swatch
+  {% render 'product-swatch', context: 'product-page', prod: product, forloop_index: 1, option_name: 'style', option_index: 1, option_value: 'Classic', sibling_product: related_product %}
+{% enddoc %}
+
 {% liquid
   comment
-    Renders a swatch.
-
-    Required parameters:
-      - context: { String } Where the swatch is being rendered (the swatch markup can vary depending on the context). Can be:
-        - 'product-page'
-        - 'product-item'
-      - prod: { Object } The product that the swatch is associated with.
-      - forloop_index: { Number } Taken from the option looping through values.
-      - option_name: { String } The option name whose values should display as swatches. Is downcased and has newlines stripped.
-      - option_index: { Number } The index of the option (1-based) in the list of product options. Used to find the associated variant image if variant image swatches are enabled.
-      - option_value: { String } The current option value being rendered as a swatch.
-
-    Optional parameters:
-      - swatch_size: { Number } The width of the swatch.
-      - swatch_image_width: { Number } The width of the swatch image source.
-      - sibling_product: { Object } The product object for a sibling swatch. Used to show a sibling product image if the sibling swatch source is set to "Product image".
-      - selected_value: { String } The currently selected option value. Only applies to variant picker swatches to determine whether the current swatch is selected.
+    Legacy comment structure preserved for reference
   endcomment
 
   assign file_extension = 'png'

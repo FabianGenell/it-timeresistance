@@ -1,3 +1,15 @@
+{% doc %}
+  Renders a product description block with optional collapsible functionality
+
+  @param {object} [block] - Section block with settings for display options
+  @param {object} product - Product object containing description (required)
+  @param {object} [block_settings] - Block settings object
+
+  @example
+  Basic product description
+  {% render 'product-block-description', product: product, block: block %}
+{% enddoc %}
+
 {%- liquid
   if product != blank
     assign description = product.description

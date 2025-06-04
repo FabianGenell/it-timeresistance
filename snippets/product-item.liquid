@@ -1,18 +1,30 @@
-{%- comment -%}
-  Variables that can be passed to this snippet:
-  - prod: (object) The product object to display (avoiding collision with globally scoped product)
-  - var: (object) Optional. The variant object to display
-  - product_columns_desktop: (number) Number of columns to display on desktop
-  - product_columns_mobile: (number) Number of columns to display on mobile
-  - show_quick_buy: (boolean) Whether to show quick buy button
-  - quick_view_is_beneath: (boolean) Whether quick view should appear beneath the product
-  - is_quick: (boolean) Whether this is a quick view context
-  - has_grid_reveal: (boolean) Whether to enable grid reveal animation
-  - placeholder: (boolean) Whether to show placeholder content
-  - collection: (object) Optional. The current collection context
-  - show_favorite_button: (boolean) Whether to show the favorite button
-  - show_price: (boolean) Whether to show the price
-{%- endcomment -%}
+{% doc %}
+  Renders a product card for grid layouts with configurable options
+
+  @param {object} prod - The product object to display (avoiding collision with globally scoped product)
+  @param {object} [var] - Optional variant object to display
+  @param {number} [product_columns_desktop] - Number of columns to display on desktop
+  @param {number} [product_columns_mobile] - Number of columns to display on mobile
+  @param {boolean} [show_quick_buy] - Whether to show quick buy button
+  @param {boolean} [quick_view_is_beneath] - Whether quick view should appear beneath the product
+  @param {boolean} [is_quick] - Whether this is a quick view context
+  @param {boolean} [has_grid_reveal] - Whether to enable grid reveal animation
+  @param {boolean} [placeholder] - Whether to show placeholder content
+  @param {object} [collection] - Optional current collection context
+  @param {boolean} [show_favorite_button] - Whether to show the favorite button
+  @param {boolean} [show_price] - Whether to show the price
+
+  @example Basic usage
+  {% render 'product-item', prod: product %}
+
+  @example With configuration
+  {% render 'product-item',
+    prod: product,
+    product_columns_desktop: 4,
+    show_quick_buy: true,
+    show_favorite_button: true
+  %}
+{% enddoc %}
 
 <!-- snippets/product-item.liquid -->
 

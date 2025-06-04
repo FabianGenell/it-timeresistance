@@ -1,3 +1,15 @@
+{% doc %}
+  Renders pagination controls for collections and search results
+
+  @param {string} [type] - Type of content being paginated (for translation)
+
+  @example Basic usage
+  {% render 'pagination' %}
+
+  @example With custom type
+  {% render 'pagination', type: 'general.pagination.products' %}
+{% enddoc %}
+
 {%- liquid
   assign pagination_type = type | t
   assign active_page_index = 0

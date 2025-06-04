@@ -1,3 +1,23 @@
+{% doc %}
+  Renders a filter bar with active filters and filter controls for collections
+
+  @param {object} results - Collection or search results object
+  @param {boolean} [show_filters] - Whether to show filter options
+  @param {boolean} [enable_sorting] - Whether to show sort options
+  @param {string} [collection_url] - Base URL for the collection
+
+  @example Basic usage
+  {% render 'filter-bar', results: collection %}
+
+  @example With sorting enabled
+  {% render 'filter-bar',
+    results: collection,
+    show_filters: true,
+    enable_sorting: true,
+    collection_url: collection.url
+  %}
+{% enddoc %}
+
 {%- liquid
   assign filters_valid = false
   if results.filters != empty and show_filters

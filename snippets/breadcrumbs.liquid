@@ -1,3 +1,12 @@
+{% doc %}
+  Renders breadcrumb navigation for improved user experience and SEO
+
+  @param {boolean} [show_breadcrumbs] - Whether to display breadcrumbs
+
+  @example Basic usage
+  {% render 'breadcrumbs', show_breadcrumbs: true %}
+{% enddoc %}
+
 {%- assign current_template = template | split: '.' | first -%}
 <nav class="breadcrumbs ff-body fs-body-75" role="navigation" aria-label="breadcrumbs">
   {%- if show_breadcrumbs -%}

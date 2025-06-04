@@ -1,3 +1,16 @@
+{% doc %}
+  Renders SVG icons with consistent styling for the theme
+
+  @param {string} icon - The icon name to render
+  @param {string} [class] - Additional CSS classes for the icon
+
+  @example Basic usage
+  {% render 'icon', icon: 'header-account' %}
+
+  @example With custom class
+  {% render 'icon', icon: 'chevron-down', class: 'rotate-180' %}
+{% enddoc %}
+
 <span class="icon icon-new icon-{{ icon }} {{ class }}">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     {%- case icon -%}

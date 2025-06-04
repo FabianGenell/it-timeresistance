@@ -1,3 +1,23 @@
+{% doc %}
+  Renders a search result item (product, article, or page) in search results
+
+  @param {object} item - The search result item (product, article, or page)
+  @param {number} [columns_desktop] - Number of columns on desktop (default: 4)
+  @param {number} [columns_mobile] - Number of columns on mobile (default: 2)
+  @param {string} [result_type] - Type of search result for styling
+
+  @example Basic usage
+  {% render 'search-item', item: search_result %}
+
+  @example With custom grid
+  {% render 'search-item',
+    item: search_result,
+    columns_desktop: 3,
+    columns_mobile: 1,
+    result_type: 'product'
+  %}
+{% enddoc %}
+
 {%- liquid
   assign mobile_column_count = 2
   if columns_mobile == 1

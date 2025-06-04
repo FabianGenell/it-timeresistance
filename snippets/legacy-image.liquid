@@ -1,41 +1,39 @@
-{%- liquid
-  comment
-    Renders an image, with an optional placeholder.
+{% doc %}
+  Renders an image with wrapper, optional placeholder, and performance optimizations
 
-    Optional parameters:
-      - image: { Object } The image to be rendered.
-      - One of the following:
-        - sizes: { String } A list of responsive image sizes (for the 'sizes' attributes).
-        - sizes_px: { Number } A width (in pixels) for the image.
-      - aspect_ratio: { String } The aspect ratio of the image.
-      - focal_point: { String } The source of the focal point of the image. Can be:
-        - 'image_presentation': The focal point comes from the image itself.
-        - 'center'
-        - 'top'
-        - 'right'
-        - 'bottom'
-        - 'left'
-      - focal_alignment: { String } The focal alignment ('object-position') of the image (based on the focal point
-        source). Used for cropping.
-      - wrapper_class: { String } A custom class to be applied to the image wrapper.
-      - image_class: { String } A custom class to be applied to the image.
-      - prioritize_loading: { Boolean } If 'true', the `loading="lazy"` attribute won't be added to the image.
-      - animate: { Boolean } Whether the image should be animated.
-      - include_placeholder: { Boolean } Whether a placeholder should be rendered if no image is provided.
-      - placeholder_name: { String } The name of the Shopify placeholder SVG to used.
-      - placeholder_natural_fallback_ratio: { String } The aspect ratio of the placeholder, if not already set.
-      - fallback_alt: { String } Alt text to use if the image doesn't have any.
-      - no_crop: { Boolean } If 'true', the image will be loaded in full, and then cropped in CSS (rather than
-        letting Shopify serve a cropped image).
-      - object_fit: { String } The 'object-fit' CSS property to use for the image.
-      - no_lazy_load: { Boolean } If 'true', no lazy load animations are applied.
-      - src_set_type: { String } A string noting the kind of environment the image is being rendered in to help
-        with more performant srcset generation. If this parameter isn't specified, a comprehensive srcset range
-        will be used. Can be:
-        - 'grid'
-        - 'full-width'
-        - 'thumbnail'
-  endcomment
+  @param {object} [image] - The image object to render
+  @param {string} [sizes] - Responsive image sizes for the 'sizes' attribute
+  @param {number} [sizes_px] - Fixed width in pixels (alternative to sizes)
+  @param {string} [aspect_ratio] - Image aspect ratio ('portrait', 'landscape', 'square', 'natural')
+  @param {string} [focal_point] - Focal point source ('image_presentation', 'center', 'top', 'right', 'bottom', 'left')
+  @param {string} [focal_alignment] - CSS object-position value based on focal point
+  @param {string} [wrapper_class] - CSS classes for the image wrapper
+  @param {string} [image_class] - CSS classes for the image element
+  @param {boolean} [prioritize_loading] - If true, skip lazy loading
+  @param {boolean} [animate] - Enable image animations
+  @param {boolean} [include_placeholder] - Show placeholder if no image
+  @param {string} [placeholder_name] - Shopify placeholder SVG name
+  @param {string} [placeholder_natural_fallback_ratio] - Fallback aspect ratio for placeholder
+  @param {string} [fallback_alt] - Alt text fallback if image has no alt
+  @param {boolean} [no_crop] - Load full image and crop with CSS
+  @param {string} [object_fit] - CSS object-fit property value
+  @param {boolean} [no_lazy_load] - Disable lazy load animations
+  @param {string} [src_set_type] - Optimize srcset ('grid', 'full-width', 'thumbnail')
+  @param {string} [load_type] - Control loading timing ('dom', 'load', 'manual')
+
+  @example Basic usage
+  {% render 'legacy-image', image: product.featured_image, sizes: '50vw' %}
+
+  @example With wrapper and animation
+  {% render 'legacy-image',
+    image: block.settings.image,
+    aspect_ratio: 'landscape',
+    wrapper_class: 'hero-image',
+    animate: true
+  %}
+{% enddoc %}
+
+{%- liquid
 
   if image != image.preview_image and image.preview_image
     comment

@@ -1,10 +1,21 @@
-{% comment %}
-  pass in:
-  * aspect_ratio
-  * placeholder_name (optional) name from https://www.shopify.ca/partners/blog/placeholder-images
-  * wrapper_class (optional)
-  * natural_fallback_ratio (optional) ratio used when aspect_ratio is 'natural' (defaults to square)
-{% endcomment %}
+{% doc %}
+  Renders a placeholder image with configurable aspect ratio and styling
+
+  @param {string} aspect_ratio - Aspect ratio for the placeholder image (required)
+  @param {string} [placeholder_name] - Placeholder name from Shopify's placeholder system (default: 'image')
+  @param {string} [wrapper_class] - Additional CSS classes for the wrapper element
+  @param {string} [natural_fallback_ratio] - Fallback ratio when aspect_ratio is 'natural' (default: 'square')
+
+  @example
+  Basic placeholder
+  {% render 'placeholder-image', aspect_ratio: 'square' %}
+  @example
+  Product placeholder
+  {% render 'placeholder-image', aspect_ratio: 'portrait', placeholder_name: 'product-1', wrapper_class: 'product-image' %}
+  @example
+  Collection placeholder
+  {% render 'placeholder-image', aspect_ratio: 'landscape', placeholder_name: 'collection-1', natural_fallback_ratio: 'wide' %}
+{% enddoc %}
 {%- liquid
   assign placeholder_tag = 'image'
 

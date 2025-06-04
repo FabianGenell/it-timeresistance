@@ -1,3 +1,22 @@
+{% doc %}
+  Renders a newsletter subscription form with email input and submit button
+
+  @param {string} [button_text] - Text for the submit button (default: localized 'Submit')
+  @param {string} [class] - Additional CSS classes for the form wrapper
+  @param {string} [id] - Form ID for accessibility (default: 'newsletter')
+  @param {string} [tags] - Customer tags to apply on subscription (default: 'newsletter')
+
+  @example
+  Basic newsletter form
+  {% render 'newsletter-form' %}
+  @example
+  Customized newsletter form
+  {% render 'newsletter-form', button_text: 'Subscribe Now', class: 'footer-newsletter', id: 'footer-newsletter-form', tags: 'footer-subscriber' %}
+  @example
+  Newsletter with custom styling
+  {% render 'newsletter-form', class: 'popup-newsletter', id: 'popup-newsletter' %}
+{% enddoc %}
+
 {%- liquid
   if button_text == blank
     assign button_text = 'general.newsletter_form.submit' | t
@@ -18,7 +37,9 @@
   {%- unless form.posted_successfully? -%}
     <div class="newsletter-form__inner">
       <input type="hidden" name="contact[tags]" value="{{ tags }}">
-      <label for="{{ id }}-email" class="visually-hidden">{{ 'general.newsletter_form.email_placeholder' | t }}</label>
+      <label for="{{ id }}-email" class="visually-hidden">
+        {{- 'general.newsletter_form.email_placeholder' | t -}}
+      </label>
       <input
         type="email"
         class="input newsletter-form__input"
@@ -31,9 +52,8 @@
         required
       >
 
-      {%-
-        render 'button-block',
-        wrapper_class: "newsletter-form__button",
+      {%- render 'button-block',
+        wrapper_class: 'newsletter-form__button',
         label: button_text,
         is_full: true,
         is_overlay: true,

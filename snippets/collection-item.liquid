@@ -1,20 +1,21 @@
-<!-- - snippets/collection-item.liquid - -->
-{%- comment -%}
-  Pass these variables into snippet:
+{% doc %}
+  Renders a collection item card with image, title, and optional button
 
-  Required:
+  @param {object} collection - Collection object to display (required)
+  @param {string} label_style - Style for the label: 'overlay' or other (required)
+  @param {string} overlay_title_background - Color picker value for overlay background (required)
+  @param {string} overlay_title_background_style - Style for overlay background (required)
+  @param {string} image_sizes - Sizes attribute for responsive images (required)
+  @param {string} [aspect_ratio] - Aspect ratio for the image
+  @param {boolean} [placeholder] - Show placeholder content if true
 
-  * collection: Collection object
-  * label_style: String
-  * overlay_title_background: Color_picker value
-  * overlay_title_background_style: String
-  * image_sizes: String (passed to image as sizes attribute)
-
-  Optional:
-
-  * aspect_ratio: String
-  * placeholder: Bool - show placeholder content if passed
-{%- endcomment -%}
+  @example
+  Basic collection item
+  {% render 'collection-item', collection: collections.featured, label_style: 'overlay', overlay_title_background: '#000000', overlay_title_background_style: 'solid', image_sizes: '(min-width: 768px) 50vw, 100vw' %}
+  @example
+  With custom aspect ratio
+  {% render 'collection-item', collection: collections.men, label_style: 'below', overlay_title_background: '#ffffff', overlay_title_background_style: 'gradient', image_sizes: '300px', aspect_ratio: 'portrait' %}
+{% enddoc %}
 
 {%- liquid
   assign label_is_overlay = false

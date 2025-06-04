@@ -1,10 +1,21 @@
-{%- comment -%}
-  Pass in:
-  - prod: object The product object
-  - hidden: boolean (optional, used to not trip up javascript if buy button is removed)
-  - price_content_type: "price" or "custom" or "hide" after checking both $0 and sold out pricing display settings
-  - custom_price_content: the translation to populate price if sold out or free, depending on logic checks and settings
-{%- endcomment -%}
+{% doc %}
+  Renders a product form with variant selection and add to cart functionality
+
+  @param {object} prod - The product object
+  @param {boolean} [hidden] - Used to prevent JavaScript conflicts if buy button is removed
+  @param {string} [price_content_type] - Display type: "price", "custom", or "hide" 
+  @param {string} [custom_price_content] - Translation content for sold out or free products
+
+  @example Basic usage
+  {% render 'product-form', prod: product %}
+
+  @example With custom pricing
+  {% render 'product-form',
+    prod: product,
+    price_content_type: 'custom',
+    custom_price_content: 'Sold out'
+  %}
+{% enddoc %}
 
 {%- liquid
   assign product_available_label = 'products.product.add_to_cart' | t

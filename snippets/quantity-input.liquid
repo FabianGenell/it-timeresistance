@@ -1,3 +1,21 @@
+{% doc %}
+  Renders a quantity input control with plus/minus buttons
+
+  @param {string} [id] - Unique identifier for the input element
+  @param {number} [min] - Minimum quantity value (default: 1)
+  @param {number} [value] - Initial quantity value (default: 1)
+
+  @example Basic usage
+  {% render 'quantity-input', id: 'product-form' %}
+
+  @example With custom values
+  {% render 'quantity-input', 
+    id: 'cart-item', 
+    min: 0, 
+    value: item.quantity 
+  %}
+{% enddoc %}
+
 <div class="quantity-input">
   <button
     type="button"

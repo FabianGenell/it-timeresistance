@@ -1,3 +1,21 @@
+{% doc %}
+  Renders a modal dialog with header, content area, and close functionality
+
+  @param {string} [modal_id] - Unique identifier for the modal
+  @param {string} [title] - Modal title text
+  @param {string} [size] - Modal size ('small', 'medium', 'large')
+
+  @example Basic usage
+  {% render 'modal', modal_id: 'size-guide' %}
+
+  @example With title and size
+  {% render 'modal', 
+    modal_id: 'product-details',
+    title: 'Product Details',
+    size: 'large'
+  %}
+{% enddoc %}
+
 <div class="modal popover" data-modal>
   <div class="modal__wash"></div>
   <div class="modal__inner" data-scroll-lock-ignore>

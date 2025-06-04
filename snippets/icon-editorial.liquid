@@ -1,3 +1,16 @@
+{% doc %}
+  Renders editorial-style SVG icons with consistent styling
+
+  @param {string} icon - The icon name to render
+  @param {string} [class] - Additional CSS classes for the icon
+
+  @example Basic usage
+  {% render 'icon-editorial', icon: 'bank' %}
+
+  @example With custom class
+  {% render 'icon-editorial', icon: 'italy', class: 'text-accent' %}
+{% enddoc %}
+
 <span class="icon icon-new icon-{{ icon }} {{ class }}">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       {%- case icon -%}

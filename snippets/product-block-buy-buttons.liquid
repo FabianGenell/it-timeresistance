@@ -1,3 +1,22 @@
+{% doc %}
+  Renders buy buttons block for product forms including quantity error handling and gift card recipient form
+
+  @param {object} prod - The product object
+  @param {object} [section] - Section object with settings
+  @param {object} [current_variant] - Currently selected product variant
+  @param {boolean} [show_dynamic_checkout] - Whether to show dynamic checkout buttons
+
+  @example Basic usage
+  {% render 'product-block-buy-buttons', prod: product %}
+
+  @example With dynamic checkout
+  {% render 'product-block-buy-buttons', 
+    prod: product,
+    current_variant: product.selected_or_first_available_variant,
+    show_dynamic_checkout: true
+  %}
+{% enddoc %}
+
 <div
   class="product__quantity-error product__block product__block--medium hidden"
   data-quantity-error

@@ -1,16 +1,24 @@
-{% comment %}
-  Renders a form status message
-  Accepts:
-  - form: {Object} Form Liquid object (required)
-  - form_id: {String} Form's id attribute for accessibility purpose (required)
-  - success_message: {String} Success message locale key. Default to 'contact.form.post_success' (optional)
-  - success_alignment: {String} text alignment setting to connect success message alignment
+{% doc %}
+  Renders a form status message with success confirmation or error messages
 
-  Usage:
-  {% render 'form-status', form: form, form_id: formId, success_message: post_message, success_alignment: success_alignment %}
-{% endcomment %}
+  @param {object} form - Form Liquid object (required)
+  @param {string} form_id - Form's id attribute for accessibility purpose (required)
+  @param {string} [success_message] - Success message locale key (default: 'contact.form.post_success')
+  @param {string} [success_alignment] - Text alignment setting to connect success message alignment
+
+  @example
+  Basic usage
+  {% render 'form-status', form: form, form_id: 'contact-form' %}
+  @example
+  With custom success message
+  {% render 'form-status', form: form, form_id: 'newsletter-form', success_message: 'Newsletter subscription confirmed!', success_alignment: 'center' %}
+{% enddoc %}
 {% if form.posted_successfully? or form.errors %}
-  <div id="form-status--{{ form_id }}" class="form-status" style="--success-alignment: {{ success_alignment }}">
+  <div
+    id="form-status--{{ form_id }}"
+    class="form-status"
+    style="--success-alignment: {{ success_alignment }}"
+  >
     {%- if form.posted_successfully? and success_message -%}
       <span
         class="form-status__message form-status__message--success"

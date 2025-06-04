@@ -1,3 +1,22 @@
+{% doc %}
+  Renders product variant picker with swatches, chips, and dropdown options
+
+  @param {object} prod - The product object
+  @param {object} [current_variant] - Currently selected variant
+  @param {object} [block] - Block object with settings
+  @param {boolean} [is_quick] - Whether this is in quick view context
+
+  @example Basic usage
+  {% render 'product-block-variant-picker', prod: product %}
+
+  @example With current variant
+  {% render 'product-block-variant-picker',
+    prod: product,
+    current_variant: product.selected_or_first_available_variant,
+    is_quick: false
+  %}
+{% enddoc %}
+
 {%- liquid
   assign swatch_options = settings.swatch_options | downcase | split: ', '
   assign chip_options = settings.chip_options | downcase | split: ', '

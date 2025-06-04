@@ -1,30 +1,30 @@
-{%- comment -%}
-  Pass these variables into snippet:
+{% doc %}
+  Renders a responsive image with lazy loading and performance optimizations
 
-  Required:
-  * image: Image object
-  * sizes: srcset size attribute
+  @param {object} image - The image object to render
+  @param {string} sizes - The sizes attribute for responsive images
+  @param {boolean} [prioritize_loading] - If true, loads image with high priority
+  @param {number} [fallback_width] - Width for browsers that don't support srcset (default: 320)
+  @param {string} [tag_name] - HTML tag to render ('img', 'picture', 'source') (default: 'img')
+  @param {string} [media] - Media query for source elements
+  @param {string} [aspect_ratio] - Force aspect ratio ('portrait', 'landscape', 'square', 'natural')
+  @param {string} [fallback_alt] - Alt text fallback if image has no alt
+  @param {boolean} [no_crop] - If true, don't crop image server-side
+  @param {string} [src_set_type] - Optimize srcset for context ('grid', 'full-width', 'thumbnail')
+  @param {string} [load_type] - Control loading timing ('dom', 'load', 'manual')
+  @param {string} [class_name] - Additional CSS classes for the image
 
-  Optional:
-  * prioritize_loading: is this image rendered above the fold or otherwise prioritized? this will avoid loading="lazy"
-  * fallback_width: width shown to browsers that don't support srcSet
-  * tag_name: render something other than an `img` element, for instance `picture` or `source`
-  * media: custom media definition for `source`
-  * aspect_ratio: necessary if the image is displayed at a non natural aspect ratio
-  * fallback_alt: fall back alt text if non set on image in admin
-  * no_crop: { Boolean } If 'true', the image will be loaded in full, and then cropped in CSS (rather than
-      letting Shopify serve a cropped image).
-  * src_set_type: optional parameter used to reduce the srcset generation to speed up page perf
-      - 'grid'
-      - 'full-width'
-      - 'thumbnail'
-      - if unset a comprehensive src set range will be used
-  * load_type: { String } Controls when the image loads for performance optimization
-      - 'dom': Load when DOM is ready
-      - 'load': Load when window load event fires
-      - 'manual': Don't load automatically (requires manual trigger)
-      - if unset, image loads normally
-{%- endcomment -%}
+  @example Basic usage
+  {% render 'responsive-image', image: product.featured_image, sizes: '50vw' %}
+
+  @example With performance optimization
+  {% render 'responsive-image', 
+    image: media, 
+    sizes: '90vw',
+    load_type: 'load',
+    prioritize_loading: true
+  %}
+{% enddoc %}
 
 {%- liquid
   if tag_name == blank

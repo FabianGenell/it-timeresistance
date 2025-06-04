@@ -1,3 +1,15 @@
+{% doc %}
+  Renders unit price information for cart line items or product variants
+
+  @param {object} item - Cart line item or product variant with unit price data (required)
+
+  @example Cart line item
+  {% render 'unit-price', item: line_item %}
+
+  @example Product variant
+  {% render 'unit-price', item: product.selected_or_first_available_variant %}
+{% enddoc %}
+
 <dl data-unit-price-container class="unit-price{% if item.unit_price_measurement %} unit-price--available{% endif %}">
   <dt>
     <span class="visually-hidden visually-hidden--inline">{{ 'products.product.unit_price_label' | t }}</span>

@@ -1,9 +1,18 @@
-{%- comment -%}
-  Star rating icons
+{% doc %}
+  Renders star rating icons based on a numeric rating value
 
-  Pass in:
-  rating: [Int] the current rating
-{%- endcomment -%}
+  @param {number} rating - The rating value (0-5) to display as stars (required)
+
+  @example
+  Full rating
+  {% render 'star-rating', rating: 5 %}
+  @example
+  Partial rating
+  {% render 'star-rating', rating: 3.5 %}
+  @example
+  Product rating
+  {% render 'star-rating', rating: product.metafields.reviews.rating.value %}
+{% enddoc %}
 
 {%- liquid
   assign max_star_rating = 5

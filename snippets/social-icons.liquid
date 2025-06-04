@@ -1,3 +1,15 @@
+{% doc %}
+  Renders social media icons based on theme settings
+
+  @param {string} [position] - Icon alignment ('left', 'center', 'right') (default: 'left')
+
+  @example Basic usage
+  {% render 'social-icons' %}
+
+  @example With center alignment
+  {% render 'social-icons', position: 'center' %}
+{% enddoc %}
+
 {%- liquid
   if position == blank
     assign position = 'left'

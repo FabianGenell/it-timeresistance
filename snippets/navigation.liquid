@@ -1,3 +1,21 @@
+{% doc %}
+  Renders a navigation menu with support for nested submenus and mega navigation
+
+  @param {object} menu - Menu Liquid object containing navigation links (required)
+  @param {object} [blocks] - Section blocks for mega navigation configuration
+  @param {boolean} [no_children] - If true, prevents display of child menu items (default: false)
+
+  @example
+  Basic navigation menu
+  {% render 'navigation', menu: main_menu %}
+  @example
+  Navigation without child menus
+  {% render 'navigation', menu: footer_menu, no_children: true %}
+  @example
+  Navigation with mega menu blocks
+  {% render 'navigation', menu: main_menu, blocks: section.blocks %}
+{% enddoc %}
+
 {% liquid
   assign can_show_children = true
 

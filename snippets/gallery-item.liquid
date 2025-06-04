@@ -1,13 +1,31 @@
 <!-- snippets/gallery-item.liquid -->
 
-{%- comment -%}
-  Pass these variables into snippet:
+{% doc %}
+  Renders a gallery item with media, title, and optional text content
 
-  Required:
+  @param {object} block - Current block with settings
+  @param {string} title - Title text for the gallery item
+  @param {object} media - Media object (image or video)
+  @param {string} [text] - Optional text content
+  @param {string} [aspect_ratio] - Aspect ratio for the media
+  @param {boolean} [enable_lightbox] - Whether to enable lightbox functionality
 
-  * block: Current block
-  * title: String
-  * media: media
+  @example Basic usage
+  {% render 'gallery-item',
+    block: block,
+    title: 'Gallery Title',
+    media: block.settings.image
+  %}
+
+  @example With text and lightbox
+  {% render 'gallery-item',
+    block: block,
+    title: 'Product Feature',
+    media: block.settings.video,
+    text: 'Detailed description...',
+    enable_lightbox: true
+  %}
+{% enddoc %}
   * image: Image
   * aspect_ratio: String
   * label_style: String

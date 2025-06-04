@@ -1,23 +1,30 @@
-{% comment %}
-  Renders media elements (images, videos, external videos, 3D models) with performance optimizations.
-  
-  Parameters:
-  * media: { Object } - Shopify media object (required)
-  * within_carousel: { Boolean } - Makes iframes more usable within touch slider
-  * load_type: { String } - Controls when media loads for performance
-      - 'dom': Load when DOM is ready
-      - 'load': Load when window load event fires  
-      - 'manual': Don't load automatically (requires manual trigger)
-  * enable_product_lightbox: { Boolean } - Enable lightbox functionality
-  * loop_video: { Boolean } - Enable video looping
-  * aspect_ratio: { String } - Aspect ratio for media container
-  * sizes: { String } - Sizes attribute for responsive images
-  * animate: { Boolean } - Enable entrance animations
-  * prioritize_loading: { Boolean } - Load image with high priority
-  * fallback_alt: { String } - Alt text fallback
-  * featured_media: { Object } - Featured media object for comparison
-  * link: { String } - Optional link URL for media
-{% endcomment %}
+{% doc %}
+  Renders media elements (images, videos, external videos, 3D models) with performance optimizations
+
+  @param {object} media - The Shopify media object to render
+  @param {boolean} [within_carousel] - Optimize iframes for touch sliders
+  @param {string} [load_type] - Control loading timing ('dom', 'load', 'manual')
+  @param {boolean} [enable_product_lightbox] - Enable lightbox functionality
+  @param {boolean} [loop_video] - Enable video looping
+  @param {string} [aspect_ratio] - Aspect ratio for media container
+  @param {string} [sizes] - Sizes attribute for responsive images
+  @param {boolean} [animate] - Enable entrance animations
+  @param {boolean} [prioritize_loading] - Load with high priority
+  @param {string} [fallback_alt] - Alt text fallback if media has no alt
+  @param {object} [featured_media] - Featured media object for comparison
+  @param {string} [link] - Optional URL to wrap media in link
+
+  @example Basic usage
+  {% render 'media', media: product.featured_media %}
+
+  @example With performance optimization
+  {% render 'media',
+    media: media,
+    load_type: 'load',
+    enable_product_lightbox: true,
+    within_carousel: false
+  %}
+{% enddoc %}
 <div
   class="
     media

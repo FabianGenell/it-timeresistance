@@ -1,3 +1,16 @@
+{% doc %}
+  Renders product badges based on custom metafield
+
+  @param {object} prod - Product object to display badges for (required)
+
+  @example
+  Basic usage
+  {% render 'product-badges', prod: product %}
+  @example
+  In product card
+  {% render 'product-badges', prod: collection.products.first %}
+{% enddoc %}
+
 {%- liquid
   assign badge = prod.metafields.custom.product_badge_text
 -%}

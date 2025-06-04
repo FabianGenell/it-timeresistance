@@ -1,18 +1,17 @@
-{%- comment -%}
-  Renders a product's price display with support for sale prices, variable pricing, and custom display options.
+{% doc %}
+  Renders a product's price display with support for sale prices, variable pricing, and custom display options
 
-  Required parameters:
-  - prod* (object): The product object with properties
-  - placeholder (boolean): Show placeholder price if true
-  - current_variant (object): Current variant for unit price display
+  @param {object} prod - The product object with pricing properties
+  @param {boolean} [placeholder] - Show placeholder price if true
+  @param {object} [current_variant] - Current variant for unit price display
 
-  Usage:
+  @example Basic usage
   {% render 'price',
     prod: product,
     current_variant: product.selected_or_first_available_variant,
     placeholder: false
   %}
-{%- endcomment -%}
+{% enddoc %}
 
 {% liquid
   assign price_content_type = 'price'

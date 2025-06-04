@@ -5,8 +5,9 @@
 {{ 'partial-shopify-product-reviews.css' | asset_url | stylesheet_tag }}
 
 {% liquid
+  assign defer_load_type = 'manual'
   assign current_variant = product.selected_or_first_available_variant
-  
+
   # Performance optimization: defer loading media beyond this threshold
   assign media_priority_threshold = 3
 
@@ -319,7 +320,7 @@
 
                 assign media_load_type = null
                 if forloop.index > media_priority_threshold
-                  assign media_load_type = 'manual'
+                  assign media_load_type = defer_load_type
                 endif
               -%}
               <div
@@ -389,7 +390,7 @@
 
                 assign media_load_type = null
                 if forloop.index > media_priority_threshold
-                  assign media_load_type = 'manual'
+                  assign media_load_type = defer_load_type
                 endif
               -%}
               <div
@@ -486,7 +487,7 @@
 
               assign media_load_type = null
               if forloop.index > media_priority_threshold
-                assign media_load_type = 'manual'
+                assign media_load_type = defer_load_type
               endif
             -%}
 

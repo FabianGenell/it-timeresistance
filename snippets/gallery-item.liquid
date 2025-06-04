@@ -10,14 +10,15 @@
   @param {string} [aspect_ratio] - Aspect ratio for the media
   @param {boolean} [enable_lightbox] - Whether to enable lightbox functionality
 
-  @example Basic usage
+  @example
+  Basic usage
   {% render 'gallery-item',
     block: block,
     title: 'Gallery Title',
     media: block.settings.image
   %}
-
-  @example With text and lightbox
+  @example
+  With text and lightbox
   {% render 'gallery-item',
     block: block,
     title: 'Product Feature',
@@ -26,15 +27,6 @@
     enable_lightbox: true
   %}
 {% enddoc %}
-  * image: Image
-  * aspect_ratio: String
-  * label_style: String
-  * label_size: String
-  * overlay_text_color: Color_picker value
-  * overlay_text_background: Color_picker value
-  * overlay_text_background_style: String
-  * image_sizes: String (passed to image as sizes attribute)
-{%- endcomment -%}
 
 {%- liquid
   if block and media == blank

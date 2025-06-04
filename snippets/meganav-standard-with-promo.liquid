@@ -37,7 +37,10 @@
 
   {%- for i in (1..promos) -%}
     {%- liquid
+      assign sizes = '(max-width: 1200px) 60vw, 700px'
       if meganav_type == 'meganav_double_banner'
+        assign sizes = '(max-width: 1200px) 50vw, 700px'
+
         assign image_key = 'image_' | append: i
         assign link_key = 'link_' | append: i
         assign promo_text_key = 'promo_text_' | append: i
@@ -69,13 +72,14 @@
         {%- if link != blank -%}
           <a href="{{ link }}" class="meganav__promo-image-link">
         {%- endif -%}
-        {%- render 'legacy-image' with
-          wrapper_class: "meganav__promo-image",
-          image: image,
-          sizes_px: promo_width,
-          focal_point: focal_point,
-          include_placeholder: true,
-          aspect_ratio: "externally_set"
+
+        {%- render 'image', 
+          image: image, 
+          src_width: promo_width, 
+          class: "img-fit",
+          widths: '300, 600, 900, 1200, 1500',
+          sizes: sizes,
+          lazy_type: 'load'
         -%}
         {%- if link != blank -%}
           </a>
@@ -122,7 +126,7 @@
   data-hidden="true"
   data-menu-handle="{{ menu }}"
   data-meganav-type="{{ meganav_type }}"
-  {% unless meganav_type == 'full_width_meganav' %}
+  {% unless meganav_type == 'full_width_meganav' or meganav_type == 'meganav_double_banner' %}
     data-align-to-trigger="true"
   {% endunless %}
   style="

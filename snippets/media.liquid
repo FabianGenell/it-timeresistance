@@ -1,5 +1,6 @@
 {% comment %}
   within_carousel: bool - will attempt to make iframes more usable within touch slider
+  load_type: string - when to load media ('dom', 'load', 'manual')
 {% endcomment %}
 <div
   class="
@@ -47,7 +48,8 @@
         prioritize_loading: prioritize_loading,
         fallback_alt: fallback_alt,
         no_crop: enable_product_lightbox,
-        animate: animate
+        animate: animate,
+        load_type: load_type
       %}
     </{{ media_link_element }}>
 
@@ -60,7 +62,16 @@
       data-pswp-width="{{ media.preview_image.width }}"
       data-pswp-height="{{ media.preview_image.height }}"
     >
-      {{ media | video_tag: image_size: '1024x', autoplay: true, muted: true }}
+      <responsive-video
+        {% if load_type -%}
+          data-load-type="{{ load_type }}"
+        {%- endif -%}
+        {% if loop_video %}
+          autoplay
+        {% endif %}
+      >
+        {{ media | video_tag: image_size: '1024x', autoplay: true, muted: true }}
+      </responsive-video>
     </a>
   {%- elsif media.media_type == 'external_video' -%}
     {% # external_video_tag will include the wrong origin parameter when viewing a shopify preview URL, the replace here is to work around that %}
@@ -74,36 +85,45 @@
       endif
     -%}
 
-    {% if within_carousel %}
-      <div class="mobile-media-carousel__external-video-modal pswp--product-video-modal">
+    <responsive-video
+      {% if load_type %}
+        data-load-type="{{ load_type }}"
+      {%- endif -%}
+      {% if loop_video %}
+        autoplay
+      {% endif %}
+    >
+      {% if within_carousel %}
+        <div class="mobile-media-carousel__external-video-modal pswp--product-video-modal">
+          {{
+            media
+            | external_video_url: playlist: media.external_id, loop: loop_binary, controls: true
+            | external_video_tag
+            | replace: shop_domain, request.host
+          }}
+        </div>
+
+        <div
+          class="mobile-media-carousel__poster"
+          style="background-image: url({{ media.preview_image | image_url }})"
+        >
+          <button
+            class="mobile-media-carousel__play-icon"
+            aria-label="{{ 'general.accessibility.open_modal' | t }}"
+          >
+            {% render 'icon', icon: 'play-badge' %}
+          </button>
+        </div>
+
+      {% else %}
         {{
           media
-          | external_video_url: playlist: media.external_id, loop: loop_binary, controls: true
+          | external_video_url: playlist: media.external_id, loop: loop_binary
           | external_video_tag
           | replace: shop_domain, request.host
         }}
-      </div>
-
-      <div
-        class="mobile-media-carousel__poster"
-        style="background-image: url({{ media.preview_image | image_url }})"
-      >
-        <button
-          class="mobile-media-carousel__play-icon"
-          aria-label="{{ 'general.accessibility.open_modal' | t }}"
-        >
-          {% render 'icon', icon: 'play-badge' %}
-        </button>
-      </div>
-
-    {% else %}
-      {{
-        media
-        | external_video_url: playlist: media.external_id, loop: loop_binary
-        | external_video_tag
-        | replace: shop_domain, request.host
-      }}
-    {% endif %}
+      {% endif %}
+    </responsive-video>
   {%- elsif media.media_type == 'model' -%}
     {{ media | model_viewer_tag: reveal: 'interaction', toggleable: true }}
     <a

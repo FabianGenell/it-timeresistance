@@ -313,6 +313,11 @@
                 if media == featured_media
                   assign is_featured_media = true
                 endif
+
+                assign media_load_type = null
+                if forloop.index > 3
+                  assign media_load_type = 'load'
+                endif
               -%}
               <div
                 class="product__media-item carousel_slide swiper-slide"
@@ -332,7 +337,8 @@
                   aspect_ratio: media_aspect_ratio,
                   sizes: '90vw',
                   prioritize_loading: prioritize_loading,
-                  within_carousel: true
+                  within_carousel: true,
+                  load_type: media_load_type
                 %}
               </div>
 
@@ -377,6 +383,11 @@
                 if media.media_type == 'model'
                   assign media_aspect_ratio = 'square'
                 endif
+
+                assign media_load_type = null
+                if forloop.index > 3
+                  assign media_load_type = 'load'
+                endif
               -%}
               <div
                 class="
@@ -400,7 +411,8 @@
                   aspect_ratio: media_aspect_ratio,
                   sizes: '90vw',
                   animate: true,
-                  within_carousel: false
+                  within_carousel: false,
+                  load_type: media_load_type
                 %}
               </div>
             {%- else -%}
@@ -468,6 +480,11 @@
               if media.media_type == 'model'
                 assign media_aspect_ratio = 'square'
               endif
+
+              assign media_load_type = null
+              if forloop.index > 3
+                assign media_load_type = 'load'
+              endif
             -%}
 
             <div
@@ -493,7 +510,8 @@
                 aspect_ratio: media_aspect_ratio,
                 sizes: sizes,
                 animate: true,
-                within_carousel: false
+                within_carousel: false,
+                load_type: media_load_type
               %}
             </div>
           {%- else -%}

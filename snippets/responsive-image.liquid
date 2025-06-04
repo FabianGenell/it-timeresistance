@@ -31,7 +31,7 @@
     assign fallback_width = 320
   endif
 
-  if lazy
+  if lazy or load_type
     assign src_attr = "data-src"
     assign src_set_attr = "data-srcset"
   else
@@ -117,5 +117,6 @@
   {% if media %}media="{{ media }}"{{ ' ' }}{% endif %}
   {{ src_set_attr }}="{{ src_set_string }}"{{ ' ' }}
   sizes="{{ sizes }}"
+  {%- if load_type -%}data-load-{{ load_type }}{{ ' ' }}{%- endif -%}
   onload="javascript: this.closest('.image').classList.add('loaded')"
 />

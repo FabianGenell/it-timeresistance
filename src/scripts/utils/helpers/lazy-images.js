@@ -33,7 +33,34 @@ function setImageSourceArray(imgElArray) {
  * Initialises lazy load images.
  */
 export function initLazyImages() {
-    if ('loading' in HTMLImageElement.prototype === false && 'IntersectionObserver' in window) {
+    // Handle images with specific load timing first
+    const imagesOnDOMLoad = [];
+    const imagesOnLoad = [];
+    const imagesForIntersectionObserver = [];
+
+    document.querySelectorAll('[loading="lazy"], [data-src]').forEach((img) => {
+        if (img.hasAttribute('data-load-dom')) {
+            imagesOnDOMLoad.push(img);
+        } else if (img.hasAttribute('data-load-load')) {
+            imagesOnLoad.push(img);
+        } else if (img.hasAttribute('data-load-manual')) {
+            return; // Skip manual loading images
+        } else {
+            // Images without specific load timing
+            if ('loading' in HTMLImageElement.prototype === false && 'IntersectionObserver' in window) {
+                imagesForIntersectionObserver.push(img);
+            } else {
+                setImageSources(img);
+            }
+        }
+    });
+
+    // Load images with specific timing
+    loadImagesOnDOMLoaded(imagesOnDOMLoad);
+    loadImagesOnLoaded(imagesOnLoad);
+
+    // Use IntersectionObserver for remaining images if supported
+    if (imagesForIntersectionObserver.length > 0) {
         console.log('intersection observer');
         const io = new IntersectionObserver(
             (entries, observer) => {
@@ -48,29 +75,9 @@ export function initLazyImages() {
             { rootMargin: '0px 0px 500px 0px' }
         );
 
-        document.querySelectorAll('[loading="lazy"]').forEach((img) => {
+        imagesForIntersectionObserver.forEach((img) => {
             io.observe(img);
         });
-    } else {
-        // If native lazy load supported or IntersectionObserver not supported (legacy browsers).
-        const imagesOnDOMLoad = [];
-        const imagesOnLoad = [];
-
-        document.querySelectorAll('[loading="lazy"], [data-src]').forEach((img) => {
-            if (img.hasAttribute('data-load-dom')) {
-                imagesOnDOMLoad.push(img);
-            } else if (img.hasAttribute('data-load-load')) {
-                imagesOnLoad.push(img);
-            } else if (img.hasAttribute('data-load-manual')) {
-                return;
-            } else {
-                setImageSources(img);
-            }
-        });
-
-        loadImagesOnDOMLoaded(imagesOnDOMLoad);
-
-        loadImagesOnLoaded(imagesOnLoad);
     }
 }
 

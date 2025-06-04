@@ -11,6 +11,9 @@
     polyfillInert: "{{ 'polyfill-inert-chunk.js' | asset_url }}",
     polyfillResizeObserver: "{{ 'polyfill-resize-observer-chunk.js' | asset_url }}"
   };
+  flu.states = {
+    useCustomEvents: true
+  };
 </script>
 
 {% # Set the following line to true to use the unminified javascript file theme.js %}
@@ -26,22 +29,8 @@
 
 <script defer src="{{ 'main.bundle.js' | asset_url }}"></script>
 
-{% # Set the following line to true to import custom-events.js %}
-{% assign useCustomEvents = true %}
-
-{% # Set the following line to true to import custom.css %}
-{% assign useCustomCSS = true %}
-
-{% if useCustomEvents %}
-  {% comment %} <script src="{{ 'custom-events.js' | asset_url }}" defer></script> {% endcomment %}
-  <script>
-    window.flu.states = {
-      useCustomEvents: true
-    };
-  </script>
-{% endif %}
-
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <script defer>
   var defineVH = function () {
     document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
@@ -52,7 +41,3 @@
 </script>
 
 {{ 'style.bundle.css' | asset_url | stylesheet_tag: preload: true }}
-
-{% if useCustomCSS %}
-  {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
-{% endif %}

@@ -2,7 +2,6 @@
   Pass these variables into snippet:
 
   Required:
-
   * image: Image object
   * sizes: srcset size attribute
 
@@ -20,6 +19,11 @@
       - 'full-width'
       - 'thumbnail'
       - if unset a comprehensive src set range will be used
+  * load_type: { String } Controls when the image loads for performance optimization
+      - 'dom': Load when DOM is ready
+      - 'load': Load when window load event fires
+      - 'manual': Don't load automatically (requires manual trigger)
+      - if unset, image loads normally
 {%- endcomment -%}
 
 {%- liquid

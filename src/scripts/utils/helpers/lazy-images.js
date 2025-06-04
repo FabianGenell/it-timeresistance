@@ -1,27 +1,52 @@
 import { afterCallstack } from '../utils.js';
 
+// Constants for load attributes
+const LOAD_ATTRIBUTES = {
+    DOM: 'data-load-dom',
+    LOAD: 'data-load-load',
+    MANUAL: 'data-load-manual'
+};
+
+const SELECTORS = {
+    LAZY_IMAGES: '[loading="lazy"], [data-src]',
+    PICTURE: 'PICTURE'
+};
+
+/**
+ * Sets src and srcset attributes from data attributes for an element
+ * @param {Element} el - Element to set attributes on
+ */
+function setImageAttr(el) {
+    if (el.dataset.src && !el.src) {
+        el.src = el.dataset.src;
+    }
+
+    if (el.dataset.srcset && !el.srcset) {
+        el.srcset = el.dataset.srcset;
+    }
+}
+
 /**
  * Checks if a lazy load image has alternate <source> elements and copies the
  * 'data-src' and 'data-srcset' selectors to 'src' and 'srcset' accordingly.
  * @param {Element} img - Image element.
  */
 export function setImageSources(img) {
-    const setImageAttr = (el) => {
-        if (el.dataset.src && !el.src) {
-            el.src = el.dataset.src;
-        }
+    if (!img) {
+        console.warn('[LazyImages] Invalid image element provided');
+        return;
+    }
 
-        if (el.dataset.srcset && !el.srcset) {
-            el.srcset = el.dataset.srcset;
+    try {
+        if (img.parentNode?.tagName === SELECTORS.PICTURE) {
+            Array.from(img.parentNode.children).forEach((el) => {
+                setImageAttr(el);
+            });
+        } else {
+            setImageAttr(img);
         }
-    };
-
-    if (img.parentNode.tagName === 'PICTURE') {
-        Array.from(img.parentNode.children).forEach((el) => {
-            setImageAttr(el);
-        });
-    } else {
-        setImageAttr(img);
+    } catch (error) {
+        console.error('[LazyImages] Error setting image sources:', error);
     }
 }
 
@@ -38,12 +63,12 @@ export function initLazyImages() {
     const imagesOnLoad = [];
     const imagesForIntersectionObserver = [];
 
-    document.querySelectorAll('[loading="lazy"], [data-src]').forEach((img) => {
-        if (img.hasAttribute('data-load-dom')) {
+    document.querySelectorAll(SELECTORS.LAZY_IMAGES).forEach((img) => {
+        if (img.hasAttribute(LOAD_ATTRIBUTES.DOM)) {
             imagesOnDOMLoad.push(img);
-        } else if (img.hasAttribute('data-load-load')) {
+        } else if (img.hasAttribute(LOAD_ATTRIBUTES.LOAD)) {
             imagesOnLoad.push(img);
-        } else if (img.hasAttribute('data-load-manual')) {
+        } else if (img.hasAttribute(LOAD_ATTRIBUTES.MANUAL)) {
             return; // Skip manual loading images
         } else {
             // Images without specific load timing
@@ -103,12 +128,18 @@ function loadImagesOnLoaded(imageElArray) {
     window.addEventListener('load', execute);
 }
 
-//Loads all images manually (load,dom,manual, etc.)
+/**
+ * Loads all images manually (load, dom, manual, etc.)
+ * @param {Document|Element} container - Container to search within
+ */
 export function loadManualImages(container = document) {
     console.debug('loadManualImages', container);
-    const imageEls = container.querySelectorAll('[loading="lazy"]');
-
-    setImageSourceArray(imageEls);
+    try {
+        const imageEls = container.querySelectorAll('[loading="lazy"]');
+        setImageSourceArray(imageEls);
+    } catch (error) {
+        console.error('[LazyImages] Error loading manual images:', error);
+    }
 }
 
 afterCallstack(initLazyImages);

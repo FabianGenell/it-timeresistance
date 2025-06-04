@@ -1,6 +1,22 @@
 {% comment %}
-  within_carousel: bool - will attempt to make iframes more usable within touch slider
-  load_type: string - when to load media ('dom', 'load', 'manual')
+  Renders media elements (images, videos, external videos, 3D models) with performance optimizations.
+  
+  Parameters:
+  * media: { Object } - Shopify media object (required)
+  * within_carousel: { Boolean } - Makes iframes more usable within touch slider
+  * load_type: { String } - Controls when media loads for performance
+      - 'dom': Load when DOM is ready
+      - 'load': Load when window load event fires  
+      - 'manual': Don't load automatically (requires manual trigger)
+  * enable_product_lightbox: { Boolean } - Enable lightbox functionality
+  * loop_video: { Boolean } - Enable video looping
+  * aspect_ratio: { String } - Aspect ratio for media container
+  * sizes: { String } - Sizes attribute for responsive images
+  * animate: { Boolean } - Enable entrance animations
+  * prioritize_loading: { Boolean } - Load image with high priority
+  * fallback_alt: { String } - Alt text fallback
+  * featured_media: { Object } - Featured media object for comparison
+  * link: { String } - Optional link URL for media
 {% endcomment %}
 <div
   class="

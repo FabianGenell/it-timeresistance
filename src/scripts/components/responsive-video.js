@@ -32,8 +32,33 @@
  * - Supports load-type attributes: 'dom', 'load', 'manual'
  */
 
-import videoManager from '../utils/helpers/pause-outside-videos.js';
 import { afterCallstack } from '../utils/utils.js';
+
+// Constants
+const LOAD_TYPES = {
+    DOM: 'dom',
+    LOAD: 'load',
+    MANUAL: 'manual'
+};
+
+const VIDEO_ERROR_CODES = {
+    MEDIA_ERR_ABORTED: 1,
+    MEDIA_ERR_NETWORK: 2,
+    MEDIA_ERR_DECODE: 3,
+    MEDIA_ERR_SRC_NOT_SUPPORTED: 4
+};
+
+const SELECTORS = {
+    VIDEO: 'video',
+    SOURCE: 'source',
+    RESPONSIVE_VIDEO_WRAPPER: '.responsive-video-wrapper',
+    POSTER_IMAGE: '.poster-image',
+    PLAY_TOGGLE: '[data-play-toggle]',
+    SOUND_TOGGLE: '[data-sound-toggle]',
+    ICON_PLAY: '[data-icon-play]',
+    ICON_SOUND_ON: '[data-icon-sound-on]',
+    ICON_SOUND_OFF: '[data-icon-sound-off]'
+};
 
 class ResponsiveVideo extends HTMLElement {
     /** @type {VideoState} */
@@ -83,7 +108,7 @@ class ResponsiveVideo extends HTMLElement {
      */
     getLoadType() {
         const type = this.getAttribute('data-load-type');
-        if (type === 'dom' || type === 'load' || type === 'manual') {
+        if (Object.values(LOAD_TYPES).includes(type)) {
             return type;
         }
         return null;
@@ -101,17 +126,17 @@ class ResponsiveVideo extends HTMLElement {
      * Sets up DOM element references
      */
     setupElements() {
-        this.elements.videoWrapper = this.querySelector('.responsive-video-wrapper') || this;
-        this.elements.video = this.querySelector('video');
-        this.elements.posterImage = this.querySelector('.poster-image');
-        this.elements.playButton = this.querySelector('[data-play-toggle]');
-        this.elements.soundButton = this.querySelector('[data-sound-toggle]');
-        this.elements.playIcon = this.querySelector('[data-icon-play]');
-        this.elements.soundOnIcon = this.querySelector('[data-icon-sound-on]');
-        this.elements.soundOffIcon = this.querySelector('[data-icon-sound-off]');
+        this.elements.videoWrapper = this.querySelector(SELECTORS.RESPONSIVE_VIDEO_WRAPPER) || this;
+        this.elements.video = this.querySelector(SELECTORS.VIDEO);
+        this.elements.posterImage = this.querySelector(SELECTORS.POSTER_IMAGE);
+        this.elements.playButton = this.querySelector(SELECTORS.PLAY_TOGGLE);
+        this.elements.soundButton = this.querySelector(SELECTORS.SOUND_TOGGLE);
+        this.elements.playIcon = this.querySelector(SELECTORS.ICON_PLAY);
+        this.elements.soundOnIcon = this.querySelector(SELECTORS.ICON_SOUND_ON);
+        this.elements.soundOffIcon = this.querySelector(SELECTORS.ICON_SOUND_OFF);
 
         if (this.elements.video) {
-            this.elements.sources = Array.from(this.elements.video.querySelectorAll('source'));
+            this.elements.sources = Array.from(this.elements.video.querySelectorAll(SELECTORS.SOURCE));
 
             // Set initial video state
             if (this.autoplay) {
@@ -258,7 +283,7 @@ class ResponsiveVideo extends HTMLElement {
      */
     handleWrapperClick(e) {
         // Ignore clicks on sound button
-        if (e.target.closest('[data-sound-toggle]')) {
+        if (e.target.closest(SELECTORS.SOUND_TOGGLE)) {
             return;
         }
 
@@ -305,12 +330,14 @@ class ResponsiveVideo extends HTMLElement {
     handleVideoError(e) {
         // Ignore "Empty src attribute" errors when using deferred loading
         // This is expected behavior when sources are intentionally removed
-        if (this.state.loadType && 
-            this.elements.video?.error?.code === 4 && 
-            this.elements.video?.error?.message?.includes('Empty src attribute')) {
+        if (
+            this.state.loadType &&
+            this.elements.video?.error?.code === VIDEO_ERROR_CODES.MEDIA_ERR_SRC_NOT_SUPPORTED &&
+            this.elements.video?.error?.message?.includes('Empty src attribute')
+        ) {
             return;
         }
-        
+
         console.error('[ResponsiveVideo] Video error:', e, this.elements.video?.error);
     }
 
@@ -406,13 +433,13 @@ class ResponsiveVideo extends HTMLElement {
      */
     handleLoadType() {
         switch (this.state.loadType) {
-            case 'dom':
+            case LOAD_TYPES.DOM:
                 this.loadOnDOMReady();
                 break;
-            case 'load':
+            case LOAD_TYPES.LOAD:
                 this.loadOnWindowLoad();
                 break;
-            case 'manual':
+            case LOAD_TYPES.MANUAL:
                 // Don't load automatically
                 break;
             default:
@@ -631,12 +658,12 @@ export function loadManualVideos(container = document) {
 
 // Module export for Shopify theme integration
 export default {
-    init(container) {
+    init() {
         // Custom elements are automatically initialized by the browser
         // This function just ensures backward compatibility
     },
 
-    destroy(container) {
+    destroy() {
         // Let the disconnectedCallback handle cleanup
     },
 

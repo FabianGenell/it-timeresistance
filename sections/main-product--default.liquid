@@ -6,6 +6,9 @@
 
 {% liquid
   assign current_variant = product.selected_or_first_available_variant
+  
+  # Performance optimization: defer loading media beyond this threshold
+  assign media_priority_threshold = 3
 
   if section.settings.show_featured_media_first and product.selected_variant == blank
     assign featured_media = product.featured_media
@@ -315,8 +318,8 @@
                 endif
 
                 assign media_load_type = null
-                if forloop.index > 3
-                  assign media_load_type = 'load'
+                if forloop.index > media_priority_threshold
+                  assign media_load_type = 'manual'
                 endif
               -%}
               <div
@@ -385,8 +388,8 @@
                 endif
 
                 assign media_load_type = null
-                if forloop.index > 3
-                  assign media_load_type = 'load'
+                if forloop.index > media_priority_threshold
+                  assign media_load_type = 'manual'
                 endif
               -%}
               <div
@@ -482,8 +485,8 @@
               endif
 
               assign media_load_type = null
-              if forloop.index > 3
-                assign media_load_type = 'load'
+              if forloop.index > media_priority_threshold
+                assign media_load_type = 'manual'
               endif
             -%}
 

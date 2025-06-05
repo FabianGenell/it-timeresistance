@@ -270,7 +270,7 @@
       "type": "collection-list-slider",
       "name": "t:sections.collection_list_slider.presets.name",
       "settings": {
-        "heading": "All Men Categories",
+        "heading": "Men's Collections",
         "heading_tag": "h2",
         "subheading": "",
         "link": "shopify://collections",

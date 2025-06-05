@@ -201,7 +201,7 @@
         "text_z4p6gR": {
           "type": "text",
           "settings": {
-            "text": "<p>Experience the art of precision with our laser engraving service. We can engrave text, symbols, and logo onto your chosen leather product, adding a distinctive mark that stands the test of time. To personalize your item with laser engraving, simply select the Personalization option when placing your order and provide the following info in the Order Special Instructions in Your Cart:</p><ul><li>Message: Specify the text you wish to engrave.</li></ul>",
+            "text": "<p>Experience the art of precision with our laser engraving service. We can engrave text, symbols, and logo onto your chosen leather product, adding a distinctive mark that stands the test of time. To personalize your item with laser engraving, simply provide the following information in the Order Special Instructions section in Your Cart when placing your order.</p><ul><li>Message: Specify the text you wish to engrave.</li></ul>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -380,7 +380,7 @@
         "text_VYj9Mm": {
           "type": "text",
           "settings": {
-            "text": "<p><em>Laser engraving reacts with the leather surface, producing a unique shade each time that depends on the leather’s color; the engraving color is determined by the leather and cannot be freely selected.</em></p>",
+            "text": "<p><em>The laser engraving color varies, reflecting the leather’s natural tones.</em></p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -472,7 +472,7 @@
         "text_MCq79H": {
           "type": "text",
           "settings": {
-            "text": "<p>For a timeless and refined touch, consider adding a monogram to your leather accessory. Our debossing service imprints your initials into the leather, creating a subtle yet striking effect. To personalize your item with a monogram, select the Personalization option when placing your order and provide the following details in the Order Special Instructions in Your Cart:</p><ul><li>Initials: Specify up to ten characters in upper case letters.</li><li>Preferred Color: Choose from Clear, Black, Silver, or Gold.</li></ul><p>Our monograms are crafted using the Georgia Standard font, ensuring a classic and sophisticated appearance.</p><p>Monogram/Debossing Examples</p>",
+            "text": "<p>For a timeless and refined touch, consider adding a monogram to your leather accessory. Our debossing service imprints your initials into the leather, creating a subtle yet striking effect. To personalize your item with a monogram, simply provide the following details in the Order Special Instructions section in Your Cart when placing your order.</p><ul><li>Initials: Specify up to ten characters in upper case letters.</li><li>Preferred Color: Choose from Clear, Black, Silver, or Gold.</li></ul><p>Our monograms are crafted using the Georgia Standard font, ensuring a classic and sophisticated appearance.</p><p>Monogram/Debossing Examples</p>",
             "text_font_class": "fs-body-100"
           }
         }

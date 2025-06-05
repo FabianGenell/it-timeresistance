@@ -380,7 +380,7 @@
         "text_VYj9Mm": {
           "type": "text",
           "settings": {
-            "text": "<p><em>The laser engraving color varies, reflecting the leather’s natural tones.</em></p>",
+            "text": "<p><em>Laser engraving reacts with the leather surface, producing a unique shade each time that depends on the leather’s color; the engraving color is determined by the leather and cannot be freely selected.</em></p>",
             "text_font_class": "fs-body-75"
           }
         }

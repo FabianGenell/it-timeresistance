@@ -1,22 +1,23 @@
-{%- comment -%}theme-check-disable ImgLazyLoading{%- endcomment -%}
-{%- comment -%}
-  Parameters:
-  - image {Object} - Image object (largest viewpoint, desktop)
-  - widths {Array} - Array of widths with width and srcset
-  - breakpoints {Array} - Array of breakpoints (min-width) with width and srcset
-  - image_{breakpoint} {Object} - Image object for the breakpoint
-  - src_width {Number} - Width of the image
-  - sizes {String} - Sizes attribute for the image
-  - class {String} - Class name(s) for the 'class' attribute (optional).
-  - attributes {String} - Additional attributes (optional).
-  - alt_text {String} - Custom text for the 'alt' attribute (optional).
-  - focal_point {String} - Focal point for the image (optional, default is 'center').
-  - disable_focal_point {Boolean} - Disables the focussing of a spot on the image (optional, default is false).
-  - section_index {Number} - If passed, image lazy load will be prevented if it's the first section
-  - lazy_load {Boolean} - Image should be lazy load (optional, default is true).
-  - lazy_type {String} - [dom, load, manual] sets when to load the image
+{%- comment -%}theme-check-disable ImgLazyLoading, UnusedDocParam{%- endcomment -%}
+{% doc %}
+  Renders a responsive picture element with multiple image sources and breakpoints.
 
-  Usage:
+  @param {object} image - Main image object for largest viewport/desktop
+  @param {string} widths - Comma-separated list of image widths for srcset
+  @param {string} breakpoints - Comma-separated list of breakpoint widths
+  @param {object} [image_breakpoint] - Image object for each breakpoint width (e.g. image_400, image_800, image_1200, image_3000)
+  @param {number} [src_width] - Width for src attribute
+  @param {string} [sizes] - Sizes attribute for responsive images
+  @param {string} [class] - Class name(s) for class attribute
+  @param {string} [attributes] - Additional HTML attributes
+  @param {string} [alt_text] - Custom text for alt attribute
+  @param {string} [focal_point] - Image focal point (default: 'center')
+  @param {boolean} [disable_focal_point] - Disable focal point positioning
+  @param {number} [section_index] - Prevents lazy load if first section
+  @param {boolean} [lazy_load] - Enable lazy loading
+  @param {string} [lazy_type] - When to load image: 'dom', 'load', or 'manual'
+
+  @example
   {% render 'pictures',
     breakpoints: '400, 800, 1200, 3000',
     image_400: image_400,
@@ -28,7 +29,7 @@
     class: 'img-fit',
     src_width: 1000
   %}
-{%- endcomment -%}
+{% enddoc %}
 
 {%- liquid
   assign input_image = image

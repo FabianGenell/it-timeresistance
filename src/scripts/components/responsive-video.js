@@ -202,6 +202,12 @@ class ResponsiveVideo extends HTMLElement {
                 this.elements.video.removeAttribute('src');
             }
 
+            // Handle poster attribute
+            if (this.elements.video.poster) {
+                this.originalPoster = this.elements.video.poster;
+                this.elements.video.removeAttribute('poster');
+            }
+
             // Handle source elements
             this.elements.sources.forEach((source) => {
                 try {
@@ -237,6 +243,11 @@ class ResponsiveVideo extends HTMLElement {
             // Restore video src
             if (this.originalVideoSrc) {
                 this.elements.video.src = this.originalVideoSrc;
+            }
+
+            // Restore poster
+            if (this.originalPoster) {
+                this.elements.video.poster = this.originalPoster;
             }
 
             // Restore source elements

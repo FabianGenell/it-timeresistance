@@ -14,10 +14,11 @@
   @param {object} [featured_media] - Featured media object for comparison
   @param {string} [link] - Optional URL to wrap media in link
 
-  @example Basic usage
+  @example
+  Basic usage
   {% render 'media', media: product.featured_media %}
-
-  @example With performance optimization
+  @example
+  With performance optimization
   {% render 'media',
     media: media,
     load_type: 'load',
@@ -85,16 +86,13 @@
       data-pswp-width="{{ media.preview_image.width }}"
       data-pswp-height="{{ media.preview_image.height }}"
     >
-      <responsive-video
-        {% if load_type -%}
-          data-load-type="{{ load_type }}"
-        {%- endif -%}
-        {% if loop_video %}
-          autoplay
-        {% endif %}
-      >
-        {{ media | video_tag: image_size: '1024x', autoplay: true, muted: true }}
-      </responsive-video>
+      {%- render 'responsive-video',
+        video: media,
+        load_type: load_type,
+        loop_video: loop_video,
+        autoplay: true,
+        show_controls: false
+      -%}
     </a>
   {%- elsif media.media_type == 'external_video' -%}
     {% # external_video_tag will include the wrong origin parameter when viewing a shopify preview URL, the replace here is to work around that %}

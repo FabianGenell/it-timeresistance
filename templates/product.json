@@ -54,13 +54,10 @@
             "add_box": false,
             "add_dividers": false,
             "icon_1": "shipping-truck",
-            "custom_icon_image_1": "",
             "text_1": "<p>Free and Fast Shipping</p>",
             "icon_2": "italy",
-            "custom_icon_image_2": "",
             "text_2": "<p>Full-Grain Italian Leather</p>",
             "icon_3": "returns",
-            "custom_icon_image_3": "",
             "text_3": "<p>Free 30-Day Returns</p>",
             "icon_4": "none",
             "text_4": "",
@@ -138,8 +135,8 @@
             "heading": "Personalization",
             "heading_tag": "h6",
             "content": "",
-            "page_for_content": "",
-            "custom_liquid": "{% style %}\n.custom-paragraph-body img{\ndisplay:inline;\n}\n.example-image{\n    width: 22%;\n    margin: 1%;\n    vertical-align: middle;\n}\n{% endstyle %}\n\n{% assign page_handle = product.metafields.custom.personalization_page %}\n      {% if page_handle %}\n        {% assign page = pages[page_handle] %}\n        {% if page %}\n          <div class=\"personalization-page-content\">\n            {{ page.content }}\n          </div>\n        {% else %}\n          <p>Page not found.</p>\n        {% endif %}\n      {% else %}\n        <p>No page linked.</p>\n      {% endif %}"
+            "page_for_content": "{{ product.metafields.custom.personalization_page.value }}",
+            "custom_liquid": ""
           }
         },
         "accordion_WceBNM": {

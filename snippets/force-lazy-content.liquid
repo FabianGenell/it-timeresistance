@@ -1,0 +1,18 @@
+{% doc %}
+  @param content - Content to force lazy load
+  @param {string} [lazy_type] - When to load image: 'dom', 'load', or 'manual'
+
+  @example
+  {% render 'force-lazy-content', content: '<img src="https://via.placeholder.com/150" alt="Placeholder">' %}
+{% enddoc %}
+
+{%- capture lazy_template -%}
+  {%- if lazy_type != blank %} data-load-{{ lazy_type }}
+  {%- endif %} data-src="
+{%- endcapture -%}
+
+{%- liquid
+  assign lazy_content = content | replace: ' src="', lazy_template
+-%}
+
+{{- lazy_content }}

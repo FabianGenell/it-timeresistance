@@ -83,7 +83,7 @@
         {% endunless %}
         id="accordion-content-{{ block.id }}"
       >
-        {{ content }}
+        {%- render 'force-lazy-content', content: content -%}
       </div>
     </div>
   </div>

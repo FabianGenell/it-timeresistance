@@ -10759,13 +10759,15 @@ register('video', {
                     loadYouTubeAPI().then(() => {
                         // Check if we're in Brave browser
                         const isBrave = window.navigator.brave && window.navigator.brave.isBrave;
+                        let host = 'https://www.youtube.com';
                         if (isBrave) {
                             console.log('Brave browser detected - using privacy-friendly settings');
+                            host = 'https://www.youtube-nocookie.com';
                         }
 
                         const player = new window.YT.Player(videoExternal, {
                             videoId,
-                            host: 'https://www.youtube-nocookie.com',
+                            host: host,
                             playerVars: {
                                 autohide: 0,
                                 cc_load_policy: 0,
@@ -10865,6 +10867,9 @@ register('video', {
                                         console.error(
                                             'This video cannot be embedded. Check video privacy settings.'
                                         );
+                                        // Open video in new tab
+                                        const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+                                        window.open(videoUrl, '_blank');
                                     }
                                 }
                             }

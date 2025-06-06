@@ -7,6 +7,7 @@
  * @property {boolean} autoplayAttempted - Whether autoplay has been attempted
  * @property {'dom'|'load'|'manual'|null} loadType - When to load the video
  * @property {boolean} isLoaded - Whether the video source has been loaded
+ * @property {boolean} isEnabled - Whether the component is functioning properly
  */
 
 /**
@@ -69,7 +70,8 @@ class ResponsiveVideo extends HTMLElement {
         currentSource: null,
         autoplayAttempted: false,
         loadType: null,
-        isLoaded: false
+        isLoaded: false,
+        isEnabled: true
     };
 
     /** @type {VideoElements} */
@@ -93,13 +95,18 @@ class ResponsiveVideo extends HTMLElement {
     }
 
     connectedCallback() {
-        // Initialize state
-        this.state.loadType = this.getLoadType();
+        try {
+            // Initialize state
+            this.state.loadType = this.getLoadType();
 
-        this.setupElements();
-        this.bindEvents();
-        this.setupObservers();
-        this.handleLoadType();
+            this.setupElements();
+            this.bindEvents();
+            this.setupObservers();
+            this.handleLoadType();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to initialize component:', error);
+            this.state.isEnabled = false;
+        }
     }
 
     /**
@@ -107,11 +114,16 @@ class ResponsiveVideo extends HTMLElement {
      * @returns {'dom'|'load'|'manual'|null}
      */
     getLoadType() {
-        const type = this.getAttribute('data-load-type');
-        if (Object.values(LOAD_TYPES).includes(type)) {
-            return type;
+        try {
+            const type = this.getAttribute('data-load-type');
+            if (Object.values(LOAD_TYPES).includes(type)) {
+                return type;
+            }
+            return null;
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to get load type:', error);
+            return null;
         }
-        return null;
     }
 
     /**
@@ -119,40 +131,58 @@ class ResponsiveVideo extends HTMLElement {
      * @returns {boolean}
      */
     get autoplay() {
-        return this.hasAttribute('autoplay') || this.hasAttribute('data-autoplay');
+        try {
+            return this.hasAttribute('autoplay') || this.hasAttribute('data-autoplay');
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to check autoplay attribute:', error);
+            return false;
+        }
     }
 
     /**
      * Sets up DOM element references
      */
     setupElements() {
-        this.elements.videoWrapper = this.querySelector(SELECTORS.RESPONSIVE_VIDEO_WRAPPER) || this;
-        this.elements.video = this.querySelector(SELECTORS.VIDEO);
-        this.elements.posterImage = this.querySelector(SELECTORS.POSTER_IMAGE);
-        this.elements.playButton = this.querySelector(SELECTORS.PLAY_TOGGLE);
-        this.elements.soundButton = this.querySelector(SELECTORS.SOUND_TOGGLE);
-        this.elements.playIcon = this.querySelector(SELECTORS.ICON_PLAY);
-        this.elements.soundOnIcon = this.querySelector(SELECTORS.ICON_SOUND_ON);
-        this.elements.soundOffIcon = this.querySelector(SELECTORS.ICON_SOUND_OFF);
+        if (!this.state.isEnabled) return;
 
-        if (this.elements.video) {
-            this.elements.sources = Array.from(this.elements.video.querySelectorAll(SELECTORS.SOURCE));
+        try {
+            this.elements.videoWrapper = this.querySelector(SELECTORS.RESPONSIVE_VIDEO_WRAPPER) || this;
+            this.elements.video = this.querySelector(SELECTORS.VIDEO);
+            this.elements.posterImage = this.querySelector(SELECTORS.POSTER_IMAGE);
+            this.elements.playButton = this.querySelector(SELECTORS.PLAY_TOGGLE);
+            this.elements.soundButton = this.querySelector(SELECTORS.SOUND_TOGGLE);
+            this.elements.playIcon = this.querySelector(SELECTORS.ICON_PLAY);
+            this.elements.soundOnIcon = this.querySelector(SELECTORS.ICON_SOUND_ON);
+            this.elements.soundOffIcon = this.querySelector(SELECTORS.ICON_SOUND_OFF);
 
-            // Set initial video state
-            if (this.autoplay) {
-                this.elements.video.dataset.autoplay = 'true';
-                this.elements.video.muted = true;
+            if (this.elements.video) {
+                try {
+                    this.elements.sources = Array.from(
+                        this.elements.video.querySelectorAll(SELECTORS.SOURCE)
+                    );
+
+                    // Set initial video state
+                    if (this.autoplay) {
+                        this.elements.video.dataset.autoplay = 'true';
+                        this.elements.video.muted = true;
+                    }
+
+                    // For deferred loading, remove src attributes to prevent loading
+                    if (this.state.loadType && this.state.loadType !== null) {
+                        this.deferVideoSources();
+                    }
+
+                    // Initially hide video until loaded
+                    this.elements.video.style.opacity = '0';
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Failed to setup video element:', error);
+                }
+            } else {
+                console.warn('[ResponsiveVideo] No video element found');
             }
-
-            // For deferred loading, remove src attributes to prevent loading
-            if (this.state.loadType && this.state.loadType !== null) {
-                this.deferVideoSources();
-            }
-
-            // Initially hide video until loaded
-            this.elements.video.style.opacity = '0';
-        } else {
-            console.error('[ResponsiveVideo] No video element found');
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to setup elements:', error);
+            this.state.isEnabled = false;
         }
     }
 
@@ -160,32 +190,40 @@ class ResponsiveVideo extends HTMLElement {
      * Defers video sources by storing them and removing src attributes
      */
     deferVideoSources() {
-        if (!this.elements.video) return;
+        if (!this.elements.video || !this.state.isEnabled) return;
 
-        // Store original sources for later restoration
-        this.originalSources = [];
+        try {
+            // Store original sources for later restoration
+            this.originalSources = [];
 
-        // Handle video src attribute
-        if (this.elements.video.src) {
-            this.originalVideoSrc = this.elements.video.src;
-            this.elements.video.removeAttribute('src');
-        }
-
-        // Handle source elements
-        this.elements.sources.forEach((source) => {
-            if (source.src) {
-                this.originalSources.push({
-                    element: source,
-                    src: source.src,
-                    media: source.getAttribute('media')
-                });
-                source.removeAttribute('src');
+            // Handle video src attribute
+            if (this.elements.video.src) {
+                this.originalVideoSrc = this.elements.video.src;
+                this.elements.video.removeAttribute('src');
             }
-        });
 
-        // Clear video load to prevent any loading
-        if (this.elements.video.load) {
-            this.elements.video.load();
+            // Handle source elements
+            this.elements.sources.forEach((source) => {
+                try {
+                    if (source.src) {
+                        this.originalSources.push({
+                            element: source,
+                            src: source.src,
+                            media: source.getAttribute('media')
+                        });
+                        source.removeAttribute('src');
+                    }
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Failed to defer source:', error);
+                }
+            });
+
+            // Clear video load to prevent any loading
+            if (this.elements.video.load) {
+                this.elements.video.load();
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to defer video sources:', error);
         }
     }
 
@@ -193,22 +231,30 @@ class ResponsiveVideo extends HTMLElement {
      * Restores video sources from stored originals
      */
     restoreVideoSources() {
-        if (!this.elements.video) return;
+        if (!this.elements.video || !this.state.isEnabled) return;
 
-        // Restore video src
-        if (this.originalVideoSrc) {
-            this.elements.video.src = this.originalVideoSrc;
+        try {
+            // Restore video src
+            if (this.originalVideoSrc) {
+                this.elements.video.src = this.originalVideoSrc;
+            }
+
+            // Restore source elements
+            if (this.originalSources) {
+                this.originalSources.forEach((sourceData) => {
+                    try {
+                        sourceData.element.src = sourceData.src;
+                    } catch (error) {
+                        console.warn('[ResponsiveVideo] Failed to restore individual source:', error);
+                    }
+                });
+            }
+
+            // Reload video with restored sources
+            this.elements.video.load();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to restore video sources:', error);
         }
-
-        // Restore source elements
-        if (this.originalSources) {
-            this.originalSources.forEach((sourceData) => {
-                sourceData.element.src = sourceData.src;
-            });
-        }
-
-        // Reload video with restored sources
-        this.elements.video.load();
     }
 
     /**
@@ -216,64 +262,88 @@ class ResponsiveVideo extends HTMLElement {
      * @returns {HTMLSourceElement|null}
      */
     getActiveSource() {
-        if (!this.elements.video || !this.elements.sources.length) {
-            console.error('[ResponsiveVideo] Cannot get active source - video or sources missing');
+        if (!this.elements.video || !this.elements.sources.length || !this.state.isEnabled) {
+            console.warn('[ResponsiveVideo] Cannot get active source - video or sources missing');
             return null;
         }
 
-        const viewportWidth = window.innerWidth;
+        try {
+            const viewportWidth = window.innerWidth;
 
-        // Check mobile source (max-width)
-        const mobileSource = this.elements.sources.find((source) => {
-            const media = source.getAttribute('media');
-            if (!media || !media.includes('max-width')) return false;
+            // Check mobile source (max-width)
+            const mobileSource = this.elements.sources.find((source) => {
+                try {
+                    const media = source.getAttribute('media');
+                    if (!media || !media.includes('max-width')) return false;
 
-            const maxWidthMatch = media.match(/\d+/);
-            if (!maxWidthMatch) return false;
+                    const maxWidthMatch = media.match(/\d+/);
+                    if (!maxWidthMatch) return false;
 
-            return viewportWidth <= parseInt(maxWidthMatch[0]);
-        });
+                    return viewportWidth <= parseInt(maxWidthMatch[0]);
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Failed to check mobile source:', error);
+                    return false;
+                }
+            });
 
-        if (mobileSource) return mobileSource;
+            if (mobileSource) return mobileSource;
 
-        // Check large source (min-width)
-        const largeSource = this.elements.sources.find((source) => {
-            const media = source.getAttribute('media');
-            if (!media || !media.includes('min-width')) return false;
+            // Check large source (min-width)
+            const largeSource = this.elements.sources.find((source) => {
+                try {
+                    const media = source.getAttribute('media');
+                    if (!media || !media.includes('min-width')) return false;
 
-            const minWidthMatch = media.match(/\d+/);
-            if (!minWidthMatch) return false;
+                    const minWidthMatch = media.match(/\d+/);
+                    if (!minWidthMatch) return false;
 
-            return viewportWidth >= parseInt(minWidthMatch[0]);
-        });
+                    return viewportWidth >= parseInt(minWidthMatch[0]);
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Failed to check large source:', error);
+                    return false;
+                }
+            });
 
-        if (largeSource) return largeSource;
+            if (largeSource) return largeSource;
 
-        // Default source (no media attribute)
-        return (
-            this.elements.sources.find((source) => !source.hasAttribute('media')) || this.elements.sources[0]
-        );
+            // Default source (no media attribute)
+            return (
+                this.elements.sources.find((source) => !source.hasAttribute('media')) ||
+                this.elements.sources[0]
+            );
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to get active source:', error);
+            return this.elements.sources[0] || null;
+        }
     }
 
     /**
      * Binds event listeners
      */
     bindEvents() {
-        // Video wrapper click handler
-        this.elements.videoWrapper.addEventListener('click', this.handleWrapperClick.bind(this));
+        if (!this.state.isEnabled) return;
 
-        // Sound button click handler
-        if (this.elements.soundButton) {
-            this.elements.soundButton.addEventListener('click', this.toggleSound.bind(this));
-        }
+        try {
+            // Video wrapper click handler
+            if (this.elements.videoWrapper) {
+                this.elements.videoWrapper.addEventListener('click', this.handleWrapperClick.bind(this));
+            }
 
-        // Video event handlers
-        if (this.elements.video) {
-            this.elements.video.addEventListener('play', this.handleVideoPlay.bind(this));
-            this.elements.video.addEventListener('pause', this.handleVideoPause.bind(this));
-            this.elements.video.addEventListener('canplay', this.handleVideoCanPlay.bind(this));
-            this.elements.video.addEventListener('loadeddata', this.handleVideoLoadedData.bind(this));
-            this.elements.video.addEventListener('error', this.handleVideoError.bind(this));
+            // Sound button click handler
+            if (this.elements.soundButton) {
+                this.elements.soundButton.addEventListener('click', this.toggleSound.bind(this));
+            }
+
+            // Video event handlers
+            if (this.elements.video) {
+                this.elements.video.addEventListener('play', this.handleVideoPlay.bind(this));
+                this.elements.video.addEventListener('pause', this.handleVideoPause.bind(this));
+                this.elements.video.addEventListener('canplay', this.handleVideoCanPlay.bind(this));
+                this.elements.video.addEventListener('loadeddata', this.handleVideoLoadedData.bind(this));
+                this.elements.video.addEventListener('error', this.handleVideoError.bind(this));
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to bind events:', error);
         }
     }
 
@@ -282,44 +352,66 @@ class ResponsiveVideo extends HTMLElement {
      * @param {Event} e
      */
     handleWrapperClick(e) {
-        // Ignore clicks on sound button
-        if (e.target.closest(SELECTORS.SOUND_TOGGLE)) {
-            return;
-        }
+        if (!this.state.isEnabled) return;
 
-        this.togglePlay();
-        e.preventDefault();
+        try {
+            // Ignore clicks on sound button
+            if (e.target.closest(SELECTORS.SOUND_TOGGLE)) {
+                return;
+            }
+
+            this.togglePlay();
+            e.preventDefault();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle wrapper click:', error);
+        }
     }
 
     /**
      * Handles video play event
      */
     handleVideoPlay() {
-        this.state.isPlaying = true;
-        this.updateControlsUI();
+        try {
+            this.state.isPlaying = true;
+            this.updateControlsUI();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle video play event:', error);
+        }
     }
 
     /**
      * Handles video pause event
      */
     handleVideoPause() {
-        this.state.isPlaying = false;
-        this.updateControlsUI();
+        try {
+            this.state.isPlaying = false;
+            this.updateControlsUI();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle video pause event:', error);
+        }
     }
 
     /**
      * Handles video canplay event
      */
     handleVideoCanPlay() {
-        this.handleVideoLoaded();
+        try {
+            this.handleVideoLoaded();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle video canplay event:', error);
+        }
     }
 
     /**
      * Handles video loadeddata event
      */
     handleVideoLoadedData() {
-        if (this.autoplay && !this.state.autoplayAttempted) {
-            this.attemptAutoplay();
+        try {
+            if (this.autoplay && !this.state.autoplayAttempted) {
+                this.attemptAutoplay();
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle video loadeddata event:', error);
         }
     }
 
@@ -328,33 +420,43 @@ class ResponsiveVideo extends HTMLElement {
      * @param {Event} e
      */
     handleVideoError(e) {
-        // Ignore "Empty src attribute" errors when using deferred loading
-        // This is expected behavior when sources are intentionally removed
-        if (
-            this.state.loadType &&
-            this.elements.video?.error?.code === VIDEO_ERROR_CODES.MEDIA_ERR_SRC_NOT_SUPPORTED &&
-            this.elements.video?.error?.message?.includes('Empty src attribute')
-        ) {
-            return;
-        }
+        try {
+            // Ignore "Empty src attribute" errors when using deferred loading
+            // This is expected behavior when sources are intentionally removed
+            if (
+                this.state.loadType &&
+                this.elements.video?.error?.code === VIDEO_ERROR_CODES.MEDIA_ERR_SRC_NOT_SUPPORTED &&
+                this.elements.video?.error?.message?.includes('Empty src attribute')
+            ) {
+                return;
+            }
 
-        console.error('[ResponsiveVideo] Video error:', e, this.elements.video?.error);
+            console.warn('[ResponsiveVideo] Video error:', e, this.elements.video?.error);
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle video error event:', error);
+        }
     }
 
     /**
      * Handles when video is loaded and ready
      */
     handleVideoLoaded() {
-        if (this.elements.posterImage) {
-            this.elements.posterImage.style.opacity = '0';
-        }
+        if (!this.state.isEnabled) return;
 
-        if (this.elements.video) {
-            this.elements.video.style.opacity = '1';
-        }
+        try {
+            if (this.elements.posterImage) {
+                this.elements.posterImage.style.opacity = '0';
+            }
 
-        if (this.autoplay && !this.state.autoplayAttempted) {
-            this.attemptAutoplay();
+            if (this.elements.video) {
+                this.elements.video.style.opacity = '1';
+            }
+
+            if (this.autoplay && !this.state.autoplayAttempted) {
+                this.attemptAutoplay();
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle video loaded:', error);
         }
     }
 
@@ -362,31 +464,35 @@ class ResponsiveVideo extends HTMLElement {
      * Attempts to autoplay the video
      */
     async attemptAutoplay() {
-        if (!this.elements.video) return;
-
-        this.state.autoplayAttempted = true;
-
-        if (!this.isElementVisible()) return;
-
-        this.elements.video.muted = true;
+        if (!this.elements.video || !this.state.isEnabled) return;
 
         try {
-            await new Promise((resolve) => setTimeout(resolve, 100));
-            await this.elements.video.play();
-            this.state.isPlaying = true;
-            this.updateControlsUI();
-        } catch (error) {
-            console.error('[ResponsiveVideo] Autoplay failed:', error);
+            this.state.autoplayAttempted = true;
 
-            // Retry once after delay
+            if (!this.isElementVisible()) return;
+
+            this.elements.video.muted = true;
+
             try {
-                await new Promise((resolve) => setTimeout(resolve, 1000));
+                await new Promise((resolve) => setTimeout(resolve, 100));
                 await this.elements.video.play();
                 this.state.isPlaying = true;
                 this.updateControlsUI();
-            } catch (retryError) {
-                console.error('[ResponsiveVideo] Autoplay retry failed:', retryError);
+            } catch (error) {
+                console.warn('[ResponsiveVideo] Autoplay failed:', error);
+
+                // Retry once after delay
+                try {
+                    await new Promise((resolve) => setTimeout(resolve, 1000));
+                    await this.elements.video.play();
+                    this.state.isPlaying = true;
+                    this.updateControlsUI();
+                } catch (retryError) {
+                    console.warn('[ResponsiveVideo] Autoplay retry failed:', retryError);
+                }
             }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to attempt autoplay:', error);
         }
     }
 
@@ -395,26 +501,47 @@ class ResponsiveVideo extends HTMLElement {
      * @returns {boolean}
      */
     isElementVisible() {
-        const rect = this.getBoundingClientRect();
-        return (
-            rect.top < window.innerHeight &&
-            rect.bottom > 0 &&
-            rect.left < window.innerWidth &&
-            rect.right > 0
-        );
+        try {
+            const rect = this.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0 &&
+                rect.left < window.innerWidth &&
+                rect.right > 0
+            );
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to check element visibility:', error);
+            return false;
+        }
     }
 
     /**
      * Sets up observers for resize and viewport
      */
     setupObservers() {
-        if ('ResizeObserver' in window) {
-            this.state.resizeObserver = new ResizeObserver(() => {
-                this.handleResize();
-            });
-            this.state.resizeObserver.observe(document.documentElement);
-        } else {
-            window.addEventListener('resize', this.handleResize.bind(this));
+        if (!this.state.isEnabled) return;
+
+        try {
+            if ('ResizeObserver' in window) {
+                this.state.resizeObserver = new ResizeObserver(() => {
+                    try {
+                        this.handleResize();
+                    } catch (error) {
+                        console.warn('[ResponsiveVideo] Failed to handle resize in observer:', error);
+                    }
+                });
+                this.state.resizeObserver.observe(document.documentElement);
+            } else {
+                window.addEventListener('resize', this.handleResize.bind(this));
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to setup observers:', error);
+            // Fallback to window resize event
+            try {
+                window.addEventListener('resize', this.handleResize.bind(this));
+            } catch (fallbackError) {
+                console.warn('[ResponsiveVideo] Failed to setup fallback resize listener:', fallbackError);
+            }
         }
     }
 
@@ -422,29 +549,51 @@ class ResponsiveVideo extends HTMLElement {
      * Handles resize events
      */
     handleResize() {
-        clearTimeout(this.resizeTimeout);
-        this.resizeTimeout = setTimeout(() => {
-            this.updateSourceBasedOnViewport();
-        }, 150);
+        if (!this.state.isEnabled) return;
+
+        try {
+            clearTimeout(this.resizeTimeout);
+            this.resizeTimeout = setTimeout(() => {
+                try {
+                    this.updateSourceBasedOnViewport();
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Failed to update source on resize:', error);
+                }
+            }, 150);
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle resize:', error);
+        }
     }
 
     /**
      * Handles load type behavior
      */
     handleLoadType() {
-        switch (this.state.loadType) {
-            case LOAD_TYPES.DOM:
-                this.loadOnDOMReady();
-                break;
-            case LOAD_TYPES.LOAD:
-                this.loadOnWindowLoad();
-                break;
-            case LOAD_TYPES.MANUAL:
-                // Don't load automatically
-                break;
-            default:
+        if (!this.state.isEnabled) return;
+
+        try {
+            switch (this.state.loadType) {
+                case LOAD_TYPES.DOM:
+                    this.loadOnDOMReady();
+                    break;
+                case LOAD_TYPES.LOAD:
+                    this.loadOnWindowLoad();
+                    break;
+                case LOAD_TYPES.MANUAL:
+                    // Don't load automatically
+                    break;
+                default:
+                    this.setInitialSource();
+                    break;
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to handle load type:', error);
+            // Fallback to setting initial source
+            try {
                 this.setInitialSource();
-                break;
+            } catch (fallbackError) {
+                console.warn('[ResponsiveVideo] Failed to set initial source as fallback:', fallbackError);
+            }
         }
     }
 
@@ -452,85 +601,119 @@ class ResponsiveVideo extends HTMLElement {
      * Loads video when DOM is ready
      */
     loadOnDOMReady() {
-        const execute = () => afterCallstack(() => this.setInitialSource());
+        if (!this.state.isEnabled) return;
 
-        if (document.readyState !== 'loading') {
-            return execute();
+        try {
+            const execute = () => {
+                try {
+                    afterCallstack(() => this.setInitialSource());
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Failed to execute DOM ready callback:', error);
+                }
+            };
+
+            if (document.readyState !== 'loading') {
+                return execute();
+            }
+
+            document.addEventListener('DOMContentLoaded', execute);
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to setup DOM ready loading:', error);
         }
-
-        document.addEventListener('DOMContentLoaded', execute);
     }
 
     /**
      * Loads video when window loads
      */
     loadOnWindowLoad() {
-        const execute = () => afterCallstack(() => this.setInitialSource());
+        if (!this.state.isEnabled) return;
 
-        if (document.readyState === 'complete') {
-            return execute();
+        try {
+            const execute = () => {
+                try {
+                    afterCallstack(() => this.setInitialSource());
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Failed to execute window load callback:', error);
+                }
+            };
+
+            if (document.readyState === 'complete') {
+                return execute();
+            }
+
+            window.addEventListener('load', execute);
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to setup window load loading:', error);
         }
-
-        window.addEventListener('load', execute);
     }
 
     /**
      * Sets the initial video source
      */
     setInitialSource() {
-        if (this.state.isLoaded) return;
+        if (this.state.isLoaded || !this.state.isEnabled) return;
 
-        // If sources were deferred, restore them first
-        if (this.originalSources || this.originalVideoSrc) {
-            this.restoreVideoSources();
+        try {
+            // If sources were deferred, restore them first
+            if (this.originalSources || this.originalVideoSrc) {
+                this.restoreVideoSources();
+            }
+
+            const activeSource = this.getActiveSource();
+            if (!activeSource || !this.elements.video) {
+                console.warn('[ResponsiveVideo] Cannot set initial source - activeSource or video missing');
+                return;
+            }
+
+            this.elements.video.src = activeSource.src;
+            this.state.currentSource = activeSource.src;
+            this.state.isLoaded = true;
+
+            this.elements.video.load();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to set initial source:', error);
         }
-
-        const activeSource = this.getActiveSource();
-        if (!activeSource || !this.elements.video) {
-            console.error('[ResponsiveVideo] Cannot set initial source - activeSource or video missing');
-            return;
-        }
-
-        this.elements.video.src = activeSource.src;
-        this.state.currentSource = activeSource.src;
-        this.state.isLoaded = true;
-
-        this.elements.video.load();
     }
 
     /**
      * Updates video source based on viewport changes
      */
     async updateSourceBasedOnViewport() {
-        const activeSource = this.getActiveSource();
-        if (!activeSource || !this.elements.video) {
-            console.error('[ResponsiveVideo] Cannot update source - activeSource or video missing');
-            return;
-        }
+        if (!this.state.isEnabled) return;
 
-        // Only update if source changed
-        if (this.state.currentSource === activeSource.src) return;
-
-        const wasPlaying = !this.elements.video.paused;
-
-        // Update source
-        this.elements.video.src = activeSource.src;
-        this.state.currentSource = activeSource.src;
-
-        // Reset visual state
-        this.elements.video.style.opacity = '0';
-        if (this.elements.posterImage) {
-            this.elements.posterImage.style.opacity = '1';
-        }
-
-        this.elements.video.load();
-
-        if (wasPlaying) {
-            try {
-                await this.elements.video.play();
-            } catch (error) {
-                console.error('[ResponsiveVideo] Error playing video after source change:', error);
+        try {
+            const activeSource = this.getActiveSource();
+            if (!activeSource || !this.elements.video) {
+                console.warn('[ResponsiveVideo] Cannot update source - activeSource or video missing');
+                return;
             }
+
+            // Only update if source changed
+            if (this.state.currentSource === activeSource.src) return;
+
+            const wasPlaying = !this.elements.video.paused;
+
+            // Update source
+            this.elements.video.src = activeSource.src;
+            this.state.currentSource = activeSource.src;
+
+            // Reset visual state
+            this.elements.video.style.opacity = '0';
+            if (this.elements.posterImage) {
+                this.elements.posterImage.style.opacity = '1';
+            }
+
+            this.elements.video.load();
+
+            if (wasPlaying) {
+                try {
+                    await this.elements.video.play();
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Error playing video after source change:', error);
+                }
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to update source based on viewport:', error);
         }
     }
 
@@ -538,66 +721,80 @@ class ResponsiveVideo extends HTMLElement {
      * Toggles video play/pause
      */
     async togglePlay() {
-        if (!this.elements.video) {
-            console.error('[ResponsiveVideo] Cannot toggle play - video missing');
+        if (!this.elements.video || !this.state.isEnabled) {
+            console.warn('[ResponsiveVideo] Cannot toggle play - video missing or component disabled');
             return;
         }
 
-        if (this.elements.video.paused) {
-            // Ensure source is set
-            if (!this.elements.video.src) {
-                const activeSource = this.getActiveSource();
-                if (activeSource) {
-                    this.elements.video.src = activeSource.src;
-                    this.elements.video.load();
-                } else {
-                    console.error('[ResponsiveVideo] No source available to play');
-                    return;
+        try {
+            if (this.elements.video.paused) {
+                // Ensure source is set
+                if (!this.elements.video.src) {
+                    const activeSource = this.getActiveSource();
+                    if (activeSource) {
+                        this.elements.video.src = activeSource.src;
+                        this.elements.video.load();
+                    } else {
+                        console.warn('[ResponsiveVideo] No source available to play');
+                        return;
+                    }
                 }
+
+                try {
+                    await this.elements.video.play();
+                    this.state.isPlaying = true;
+                } catch (error) {
+                    console.warn('[ResponsiveVideo] Error playing video:', error);
+                }
+            } else {
+                this.elements.video.pause();
+                this.state.isPlaying = false;
             }
 
-            try {
-                await this.elements.video.play();
-                this.state.isPlaying = true;
-            } catch (error) {
-                console.error('[ResponsiveVideo] Error playing video:', error);
-            }
-        } else {
-            this.elements.video.pause();
-            this.state.isPlaying = false;
+            this.updateControlsUI();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to toggle play:', error);
         }
-
-        this.updateControlsUI();
     }
 
     /**
      * Toggles video sound
      */
     toggleSound() {
-        if (!this.elements.video) {
-            console.error('[ResponsiveVideo] Cannot toggle sound - video missing');
+        if (!this.elements.video || !this.state.isEnabled) {
+            console.warn('[ResponsiveVideo] Cannot toggle sound - video missing or component disabled');
             return;
         }
 
-        this.elements.video.muted = !this.elements.video.muted;
-        this.state.isMuted = this.elements.video.muted;
+        try {
+            this.elements.video.muted = !this.elements.video.muted;
+            this.state.isMuted = this.elements.video.muted;
 
-        this.updateControlsUI();
+            this.updateControlsUI();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to toggle sound:', error);
+        }
     }
 
     /**
      * Updates UI controls based on state
      */
     updateControlsUI() {
-        // Update play icon visibility
-        if (this.elements.playIcon && this.elements.video) {
-            this.elements.playIcon.classList.toggle('hidden', !this.elements.video.paused);
-        }
+        if (!this.state.isEnabled) return;
 
-        // Update sound icons
-        if (this.elements.soundOnIcon && this.elements.soundOffIcon && this.elements.video) {
-            this.elements.soundOnIcon.classList.toggle('hidden', this.elements.video.muted);
-            this.elements.soundOffIcon.classList.toggle('hidden', !this.elements.video.muted);
+        try {
+            // Update play icon visibility
+            if (this.elements.playIcon && this.elements.video) {
+                this.elements.playIcon.classList.toggle('hidden', !this.elements.video.paused);
+            }
+
+            // Update sound icons
+            if (this.elements.soundOnIcon && this.elements.soundOffIcon && this.elements.video) {
+                this.elements.soundOnIcon.classList.toggle('hidden', this.elements.video.muted);
+                this.elements.soundOffIcon.classList.toggle('hidden', !this.elements.video.muted);
+            }
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to update controls UI:', error);
         }
     }
 
@@ -605,42 +802,64 @@ class ResponsiveVideo extends HTMLElement {
      * Cleanup when element is removed
      */
     disconnectedCallback() {
-        this.destroy();
+        try {
+            this.destroy();
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to cleanup on disconnect:', error);
+        }
     }
 
     /**
      * Destroys the component and cleans up
      */
     destroy() {
-        // Clear resize timeout
-        if (this.resizeTimeout) {
-            clearTimeout(this.resizeTimeout);
-        }
+        try {
+            // Clear resize timeout
+            if (this.resizeTimeout) {
+                clearTimeout(this.resizeTimeout);
+            }
 
-        // Remove event listeners
-        this.elements.videoWrapper?.removeEventListener('click', this.handleWrapperClick);
-        this.elements.soundButton?.removeEventListener('click', this.toggleSound);
+            // Remove event listeners
+            try {
+                this.elements.videoWrapper?.removeEventListener('click', this.handleWrapperClick);
+                this.elements.soundButton?.removeEventListener('click', this.toggleSound);
 
-        if (this.elements.video) {
-            this.elements.video.removeEventListener('play', this.handleVideoPlay);
-            this.elements.video.removeEventListener('pause', this.handleVideoPause);
-            this.elements.video.removeEventListener('canplay', this.handleVideoCanPlay);
-            this.elements.video.removeEventListener('loadeddata', this.handleVideoLoadedData);
-            this.elements.video.removeEventListener('error', this.handleVideoError);
-        }
+                if (this.elements.video) {
+                    this.elements.video.removeEventListener('play', this.handleVideoPlay);
+                    this.elements.video.removeEventListener('pause', this.handleVideoPause);
+                    this.elements.video.removeEventListener('canplay', this.handleVideoCanPlay);
+                    this.elements.video.removeEventListener('loadeddata', this.handleVideoLoadedData);
+                    this.elements.video.removeEventListener('error', this.handleVideoError);
+                }
+            } catch (error) {
+                console.warn('[ResponsiveVideo] Failed to remove event listeners:', error);
+            }
 
-        // Disconnect observers
-        if (this.state.resizeObserver) {
-            this.state.resizeObserver.disconnect();
-        } else {
-            window.removeEventListener('resize', this.handleResize);
+            // Disconnect observers
+            try {
+                if (this.state.resizeObserver) {
+                    this.state.resizeObserver.disconnect();
+                } else {
+                    window.removeEventListener('resize', this.handleResize);
+                }
+            } catch (error) {
+                console.warn('[ResponsiveVideo] Failed to disconnect observers:', error);
+            }
+
+            this.state.isEnabled = false;
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to destroy component:', error);
         }
     }
 }
 
-// Define custom element
-if (!customElements.get('responsive-video')) {
-    customElements.define('responsive-video', ResponsiveVideo);
+// Define custom element with error handling
+try {
+    if (!customElements.get('responsive-video')) {
+        customElements.define('responsive-video', ResponsiveVideo);
+    }
+} catch (error) {
+    console.warn('[ResponsiveVideo] Failed to define custom element:', error);
 }
 
 /**
@@ -648,23 +867,39 @@ if (!customElements.get('responsive-video')) {
  * @param {HTMLElement|Document} container - Container to search within
  */
 export function loadManualVideos(container = document) {
-    const manualVideos = container.querySelectorAll('responsive-video[data-load-type="manual"]');
-    manualVideos.forEach((video) => {
-        if (video instanceof ResponsiveVideo && !video.state?.isLoaded) {
-            video.setInitialSource();
-        }
-    });
+    try {
+        const manualVideos = container.querySelectorAll('responsive-video[data-load-type="manual"]');
+        manualVideos.forEach((video) => {
+            try {
+                if (video instanceof ResponsiveVideo && !video.state?.isLoaded) {
+                    video.setInitialSource();
+                }
+            } catch (error) {
+                console.warn('[ResponsiveVideo] Failed to load manual video:', error);
+            }
+        });
+    } catch (error) {
+        console.warn('[ResponsiveVideo] Failed to load manual videos:', error);
+    }
 }
 
 // Module export for Shopify theme integration
 export default {
     init() {
-        // Custom elements are automatically initialized by the browser
-        // This function just ensures backward compatibility
+        try {
+            // Custom elements are automatically initialized by the browser
+            // This function just ensures backward compatibility
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to initialize module:', error);
+        }
     },
 
     destroy() {
-        // Let the disconnectedCallback handle cleanup
+        try {
+            // Let the disconnectedCallback handle cleanup
+        } catch (error) {
+            console.warn('[ResponsiveVideo] Failed to destroy module:', error);
+        }
     },
 
     loadManualVideos

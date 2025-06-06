@@ -8,12 +8,12 @@ const LOAD_ATTRIBUTES = {
 };
 
 const SELECTORS = {
-    LAZY_MEDIA: '[loading="lazy"], [data-src]',
+    LAZY_MEDIA: '[loading="lazy"], [data-src], [data-poster]',
     PICTURE: 'PICTURE'
 };
 
 /**
- * Sets src and srcset attributes from data attributes for an element
+ * Sets src, srcset, and poster attributes from data attributes for an element
  * @param {Element} el - Element to set attributes on
  */
 function setMediaAttr(el) {
@@ -23,6 +23,10 @@ function setMediaAttr(el) {
 
     if (el.dataset.srcset && !el.srcset) {
         el.srcset = el.dataset.srcset;
+    }
+
+    if (el.dataset.poster && !el.poster) {
+        el.poster = el.dataset.poster;
     }
 }
 

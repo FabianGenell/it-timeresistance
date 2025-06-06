@@ -6,13 +6,16 @@
   {% render 'force-lazy-content', content: '<img src="https://via.placeholder.com/150" alt="Placeholder">' %}
 {% enddoc %}
 
-{%- capture lazy_template -%}
+{%- capture src_template -%}
   {%- if lazy_type != blank %} data-load-{{ lazy_type }}
   {%- endif %} data-src="
 {%- endcapture -%}
 
+{%- capture poster_template %} data-poster="{%- endcapture -%}
+
 {%- liquid
-  assign lazy_content = content | replace: ' src="', lazy_template
+  assign lazy_content = content | replace: ' src="', src_template
+  assign lazy_content = lazy_content | replace: ' poster="', poster_template
 -%}
 
 {{- lazy_content }}

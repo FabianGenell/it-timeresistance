@@ -367,8 +367,8 @@
       "name": "personalization_page",
       "description": "",
       "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
+        "name": "page_reference",
+        "category": "REFERENCE"
       }
     }
   ],

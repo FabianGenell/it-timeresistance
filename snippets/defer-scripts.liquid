@@ -1,0 +1,115 @@
+{% doc %}
+  Script blocker that defers loading of certain scripts to improve page load performance
+{% enddoc %}
+
+
+<script>
+// Place this at the very top of <head>
+  (() => {
+    console.debug('[ScriptBlocker] Initializing...');
+    
+    // Define patterns to block/defer
+    const blockedPatterns = [];
+
+    const blockedDomains = [];
+    
+    // Store deferred scripts in an array to preserve order
+    const deferredScripts = [];
+    // Use a Set just to track what we've already seen (for deduplication)
+    const seenScripts = new Set();
+    
+    // 1. INTERCEPT DOCUMENT.WRITE
+    const originalWrite = document.write;
+    document.write = function(html) {
+      const filtered = html.replace(/<script\b([^>]*)src=["']([^"']+)["']([^>]*)>/gi, 
+        (match, prefix, src, suffix) => {
+          if (shouldDefer(src)) {
+            addDeferredScript(src);
+            console.debug('[ScriptBlocker] Deferred via document.write:', src);
+            return `<script${prefix}type="text/plain" data-deferred-src="${src}"${suffix}>`;
+          }
+          return match;
+        });
+      return originalWrite.call(document, filtered);
+    };
+    
+    // 2. OBSERVER APPROACH
+    const observer = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'childList') {
+          mutation.addedNodes.forEach(node => {
+            // Handle direct script tags
+            if (node.tagName === 'SCRIPT' && node.src && !node.dataset.processed) {
+              if (shouldDefer(node.src)) {
+                addDeferredScript(node.src);
+                node.type = 'text/plain';
+                node.dataset.processed = 'true';
+                console.debug('[ScriptBlocker] Deferred via observer:', node.src);
+              }
+            }
+            
+            // Handle scripts in subtree
+            if (node.querySelectorAll) {
+              node.querySelectorAll('script[src]:not([data-processed])').forEach(script => {
+                if (shouldDefer(script.src)) {
+                  addDeferredScript(script.src);
+                  script.type = 'text/plain';
+                  script.dataset.processed = 'true';
+                  console.debug('[ScriptBlocker] Deferred via observer in subtree:', script.src);
+                }
+              });
+            }
+          });
+        }
+      }
+    });
+    observer.observe(document, { childList: true, subtree: true });
+    
+    // Helper function to add script to deferred list (avoiding duplicates)
+    function addDeferredScript(src) {
+      if (!seenScripts.has(src)) {
+        seenScripts.add(src);
+        deferredScripts.push(src);
+      }
+    }
+    
+    // Helper function to check if a script should be deferred
+    function shouldDefer(src) {
+      try {
+        const url = new URL(src, window.location.href);
+        // Check domain
+        if (blockedDomains.some(domain => 
+            url.hostname === domain || url.hostname.endsWith('.' + domain))) {
+          return true;
+        }
+        
+        // Check patterns
+        return blockedPatterns.some(pattern => {
+          const regex = new RegExp(pattern.replace(/\./g, '\\.').replace(/\*/g, '.*'));
+          return regex.test(url.href) || regex.test(url.pathname);
+        });
+      } catch (e) {
+        return false;
+      }
+    }
+    
+    // Load deferred scripts after DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => {
+      console.debug('[ScriptBlocker] DOMContentLoaded, loading deferred scripts...');
+      // Disconnect observer to prevent it from seeing our new script tags
+      observer.disconnect();
+      
+      // Add each deferred script back with defer attribute, in original order
+      deferredScripts.forEach((src, index) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.defer = true;
+        document.head.appendChild(script);
+        console.debug(`[ScriptBlocker] Loading deferred script #${index + 1}:`, src);
+      });
+    });
+    
+    console.debug('[ScriptBlocker] Initialization complete');
+  })();
+</script>
+

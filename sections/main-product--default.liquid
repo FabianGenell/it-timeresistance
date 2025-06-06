@@ -5,7 +5,7 @@
 {{ 'partial-shopify-product-reviews.css' | asset_url | stylesheet_tag }}
 
 {% liquid
-  assign defer_load_type = 'manual'
+  assign defer_load_type = 'load'
   assign current_variant = product.selected_or_first_available_variant
 
   # Performance optimization: defer loading media beyond this threshold

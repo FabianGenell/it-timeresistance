@@ -201,7 +201,7 @@
         "text_z4p6gR": {
           "type": "text",
           "settings": {
-            "text": "<p>Experience the art of precision with our laser engraving service. We can engrave text, symbols, and logo onto your chosen leather product, adding a distinctive mark that stands the test of time. To personalize your item with laser engraving, simply provide the following information in the Order Special Instructions section in Your Cart when placing your order.</p><ul><li>Message: Specify the text you wish to engrave.</li></ul>",
+            "text": "<p>Experience the art of precision with our laser engraving service. We can engrave text, symbols, and logo onto your chosen leather product, adding a distinctive mark that stands the test of time. To personalize your item with laser engraving, simply provide the following information in the Order Special Instructions section in Your Cart when placing your order.</p><ul><li>Message: Specify the text you wish to engrave.</li><li>Font Style: Choose from three elegant fonts.</li></ul>",
             "text_font_class": "fs-body-100"
           }
         }

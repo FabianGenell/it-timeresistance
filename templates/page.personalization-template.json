@@ -705,7 +705,7 @@
         "link": "",
         "link_text": "",
         "columns": "4",
-        "mobile_columns": "1",
+        "mobile_columns": "2",
         "loop_carousel": true,
         "aspect_ratio": "natural",
         "image_caption_style": "overlay",

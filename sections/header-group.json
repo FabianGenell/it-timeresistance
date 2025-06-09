@@ -87,7 +87,7 @@
             "promo_width": 700,
             "promo_height": 400,
             "secondary_position": "left",
-            "image": "shopify://shop_images/women.webp",
+            "image": "shopify://shop_images/v2.jpg",
             "focal_point": "image_presentation",
             "promo_text": "WOMEN",
             "link": "shopify://collections/women",

@@ -56,7 +56,7 @@
             "promo_width": 700,
             "promo_height": 400,
             "secondary_position": "left",
-            "image": "shopify://shop_images/men.webp",
+            "image": "shopify://shop_images/men-new-06-09.png",
             "focal_point": "image_presentation",
             "promo_text": "MEN",
             "link": "shopify://collections/men",
@@ -71,6 +71,7 @@
             "text_color": "#ffffff",
             "button_text_color": "#353232",
             "button_background_color": "#ffffff",
+            "button_hover_background_color": "#f0f0f0",
             "color_overlay": "#000000",
             "color_overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1) 22%, rgba(0, 0, 0, 1) 96%)",
             "overlay_opacity": 0
@@ -101,6 +102,7 @@
             "text_color": "#ffffff",
             "button_text_color": "#353232",
             "button_background_color": "#ffffff",
+            "button_hover_background_color": "#f0f0f0",
             "color_overlay": "#000000",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
@@ -130,6 +132,7 @@
             "text_color": "#ffffff",
             "button_text_color": "#353232",
             "button_background_color": "#ffffff",
+            "button_hover_background_color": "#f0f0f0",
             "color_overlay": "#000000",
             "color_overlay_gradient": "",
             "overlay_opacity": 30
@@ -165,6 +168,7 @@
             "text_color": "#ffffff",
             "button_text_color": "#353232",
             "button_background_color": "#ffffff",
+            "button_hover_background_color": "#f0f0f0",
             "color_overlay": "#ffffff",
             "color_overlay_gradient": "",
             "overlay_opacity": 0

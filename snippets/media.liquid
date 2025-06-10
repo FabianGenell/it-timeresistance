@@ -3,7 +3,7 @@
 
   @param {object} media - The Shopify media object to render
   @param {boolean} [within_carousel] - Optimize iframes for touch sliders
-  @param {string} [load_type] - Control loading timing ('dom', 'load', 'manual')
+  @param {string} [lazy_type] - Control loading timing ('dom', 'load', 'manual')
   @param {boolean} [enable_product_lightbox] - Enable lightbox functionality
   @param {boolean} [loop_video] - Enable video looping
   @param {string} [aspect_ratio] - Aspect ratio for media container
@@ -21,7 +21,7 @@
   With performance optimization
   {% render 'media',
     media: media,
-    load_type: 'load',
+    lazy_type: 'load',
     enable_product_lightbox: true,
     within_carousel: false
   %}
@@ -73,7 +73,7 @@
         fallback_alt: fallback_alt,
         no_crop: enable_product_lightbox,
         animate: animate,
-        load_type: load_type
+        lazy_type: lazy_type
       %}
     </{{ media_link_element }}>
 
@@ -88,7 +88,7 @@
     >
       {%- render 'responsive-video',
         video: media,
-        load_type: load_type,
+        lazy_type: lazy_type,
         loop_video: loop_video,
         autoplay: true,
         show_controls: false
@@ -107,8 +107,8 @@
     -%}
 
     <responsive-video
-      {% if load_type %}
-        data-load-type="{{ load_type }}"
+      {% if lazy_type %}
+        data-load-type="{{ lazy_type }}"
       {%- endif -%}
       {% if loop_video %}
         autoplay

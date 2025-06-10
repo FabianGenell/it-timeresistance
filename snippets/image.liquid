@@ -16,6 +16,7 @@
   @param {string} [attributes] - Additional HTML attributes
   @param {string} [alt_text] - Custom text for alt attribute
   @param {boolean} [disable_focal_point] - Disables focusing on a spot in the image
+  @param {string} [focal_alignment] - Focal point alignment
   @param {number} [section_index] - If passed, prevents lazy load if first section
   @param {string} [lazy_type] - When to load image: 'dom', 'load', or 'manual'
 
@@ -147,6 +148,7 @@
   endunless
 
   assign disable_focal_point = disable_focal_point | default: false
+  assign focal_alignment = focal_alignment | default: image.presentation.focal_point
 -%}
 
 {%- capture placeholder_image -%}
@@ -196,13 +198,11 @@
       data-load-{{ lazy_type }}
     {%- endif -%}
 
-    {% if focal_alignment %}
+    {% if focal_alignment and disable_focal_point == false %}
       style="
         --focal-alignment: {{ focal_alignment }};
         object-position: {{ focal_alignment }};
       "
-    {% elsif disable_focal_point == false and image.presentation.focal_point %}
-      style="object-position: {{ image.presentation.focal_point }};"
     {% endif -%}
 
     loading="{% if lazy_load %}lazy{% else %}eager{% endif %}"
@@ -212,6 +212,7 @@
     {%- unless lazy_load -%}
       fetchpriority="high"
     {%- endunless -%}
+    onload="javascript: this.closest('.image')?.classList.add('loaded')"
   >
 
   {%- if mobile_srcset -%}

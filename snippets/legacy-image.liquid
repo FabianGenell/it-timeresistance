@@ -19,12 +19,13 @@
   @param {string} [object_fit] - CSS object-fit property value
   @param {boolean} [no_lazy_load] - Disable lazy load animations
   @param {string} [src_set_type] - Optimize srcset ('grid', 'full-width', 'thumbnail')
-  @param {string} [load_type] - Control loading timing ('dom', 'load', 'manual')
+  @param {string} [lazy_type] - Control loading timing ('dom', 'load', 'manual')
 
-  @example Basic usage
+  @example
+  Basic usage
   {% render 'legacy-image', image: product.featured_image, sizes: '50vw' %}
-
-  @example With wrapper and animation
+  @example
+  With wrapper and animation
   {% render 'legacy-image',
     image: block.settings.image,
     aspect_ratio: 'landscape',
@@ -34,7 +35,6 @@
 {% enddoc %}
 
 {%- liquid
-
   if image != image.preview_image and image.preview_image
     comment
       hack - nicer way?
@@ -57,6 +57,12 @@
       assign focal_alignment = focal_point | replace: '_', ' '
     endif
   endif
+
+  if prioritize_loading
+    assign lazy_load = false
+  else
+    assign lazy_load = true
+  endif
 -%}
 
 {%- if image != blank -%}
@@ -73,21 +79,33 @@
       {%- if object_fit != blank and aspect_ratio != 'natural' -%}--object-fit: {{ object_fit }};{%- endif -%}
     "
   >
-    {%
-      render 'responsive-image' with
+    {% comment %}
+      {%
+        render 'responsive-image' with
+        image: image,
+        sizes: sizes,
+        prioritize_loading: prioritize_loading,
+        aspect_ratio: aspect_ratio,
+        focal_point: focal_point,
+        focal_alignment: focal_alignment,
+        no_crop: no_crop,
+        object_fit: object_fit,
+        fallback_alt: fallback_alt,
+        src_set_type: src_set_type,
+        class_name: image_class,
+        lazy_type: lazy_type
+      %}
+    {% endcomment %}
+
+    {%- render 'image',
+      src_width: 3000,
+      widths: '300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000',
       image: image,
       sizes: sizes,
-      prioritize_loading: prioritize_loading,
-      aspect_ratio: aspect_ratio,
-      focal_point: focal_point,
       focal_alignment: focal_alignment,
-      no_crop: no_crop,
-      object_fit: object_fit,
-      fallback_alt: fallback_alt,
-      src_set_type: src_set_type,
-      class_name: image_class,
-      load_type: load_type
-    %}
+      lazy_load: lazy_load,
+      class: image_class
+    -%}
   </div>
 {%- elsif include_placeholder -%}
   {%- assign natural_fallback = placeholder_natural_fallback_ratio | default: 'square' -%}

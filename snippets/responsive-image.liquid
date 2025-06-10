@@ -11,7 +11,7 @@
   @param {string} [fallback_alt] - Alt text fallback if image has no alt
   @param {boolean} [no_crop] - If true, don't crop image server-side
   @param {string} [src_set_type] - Optimize srcset for context ('grid', 'full-width', 'thumbnail')
-  @param {string} [load_type] - Control loading timing ('dom', 'load', 'manual')
+  @param {string} [lazy_type] - Control loading timing ('dom', 'load', 'manual')
   @param {string} [class_name] - Additional CSS classes for the image
 
   @example Basic usage
@@ -21,7 +21,7 @@
   {% render 'responsive-image', 
     image: media, 
     sizes: '90vw',
-    load_type: 'load',
+    lazy_type: 'load',
     prioritize_loading: true
   %}
 {% enddoc %}
@@ -35,7 +35,7 @@
     assign fallback_width = 320
   endif
 
-  if lazy or load_type
+  if lazy or lazy_type
     assign src_attr = "data-src"
     assign src_set_attr = "data-srcset"
   else
@@ -121,6 +121,6 @@
   {% if media %}media="{{ media }}"{{ ' ' }}{% endif %}
   {{ src_set_attr }}="{{ src_set_string }}"{{ ' ' }}
   sizes="{{ sizes }}"
-  {%- if load_type -%}data-load-{{ load_type }}{{ ' ' }}{%- endif -%}
+  {%- if lazy_type -%}data-load-{{ lazy_type }}{{ ' ' }}{%- endif -%}
   onload="javascript: this.closest('.image').classList.add('loaded')"
 />

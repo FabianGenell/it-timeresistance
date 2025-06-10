@@ -10,7 +10,7 @@
   @param {object} [mobile_poster_image] - The mobile poster image object
   @param {object} [large_poster_image] - The large poster image object
   @param {boolean} [autoplay] - Whether to autoplay the video
-  @param {string} [load_type] - The load type
+  @param {string} [lazy_type] - The load type
   @param {boolean} [loop_video] - Whether to loop the video
   @param {string} [pause_outside_viewport] - The pause outside viewport
   @param {string} [viewport_threshold] - The viewport threshold
@@ -20,7 +20,7 @@
   @example
   {%- render 'responsive-video', video: video -%}
   @example
-  {%- render 'responsive-video', video: video, load_type: load_type, loop_video: loop_video -%}
+  {%- render 'responsive-video', video: video, lazy_type: lazy_type, loop_video: loop_video -%}
 {% enddoc %}
 
 {%- liquid
@@ -69,8 +69,8 @@
 <responsive-video
   class="{{ class }}"
 
-  {% if load_type -%}
-    data-load-type="{{ load_type }}"
+  {% if lazy_type -%}
+    data-load-type="{{ lazy_type }}"
   {%- endif -%}
   {% if loop_video %}
     autoplay
@@ -99,7 +99,7 @@
         sizes: '100vw',
         widths: '390, 719, 1200, 1600, 1920, 3000',
         section_index: section.index,
-        load_type: load_type
+        lazy_type: lazy_type
       -%}
     </div>
     {% if video_url != blank %}
@@ -110,27 +110,35 @@
         playsinline
         class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 opacity-0"
       >
-        <source
-          src="{{ video_url }}"
-          type="video/mp4"
-          data-aspect-ratio="{{ aspect_ratio }}"
-        >
-        {% if mobile_video_url != blank %}
-          <source
-            src="{{ mobile_video_url }}"
-            type="video/mp4"
-            media="(max-width: 719px)"
-            data-aspect-ratio="{{ mobile_aspect_ratio }}"
-          >
-        {% endif %}
-        {% if large_video_url != blank %}
-          <source
-            src="{{ large_video_url }}"
-            type="video/mp4"
-            media="(min-width: 1800px)"
-            data-aspect-ratio="{{ large_aspect_ratio }}"
-          >
-        {% endif %}
+        {%- for source in video.sources -%}
+          {%- if source.format == 'mp4' -%}
+            <source
+              src="{{ source.url }}"
+              type="{{ source.mime_type }}"
+              data-aspect-ratio="{{ aspect_ratio }}"
+            >
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for source in mobile_video.sources -%}
+          {%- if source.format == 'mp4' -%}
+            <source
+              src="{{ source.url }}"
+              type="{{ source.mime_type }}"
+              media="(max-width: 719px)"
+              data-aspect-ratio="{{ mobile_aspect_ratio }}"
+            >
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for source in large_video.sources -%}
+          {%- if source.format == 'mp4' -%}
+            <source
+              src="{{ source.url }}"
+              type="{{ source.mime_type }}"
+              media="(min-width: 1800px)"
+              data-aspect-ratio="{{ large_aspect_ratio }}"
+            >
+          {%- endif -%}
+        {%- endfor -%}
       </video>
 
       <!-- Video Controls -->

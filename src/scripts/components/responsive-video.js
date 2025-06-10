@@ -5,7 +5,7 @@
  * @property {ResizeObserver|null} resizeObserver - Resize observer instance
  * @property {string|null} currentSource - Current video source URL
  * @property {boolean} autoplayAttempted - Whether autoplay has been attempted
- * @property {'dom'|'load'|'manual'|null} loadType - When to load the video
+ * @property {'dom'|'load'|'manual'|null} lazyType - When to load the video
  * @property {boolean} isLoaded - Whether the video source has been loaded
  * @property {boolean} isEnabled - Whether the component is functioning properly
  */
@@ -69,7 +69,7 @@ class ResponsiveVideo extends HTMLElement {
         resizeObserver: null,
         currentSource: null,
         autoplayAttempted: false,
-        loadType: null,
+        lazyType: null,
         isLoaded: false,
         isEnabled: true
     };
@@ -97,7 +97,7 @@ class ResponsiveVideo extends HTMLElement {
     connectedCallback() {
         try {
             // Initialize state
-            this.state.loadType = this.getLoadType();
+            this.state.lazyType = this.getLoadType();
 
             this.setupElements();
             this.bindEvents();
@@ -168,7 +168,7 @@ class ResponsiveVideo extends HTMLElement {
                     }
 
                     // For deferred loading, remove src attributes to prevent loading
-                    if (this.state.loadType && this.state.loadType !== null) {
+                    if (this.state.lazyType && this.state.lazyType !== null) {
                         this.deferVideoSources();
                     }
 
@@ -432,17 +432,27 @@ class ResponsiveVideo extends HTMLElement {
      */
     handleVideoError(e) {
         try {
+            const videoError = this.elements.video?.error;
+
             // Ignore "Empty src attribute" errors when using deferred loading
             // This is expected behavior when sources are intentionally removed
             if (
-                this.state.loadType &&
-                this.elements.video?.error?.code === VIDEO_ERROR_CODES.MEDIA_ERR_SRC_NOT_SUPPORTED &&
-                this.elements.video?.error?.message?.includes('Empty src attribute')
+                this.state.lazyType &&
+                videoError?.code === VIDEO_ERROR_CODES.MEDIA_ERR_SRC_NOT_SUPPORTED &&
+                videoError?.message?.includes('Empty src attribute')
             ) {
                 return;
             }
 
-            console.warn('[ResponsiveVideo] Video error:', e, this.elements.video?.error);
+            // Handle specific HLS errors more gracefully
+            if (videoError?.message?.includes('HLS') || videoError?.message?.includes('DEMUXER_ERROR')) {
+                console.warn(
+                    '[ResponsiveVideo] HLS format not supported by this browser. Consider using MP4 format only.'
+                );
+                return;
+            }
+
+            console.warn('[ResponsiveVideo] Video error:', e, videoError);
         } catch (error) {
             console.warn('[ResponsiveVideo] Failed to handle video error event:', error);
         }
@@ -583,7 +593,7 @@ class ResponsiveVideo extends HTMLElement {
         if (!this.state.isEnabled) return;
 
         try {
-            switch (this.state.loadType) {
+            switch (this.state.lazyType) {
                 case LOAD_TYPES.DOM:
                     this.loadOnDOMReady();
                     break;

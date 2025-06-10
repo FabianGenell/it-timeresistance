@@ -5,7 +5,7 @@
 {{ 'partial-shopify-product-reviews.css' | asset_url | stylesheet_tag }}
 
 {% liquid
-  assign defer_load_type = 'load'
+  assign defer_lazy_type = 'dom'
   assign current_variant = product.selected_or_first_available_variant
 
   # Performance optimization: defer loading media beyond this threshold
@@ -298,10 +298,6 @@
               {% liquid
                 assign prioritize_loading = false
 
-                if forloop.first or forloop.index == initial_variant_media_position
-                  assign prioritize_loading = true
-                endif
-
                 if forloop.index < initial_variant_media_position or forloop.index > next_variant_media_index
                   continue
                 endif
@@ -318,9 +314,11 @@
                   assign is_featured_media = true
                 endif
 
-                assign media_load_type = null
+                assign media_lazy_type = null
                 if forloop.index > media_priority_threshold
-                  assign media_load_type = defer_load_type
+                  assign media_lazy_type = defer_lazy_type
+                  assign prioritize_loading = true
+
                 endif
               -%}
               <div
@@ -342,7 +340,7 @@
                   sizes: '90vw',
                   prioritize_loading: prioritize_loading,
                   within_carousel: true,
-                  load_type: media_load_type
+                  lazy_type: media_lazy_type
                 %}
               </div>
 
@@ -388,9 +386,9 @@
                   assign media_aspect_ratio = 'square'
                 endif
 
-                assign media_load_type = null
+                assign media_lazy_type = null
                 if forloop.index > media_priority_threshold
-                  assign media_load_type = defer_load_type
+                  assign media_lazy_type = defer_lazy_type
                 endif
               -%}
               <div
@@ -416,7 +414,7 @@
                   sizes: '90vw',
                   animate: true,
                   within_carousel: false,
-                  load_type: media_load_type
+                  lazy_type: media_lazy_type
                 %}
               </div>
             {%- else -%}
@@ -485,9 +483,9 @@
                 assign media_aspect_ratio = 'square'
               endif
 
-              assign media_load_type = null
+              assign media_lazy_type = null
               if forloop.index > media_priority_threshold
-                assign media_load_type = defer_load_type
+                assign media_lazy_type = defer_lazy_type
               endif
             -%}
 
@@ -515,7 +513,7 @@
                 sizes: sizes,
                 animate: true,
                 within_carousel: false,
-                load_type: media_load_type
+                lazy_type: media_lazy_type
               %}
             </div>
           {%- else -%}

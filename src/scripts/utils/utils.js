@@ -80,10 +80,10 @@ export async function afterAnimationEnd(element, callback) {
  *
  * @param {Function} callback - The function to be executed after the call stack clears.
  */
-export function afterCallstack(callback) {
+export function afterCallstack(callback, delay = 0) {
     setTimeout(() => {
         requestAnimationFrame(callback);
-    }, 0);
+    }, delay);
 }
 
 export function formatMoney(cents, format = window.themeVariables.moneyFormat) {

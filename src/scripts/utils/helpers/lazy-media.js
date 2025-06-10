@@ -8,7 +8,7 @@ const LOAD_ATTRIBUTES = {
 };
 
 const SELECTORS = {
-    LAZY_MEDIA: '[loading="lazy"], [data-src], [data-poster]',
+    LAZY_MEDIA: '[loading="lazy"], [data-src], [data-poster], [data-srcset]',
     PICTURE: 'PICTURE'
 };
 

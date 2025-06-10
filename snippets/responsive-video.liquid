@@ -13,8 +13,6 @@
   @param {string} [lazy_type] - The load type ('dom', 'load', 'manual')
   @param {string} [image_lazy_type] - The image load type ('dom', 'load', 'manual')
   @param {boolean} [loop_video] - Whether to loop the video
-  @param {string} [pause_outside_viewport] - The pause outside viewport
-  @param {string} [viewport_threshold] - The viewport threshold
   @param {boolean} [show_controls] - Whether to show the controls
   @param {string} [class] - The classes to add to the responsive video wrapper
 
@@ -79,20 +77,9 @@
   {% if lazy_type -%}
     data-lazy-type="{{ lazy_type }}"
   {%- endif -%}
-  {% if loop_video %}
-    autoplay
-  {% endif %}
 
   {% if autoplay %}
     autoplay
-  {% endif %}
-
-  {% if pause_outside_viewport != blank %}
-    data-pause-outside-viewport="{{ pause_outside_viewport }}"
-  {% endif %}
-
-  {% if viewport_threshold != blank %}
-    data-viewport-threshold="{{ viewport_threshold }}"
   {% endif %}
 >
   <div class="responsive-video-wrapper relative w-full overflow-hidden cursor-pointer">
@@ -112,40 +99,49 @@
     {% if video_url != blank %}
       <!-- Video Element - Hidden Until Loaded -->
       <video
+        {% if loop_video %}
+          loop
+        {% endif %}
+
+        {% if autoplay %}
+          autoplay
+        {% endif %}
+
         muted
-        loop
         playsinline
         class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 opacity-0"
       >
-        {%- for source in video.sources -%}
-          {%- if source.format == 'mp4' -%}
-            <source
-              src="{{ source.url }}"
-              type="{{ source.mime_type }}"
-              data-aspect-ratio="{{ aspect_ratio }}"
-            >
-          {%- endif -%}
-        {%- endfor -%}
-        {%- for source in mobile_video.sources -%}
-          {%- if source.format == 'mp4' -%}
-            <source
-              src="{{ source.url }}"
-              type="{{ source.mime_type }}"
-              media="(max-width: 719px)"
-              data-aspect-ratio="{{ mobile_aspect_ratio }}"
-            >
-          {%- endif -%}
-        {%- endfor -%}
-        {%- for source in large_video.sources -%}
-          {%- if source.format == 'mp4' -%}
-            <source
-              src="{{ source.url }}"
-              type="{{ source.mime_type }}"
-              media="(min-width: 1800px)"
-              data-aspect-ratio="{{ large_aspect_ratio }}"
-            >
-          {%- endif -%}
-        {%- endfor -%}
+        <template data-sources>
+          {%- for source in video.sources -%}
+            {%- if source.format == 'mp4' -%}
+              <source
+                src="{{ source.url }}"
+                type="{{ source.mime_type }}"
+                data-aspect-ratio="{{ aspect_ratio }}"
+              >
+            {%- endif -%}
+          {%- endfor -%}
+          {%- for source in mobile_video.sources -%}
+            {%- if source.format == 'mp4' -%}
+              <source
+                src="{{ source.url }}"
+                type="{{ source.mime_type }}"
+                media="(max-width: 719px)"
+                data-aspect-ratio="{{ mobile_aspect_ratio }}"
+              >
+            {%- endif -%}
+          {%- endfor -%}
+          {%- for source in large_video.sources -%}
+            {%- if source.format == 'mp4' -%}
+              <source
+                src="{{ source.url }}"
+                type="{{ source.mime_type }}"
+                media="(min-width: 1800px)"
+                data-aspect-ratio="{{ large_aspect_ratio }}"
+              >
+            {%- endif -%}
+          {%- endfor -%}
+        </template>
       </video>
 
       <!-- Video Controls -->

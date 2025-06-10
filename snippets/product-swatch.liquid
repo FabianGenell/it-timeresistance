@@ -67,7 +67,7 @@
         assign custom_swatch_image = option_value | handle | append: '.' | append: file_extension
 
         if images[custom_swatch_image] != blank
-          echo images[custom_swatch_image] | image_url: width: swatch_image_width | image_tag: alt: option_value, loading: 'lazy', role: 'presentation'
+          render 'image', image: images[custom_swatch_image], src_width: swatch_image_width, lazy_type: 'dom'
         endif
       endif
     endif

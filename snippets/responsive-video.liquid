@@ -10,7 +10,8 @@
   @param {object} [mobile_poster_image] - The mobile poster image object
   @param {object} [large_poster_image] - The large poster image object
   @param {boolean} [autoplay] - Whether to autoplay the video
-  @param {string} [lazy_type] - The load type
+  @param {string} [lazy_type] - The load type ('dom', 'load', 'manual')
+  @param {string} [image_lazy_type] - The image load type ('dom', 'load', 'manual')
   @param {boolean} [loop_video] - Whether to loop the video
   @param {string} [pause_outside_viewport] - The pause outside viewport
   @param {string} [viewport_threshold] - The viewport threshold
@@ -31,6 +32,12 @@
   assign loop_video = loop_video | default: true, allow_false: true
   assign autoplay = autoplay | default: true, allow_false: true
   assign show_controls = show_controls | default: true, allow_false: true
+
+  assign image_lazy_type = image_lazy_type | default: lazy_type
+
+  if lazy_type == 'manual' and image_lazy_type == 'manual'
+    assign image_lazy_type = 'load'
+  endif
 
   # Create URLs from video assets
   assign poster_image = poster_image | default: video.preview_image
@@ -70,7 +77,7 @@
   class="{{ class }}"
 
   {% if lazy_type -%}
-    data-load-type="{{ lazy_type }}"
+    data-lazy-type="{{ lazy_type }}"
   {%- endif -%}
   {% if loop_video %}
     autoplay
@@ -99,7 +106,7 @@
         sizes: '100vw',
         widths: '390, 719, 1200, 1600, 1920, 3000',
         section_index: section.index,
-        lazy_type: lazy_type
+        lazy_type: image_lazy_type
       -%}
     </div>
     {% if video_url != blank %}

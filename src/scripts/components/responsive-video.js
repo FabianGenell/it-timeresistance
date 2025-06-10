@@ -115,7 +115,7 @@ class ResponsiveVideo extends HTMLElement {
      */
     getLoadType() {
         try {
-            const type = this.getAttribute('data-load-type');
+            const type = this.getAttribute('data-lazy-type');
             if (Object.values(LOAD_TYPES).includes(type)) {
                 return type;
             }
@@ -167,6 +167,8 @@ class ResponsiveVideo extends HTMLElement {
                         this.elements.video.muted = true;
                     }
 
+                    console.log('this.state.lazyType', this.state.lazyType);
+
                     // For deferred loading, remove src attributes to prevent loading
                     if (this.state.lazyType && this.state.lazyType !== null) {
                         this.deferVideoSources();
@@ -191,6 +193,7 @@ class ResponsiveVideo extends HTMLElement {
      */
     deferVideoSources() {
         if (!this.elements.video || !this.state.isEnabled) return;
+        console.log('deferVideoSources');
 
         try {
             // Store original sources for later restoration

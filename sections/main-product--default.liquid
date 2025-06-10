@@ -6,6 +6,7 @@
 
 {% liquid
   assign defer_lazy_type = 'dom'
+  assign defer_lazy_type_video = 'load'
   assign current_variant = product.selected_or_first_available_variant
 
   # Performance optimization: defer loading media beyond this threshold
@@ -296,7 +297,7 @@
 
             {% for media in product.media -%}
               {% liquid
-                assign prioritize_loading = false
+                assign prioritize_loading = true
 
                 if forloop.index < initial_variant_media_position or forloop.index > next_variant_media_index
                   continue
@@ -317,10 +318,15 @@
                 assign media_lazy_type = null
                 if forloop.index > media_priority_threshold
                   assign media_lazy_type = defer_lazy_type
-                  assign prioritize_loading = true
+                  assign prioritize_loading = false
+                endif
 
+                if media.media_type == 'video'
+                  assign media_lazy_type = defer_lazy_type_video
+                  assign prioritize_loading = false
                 endif
               -%}
+
               <div
                 class="product__media-item carousel_slide swiper-slide"
                 data-is-featured="{{ is_featured_media }}"
@@ -389,8 +395,15 @@
                 assign media_lazy_type = null
                 if forloop.index > media_priority_threshold
                   assign media_lazy_type = defer_lazy_type
+                  assign prioritize_loading = false
+                endif
+
+                if media.media_type == 'video'
+                  assign media_lazy_type = defer_lazy_type_video
+                  assign prioritize_loading = false
                 endif
               -%}
+
               <div
                 class="
                   product__media-item
@@ -486,6 +499,11 @@
               assign media_lazy_type = null
               if forloop.index > media_priority_threshold
                 assign media_lazy_type = defer_lazy_type
+              endif
+
+              if media.media_type == 'video'
+                assign media_lazy_type = defer_lazy_type_video
+                assign prioritize_loading = false
               endif
             -%}
 

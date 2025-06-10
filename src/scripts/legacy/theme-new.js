@@ -1,3 +1,4 @@
+import { initLazyMedia } from '../utils/helpers/lazy-media.js';
 import Carousel from './components/carousel.js';
 import {
     qs,
@@ -192,6 +193,8 @@ function load(types, containers) {
             return false;
         });
     });
+
+    initLazyMedia();
 }
 
 window.Shopify.theme.sections.load = load;
@@ -10330,6 +10333,9 @@ register('recently-viewed-products', {
             const content = qs(selectors$m.recentlyViewed, this.container);
             const carouselSlide = qs(selectors$m.carouselSlide, this.container);
             this.productItem = ProductItem(this.container);
+
+            initLazyMedia();
+
             if (shouldAnimate(this.container)) {
                 this.animateListSlider = animateListSlider(this.container);
             }

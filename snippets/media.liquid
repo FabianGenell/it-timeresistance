@@ -13,6 +13,7 @@
   @param {string} [fallback_alt] - Alt text fallback if media has no alt
   @param {object} [featured_media] - Featured media object for comparison
   @param {string} [link] - Optional URL to wrap media in link
+  @param {string} [poster_lazy_type] - The image load type ('dom', 'load', 'manual')
 
   @example
   Basic usage
@@ -90,6 +91,7 @@
         video: media,
         lazy_type: lazy_type,
         loop_video: loop_video,
+        poster_lazy_type: poster_lazy_type,
         autoplay: true,
         show_controls: false
       -%}

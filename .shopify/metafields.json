@@ -370,6 +370,26 @@
         "name": "page_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "clothing-accessory-material",
+      "namespace": "shopify",
+      "name": "Clothing accessory material",
+      "description": "Identifies the main material used in clothing accessories, like leather or linen",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "wallet-features",
+      "namespace": "shopify",
+      "name": "Wallet features",
+      "description": "Describes special characteristics of wallets, like RFID protection or compact design",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [

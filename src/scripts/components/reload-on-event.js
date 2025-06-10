@@ -1,3 +1,5 @@
+import { initLazyImages } from '../utils/helpers/lazy-media.js';
+
 //chrom console: -url:https://au.timeresistance.com/cdn/shopifycloud/shopify-xr-js/v1.0/shopify-xr.en.js -url:chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/background-redux-new.js -url:https://au.timeresistance.com/cdn/shopifycloud/media-analytics/v0.1/analytics.js -runtime.lastError -ERR_BLOCKED
 class ReloadOnEvent extends HTMLElement {
     static sectionListeners = {};
@@ -102,6 +104,8 @@ class ReloadOnEvent extends HTMLElement {
         if (this.container) {
             this.reloadSection();
         }
+
+        initLazyImages();
 
         this.dispatchEvent(
             new CustomEvent('reload-on-event:loaded', {

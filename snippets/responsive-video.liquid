@@ -11,7 +11,7 @@
   @param {object} [large_poster_image] - The large poster image object
   @param {boolean} [autoplay] - Whether to autoplay the video
   @param {string} [lazy_type] - The load type ('dom', 'load', 'manual')
-  @param {string} [image_lazy_type] - The image load type ('dom', 'load', 'manual')
+  @param {string} [poster_lazy_type] - The image load type ('dom', 'load', 'manual')
   @param {boolean} [loop_video] - Whether to loop the video
   @param {boolean} [show_controls] - Whether to show the controls
   @param {string} [class] - The classes to add to the responsive video wrapper
@@ -31,10 +31,10 @@
   assign autoplay = autoplay | default: true, allow_false: true
   assign show_controls = show_controls | default: true, allow_false: true
 
-  assign image_lazy_type = image_lazy_type | default: lazy_type
+  assign poster_lazy_type = poster_lazy_type | default: lazy_type
 
-  if lazy_type == 'manual' and image_lazy_type == 'manual'
-    assign image_lazy_type = 'load'
+  if lazy_type == 'manual' and poster_lazy_type == 'manual'
+    assign poster_lazy_type = 'load'
   endif
 
   # Create URLs from video assets
@@ -84,7 +84,12 @@
 >
   <div class="responsive-video-wrapper relative w-full overflow-hidden cursor-pointer">
     <!-- Poster Image - Sets Aspect Ratio -->
-    <div class="poster-image relative w-full transition-opacity duration-500">
+    <div
+      class="
+        poster-image relative w-full transition-opacity duration-500
+        image image--animate animation--lazy-load
+      "
+    >
       {%- render 'pictures',
         breakpoints: '719, 1800',
         image: poster_image,
@@ -93,7 +98,7 @@
         sizes: '100vw',
         widths: '390, 719, 1200, 1600, 1920, 3000',
         section_index: section.index,
-        lazy_type: image_lazy_type
+        lazy_type: poster_lazy_type
       -%}
     </div>
     {% if video_url != blank %}
@@ -106,6 +111,10 @@
         {% if autoplay %}
           autoplay
         {% endif %}
+
+        {%- if lazy_type != blank %}
+          fetchpriority="low"
+        {% endif -%}
 
         muted
         playsinline

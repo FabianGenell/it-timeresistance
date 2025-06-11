@@ -660,6 +660,15 @@
             "text": ""
           }
         },
+        "image_tkp4Fa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/engraving_gallery_06_11_2.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
         "image_zBmgaf": {
           "type": "image",
           "settings": {
@@ -669,10 +678,10 @@
             "text": ""
           }
         },
-        "image_tkp4Fa": {
+        "image_amhB7C": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/engraving_gallery_06_11_2.png",
+            "image": "shopify://shop_images/engraving_gallery_06_11_13.png",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -764,15 +773,6 @@
             "text": ""
           }
         },
-        "image_KRGiTK": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/engraving_gallery_06_11_9.png",
-            "focal_point": "image_presentation",
-            "title": "",
-            "text": ""
-          }
-        },
         "image_r69MiG": {
           "type": "image",
           "settings": {
@@ -791,10 +791,10 @@
             "text": ""
           }
         },
-        "image_amhB7C": {
+        "image_KRGiTK": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/engraving_gallery_06_11_13.png",
+            "image": "shopify://shop_images/engraving_gallery_06_11_9.png",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -844,8 +844,9 @@
         "image_Fkthag",
         "image_nMtyLY",
         "image_yj9wwJ",
-        "image_zBmgaf",
         "image_tkp4Fa",
+        "image_zBmgaf",
+        "image_amhB7C",
         "image_4kwngC",
         "image_qXPjrr",
         "image_4pxGEc",
@@ -855,10 +856,9 @@
         "image_zeY8R7",
         "image_FCMwmx",
         "image_tj3cLV",
-        "image_KRGiTK",
         "image_r69MiG",
         "image_JXpzUt",
-        "image_amhB7C",
+        "image_KRGiTK",
         "image_wC6CDB",
         "image_metBQ8",
         "image_4VLiWC",

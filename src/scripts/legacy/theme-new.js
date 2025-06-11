@@ -5068,7 +5068,7 @@ function Media(node) {
         ],
         () => {
             featuresLoaded = true;
-            if ('YT' in window && Boolean(YT.loaded)) {
+            if ('YT' in window && YT && Boolean(YT.loaded)) {
                 elements.forEach(initElement);
             } else {
                 window.onYouTubeIframeAPIReady = function () {

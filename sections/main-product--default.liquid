@@ -397,7 +397,9 @@
                 assign media_lazy_type = null
                 assign prioritize_loading = true
 
-                if forloop.index > media_priority_threshold
+                assign variant_priority_threshold = initial_variant_media_position | plus: media_priority_threshold
+
+                if forloop.index > variant_priority_threshold
                   assign media_lazy_type = defer_lazy_type
                   assign prioritize_loading = false
                 endif
@@ -407,7 +409,9 @@
                   assign prioritize_loading = false
                 endif
 
-                if forloop.index >= media_limit_mobile
+                assign variant_media_limit = initial_variant_media_position | plus: media_limit_mobile
+
+                if forloop.index >= variant_media_limit
                   assign media_lazy_type = 'manual'
                   assign prioritize_loading = false
                 endif
@@ -432,6 +436,7 @@
                   featured_media: featured_media,
                   enable_product_lightbox: section.settings.enable_product_lightbox,
                   loop_video: section.settings.enable_video_looping,
+                  prioritize_loading: prioritize_loading,
                   aspect_ratio: media_aspect_ratio,
                   sizes: '90vw',
                   animate: true,
@@ -507,7 +512,9 @@
               assign media_lazy_type = null
               assign prioritize_loading = true
 
-              if forloop.index > media_priority_threshold
+              assign variant_priority_threshold = initial_variant_media_position | plus: media_priority_threshold
+
+              if forloop.index > variant_priority_threshold
                 assign media_lazy_type = defer_lazy_type
                 assign prioritize_loading = false
               endif
@@ -516,12 +523,8 @@
                 assign media_lazy_type = defer_lazy_type_video
                 assign prioritize_loading = false
               endif
-
-              if forloop.index >= media_limit_mobile
-                assign media_lazy_type = 'manual'
-                assign prioritize_loading = false
-              endif
             -%}
+
             <div
               class="
                 product__media-item

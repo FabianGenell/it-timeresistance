@@ -651,6 +651,15 @@
             "text": ""
           }
         },
+        "image_yj9wwJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/engraving_gallery_06_11_7.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
         "image_zBmgaf": {
           "type": "image",
           "settings": {
@@ -732,15 +741,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/engraving_gallery_06_11_10.png",
-            "focal_point": "image_presentation",
-            "title": "",
-            "text": ""
-          }
-        },
-        "image_yj9wwJ": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/engraving_gallery_06_11_7.png",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
@@ -843,6 +843,7 @@
         "image_zH6E3e",
         "image_Fkthag",
         "image_nMtyLY",
+        "image_yj9wwJ",
         "image_zBmgaf",
         "image_tkp4Fa",
         "image_4kwngC",
@@ -852,7 +853,6 @@
         "image_WWXy9U",
         "image_zeY8R7",
         "image_4pxGEc",
-        "image_yj9wwJ",
         "image_FCMwmx",
         "image_tj3cLV",
         "image_KRGiTK",

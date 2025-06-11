@@ -1029,6 +1029,7 @@
         "slide_BTXPfj",
         "slide_JkbcQf"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "image_aspect": "original",

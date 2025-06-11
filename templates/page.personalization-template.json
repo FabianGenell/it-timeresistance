@@ -689,15 +689,6 @@
             "text": ""
           }
         },
-        "image_FCMwmx": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/4_f8ee373a-46c9-4667-909e-880d14484969.jpg",
-            "focal_point": "image_presentation",
-            "title": "",
-            "text": ""
-          }
-        },
         "image_ibCUwz": {
           "type": "image",
           "settings": {
@@ -755,6 +746,15 @@
             "text": ""
           }
         },
+        "image_FCMwmx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_f8ee373a-46c9-4667-909e-880d14484969.jpg",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
         "image_tj3cLV": {
           "type": "image",
           "settings": {
@@ -800,6 +800,15 @@
             "text": ""
           }
         },
+        "image_wC6CDB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/engraving_gallery_06_11_16_eea90dfd-7bbc-4fd1-be15-a245936c7e64.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
         "image_metBQ8": {
           "type": "image",
           "settings": {
@@ -827,15 +836,6 @@
             "title": "",
             "text": ""
           }
-        },
-        "image_wC6CDB": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/engraving_gallery_06_11_16_eea90dfd-7bbc-4fd1-be15-a245936c7e64.png",
-            "focal_point": "image_presentation",
-            "title": "",
-            "text": ""
-          }
         }
       },
       "block_order": [
@@ -847,22 +847,22 @@
         "image_tkp4Fa",
         "image_4kwngC",
         "image_qXPjrr",
-        "image_FCMwmx",
         "image_ibCUwz",
         "image_63fh3Q",
         "image_WWXy9U",
         "image_zeY8R7",
         "image_4pxGEc",
         "image_yj9wwJ",
+        "image_FCMwmx",
         "image_tj3cLV",
         "image_KRGiTK",
         "image_r69MiG",
         "image_JXpzUt",
         "image_amhB7C",
+        "image_wC6CDB",
         "image_metBQ8",
         "image_4VLiWC",
-        "image_4kYyJV",
-        "image_wC6CDB"
+        "image_4kYyJV"
       ],
       "settings": {
         "use_variant_images": false,

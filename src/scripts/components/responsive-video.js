@@ -53,6 +53,7 @@ class ResponsiveVideo extends HTMLElement {
         this.updateSource();
 
         const execute = () => {
+            console.log('execute', this.lazyType, this);
             if (this.lazyType) {
                 this.video.setAttribute('data-src', this.currentSource);
                 initLazyMedia();
@@ -135,8 +136,13 @@ class ResponsiveVideo extends HTMLElement {
     }
 
     load() {
+        if (this.video.src) {
+            const newSourceUrl = this.cleanSourceURL(this.currentSource);
+            const currentSourceUrl = this.cleanSourceURL(this.video.src);
+            if (currentSourceUrl === newSourceUrl) return;
+        }
+
         this.video.src = this.currentSource;
-        //this.video.load();
     }
 
     onResize() {
@@ -172,10 +178,10 @@ class ResponsiveVideo extends HTMLElement {
             this.poster.style.opacity = '0';
         }
         this.video.style.opacity = '1';
-        /* if (this.video.hasAttribute('autoplay')) {
+        if (this.video.hasAttribute('autoplay')) {
             this.video.muted = true;
             this.video.play().catch(() => {});
-        } */
+        }
         this.updateControlsUI();
     }
 

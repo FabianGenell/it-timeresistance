@@ -105,11 +105,12 @@
       {%- capture lazy_attributes -%}
         {% if lazy_type -%}
           data-load-{{ lazy_type }}
+          preload="none"
         {%- endif -%}
 
-        {%- if lazy_type != blank %}
+        {% comment %} {%- if lazy_type != blank %}
           fetchpriority="low"
-        {% endif -%}
+        {% endif -%} {% endcomment %}
       {%- endcapture -%}
       <!-- Video Element - Hidden Until Loaded -->
       <video

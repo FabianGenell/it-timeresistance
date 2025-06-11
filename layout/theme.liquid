@@ -2,17 +2,7 @@
 
 <html class="no-js" lang="{{ request.locale.iso_code }}" style="--announcement-height: 1px;">
   <head>
-
-<script>
-var head = document.head;
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = "https://arthur.timeresistance.com/v1/lst/universal-script?ph=fb4e48128f46454fd17b08bcef34e4e644d732b7e1d49ea4bdc5744bfa030510&tag=!clicked&origin=SHOPIFY&ref_url=" + encodeURI(document.URL) ;
-head.appendChild(script);
-</script>
-
-
-    
+    {%- render 'defer-scripts' -%}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -112,8 +102,19 @@ head.appendChild(script);
       {% render 'back-to-top' %}
     </div>
 
-    {{ '//www.youtube.com/iframe_api' | script_tag }}
-    {{ '//cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css' | stylesheet_tag }}
+    <link rel="stylesheet" href="//cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css">
+
+    <script defer src="//www.youtube.com/iframe_api"></script>
+
+    <script>
+      var head = document.head;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src =
+        'https://arthur.timeresistance.com/v1/lst/universal-script?ph=fb4e48128f46454fd17b08bcef34e4e644d732b7e1d49ea4bdc5744bfa030510&tag=!clicked&origin=SHOPIFY&ref_url=' +
+        encodeURI(document.URL);
+      head.appendChild(script);
+    </script>
   </body>
   <link
     rel="preload"

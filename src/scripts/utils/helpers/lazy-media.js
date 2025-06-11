@@ -12,6 +12,8 @@ const SELECTORS = {
     PICTURE: 'PICTURE'
 };
 
+const DEBUG = false;
+
 /**
  * Sets src, srcset, and poster attributes from data attributes for an element
  * @param {Element} el - Element to set attributes on
@@ -90,7 +92,6 @@ export function initLazyMedia() {
 
     // Use IntersectionObserver for remaining media if supported
     if (mediaForIntersectionObserver.length > 0) {
-        console.log('intersection observer');
         const io = new IntersectionObserver(
             (entries, observer) => {
                 entries.forEach((entry) => {
@@ -111,7 +112,7 @@ export function initLazyMedia() {
 }
 
 function loadMediaOnDOMLoaded(mediaElArray) {
-    console.debug('loadMediaOnDOMLoaded', mediaElArray);
+    if (DEBUG) console.debug('loadMediaOnDOMLoaded', mediaElArray);
     const execute = () => afterCallstack(() => setMediaSourceArray(mediaElArray));
 
     if (document.readyState != 'loading') {
@@ -122,7 +123,7 @@ function loadMediaOnDOMLoaded(mediaElArray) {
 }
 
 function loadMediaOnLoaded(mediaElArray) {
-    console.debug('loadMediaOnLoaded', mediaElArray);
+    if (DEBUG) console.debug('loadMediaOnLoaded', mediaElArray);
     const execute = () => afterCallstack(() => setMediaSourceArray(mediaElArray));
 
     if (document.readyState == 'complete') {
@@ -137,7 +138,7 @@ function loadMediaOnLoaded(mediaElArray) {
  * @param {Document|Element} container - Container to search within
  */
 export function loadManualMedia(container = document) {
-    console.debug('loadManualMedia', container);
+    if (DEBUG) console.debug('loadManualMedia', container);
     try {
         const mediaEls = container.querySelectorAll('[loading="lazy"]');
         setMediaSourceArray(mediaEls);

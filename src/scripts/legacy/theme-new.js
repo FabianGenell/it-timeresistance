@@ -1,4 +1,4 @@
-import { initLazyMedia } from '../utils/helpers/lazy-media.js';
+import { initLazyMedia, loadManualMedia } from '../utils/helpers/lazy-media.js';
 import Carousel from './components/carousel.js';
 import {
     qs,
@@ -5466,6 +5466,9 @@ const moreMedia = (node) => {
             updateText(true);
             return;
         }
+
+        loadManualMedia(node);
+
         productMedia.dataset.productMedia = states.beforeOpen;
         window.requestAnimationFrame(() => {
             const { width } = productMedia.getBoundingClientRect();
@@ -10767,7 +10770,6 @@ register('video', {
                         const isBrave = window.navigator.brave && window.navigator.brave.isBrave;
                         let host = 'https://www.youtube.com';
                         if (isBrave) {
-                            console.log('Brave browser detected - using privacy-friendly settings');
                             host = 'https://www.youtube-nocookie.com';
                         }
 
@@ -10793,8 +10795,6 @@ register('video', {
                             },
                             events: {
                                 onReady: () => {
-                                    console.log('youtube video ready', player);
-
                                     const iframe = player.getIframe();
                                     iframe.tabIndex = '-1';
 

@@ -402,8 +402,12 @@
                   assign media_lazy_type = defer_lazy_type_video
                   assign prioritize_loading = false
                 endif
-              -%}
 
+                if forloop.index >= media_limit_mobile
+                  assign media_lazy_type = 'manual'
+                  assign prioritize_loading = false
+                endif
+              -%}
               <div
                 class="
                   product__media-item
@@ -498,7 +502,7 @@
               endif
 
               assign media_lazy_type = null
-              if forloop.index > media_priority_threshold
+              if forloop.index0 > media_priority_threshold
                 assign media_lazy_type = defer_lazy_type
               endif
 
@@ -507,7 +511,6 @@
                 assign prioritize_loading = false
               endif
             -%}
-
             <div
               class="
                 product__media-item

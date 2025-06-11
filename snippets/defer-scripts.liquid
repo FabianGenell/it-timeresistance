@@ -16,26 +16,24 @@
     //   /judge\.me.*\.(js|css)/ matches Judge.me JS or CSS files
     // Matches partial URLs or filenames (expanded to catch more variations)
     const blockedPatterns = [
-      /klaviyo.*\.js/,                           // any klaviyo .js
-      /\/onsite\/js\/.*\/klaviyo\.js/,           // nested klaviyo paths
-      /gorgias/,                                 // anything Gorgias-related
-      /youtube\.com\/iframe_api/,
-      /www-widgetapi\.js/,                       // YouTube widget loader
-      /product-reviews\.css/,
-      /shopify-plyr(\.css|\.js)/,
-      /photoswipe-chunk\.js/,
-      /swiper-chunk\.js/,
-      /el-viewer-ui\.en\.js/,
-      /shopify-xr\.en\.js/,
-      /analytics\.js/,
-      /judge\.me.*\.(js|css)/,
-      /vue.*\.(js|css)/,
-      /cartbite.*\.js/,
-      /avada-cookie\.js/,
-      /ecomsend\.js/,
-      /contactform-v2\.js/,
-      /bugsnag.*\.js/,
-      /remote\.js/
+      "preloads.js",
+      "storefront/load_feature",
+      "shopify_pay/storefront",
+      "preview-bar-modules.js",
+      "model-viewer-ui.en.js",
+      "shopify-xr.en.js",
+      "analytics.js",
+      "contactform-v2.js",
+      "klaviyo.js",
+      "gorgias",
+      "avada-cookie.js",
+      "cartbite-embed.js",
+      "ecomsend.js",
+      "bugsnag",
+      "youtube.com/iframe_api",
+      "www-widgetapi.js",
+      "replace-mailto-script.js",
+      "dyn-rev"
     ];
 
     const blockedDomains = [
@@ -48,7 +46,8 @@
       "api.ecomsend.com",
       "d2wy8f7a9ursnm.cloudfront.net", // bugsnag
       "www.youtube.com",
-      "i.ytimg.com"
+      "i.ytimg.com",
+      "s1.staq-cdn.com"
     ];
     
     // Store deferred scripts in an array to preserve order
@@ -83,6 +82,8 @@
                 node.type = 'text/plain';
                 node.dataset.processed = 'true';
                 console.debug('[ScriptBlocker] Deferred via observer:', node.src);
+              } else {
+                console.debug('[ScriptBlocker] Not deferred via observer:', node.src);
               }
             }
             

@@ -5940,8 +5940,8 @@ html.do-anim .animation .featured-collection-slider__content.init-reveal.reveal 
 }
 .image-compare--vertical .image-compare__slider {
     cursor: ns-resize;
-    writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
+    writing-mode: vertical-lr;
+    direction: rtl;
 }
 .image-compare__slider:focus-visible ~ .image-compare__slider-button {
     outline: 2px solid;

@@ -102,6 +102,15 @@
       -%}
     </div>
     {% if video_url != blank %}
+      {%- capture lazy_attributes -%}
+        {% if lazy_type -%}
+          data-load-{{ lazy_type }}
+        {%- endif -%}
+
+        {%- if lazy_type != blank %}
+          fetchpriority="low"
+        {% endif -%}
+      {%- endcapture -%}
       <!-- Video Element - Hidden Until Loaded -->
       <video
         {% if loop_video %}
@@ -112,9 +121,7 @@
           autoplay
         {% endif %}
 
-        {%- if lazy_type != blank %}
-          fetchpriority="low"
-        {% endif -%}
+        {{ lazy_attributes }}
 
         muted
         playsinline
@@ -124,7 +131,7 @@
           {%- for source in video.sources -%}
             {%- if source.format == 'mp4' -%}
               <source
-                src="{{ source.url }}"
+                data-src="{{ source.url }}"
                 type="{{ source.mime_type }}"
                 data-aspect-ratio="{{ aspect_ratio }}"
               >
@@ -133,7 +140,7 @@
           {%- for source in mobile_video.sources -%}
             {%- if source.format == 'mp4' -%}
               <source
-                src="{{ source.url }}"
+                data-src="{{ source.url }}"
                 type="{{ source.mime_type }}"
                 media="(max-width: 719px)"
                 data-aspect-ratio="{{ mobile_aspect_ratio }}"
@@ -143,7 +150,7 @@
           {%- for source in large_video.sources -%}
             {%- if source.format == 'mp4' -%}
               <source
-                src="{{ source.url }}"
+                data-src="{{ source.url }}"
                 type="{{ source.mime_type }}"
                 media="(min-width: 1800px)"
                 data-aspect-ratio="{{ large_aspect_ratio }}"

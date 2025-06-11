@@ -1,3 +1,5 @@
+import { initLazyMedia } from '../utils/helpers/lazy-media.js';
+
 const LOAD_TYPES = {
     DOM: 'dom',
     LOAD: 'load',
@@ -50,11 +52,39 @@ class ResponsiveVideo extends HTMLElement {
     initVideo() {
         this.updateSource();
 
-        if (this.lazyType) {
-            this.video.setAttribute('data-src', this.currentSource);
+        const execute = () => {
+            if (this.lazyType) {
+                this.video.setAttribute('data-src', this.currentSource);
+                initLazyMedia();
+            } else {
+                this.load();
+            }
+        };
+
+        if (this.isVisible()) {
+            execute();
         } else {
-            this.load();
+            this.observeVisibility(execute);
         }
+    }
+
+    isVisible() {
+        const rect = this.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0;
+    }
+
+    observeVisibility(callback) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && this.isVisible()) {
+                    // Element is now visible
+                    callback();
+                    observer.disconnect();
+                }
+            });
+        });
+
+        observer.observe(this);
     }
 
     initElements() {
@@ -74,7 +104,7 @@ class ResponsiveVideo extends HTMLElement {
 
     getSources() {
         return Array.from(this.sourcesTemplate.content.querySelectorAll('source')).map((s) => ({
-            src: s.src,
+            src: s.getAttribute('data-src'),
             media: s.media
         }));
     }
@@ -168,7 +198,3 @@ class ResponsiveVideo extends HTMLElement {
 }
 
 customElements.define('responsive-video', ResponsiveVideo);
-
-export function loadManualVideos(container = document) {
-    container.querySelectorAll('responsive-video[data-load-type="manual"]').forEach((el) => el.load());
-}

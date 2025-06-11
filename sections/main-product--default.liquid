@@ -2,7 +2,7 @@
 {%- if section.settings.enable_section_style -%}
   {%- render 'section-style', section: section -%}
 {%- endif -%}
-{{ 'partial-shopify-product-reviews.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'partial-shopify-product-reviews.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 {% liquid
   assign defer_lazy_type = 'dom'
@@ -295,6 +295,7 @@
           <div class="product__media carousel__wrapper swiper-wrapper">
             {%- assign media_index = 0 -%}
 
+            {% comment %}! THIS IS CAROUSEL {% endcomment %}
             {% for media in product.media -%}
               {% liquid
                 assign prioritize_loading = true
@@ -364,6 +365,7 @@
         {% comment -%}
           Mobile gallery style other than 'carousel'
         {% endcomment -%}
+        {% comment %}! MOBILE ONLY {% endcomment %}
         <div
           class="product__media-container below-mobile{% if section.settings.enable_product_lightbox %} lightbox-media-container{% endif %}"
           data-gallery-style="{{ gallery_style_mobile }}"
@@ -393,6 +395,8 @@
                 endif
 
                 assign media_lazy_type = null
+                assign prioritize_loading = true
+
                 if forloop.index > media_priority_threshold
                   assign media_lazy_type = defer_lazy_type
                   assign prioritize_loading = false
@@ -408,6 +412,7 @@
                   assign prioritize_loading = false
                 endif
               -%}
+
               <div
                 class="
                   product__media-item
@@ -458,6 +463,8 @@
         </div>
       {%- endif %}
 
+      {% comment %}! DESKTOP ONLY {% endcomment %}
+
       <div
         class="product__media-container above-mobile{% if section.settings.enable_product_lightbox %} lightbox-media-container{% endif %}"
         data-gallery-style="{{ gallery_style }}"
@@ -497,17 +504,21 @@
 
               assign media_aspect_ratio = image_aspect_ratio
 
-              if media.media_type == 'model'
-                assign media_aspect_ratio = 'square'
-              endif
-
               assign media_lazy_type = null
-              if forloop.index0 > media_priority_threshold
+              assign prioritize_loading = true
+
+              if forloop.index > media_priority_threshold
                 assign media_lazy_type = defer_lazy_type
+                assign prioritize_loading = false
               endif
 
               if media.media_type == 'video'
                 assign media_lazy_type = defer_lazy_type_video
+                assign prioritize_loading = false
+              endif
+
+              if forloop.index >= media_limit_mobile
+                assign media_lazy_type = 'manual'
                 assign prioritize_loading = false
               endif
             -%}
@@ -532,6 +543,7 @@
                 enable_product_lightbox: section.settings.enable_product_lightbox,
                 loop_video: section.settings.enable_video_looping,
                 aspect_ratio: media_aspect_ratio,
+                prioritize_loading: prioritize_loading,
                 sizes: sizes,
                 animate: true,
                 within_carousel: false,

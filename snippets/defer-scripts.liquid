@@ -8,10 +8,48 @@
   (() => {
     console.debug('[ScriptBlocker] Initializing...');
     
-    // Define patterns to block/defer
-    const blockedPatterns = [];
+    // Regex patterns to match script or stylesheet URLs to defer.
+    // Use full or partial matches for file names or paths.
+    // Example: 
+    //   /main\.bundle\.js/ matches exact file
+    //   /klaviyo.*\.js/ matches any Klaviyo JS file
+    //   /judge\.me.*\.(js|css)/ matches Judge.me JS or CSS files
+    // Matches partial URLs or filenames (expanded to catch more variations)
+    const blockedPatterns = [
+      /klaviyo.*\.js/,                           // any klaviyo .js
+      /\/onsite\/js\/.*\/klaviyo\.js/,           // nested klaviyo paths
+      /gorgias/,                                 // anything Gorgias-related
+      /youtube\.com\/iframe_api/,
+      /www-widgetapi\.js/,                       // YouTube widget loader
+      /product-reviews\.css/,
+      /shopify-plyr(\.css|\.js)/,
+      /photoswipe-chunk\.js/,
+      /swiper-chunk\.js/,
+      /el-viewer-ui\.en\.js/,
+      /shopify-xr\.en\.js/,
+      /analytics\.js/,
+      /judge\.me.*\.(js|css)/,
+      /vue.*\.(js|css)/,
+      /cartbite.*\.js/,
+      /avada-cookie\.js/,
+      /ecomsend\.js/,
+      /contactform-v2\.js/,
+      /bugsnag.*\.js/,
+      /remote\.js/
+    ];
 
-    const blockedDomains = [];
+    const blockedDomains = [
+      "static.klaviyo.com",
+      "cdnwidget.judge.me",
+      "cdn.jsdelivr.net",
+      "gorgias.chat",
+      "cartbite-app-api.staqlab.com",
+      "cookie.avada.io",
+      "api.ecomsend.com",
+      "d2wy8f7a9ursnm.cloudfront.net", // bugsnag
+      "www.youtube.com",
+      "i.ytimg.com"
+    ];
     
     // Store deferred scripts in an array to preserve order
     const deferredScripts = [];
@@ -94,8 +132,8 @@
     }
     
     // Load deferred scripts after DOMContentLoaded
-    document.addEventListener('DOMContentLoaded', () => {
-      console.debug('[ScriptBlocker] DOMContentLoaded, loading deferred scripts...');
+    window.addEventListener('load', () => {
+      console.debug('[ScriptBlocker] load, loading deferred scripts...');
       // Disconnect observer to prevent it from seeing our new script tags
       observer.disconnect();
       

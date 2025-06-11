@@ -1,3 +1,5 @@
+import { initLazyImages } from '../utils/helpers/lazy-media.js';
+
 class FavoriteHandler {
     constructor() {
         this.favorites = this.fetchFavorites();
@@ -159,6 +161,7 @@ class FavoriteProducts extends HTMLElement {
                         return this.productGrid.appendChild(el);
                     } catch (error) {}
                 });
+                initLazyImages();
                 return productsHTML;
             })
         );

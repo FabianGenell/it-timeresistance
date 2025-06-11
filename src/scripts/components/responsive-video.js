@@ -53,7 +53,6 @@ class ResponsiveVideo extends HTMLElement {
         this.updateSource();
 
         const execute = () => {
-            console.log('execute', this.lazyType, this);
             if (this.lazyType) {
                 this.video.setAttribute('data-src', this.currentSource);
                 initLazyMedia();

@@ -614,6 +614,15 @@
     "media_gallery_Ha6HVM": {
       "type": "media-gallery",
       "blocks": {
+        "image_j3qhyQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_6.png",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
         "image_qXPjrr": {
           "type": "image",
           "settings": {
@@ -688,6 +697,7 @@
         }
       },
       "block_order": [
+        "image_j3qhyQ",
         "image_qXPjrr",
         "image_4VLiWC",
         "image_Fkthag",

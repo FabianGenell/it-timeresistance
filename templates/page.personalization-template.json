@@ -1031,7 +1031,7 @@
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
-        "image_aspect": "custom",
+        "image_aspect": "original",
         "desktop_height": 50,
         "mobile_height": 100,
         "enable_autoplay": true,
@@ -1039,7 +1039,7 @@
         "navigation_alignment": "center",
         "navigation_color_foreground": "#fff",
         "navigation_color_background": "",
-        "navigation_background_opacity": 100,
+        "navigation_background_opacity": 0,
         "enable_animation": true,
         "enable_section_style": false,
         "section_padding_top": 0,

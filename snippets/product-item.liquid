@@ -14,10 +14,11 @@
   @param {boolean} [show_favorite_button] - Whether to show the favorite button
   @param {boolean} [show_price] - Whether to show the price
 
-  @example Basic usage
+  @example
+  Basic usage
   {% render 'product-item', prod: product %}
-
-  @example With configuration
+  @example
+  With configuration
   {% render 'product-item',
     prod: product,
     product_columns_desktop: 4,
@@ -330,7 +331,7 @@
             endif
           %}
           {% if price_content_type == 'price' %}
-            <p class="product-item__price text-xl">
+            <p class="product-item__price text-lg">
               {% if placeholder %}
                 {{ 9999 | money }}
 

@@ -295,7 +295,7 @@
         "link": "",
         "link_text": "",
         "columns": "3",
-        "mobile_columns": "2",
+        "mobile_columns": "1",
         "loop_carousel": false,
         "aspect_ratio": "square",
         "image_caption_style": "beneath",

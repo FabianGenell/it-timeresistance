@@ -2072,15 +2072,10 @@ html.sticky-header-active body.scroll-lock .shopify-section.header__outer-wrappe
     visibility: visible;
 }
 .header .icon-button__icon .icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 }
-@media (max-width: 959px) {
-    .header .icon-button__icon .icon {
-        width: 30px;
-        height: 30px;
-    }
-}
+
 .header__inner {
     box-shadow: 0px calc(var(--divider-width) * -1) 0px currentColor inset;
     max-width: 1400px;
@@ -14066,7 +14061,7 @@ ul.drawer-menu__secondary-links .drawer-menu__item {
 }
 .drawer-menu__item {
     list-style: none;
-    font-size: var(--font-size-body-50);
+    font-size: 16px;
     text-transform: uppercase;
     margin: 0;
     padding: 0;

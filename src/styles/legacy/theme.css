@@ -4429,6 +4429,9 @@ html.no-js .product__media-show-more {
         0 0 0 1px var(--color-border) inset,
         0 0 0 4px var(--color-background) inset;
 }
+.dynamic-variant-button.product__color-swatch.disabled {
+    opacity: 0.5;
+}
 .dynamic-variant-button.product__color-swatch.disabled::after {
     border-color: inherit;
 }

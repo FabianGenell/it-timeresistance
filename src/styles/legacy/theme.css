@@ -1866,10 +1866,7 @@ input.input + label {
     padding: 0;
     list-style: none;
 }
-.footer__links li + li {
-    margin-top: calc(4px * 3);
-    margin-top: var(--spacing-3);
-}
+
 .footer__links a:hover {
     -webkit-text-decoration: underline;
     text-decoration: underline;

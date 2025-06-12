@@ -2,3 +2,4 @@
 @import "../styles/tailwind.css";
 @import "../styles/base.css";
 @import "../styles/extras.css";
+@import "../styles/components/index.css";

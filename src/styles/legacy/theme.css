@@ -2077,8 +2077,8 @@ html.sticky-header-active body.scroll-lock .shopify-section.header__outer-wrappe
 }
 @media (max-width: 959px) {
     .header .icon-button__icon .icon {
-        width: 26px;
-        height: 26px;
+        width: 30px;
+        height: 30px;
     }
 }
 .header__inner {

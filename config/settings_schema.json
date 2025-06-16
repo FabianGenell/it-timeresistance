@@ -657,6 +657,12 @@
     "name": "t:settings_schema.product_listing.name",
     "settings": [
       {
+        "id": "show_from_price",
+        "type": "checkbox",
+        "label": "Show from price",
+        "default": false
+      },
+      {
         "id": "product_listing_show_vendor",
         "type": "checkbox",
         "label": "t:settings_schema.product_listing.settings.product_listing_show_vendor.label",

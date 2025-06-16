@@ -138,7 +138,7 @@
             <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
             <s class="t-subdued">{{ prod.compare_at_price | money }}</s>
 
-            {% if prod.price_varies %}
+            {% if prod.price_varies and settings.show_from_price %}
               {%- assign sale_price = prod.price | money -%}
 
               <span class="sale">
@@ -149,7 +149,7 @@
             {% endif %}
           </p>
         {% else %}
-          {% if prod.price_varies %}
+          {% if prod.price_varies and settings.show_from_price %}
             {%- assign price = prod.price | money -%}
             <p class="product-card-mini__price">
               {{ 'products.product.from_lowest_price_html' | t: lowest_price: price }}

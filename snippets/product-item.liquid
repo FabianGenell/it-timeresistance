@@ -353,7 +353,11 @@
                   <s class="t-subdued">{{ prod.compare_at_price | money }}</s>
                 {% endunless %}
 
-                {% if prod.price_varies or prod.compare_at_price_varies or has_null_compare_at_price %}
+                {% if prod.price_varies
+                  and settings.show_from_price
+                  or prod.compare_at_price_varies
+                  or has_null_compare_at_price
+                %}
                   {%- assign sale_price = prod.price | money -%}
 
                   <span class="sale">
@@ -364,9 +368,8 @@
                 {% endif %}
 
               {% else %}
-                {% if prod.price_varies %}
+                {% if prod.price_varies and settings.show_from_price %}
                   {%- assign price = prod.price | money -%}
-
                   {{ 'products.product.from_lowest_price_html' | t: lowest_price: price }}
 
                 {% else %}
@@ -386,7 +389,7 @@
               {% render 'unit-price', item: current_variant %}
             </p>
           {% elsif price_content_type == 'custom' %}
-            {% if prod.price_varies and prod.price == 0 %}
+            {% if prod.price_varies and settings.show_from_price and prod.price == 0 %}
               {%- assign price = prod.price | money -%}
               {%- assign custom_price_content = 'products.inventory.zero_price_custom_label' | t -%}
 

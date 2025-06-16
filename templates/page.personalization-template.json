@@ -501,7 +501,6 @@
     },
     "image_hero_QEqrdA": {
       "type": "image-hero",
-      "disabled": true,
       "settings": {
         "image_aspect": "original",
         "desktop_height": 100,
@@ -667,6 +666,7 @@
         "slide_BTXPfj",
         "slide_JkbcQf"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "image_aspect": "original",

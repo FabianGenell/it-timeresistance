@@ -13987,6 +13987,7 @@ register('collection', {
                     _this$animateCollecti === void 0 ||
                     _this$animateCollecti.infiniteScrollReveal();
                 this._updatePaginationCount();
+                initLazyMedia();
                 r$1('collection:updated');
             }
         };

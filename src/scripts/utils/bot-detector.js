@@ -5,15 +5,15 @@
 const CONFIG = {
     // Basic settings
     DEBUG: false,
-    MIN_TIME_ATC_MS: 1500,
 
+    MIN_TIME_CART_ADD_MS: 1500,
     REQUIRE_MOUSE_MOVEMENT: true,
     REQUIRE_VARIANT_CHANGE: false,
     REQUIRE_ADD_BUTTON_CLICK: false,
     REQUIRE_CHECKOUT_CLICK: false,
     CHECK_WEBDRIVER: true,
-    HONEYPOT_FIELD_NAME: 'website',
 
+    HONEYPOT_FIELD_NAME: 'website',
     CART_ATTR_RESULT: 'is-human',
     CART_ATTR_TIMESTAMP: 'bot-check-timestamp',
     CART_ATTR_DETAILS: 'bot-check-details'
@@ -156,7 +156,7 @@ class BotDetector {
         }
 
         // Check 2: Too fast (likely bot)
-        if (timeElapsed < this.config.MIN_TIME_ATC_MS) {
+        if (timeElapsed < this.config.MIN_TIME_CART_ADD_MS) {
             issues.push(`too-fast-${timeElapsed}ms`);
             isHuman = false;
         }
@@ -256,13 +256,13 @@ class BotDetector {
 
 // Auto-initialize with default config (can be disabled by setting window.disableBotDetector = true)
 if (typeof window !== 'undefined' && !window.disableBotDetector) {
-    window.botDetector = new BotDetector();
+    new BotDetector();
 }
 
 // Example of custom configuration:
 // window.botDetector = new BotDetector({
 //   DEBUG: false,                      // Disable logging in production
-//   MIN_TIME_ATC_MS: 2000,                // Require 2 seconds minimum
+//   MIN_TIME_CART_ADD_MS: 2000,                // Require 2 seconds minimum
 //   REQUIRE_MOUSE_MOVEMENT: false,    // Don't require mouse movement
 //   REQUIRE_VARIANT_CHANGE: true,     // Require product variant selection
 //   REQUIRE_ADD_BUTTON_CLICK: true,   // Require specific add button click

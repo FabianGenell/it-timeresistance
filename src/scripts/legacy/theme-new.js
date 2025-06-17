@@ -7801,6 +7801,7 @@ function PredictiveSearch(resultsContainer) {
     const cachedResults = {};
     function renderSearchResults(resultsMarkup) {
         resultsContainer.innerHTML = resultsMarkup;
+        initLazyMedia();
     }
     function getSearchResults(searchTerm) {
         const queryKey = searchTerm.replace(' ', '-').toLowerCase();

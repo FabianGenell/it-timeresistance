@@ -564,6 +564,7 @@
         },
         "slide_7KHa4c": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
@@ -595,6 +596,7 @@
         },
         "slide_BTXPfj": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
@@ -626,6 +628,7 @@
         },
         "slide_JkbcQf": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",

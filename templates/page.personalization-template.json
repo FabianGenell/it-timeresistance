@@ -501,6 +501,7 @@
     },
     "image_hero_QEqrdA": {
       "type": "image-hero",
+      "disabled": true,
       "settings": {
         "image_aspect": "original",
         "desktop_height": 100,

@@ -568,6 +568,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Embossing_page_15.svg",
+            "image_mobile": "shopify://shop_images/2_embossing_page.svg",
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
             "media_link": "",
@@ -600,6 +601,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Embossing_page_16.svg",
+            "image_mobile": "shopify://shop_images/3_embossing_page.svg",
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
             "media_link": "",
@@ -632,6 +634,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Embossing_page_17.svg",
+            "image_mobile": "shopify://shop_images/4_embossing_page.svg",
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
             "media_link": "",
@@ -664,6 +667,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Embossing_page_18.svg",
+            "image_mobile": "shopify://shop_images/5_embossing_page.svg",
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
             "media_link": "",
@@ -696,6 +700,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Embossing_page_19.svg",
+            "image_mobile": "shopify://shop_images/6_embossing_page.svg",
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
             "media_link": "",
@@ -728,6 +733,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Embossing_page_20.svg",
+            "image_mobile": "shopify://shop_images/7_embossing_page.svg",
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
             "media_link": "",

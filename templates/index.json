@@ -23,7 +23,7 @@
             "mobile_image": "shopify://shop_images/A_1040_x_1576.jpg",
             "image_xl": "shopify://shop_images/A2152_x_1680_2.jpg",
             "media_fit": "contain",
-            "focal_point": "right",
+            "focal_point": "left",
             "text_position": "center_flex-end",
             "accent": "",
             "title": "MEN",

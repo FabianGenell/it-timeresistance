@@ -774,7 +774,7 @@
         "enable_autoplay": false,
         "duration_autoplay": 4,
         "navigation_alignment": "center",
-        "navigation_color_foreground": "#ffffff",
+        "navigation_color_foreground": "#000000",
         "navigation_color_background": "",
         "navigation_background_opacity": 0,
         "enable_animation": true,

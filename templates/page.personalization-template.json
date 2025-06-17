@@ -352,7 +352,7 @@
         "desktop_height": 100,
         "mobile_height": 100,
         "image": "shopify://shop_images/laser_engraving_new.svg",
-        "image_mobile": "shopify://shop_images/laser_engraving_new_mobile.svg",
+        "image_mobile": "shopify://shop_images/1_laser_engraving_new_mobile.svg",
         "focal_point": "image_presentation",
         "mobile_focal_point": "image_presentation",
         "media_link": "",

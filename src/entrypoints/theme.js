@@ -8,6 +8,7 @@ window.theme = window.theme || {};
 
 import '../scripts/components/';
 import '../scripts/utils/helpers';
+import '../scripts/utils/bot-detector.js';
 import '../scripts/legacy/theme-new.js';
 
 console.log('main.bundle.js loaded');

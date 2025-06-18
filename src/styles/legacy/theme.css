@@ -17824,6 +17824,9 @@ html.theme-editor .popup__tab {
 .template-product .fs-heading-3-base {
     @apply text-center;
 }
+.template-product .product__meta .fs-heading-3-base {
+    @apply text-left;
+}
 .fs-heading-3-base {
     @apply text-[28px] md:text-[32px];
 }

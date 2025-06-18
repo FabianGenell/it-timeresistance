@@ -52,7 +52,9 @@
   <load-page-content
     data-lazy-type="load"
     data-page-url="{{ content_page.url }}"
-  ></load-page-content>
+  >
+  {{ content }}
+  </load-page-content>
   {%- endcapture -%}
 {%- endif -%}
 

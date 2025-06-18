@@ -34,25 +34,37 @@
       {%- case block.type -%}
         {%- when 'accent' -%}
           {%- unless block.settings.accent == blank -%}
-            <p class="rich-text__accent fs-accent section-blocks__accent">
+            <p
+              {{ block.shopify_attributes }}
+              class="rich-text__accent fs-accent section-blocks__accent"
+            >
               {{ block.settings.accent }}
             </p>
           {%- endunless -%}
         {%- when 'heading' -%}
           {%- unless block.settings.title == blank -%}
-            <{{ block.settings.heading_tag }} class="rich-text__heading ff-heading {{ block.settings.heading_font_class }} section-blocks__heading">
+            <{{ block.settings.heading_tag }}
+              {{ block.shopify_attributes }}
+              class="rich-text__heading ff-heading {{ block.settings.heading_font_class }} section-blocks__heading"
+            >
               {{ block.settings.title | newline_to_br }}
             </{{ block.settings.heading_tag }}>
           {%- endunless -%}
         {%- when 'subheading' -%}
           {%- unless block.settings.subheading == blank -%}
-            <{{ block.settings.subheading_tag }} class="rich-text__subheading ff-subheading {{ block.settings.subheading_font_class }} section-blocks__subheading">
+            <{{ block.settings.subheading_tag }}
+              {{ block.shopify_attributes }}
+              class="rich-text__subheading ff-subheading {{ block.settings.subheading_font_class }} section-blocks__subheading"
+            >
               {{ block.settings.subheading }}
             </{{ block.settings.subheading_tag }}>
           {%- endunless -%}
         {%- when 'text' -%}
           {%- unless block.settings.text == blank -%}
-            <div class="rich-text__text rte ff-body {{ block.settings.text_font_class }} section-blocks__subheading">
+            <div
+              {{ block.shopify_attributes }}
+              class="rich-text__text rte ff-body {{ block.settings.text_font_class }} section-blocks__subheading"
+            >
               {{ block.settings.text }}
             </div>
           {%- endunless -%}
@@ -89,13 +101,38 @@
             buttons_can_inline: true,
             forloop: forloop
           -%}
-        {%- when 'play-button' -%}
-          {%-
-            render 'play-button-block' with
-            wrapper_class: 'rich-text__play-button section-blocks__video-button',
-            block: block,
-            button_alignment: content_alignment
+        {%- when 'video' -%}
+          {%- liquid
+            assign mobile_video = block.settings.video_mobile
+            assign mobile_poster_image = block.settings.mobile_poster_image
+
+            assign desktop_video = block.settings.video_desktop
+            assign desktop_poster_image = block.settings.desktop_poster_image
+
+            assign large_video = block.settings.video_large
+            assign large_poster_image = block.settings.large_poster_image
+
+            assign autoplay = block.settings.autoplay
           -%}
+
+          <div
+            class="animation animation--custom-video w-full my-4"
+            {{ block.shopify_attributes }}
+          >
+            <div class="relative w-full">
+              {%- render 'responsive-video',
+                video: desktop_video,
+                mobile_video: mobile_video,
+                large_video: large_video,
+                class: 'relative w-full overflow-hidden',
+                poster_image: desktop_poster_image,
+                mobile_poster_image: mobile_poster_image,
+                large_poster_image: large_poster_image,
+                autoplay: autoplay
+              -%}
+            </div>
+          </div>
+
         {%- when 'border' -%}
           {%- render 'border-block' -%}
         {%- when 'spacer' -%}
@@ -525,96 +562,60 @@
       ]
     },
     {
-      "type": "play-button",
-      "name": "t:shared.section_blocks.play_button.name",
+      "type": "video",
+      "name": "Video",
       "settings": [
         {
-          "id": "video_source",
-          "type": "radio",
-          "label": "t:shared.settings.video_source.label",
-          "options": [
-            {
-              "label": "t:shared.settings.video_source.option_1",
-              "value": "shopify"
-            },
-            {
-              "label": "t:shared.settings.video_source.option_2",
-              "value": "external"
-            }
-          ],
-          "default": "external"
+          "type": "header",
+          "content": "Video sources"
         },
         {
           "type": "video",
-          "id": "video",
-          "label": "t:shared.settings.video.label",
-          "info": "t:shared.settings.video.info"
+          "id": "video_desktop",
+          "label": "Desktop video",
+          "info": "Main video for desktop screens"
         },
         {
-          "id": "video_url",
-          "type": "video_url",
-          "label": "t:shared.settings.external_video_url.label",
-          "accept": ["youtube", "vimeo"],
-          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Mobile video",
+          "info": "Optional optimized video for mobile screens"
+        },
+        {
+          "type": "video",
+          "id": "video_large",
+          "label": "Large screen video",
+          "info": "Optional high-resolution video for large screens"
         },
         {
           "type": "header",
-          "content": "t:sections.video.blocks.play_button.name"
+          "content": "Video Poster Images"
         },
         {
-          "id": "image",
           "type": "image_picker",
-          "label": "t:shared.section_blocks.play_button.settings.poster_image.label"
+          "id": "desktop_poster_image",
+          "label": "Desktop poster image",
+          "info": "Main poster image for desktop screens"
         },
         {
-          "type": "select",
-          "id": "aspect_ratio",
-          "label": "t:shared.settings.aspect_ratio.label",
-          "default": "square",
-          "options": [
-            {
-              "value": "natural",
-              "label": "t:shared.settings.aspect_ratio.option_natural"
-            },
-            {
-              "value": "square",
-              "label": "t:shared.settings.aspect_ratio.option_square"
-            },
-            {
-              "value": "portrait",
-              "label": "t:shared.settings.aspect_ratio.option_portrait"
-            },
-            {
-              "value": "landscape",
-              "label": "t:shared.settings.aspect_ratio.option_landscape"
-            }
-          ]
+          "type": "image_picker",
+          "id": "mobile_poster_image",
+          "label": "Mobile poster image",
+          "info": "Optional poster image for mobile screens",
+          "visible_if": "{{ section.settings.video_mobile != blank }}"
         },
         {
-          "id": "text",
-          "type": "text",
-          "label": "t:shared.section_blocks.play_button.settings.text.label",
-          "default": "Watch now"
+          "type": "image_picker",
+          "id": "large_poster_image",
+          "label": "Large screen poster image",
+          "info": "Optional poster image for large screens",
+          "visible_if": "{{ section.settings.video_large != blank }}"
         },
         {
-          "type": "select",
-          "id": "icon_style",
-          "label": "t:shared.section_blocks.play_button.settings.icon_style.label",
-          "default": "outline",
-          "options": [
-            {
-              "value": "dark",
-              "label": "t:shared.section_blocks.play_button.settings.icon_style.option_dark"
-            },
-            {
-              "value": "light",
-              "label": "t:shared.section_blocks.play_button.settings.icon_style.option_light"
-            },
-            {
-              "value": "outline",
-              "label": "t:shared.section_blocks.play_button.settings.icon_style.option_outline"
-            }
-          ]
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": false
         }
       ]
     },

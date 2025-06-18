@@ -47,6 +47,15 @@
   endif
 -%}
 
+{%- if block_settings.fetch_page_content and content_page != blank -%}
+  {%- capture content -%}
+  <load-page-content
+    data-lazy-type="load"
+    data-page-url="{{ content_page.url }}"
+  ></load-page-content>
+  {%- endcapture -%}
+{%- endif -%}
+
 {% if content != blank or request.design_mode %}
   <div class="accordion {{ classes }}" {{ block.shopify_attributes }}>
     <div

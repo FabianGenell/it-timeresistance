@@ -100,6 +100,7 @@
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "",
+            "fetch_page_content": false,
             "custom_liquid": "{{ product.metafields.custom.product_features | metafield_tag }}\n\n<reload-on-event\n  class=\"block mt-2\"\n  id=\"reload-product-item-{{ prod.handle }}\"\n  data-event=\"product:variant-change\"\n  data-reload-section=\"false\"\n>\n  {%- if product.selected_or_first_available_variant -%}\n    <p class=\"mt-1\">SKU: {{ product.selected_or_first_available_variant.sku }}</p>\n  {%- endif -%}\n</reload-on-event>"
           }
         },
@@ -112,6 +113,7 @@
             "heading_tag": "h6",
             "content": "{{ product.metafields.custom.product_materials | metafield_tag }}",
             "page_for_content": "",
+            "fetch_page_content": false,
             "custom_liquid": ""
           }
         },
@@ -124,6 +126,7 @@
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "",
+            "fetch_page_content": false,
             "custom_liquid": "<img src=\"{{ product.metafields.custom.product_dimensions | img_url: 'master' }}\" alt=\"Bag Dimensions\" style=\"border:0;\" class=\"responsive-img\">"
           }
         },
@@ -136,6 +139,7 @@
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "{{ product.metafields.custom.personalization_page.value }}",
+            "fetch_page_content": true,
             "custom_liquid": ""
           }
         },
@@ -148,6 +152,7 @@
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "shipping-and-returns",
+            "fetch_page_content": false,
             "custom_liquid": ""
           }
         }

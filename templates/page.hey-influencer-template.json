@@ -166,24 +166,6 @@
             "text": ""
           }
         },
-        "image_BfbHcA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hey_influencer_gallery_5.jpg",
-            "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": ""
-          }
-        },
-        "image_Ri3BCU": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hey_influencer_gallery_4.jpg",
-            "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": ""
-          }
-        },
         "image_jK4EBz": {
           "type": "image",
           "settings": {
@@ -251,6 +233,15 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/hey_influencer_gallery_10.jpg",
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": ""
+          }
+        },
+        "image_BfbHcA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hey_influencer_gallery_5.jpg",
             "focal_point": "image_presentation",
             "title": "Image with caption",
             "text": ""
@@ -355,6 +346,15 @@
             "text": ""
           }
         },
+        "image_Ri3BCU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hey_influencer_gallery_4.jpg",
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": ""
+          }
+        },
         "image_bt9UUt": {
           "type": "image",
           "settings": {
@@ -431,8 +431,6 @@
       "block_order": [
         "image_XiRjat",
         "image_qnzNVW",
-        "image_BfbHcA",
-        "image_Ri3BCU",
         "image_jK4EBz",
         "image_qkLfrJ",
         "image_gVMFz8",
@@ -441,6 +439,7 @@
         "image_REyDRp",
         "image_kp6q3n",
         "image_kPFaUn",
+        "image_BfbHcA",
         "image_pdXeKy",
         "image_mMx93k",
         "image_JUjK8p",
@@ -452,6 +451,7 @@
         "image_xXMBYx",
         "image_kBGjEy",
         "image_VeHHjb",
+        "image_Ri3BCU",
         "image_bt9UUt",
         "image_eqHTLD",
         "image_nDUhVm",

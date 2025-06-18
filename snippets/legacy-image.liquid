@@ -97,10 +97,25 @@
       %}
     {% endcomment %}
 
-    {%- render 'image',
-      src_width: 3000,
-      widths: '300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000',
+    {% comment %}
+      {%- render 'image',
+        image: image,
+        src_width: 3000,
+        widths: '300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000',
+        sizes: sizes,
+        focal_alignment: focal_alignment,
+        lazy_load: lazy_load,
+        lazy_type: lazy_type,
+        class: image_class
+      -%}
+    {% endcomment %}
+
+    {%- render 'pictures',
+      breakpoints: '719, 1800',
       image: image,
+      image_mobile: mobile_image,
+      image_xl: image_xl,
+      widths: '300, 600, 900, 1200, 1500, 1800, 2100, 2400, 2700, 3000',
       sizes: sizes,
       focal_alignment: focal_alignment,
       lazy_load: lazy_load,

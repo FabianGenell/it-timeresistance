@@ -63,16 +63,20 @@
               assign full_width = true
             endif
           -%}
+
           {%- render 'image-block',
             shopify_attributes: block.shopify_attributes,
             wrapper_class: wrapper_class,
             image: block.settings.image,
+            image_mobile: block.settings.mobile_image,
+            image_xl: block.settings.image_xl,
             width: block.settings.image_size,
             mobile_width: block.settings.image_size_mobile,
             break_to_mobile_at: '720',
             align: content_alignment,
             full_width: full_width
           -%}
+
         {%- when 'button' -%}
           {%-
             render 'button-block' with
@@ -432,7 +436,18 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:shared.section_blocks.image.settings.image.label"
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_xl",
+          "label": "Image XL",
+          "info": "This image will be used on desktop screens larger than 1800px"
         },
         {
           "type": "radio",

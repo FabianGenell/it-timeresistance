@@ -3,6 +3,10 @@
   if align_mobile == null
     assign align_mobile = align
   endif
+
+  if full_width == true
+    assign image_class = 'w-full'
+  endif
 -%}
 <div
   class="
@@ -23,9 +27,12 @@
     {%-
       render 'legacy-image' with
       image: image,
+      image_mobile: image_mobile,
+      image_xl: image_xl,
       sizes: sizes,
       include_placeholder: true,
-      placeholder_natural_fallback_ratio: 'landscape'
+      placeholder_natural_fallback_ratio: 'landscape',
+      image_class:image_class
     -%}
   </div>
 </div>

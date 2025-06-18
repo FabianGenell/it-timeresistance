@@ -144,6 +144,78 @@
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
+    },
+    "media_gallery_wg6jUt": {
+      "type": "media-gallery",
+      "blocks": {
+        "image_4mNBJT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hey_influencer_gallery_31.jpg",
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_qnzNVW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hey_influencer_gallery_31.jpg",
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_BfbHcA": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        },
+        "image_Ri3BCU": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": "<p>Use these sections to promote a particular feature with editorial photography.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_4mNBJT",
+        "image_qnzNVW",
+        "image_BfbHcA",
+        "image_Ri3BCU"
+      ],
+      "name": "Media Gallery",
+      "settings": {
+        "use_variant_images": false,
+        "heading": "Gallery carousel",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "columns": "4",
+        "mobile_columns": "1",
+        "loop_carousel": true,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#fff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
     }
   },
   "order": [
@@ -151,6 +223,7 @@
     "rich_text_zfGjE4",
     "image_hero_Hk44zr",
     "rich_text_G6RpXH",
-    "custom_liquid_QmiVFb"
+    "custom_liquid_QmiVFb",
+    "media_gallery_wg6jUt"
   ]
 }

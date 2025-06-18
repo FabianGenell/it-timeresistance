@@ -464,7 +464,7 @@
       "name": "Media Gallery",
       "settings": {
         "use_variant_images": false,
-        "heading": "Gallery carousel",
+        "heading": "",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",

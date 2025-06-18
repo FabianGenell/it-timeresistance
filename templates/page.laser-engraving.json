@@ -25,7 +25,7 @@
           "type": "heading",
           "settings": {
             "title": "Laser Engraving",
-            "heading_tag": "h4",
+            "heading_tag": "h5",
             "heading_font_class": "fs-heading-3-base"
           }
         },

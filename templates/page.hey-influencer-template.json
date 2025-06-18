@@ -157,10 +157,10 @@
             "text": ""
           }
         },
-        "image_qnzNVW": {
+        "image_L6RkCy": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hey_influencer_gallery_1.jpg",
+            "image": "shopify://shop_images/hey_influencer_gallery_20.jpg",
             "focal_point": "image_presentation",
             "title": "Image with caption",
             "text": ""
@@ -179,6 +179,15 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/hey_influencer_gallery_18.jpg",
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": ""
+          }
+        },
+        "image_kPFaUn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hey_influencer_gallery_10.jpg",
             "focal_point": "image_presentation",
             "title": "Image with caption",
             "text": ""
@@ -229,15 +238,6 @@
             "text": ""
           }
         },
-        "image_kPFaUn": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hey_influencer_gallery_10.jpg",
-            "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": ""
-          }
-        },
         "image_BfbHcA": {
           "type": "image",
           "settings": {
@@ -265,6 +265,15 @@
             "text": ""
           }
         },
+        "image_qnzNVW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hey_influencer_gallery_1.jpg",
+            "focal_point": "image_presentation",
+            "title": "Image with caption",
+            "text": ""
+          }
+        },
         "image_JUjK8p": {
           "type": "image",
           "settings": {
@@ -287,15 +296,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/hey_influencer_gallery_6.jpg",
-            "focal_point": "image_presentation",
-            "title": "Image with caption",
-            "text": ""
-          }
-        },
-        "image_L6RkCy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hey_influencer_gallery_20.jpg",
             "focal_point": "image_presentation",
             "title": "Image with caption",
             "text": ""
@@ -430,22 +430,22 @@
       },
       "block_order": [
         "image_XiRjat",
-        "image_qnzNVW",
+        "image_L6RkCy",
         "image_jK4EBz",
         "image_qkLfrJ",
+        "image_kPFaUn",
         "image_gVMFz8",
         "image_4mNBJT",
         "image_GTaf6R",
         "image_REyDRp",
         "image_kp6q3n",
-        "image_kPFaUn",
         "image_BfbHcA",
         "image_pdXeKy",
         "image_mMx93k",
+        "image_qnzNVW",
         "image_JUjK8p",
         "image_ixcXqG",
         "image_MtiMrY",
-        "image_L6RkCy",
         "image_jGYCzx",
         "image_3LrF3f",
         "image_xXMBYx",

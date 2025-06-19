@@ -68,6 +68,7 @@
       "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/Black Leather backpack -The Sun also Rises - Time Resistance.mp4",
+        "video_large": "shopify://files/videos/Black Leather backpack -The Sun also Rises - Time Resistance.mp4",
         "autoplay": true,
         "pause_outside_viewport": true,
         "viewport_threshold": 50,
@@ -551,7 +552,7 @@
         "columns": "4",
         "mobile_columns": "1",
         "loop_carousel": true,
-        "aspect_ratio": "square",
+        "aspect_ratio": "natural",
         "image_caption_style": "overlay",
         "image_caption_size": "fs-body-100",
         "overlay_text_background_style": "gradient",

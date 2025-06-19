@@ -63,6 +63,23 @@
         "custom_content_width": 700
       }
     },
+    "custom_video_NXhD6P": {
+      "type": "custom-video",
+      "name": "Custom Video",
+      "settings": {
+        "video_desktop": "shopify://files/videos/Black Leather backpack -The Sun also Rises - Time Resistance.mp4",
+        "autoplay": true,
+        "pause_outside_viewport": true,
+        "viewport_threshold": 50,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
     "grid_BTzzmJ": {
       "type": "grid",
       "blocks": {
@@ -96,10 +113,10 @@
             "button_opacity": 100,
             "button_font_size": 16,
             "background_color": "",
-            "text_color": "#FFFFFF",
-            "button_background_color": "#FFFFFF",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
             "button_text_color": "#000000",
-            "color_overlay": "#000",
+            "color_overlay": "#000000",
             "color_overlay_gradient": "",
             "overlay_opacity": 0
           }
@@ -108,6 +125,7 @@
       "block_order": [
         "item_PmFR8U"
       ],
+      "disabled": true,
       "name": "Grid 2 Column",
       "settings": {
         "heading": "",
@@ -554,6 +572,7 @@
   "order": [
     "main",
     "rich_text_zfGjE4",
+    "custom_video_NXhD6P",
     "grid_BTzzmJ",
     "rich_text_G6RpXH",
     "custom_liquid_QmiVFb",

@@ -71,7 +71,7 @@
         "autoplay": true,
         "pause_outside_viewport": true,
         "viewport_threshold": 50,
-        "enable_section_style": false,
+        "enable_section_style": true,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
         "enable_section_style_mobile": false,

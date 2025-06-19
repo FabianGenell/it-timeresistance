@@ -84,7 +84,7 @@
             <span class="t-subdued">{{ 'search.headings.products' | t }}</span>
           </h4>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:max-h-[600px] overflow-y-auto overflow-x-hidden">
             {%- assign variants_displayed = 0 -%}
             {%- for product in predictive_search.resources.products -%}
               {%- render 'product-variant-items',
@@ -97,7 +97,7 @@
             {%- endfor -%}
           </div>
 
-          <div class="flex h-full justify-center items-end">
+          <div class="flex justify-center items-end h-auto">
             <button
               class="btn btn--primary btn--full btn--small mt-6 "
               type="submit"

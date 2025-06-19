@@ -12970,9 +12970,9 @@ html.sticky-header-enabled[data-enable-sticky-announcement-bar*="mobile"]
 .meganav {
     position: absolute;
     top: 100%;
-    margin-top: -1px;
+    /* margin-top: -1px; */
+    /* border: 1px solid var(--color-text); */
     background: var(--color-background);
-    border: 1px solid var(--color-text);
     color: var(--color-text);
     text-transform: none;
     overflow-y: hidden;

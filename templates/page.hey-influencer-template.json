@@ -552,7 +552,7 @@
         "columns": "4",
         "mobile_columns": "1",
         "loop_carousel": true,
-        "aspect_ratio": "natural",
+        "aspect_ratio": "portrait",
         "image_caption_style": "overlay",
         "image_caption_size": "fs-body-100",
         "overlay_text_background_style": "gradient",

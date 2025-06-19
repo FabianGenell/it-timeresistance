@@ -152,6 +152,45 @@ document.addEventListener('DOMContentLoaded', initLazyMedia);
 
 document.addEventListener('shopify:section:load', () => afterCallstack(initLazyMedia));
 
+// Set up MutationObserver after page load to watch for dynamically added content
+window.addEventListener('load', () => {
+    const observer = new MutationObserver((mutations) => {
+        let hasNewMedia = false;
+
+        for (const mutation of mutations) {
+            if (mutation.type === 'childList') {
+                // Check if any added nodes contain lazy media elements
+                for (const node of mutation.addedNodes) {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        // Check if the node itself is a lazy media element or contains any
+                        if (node.matches && node.matches(SELECTORS.LAZY_MEDIA)) {
+                            hasNewMedia = true;
+                            break;
+                        }
+                        if (node.querySelectorAll && node.querySelectorAll(SELECTORS.LAZY_MEDIA).length > 0) {
+                            hasNewMedia = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (hasNewMedia) {
+            if (DEBUG) console.debug('[LazyMedia] New media detected via MutationObserver');
+            afterCallstack(initLazyMedia);
+        }
+    });
+
+    // Start observing the document body for changes
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    if (DEBUG) console.debug('[LazyMedia] MutationObserver initialized');
+});
+
 // For backwards compatibility
 export const setImageSources = setMediaSources;
 export const initLazyImages = initLazyMedia;

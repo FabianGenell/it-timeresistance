@@ -6,7 +6,10 @@
 <script>
 // Place this at the very top of <head>
   (() => {
-    console.debug('[ScriptBlocker] Initializing...');
+    // Set to true to enable debugging logs, false to disable
+    const DEBUG = false;
+    
+    if (DEBUG) console.debug('[ScriptBlocker] Initializing...');
     
     // Regex patterns to match script or stylesheet URLs to defer.
     // Use full or partial matches for file names or paths.
@@ -62,7 +65,7 @@
         (match, prefix, src, suffix) => {
           if (shouldDefer(src)) {
             addDeferredScript(src);
-            console.debug('[ScriptBlocker] Deferred via document.write:', src);
+            if (DEBUG) console.debug('[ScriptBlocker] Deferred via document.write:', src);
             return `<script${prefix}type="text/plain" data-deferred-src="${src}"${suffix}>`;
           }
           return match;
@@ -81,9 +84,9 @@
                 addDeferredScript(node.src);
                 node.type = 'text/plain';
                 node.dataset.processed = 'true';
-                console.debug('[ScriptBlocker] Deferred via observer:', node.src);
+                if (DEBUG) console.debug('[ScriptBlocker] Deferred via observer:', node.src);
               } else {
-                console.debug('[ScriptBlocker] Not deferred via observer:', node.src);
+                if (DEBUG) console.debug('[ScriptBlocker] Not deferred via observer:', node.src);
               }
             }
             
@@ -94,7 +97,7 @@
                   addDeferredScript(script.src);
                   script.type = 'text/plain';
                   script.dataset.processed = 'true';
-                  console.debug('[ScriptBlocker] Deferred via observer in subtree:', script.src);
+                  if (DEBUG) console.debug('[ScriptBlocker] Deferred via observer in subtree:', script.src);
                 }
               });
             }
@@ -134,7 +137,7 @@
     
     // Load deferred scripts after DOMContentLoaded
     window.addEventListener('load', () => {
-      console.debug('[ScriptBlocker] load, loading deferred scripts...');
+      if (DEBUG) console.debug('[ScriptBlocker] load, loading deferred scripts...');
       // Disconnect observer to prevent it from seeing our new script tags
       observer.disconnect();
       
@@ -144,11 +147,11 @@
         script.src = src;
         script.defer = true;
         document.head.appendChild(script);
-        console.debug(`[ScriptBlocker] Loading deferred script #${index + 1}:`, src);
+        if (DEBUG) console.debug(`[ScriptBlocker] Loading deferred script #${index + 1}:`, src);
       });
     });
     
-    console.debug('[ScriptBlocker] Initialization complete');
+    if (DEBUG) console.debug('[ScriptBlocker] Initialization complete');
   })();
 </script>
 

@@ -29,13 +29,21 @@ export async function customLightbox({ childSelector, galerySelector, mainClass,
 
         if (type === 'video') {
             return itemData; // Video src retrieved later in contentLoad
-        } else {
-            itemData.src = element.getAttribute('href') || element.dataset.pswpSrc;
-            if (!itemData.src) {
-                console.warn('Image lightbox element missing href and data-pswp-src:', element);
-            }
-            return itemData;
         }
+
+        itemData.src = element.getAttribute('href') || element.dataset.pswpSrc;
+
+        const img = element.querySelector('img');
+        console.log('img', img);
+        if (img) {
+            itemData.msrc = img.src; // thumbnail placeholder
+            itemData.alt = img.alt || '';
+        }
+
+        if (!itemData.src) {
+            console.warn('Image lightbox element missing href and data-pswp-src:', element);
+        }
+        return itemData;
     };
 
     const dataSource = Array.from(lightboxElements).map(createDataSourceItem);
@@ -126,9 +134,22 @@ export async function customLightbox({ childSelector, galerySelector, mainClass,
 
     if (addListener) {
         lightboxElements.forEach((element, index) => {
-            element.addEventListener('click', (e) => {
+            element.addEventListener('click', async (e) => {
                 console.log('opening w custom clicker listneer mate click', e);
                 e.preventDefault();
+
+                // Ensure lazy-loaded images are loaded before opening lightbox
+                const lazyImages = element.querySelectorAll('img[data-src], img[data-srcset]');
+                if (lazyImages.length > 0) {
+                    // Trigger lazy loading by calling setMediaSources from our lazy-media module
+                    if (window.setMediaSources) {
+                        lazyImages.forEach((img) => window.setMediaSources(img));
+                    }
+
+                    // Wait a bit for images to start loading
+                    await new Promise((resolve) => setTimeout(resolve, 50));
+                }
+
                 lightbox.loadAndOpen(index);
             });
         });

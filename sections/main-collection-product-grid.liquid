@@ -16,6 +16,17 @@
 
   assign swatch_options = settings.swatch_options | downcase | split: ', '
   assign chip_options = settings.chip_options | downcase | split: ', '
+
+  assign filters_active = false
+  assign active_filter_count = 0
+  for filter in collection.filters
+    if filter.active_values.size > 0
+      assign filters_active = true
+    endif
+    for active_value in filter.active_values
+      assign active_filter_count = active_filter_count | plus: 1
+    endfor
+  endfor
 -%}
 
 <section
@@ -132,6 +143,7 @@
                           product_columns_desktop: section.settings.columns_desktop,
                           product_columns_mobile: section.settings.columns_mobile,
                           aspect_ratio: settings.product_listing_aspect_ratio,
+                          show_unavailable_variants: filters_active,
                           has_grid_reveal: true
                         -%}
                       {%- else -%}

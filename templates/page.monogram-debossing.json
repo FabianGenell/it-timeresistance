@@ -46,8 +46,8 @@
         "text_XC7KbN": {
           "type": "text",
           "settings": {
-            "text": "<p>More information about personalization services <a href=\"/pages/personalization\" title=\"Personalization\"><strong>here</strong></a>.</p><p>*Personalized items are non-returnable.</p>",
-            "text_font_class": "fs-body-75"
+            "text": "<p>More information about personalization services <a href=\"/pages/personalization\" target=\"_blank\" title=\"Personalization\"><strong>here</strong></a>.</p><p>*Personalized items are non-returnable.</p>",
+            "text_font_class": "fs-body-100"
           }
         }
       },

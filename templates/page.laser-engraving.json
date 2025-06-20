@@ -49,7 +49,7 @@
         "text_jPDHLx": {
           "type": "text",
           "settings": {
-            "text": "<p>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\"><strong>care@timeresistance.com</strong></a>.<br/><br/>Watch a short video guide on how to order the laser engraving service.</p>",
+            "text": "<p>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\" target=\"_blank\"><strong>care@timeresistance.com</strong></a>.<br/><br/>Watch a short video guide on how to order the laser engraving service.</p>",
             "text_font_class": "fs-body-100"
           }
         },
@@ -63,7 +63,7 @@
         "text_XC7KbN": {
           "type": "text",
           "settings": {
-            "text": "<p>More information about personalization services <a href=\"https://eu.timeresistance.com/pages/personalization\"><strong>here</strong></a>.</p><p>*Personalized items are non-returnable.</p>",
+            "text": "<p>More information about personalization services <a href=\"/pages/personalization\" target=\"_blank\" title=\"Personalization\"><strong>here</strong></a>.</p><p>*Personalized items are non-returnable.</p>",
             "text_font_class": "fs-body-100"
           }
         }

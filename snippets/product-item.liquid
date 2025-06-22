@@ -60,14 +60,14 @@
 
   case product_columns_desktop
     when '5'
-      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 1400px) calc((93.4vw - (12px * 3)) / 5), 270px' | replace: '[[mcc]]', mobile_column_count
+      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 2400px) calc((93.4vw - (12px * 3)) / 5), calc((93.4vw - (12px * 3)) / 7)' | replace: '[[mcc]]', mobile_column_count
     when '3'
-      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 1400px) calc((93.4vw - (12px * 3)) / 3), 450px' | replace: '[[mcc]]', mobile_column_count
+      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 2400px) calc((93.4vw - (12px * 3)) / 3), calc((93.4vw - (12px * 3)) / 4)' | replace: '[[mcc]]', mobile_column_count
     when '2'
-      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 1400px) calc((93.4vw - (12px * 3)) / 2), 690px' | replace: '[[mcc]]', mobile_column_count
+      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 2400px) calc((93.4vw - (12px * 3)) / 2), calc((93.4vw - (12px * 3)) / 3)' | replace: '[[mcc]]', mobile_column_count
     else
       # Using a 4 item grid as default for sizes
-      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 1400px) calc((93.4vw - (12px * 3)) / 4), 304px' | replace: '[[mcc]]', mobile_column_count
+      assign sizes = '(max-width: 720px) calc((90vw - 12px) /[[mcc]]), (max-width: 2400px) calc((93.4vw - (12px * 3)) / 4), calc((93.4vw - (12px * 3)) / 6)' | replace: '[[mcc]]', mobile_column_count
   endcase
 
   assign has_hover_swatches = false

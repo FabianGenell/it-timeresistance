@@ -242,7 +242,7 @@
       "settings": {
         "video_source": "external",
         "video_url": "https://www.youtube.com/watch?v=Uhd7pr4QNBM",
-        "image": "shopify://shop_images/1500x768.jpg",
+        "image": "shopify://shop_images/1500x844px_0f3dfb4a-3340-4fc5-8f08-521b25309c8b.jpg",
         "loop": false,
         "media_aspect_ratio": "landscape_wide_alt",
         "focal_point": "image_presentation",

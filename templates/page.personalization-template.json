@@ -793,6 +793,28 @@
         "section_padding": "none"
       }
     },
+    "custom_video_4JrPkT": {
+      "type": "custom-video",
+      "name": "Custom Video",
+      "settings": {
+        "video_desktop": "shopify://files/videos/05_26_monogram.mp4",
+        "video_mobile": "shopify://files/videos/05_26_monogram.mp4",
+        "video_large": "shopify://files/videos/05_26_monogram.mp4",
+        "desktop_poster_image": "shopify://shop_images/Untitled_design_36.jpg",
+        "mobile_poster_image": "shopify://shop_images/Untitled_design_36.jpg",
+        "large_poster_image": "shopify://shop_images/Untitled_design_36.jpg",
+        "autoplay": false,
+        "pause_outside_viewport": true,
+        "viewport_threshold": 50,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
     "video_a3cwmp": {
       "type": "video",
       "blocks": {
@@ -827,6 +849,7 @@
         "text_HCjEcr",
         "play_button_8UmcXn"
       ],
+      "disabled": true,
       "name": "t:sections.video.presets.name",
       "settings": {
         "video_source": "shopify",
@@ -1155,24 +1178,6 @@
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
-    },
-    "custom_video_4JrPkT": {
-      "type": "custom-video",
-      "disabled": true,
-      "name": "Custom Video",
-      "settings": {
-        "video_desktop": "shopify://files/videos/05_26_monogram.mp4",
-        "autoplay": false,
-        "pause_outside_viewport": true,
-        "viewport_threshold": 50,
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-none"
-      }
     }
   },
   "order": [
@@ -1190,9 +1195,9 @@
     "rich_text_TUDrhn",
     "image_hero_QEqrdA",
     "slideshow_q48mtH",
+    "custom_video_4JrPkT",
     "video_a3cwmp",
     "rich_text_gcXFfq",
-    "media_gallery_Ha6HVM",
-    "custom_video_4JrPkT"
+    "media_gallery_Ha6HVM"
   ]
 }

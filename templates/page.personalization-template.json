@@ -1155,6 +1155,23 @@
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
+    },
+    "custom_video_4JrPkT": {
+      "type": "custom-video",
+      "name": "Custom Video",
+      "settings": {
+        "video_desktop": "shopify://files/videos/05_26_monogram.mp4",
+        "autoplay": true,
+        "pause_outside_viewport": true,
+        "viewport_threshold": 50,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-none"
+      }
     }
   },
   "order": [
@@ -1174,6 +1191,7 @@
     "slideshow_q48mtH",
     "video_a3cwmp",
     "rich_text_gcXFfq",
-    "media_gallery_Ha6HVM"
+    "media_gallery_Ha6HVM",
+    "custom_video_4JrPkT"
   ]
 }

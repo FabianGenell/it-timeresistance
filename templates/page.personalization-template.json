@@ -1161,7 +1161,7 @@
       "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/05_26_monogram.mp4",
-        "autoplay": true,
+        "autoplay": false,
         "pause_outside_viewport": true,
         "viewport_threshold": 50,
         "enable_section_style": false,

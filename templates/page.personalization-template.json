@@ -444,7 +444,7 @@
         "video": "shopify://files/videos/05_26_graviravimas.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "image": "shopify://shop_images/Untitled_design_37_a4760027-8817-4f1d-8d1d-2e2a58dc4180.jpg",
-        "loop": true,
+        "loop": false,
         "media_aspect_ratio": "landscape_ultrawide_alt",
         "focal_point": "image_presentation",
         "text_position": "center_center",

@@ -115,7 +115,7 @@
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-none",
+        "section_padding": "section--vertical-padding-top-only",
         "content_width": "full",
         "custom_content_width": 700
       }

@@ -795,6 +795,7 @@
     },
     "custom_video_4JrPkT": {
       "type": "custom-video",
+      "disabled": true,
       "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/05_26_monogram.mp4",
@@ -849,7 +850,6 @@
         "text_HCjEcr",
         "play_button_8UmcXn"
       ],
-      "disabled": true,
       "name": "t:sections.video.presets.name",
       "settings": {
         "video_source": "shopify",

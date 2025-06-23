@@ -438,6 +438,7 @@
         "text_whUxtM",
         "play_button_wBdQLh"
       ],
+      "disabled": true,
       "name": "t:sections.video.presets.name",
       "settings": {
         "video_source": "shopify",
@@ -456,6 +457,28 @@
         "overlay_opacity": 0,
         "enable_animation": true,
         "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "custom_video_cVhC4p": {
+      "type": "custom-video",
+      "name": "Custom Video",
+      "settings": {
+        "video_desktop": "shopify://files/videos/06_23_engraving.mp4",
+        "video_mobile": "shopify://files/videos/06_23_engraving.mp4",
+        "video_large": "shopify://files/videos/06_23_engraving.mp4",
+        "desktop_poster_image": "shopify://shop_images/Untitled_design_37_a4760027-8817-4f1d-8d1d-2e2a58dc4180.jpg",
+        "mobile_poster_image": "shopify://shop_images/Untitled_design_37_a4760027-8817-4f1d-8d1d-2e2a58dc4180.jpg",
+        "large_poster_image": "shopify://shop_images/Untitled_design_37_a4760027-8817-4f1d-8d1d-2e2a58dc4180.jpg",
+        "autoplay": false,
+        "pause_outside_viewport": true,
+        "viewport_threshold": 50,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "rich_text_TUDrhn": {
@@ -1192,6 +1215,7 @@
     "image_hero_kmPdjY",
     "rich_text_F3iqqc",
     "video_cetFC4",
+    "custom_video_cVhC4p",
     "rich_text_TUDrhn",
     "image_hero_QEqrdA",
     "slideshow_q48mtH",

@@ -818,12 +818,11 @@
     },
     "custom_video_4JrPkT": {
       "type": "custom-video",
-      "disabled": true,
       "name": "Custom Video",
       "settings": {
-        "video_desktop": "shopify://files/videos/05_26_monogram.mp4",
-        "video_mobile": "shopify://files/videos/05_26_monogram.mp4",
-        "video_large": "shopify://files/videos/05_26_monogram.mp4",
+        "video_desktop": "shopify://files/videos/06_23_monogram.mp4",
+        "video_mobile": "shopify://files/videos/06_23_monogram.mp4",
+        "video_large": "shopify://files/videos/06_23_monogram.mp4",
         "desktop_poster_image": "shopify://shop_images/Untitled_design_36.jpg",
         "mobile_poster_image": "shopify://shop_images/Untitled_design_36.jpg",
         "large_poster_image": "shopify://shop_images/Untitled_design_36.jpg",
@@ -873,6 +872,7 @@
         "text_HCjEcr",
         "play_button_8UmcXn"
       ],
+      "disabled": true,
       "name": "t:sections.video.presets.name",
       "settings": {
         "video_source": "shopify",

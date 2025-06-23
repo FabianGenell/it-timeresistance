@@ -1158,6 +1158,7 @@
     },
     "custom_video_4JrPkT": {
       "type": "custom-video",
+      "disabled": true,
       "name": "Custom Video",
       "settings": {
         "video_desktop": "shopify://files/videos/05_26_monogram.mp4",

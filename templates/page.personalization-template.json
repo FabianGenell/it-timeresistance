@@ -399,7 +399,7 @@
         "enable_section_style_mobile": false,
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-only",
+        "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "custom",
         "custom_content_width": 700
       }

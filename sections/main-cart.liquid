@@ -294,15 +294,15 @@
                 </button>
               </div>
 
+              <p class="t-subdued my-2">
+                {{- 'cart.general.discount_code' | t -}}
+              </p>
+
               {%- if show_cart_points -%}
                 <ul class="md:hidden flex flex-col gap-4 mb-4 text-sm [&>svg]:size-5">
                   {{ cart_points }}
                 </ul>
               {%- endif -%}
-
-              <p class="t-subdued mt-2">
-                {{- 'cart.general.discount_code' | t -}}
-              </p>
 
               {%- if section.settings.show_payment_methods -%}
                 <p class="t-subdued mt-2">

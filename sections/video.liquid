@@ -184,6 +184,7 @@
               >
                 <button
                   class=""
+                  style="opacity: {{ block.settings.button_opacity }}%;"
                   type="button"
                   data-play-button-block
                   {% if block.settings.text == blank %}
@@ -634,6 +635,16 @@
               "label": "t:shared.section_blocks.play_button.settings.icon_style.option_outline"
             }
           ]
+        },
+        {
+          "id": "button_opacity",
+          "type": "range",
+          "label": "Button Opacity",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 70
         }
       ],
       "limit": 1

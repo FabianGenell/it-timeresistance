@@ -142,7 +142,7 @@
           "type": "meganav_double_banner",
           "settings": {
             "dropdown_parent_link": "Gift Ideas",
-            "image_1": "shopify://shop_images/option1.2.jpg",
+            "image_1": "shopify://shop_images/option1.jpg",
             "focal_point_1": "image_presentation",
             "promo_text_1": "FOR HIM",
             "link_1": "shopify://collections/gift-ideas-for-him",

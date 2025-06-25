@@ -142,7 +142,7 @@
           "type": "meganav_double_banner",
           "settings": {
             "dropdown_parent_link": "Gift Ideas",
-            "image_1": "shopify://shop_images/him.jpg",
+            "image_1": "shopify://shop_images/option1.2.jpg",
             "focal_point_1": "image_presentation",
             "promo_text_1": "FOR HIM",
             "link_1": "shopify://collections/gift-ideas-for-him",
@@ -153,7 +153,7 @@
             "link_1_border_radius": 0,
             "link_1_opacity": 70,
             "link_1_font_size": 16,
-            "image_2": "shopify://shop_images/her.jpg",
+            "image_2": "shopify://shop_images/option2.jpg",
             "focal_point_2": "image_presentation",
             "promo_text_2": "FOR HER",
             "link_2": "shopify://collections/gift-ideas-for-her",

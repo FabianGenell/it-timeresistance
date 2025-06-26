@@ -58,7 +58,7 @@
             "icon_2": "italy",
             "text_2": "<p>Full-Grain Italian Leather</p>",
             "icon_3": "returns",
-            "text_3": "<p>Free 30-Day Returns</p>",
+            "text_3": "<p>Easy 30-Day Returns</p>",
             "icon_4": "none",
             "text_4": "",
             "icon_5": "none",
@@ -232,7 +232,8 @@
           "settings": {
             "text": "",
             "button_layout": "full",
-            "icon_style": "dark"
+            "icon_style": "dark",
+            "button_opacity": 70
           }
         }
       },

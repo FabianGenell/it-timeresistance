@@ -73,7 +73,7 @@
             "expand_by_default": false,
             "icon": "none",
             "title": "How do I return or exchange an item?",
-            "text": "<p>You may return your purchase within 30 days of the delivery date, no questions asked.</p><p>Enjoy free returns! For further details, please refer to our <a href=\"https://au-timeresistance.myshopify.com/pages/shipping-and-returns\" target=\"_blank\" title=\"Shipping and Return policies\">Shipping and Return policies</a>.<br/><br/></p>"
+            "text": "<p>You may return your purchase within 30 days of the delivery date, no questions asked.</p><p>Enjoy easy returns! For further details, please refer to our <a href=\"/pages/shipping-and-returns\" target=\"_blank\" title=\"Shipping and Returns\">Shipping and Return policies</a>.<br/><br/></p>"
           }
         },
         "item_PV8pLA": {

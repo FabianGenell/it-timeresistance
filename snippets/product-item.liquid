@@ -329,6 +329,12 @@
                 assign custom_price_content = 'products.inventory.sold_out_price_custom_label' | t
               endif
             endif
+
+            assign price = prod.price
+
+            if var != blank
+              assign price = var.price
+            endif
           %}
           {% if price_content_type == 'price' %}
             <p class="product-item__price text-lg">
@@ -373,7 +379,7 @@
                   {{ 'products.product.from_lowest_price_html' | t: lowest_price: price }}
 
                 {% else %}
-                  <span class="product-item__price">{{ prod.price | money }}</span>
+                  <span class="product-item__price">{{ price | money }}</span>
                 {% endif %}
               {% endif %}
 

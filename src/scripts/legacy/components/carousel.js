@@ -65,7 +65,7 @@ export default function Carousel(node) {
             carousel.slideTo(slideIndex);
         }
     }
-    import(flu.chunks.swiper).then((_ref) => {
+    import(new URL(flu.chunks.swiper, window.location.origin).href).then((_ref) => {
         let { Swiper, Navigation, Pagination } = _ref;
         let swiperOptions = Object.assign(defaultSwiperOptions, options);
         let modules = [];

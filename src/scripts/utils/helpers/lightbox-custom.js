@@ -48,7 +48,7 @@ export async function customLightbox({ childSelector, galerySelector, mainClass,
 
     const dataSource = Array.from(lightboxElements).map(createDataSourceItem);
 
-    const pswpModule = await import(window.flu.chunks.photoswipe); // Assumed path to PhotoSwipe module
+    const pswpModule = await import(new URL(window.flu.chunks.photoswipe, window.location.origin).href); // Assumed path to PhotoSwipe module
 
     const { PhotoSwipeLightbox, PhotoSwipe } = pswpModule;
 

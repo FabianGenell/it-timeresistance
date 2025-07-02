@@ -5097,7 +5097,7 @@ function Media(node) {
                 break;
             case 'external_video': {
                 if (hasMobileVideoModal) {
-                    const photoSwipe = import(flu.chunks.photoswipe);
+                    const photoSwipe = import(new URL(flu.chunks.photoswipe, window.location.origin).href);
                     const videoPoster = qs(selectors.videoPoster, instance.container);
                     let photoSwipeInstance;
                     photoSwipe.then((_ref) => {
@@ -5338,7 +5338,7 @@ function provideResizeObserver() {
             ResizeObserver
         });
     }
-    return import(flu.chunks.polyfillResizeObserver);
+    return import(new URL(flu.chunks.polyfillResizeObserver, window.location.origin).href);
 }
 
 function quantityInput(container) {
@@ -6644,7 +6644,7 @@ function productLightbox() {
 
     const dataSource = Array.from(lightboxElements).map(createDataSourceItem);
 
-    import(flu.chunks.photoswipe) // Assumed path to PhotoSwipe module
+    import(new URL(flu.chunks.photoswipe, window.location.origin).href) // Assumed path to PhotoSwipe module
         .then((pswpModule) => {
             const { PhotoSwipeLightbox, PhotoSwipe } = pswpModule;
 
@@ -7053,7 +7053,7 @@ class Product {
         }
         const mobileFeaturedImage = qs(selectors$G.mobileFeaturedImage, swiperWrapper);
         const initialSlide = mobileFeaturedImage ? parseInt(mobileFeaturedImage.dataset.slideIndex) : 0;
-        import(flu.chunks.swiper).then((_ref) => {
+        import(new URL(flu.chunks.swiper, window.location.origin).href).then((_ref) => {
             let { Swiper, Pagination } = _ref;
             this.mobileSwiper = new Swiper(swiperWrapper, {
                 modules: [Pagination],
@@ -9062,7 +9062,7 @@ register('announcement-bar', {
         const autoplayEnabled = this.sliderContainer.dataset.autoplayEnabled == 'true';
         const autoplayDelay = parseInt(this.sliderContainer.dataset.autoplayDelay, 10);
         let _this = this;
-        import(flu.chunks.swiper).then((_ref2) => {
+        import(new URL(flu.chunks.swiper, window.location.origin).href).then((_ref2) => {
             let { Swiper, Navigation, Autoplay } = _ref2;
             this.swiper = new Swiper(this.sliderContainer, {
                 on: {
@@ -10507,7 +10507,7 @@ register('slideshow', {
             this.observer = intersectionWatcher(this.container);
         }
         if (this.slides.length > 1) {
-            import(flu.chunks.swiper).then((_ref) => {
+            import(new URL(flu.chunks.swiper, window.location.origin).href).then((_ref) => {
                 let { Swiper, Navigation, Autoplay, Pagination, EffectFade, EffectCreative } = _ref;
                 const swiperOptions = {
                     modules: [Navigation, Pagination],
@@ -10966,11 +10966,11 @@ const playButton = (node) => {
     const playButton = qs(selectors$i.playButton, node);
     const videoHtml = qs(selectors$i.playButtonVideoContainer, node);
     const videoType = videoHtml.dataset.videoType;
-    import(flu.chunks.photoswipe); // Load this ahead of needing
+    import(new URL(flu.chunks.photoswipe, window.location.origin).href); // Load this ahead of needing
 
     const events = [
         listen(playButton, 'click', () => {
-            import(flu.chunks.photoswipe).then((_ref) => {
+            import(new URL(flu.chunks.photoswipe, window.location.origin).href).then((_ref) => {
                 let { PhotoSwipeLightbox, PhotoSwipe } = _ref;
                 photoSwipeInstance = new PhotoSwipeLightbox({
                     dataSource: [
@@ -11286,7 +11286,7 @@ register('quote', {
         const autoplayEnabled = sliderContainer.dataset.autoplayEnabled == 'true';
         const autoplayDelay = parseInt(sliderContainer.dataset.autoplayDelay, 10);
         this.events = [];
-        import(flu.chunks.swiper).then((_ref) => {
+        import(new URL(flu.chunks.swiper, window.location.origin).href).then((_ref) => {
             let { Swiper, Autoplay, Navigation, EffectFade } = _ref;
             this.swiper = new Swiper(sliderContainer, {
                 modules: [Navigation, Autoplay, EffectFade],
@@ -11548,7 +11548,7 @@ register('shoppable', {
                 return;
             }
             const _this = this;
-            import(flu.chunks.swiper).then((_ref4) => {
+            import(new URL(flu.chunks.swiper, window.location.origin).href).then((_ref4) => {
                 let { Swiper, Navigation, Pagination } = _ref4;
                 this.swiper = new Swiper(this.slider, {
                     modules: [Navigation, Pagination],
@@ -11971,7 +11971,7 @@ register('testimonials', {
             this.observer = intersectionWatcher(this.container);
         }
         if (this.items.length > 1) {
-            import(flu.chunks.swiper).then((_ref) => {
+            import(new URL(flu.chunks.swiper, window.location.origin).href).then((_ref) => {
                 let { Swiper, Navigation, EffectFade } = _ref;
                 const swiperOptions = {
                     modules: [Navigation, EffectFade],
@@ -13073,7 +13073,7 @@ const priceRange = (container) => {
     const slider = qs('[data-range-slider]', container);
     let min = Math.floor(minInput.value ? minInput.value : minInput.getAttribute('min'));
     let max = Math.floor(maxInput.value ? maxInput.value : maxInput.getAttribute('max'));
-    import(flu.chunks.nouislider).then((_ref) => {
+    import(new URL(flu.chunks.nouislider, window.location.origin).href).then((_ref) => {
         let { noUiSlider } = _ref;
         noUiSlider.create(slider, {
             start: [
@@ -14451,7 +14451,7 @@ var _window$Shopify;
 
 // eslint-disable-next-line no-prototype-builtins
 if (!HTMLElement.prototype.hasOwnProperty('inert')) {
-    import(flu.chunks.polyfillInert);
+    import(new URL(flu.chunks.polyfillInert, window.location.origin).href);
 }
 
 // Detect theme editor

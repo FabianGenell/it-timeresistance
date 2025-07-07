@@ -9,5 +9,7 @@
     <option value="sg" data-url="https://timeresistance.sg">Singapore / SGD</option>
     <option value="uk" data-url="https://timeresistance.co.uk">United Kingdom / GBP</option>
   </select>
-  {% render 'icon' with 'chevron-small', class: 'absolute right-0 top-1/2 -translate-y-1/2 w-[13px]' %}
+  {% render 'icon' with 'chevron-small',
+    class: 'absolute right-0 top-1/2 -translate-y-1/2 w-[13px] pointer-events-none'
+  %}
 </currency-selector>

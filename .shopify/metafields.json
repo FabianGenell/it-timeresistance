@@ -16,7 +16,7 @@
       "key": "hero_video_desktop",
       "namespace": "custom",
       "name": "hero video desktop",
-      "description": "",
+      "description": null,
       "type": {
         "name": "file_reference",
         "category": "REFERENCE"
@@ -26,27 +26,17 @@
       "key": "hero_video_mobile",
       "namespace": "custom",
       "name": "hero video mobile",
-      "description": "",
+      "description": null,
       "type": {
         "name": "file_reference",
         "category": "REFERENCE"
       }
     },
     {
-      "key": "short_name",
-      "namespace": "custom",
-      "name": "Short name",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "hero_video_large",
       "namespace": "custom",
       "name": "hero video large",
-      "description": "",
+      "description": null,
       "type": {
         "name": "file_reference",
         "category": "REFERENCE"
@@ -56,7 +46,7 @@
       "key": "hero_poster_mobile",
       "namespace": "custom",
       "name": "hero poster mobile",
-      "description": "",
+      "description": null,
       "type": {
         "name": "file_reference",
         "category": "REFERENCE"
@@ -66,7 +56,7 @@
       "key": "hero_poster_desktop",
       "namespace": "custom",
       "name": "hero poster desktop",
-      "description": "",
+      "description": null,
       "type": {
         "name": "file_reference",
         "category": "REFERENCE"
@@ -76,38 +66,27 @@
       "key": "hero_poster_large",
       "namespace": "custom",
       "name": "hero poster large",
-      "description": "",
+      "description": null,
       "type": {
         "name": "file_reference",
         "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "short_name",
+      "namespace": "custom",
+      "name": "Short name",
+      "description": null,
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
       }
     }
   ],
   "company": [],
   "company_location": [],
   "location": [],
-  "market": [
-    {
-      "key": "men_s_collections",
-      "namespace": "custom",
-      "name": "Men's Collections",
-      "description": "",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "women_s_collections",
-      "namespace": "custom",
-      "name": "Women's Collections",
-      "description": "",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    }
-  ],
+  "market": [],
   "order": [],
   "page": [],
   "product": [
@@ -152,42 +131,12 @@
       }
     },
     {
-      "key": "product_design",
-      "namespace": "custom",
-      "name": "Product Design",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
       "key": "product_materials",
       "namespace": "custom",
       "name": "Product Materials",
       "description": "",
       "type": {
         "name": "rich_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "product_video_youtube_id",
-      "namespace": "custom",
-      "name": "Product video youtube id",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "cozy_gallery_id",
-      "namespace": "custom",
-      "name": "Cozy Gallery id",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
         "category": "TEXT"
       }
     },
@@ -202,39 +151,19 @@
       }
     },
     {
+      "key": "product_video_youtube_id",
+      "namespace": "custom",
+      "name": "Product video youtube id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
       "key": "product_360_id2",
       "namespace": "custom",
       "name": "Product 360 id2",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "rating_count",
-      "namespace": "reviews",
-      "name": "Product rating count",
-      "description": "Total number of ratings from customers",
-      "type": {
-        "name": "number_integer",
-        "category": "NUMBER"
-      }
-    },
-    {
-      "key": "short_product_name",
-      "namespace": "custom",
-      "name": "Short Product Name",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "product_badge_text",
-      "namespace": "custom",
-      "name": "Product Badge Text",
       "description": "",
       "type": {
         "name": "single_line_text_field",
@@ -255,6 +184,56 @@
       "key": "product_lookbook_id",
       "namespace": "custom",
       "name": "Product Lookbook ID",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "short_product_name",
+      "namespace": "custom",
+      "name": "Short Product Name",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_design",
+      "namespace": "custom",
+      "name": "Product Design",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_badge_text",
+      "namespace": "custom",
+      "name": "Product Badge Text",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "cozy_gallery_id",
+      "namespace": "custom",
+      "name": "Cozy Gallery id",
       "description": "",
       "type": {
         "name": "single_line_text_field",
@@ -312,30 +291,10 @@
       }
     },
     {
-      "key": "carry-options",
+      "key": "wallet-features",
       "namespace": "shopify",
-      "name": "Carry options",
-      "description": "Specifies the carrying methods available for items, such as a handle or shoulder strap",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "bag-case-material",
-      "namespace": "shopify",
-      "name": "Bag/Case material",
-      "description": "Identifies the main material used in a bag or case, such as leather or canvas",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "bag-case-storage-features",
-      "namespace": "shopify",
-      "name": "Bag/Case storage features",
-      "description": "Identifies unique storage elements in bags or cases, such as adjustable dividers or external pockets",
+      "name": "Wallet features",
+      "description": "Describes special characteristics of wallets, like RFID protection or compact design",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
@@ -362,10 +321,20 @@
       }
     },
     {
-      "key": "accessory-size",
+      "key": "bag-case-material",
       "namespace": "shopify",
-      "name": "Accessory size",
-      "description": "Defines the size of an accessory product, such as one size or compact",
+      "name": "Bag/Case material",
+      "description": "Identifies the main material used in a bag or case, such as leather or canvas",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "carry-options",
+      "namespace": "shopify",
+      "name": "Carry options",
+      "description": "Specifies the carrying methods available for items, such as a handle or shoulder strap",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
@@ -402,16 +371,6 @@
       }
     },
     {
-      "key": "personalization_page",
-      "namespace": "custom",
-      "name": "personalization_page",
-      "description": "",
-      "type": {
-        "name": "page_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
       "key": "clothing-accessory-material",
       "namespace": "shopify",
       "name": "Clothing accessory material",
@@ -422,27 +381,16 @@
       }
     },
     {
-      "key": "wallet-features",
-      "namespace": "shopify",
-      "name": "Wallet features",
-      "description": "Describes special characteristics of wallets, like RFID protection or compact design",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    }
-  ],
-  "variant": [
-    {
-      "key": "gallery_media",
+      "key": "personalization_page",
       "namespace": "custom",
-      "name": "Gallery Media",
-      "description": "This will be shown at the bottom of the product page In the Gallery Slider",
+      "name": "personalization_page",
+      "description": "",
       "type": {
-        "name": "list.file_reference",
+        "name": "page_reference",
         "category": "REFERENCE"
       }
     }
   ],
+  "variant": [],
   "shop": []
 }

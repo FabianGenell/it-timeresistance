@@ -179,6 +179,7 @@ const createVideoElement = (videoSrc) => {
     const video = document.createElement('video');
     video.src = videoSrc;
     video.controls = true;
+    video.playsInline = true;
 
     Object.assign(video.style, {
         maxWidth: '100%',

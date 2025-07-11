@@ -402,12 +402,57 @@
         "image_wCaRME": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/2_dfad13c6-dc4b-4e74-8406-967edf055653.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_igYJrB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_f9c6f86b-38e4-4d87-aa97-56524376e958.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_bTyWNk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/17_a1a921dc-e5a9-49a1-b58f-8f8d608f0d3c.webp",
             "focal_point": "image_presentation",
             "title": "",
             "text": ""
           }
         },
         "image_gRBgc9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/22_5a0fbde6-f85f-4ebb-87a9-fb977c177751.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_pxaJfk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/18_b1060413-9c05-4d69-9f34-fcb2493dbfed.webp",
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_VR4JpK": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "",
+            "text": ""
+          }
+        },
+        "image_HLCWRa": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
@@ -455,7 +500,12 @@
         "image_MBBYTA",
         "image_8qU4FJ",
         "image_wCaRME",
-        "image_gRBgc9"
+        "image_igYJrB",
+        "image_bTyWNk",
+        "image_gRBgc9",
+        "image_pxaJfk",
+        "image_VR4JpK",
+        "image_HLCWRa"
       ],
       "settings": {
         "use_variant_images": false,

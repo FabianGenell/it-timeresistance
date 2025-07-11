@@ -443,22 +443,6 @@
             "title": "",
             "text": ""
           }
-        },
-        "image_VR4JpK": {
-          "type": "image",
-          "settings": {
-            "focal_point": "image_presentation",
-            "title": "",
-            "text": ""
-          }
-        },
-        "image_HLCWRa": {
-          "type": "image",
-          "settings": {
-            "focal_point": "image_presentation",
-            "title": "",
-            "text": ""
-          }
         }
       },
       "block_order": [
@@ -503,9 +487,7 @@
         "image_igYJrB",
         "image_bTyWNk",
         "image_gRBgc9",
-        "image_pxaJfk",
-        "image_VR4JpK",
-        "image_HLCWRa"
+        "image_pxaJfk"
       ],
       "settings": {
         "use_variant_images": false,

@@ -15,27 +15,34 @@
         "featured_image": {
           "type": "featured_image",
           "settings": {
+            "enable_full_width_image": true,
+            "image_aspect": "original",
+            "desktop_height": 100,
+            "mobile_height": 100,
+            "focal_point": "image_presentation"
           }
         },
         "title": {
           "type": "title",
           "settings": {
+            "show_tags": true,
+            "show_author": true,
+            "show_date": true
           }
         },
         "content": {
           "type": "content",
-          "settings": {
-          }
+          "settings": {}
         },
         "social_share": {
           "type": "social_sharing",
           "settings": {
+            "share_text": "Share"
           }
         },
         "pagination": {
           "type": "pagination",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -46,6 +53,9 @@
         "pagination"
       ],
       "settings": {
+        "content_width": "custom",
+        "custom_content_width": 700,
+        "enable_animation": true
       }
     }
   },

@@ -51,6 +51,11 @@
     .swiper-pagination {
         display: none;
     }
+    
+    /* Show pagination dots for featured-collection-slider on desktop */
+    .featured-collection-slider .swiper-pagination {
+        display: flex;
+    }
 }
 
 .swiper-pagination-bullet {

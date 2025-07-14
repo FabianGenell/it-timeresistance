@@ -10116,6 +10116,7 @@ register('featured-collection-slider', {
             this.carousels.push(
                 Carousel(container, {
                     slidesPerView: this.mobilePerView,
+                    slidesPerGroup: Math.ceil(this.mobilePerView),
                     spaceBetween: 13,
                     // matches product grid
                     navigation: {
@@ -10127,16 +10128,19 @@ register('featured-collection-slider', {
                         720: {
                             spaceBetween: 17,
                             // matches product grid
-                            slidesPerView: this.perView === 5 ? this.perView - 1 : this.perView
+                            slidesPerView: this.perView === 5 ? this.perView - 1 : this.perView,
+                            slidesPerGroup: this.perView === 5 ? this.perView - 1 : this.perView
                         },
                         1200: {
                             spaceBetween: 25,
                             // matches product grid
-                            slidesPerView: this.perView
+                            slidesPerView: this.perView,
+                            slidesPerGroup: this.perView
                         },
                         2400: {
                             spaceBetween: 25,
-                            slidesPerView: Math.abs(this.perView * 1.5)
+                            slidesPerView: Math.abs(this.perView * 1.5),
+                            slidesPerGroup: Math.abs(this.perView * 1.5)
                         }
                     }
                 })

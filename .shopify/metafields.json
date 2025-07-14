@@ -1,14 +1,306 @@
 {
   "article": [],
   "blog": [],
-  "collection": [],
+  "collection": [
+    {
+      "key": "menwomen",
+      "namespace": "custom",
+      "name": "menwomen",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "hero_video_desktop",
+      "namespace": "custom",
+      "name": "hero video desktop",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_video_mobile",
+      "namespace": "custom",
+      "name": "hero video mobile",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "short_name",
+      "namespace": "custom",
+      "name": "Short name",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "hero_video_large",
+      "namespace": "custom",
+      "name": "hero video large",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_poster_mobile",
+      "namespace": "custom",
+      "name": "hero poster mobile",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_poster_desktop",
+      "namespace": "custom",
+      "name": "hero poster desktop",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "hero_poster_large",
+      "namespace": "custom",
+      "name": "hero poster large",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "company": [],
   "company_location": [],
   "location": [],
-  "market": [],
+  "market": [
+    {
+      "key": "men_s_collections",
+      "namespace": "custom",
+      "name": "Men's Collections",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "women_s_collections",
+      "namespace": "custom",
+      "name": "Women's Collections",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "order": [],
   "page": [],
   "product": [
+    {
+      "key": "laptop_size",
+      "namespace": "custom",
+      "name": "Laptop Size",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_name_only",
+      "namespace": "custom",
+      "name": "Product name only",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "short_product_desc",
+      "namespace": "custom",
+      "name": "Short product desc",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_features",
+      "namespace": "custom",
+      "name": "Product Features",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_design",
+      "namespace": "custom",
+      "name": "Product Design",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_materials",
+      "namespace": "custom",
+      "name": "Product Materials",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_video_youtube_id",
+      "namespace": "custom",
+      "name": "Product video youtube id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "cozy_gallery_id",
+      "namespace": "custom",
+      "name": "Cozy Gallery id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_360_id",
+      "namespace": "custom",
+      "name": "Product 360 id",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_360_id2",
+      "namespace": "custom",
+      "name": "Product 360 id2",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "short_product_name",
+      "namespace": "custom",
+      "name": "Short Product Name",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_badge_text",
+      "namespace": "custom",
+      "name": "Product Badge Text",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "rating",
+      "namespace": "reviews",
+      "name": "Product rating",
+      "description": "Average rating from customers",
+      "type": {
+        "name": "rating",
+        "category": "RATING"
+      }
+    },
+    {
+      "key": "product_lookbook_id",
+      "namespace": "custom",
+      "name": "Product Lookbook ID",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products_display",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products settings",
+      "description": "Determines how related products are displayed along with algorithmic product recommendations",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "complementary_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Complementary products",
+      "description": "List of complementary products",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "queries",
+      "namespace": "shopify--discovery--product_search_boost",
+      "name": "Search product boosts",
+      "description": "List of search queries for which a product gets higher rank in search results",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products",
+      "description": "List of related products",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
     {
       "key": "color-pattern",
       "namespace": "shopify",
@@ -20,16 +312,137 @@
       }
     },
     {
-      "key": "instrument-accessory-material",
+      "key": "carry-options",
       "namespace": "shopify",
-      "name": "Instrument accessory material",
-      "description": "Identifies the material used in music instrument accessories, like wood or brass",
+      "name": "Carry options",
+      "description": "Specifies the carrying methods available for items, such as a handle or shoulder strap",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bag-case-material",
+      "namespace": "shopify",
+      "name": "Bag/Case material",
+      "description": "Identifies the main material used in a bag or case, such as leather or canvas",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bag-case-storage-features",
+      "namespace": "shopify",
+      "name": "Bag/Case storage features",
+      "description": "Identifies unique storage elements in bags or cases, such as adjustable dividers or external pockets",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "age-group",
+      "namespace": "shopify",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "target-gender",
+      "namespace": "shopify",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "accessory-size",
+      "namespace": "shopify",
+      "name": "Accessory size",
+      "description": "Defines the size of an accessory product, such as one size or compact",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "closure-type",
+      "namespace": "shopify",
+      "name": "Closure type",
+      "description": "Defines the method used to fasten or secure a product, such as zipper or buckles",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "material",
+      "namespace": "shopify",
+      "name": "Material",
+      "description": "Defines a product's primary material, such as cotton or wool",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "watch-accessory-style",
+      "namespace": "shopify",
+      "name": "Watch accessory style",
+      "description": "Defines the style of watch accessories, e.g. sporty, modern",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "personalization_page",
+      "namespace": "custom",
+      "name": "personalization_page",
+      "description": "",
+      "type": {
+        "name": "page_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "clothing-accessory-material",
+      "namespace": "shopify",
+      "name": "Clothing accessory material",
+      "description": "Identifies the main material used in clothing accessories, like leather or linen",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "wallet-features",
+      "namespace": "shopify",
+      "name": "Wallet features",
+      "description": "Describes special characteristics of wallets, like RFID protection or compact design",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
     }
   ],
-  "variant": [],
+  "variant": [
+    {
+      "key": "gallery_media",
+      "namespace": "custom",
+      "name": "Gallery Media",
+      "description": "This will be shown at the bottom of the product page In the Gallery Slider",
+      "type": {
+        "name": "list.file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "shop": []
 }

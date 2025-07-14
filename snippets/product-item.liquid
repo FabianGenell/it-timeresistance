@@ -468,6 +468,10 @@
     </div>
     <div class="product-item__hover-container"></div>
     {%- if show_quick_buy -%}
+      {%- if var == blank -%}
+        {%- assign var = prod.selected_or_first_available_variant -%}
+      {%- endif -%}
+
       {% render 'product-form',
         prod: prod,
         current_variant: var,

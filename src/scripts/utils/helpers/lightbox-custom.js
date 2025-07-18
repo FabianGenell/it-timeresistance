@@ -34,7 +34,7 @@ export async function customLightbox({ childSelector, galerySelector, mainClass,
         itemData.src = element.getAttribute('href') || element.dataset.pswpSrc;
 
         const img = element.querySelector('img');
-        console.log('img', img);
+        /* console.log('img', img); */
         if (img) {
             itemData.msrc = img.src; // thumbnail placeholder
             itemData.alt = img.alt || '';
@@ -163,6 +163,7 @@ export async function customLightbox({ childSelector, galerySelector, mainClass,
 }
 
 window.customLightbox = customLightbox;
+console.log('set window lightbox', window.customLightbox);
 
 const createVideoElement = (videoSrc) => {
     const container = document.createElement('div');

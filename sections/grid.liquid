@@ -27,10 +27,15 @@
     else
       assign aspect_ratio_xl = aspect_ratio
     endif
+  endif
 
-  else
+  if aspect_ratio == blank
     assign aspect_ratio = section.settings.aspect_ratio | default: 100
+  endif
+  if aspect_ratio_mobile == blank
     assign aspect_ratio_mobile = section.settings.aspect_ratio_mobile | default: 140
+  endif
+  if aspect_ratio_xl == blank
     assign aspect_ratio_xl = section.settings.aspect_ratio_xl | default: 60
   endif
 -%}

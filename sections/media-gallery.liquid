@@ -11,134 +11,178 @@
 
 {%- liquid
   if section.settings.use_variant_images
-    assign variant = product.selected_variant
-    assign variant_images = variant.metafields.custom.gallery_media
-    assign variant_media_val = variant_images.value
-    if variant_media_val == blank
-      for variant in product.variants
-        assign variant_images = variant.metafields.custom.gallery_media
-        assign variant_media_val = variant_images.value
-        if variant_media_val != blank
-          break
-        endif
-      endfor
+    if section.settings.divide_by_variant
+      assign variant = product.selected_variant
+      assign variant_images = variant.metafields.custom.gallery_media
+      assign variant_media_val = variant_images.value
+      if variant_media_val == blank
+        for variant in product.variants
+          assign variant_images = variant.metafields.custom.gallery_media
+          assign variant_media_val = variant_images.value
+          if variant_media_val != blank
+            break
+          endif
+        endfor
+      endif
     endif
 
-    if variant_images != blank
-      assign use_variant_images = true
+    if variant_media_val != blank
+      assign use_per_variant_images = true
     endif
   endif
 
   assign loop_carousel = section.settings.loop_carousel
 
-  if use_variant_images
-    assign variant_images_size = variant_images.value | split: ',' | size
-    if variant_images_size < 3
+  if use_per_variant_images
+    assign reload_on_event = true
+  endif
+-%}
+
+{%- if section.settings.use_variant_images -%}
+  {%- capture variant_images -%}
+    {%- if section.settings.divide_by_variant -%}
+      
+      {%- for media in variant_media_val -%}
+        <div
+          class="gallery-carousel__item carousel__slide swiper-slide"
+        >
+          {%- render 'gallery-item',
+            media: media,
+            aspect_ratio: section.settings.aspect_ratio,
+            label_style: section.settings.image_caption_style,
+            label_size: section.settings.image_caption_size,
+            overlay_text_color: section.settings.overlay_text_color,
+            overlay_text_background: section.settings.overlay_text_background,
+            overlay_text_background_style: section.settings.overlay_text_background_style,
+            image_sizes: image_sizes
+          -%}
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+
+      {%- for variant in product.variants -%}
+        {%- assign variant_images = variant.metafields.custom.gallery_media.value -%}
+        {%- for media in variant_images -%}
+          <div
+            class="gallery-carousel__item carousel__slide swiper-slide"
+          >
+            {%- render 'gallery-item',
+              media: media,
+              aspect_ratio: section.settings.aspect_ratio,
+              label_style: section.settings.image_caption_style,
+              label_size: section.settings.image_caption_size,
+              overlay_text_color: section.settings.overlay_text_color,
+              overlay_text_background: section.settings.overlay_text_background,
+              overlay_text_background_style: section.settings.overlay_text_background_style,
+              image_sizes: image_sizes
+            -%}
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- liquid
+  if variant_images
+    assign variant_image_parts_size = variant_images | split: 'swiper-slide' | size
+
+    if variant_image_parts_size < 3
       assign loop_carousel = false
     endif
   endif
 -%}
 
-{%- unless section.settings.use_variant_images and variant_media_val == blank -%}
-  <reload-on-event
-    id="reload-media-gallery-{{ section.id }}"
-    data-event="product:variant-change"
-  >
-    <div
-      class="
-        gallery-carousel
-        section
-        section--divider-{{ section.settings.divider_style }}
-        {{ section.settings.section_padding }}
-        {% if settings.enable_section_animations and section.settings.enable_animation %}
-          animation
-          animation--gallery-carousel
-        {% endif %}
-      "
-      data-section-id="{{ section.id }}"
-      data-section-type="gallery-carousel"
-      data-loop-carousel="{{ loop_carousel }}"
-      data-products-per-view="{{ section.settings.columns }}"
-      data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
+{%- unless section.settings.use_variant_images and variant_images == blank -%}
+  {%- if reload_on_event -%}
+    <reload-on-event
+      id="reload-media-gallery-{{ section.id }}"
+      data-event="product:variant-change"
     >
-      <div class="gallery-carousel__inner overflow-hidden">
-        <div class="gallery-carousel__meta carousel__navigation-wrapper">
-          <div class="section-introduction animation--section-introduction">
-            {%- unless section.settings.heading == blank -%}
-              <{{ section.settings.heading_tag }} class="gallery-carousel__heading ff-heading fs-heading-3-base section-introduction__heading">
-                {{ section.settings.heading }}
-              </{{ section.settings.heading_tag }}>
-            {%- endunless -%}
+  {%- endif -%}
+  <div
+    class="
+      gallery-carousel
+      section
+      section--divider-{{ section.settings.divider_style }}
+      {{ section.settings.section_padding }}
+      {% if settings.enable_section_animations and section.settings.enable_animation %}
+        animation
+        animation--gallery-carousel
+      {% endif %}
+    "
+    data-section-id="{{ section.id }}"
+    data-section-type="gallery-carousel"
+    data-loop-carousel="{{ loop_carousel }}"
+    data-products-per-view="{{ section.settings.columns }}"
+    data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
+  >
+    <div class="gallery-carousel__inner overflow-hidden">
+      <div class="gallery-carousel__meta carousel__navigation-wrapper">
+        <div class="section-introduction animation--section-introduction">
+          {%- unless section.settings.heading == blank -%}
+            <{{ section.settings.heading_tag }} class="gallery-carousel__heading ff-heading fs-heading-3-base section-introduction__heading">
+              {{ section.settings.heading }}
+            </{{ section.settings.heading_tag }}>
+          {%- endunless -%}
 
-            {%- unless section.settings.subheading == blank -%}
-              <div class="gallery-carousel__subheading ff-body fs-body-100 rte section-introduction__subheading">
-                {{ section.settings.subheading }}
-              </div>
-            {%- endunless -%}
+          {%- unless section.settings.subheading == blank -%}
+            <div class="gallery-carousel__subheading ff-body fs-body-100 rte section-introduction__subheading">
+              {{ section.settings.subheading }}
+            </div>
+          {%- endunless -%}
 
-            {%- render 'button-block',
-              wrapper_class: 'gallery-carousel__button section-introduction__button',
-              link: section.settings.link,
-              label: section.settings.link_text,
-              button_style: 'btn--callout'
-            -%}
-          </div>
-
-          {%- render 'carousel-navigation', wrapper_class: 'animation--controls' %}
+          {%- render 'button-block',
+            wrapper_class: 'gallery-carousel__button section-introduction__button',
+            link: section.settings.link,
+            label: section.settings.link_text,
+            button_style: 'btn--callout'
+          -%}
         </div>
 
-        <div
-          class="
-            gallery-carousel__content
-            carousel
-            carousel--per-view-{{ section.settings.columns }}
-            carousel--mobile-per-view-{{ section.settings.mobile_columns }}
-            swiper
-            lightbox-media-container
-          "
-        >
-          <div class="gallery-carousel__items carousel__wrapper swiper-wrapper">
-            {%- if use_variant_images -%}
-              {%- for media in variant_media_val -%}
-                <div
-                  class="gallery-carousel__item carousel__slide swiper-slide"
-                >
-                  {%- render 'gallery-item',
-                    media: media,
-                    aspect_ratio: section.settings.aspect_ratio,
-                    label_style: section.settings.image_caption_style,
-                    label_size: section.settings.image_caption_size,
-                    overlay_text_color: section.settings.overlay_text_color,
-                    overlay_text_background: section.settings.overlay_text_background,
-                    overlay_text_background_style: section.settings.overlay_text_background_style,
-                    image_sizes: image_sizes
-                  -%}
-                </div>
-              {%- endfor -%}
-            {%- else -%}
-              {%- for block in section.blocks -%}
-                <div
-                  {{ block.shopify_attributes }}
-                  class="gallery-carousel__item carousel__slide swiper-slide"
-                >
-                  {% render 'gallery-item',
-                    block: block,
-                    aspect_ratio: section.settings.aspect_ratio,
-                    label_style: section.settings.image_caption_style,
-                    label_size: section.settings.image_caption_size,
-                    overlay_text_color: section.settings.overlay_text_color,
-                    overlay_text_background: section.settings.overlay_text_background,
-                    overlay_text_background_style: section.settings.overlay_text_background_style,
-                    image_sizes: image_sizes
-                  %}
-                </div>
-              {%- endfor -%}
-            {%- endif -%}
-          </div>
+        {%- render 'carousel-navigation', wrapper_class: 'animation--controls' %}
+      </div>
+
+      <div
+        class="
+          gallery-carousel__content
+          carousel
+          carousel--per-view-{{ section.settings.columns }}
+          carousel--mobile-per-view-{{ section.settings.mobile_columns }}
+          swiper
+          lightbox-media-container
+        "
+      >
+        <div class="gallery-carousel__items carousel__wrapper swiper-wrapper">
+          {%- if section.settings.use_variant_images -%}
+            {{ variant_images }}
+          {%- else -%}
+            {%- for block in section.blocks -%}
+              <div
+                {{ block.shopify_attributes }}
+                class="gallery-carousel__item carousel__slide swiper-slide"
+              >
+                {% render 'gallery-item',
+                  block: block,
+                  aspect_ratio: section.settings.aspect_ratio,
+                  label_style: section.settings.image_caption_style,
+                  label_size: section.settings.image_caption_size,
+                  overlay_text_color: section.settings.overlay_text_color,
+                  overlay_text_background: section.settings.overlay_text_background,
+                  overlay_text_background_style: section.settings.overlay_text_background_style,
+                  image_sizes: image_sizes
+                %}
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
         </div>
       </div>
     </div>
-  </reload-on-event>
+  </div>
+  {%- if reload_on_event -%}
+    </reload-on-event>
+  {%- endif -%}
 {%- endunless -%}
 
 <script>
@@ -146,6 +190,7 @@
     const sectionId = 'shopify-section-{{ section.id }}';
     const section = document.getElementById(sectionId);
     async function initLightbox() {
+      console.log('initLightbox');
       return window.customLightbox({
         childSelector: `#${sectionId} .gallery-item`,
         gallerySelector: `#${sectionId} .gallery-carousel__items`,
@@ -154,20 +199,18 @@
       });
     }
 
+    /*
     document.addEventListener('reload-on-event:loaded', ({ detail }) => {
       const SECTION_ID = '{{ section.id }}';
       if (detail.shopifySectionId === SECTION_ID) {
         initLightbox();
       }
     });
+    */
 
-    if (document.readyState === 'complete') {
+    document.addEventListener('theme:loaded', () => {
       initLightbox();
-    } else {
-      document.addEventListener('DOMContentLoaded', () => {
-        initLightbox();
-      });
-    }
+    });
   })();
 </script>
 
@@ -188,6 +231,13 @@
       "id": "use_variant_images",
       "label": "Use variant images",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "divide_by_variant",
+      "label": "Divide by variant",
+      "info": "When disabled, shows all variant images at once without reloading on variant change",
+      "default": true
     },
     {
       "type": "text",

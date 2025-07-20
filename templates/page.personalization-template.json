@@ -351,7 +351,7 @@
         "image_aspect": "original",
         "desktop_height": 100,
         "mobile_height": 100,
-        "image": "shopify://shop_images/laser_engraving_new.svg",
+        "image": "shopify://shop_images/laser_engraving_new.jpg",
         "image_mobile": "shopify://shop_images/1_laser_engraving_new_mobile.svg",
         "focal_point": "image_presentation",
         "mobile_focal_point": "image_presentation",
@@ -429,7 +429,8 @@
           "settings": {
             "text": "",
             "button_layout": "full",
-            "icon_style": "outline"
+            "icon_style": "outline",
+            "button_opacity": 70
           }
         }
       },
@@ -863,7 +864,8 @@
           "settings": {
             "text": "",
             "button_layout": "full",
-            "icon_style": "outline"
+            "icon_style": "outline",
+            "button_opacity": 70
           }
         }
       },
@@ -1177,6 +1179,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "",
         "heading_tag": "h2",
         "subheading": "",

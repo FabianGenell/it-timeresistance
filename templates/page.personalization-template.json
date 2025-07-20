@@ -624,8 +624,8 @@
         "slide_BTXPfj": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Embossing_page_16.svg",
-            "image_mobile": "shopify://shop_images/3_embossing_page.svg",
+            "image": "shopify://shop_images/Embossing_page_16.jpg",
+            "image_mobile": "shopify://shop_images/3_embossing_page.jpg",
             "focal_point": "image_presentation",
             "mobile_focal_point": "image_presentation",
             "media_link": "",

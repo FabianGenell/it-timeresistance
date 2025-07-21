@@ -289,6 +289,7 @@
       "type": "media-gallery",
       "settings": {
         "use_variant_images": true,
+        "divide_by_variant": false,
         "heading": "Styled by Our Community - {{ product.metafields.custom.product_name_only.value }}",
         "heading_tag": "h2",
         "subheading": "",
@@ -316,18 +317,6 @@
     },
     "17273443262e1c4dc4": {
       "type": "apps",
-      "blocks": {
-        "xo_gallery_xo_gallery_xQmR49": {
-          "type": "shopify://apps/xo-gallery/blocks/xo-gallery/e61dfbaa-1a75-4e4e-bffc-324f17325251",
-          "settings": {
-            "id": 0,
-            "mid": "{{ product.metafields.custom.product_lookbook_id.value }}"
-          }
-        }
-      },
-      "block_order": [
-        "xo_gallery_xo_gallery_xQmR49"
-      ],
       "disabled": true,
       "custom_css": [],
       "settings": {

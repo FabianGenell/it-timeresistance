@@ -18,6 +18,12 @@
   endif
 
   if section.settings.set_button_style_globally
+    assign button_label = section.settings.block_link_text
+  else
+    assign button_label = block.settings.link_text
+  endif
+
+  if section.settings.set_button_style_globally
     assign button_style_settings = section.settings
     assign button_style_settings_key = 'block_button'
     assign button_style = section.settings.block_button_style
@@ -212,7 +218,7 @@
                 id="button-{{ block.id }}"
                 class="btn btn--overlay {{ button_style }}{% if use_small_button_above_960 %} btn--small-above-960{% endif %}"
               >
-                <span>{{ block.settings.link_text }}</span>
+                <span>{{ button_label }}</span>
               </div>
             </div>
           {%- endif -%}

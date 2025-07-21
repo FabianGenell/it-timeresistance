@@ -12,7 +12,7 @@
   "type": "module",
   "scripts": {
     "dev": "run-p -sr \"shopify:dev -- {@}\" \"vite:watch\" --",
-    "shopify:dev": "shopify theme dev -s esp-timeresistance --port 3002",
+    "shopify:dev": "shopify theme dev -s au-timeresistance",
     "build": "vite build",
     "vite:watch": "vite build --watch",
     "prettier": "prettier --write ."

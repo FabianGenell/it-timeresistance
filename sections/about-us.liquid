@@ -1,17 +1,23 @@
-<!-- File: sections/about-us.liquid -->
+<!-- About Us Section -->
 {%- if section.settings.enable_section_style -%}
   {%- render 'section-style', section: section -%}
 {%- endif -%}
 
-<!-- sections/about-us.liquid -->
+{%- liquid
+  # Build tab names array dynamically
+  assign tab_names = section.settings.tab_1_name | append: ',' | append: section.settings.tab_2_name | append: ',' | append: section.settings.tab_3_name | append: ',' | append: section.settings.tab_4_name | split: ','
+  
+  # Create tab IDs for data attributes
+  assign tab_1_id = section.settings.tab_1_name | downcase
+  assign tab_2_id = section.settings.tab_2_name | downcase  
+  assign tab_3_id = section.settings.tab_3_name | downcase
+  assign tab_4_id = section.settings.tab_4_name | downcase
+-%}
 
-{% liquid
-  assign categories = 'Team,Products,Timeline,International' | split: ','
-%}
-
-<div class="section">
+<div class="section" id="about-us-{{ section.id }}">
+  <!-- Tab Navigation -->
   {%- render 'section-tab-navigator',
-    array: categories,
+    array: tab_names,
     class: 'border-b border-[#e0c398] pb-1 text-sm top-0 sticky z-10 mb-4',
     blob_class: 'h-[3px] bottom-0 bg-black md:block',
     button_class: 'md:px-4 p-2',
@@ -19,203 +25,185 @@
     list_class: 'flex'
   -%}
 
-  <!-- Team -->
-  <div
-    class="text-center"
-    data-tab="team"
-  >
-    <p
-      class="md:my-10 mb-10 font-xl font-bold mx-auto max-w-[800px]"
-    >
-      {{ section.settings.team_title }}
-    </p>
+  <!-- Team Tab -->
+  <div class="text-center" data-tab="{{ tab_1_id }}">
+    {%- if section.settings.team_title != blank -%}
+      <h2 class="md:my-10 mb-10 font-xl font-bold mx-auto max-w-[800px]">
+        {{ section.settings.team_title }}
+      </h2>
+    {%- endif -%}
 
     <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-      {% for block in section.blocks %}
+      {%- for block in section.blocks -%}
         {%- liquid
-          assign class = ''
+          assign grid_class = 'group mx-auto flex flex-col items-center w-full max-w-[150px]'
           if block.settings.full_row
-            assign class = 'col-span-2 md:col-span-5 '
+            assign grid_class = grid_class | prepend: 'col-span-2 md:col-span-5 '
           endif
         -%}
-        <div class="group {{ class }} mx-auto flex flex-col items-center  w-full max-w-[150px]">
+        
+        <div class="{{ grid_class }}">
           <div class="media w-full pb-[100%] rounded-full overflow-hidden">
-            {% render 'image',
+            {%- render 'image',
               image: block.settings.image,
               src_width: 300,
               widths: '150,300',
               sizes: '150px',
               class: 'img-fit img-fit--zoom img-fit--group-zoom'
-            %}
+            -%}
           </div>
-          <p class="font-lg font-bold mt-2">{{ block.settings.name }}</p>
-          <p class="text-sm uppercase tracking-wider">{{ block.settings.role }}</p>
+          
+          {%- if block.settings.name != blank -%}
+            <h3 class="font-lg font-bold mt-2">{{ block.settings.name }}</h3>
+          {%- endif -%}
+          
+          {%- if block.settings.role != blank -%}
+            <p class="text-sm uppercase tracking-wider">{{ block.settings.role }}</p>
+          {%- endif -%}
         </div>
-      {% endfor %}
+      {%- endfor -%}
     </div>
   </div>
 
-  <!-- Products -->
-
-  <div
-    class="grid md:grid-cols-[11fr_5fr] gap-6 md:gap-10"
-    data-tab="products"
-  >
+  <!-- Products Tab -->
+  <div class="grid md:grid-cols-[11fr_5fr] gap-6 md:gap-10" data-tab="{{ tab_2_id }}">
+    <!-- Video Section -->
     {%- if section.settings.video != blank -%}
-      <div class="">
-        <p class="font-lg font-bold">{{ section.settings.video_title }}</p>
-        {% render 'video',
+      <div class="video-container">
+        {%- if section.settings.video_title != blank -%}
+          <h3 class="font-lg font-bold mb-4">{{ section.settings.video_title }}</h3>
+        {%- endif -%}
+        
+        {%- render 'video',
           video: section.settings.video,
           wrapper_class: 'w-full h-full',
           aspect_ratio: '16/9',
           controls: true,
           loop: true
-        %}
+        -%}
       </div>
     {%- endif -%}
 
-    <div class="">
-      <p class="font-lg font-bold">Features</p>
+    <!-- Features Section -->
+    <div class="features-container">
+      {%- if section.settings.features_title != blank -%}
+        <h3 class="font-lg font-bold mb-4">{{ section.settings.features_title }}</h3>
+      {%- endif -%}
+      
       <div class="product-text">
-        <div id="features_div">
-          <ul class="list-none">
-            <li class="flex items-center">
-              <img
-                class="pr-2"
-                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/made_in_italy.svg?v=1683187137"
-                alt="Icon"
-                width="24"
-                height="24"
-
-              >Made in Italy
-            </li>
-            <li class="flex items-center">
-              <img
-                class="pr-2"
-                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/classic_design.svg?v=1683186411"
-                alt="Icon"
-                width="24"
-                height="24"
-
-              >Classic design
-            </li>
-            <li class="flex items-center">
-              <img
-                class="pr-2"
-                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/full_grain.svg?v=1683186410"
-                alt="Icon"
-                width="24"
-                height="24"
-
-              >Full-grain, hand-dyed, vegetable-tanned leather
-            </li>
-            <li class="flex items-center">
-              <img
-                class="pr-2"
-                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/hand_made.svg?v=1683186411"
-                alt="Icon"
-                width="24"
-                height="24"
-
-              >Hand made
-            </li>
-            <li class="flex items-center">
-              <img
-                class="pr-2"
-                src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/fashion.svg?v=1683186411"
-                alt="Icon"
-                width="24"
-                height="24"
-
-              >"Slow fashion" mindset
-            </li>
-          </ul>
-        </div>
+        <ul class="list-none space-y-2" id="features-list">
+          {%- for i in (1..5) -%}
+            {%- liquid
+              assign feature_text_key = 'feature_' | append: i | append: '_text'
+              assign feature_icon_key = 'feature_' | append: i | append: '_icon'
+              assign feature_icon_url_key = 'feature_' | append: i | append: '_icon_url'
+              
+              assign feature_text = section.settings[feature_text_key]
+              assign feature_icon = section.settings[feature_icon_key]
+              assign feature_icon_url = section.settings[feature_icon_url_key]
+            -%}
+            
+            {%- if feature_text != blank -%}
+              <li class="flex items-center">
+                {%- if feature_icon != blank -%}
+                  <img
+                    class="pr-2"
+                    src="{{ feature_icon | image_url: width: 48 }}"
+                    alt="Icon"
+                    width="24"
+                    height="24"
+                  >
+                {%- elsif feature_icon_url != blank -%}
+                  <img
+                    class="pr-2"
+                    src="{{ feature_icon_url }}"
+                    alt="Icon"
+                    width="24"
+                    height="24"
+                  >
+                {%- endif -%}
+                {{ feature_text }}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
       </div>
     </div>
   </div>
 
-  <!-- Timeline -->
-  <div
-    class=""
-    data-tab="timeline"
-  >
-    {%- render 'image',
-      image: section.settings.timeline_image,
-      src_width: 1280,
-      widths: '320,640,960,1280',
-      sizes: '100vw',
-      class: 'w-full h-full'
-    -%}
+  <!-- Timeline Tab -->
+  <div class="timeline-container" data-tab="{{ tab_3_id }}">
+    {%- if section.settings.timeline_image != blank -%}
+      {%- render 'image',
+        image: section.settings.timeline_image,
+        src_width: 1280,
+        widths: '320,640,960,1280',
+        sizes: '100vw',
+        class: 'w-full h-full'
+      -%}
+    {%- endif -%}
   </div>
 
-  <!-- International -->
-  <div
-    class=""
-    data-tab="international"
-  >
+  <!-- International Tab -->
+  <div class="international-container" data-tab="{{ tab_4_id }}">
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="">
-        <p>We serve customers from over 90 countries.</p>
-        <p>Time Resistance partners with carefully selected brand ambassadors.</p>
-        <p>
-          We exhibit at various trade shows around the world including Liberty Fairs NY (USA), Mipel (Italy),
-          Nordic Shoe and Bag Fair (Sweden), and ILM (Germany).<br>
-          ILM is a trade fair that takes place in Offenbach am Main, Germany. It is one of the largest and
-          most important trade fairs for high-quality leather goods, luggage, bags and accessories.<br>
-          Mipel is another trade show that takes place in Milan, Italy. It is an international event that
-          showcases leather goods and fashion accessories.<br>
-          Nordic Shoe and Bag Fair is a trade show that takes place in Stockholm, Sweden. It is a platform for
-          Scandinavian shoe and bag brands to showcase their products.<br>
-          Liberty Fairs NY is a trade show that takes place in New York City, USA. It is a contemporary
-          fashion trade show that showcases men’s and women’s apparel, footwear, accessories and lifestyle
-          brands.
-        </p>
-        <p>
-          Our participation in trade shows allows us to showcase our products to a wider audience and to
-          connect with other industry professionals. It also gives us an opportunity to stay up-to-date with
-          the latest trends and developments in the industry.
-        </p>
-        <p>Time Resistance is registered in the EU, the US, China and Australia.</p>
-        <div class="flex flex-wrap gap-2">
-          <img
-            class="image-1"
-            src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/USA_Certificate.jpg?v=1682590950"
-            alt="USA Certificate"
-            width="auto"
-            height="auto"
-          >
-          <img
-            class="image-2"
-            src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/China_Certificate.jpg?v=1682590998"
-            alt="China Certificate"
-            width="auto"
-            height="auto"
-          >
-          <img
-            class="image-3"
-            src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Lithuania_Certificate.jpg?v=1682591025"
-            alt="Lithuania Certificate"
-            width="auto"
-            height="auto"
-          >
+      <!-- Content and Certificates -->
+      <div class="content-section">
+        {%- if section.settings.international_content != blank -%}
+          <div class="international-content mb-6">
+            {{ section.settings.international_content }}
+          </div>
+        {%- endif -%}
+        
+        <!-- Certificate Images -->
+        <div class="certificates flex flex-wrap gap-2">
+          {%- for i in (1..3) -%}
+            {%- liquid
+              assign cert_key = 'certificate_' | append: i
+              assign cert_url_key = 'certificate_' | append: i | append: '_url'
+              assign cert_alt_key = 'certificate_' | append: i | append: '_alt'
+              
+              assign certificate = section.settings[cert_key]
+              assign certificate_url = section.settings[cert_url_key]
+              assign certificate_alt = section.settings[cert_alt_key]
+            -%}
+            
+            {%- if certificate != blank or certificate_url != blank -%}
+              <img
+                class="image-{{ i }}"
+                src="{% if certificate != blank %}{{ certificate | image_url: width: 300 }}{% else %}{{ certificate_url }}{% endif %}"
+                alt="{{ certificate_alt | escape }}"
+                width="auto"
+                height="auto"
+              >
+            {%- endif -%}
+          {%- endfor -%}
         </div>
       </div>
-      <div class="">
-        <img
-          class="image-4"
-          src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_1.jpg?v=1682591083"
-          alt="Mipel Trade Show"
-          width="auto"
-          height="auto"
-        >
-        <img
-          class="image-5"
-          src="https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_2.jpg?v=1682591083"
-          alt="Mipel Trade Show"
-          width="auto"
-          height="auto"
-        >
+      
+      <!-- Trade Show Images -->
+      <div class="trade-shows">
+        {%- for i in (1..2) -%}
+          {%- liquid
+            assign trade_image_key = 'trade_show_image_' | append: i
+            assign trade_url_key = 'trade_show_image_' | append: i | append: '_url'
+            assign trade_alt_key = 'trade_show_image_' | append: i | append: '_alt'
+            
+            assign trade_image = section.settings[trade_image_key]
+            assign trade_url = section.settings[trade_url_key]
+            assign trade_alt = section.settings[trade_alt_key]
+          -%}
+          
+          {%- if trade_image != blank or trade_url != blank -%}
+            <img
+              class="image-{{ i | plus: 3 }} mb-4"
+              src="{% if trade_image != blank %}{{ trade_image | image_url: width: 600 }}{% else %}{{ trade_url }}{% endif %}"
+              alt="{{ trade_alt | escape }}"
+              width="auto"
+              height="auto"
+            >
+          {%- endif -%}
+        {%- endfor -%}
       </div>
     </div>
   </div>
@@ -228,44 +216,309 @@
   "settings": [
     {
       "type": "header",
-      "content": "Team"
+      "content": "Tab Configuration"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_name",
+      "label": "Team Tab Name",
+      "default": "Team",
+      "info": "Name for the first tab"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_name",
+      "label": "Products Tab Name",
+      "default": "Products",
+      "info": "Name for the second tab"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_name",
+      "label": "Timeline Tab Name",
+      "default": "Timeline",
+      "info": "Name for the third tab"
+    },
+    {
+      "type": "text",
+      "id": "tab_4_name",
+      "label": "International Tab Name",
+      "default": "International",
+      "info": "Name for the fourth tab"
+    },
+    
+    {
+      "type": "header",
+      "content": "Team Section"
     },
     {
       "type": "text",
       "id": "team_title",
-      "label": "Team Title"
+      "label": "Team Section Title",
+      "info": "Optional title displayed above team members"
     },
+    
     {
       "type": "header",
-      "content": "Products"
+      "content": "Products Section"
     },
     {
       "type": "text",
       "id": "video_title",
-      "label": "Video Title"
+      "label": "Video Title",
+      "info": "Optional title displayed above the video"
     },
     {
       "type": "video",
       "id": "video",
-      "label": "Video"
+      "label": "Product Video",
+      "info": "Video showcasing your products"
     },
     {
+      "type": "text",
+      "id": "features_title",
+      "label": "Features Section Title",
+      "default": "Features",
+      "info": "Title for the features list"
+    },
+    
+    {
       "type": "header",
-      "content": "Timeline"
+      "content": "Product Features"
+    },
+    {
+      "type": "paragraph",
+      "content": "Configure up to 5 product features. Each feature can have an icon and descriptive text."
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_1_icon",
+      "label": "Feature 1 Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_text",
+      "label": "Feature 1 Text",
+      "default": "Made in Italy"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_icon_url",
+      "label": "Feature 1 Icon URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/made_in_italy.svg?v=1683187137",
+      "info": "Used if no icon image is uploaded"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "feature_2_icon",
+      "label": "Feature 2 Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_text",
+      "label": "Feature 2 Text",
+      "default": "Classic design"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_icon_url",
+      "label": "Feature 2 Icon URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/classic_design.svg?v=1683186411",
+      "info": "Used if no icon image is uploaded"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "feature_3_icon",
+      "label": "Feature 3 Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_text",
+      "label": "Feature 3 Text",
+      "default": "Full-grain, hand-dyed, vegetable-tanned leather"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_icon_url",
+      "label": "Feature 3 Icon URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/full_grain.svg?v=1683186410",
+      "info": "Used if no icon image is uploaded"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "feature_4_icon",
+      "label": "Feature 4 Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_text",
+      "label": "Feature 4 Text",
+      "default": "Hand made"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_icon_url",
+      "label": "Feature 4 Icon URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/hand_made.svg?v=1683186411",
+      "info": "Used if no icon image is uploaded"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "feature_5_icon",
+      "label": "Feature 5 Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_text",
+      "label": "Feature 5 Text",
+      "default": "\"Slow fashion\" mindset"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_icon_url",
+      "label": "Feature 5 Icon URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/fashion.svg?v=1683186411",
+      "info": "Used if no icon image is uploaded"
+    },
+    
+    {
+      "type": "header",
+      "content": "Timeline Section"
     },
     {
       "type": "image_picker",
       "id": "timeline_image",
-      "label": "Timeline Image"
+      "label": "Timeline Image",
+      "info": "Large image displayed in the timeline tab"
     },
     {
       "type": "text",
       "id": "timeline_title",
-      "label": "Timeline Title"
+      "label": "Timeline Title",
+      "info": "Optional title for the timeline section"
     },
+    
     {
       "type": "header",
-      "content": "International"
+      "content": "International Section"
+    },
+    {
+      "type": "richtext",
+      "id": "international_content",
+      "label": "International Content",
+      "default": "<p>We serve customers from over 90 countries.</p><p>Time Resistance partners with carefully selected brand ambassadors.</p><p>We exhibit at various trade shows around the world including Liberty Fairs NY (USA), Mipel (Italy), Nordic Shoe and Bag Fair (Sweden), and ILM (Germany).<br>ILM is a trade fair that takes place in Offenbach am Main, Germany. It is one of the largest and most important trade fairs for high-quality leather goods, luggage, bags and accessories.<br>Mipel is another trade show that takes place in Milan, Italy. It is an international event that showcases leather goods and fashion accessories.<br>Nordic Shoe and Bag Fair is a trade show that takes place in Stockholm, Sweden. It is a platform for Scandinavian shoe and bag brands to showcase their products.<br>Liberty Fairs NY is a trade show that takes place in New York City, USA. It is a contemporary fashion trade show that showcases men's and women's apparel, footwear, accessories and lifestyle brands.</p><p>Our participation in trade shows allows us to showcase our products to a wider audience and to connect with other industry professionals. It also gives us an opportunity to stay up-to-date with the latest trends and developments in the industry.</p><p>Time Resistance is registered in the EU, the US, China and Australia.</p>",
+      "info": "Rich text content for the international section"
+    },
+    
+    {
+      "type": "header",
+      "content": "Certificate Images"
+    },
+    {
+      "type": "paragraph",
+      "content": "Upload certificate images or use fallback URLs for existing images."
+    },
+    {
+      "type": "image_picker",
+      "id": "certificate_1",
+      "label": "Certificate 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "certificate_1_alt",
+      "label": "Certificate 1 Alt Text",
+      "default": "USA Certificate"
+    },
+    {
+      "type": "text",
+      "id": "certificate_1_url",
+      "label": "Certificate 1 URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/USA_Certificate.jpg?v=1682590950",
+      "info": "Used if no certificate image is uploaded"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "certificate_2",
+      "label": "Certificate 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "certificate_2_alt",
+      "label": "Certificate 2 Alt Text",
+      "default": "China Certificate"
+    },
+    {
+      "type": "text",
+      "id": "certificate_2_url",
+      "label": "Certificate 2 URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/China_Certificate.jpg?v=1682590998",
+      "info": "Used if no certificate image is uploaded"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "certificate_3",
+      "label": "Certificate 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "certificate_3_alt",
+      "label": "Certificate 3 Alt Text",
+      "default": "Lithuania Certificate"
+    },
+    {
+      "type": "text",
+      "id": "certificate_3_url",
+      "label": "Certificate 3 URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Lithuania_Certificate.jpg?v=1682591025",
+      "info": "Used if no certificate image is uploaded"
+    },
+    
+    {
+      "type": "header",
+      "content": "Trade Show Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "trade_show_image_1",
+      "label": "Trade Show Image 1"
+    },
+    {
+      "type": "text",
+      "id": "trade_show_image_1_alt",
+      "label": "Trade Show Image 1 Alt Text",
+      "default": "Mipel Trade Show"
+    },
+    {
+      "type": "text",
+      "id": "trade_show_image_1_url",
+      "label": "Trade Show Image 1 URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_1.jpg?v=1682591083",
+      "info": "Used if no trade show image is uploaded"
+    },
+    
+    {
+      "type": "image_picker",
+      "id": "trade_show_image_2",
+      "label": "Trade Show Image 2"
+    },
+    {
+      "type": "text",
+      "id": "trade_show_image_2_alt",
+      "label": "Trade Show Image 2 Alt Text",
+      "default": "Mipel Trade Show"
+    },
+    {
+      "type": "text",
+      "id": "trade_show_image_2_url",
+      "label": "Trade Show Image 2 URL (Fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_2.jpg?v=1682591083",
+      "info": "Used if no trade show image is uploaded"
     }
   ],
   "blocks": [
@@ -276,7 +529,7 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "Team Member Photo"
         },
         {
           "type": "text",
@@ -286,13 +539,14 @@
         {
           "type": "text",
           "id": "role",
-          "label": "Role"
+          "label": "Role/Position"
         },
         {
           "type": "checkbox",
           "id": "full_row",
-          "label": "Full row",
-          "default": false
+          "label": "Full Width",
+          "default": false,
+          "info": "Make this team member span the full width"
         }
       ]
     }

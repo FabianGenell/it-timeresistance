@@ -370,6 +370,16 @@
     "expand_text": {
       "see_more": "Ver más",
       "see_less": "Ver menos"
+    },
+    "countries": {
+      "australia": "Australia",
+      "canada": "Canadá",
+      "united_states": "Estados Unidos",
+      "european_union": "Unión Europea",
+      "germany": "Alemania",
+      "global": "Global",
+      "singapore": "Singapur",
+      "united_kingdom": "Reino Unido"
     }
   },
   "gift_cards": {

@@ -57,6 +57,8 @@
     "general": {
       "add": "Hinzufügen",
       "cart": "Ihr Warenkorb",
+      "discount_code": "Haben Sie einen Rabattcode? Fügen Sie ihn im nächsten Schritt hinzu",
+      "we_accept": "Wir akzeptieren:",
       "checkout": "Auschecken",
       "confirmation_popup_heading": "Artikel wurde in den Warenkorb gelegt",
       "continue_shopping": "Weiter einkaufen",
@@ -229,7 +231,13 @@
     "sort_title": "Sortieren",
     "title": "Filter",
     "to": "An",
-    "zero_selected": "0 ausgewählt"
+    "zero_selected": "0 ausgewählt",
+    "manual": "Unsere Favoriten",
+    "best_selling": "Bestseller",
+    "newest": "Neueste",
+    "oldest": "Älteste",
+    "price_ascending": "Preis: niedrig zu hoch",
+    "price_descending": "Preis: hoch zu niedrig"
   },
   "general": {
     "404": {
@@ -309,7 +317,8 @@
     "navigation": {
       "home": "Startseite",
       "next": "nächste",
-      "previous": "Vorherige"
+      "previous": "Vorherige",
+      "scroll_to_top": "Nach oben scrollen"
     },
     "newsletter_form": {
       "confirmation": "Vielen Dank für Ihr Abonnement!",
@@ -357,6 +366,23 @@
       "link_copied": "Link in die Zwischenablage kopiert",
       "link_copy_error": "Fehler beim Kopieren des Links.",
       "share": "Teilen"
+    },
+    "expand_text": {
+      "see_more": "Mehr anzeigen",
+      "see_less": "Weniger anzeigen"
+    },
+    "countries": {
+      "australia": "Australien",
+      "canada": "Kanada",
+      "united_states": "Vereinigte Staaten",
+      "european_union": "Europäische Union",
+      "germany": "Deutschland",
+      "global": "Global",
+      "singapore": "Singapur",
+      "united_kingdom": "Vereinigtes Königreich",
+      "spain": "Spanien",
+      "italy": "Italien",
+      "france": "Frankreich"
     }
   },
   "gift_cards": {

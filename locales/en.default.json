@@ -367,6 +367,10 @@
       "link_copied": "Link copied!",
       "link_copy_error": "Error copying link.",
       "share": "Share"
+    },
+    "expand_text": {
+      "see_more": "See more",
+      "see_less": "See less"
     }
   },
   "gift_cards": {

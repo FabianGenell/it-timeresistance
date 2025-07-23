@@ -366,6 +366,10 @@
       "link_copied": "Link copiato negli appunti",
       "link_copy_error": "Errore nella copia del link.",
       "share": "Condividi"
+    },
+    "expand_text": {
+      "see_more": "Vedi di più",
+      "see_less": "Vedi di meno"
     }
   },
   "gift_cards": {

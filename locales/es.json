@@ -366,6 +366,10 @@
       "link_copied": "Enlace copiado al portapapeles",
       "link_copy_error": "Error al copiar el enlace.",
       "share": "Comparte"
+    },
+    "expand_text": {
+      "see_more": "Ver más",
+      "see_less": "Ver menos"
     }
   },
   "gift_cards": {

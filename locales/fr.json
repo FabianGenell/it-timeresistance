@@ -366,6 +366,10 @@
       "link_copied": "Lien copié dans le presse-papiers",
       "link_copy_error": "Erreur de copie du lien.",
       "share": "Partager"
+    },
+    "expand_text": {
+      "see_more": "Voir plus",
+      "see_less": "Voir moins"
     }
   },
   "gift_cards": {

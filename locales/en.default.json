@@ -380,7 +380,10 @@
       "germany": "Germany",
       "global": "Global",
       "singapore": "Singapore",
-      "united_kingdom": "United Kingdom"
+      "united_kingdom": "United Kingdom",
+      "spain": "Spain",
+      "italy": "Italy",
+      "france": "France"
     }
   },
   "gift_cards": {

@@ -379,7 +379,10 @@
       "germany": "Allemagne",
       "global": "Mondial",
       "singapore": "Singapour",
-      "united_kingdom": "Royaume-Uni"
+      "united_kingdom": "Royaume-Uni",
+      "spain": "Espagne",
+      "italy": "Italie",
+      "france": "France"
     }
   },
   "gift_cards": {

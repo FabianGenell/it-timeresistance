@@ -4,7 +4,7 @@
   @param {object} prod - Product object containing swatches (required)
   @param {string} option_name - Option name for swatch display (required)
   @param {boolean} [show_sibling_swatches] - Whether sibling swatches are enabled
-  @param {array} [sibling_products] - Array of sibling product objects
+  @param {object} [sibling_products] - Array of sibling product objects
 
   @example
   Basic product swatches
@@ -80,6 +80,9 @@
       {%- endfor -%}
     {% endif %}
 
-    {% render 'product-item-swatches-overflow', option_values_count: option_values_count, max_items: max_items %}
+    {% render 'product-item-swatches-overflow',
+      option_values_count: option_values_count,
+      max_items: max_items
+    %}
   </ul>
 </div>

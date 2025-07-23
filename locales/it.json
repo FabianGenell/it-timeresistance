@@ -57,6 +57,8 @@
     "general": {
       "add": "Aggiungi",
       "cart": "Il tuo carrello",
+      "discount_code": "Hai un codice sconto? Aggiungilo al prossimo passaggio",
+      "we_accept": "Accettiamo:",
       "checkout": "Check-out",
       "confirmation_popup_heading": "Articolo aggiunto al carrello",
       "continue_shopping": "Continua lo shopping",
@@ -229,7 +231,13 @@
     "sort_title": "Ordina",
     "title": "Filtra",
     "to": "A",
-    "zero_selected": "0 selezionata"
+    "zero_selected": "0 selezionata",
+    "manual": "I nostri preferiti",
+    "best_selling": "Più venduti",
+    "newest": "Più recenti",
+    "oldest": "Più vecchi",
+    "price_ascending": "Prezzo: dal più basso al più alto",
+    "price_descending": "Prezzo: dal più alto al più basso"
   },
   "general": {
     "404": {
@@ -309,7 +317,8 @@
     "navigation": {
       "home": "Home",
       "next": "Successiva",
-      "previous": "Precedente"
+      "previous": "Precedente",
+      "scroll_to_top": "Torna su"
     },
     "newsletter_form": {
       "confirmation": "Grazie per l'iscrizione",

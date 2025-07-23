@@ -1,3 +1,4 @@
+
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
@@ -317,7 +318,8 @@
     "navigation": {
       "home": "Home",
       "next": "Next",
-      "previous": "Previous"
+      "previous": "Previous",
+      "scroll_to_top": "Scroll to Top"
     },
     "newsletter_form": {
       "confirmation": "Thanks for subscribing!",

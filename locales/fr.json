@@ -57,6 +57,8 @@
     "general": {
       "add": "Ajouter",
       "cart": "Votre panier",
+      "discount_code": "Vous avez un code de réduction ? Ajoutez-le à l'étape suivante",
+      "we_accept": "Nous acceptons :",
       "checkout": "Voir le site",
       "confirmation_popup_heading": "Article ajouté au panier",
       "continue_shopping": "Poursuivre les achats",
@@ -229,7 +231,13 @@
     "sort_title": "Trier",
     "title": "Filtrez",
     "to": "À l'adresse suivante :",
-    "zero_selected": "0 sélectionné"
+    "zero_selected": "0 sélectionné",
+    "manual": "Nos favoris",
+    "best_selling": "Meilleures ventes",
+    "newest": "Plus récents",
+    "oldest": "Plus anciens",
+    "price_ascending": "Prix : du plus bas au plus élevé",
+    "price_descending": "Prix : du plus élevé au plus bas"
   },
   "general": {
     "404": {
@@ -309,7 +317,8 @@
     "navigation": {
       "home": "Accueil",
       "next": "Suivant",
-      "previous": "Précédent"
+      "previous": "Précédent",
+      "scroll_to_top": "Retour en haut"
     },
     "newsletter_form": {
       "confirmation": "Merci de vous être abonné !",

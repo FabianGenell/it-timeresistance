@@ -149,3 +149,5 @@ dist
 .pnp.*
 
 **/.claude/settings.local.json
+
+.shopify/

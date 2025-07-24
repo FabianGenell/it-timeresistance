@@ -532,6 +532,12 @@
     "blog_posts": {
       "more": "Más"
     },
+    "favorite_products": {
+      "title": "Productos favoritos",
+      "empty_state_title": "Aún no hay favoritos",
+      "empty_state_description": "Añade productos a tus favoritos para verlos aquí.",
+      "loading": "Cargando"
+    },
     "countdown_timer": {
       "days": "Días",
       "hours": "horas",

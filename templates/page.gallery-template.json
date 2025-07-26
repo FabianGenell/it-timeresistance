@@ -24,7 +24,7 @@
         "heading_rx9Uke": {
           "type": "heading",
           "settings": {
-            "title": "Gallery",
+            "title": "Galleria",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-2-base"
           }
@@ -491,6 +491,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Daydreams",
         "heading_tag": "h2",
         "subheading": "<p>This season, we drew creative energy from the enchanting Užutrakio Manor near Trakai, a stunning light-colored estate nestled by a serene lake. Užutrakio Manor, built in the late 19th century by the esteemed Polish architect Józef Huss, is a masterpiece of Neo-Renaissance architecture. Its splendid gardens, designed by the renowned French landscape architect Édouard André, feature blooming roses and majestic statues, creating a picturesque setting that beautifully complements our classic leather bags and accessories.<br/><br/>Our pieces, inspired by the intricate artistry of the manor’s architecture and its idyllic surroundings, reflect our dedication to crafting leather masterpieces that stand the test of time. Titled \"Daydreams,\" this shoot encapsulates the ethereal and dreamlike quality of wandering through Užutrakio Manor. The serene lake, lush gardens, and timeless architecture create a sense of being transported to a place where history and imagination intertwine, inspiring a state of daydream-like reverie.</p>",
@@ -964,6 +965,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Classic Reimagined",
         "heading_tag": "h2",
         "subheading": "<p>At Time Resistance, we craft leather bags and accessories that seamlessly blend classic design with modern sophistication. Our latest photoshoot captures this essence, featuring our new collection against the backdrop of the National Gallery’s minimalistic architecture and an otherworldly, futuristic skate park. These striking locations highlight the timeless elegance and forward-thinking design of our products, showcasing their versatility and enduring appeal. Join us in exploring this visual journey where tradition meets innovation, and discover how our creations transcend time.</p>",
@@ -1257,6 +1259,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Shapeshifter",
         "heading_tag": "h2",
         "subheading": "<p>Inspired by the harmony between the raw beauty of leather and contemporary elements, we focused on the interplay of textures. The studio's large windows and concrete details created a captivating atmosphere, emphasizing beautiful shapes and adding depth to each frame. This collection tells a story of a confident individual navigating the urban landscape, seamlessly integrating our leather accessories into a lifestyle that embraces modernity, elegance, and versatility. The result is a visually striking narrative that invites our audience into the artistic and contemporary world we've crafted.</p>",
@@ -1520,6 +1523,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Synagogue",
         "heading_tag": "h2",
         "subheading": "<p>In the world of fashion, Time Resistance is redefining artistry with our 'Timeless Art of Leather' philosophy. Our latest photoshoot pays homage to tradition, elegance, and timeless beauty, set in a historic synagogue—a harmonious blend of past and present. Step into a world where fashion becomes art, transcending time and trends, and discover the 'Timeless Art of Leather' with us.</p>",
@@ -1813,6 +1817,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Serenity",
         "heading_tag": "h2",
         "subheading": "<p>Our latest photoshoot Serenity is designed to capture the essence of summer. The photoshoot features one of our favorite models Edvina who is the embodiment of this notion. The photoshoot is meant to evoke feelings of warmth, happiness, and relaxation. We have used a variety of artistic techniques to capture the essence of summer in our leather bags. The photoshoot features a range of colors that are reminiscent of the summer season. We have also used lighting techniques to create a warm and inviting atmosphere that is perfect for summer. We hope our artistic take on the summer season and our leather bags will impress you.</p>",
@@ -2096,6 +2101,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Spring Fling",
         "heading_tag": "h2",
         "subheading": "<p>This spring, we invite you to experience a new kind of love: a love between you and your bag. Our latest photoshoot is a tribute to this special bond that transcends time and space. Our leather bags are more than just accessories. They are companions, confidants, and soulmates. They reflect your inner beauty and express your outer style. They are with you through thick and thin, through joy and sorrow, through work and play. They are the ones who make you feel alive and complete. Our photoshoot captures the magic of spring: the freshness of the air, the warmth of the sun, the vibrancy of the city. The model is a vision of elegance and charm, wearing a suit that matches his bags and his mood. The background is a stunning contrast of light and dark, with subtle touches of modernity and history. The photoshoot is a romance between you and your bag. It shows that you don’t need anyone else to make you happy. You just need yourself and your bag. So go ahead and indulge in a spring fling with our leather bags.</p>",
@@ -2359,6 +2365,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Old Town Young Soul",
         "heading_tag": "h2",
         "subheading": "<p>A new season and a new photoshoot at Time Resistance. Since we constantly update, improve and renew our collection, photo shoots have become an inseparable part of our journey. We have a lot of new leather backpacks, messenger bags, leather briefcases, leather duffel bags and so much more therefore we are really excited for you to finally see them. This time we were really inspired by everyone’s favorite thing – vacation. My favorite type of vacation is not rock climbing in Australia or surfing in Hawaii, my ideal way to relax and rejuvenate is to go to some European town full of life and history; wander around, and sit down for a cup of coffee or a glass of wine, observe the architecture and the people. We found a perfect representation for that - a classic yet youthful gentleman and one of the most authentic capitals in Europe – Vilnius. There are so many beautiful alleys and nooks in the old town that we could be there for days. The funny part was that we actually saw a lot of people there going to their jobs, wearing similar clothes and carrying leather briefcases so that photo shoot seemed very real this time.</p>",
@@ -2582,6 +2589,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Reflections",
         "heading_tag": "h2",
         "subheading": "<p>The summer is over, and the fall is upon us. New beginnings, great challenges and amazing rewards. We wanted to inspire you for all those things, whether it’s a new school, company or social circle. For the first time we have decided to use four amazing models instead of one or two like we normally do. It was quite a challenge making sure they work as a team however the results were amazing – a completely different vibe, dynamic shots and lots of fun! Check out how it all turned out in some formal and more casual settings.</p>",
@@ -2835,6 +2843,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Phases",
         "heading_tag": "h2",
         "subheading": "<p>Paulius is one of our favorite models. He really embodies Time Resistance brand therefore we have decided to work with him once more. Paulius is not only an amazing model, he actually wears many hats in life. In a way, he has inspired our latest photoshoot. We wanted to show how the same bag can fit in many settings or in different stages of life: a casual stroll, a school or a business trip. Check out some of our favorite shots taken in capital Vilnius.</p>",
@@ -3138,6 +3147,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Sun Kissed Rye",
         "heading_tag": "h2",
         "subheading": "<p>Travel is everything! Whether it‘s business or pleasure, it‘s always exciting, especially if the destination is as sunny, warm and fuzzy as our photoshoot Sun Kissed Rye. Fresh, cheerful and full of life – this is what we had in mind introducing the new collection of leather backpacks, totes, and for the very first time – sling bags!</p>",
@@ -3341,6 +3351,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "The Voyage",
         "heading_tag": "h2",
         "subheading": "<p>In the world of fashion, Time Resistance is redefining artistry with our 'Timeless Art of Leather' philosophy. Our latest photoshoot pays homage to tradition, elegance, and timeless beauty, set in a historic synagogue—a harmonious blend of past and present. Step into a world where fashion becomes art, transcending time and trends, and discover the 'Timeless Art of Leather' with us.</p>",
@@ -3564,6 +3575,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Dunes",
         "heading_tag": "h2",
         "subheading": "<p>For this photoshoot we have decided to get back to basics and flirt with the concept of „timeless“ which is such a big part of our brand. We still wanted to make it fresh and exciting though. It was decided to go with the idea of creating images that make it difficult to determine the place or time of the scene. Making it really ambiguous: is it the past, present or future? Isn‘t that a true definition of „timeless“?</p><p>Now, it is easier said than done. After discussing various locations it was set to take place at one of local quarries. Nice pastel earthy tones of the sand let our leather briefcases, backpacks, leather travel bags, etc. truly shine.</p><p>We added some carefully selected props like a transparent cube, a chair, mirrors, custom made golden ruins to make the shots more interesting, create an illusion, and also to raise questions: Are they really just walking in a desert at the present time or is this a distant future and the office is underground, underneath the sand?</p>",
@@ -3787,6 +3799,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Romantic Getaway",
         "heading_tag": "h2",
         "subheading": "<p>Most of our bags and accessories are unisex. We find it edgy, cool and empowering for a women to carry a briefcase even a really masculine looking one, this is how you know she is a real boss. We wanted to utilize both male and female models to show how leather portfolios, classic doctor bags, etc. can be used by both without being a caricature. The tale is as old as time: after a busy work day (of course they look so professional!), a couple meet for a romantic getaway.</p>",
@@ -3920,6 +3933,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "King of Shadows",
         "heading_tag": "h2",
         "subheading": "<p>A visual masterpiece. This is how we remember the experience from the photoshoot King of Shadows. Cold concrete, strikingly blue sky and the contrast of those two made the images dynamic and magical. A lonesome man in a dystopian world manages to survive with only wisdom in his eyes and reliable leather briefcase in his hands.</p>",
@@ -4053,6 +4067,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Doctor Who",
         "heading_tag": "h2",
         "subheading": "<p>We were so excited about the launch of a new travel bag collection. Sleek, sharp, modern yet classic – these words described both, the bags and the atmosphere of the photoshoot. A mysterious man full of class and attitude is a prophet in a new land.</p>",
@@ -4196,6 +4211,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Wind Master",
         "heading_tag": "h2",
         "subheading": "<p>Freedom is the power or right to act, speak, or think as one wants without hindrance or restraint. Freedom is all about having the right to be different. Many grandparents, parents of ours and even us fought for this precious virtue. This is something we always wanted and something we will always strive for. This is what sums up the essence of this photoshoot. Vintage but with a hint of modern – who says you can‘t have it all?</p>",
@@ -4369,6 +4385,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Secret Agent",
         "heading_tag": "h2",
         "subheading": "<p>It‘s all about the versatility of leather bags. We really went wild with this one, story-wise of course. He is a secret agent working on one of his cases, infiltrating and observing. Different locations, from corporate headquarters to a train station to an abandoned nuclear plant, perfectly disguised and ready to strike.</p>",
@@ -4542,6 +4559,7 @@
       ],
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Opposites Attract",
         "heading_tag": "h2",
         "subheading": "<p>We have always believed that classy leather bags are not for only stuffy business man, cool guys can wear them as well without loosing their swag. This is what we tried to prove with the photoshoot called Opposites Attract. Some shoots were taken in an old manor and the classic design doctor bags really brought us back in time for a moment. Then we moved to a skating park near some office buildings where many young guys like our handsome model actually work. The bags really accustomed to the new habitat and transformed the man into an edgy millennial.</p>",

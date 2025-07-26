@@ -41,8 +41,10 @@
     "capitalize_buttons": false,
     "buttons_letter_spacing": 50,
     "enable_section_animations": true,
+    "swatch_options": "Colore",
     "swatch_shape": "round",
     "use_variant_image_swatches": false,
+    "siblings_option_name": "Colore",
     "sale_badge_format": "percent_off",
     "custom_product_badge_group_1_tag_names": "Responsible",
     "custom_product_badge_group_1_color": "#3C9342",
@@ -77,89 +79,7 @@
     "social_youtube_link": "https://www.youtube.com/channel/UCg9OY-iAQRoNTxTI11MiOFQ",
     "favicon": "shopify://shop_images/favicon_b0751aa8-d8e7-4acd-a4ad-a5e62c7bf5c2.png",
     "enable_back_to_top": false,
-    "content_for_index": [],
-    "blocks": {
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
-      "1173261918193615741": {
-        "type": "shopify://apps/geo-pro-geolocation/blocks/geopro/16fc5313-7aee-4e90-ac95-f50fc7c8b657",
-        "disabled": false,
-        "settings": {}
-      },
-      "6052823664294247695": {
-        "type": "shopify://apps/qikify-form-builder/blocks/app-embed/753fa0d7-50d4-480a-b094-cff26e632c36",
-        "disabled": false,
-        "settings": {}
-      },
-      "14684659138027382045": {
-        "type": "shopify://apps/xo-gallery/blocks/xo-gallery-scripts/e61dfbaa-1a75-4e4e-bffc-324f17325251",
-        "disabled": true,
-        "settings": {}
-      },
-      "5946647744298494267": {
-        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
-        "disabled": true,
-        "settings": {
-          "storefront_layout_enabled": false,
-          "storefront_layout_type": "as-drawer",
-          "storefront_layout_collection_enabled": true,
-          "storefront_layout_primary_bg_color": "#000000",
-          "storefront_layout_primary_text_color": "#ffffff",
-          "storefront_layout_secondary_bg_color": "#F4F8FE",
-          "storefront_layout_secondary_text_color": "#333333",
-          "storefront_layout_ui_border_radius": 6,
-          "storefront_layout_notification_enabled_as_default": true,
-          "storefront_layout_notification_position": "left",
-          "storefront_layout_action_popup_position": "left",
-          "storefront_layout_drawer_position": "left",
-          "storefront_layout_drawer_width": 400,
-          "storefront_layout_as_section_page": ""
-        }
-      },
-      "17676059084223943535": {
-        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
-        "disabled": false,
-        "settings": {}
-      },
-      "10864971697205422121": {
-        "type": "shopify://apps/gorgias-live-chat-helpdesk/blocks/gorgias/a66db725-7b96-4e3f-916e-6c8e6f87aaaa",
-        "disabled": false,
-        "settings": {}
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "12142455316664340074": {
-        "type": "shopify://apps/digital-darts-hreflang-tags/blocks/hreglang_tag/9a38367c-c3ce-4d6e-93ea-48ab8009c8a5",
-        "disabled": false,
-        "settings": {}
-      },
-      "14327677521557774844": {
-        "type": "shopify://apps/simprosys-google-shopping-feed/blocks/core_settings_block/1f0b859e-9fa6-4007-97e8-4513aff5ff3b",
-        "disabled": false,
-        "settings": {}
-      },
-      "4804304946286255945": {
-        "type": "shopify://apps/avada-cookie-consent/blocks/app-embed/deacc407-65bc-4a4e-84d9-f90e9e492cf3",
-        "disabled": false,
-        "settings": {}
-      },
-      "2102808784413787648": {
-        "type": "shopify://apps/kbite/blocks/main-app-embed/147a6f7f-6771-4f9b-8dc6-c14e6b24f32c",
-        "disabled": false,
-        "settings": {}
-      },
-      "4015264832934714879": {
-        "type": "shopify://apps/ecomsend-popups/blocks/app/a5670cf8-5705-4b01-ad9e-447033feae26",
-        "disabled": false,
-        "settings": {}
-      }
-    }
+    "content_for_index": []
   },
   "presets": {
     "Vogue": {

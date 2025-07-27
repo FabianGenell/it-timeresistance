@@ -38,6 +38,12 @@
         "overlay_opacity": 0,
         "enable_animation": true,
         "full_width": true,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
       }
     },
@@ -52,11 +58,11 @@
             "collapse_on_mobile": false,
             "title": "",
             "show_title_on_desktop": false,
-            "text": "<p>Time Resistance bags are not just mere accessories but rather a canvas where their unique story of experiences, achievements, and adventures becomes embodied. Every Time Resistance leather bag is destined to tell a unique and magnificent story of the life of its owner.</p>",
+            "text": "<p>Le borse Time Resistance non sono semplici accessori, ma vere e proprie tele sulle quali prendono forma storie uniche di esperienze, conquiste e avventure. Ogni borsa in pelle Time Resistance è pensata per raccontare la storia straordinaria e personale di chi la porta.</p>",
             "image": "shopify://shop_images/tr_logo_new_no_padding.png",
             "image_max_width": 200,
             "image_placement": "above_text",
-            "character_limit": 183,
+            "character_limit": 179,
             "show_social_icons": false,
             "enable_follow_on_shop": false
           }
@@ -75,7 +81,7 @@
             "collapse_on_mobile": true,
             "title": "Information",
             "show_title_on_desktop": true,
-            "link_list": "information"
+            "link_list": ""
           }
         },
         "footer-3": {
@@ -86,7 +92,7 @@
             "collapse_on_mobile": true,
             "title": "Customer Support",
             "show_title_on_desktop": true,
-            "link_list": "customer-support"
+            "link_list": ""
           }
         },
         "newsletter_U3HPJp": {

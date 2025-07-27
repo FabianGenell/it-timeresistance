@@ -24,7 +24,7 @@
         "heading_y4rVMb": {
           "type": "heading",
           "settings": {
-            "title": "Personalization",
+            "title": "Personalizzazione",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-3-base"
           }
@@ -32,7 +32,7 @@
         "text_c9UFAg": {
           "type": "text",
           "settings": {
-            "text": "<p>At Time Resistance, we believe that your leather accessory should be as unique as you are. Our personalization services allow you to add a touch of individuality to your favorite pieces, making them truly yours. Whether you choose laser engraving or a classic monogram, our skilled artisans will create a bespoke item that reflects your personal style and story.</p>",
+            "text": "<p>Ogni accessorio in pelle firmato Time Resistance è pensato per essere unico, proprio come chi lo sceglie. I servizi di personalizzazione permettono di aggiungere un tocco distintivo agli articoli preferiti, rendendoli unici ed esclusivi. Che si opti per un’incisione laser o per un classico monogramma, i nostri artigiani realizzeranno un prodotto su misura, in grado di interpretare ogni stile ed ogni personalità.</p>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -193,7 +193,7 @@
         "heading_836eqe": {
           "type": "heading",
           "settings": {
-            "title": "Laser Engraving",
+            "title": "Incisione laser",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-3-base"
           }

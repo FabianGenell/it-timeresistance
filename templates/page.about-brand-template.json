@@ -24,7 +24,7 @@
         "heading_RAnFy7": {
           "type": "heading",
           "settings": {
-            "title": "About Brand",
+            "title": "La nostra anima",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-2-base"
           }
@@ -38,7 +38,7 @@
         "text_EqF4ic": {
           "type": "text",
           "settings": {
-            "text": "<p>Time Resistance bags are not just mere accessories but rather a canvas where their unique story of experiences, achievements, and adventures becomes embodied. Every Time Resistance leather bag is destined to tell a unique and magnificent story of the life of its owner. They are thoughtfully designed and crafted to serve that purpose and to get better with age. They are like friends that accompany you on your journey through life, like wine that gets better with age, like you who are unique and magnificent in your own way. We want to provide you with the possibility, the inspiration, the urge to follow that example and carry a bag that will become a part of your own design, a representation of your life and your unique story.</p>",
+            "text": "<p>Le borse Time Resistance non sono semplici accessori, ma vere e proprie tele sulle quali prendono forma storie uniche di esperienze, conquiste e avventure. Ogni borsa in pelle Time Resistance è pensata per raccontare la storia straordinaria e personale di chi la porta. Progettate e realizzate con cura, sono create per durare nel tempo e migliorare con gli anni. Sono compagne di viaggio fidate che ti accompagneranno durante ogni tua avventura grande e piccola, affinandosi con il tempo e l'esperienza, proprio come un buon vino che invecchiando si arricchisce; proprio come te, che sei una persona unica e straordinaria a modo tuo. Vogliamo offrirti la possibilità, l'ispirazione e l'impulso per seguire quell'esempio, e scegliere una borsa che diventerà parte integrante del tuo stile, testimone della tua vita e custode della tua storia irripetibile.</p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -52,6 +52,12 @@
         "alignment": "center_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700
@@ -63,7 +69,7 @@
         "subheading_rrd9y3": {
           "type": "subheading",
           "settings": {
-            "subheading": "Timeless Art of Leather",
+            "subheading": "L'intramontabile arte della pelle",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-4-base"
           }
@@ -71,7 +77,7 @@
         "text_DC6JBy": {
           "type": "text",
           "settings": {
-            "text": "<p>At Time Resistance, we believe that leather is more than just a material. It is a form of art that transcends time and trends. That’s why we chose the slogan Timeless Art of Leather to represent our brand and our values.</p>",
+            "text": "<p>Per Time Resistance, la pelle è molto più di un semplice materiale. È una forma d’arte che supera le mode e resiste al tempo. È per questo abbiamo scelto lo slogan “Timeless Art of Leather”: per incarnare l'essenza del nostro marchio e i valori in cui crediamo.</p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -95,6 +101,12 @@
         "button_text_color": "#ffffff",
         "enable_animation": true,
         "full_width": false,
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -104,7 +116,7 @@
         "subheading_4X4TVr": {
           "type": "subheading",
           "settings": {
-            "subheading": "Timeless",
+            "subheading": "Intramontabile",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -112,7 +124,7 @@
         "text_YjpmnL": {
           "type": "text",
           "settings": {
-            "text": "<p>Our leather bags are designed to last for generations, not just seasons. They are classic, elegant and versatile, suitable for any occasion and style. We use only the finest quality leather that ages beautifully and develops a unique patina over time.</p>",
+            "text": "<p>Le nostre borse in pelle sono pensate per durare generazioni, non solo stagioni. Classiche, eleganti e versatili, si adattano a ogni stile ed a ogni occasione. Utilizziamo esclusivamente pelle di altissima qualità, che col tempo acquista bellezza e sviluppa una patina unica.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -125,7 +137,7 @@
         "subheading_bwJGeV": {
           "type": "subheading",
           "settings": {
-            "subheading": "Art",
+            "subheading": "Arte",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -133,7 +145,7 @@
         "text_WBVtW6": {
           "type": "text",
           "settings": {
-            "text": "<p>Time Resistance leather bags are crafted with passion and skill by our talented artisans. They pay attention to every detail, from the stitching to the lining, to create pieces that are both functional and aesthetic. Each bag is a work of art that reflects our creativity and innovation.</p>",
+            "text": "<p>Le borse Time Resistance sono realizzate con passione e maestria dai nostri artigiani. Ogni dettaglio — dalle cuciture alla fodera — è curato con attenzione per creare oggetti che uniscono funzionalità ed estetica. Ogni borsa è un’opera d’arte che riflette la nostra creatività e il nostro spirito innovativo.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -146,7 +158,7 @@
         "subheading_3RF8ci": {
           "type": "subheading",
           "settings": {
-            "subheading": "Leather",
+            "subheading": "Pelle",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -154,7 +166,7 @@
         "text_HUk3wJ": {
           "type": "text",
           "settings": {
-            "text": "<p>We respect and honor the natural beauty of this material. We source our leather from ethical and sustainable suppliers, and we use eco-friendly processes to tan and dye it. We celebrate the diversity and richness of leather, offering a variety of colors, textures and finishes.</p>",
+            "text": "<p>Onoriamo la bellezza autentica di questo materiale, nel pieno rispetto della sua natura. Selezioniamo la nostra pelle da fornitori etici e sostenibili, e adottiamo processi di concia e tintura eco-compatibili. Celebriamo la varietà e la ricchezza della pelle offrendo una gamma di colori, texture e finiture.</p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -173,6 +185,12 @@
         "alignment": "left_left",
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "full",
         "custom_content_width": 700
@@ -296,11 +314,37 @@
       ],
       "name": "About Us",
       "settings": {
-        "team_title": "Meet our core team, the people behind the scenes who make our company run smoothly and successfully.",
+        "tab_1_name": "Il Nostro Team",
+        "tab_2_name": "Prodotti",
+        "tab_3_name": "La Nostra Cronistoria",
+        "tab_4_name": "Internazionale",
+        "team_title": "Il nostro team: le persone che lavorano dietro le quinte e rendono possibile ogni successo.",
         "video_title": "",
         "video": "shopify://files/videos/about-us-products-timeresistance.mp4",
+        "features_title": "Caratteristiche",
+        "feature_1_text": "Made in Italy",
+        "feature_1_icon_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/made_in_italy.svg?v=1683187137",
+        "feature_2_text": "Design classico",
+        "feature_2_icon_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/classic_design.svg?v=1683186411",
+        "feature_3_text": "Pelle pieno fiore, tinta a mano e conciata al vegetale",
+        "feature_3_icon_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/full_grain.svg?v=1683186410",
+        "feature_4_text": "Fatto a mano",
+        "feature_4_icon_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/hand_made.svg?v=1683186411",
+        "feature_5_text": "Filosofia “Slow fashion”",
+        "feature_5_icon_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/fashion.svg?v=1683186411",
         "timeline_image": "shopify://shop_images/timeline2022_1_8f800810-7b95-44dd-8508-6d17839bc13b.webp",
-        "timeline_title": ""
+        "timeline_title": "",
+        "international_content": "<p>We serve customers from over 90 countries.</p><p>Time Resistance partners with carefully selected brand ambassadors.</p><p>We exhibit at various trade shows around the world including Liberty Fairs NY (USA), Mipel (Italy), Nordic Shoe and Bag Fair (Sweden), and ILM (Germany).<br/>ILM is a trade fair that takes place in Offenbach am Main, Germany. It is one of the largest and most important trade fairs for high-quality leather goods, luggage, bags and accessories.<br/>Mipel is another trade show that takes place in Milan, Italy. It is an international event that showcases leather goods and fashion accessories.<br/>Nordic Shoe and Bag Fair is a trade show that takes place in Stockholm, Sweden. It is a platform for Scandinavian shoe and bag brands to showcase their products.<br/>Liberty Fairs NY is a trade show that takes place in New York City, USA. It is a contemporary fashion trade show that showcases men's and women's apparel, footwear, accessories and lifestyle brands.</p><p>Our participation in trade shows allows us to showcase our products to a wider audience and to connect with other industry professionals. It also gives us an opportunity to stay up-to-date with the latest trends and developments in the industry.</p><p>Time Resistance is registered in the EU, the US, China and Australia.</p>",
+        "certificate_1_alt": "USA Certificate",
+        "certificate_1_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/USA_Certificate.jpg?v=1682590950",
+        "certificate_2_alt": "China Certificate",
+        "certificate_2_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/China_Certificate.jpg?v=1682590998",
+        "certificate_3_alt": "Lithuania Certificate",
+        "certificate_3_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Lithuania_Certificate.jpg?v=1682591025",
+        "trade_show_image_1_alt": "Mipel Trade Show",
+        "trade_show_image_1_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_1.jpg?v=1682591083",
+        "trade_show_image_2_alt": "Mipel Trade Show",
+        "trade_show_image_2_url": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_2.jpg?v=1682591083"
       }
     },
     "custom_liquid_wdwUH6": {
@@ -310,6 +354,12 @@
         "custom_liquid": "<style>\n        /* Team Styles */\n        .team-heading {\n            text-align: center;\n            margin-bottom: 20px;\n        }\n\n        @media (max-width: 820px) {\n            .team-heading {\n                text-align: left !important;\n            }\n        }\n\n        .team-container {\n            display: grid;\n            grid-template-columns: repeat(5, 1fr);\n            gap: 10px;\n            justify-items: center;\n        }\n\n        .team-member {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            text-align: center;\n            margin: 10px;\n            width: 80%;\n            max-width: 150px;\n            /* Adjust according to your needs */\n        }\n\n        .team-member img {\n            width: 100%;\n            height: auto;\n            border-radius: 50%;\n            object-fit: cover;\n        }\n\n        .team-member-name,\n        .team-member-role {\n            margin: 5px 0;\n        }\n\n        .team-member-name {\n            font-family: 'Playfair Display';\n            font-style: normal;\n            font-weight: 700;\n            font-size: 20px;\n            line-height: 100%;\n            display: flex;\n            align-items: center;\n            text-align: center;\n            color: #34281F;\n        }\n\n        .team-member-role {\n            font-family: 'Montserrat';\n            font-style: normal;\n            font-weight: 400;\n            font-size: 14px;\n            line-height: 100%;\n            letter-spacing: 0.1em;\n            text-transform: uppercase;\n            color: #786352;\n        }\n\n        @media (max-width: 820px) {\n            .team-container {\n                grid-template-columns: repeat(2, 1fr);\n            }\n\n            .team-member:first-child {\n                grid-column: span 2;\n            }\n        }\n\n        @media (min-width: 821px) {\n            .team-member:first-child {\n                grid-column: span 5;\n            }\n        }\n\n        /* Product Styles */\n        .products-container {\n            display: grid;\n            grid-template-columns: repeat(16, 1fr);\n            gap: 10px;\n        }\n\n        .product {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            overflow: hidden;\n        }\n\n        .heading {\n            font-family: 'Playfair Display';\n            font-style: normal;\n            font-weight: 700;\n            font-size: 20px;\n            line-height: 100%;\n            display: flex;\n            align-items: center;\n            color: #34281F;\n        }\n\n        .product-categories {\n            grid-column: 1 / 13;\n            grid-row-start: 1;\n        }\n\n        .features {\n            grid-column: 13 / 17;\n            grid-row-start: 1;\n        }\n\n        .product-1-1,\n        .product-1-2 {\n            grid-row-start: 2;\n        }\n\n        .product-1-1,\n        .product-2-1,\n        .product-3-1 {\n            grid-column: 1 / 13;\n        }\n\n        .product-text {\n            grid-column: 13 / 17;\n            grid-row: 2 / 6;\n            padding-top: 0;\n            margin-top: 0;\n        }\n\n        .product-text p {\n            display: flex;\n            align-items: center;\n        }\n\n        .img_inside_product-text {\n            padding-right: 10px;\n        }\n\n        .features_p {\n            font-family: 'Montserrat';\n            font-style: normal;\n            font-weight: 400;\n            font-size: 14px;\n            line-height: 140%;\n            letter-spacing: 0.1em;\n            color: #786352;\n        }\n\n        @media (max-width: 820px) {\n            .products-container {\n                display: flex;\n                flex-direction: column;\n            }\n\n            .product {\n                width: 100%;\n            }\n\n            .product-categories,\n            .features {\n                width: 100%;\n                grid-column: auto;\n            }\n\n            .features {\n                grid-row-start: auto;\n                order: 2;\n                /* Change the order of the features heading to appear in the first row */\n            }\n\n            .product-text {\n                grid-row-start: auto;\n                justify-self: start;\n                order: 3;\n                /* Change the order of the product-text to appear after the features heading */\n            }\n        }\n\n        #features_div {\n            width: 100%;\n        }\n\n        .product-text {\n            justify-content: flex-start;\n            /* aligns the content at the top on the main axis */\n            align-items: flex-start;\n            /* aligns the content at the top on the cross axis */\n        }\n\n        /* International Styles */\n        .international-wrapper {\n            display: flex;\n        }\n\n        .international-col-1 {\n            flex: 1;\n            margin-right: 10px;\n        }\n\n        .international-col-2 {\n            flex: 1;\n            margin-left: 10px;\n        }\n\n        .international-col-1 img,\n        .international-col-2 img {\n            width: 100%;\n            height: auto;\n        }\n\n        .international-col-1 .image-1,\n        .international-col-1 .image-2 {\n            width: calc(25% - 5px);\n        }\n\n        .international-col-1 .image-3 {\n            width: calc(50% - 5px);\n        }\n\n        @media (max-width: 820px) {\n            .international-wrapper {\n                flex-direction: column-reverse;\n            }\n\n            .international-col-1 {\n                margin-right: 0;\n            }\n\n            .international-col-2 {\n                margin-left: 0;\n            }\n\n            .international-col-1 .image-1,\n            .international-col-1 .image-2 {\n                width: calc(50% - 5px);\n            }\n\n            .international-col-1 .image-3 {\n                width: calc(100% - 5px);\n            }\n        }\n\n        .caret {\n            display: inline-block;\n            width: 0;\n            height: 0;\n            margin-left: 5px;\n            vertical-align: middle;\n            border-top: 4px solid;\n            border-right: 4px solid transparent;\n            border-left: 4px solid transparent;\n            float: right;\n        }\n\n        .caret-up {\n            transform: rotate(180deg);\n        }\n\n        /* Video Styles */\n        .video-container-custompage {\n    grid-column: 1 / span 11; /* Make the video container span 11 columns */\n    width: 100%; /* Ensure it takes full width of the grid columns */\n\tpadding-top:0px!important;\n}\n\n.video-container-custompage video {\n    width: 100%; /* Maintain the video width to fill the container */\n    height: auto; /* Maintain aspect ratio */\n\tpadding-top:0px!important;\n}\n\n\n        .desktop-video-custompage {\n            display: block;\n        }\n\n        .mobile-video-custompage {\n            display: none;\n        }\n\n        @media (max-width: 750px) {\n            .desktop-video-custompage {\n                display: none;\n            }\n\n            .mobile-video-custompage {\n                display: block;\n            }\n        }\n    </style>\n\n    <div class=\"tabs-wrapper left\">\n        <div class=\"tabs\">\n            <button class=\"header__menu-item link link--text focus-inset tab-button active\" data-tab=\"team\">\n                TEAM\n            </button>\n            <button class=\"header__menu-item link link--text focus-inset tab-button\" data-tab=\"products\">\n                PRODUCTS\n            </button>\n            <button class=\"header__menu-item link link--text focus-inset tab-button\" data-tab=\"timeline\">\n                TIMELINE\n            </button>\n            <button class=\"header__menu-item link link--text focus-inset tab-button\" data-tab=\"international\">INTERNATIONAL</button>\n        </div>\n\n        <div class=\"accordion-wrapper\">\n            <div class=\"accordion-container\">\n                <button class=\"header__menu-item link link--text focus-inset accordion666 active\" data-tab=\"team\">TEAM<span class=\"caret\"></span></button>\n                <div class=\"tab-content active\" id=\"team\">\n                    <div id=\"team_heading\" class=\"team-heading heading\">Meet our core team, the people behind the scenes who make our company run smoothly and successfully.</div>\n                    <div class=\"team-container\">\n                        <!-- Add your team members here -->\n                        <div class=\"team-member\">\n                            <!-- FIRST TEAM MEMBER -->\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/ceo.jpg?v=1682584120\" alt=\"CEO\" />\n                            <p class=\"team-member-name\">Artūras</p>\n                            <p class=\"team-member-role\">CEO</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/brand_manager.jpg?v=1682584173\" alt=\"Staff\" />\n                            <p class=\"team-member-name\">Donatas</p>\n                            <p class=\"team-member-role\">BRAND MANAGER</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/evelina.jpg?v=1716980478\" alt=\"E-COMMERCE\" />\n                            <p class=\"team-member-name\">Evelina</p>\n                            <p class=\"team-member-role\">E-COMMERCE</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/sandra.jpg?v=1716980478\" alt=\"B2B\" />\n                            <p class=\"team-member-name\">Sandra</p>\n                            <p class=\"team-member-role\">B2B</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/justina.jpg?v=1716980478\" alt=\"VISUAL AIDS\" />\n                            <p class=\"team-member-name\">Justina</p>\n                            <p class=\"team-member-role\">VISUAL AIDS</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/logistics-IT.jpg?v=1682584466\" alt=\"LOGISTICS / IT\" />\n                            <p class=\"team-member-name\">Vaidas</p>\n                            <p class=\"team-member-role\">LOGISTICS / IT</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/vaida.jpg?v=1716980478\" alt=\"QUALITY CONTROL\" />\n                            <p class=\"team-member-name\">Vaida</p>\n                            <p class=\"team-member-role\">QUALITY CONTROL</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/neringa.jpg?v=1716980478\" alt=\"HEAD OF PRODUCTION AND PROTOTYPING\" />\n                            <p class=\"team-member-name\">Neringa</p>\n                            <p class=\"team-member-role\">HEAD OF PRODUCTION AND PROTOTYPING</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/emilija.jpg?v=1716980478\" alt=\"MARKETPLACES\" />\n                            <p class=\"team-member-name\">Emilija</p>\n                            <p class=\"team-member-role\">ASSISTANT TO THE BRAND MANAGER</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/designer.jpg?v=1682584519\" alt=\"DESIGNER\" />\n                            <p class=\"team-member-name\">Jolanta</p>\n                            <p class=\"team-member-role\">DESIGNER</p>\n                        </div>\n                        <div class=\"team-member\">\n                            <img src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/roberta.jpg?v=1716980478\" alt=\"MARKETPLACES\" />\n                            <p class=\"team-member-name\">Roberta</p>\n                            <p class=\"team-member-role\">MARKETPLACES</p>\n                        </div>\n                        <!-- Repeat for other team members -->\n                    </div>\n                </div>\n            </div>\n            <div class=\"accordion-container\">\n                <button class=\"header__menu-item link link--text focus-inset accordion666\" data-tab=\"products\">PRODUCTS<span class=\"caret\"></span></button>\n                <div class=\"tab-content\" id=\"products\">\n                    <div class=\"products-container\">\n                        <div class=\"heading product-categories\">Our Products</div>\n                        <div class=\"heading features\">Features</div>\n\n                        <!-- Video Container -->\n    <div class=\"video-container-custompage\">\n        <video class=\"desktop-video-custompage\" src=\"https://cdn.shopify.com/videos/c/o/v/89b99240f21642df924ab4b34039c970.mp4\" autoplay muted loop controls></video>\n        <video class=\"mobile-video-custompage\" src=\"https://cdn.shopify.com/videos/c/o/v/6362cd4d93ef40ba904dcc25f79ad24c.mp4\" autoplay muted loop controls></video>\n    </div>\n\n                        <div class=\"product-text\">\n                            <div id=\"features_div\">\n                                <p class=\"features_p\"><img class=\"img_inside_product-text\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/made_in_italy.svg?v=1683187137\" alt=\"Icon\" />Made in Italy</p>\n                                <p class=\"features_p\"><img class=\"img_inside_product-text\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/classic_design.svg?v=1683186411\" alt=\"Icon\" />Classic design</p>\n                                <p class=\"features_p\"><img class=\"img_inside_product-text\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/full_grain.svg?v=1683186410\" alt=\"Icon\" />Full-grain, hand-dyed, vegetable-tanned leather</p>\n                                <p class=\"features_p\"><img class=\"img_inside_product-text\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/hand_made.svg?v=1683186411\" alt=\"Icon\" />Hand made</p>\n                                <p class=\"features_p\"><img class=\"img_inside_product-text\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/fashion.svg?v=1683186411\" alt=\"Icon\" />“Slow fashion” mindset</p>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n            <div class=\"accordion-container\">\n                <button class=\"header__menu-item link link--text focus-inset accordion666\" data-tab=\"timeline\">TIMELINE<span class=\"caret\"></span></button>\n                <div class=\"tab-content\" id=\"timeline\">\n                    {% assign timeline_page = pages['timeline'] %}\n                    {{ timeline_page.content | render }}\n                </div>\n            </div>\n            <div class=\"accordion-container\">\n                <button class=\"header__menu-item link link--text focus-inset accordion666\" data-tab=\"international\">INTERNATIONAL<span class=\"caret\"></span></button>\n                <div class=\"tab-content\" id=\"international\">\n                    <div class=\"international-wrapper\">\n                        <div class=\"international-col-1\">\n                            <p>We serve customers from over 90 countries.</p>\n                            <p>Time Resistance partners with carefully selected brand ambassadors.</p>\n                            <p>We exhibit at various trade shows around the world including Liberty Fairs NY (USA), Mipel (Italy), Nordic Shoe and Bag Fair (Sweden), and ILM (Germany).<br>\n                                ILM is a trade fair that takes place in Offenbach am Main, Germany. It is one of the largest and most important trade fairs for high-quality leather goods, luggage, bags and accessories.<br>\n                                Mipel is another trade show that takes place in Milan, Italy. It is an international event that showcases leather goods and fashion accessories.<br>\n                                Nordic Shoe and Bag Fair is a trade show that takes place in Stockholm, Sweden. It is a platform for Scandinavian shoe and bag brands to showcase their products.<br>\n                                Liberty Fairs NY is a trade show that takes place in New York City, USA. It is a contemporary fashion trade show that showcases men’s and women’s apparel, footwear, accessories and lifestyle brands.</p>\n                            <p>Our participation in trade shows allows us to showcase our products to a wider audience and to connect with other industry professionals. It also gives us an opportunity to stay up-to-date with the latest trends and developments in the industry.</p>\n                            <p>Time Resistance is registered in the EU, the US, China and Australia.</p>\n                            <img class=\"image-1\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/USA_Certificate.jpg?v=1682590950\" alt=\"USA Certificate\">\n                            <img class=\"image-2\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/China_Certificate.jpg?v=1682590998\" alt=\"China Certificate\">\n                            <img class=\"image-3\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Lithuania_Certificate.jpg?v=1682591025\" alt=\"Lithuania Certificate\">\n                        </div>\n                        <div class=\"international-col-2\">\n                            <img class=\"image-4\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_1.jpg?v=1682591083\" alt=\"Mipel Trade Show\">\n                            <img class=\"image-5\" src=\"https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_2.jpg?v=1682591083\" alt=\"Mipel Trade Show\">\n                        </div>\n                    </div>\n                </div>\n\n\n            </div>\n        </div>\n    </div>\n    <script>\n        document.addEventListener('DOMContentLoaded', function () {\n            var tabButtons = document.querySelectorAll('.tab-button');\n            var tabContents = document.querySelectorAll('.tab-content');\n            var accordions = document.querySelectorAll('.accordion666');\n            var accordionHeadings = document.querySelectorAll('.accordion-heading');\n\n            function handleTabClick() {\n                var targetTab = this.dataset.tab;\n                tabButtons.forEach(function (button) {\n                    button.classList.remove('active');\n                });\n                tabContents.forEach(function (content) {\n                    content.classList.remove('active');\n                    content.style.display = 'none';\n                });\n                this.classList.add('active');\n                document.getElementById(targetTab).classList.add('active');\n                document.getElementById(targetTab).style.display = 'block';\n            }\n\n            function handleAccordionClick() {\n                this.classList.toggle('active');\n                var panel = this.nextElementSibling;\n                if (panel.style.display === 'block') {\n                    panel.style.display = 'none';\n                } else {\n                    panel.style.display = 'block';\n                }\n\n                // Toggle caret-up class\n                var caret = this.querySelector('.caret');\n                caret.classList.toggle('caret-up');\n            }\n\n            function handleMediaQueryChange(e) {\n                if (e.matches) {\n                    tabButtons.forEach(function (tabButton) {\n                        tabButton.removeEventListener('click', handleTabClick);\n                    });\n                    accordions.forEach(function (accordion) {\n                        accordion.addEventListener('click', handleAccordionClick);\n                    });\n                    var activeTabButton = document.querySelector('.tab-button.active');\n                    activeTabButton.classList.add('active');\n                    var activeTabContent = document.querySelector('.tab-content.active');\n                    activeTabContent.style.display = 'block';\n                } else {\n                    tabButtons.forEach(function (tabButton) {\n                        tabButton.addEventListener('click', handleTabClick);\n                    });\n                    accordions.forEach(function (accordion) {\n                        accordion.removeEventListener('click', handleAccordionClick);\n                        accordion.classList.remove('active');\n                        accordion.nextElementSibling.style.display = 'none';\n                    });\n                    tabButtons[0].classList.add('active');\n                    tabContents[0].classList.add('active');\n                    tabContents[0].style.display = 'block';\n                }\n            }\n\n            var mql = window.matchMedia('(max-width: 820px)');\n            mql.addEventListener('change', handleMediaQueryChange);\n            handleMediaQueryChange(mql);\n        });\n    </script>",
         "full_width": false,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     }

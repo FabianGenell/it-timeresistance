@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "title": "<p>FREE SHIPPING & EASY RETURNS</p>",
+            "title": "<p>SPEDIZIONE GRATUITA E RESI FACILI</p>",
             "title_mobile": "",
             "link": ""
           }
@@ -25,7 +25,7 @@
         "announcement-bar-1": {
           "type": "announcement",
           "settings": {
-            "title": "<p>10% OFF WITH CODE ITALY10</p>",
+            "title": "<p>10% DI SCONTO CON IL CODICE ITALY10</p>",
             "title_mobile": "",
             "link": ""
           }

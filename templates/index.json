@@ -313,7 +313,7 @@
         "collection_iWhJYk"
       ],
       "settings": {
-        "heading": "Customer Favourites",
+        "heading": "I preferiti dai clienti",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
@@ -349,7 +349,7 @@
             "focal_point": "image_presentation",
             "text_position": "center_flex-end",
             "accent": "",
-            "title": "BACKPACKS",
+            "title": "ZAINI",
             "heading_tag": "h3",
             "header_size": "md:text-2xl",
             "header_size_mobile": "text-xl",
@@ -389,7 +389,7 @@
             "focal_point": "image_presentation",
             "text_position": "center_flex-end",
             "accent": "",
-            "title": "CROSSBODY BAGS",
+            "title": "BORSE A TRACOLLA",
             "heading_tag": "h3",
             "header_size": "md:text-2xl",
             "header_size_mobile": "text-xl",
@@ -479,7 +479,7 @@
         "collection_eMi8KA"
       ],
       "settings": {
-        "heading": "Recently Unveiled",
+        "heading": "Novità",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
@@ -657,7 +657,7 @@
         "block_header_size": "md:text-4xl",
         "block_header_size_mobile": "text-3xl",
         "set_button_text_globally": true,
-        "block_link_text": "View All",
+        "block_link_text": "Visualizza di più",
         "set_button_style_globally": true,
         "block_button_style": "btn--primary",
         "block_button_padding": "8px 40px",

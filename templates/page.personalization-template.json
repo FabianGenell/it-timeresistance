@@ -263,7 +263,7 @@
         "text_969QY7": {
           "type": "text",
           "settings": {
-            "text": "<ul><li>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</li></ul>",
+            "text": "<ul><li>Per l’incisione di simboli o loghi, inviare un file PNG all’indirizzo <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a>.</li></ul>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -292,7 +292,7 @@
         "text_RtXfU9": {
           "type": "text",
           "settings": {
-            "text": "<p>Once we receive your order, our team will prepare a suggestion for the placement and size of the engraving and send it to you for approval.</p>",
+            "text": "<p>Una volta ricevuto l’ordine, verrà inviata una proposta con dimensioni e posizionamento dell’incisione per approvazione.</p>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -322,7 +322,7 @@
         "text_EQKKXD": {
           "type": "text",
           "settings": {
-            "text": "<p>Laser Engraving Examples</p>",
+            "text": "<p>Esempi di incisione laser</p>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -380,7 +380,7 @@
         "text_VYj9Mm": {
           "type": "text",
           "settings": {
-            "text": "<p><em>Laser engraving reacts with the leather surface, producing a unique shade each time that depends on the leather’s color; the engraving color is determined by the leather and cannot be freely selected.</em></p>",
+            "text": "<p><em>L’incisione laser reagisce con la superficie del cuoio, generando ogni volta una tonalità unica che dipende dal colore della pelle. Il colore dell’incisione è determinato dal tipo di cuoio e non può essere scelto liberamente.</em></p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -488,7 +488,7 @@
         "heading_jgUYii": {
           "type": "heading",
           "settings": {
-            "title": "Monograms (Debossing)",
+            "title": "Monogrammi (a rilievo)",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-3-base"
           }
@@ -496,7 +496,7 @@
         "text_MCq79H": {
           "type": "text",
           "settings": {
-            "text": "<p>For a timeless and refined touch, consider adding a monogram to your leather accessory. Our debossing service imprints your initials into the leather, creating a subtle yet striking effect. To personalize your item with a monogram, simply provide the following details in the Order Special Instructions section in Your Cart when placing your order.</p><ul><li>Initials: Specify up to ten characters in upper case letters.</li><li>Preferred Color: Choose from Clear, Black, Silver, or Gold.</li></ul><p>Our monograms are crafted using the Georgia Standard font, ensuring a classic and sophisticated appearance.</p><p>Monogram/Debossing Examples</p>",
+            "text": "<p>Per un tocco senza tempo e raffinato, si consiglia l’aggiunta di un monogramma all’accessorio in pelle. Il servizio di impressione a caldo consente di imprimere le iniziali nella pelle, creando un effetto discreto ma distintivo. Per richiedere un monogramma, selezionare l’opzione “Personalizzazione” al momento dell’ordine e fornire le seguenti informazioni nel campo “Istruzioni speciali per l’ordine” nel carrello:</p><ul><li>Iniziali: È possibile inserire fino a dieci lettere maiuscole.</li><li>Colore preferito: Disponibili: trasparente, nero, argento, oro.</li></ul><p>I monogrammi vengono realizzati con il carattere Georgia Standard, per un risultato classico ed elegante.</p><p>Esempi di monogrammi (impressione a caldo)</p>",
             "text_font_class": "fs-body-100"
           }
         }

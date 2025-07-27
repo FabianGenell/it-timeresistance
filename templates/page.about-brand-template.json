@@ -240,7 +240,7 @@
           "settings": {
             "image": "shopify://shop_images/justina.jpg",
             "name": "Justina",
-            "role": "VISUAL AIDS",
+            "role": "CONTENUTI VISIVI",
             "full_row": false
           }
         },
@@ -249,7 +249,7 @@
           "settings": {
             "image": "shopify://shop_images/logistics-IT.jpg",
             "name": "Vaidas",
-            "role": "LOGISTICS / IT",
+            "role": "LOGISTICA / IT",
             "full_row": false
           }
         },
@@ -258,7 +258,7 @@
           "settings": {
             "image": "shopify://shop_images/vaida.jpg",
             "name": "Vaida",
-            "role": "QUALITY CONTROL",
+            "role": "CONTROLLO QUALITÀ",
             "full_row": false
           }
         },
@@ -267,7 +267,7 @@
           "settings": {
             "image": "shopify://shop_images/neringa.jpg",
             "name": "Neringa",
-            "role": "HEAD OF PRODUCTION AND PROTOTYPING",
+            "role": "RESPONSABILE PRODUZIONE E PROTOTIPAZIONE",
             "full_row": false
           }
         },
@@ -276,7 +276,7 @@
           "settings": {
             "image": "shopify://shop_images/emilija.jpg",
             "name": "Emilija",
-            "role": "ASSISTANT TO THE BRAND MANAGER",
+            "role": "ASSISTENTE AL BRAND MANAGER",
             "full_row": false
           }
         },
@@ -294,7 +294,7 @@
           "settings": {
             "image": "shopify://shop_images/roberta.jpg",
             "name": "Roberta",
-            "role": "MARKETPLACES",
+            "role": "MARKETPLACE",
             "full_row": false
           }
         }

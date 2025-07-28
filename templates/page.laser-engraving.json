@@ -24,7 +24,7 @@
         "heading_epeNpG": {
           "type": "heading",
           "settings": {
-            "title": "Laser Engraving",
+            "title": "Incisione laser",
             "heading_tag": "h5",
             "heading_font_class": "fs-heading-3-base"
           }
@@ -32,7 +32,7 @@
         "text_6Bgbey": {
           "type": "text",
           "settings": {
-            "text": "<p>When placing your order, please leave a note in the Order Special Instructions section in Your Cart with the engraving text and your chosen font style.</p>",
+            "text": "<p>Al momento dell’ordine, lascia una nota nella sezione “Istruzioni speciali per l’ordine” nel carrello con il testo da incidere e lo stile di carattere scelto.</p>",
             "text_font_class": "fs-body-100"
           }
         },
@@ -49,7 +49,7 @@
         "text_jPDHLx": {
           "type": "text",
           "settings": {
-            "text": "<p>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\" target=\"_blank\"><strong>care@timeresistance.com</strong></a>.<br/><br/>Watch a short video guide on how to order the laser engraving service.</p>",
+            "text": "<p>Per incidere simboli o un logo, invia un file PNG a <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a>.</p><p>Guarda un breve video esplicativo su come richiedere il servizio di incisione laser.</p>",
             "text_font_class": "fs-body-100"
           }
         },
@@ -63,7 +63,7 @@
         "text_XC7KbN": {
           "type": "text",
           "settings": {
-            "text": "<p>More information about personalization services <a href=\"/pages/personalization\" target=\"_blank\" title=\"Personalization\"><strong>here</strong></a>.</p><p>*Personalized items are non-returnable.</p>",
+            "text": "<p><a href=\"/pages/personalization\" target=\"_blank\" title=\"Personalization\">Maggiori informazioni sui servizi di personalizzazione qui.</a></p><p><em>*Gli articoli personalizzati non sono soggetti a reso.</em></p>",
             "text_font_class": "fs-body-100"
           }
         }

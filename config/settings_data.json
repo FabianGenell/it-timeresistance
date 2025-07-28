@@ -79,7 +79,14 @@
     "social_youtube_link": "https://www.youtube.com/channel/UCg9OY-iAQRoNTxTI11MiOFQ",
     "favicon": "shopify://shop_images/favicon_b0751aa8-d8e7-4acd-a4ad-a5e62c7bf5c2.png",
     "enable_back_to_top": false,
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "6052823664294247695": {
+        "type": "shopify://apps/qikify-form-builder/blocks/app-embed/753fa0d7-50d4-480a-b094-cff26e632c36",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Vogue": {

@@ -90,6 +90,11 @@
         "type": "shopify://apps/avada-cookie-consent/blocks/app-embed/deacc407-65bc-4a4e-84d9-f90e9e492cf3",
         "disabled": false,
         "settings": {}
+      },
+      "2102808784413787648": {
+        "type": "shopify://apps/kbite-back-in-stock-notify-me/blocks/main-app-embed/147a6f7f-6771-4f9b-8dc6-c14e6b24f32c",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

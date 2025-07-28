@@ -281,7 +281,7 @@
       "settings": {
         "use_variant_images": true,
         "divide_by_variant": false,
-        "heading": "Styled by Our Community - {{ product.metafields.custom.product_name_only.value }}",
+        "heading": "Lo Stile Della Nostra Community - {{ product.metafields.custom.product_name_only.value }}",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
@@ -326,7 +326,7 @@
     "recently-viewed-products": {
       "type": "recently-viewed-products",
       "settings": {
-        "title": "Recently Viewed",
+        "title": "Ultimi Articoli Visualizzati",
         "heading_tag": "h2",
         "subheading": "",
         "maximum_products": 8,

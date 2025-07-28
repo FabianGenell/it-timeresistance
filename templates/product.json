@@ -99,7 +99,7 @@
           "settings": {
             "expand_by_default": false,
             "column_placement": "right",
-            "heading": "Features",
+            "heading": "Caratteristiche",
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "",
@@ -112,7 +112,7 @@
           "settings": {
             "expand_by_default": false,
             "column_placement": "right",
-            "heading": "Materials",
+            "heading": "Materiali",
             "heading_tag": "h6",
             "content": "{{ product.metafields.custom.product_materials | metafield_tag }}",
             "page_for_content": "",
@@ -125,7 +125,7 @@
           "settings": {
             "expand_by_default": false,
             "column_placement": "right",
-            "heading": "Dimensions",
+            "heading": "Dimensioni",
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "",
@@ -138,7 +138,7 @@
           "settings": {
             "expand_by_default": false,
             "column_placement": "right",
-            "heading": "Personalization",
+            "heading": "Personalizzazione",
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "{{ product.metafields.custom.personalization_page.value }}",
@@ -151,7 +151,7 @@
           "settings": {
             "expand_by_default": false,
             "column_placement": "right",
-            "heading": "Shipping and Returns",
+            "heading": "Spedizioni e resi",
             "heading_tag": "h6",
             "content": "",
             "page_for_content": "shipping-and-returns",
@@ -203,7 +203,7 @@
         "heading_yXP96p": {
           "type": "heading",
           "settings": {
-            "title": "Tanner Leatherstein Verdict on Time Resistance",
+            "title": "Opinione di Tanner Leatherstein su Time Resistance",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-3-base"
           }
@@ -263,15 +263,6 @@
     },
     "17273399003752b51a": {
       "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_hmzp98": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_hmzp98"
-      ],
       "settings": {
         "heading": "",
         "enable_animation": true,

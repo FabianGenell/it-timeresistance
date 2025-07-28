@@ -85,6 +85,11 @@
         "type": "shopify://apps/qikify-form-builder/blocks/app-embed/753fa0d7-50d4-480a-b094-cff26e632c36",
         "disabled": false,
         "settings": {}
+      },
+      "4804304946286255945": {
+        "type": "shopify://apps/avada-cookie-consent/blocks/app-embed/deacc407-65bc-4a4e-84d9-f90e9e492cf3",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

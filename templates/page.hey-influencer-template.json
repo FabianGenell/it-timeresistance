@@ -24,7 +24,7 @@
         "heading_rUVqp7": {
           "type": "heading",
           "settings": {
-            "title": "Hey, influencer!",
+            "title": "Caro Influencer,",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-2-base"
           }
@@ -46,7 +46,7 @@
         "text_VYW3VM": {
           "type": "text",
           "settings": {
-            "text": "<p>Are you a content creator with a passion for timeless elegance and a genuine love for high-quality leather? At Time Resistance, we believe that leather is more than just a material. It is a form of art that transcends time and trends. We’re looking for authentic creators who can capture and share this vision through their content. Join us and become part of a brand that values craftsmanship, classic old-money style, and meaningful connections.</p>",
+            "text": "<p>sei un gentiluomo moderno interessato a collaborare con un brand di pelletteria e accessori dallo stile unico? Proponiamo partnership esclusive in merce, con l'opportunità di accedere a programmi di affiliazione dedicati.* L'unica richiesta è la pubblicazione delle immagini entro due settimane dalla ricezione del prodotto e l'invio di contenuti visivi di altissima qualità. Questa è un'opportunità straordinaria per unirsi a un'azienda in ascesa, il cui prestigio è in costante crescita. Siamo alla ricerca di influencer che sappiano narrare l'essenza dei nostri prodotti con autenticità e un tocco distintivo. Uniamoci per creare qualcosa di eccezionale e memorabile!</p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -96,7 +96,7 @@
         "text_farCQq": {
           "type": "text",
           "settings": {
-            "text": "<p>Please fill out the form and provide your<br/>social media handles. We will contact selected candidates.</p>",
+            "text": "<p>Compila il modulo e indica i tuoi profili social.<br/>Contatteremo i candidati selezionati.</p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -545,6 +545,7 @@
       "name": "Media Gallery",
       "settings": {
         "use_variant_images": false,
+        "divide_by_variant": true,
         "heading": "Styled by Our Community",
         "heading_tag": "h2",
         "subheading": "",

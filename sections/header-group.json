@@ -49,7 +49,7 @@
         "meganav-0": {
           "type": "full_width_meganav",
           "settings": {
-            "dropdown_parent_link": "Men",
+            "dropdown_parent_link": "Uomo",
             "column_count": 2,
             "show_column_borders": false,
             "show_promo": true,
@@ -80,7 +80,7 @@
         "full_width_meganav_GkPhnJ": {
           "type": "full_width_meganav",
           "settings": {
-            "dropdown_parent_link": "Women",
+            "dropdown_parent_link": "Donna",
             "column_count": 2,
             "show_column_borders": false,
             "show_promo": true,
@@ -141,7 +141,7 @@
         "meganav_double_banner_cCA3yF": {
           "type": "meganav_double_banner",
           "settings": {
-            "dropdown_parent_link": "Gift Ideas",
+            "dropdown_parent_link": "Idee regalo",
             "image_1": "shopify://shop_images/option1.jpg",
             "focal_point_1": "image_presentation",
             "promo_text_1": "PER LUI",

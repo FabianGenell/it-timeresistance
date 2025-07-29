@@ -24,15 +24,28 @@
         "heading_kJdQ7y": {
           "type": "heading",
           "settings": {
-            "title": "Privacy Policy",
+            "title": "Informativa sulla Privacy",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_3EtK8a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La presente informativa è redatta ai sensi dell’art. 13 del <strong>Regolamento UE 2016/679</strong> (“GDPR”) e del <strong>D.lgs. 196/2003</strong>, come modificato dal D.lgs. 101/2018. Descrive le modalità di trattamento dei dati personali degli utenti che interagiscono con il sito <a href=\"https://www.timeresistance.it\" target=\"_blank\" title=\"https://www.timeresistance.it\">www.timeresistance.it</a> (di seguito, il \"Sito\").</p><p><strong>Titolare del trattamento</strong></p><p>Il Titolare del trattamento dei dati personali è:</p><p><strong>Time Resistance</strong><br/>Email: <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/>Sito web: <a href=\"https://www.timeresistance.it\" target=\"_blank\" title=\"https://www.timeresistance.it\">www.timeresistance.it</a></p><p>Il Titolare può essere contattato per qualsiasi informazione relativa al trattamento dei dati personali.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_Kqp4YE": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
           }
         },
         "subheading_aD68dH": {
           "type": "subheading",
           "settings": {
-            "subheading": "Customer Information",
+            "subheading": "1. Quali dati raccogliamo e quando",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -40,7 +53,7 @@
         "text_byzVCf": {
           "type": "text",
           "settings": {
-            "text": "<p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our services. We use your information only to process your order and transactions, personalize your customer experience, improve our website, and for  our customer service to reach out to you if there is an issue.</p>",
+            "text": "<p>Raccogliamo i dati personali forniti volontariamente dall’utente durante:</p><ul><li>La registrazione al sito</li><li>L’effettuazione di un ordine</li><li>L’iscrizione alla newsletter</li><li>La compilazione di moduli di contatto</li></ul><p>I dati personali raccolti includono:</p><ul><li>Nome e cognome</li><li>Indirizzo email</li><li>Indirizzo di fatturazione e di spedizione</li><li>Numero di telefono</li><li>Dati di pagamento (gestiti tramite fornitori terzi)</li><li>Cronologia ordini</li><li>Indirizzo IP e dati tecnici sul dispositivo e browser utilizzato</li></ul><p>La navigazione sul sito è possibile anche in forma anonima; tuttavia, raccogliamo automaticamente alcuni dati tecnici mediante cookie (vedi <a href=\"/pages/cookies-policy\" target=\"_blank\" title=\"Cookies Policy\">Cookie Policy</a>).</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -278,6 +291,8 @@
       },
       "block_order": [
         "heading_kJdQ7y",
+        "text_3EtK8a",
+        "spacer_Kqp4YE",
         "subheading_aD68dH",
         "text_byzVCf",
         "spacer_A4RAf6",

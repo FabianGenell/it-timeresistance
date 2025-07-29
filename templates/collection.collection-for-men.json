@@ -238,7 +238,7 @@
         "metaobject_type": "mens_collections",
         "collections": [
           "briefcases-for-men",
-          "clutches-for-men"
+          "pochette-da-uomo"
         ],
         "heading": "All Men Categories",
         "heading_tag": "h2",
@@ -281,17 +281,17 @@
         "space_between_mobile": 4,
         "collection_list": [
           "briefcases-for-men",
-          "clutches-for-men",
-          "backpacks-for-men",
-          "document-cases-for-men",
-          "messenger-bags-for-men",
-          "toiletry-bags-for-men",
-          "duffel-bags-for-men",
+          "pochette-da-uomo",
+          "zaini-da-uomo",
+          "cartelle-portadocumenti-da-uomo",
+          "borse-messenger-da-uomo",
+          "necessaire-da-uomo",
+          "borsoni-da-uomo",
           "wallets-for-men",
-          "sling-bags-for-men",
-          "laptop-bags-for-men",
+          "borsa-monospalla-da-uomo",
+          "cartelle-porta-pc-da-uomo",
           "small-leather-goods-for-men",
-          "all-bags-for-men"
+          "borse-da-uomo"
         ],
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",

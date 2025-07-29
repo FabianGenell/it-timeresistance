@@ -49,7 +49,7 @@
             "title": "Men",
             "heading_tag": "h2",
             "text": "",
-            "link": "shopify://collections/men",
+            "link": "shopify://collections/uomo",
             "link_text": "Explore the collection",
             "button_style": "btn--primary"
           }
@@ -64,7 +64,7 @@
             "title": "Women",
             "heading_tag": "h2",
             "text": "",
-            "link": "shopify://collections/women",
+            "link": "shopify://collections/donna",
             "link_text": "Explore the collection",
             "button_style": "btn--primary"
           }

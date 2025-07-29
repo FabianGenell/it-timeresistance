@@ -277,15 +277,15 @@
         "space_between": 12,
         "space_between_mobile": 4,
         "collection_list": [
-          "handbags-for-women",
-          "backpacks-for-women",
-          "cross-body-bags-for-women",
-          "travel-bags-for-women",
+          "borse-a-mano-da-donna",
+          "zaini-da-donna",
+          "borse-a-tracolla-da-donna",
+          "borse-da-viaggio-da-donna",
           "top-handle-bags-for-women",
-          "business-briefcases-for-women",
-          "jewelry-boxes-for-women",
+          "cartelle-da-lavoro-da-donna",
+          "cofanetto-portagioie-da-donna",
           "small-leather-goods-for-women",
-          "all-bags-for-women"
+          "borse-da-donna"
         ],
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",

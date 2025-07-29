@@ -63,7 +63,7 @@
         "text_XC7KbN": {
           "type": "text",
           "settings": {
-            "text": "<p><a href=\"/pages/personalization\" target=\"_blank\" title=\"Personalization\">Maggiori informazioni sui servizi di personalizzazione qui.</a></p><p><em>*Gli articoli personalizzati non sono soggetti a reso.</em></p>",
+            "text": "<p><a href=\"/pages/personalization\" target=\"_blank\" title=\"Personalization\">Maggiori informazioni sui servizi di personalizzazione qui.</a></p><p><em>Gli articoli personalizzati non sono soggetti a reso.</em></p>",
             "text_font_class": "fs-body-100"
           }
         }

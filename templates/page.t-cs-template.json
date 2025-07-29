@@ -154,10 +154,52 @@
             "space": 12
           }
         },
+        "subheading_hLaKwP": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "6. Legge applicabile e foro competente",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_a3QHac": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Il contratto è regolato dalla <strong>legge italiana</strong>.<br/>Per qualsiasi controversia sarà competente il <strong>foro del luogo di residenza o domicilio del consumatore</strong> ai sensi dell’art. 66-bis del D.lgs. 206/2005 (Codice del Consumo).</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_H7jzzK": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "subheading_PRCdwi": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "7. Diritto di recesso (ai sensi del Codice del Consumo)",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "text_F4NmpC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ai sensi degli articoli 52 e seguenti del D.lgs. 206/2005, il Cliente ha diritto di recedere dall’acquisto entro 14 giorni di calendario dalla ricezione dei prodotti, senza dover fornire alcuna motivazione.</p><p>Per esercitare il diritto di recesso, il Cliente deve inviare una comunicazione esplicita all’indirizzo email: <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a>.</p><p>Entro 14 giorni dalla comunicazione, il Cliente dovrà restituire il prodotto nelle condizioni originali. Il rimborso sarà effettuato entro 14 giorni dal ricevimento del reso.</p><p>Le spese di restituzione sono a carico del Cliente, salvo diverso accordo.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "spacer_acEUEe": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
         "subheading_WW6fYh": {
           "type": "subheading",
           "settings": {
-            "subheading": "Company details",
+            "subheading": "8. Contatti",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -165,7 +207,7 @@
         "text_mTr3gG": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Trading Name:</strong> Time Resistance</p><p><strong>Company Name:</strong> UAB Baltic Synergy</p><p><strong>Legal Address:</strong> Baltu pr. 29-77, Kaunas, Lithuania 48244</p><p><strong>Company Number:</strong> 302920865</p><p><strong>CEO:</strong> Arturas Kanapkis <strong>Phone:</strong> +370 635 66288</p><p><strong>Customer Support Email:</strong> <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></p><p><strong>Website:</strong> <a href=\"/\" target=\"_blank\">au.timeresistance.com</a></p>",
+            "text": "<p>Per richieste di assistenza, resi o chiarimenti:<br/><strong>Email:</strong> <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/><strong>Telefono:</strong> +370 635 66288<br/><strong>Sito web:</strong> <a href=\"https://timeresistance.it\" target=\"_blank\" title=\"https://timeresistance.it\">timeresistance.it</a></p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -190,6 +232,12 @@
         "subheading_dT8QmB",
         "text_7AYaMt",
         "spacer_Mqqtd7",
+        "subheading_hLaKwP",
+        "text_a3QHac",
+        "spacer_H7jzzK",
+        "subheading_PRCdwi",
+        "text_F4NmpC",
+        "spacer_acEUEe",
         "subheading_WW6fYh",
         "text_mTr3gG"
       ],

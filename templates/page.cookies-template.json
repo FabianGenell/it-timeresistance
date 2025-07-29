@@ -180,7 +180,7 @@
         "text_Gw9h3D": {
           "type": "text",
           "settings": {
-            "text": "<p>Puoi gestire o disabilitare i cookie anche direttamente dal tuo browser. Di seguito le istruzioni per i browser più comuni:<br/>Google Chrome<br/>1.\tVai su Impostazioni → Privacy e Sicurezza → Impostazioni sito<br/>2.\tClicca su “Cookie e dati dei siti”<br/>3.\tPersonalizza le tue preferenze<br/>Mozilla Firefox<br/>1.\tVai su Opzioni → Privacy e Sicurezza<br/>2.\tSezione “Cookie e dati dei siti”<br/>3.\tGestisci blocchi e autorizzazioni<br/>Safari (Mac)<br/>1.\tVai su Preferenze → Privacy<br/>2.\tSeleziona “Blocca tutti i cookie” o gestisci in modo personalizzato<br/>Microsoft Edge<br/>1.\tVai su Impostazioni → Cookie e autorizzazioni del sito<br/>2.\tClicca su “Gestione e rimozione dei cookie”<br/>Opera<br/>1.\tVai su Impostazioni → Avanzate → Privacy e Sicurezza<br/>2.\tGestisci le impostazioni dei cookie<br/>Per maggiori informazioni visita www.allaboutcookies.org.</p>",
+            "text": "<p>Puoi gestire o disabilitare i cookie anche direttamente dal tuo browser. Di seguito le istruzioni per i browser più comuni:</p><p><strong>Google Chrome</strong><br/>1.\tVai su Impostazioni → Privacy e Sicurezza → Impostazioni sito<br/>2.\tClicca su “Cookie e dati dei siti”<br/>3.\tPersonalizza le tue preferenze</p><p><strong>Mozilla Firefox</strong><br/>1.\tVai su Opzioni → Privacy e Sicurezza<br/>2.\tSezione “Cookie e dati dei siti”<br/>3.\tGestisci blocchi e autorizzazioni</p><p><strong>Safari (Mac)</strong><br/>1.\tVai su Preferenze → Privacy<br/>2.\tSeleziona “Blocca tutti i cookie” o gestisci in modo personalizzato</p><p><strong>Microsoft Edge</strong><br/>1.\tVai su Impostazioni → Cookie e autorizzazioni del sito<br/>2.\tClicca su “Gestione e rimozione dei cookie”</p><p><strong>Opera</strong><br/>1.\tVai su Impostazioni → Avanzate → Privacy e Sicurezza<br/>2.\tGestisci le impostazioni dei cookie<br/>Per maggiori informazioni visita <a href=\"https://www.allaboutcookies.org\" target=\"_blank\" title=\"https://www.allaboutcookies.org\">www.allaboutcookies.org</a>.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -193,7 +193,7 @@
         "subheading_LfjDdJ": {
           "type": "subheading",
           "settings": {
-            "subheading": "For Microsoft Internet Explorer:",
+            "subheading": "7. Terze parti e strumenti di tracciamento",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -201,7 +201,7 @@
         "text_47gAWQ": {
           "type": "text",
           "settings": {
-            "text": "<p>1. Choose the menu “Tools” then “Internet Options”<br/>2. Click on the “Privacy” tab<br/>3. Select “Advanced”<br/>4. Choose the appropriate settings</p>",
+            "text": "<p>Il Sito può utilizzare cookie e strumenti di tracciamento di terze parti, come:</p><ul><li><strong>Google Analytics</strong> (IP anonimizzato)</li><li><strong>Meta/Facebook Ads</strong></li><li><strong>Google Ads</strong></li></ul><p>Queste terze parti agiscono in qualità di <strong>autonomi titolari</strong> o <strong>responsabili del trattamento</strong>. È possibile consultare le rispettive informative per ulteriori dettagli.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -214,7 +214,7 @@
         "subheading_8FJdpp": {
           "type": "subheading",
           "settings": {
-            "subheading": "For Google Chrome:",
+            "subheading": "8. Modifiche alla presente Cookie Policy",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -222,7 +222,7 @@
         "text_GM96Mn": {
           "type": "text",
           "settings": {
-            "text": "<p>1. Choose “Settings” and click on “Advanced”<br/>2. Under \"Privacy and Security\" click “Content Settings”<br/>3. Click “Cookies”</p>",
+            "text": "<p>Ci riserviamo il diritto di modificare la presente Cookie Policy in qualunque momento. Le modifiche saranno pubblicate su questa pagina e, ove necessario, richiesto un nuovo consenso.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -235,7 +235,7 @@
         "subheading_YRgXxk": {
           "type": "subheading",
           "settings": {
-            "subheading": "For Safari:",
+            "subheading": "9. Contatti",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -243,7 +243,7 @@
         "text_GdDdxF": {
           "type": "text",
           "settings": {
-            "text": "<p>1. Choose Preferences &gt; Privacy<br/>2. Click on “Block all cookies”</p>",
+            "text": "<p>Per ulteriori informazioni o per esercitare i tuoi diritti in materia di privacy, puoi contattarci:</p><p><strong>Email:</strong> <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/><strong>Sito web:</strong> <a href=\"https://www.timeresistance.it\" target=\"_blank\" title=\"https://www.timeresistance.it\">www.timeresistance.it</a></p>",
             "text_font_class": "fs-body-75"
           }
         },

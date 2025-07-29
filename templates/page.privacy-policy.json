@@ -158,7 +158,7 @@
         "text_FLeNzj": {
           "type": "text",
           "settings": {
-            "text": "<p>Adottiamo misure tecniche e organizzative adeguate per garantire la sicurezza dei dati personali, tra cui:<br/>•\tCrittografia dei dati durante la trasmissione<br/>•\tSistemi di protezione da accessi non autorizzati<br/>•\tFormazione continua del personale<br/>•\tBackup e disaster recovery<br/>Tuttavia, nessun sistema è infallibile: raccomandiamo agli utenti di:<br/>•\tUsare password robuste e uniche<br/>•\tNon condividere le proprie credenziali<br/>•\tUscire dall’account dopo l’uso in luoghi pubblici</p>",
+            "text": "<p>Adottiamo misure tecniche e organizzative adeguate per garantire la sicurezza dei dati personali, tra cui:</p><ul><li>Crittografia dei dati durante la trasmissione</li><li>Sistemi di protezione da accessi non autorizzati</li><li>Formazione continua del personale</li><li>Backup e disaster recovery</li></ul><p>Tuttavia, nessun sistema è infallibile: raccomandiamo agli utenti di:</p><ul><li>Usare password robuste e uniche</li><li>Non condividere le proprie credenziali</li><li>Uscire dall’account dopo l’uso in luoghi pubblici</li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -171,7 +171,7 @@
         "subheading_xEPGh6": {
           "type": "subheading",
           "settings": {
-            "subheading": "How Can You Help Protect Your Data?",
+            "subheading": "7. Periodo di conservazione",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -179,7 +179,7 @@
         "text_kgXH8H": {
           "type": "text",
           "settings": {
-            "text": "<p>You should always be cautious when sharing your personal data. No one from our company will ever ask you to confirm any bank account or credit card details via email. If you receive an email claiming to be from Time Resistance asking for such information, please ignore it and do not respond.</p><p>If you are using a computing device in a public location, log out and close the website browser when you complete your session. Additionally, take the following security measures to enhance your online safety:<br/></p><ul><li>Keep your account passwords private</li><li>Use a difficult word/number combination of at least 8 characters for your password and change it frequently</li><li>Avoid using the same password for different online accounts</li></ul>",
+            "text": "<p>I dati personali saranno conservati solo per il tempo necessario alle finalità per cui sono stati raccolti. In particolare:</p><ul><li>Dati legati agli ordini: conservati per almeno <strong>10 anni</strong> per finalità fiscali e contabili</li><li>Dati marketing: fino a revoca del consenso</li><li>Dati tecnici (cookie): secondo quanto stabilito nella Cookie Policy</li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -192,7 +192,7 @@
         "subheading_t8CYhE": {
           "type": "subheading",
           "settings": {
-            "subheading": "How Long Do We Keep Your Data?",
+            "subheading": "8. Diritti dell’interessato",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -200,7 +200,7 @@
         "text_iizwBK": {
           "type": "text",
           "settings": {
-            "text": "<p>We will not retain your data longer than necessary for the purposes set out in this Privacy Policy. Different retention periods apply for different types of information. In summary, various laws, accounting, and regulatory requirements applicable to us require us to retain certain data (your full name and address only) for specific amounts of time in the form of invoices. We will not keep your data longer than necessary for the purposes for which we collect it.</p>",
+            "text": "<p>Ai sensi del GDPR e del Codice Privacy italiano, l’utente ha diritto di:</p><ul><li>Accedere ai propri dati personali</li><li>Chiedere la rettifica o l’aggiornamento</li><li>Ottenere la cancellazione dei dati (\"diritto all’oblio\")</li><li>Ottenere la limitazione del trattamento</li><li>Opporsi al trattamento per motivi legittimi</li><li>Ricevere i dati in formato strutturato e trasferirli a terzi (portabilità)</li><li>Revocare il consenso in qualsiasi momento</li></ul><p>Per esercitare i propri diritti, l’utente può contattarci a: <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a></p><p>Inoltre, l’utente ha diritto di proporre reclamo al <strong>Garante per la Protezione dei Dati Personali</strong> (<a href=\"https://www.garanteprivacy.it\" target=\"_blank\" title=\"https://www.garanteprivacy.it\">www.garanteprivacy.it</a>).</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -213,7 +213,7 @@
         "subheading_VpEcWz": {
           "type": "subheading",
           "settings": {
-            "subheading": "Transferring Personal Information Outside of Australia",
+            "subheading": "9. Modifiche alla presente informativa",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -221,7 +221,7 @@
         "text_igBfUz": {
           "type": "text",
           "settings": {
-            "text": "<p>We may store and process your information through third-party hosting services in the EU and other jurisdictions. As a result, we may transfer your personal information to a jurisdiction with different data protection and government surveillance laws than your jurisdiction. If we transfer information about you outside of Australia, we rely on Privacy Shield as the legal basis for the transfer, as Google Cloud is Privacy Shield certified.</p>",
+            "text": "<p>Ci riserviamo il diritto di aggiornare periodicamente la presente informativa. Gli aggiornamenti saranno pubblicati su questa pagina con data di revisione aggiornata.</p><p>Invitiamo gli utenti a consultare regolarmente questa sezione.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -234,7 +234,7 @@
         "subheading_JJA4n6": {
           "type": "subheading",
           "settings": {
-            "subheading": "Your Rights",
+            "subheading": "10. Contatti",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -242,49 +242,7 @@
         "text_bPW3dq": {
           "type": "text",
           "settings": {
-            "text": "<p>You have the following rights:</p><ul><li>The right to be informed about our processing of your personal data</li><li>The right to access the personal data we hold about you at any time</li><li>The right to portability – to have your personal data provided to you by us in a structured, commonly used, and machine-readable format and transferred to you or another party</li><li>The right to rectification – to ask us to update and correct any out-of-date or incorrect personal data that we hold about you</li><li>The right to erasure – to delete any personal data processed by Time Resistance, except in certain circumstances (e.g., ongoing customer service issues, open orders, legal obligations)</li><li>The right to object to the processing of your personal data and/or to withdraw any consent you have given us</li><li>The right to restriction – to prevent any data processing likely to cause damage or distress</li></ul><p>If you wish to exercise any of the above rights, you can contact us by email at <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a>.</p>",
-            "text_font_class": "fs-body-75"
-          }
-        },
-        "spacer_Pc4Tqg": {
-          "type": "spacer",
-          "settings": {
-            "space": 12
-          }
-        },
-        "subheading_Nx4Bix": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Changes To This Privacy Policy",
-            "subheading_tag": "h3",
-            "subheading_font_class": "fs-heading-6-base"
-          }
-        },
-        "text_WeqUgc": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when posted on this page.</p>",
-            "text_font_class": "fs-body-75"
-          }
-        },
-        "spacer_7EmgNp": {
-          "type": "spacer",
-          "settings": {
-            "space": 12
-          }
-        },
-        "subheading_mnDVce": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Contact Us",
-            "subheading_tag": "h3",
-            "subheading_font_class": "fs-heading-6-base"
-          }
-        },
-        "text_jwUiNc": {
-          "type": "text",
-          "settings": {
-            "text": "<p>By using our site, you consent to our privacy policy. If you have any questions regarding this privacy policy or terms and conditions, you may contact us at:</p><ul><li>Email: <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></li><li>Website: <a href=\"/\" target=\"_blank\" title=\"/\">au.timeresistance.com</a></li></ul>",
+            "text": "<p>Per qualsiasi richiesta o informazione:</p><p><strong>Email:</strong> <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/><strong>Sito Web:</strong> <a href=\"https://timeresistance.it\" target=\"_blank\" title=\"https://timeresistance.it\">timeresistance.it</a></p>",
             "text_font_class": "fs-body-75"
           }
         }
@@ -321,13 +279,7 @@
         "text_igBfUz",
         "spacer_wJNXcb",
         "subheading_JJA4n6",
-        "text_bPW3dq",
-        "spacer_Pc4Tqg",
-        "subheading_Nx4Bix",
-        "text_WeqUgc",
-        "spacer_7EmgNp",
-        "subheading_mnDVce",
-        "text_jwUiNc"
+        "text_bPW3dq"
       ],
       "settings": {
         "alignment": "center_left",

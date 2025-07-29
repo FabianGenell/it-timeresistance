@@ -24,9 +24,23 @@
         "heading_cVLeHF": {
           "type": "heading",
           "settings": {
-            "title": "Terms & Conditions",
+            "title": "Termini e Condizioni di Vendita",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_XW7hh6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Il presente documento regola le condizioni generali di vendita dei prodotti offerti sul sito <a href=\"https://www.timeresistance.it\" target=\"_blank\" title=\"https://www.timeresistance.it\">www.timeresistance.it</a>, gestito da:</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "text_nxzaMj": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Time Resistance</strong><br/>UAB Baltic Synergy<br/>Sede legale: Baltų pr. 29-77, Kaunas, Lituania 48244<br/>Partita IVA / Codice Azienda: LT100007008411 – Reg. imprese: 302920865<br/>Email: <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/>Telefono: +370 635 66288<br/></p>",
+            "text_font_class": "fs-body-75"
           }
         },
         "spacer_NYPLeU": {
@@ -38,7 +52,7 @@
         "subheading_wjb8ya": {
           "type": "subheading",
           "settings": {
-            "subheading": "General Conditions",
+            "subheading": "1. Accettazione delle condizioni generali di vendita",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -46,7 +60,7 @@
         "text_mLN4dx": {
           "type": "text",
           "settings": {
-            "text": "<p>The confirmation and submission of an order by a customer (where \"customer\" means a site user who accesses and checks out of the e-commerce website), indicates the acknowledgment and full acceptance of these terms and conditions of sale by the customer. The sales contract between our company and the customer is considered complete when we accept the order.</p>",
+            "text": "<p>L’invio dell’ordine da parte del cliente (di seguito, “Cliente”) comporta la piena conoscenza e l’integrale accettazione delle presenti condizioni generali di vendita.</p><p>Il contratto di vendita si considera concluso al momento della conferma dell’ordine da parte di Time Resistance, che verrà inviata via email all’indirizzo fornito dal Cliente.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -158,6 +172,8 @@
       },
       "block_order": [
         "heading_cVLeHF",
+        "text_XW7hh6",
+        "text_nxzaMj",
         "spacer_NYPLeU",
         "subheading_wjb8ya",
         "text_mLN4dx",

@@ -66,7 +66,7 @@
         "subheading_mUfnpy": {
           "type": "subheading",
           "settings": {
-            "subheading": "What Personal Data Do We Collect and When?",
+            "subheading": "2. Finalità e base giuridica del trattamento",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -74,7 +74,7 @@
         "text_VAB9Gk": {
           "type": "text",
           "settings": {
-            "text": "<p>We collect information from customers when they register on our site, place an order, subscribe to our newsletter, or fill out a form. When ordering or registering on our site, you may be asked to enter your name, email address, billing and delivery address, phone number, or credit card information, as appropriate. We will also see your purchase history, IP address, and information about the browser and operating system you used when placing the order. Visitors can browse our site anonymously, though some anonymous information is collected by cookies (please read more in our Cookies Policy).</p>",
+            "text": "<p>Trattiamo i dati personali per le seguenti finalità:</p><ul><li>Esecuzione del contratto di vendita e consegna degli ordini</li><li>Gestione dell’account cliente</li><li>Invio di comunicazioni sullo stato degli ordini</li><li>Personalizzazione dell’esperienza di navigazione</li><li>Invio di comunicazioni promozionali, previo consenso (newsletter)</li><li>Adempimento di obblighi legali e fiscali</li><li>Tutela in sede giudiziaria dei nostri diritti</li></ul><p>La base giuridica è l’art. 6, comma 1, lettere <strong>b), c), f)</strong> del GDPR.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -87,7 +87,7 @@
         "subheading_KKNkhz": {
           "type": "subheading",
           "settings": {
-            "subheading": "How Do We Use Your Data?",
+            "subheading": "3. Newsletter e comunicazioni commerciali",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -95,7 +95,7 @@
         "text_3TUkTh": {
           "type": "text",
           "settings": {
-            "text": "<p>We use your data primarily to:</p><p></p><ul><li> Provide our services and warranties to you</li><li>Manage your account</li><li>Tailor the site and advertising to enhance your browsing experience</li><li>Send order progress and updates via email</li><li>Contact you if there is an issue with your order</li></ul><p>If you subscribe to our newsletter, we will use your email to send you the best offers and discounts. You can opt out of receiving promotional communications at any time by:</p><ul><li>Informing us that you wish to change your marketing preferences by contacting our customer support team at <a href=\"mailto:care@timeresistance.com\" target=\"_blank\" title=\"mailto:care@timeresistance.com\">care@timeresistance.com</a></li><li>Using the “unsubscribe” link in emails</li></ul><p><em>This may not stop service messages such as order updates.</em></p>",
+            "text": "<p>Se l’utente si iscrive alla newsletter, il suo indirizzo email verrà utilizzato per l’invio di offerte e sconti. È possibile revocare il consenso in qualsiasi momento:</p><ul><li>Cliccando sul link \"Annulla iscrizione\" presente in ogni email</li><li>Contattandoci a <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a></li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -108,7 +108,7 @@
         "subheading_xCj6ww": {
           "type": "subheading",
           "settings": {
-            "subheading": "What Is the Legal Ground to Process Your Personal Data?",
+            "subheading": "4. Destinatari dei dati",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -116,7 +116,7 @@
         "text_Lmiy9r": {
           "type": "text",
           "settings": {
-            "text": "<p>The processing of your personal data is necessary for Time Resistance to fulfill the service and deliver the order to you. Additionally, your data will be used if necessary to comply with a legal obligation, court order, or in connection with a legal claim, such as retaining information about your purchases if required by tax law.</p>",
+            "text": "<p>I dati personali potranno essere comunicati a soggetti terzi, esclusivamente per le finalità indicate:</p><ul><li><strong>Corrieri </strong>(UPS, DHL, FedEx) – per la consegna degli ordini</li><li><strong>Processori di pagamento</strong> (Airwallex, Stripe, PayPal) – per gestire i pagamenti in sicurezza</li><li><strong>Google Analytics</strong> – solo in forma anonima, per analisi di traffico</li><li><strong>Consulenti legali e contabili</strong> – se necessario</li><li><strong>Autorità pubbliche</strong> – per obblighi di legge</li></ul><p>Tutti i fornitori terzi sono vincolati da accordi di trattamento dati (art. 28 GDPR) e garantiscono adeguati standard di sicurezza.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -129,7 +129,7 @@
         "subheading_zERYqi": {
           "type": "subheading",
           "settings": {
-            "subheading": "Sharing Data with Third Parties",
+            "subheading": "5. Trasferimento di dati all’estero",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -137,7 +137,7 @@
         "text_PVFBzR": {
           "type": "text",
           "settings": {
-            "text": "<p>We do not sell, trade, or transfer your personal information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, as long as those parties have confirmed they apply appropriate data protection and security controls and use your personal data only to provide certain services (such as shipping). We share data with:</p><ul><li>UPS, DHL, and FedEx – to ship your order quickly and ensure the best customer experience</li><li>Airwallex, Stripe, and PayPal – to securely process your payment</li><li>Google Analytics – to help us better understand your preferences on our site (only anonymous data, not personal data)</li><li>Our legal and professional advisers, accountants, and auditors</li><li>Government bodies – to comply with our legal obligations</li></ul><p>Customer information will not be sold, exchanged, transferred, or given to any other company for any reason other than for the purpose of delivering the purchased product or service requested.</p>",
+            "text": "<p>I dati potranno essere trasferiti a fornitori situati al di fuori dello Spazio Economico Europeo, ad esempio negli Stati Uniti. Tali trasferimenti avvengono sulla base di:</p><ul><li>Clausole contrattuali standard approvate dalla Commissione Europea</li><li>Meccanismi di certificazione (es. ex Privacy Shield – se ancora vigente al momento del trattamento)</li></ul>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -150,7 +150,7 @@
         "subheading_RFjzfd": {
           "type": "subheading",
           "settings": {
-            "subheading": "How Do We Protect Your Data?",
+            "subheading": "6. Sicurezza dei dati",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -158,7 +158,7 @@
         "text_FLeNzj": {
           "type": "text",
           "settings": {
-            "text": "<p>Time Resistance is committed to keeping your personal data safe and secure. However, remember that no method of transmission over the internet or method of electronic storage is 100% secure. Our security measures include:</p><ul><li>Encryption of data</li><li>Regular planning to ensure we are prepared to respond to cybersecurity attacks and data security incidents</li><li>Security controls to protect our IT systems and premises from external attacks and unauthorized access</li><li>Internal policies outlining our data security rules for personnel</li><li>Regular training for our employees</li></ul>",
+            "text": "<p>Adottiamo misure tecniche e organizzative adeguate per garantire la sicurezza dei dati personali, tra cui:<br/>•\tCrittografia dei dati durante la trasmissione<br/>•\tSistemi di protezione da accessi non autorizzati<br/>•\tFormazione continua del personale<br/>•\tBackup e disaster recovery<br/>Tuttavia, nessun sistema è infallibile: raccomandiamo agli utenti di:<br/>•\tUsare password robuste e uniche<br/>•\tNon condividere le proprie credenziali<br/>•\tUscire dall’account dopo l’uso in luoghi pubblici</p>",
             "text_font_class": "fs-body-75"
           }
         },

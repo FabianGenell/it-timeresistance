@@ -246,48 +246,6 @@
             "text": "<p>Per ulteriori informazioni o per esercitare i tuoi diritti in materia di privacy, puoi contattarci:</p><p><strong>Email:</strong> <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/><strong>Sito web:</strong> <a href=\"https://www.timeresistance.it\" target=\"_blank\" title=\"https://www.timeresistance.it\">www.timeresistance.it</a></p>",
             "text_font_class": "fs-body-75"
           }
-        },
-        "spacer_kaWmYJ": {
-          "type": "spacer",
-          "settings": {
-            "space": 20
-          }
-        },
-        "subheading_bRERdV": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "For Mozilla Firefox:",
-            "subheading_tag": "h3",
-            "subheading_font_class": "fs-heading-6-base"
-          }
-        },
-        "text_prhH3i": {
-          "type": "text",
-          "settings": {
-            "text": "<p>1. Click on the menu icon then select “Options”<br/>2. Click on the icon “Privacy & Security”<br/>3. Find the menu “cookie” and select the relevant options</p>",
-            "text_font_class": "fs-body-75"
-          }
-        },
-        "spacer_E4g4rq": {
-          "type": "spacer",
-          "settings": {
-            "space": 20
-          }
-        },
-        "subheading_rWDkfp": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "For Opera 6.0 and later versions:",
-            "subheading_tag": "h3",
-            "subheading_font_class": "fs-heading-6-base"
-          }
-        },
-        "text_NFDt37": {
-          "type": "text",
-          "settings": {
-            "text": "<p>1. Choose the menu icon and select “Settings”<br/>2. Click on “Privacy & Security”<br/>3. Choose the appropriate settings</p>",
-            "text_font_class": "fs-body-75"
-          }
         }
       },
       "block_order": [
@@ -318,13 +276,7 @@
         "text_GM96Mn",
         "spacer_9dDPXJ",
         "subheading_YRgXxk",
-        "text_GdDdxF",
-        "spacer_kaWmYJ",
-        "subheading_bRERdV",
-        "text_prhH3i",
-        "spacer_E4g4rq",
-        "subheading_rWDkfp",
-        "text_NFDt37"
+        "text_GdDdxF"
       ],
       "settings": {
         "alignment": "left_left",

@@ -73,7 +73,7 @@
         "subheading_TRpJc7": {
           "type": "subheading",
           "settings": {
-            "subheading": "Purchase Method",
+            "subheading": "2. Modalità di acquisto",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -81,7 +81,7 @@
         "text_gLHLAT": {
           "type": "text",
           "settings": {
-            "text": "<p>The customer can only purchase the products in the catalog at the time of the order and viewable online. The order will be processed upon receipt of a valid email address by the customer of a confirmation notice regarding the authorization to charge the price and delivery charges to the customer's credit card.<br/><br/>The correct receipt of the order is confirmed by our company by email, sent to the email address supplied by the customer. This confirmation message will contain date and time of order and the customer order number to be used in all further communications with our company. The message will include all data entered by the customer, all the information regarding the characteristics of the goods, the indication of the price, payment methods, the terms and delivery charges and the applicable taxes. The customer must report any necessary corrections. In case of non-acceptance, our company will ensure a timely notification to the customer.</p>",
+            "text": "<p>I prodotti acquistabili sono solo quelli visibili e disponibili online al momento della conferma dell’ordine.</p><p>Il Cliente riceverà un'email di conferma dell'ordine contenente:</p><ul><li>Data e ora dell'ordine</li><li>Numero identificativo dell’ordine</li><li>Dati del Cliente</li><li>Elenco dei prodotti ordinati</li><li>Prezzo, tasse incluse</li><li>Modalità di pagamento</li><li>Costi e tempi di spedizione</li><li>Eventuali altre spese applicabili</li></ul><p>Il Cliente è tenuto a verificare l’esattezza dei dati e a segnalare tempestivamente eventuali errori. In caso di mancata accettazione dell’ordine, Time Resistance informerà il Cliente con tempestività.<br/></p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -94,7 +94,7 @@
         "subheading_BcRQwC": {
           "type": "subheading",
           "settings": {
-            "subheading": "Prices",
+            "subheading": "3. Prezzi",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -115,7 +115,7 @@
         "subheading_PWCwX4": {
           "type": "subheading",
           "settings": {
-            "subheading": "Limited Liability",
+            "subheading": "4. Responsabilità limitata",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -123,7 +123,7 @@
         "text_rY3347": {
           "type": "text",
           "settings": {
-            "text": "<p>Under no circumstance shall Time Resistance be liable, in contractual or non-contractual terms, for any direct or indirect, specific or general damage which may occur due to the use, the non-use and/or due to the performance or defect/error of any Time Resistance product, information or content included in the Site (and the foregoing disregards the fact that Time Resistance was aware or not of the possibility that such damage may occur). Some of the foregoing limitations may not be applicable, since some jurisdictions do not permit the exclusion or limitation of liability for direct or indirect damages.</p>",
+            "text": "<p>Time Resistance non potrà in alcun caso essere ritenuta responsabile per eventuali danni diretti o indiretti derivanti dall’uso, mancato uso o difettoso funzionamento dei prodotti acquistati o di contenuti presenti sul sito, anche qualora fosse stata avvisata della possibilità di tali danni.</p><p>Tale limitazione di responsabilità potrebbe non trovare applicazione in alcune giurisdizioni che non consentono l’esclusione di responsabilità per determinati tipi di danni.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -136,7 +136,7 @@
         "subheading_dT8QmB": {
           "type": "subheading",
           "settings": {
-            "subheading": "Accounting documents, duties and taxes",
+            "subheading": "5. Documentazione fiscale, imposte e dazi doganali",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -144,7 +144,7 @@
         "text_7AYaMt": {
           "type": "text",
           "settings": {
-            "text": "<p>For all accepted and executed orders, our company will issue an invoice for the ordered material and send it via email to the customer upon request.</p><p>For the issuance of the invoice, the information provided by the customer at the moment of the order will be considered valid. Once it has been issued, no change in the tax document will be possible.</p><p>No responsibility can be attributed to our company in case of delay in the execution or the delivery of the order.</p><p>If you order from our site for delivery outside of Australia, you may be liable for import duties and taxes charged by Customs. These additional charges are the customer’s responsibility.</p><p>We guarantee there are no additional fees (import tax, customs duty or other) for clients from Australia.</p>",
+            "text": "<p>Per ogni ordine confermato e accettato verrà emessa fattura, disponibile su richiesta via email.</p><p>I dati per l’emissione della fattura saranno quelli forniti dal Cliente al momento dell’ordine. Una volta emessa, non sarà possibile modificarla.</p><p>Time Resistance non è responsabile per eventuali ritardi nella consegna dovuti a cause di forza maggiore o a responsabilità di terzi (es. corrieri, dogane, ecc.).</p><p><strong>Per ordini destinati al di fuori dell’Unione Europea</strong>, potrebbero essere applicati <strong>dazi doganali o imposte d’importazione</strong> a carico del Cliente.</p><p><strong>Non vi sono spese aggiuntive</strong> (tasse doganali, imposte di importazione o simili) per clienti con indirizzo di consegna in: <strong>Italia, Unione Europea, Stati Uniti e Australia</strong>.</p>",
             "text_font_class": "fs-body-75"
           }
         },

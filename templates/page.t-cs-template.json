@@ -207,7 +207,7 @@
         "text_mTr3gG": {
           "type": "text",
           "settings": {
-            "text": "<p>Per richieste di assistenza, resi o chiarimenti:<br/><strong>Email:</strong> <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/><strong>Telefono:</strong> +370 635 66288<br/><strong>Sito web:</strong> <a href=\"https://timeresistance.it\" target=\"_blank\" title=\"https://timeresistance.it\">timeresistance.it</a></p>",
+            "text": "<p>Per richieste di assistenza, resi o chiarimenti:</p><p><strong>Email:</strong> <a href=\"mailto:assistenza@timeresistance.com\" target=\"_blank\" title=\"mailto:assistenza@timeresistance.com\">assistenza@timeresistance.com</a><br/><strong>Telefono:</strong> +370 635 66288<br/><strong>Sito web:</strong> <a href=\"https://timeresistance.it\" target=\"_blank\" title=\"https://timeresistance.it\">timeresistance.it</a></p>",
             "text_font_class": "fs-body-75"
           }
         }

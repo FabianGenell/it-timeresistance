@@ -158,14 +158,6 @@
             "fetch_page_content": false,
             "custom_liquid": ""
           }
-        },
-        "judge_me_reviews_review_widget_9QnjeW": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
-        "judge_me_reviews_review_widget_6LMY3z": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
         }
       },
       "block_order": [
@@ -179,9 +171,7 @@
         "accordion-2",
         "accordion_47TTrD",
         "accordion-3",
-        "accordion_WceBNM",
-        "judge_me_reviews_review_widget_9QnjeW",
-        "judge_me_reviews_review_widget_6LMY3z"
+        "accordion_WceBNM"
       ],
       "custom_css": [
         ".product__media > :first-child {grid-column: 1 / -1; /* Span across all columns (full-width) */}"

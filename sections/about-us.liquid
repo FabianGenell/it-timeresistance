@@ -6,12 +6,12 @@
 {%- liquid
   # Build tab names array dynamically
   assign tab_names = section.settings.tab_1_name | append: ',' | append: section.settings.tab_2_name | append: ',' | append: section.settings.tab_3_name | append: ',' | append: section.settings.tab_4_name | split: ','
-  
+
   # Create tab IDs for data attributes
-  assign tab_1_id = section.settings.tab_1_name | downcase
-  assign tab_2_id = section.settings.tab_2_name | downcase  
-  assign tab_3_id = section.settings.tab_3_name | downcase
-  assign tab_4_id = section.settings.tab_4_name | downcase
+  assign tab_1_id = section.settings.tab_1_name | downcase | handle
+  assign tab_2_id = section.settings.tab_2_name | downcase | handle
+  assign tab_3_id = section.settings.tab_3_name | downcase | handle
+  assign tab_4_id = section.settings.tab_4_name | downcase | handle
 -%}
 
 <div class="section" id="about-us-{{ section.id }}">
@@ -41,7 +41,7 @@
             assign grid_class = grid_class | prepend: 'col-span-2 md:col-span-5 '
           endif
         -%}
-        
+
         <div class="{{ grid_class }}">
           <div class="media w-full pb-[100%] rounded-full overflow-hidden">
             {%- render 'image',
@@ -52,11 +52,11 @@
               class: 'img-fit img-fit--zoom img-fit--group-zoom'
             -%}
           </div>
-          
+
           {%- if block.settings.name != blank -%}
             <h3 class="font-lg font-bold mt-2">{{ block.settings.name }}</h3>
           {%- endif -%}
-          
+
           {%- if block.settings.role != blank -%}
             <p class="text-sm uppercase tracking-wider">{{ block.settings.role }}</p>
           {%- endif -%}
@@ -73,7 +73,7 @@
         {%- if section.settings.video_title != blank -%}
           <h3 class="font-lg font-bold mb-4">{{ section.settings.video_title }}</h3>
         {%- endif -%}
-        
+
         {%- render 'video',
           video: section.settings.video,
           wrapper_class: 'w-full h-full',
@@ -89,7 +89,7 @@
       {%- if section.settings.features_title != blank -%}
         <h3 class="font-lg font-bold mb-4">{{ section.settings.features_title }}</h3>
       {%- endif -%}
-      
+
       <div class="product-text">
         <ul class="list-none space-y-2" id="features-list">
           {%- for i in (1..5) -%}
@@ -97,12 +97,12 @@
               assign feature_text_key = 'feature_' | append: i | append: '_text'
               assign feature_icon_key = 'feature_' | append: i | append: '_icon'
               assign feature_icon_url_key = 'feature_' | append: i | append: '_icon_url'
-              
+
               assign feature_text = section.settings[feature_text_key]
               assign feature_icon = section.settings[feature_icon_key]
               assign feature_icon_url = section.settings[feature_icon_url_key]
             -%}
-            
+
             {%- if feature_text != blank -%}
               <li class="flex items-center">
                 {%- if feature_icon != blank -%}
@@ -154,7 +154,7 @@
             {{ section.settings.international_content }}
           </div>
         {%- endif -%}
-        
+
         <!-- Certificate Images -->
         <div class="certificates flex flex-wrap gap-2">
           {%- for i in (1..3) -%}
@@ -162,12 +162,12 @@
               assign cert_key = 'certificate_' | append: i
               assign cert_url_key = 'certificate_' | append: i | append: '_url'
               assign cert_alt_key = 'certificate_' | append: i | append: '_alt'
-              
+
               assign certificate = section.settings[cert_key]
               assign certificate_url = section.settings[cert_url_key]
               assign certificate_alt = section.settings[cert_alt_key]
             -%}
-            
+
             {%- if certificate != blank or certificate_url != blank -%}
               <img
                 class="image-{{ i }}"
@@ -180,7 +180,7 @@
           {%- endfor -%}
         </div>
       </div>
-      
+
       <!-- Trade Show Images -->
       <div class="trade-shows">
         {%- for i in (1..2) -%}
@@ -188,12 +188,12 @@
             assign trade_image_key = 'trade_show_image_' | append: i
             assign trade_url_key = 'trade_show_image_' | append: i | append: '_url'
             assign trade_alt_key = 'trade_show_image_' | append: i | append: '_alt'
-            
+
             assign trade_image = section.settings[trade_image_key]
             assign trade_url = section.settings[trade_url_key]
             assign trade_alt = section.settings[trade_alt_key]
           -%}
-          
+
           {%- if trade_image != blank or trade_url != blank -%}
             <img
               class="image-{{ i | plus: 3 }} mb-4"
@@ -246,7 +246,7 @@
       "default": "International",
       "info": "Name for the fourth tab"
     },
-    
+
     {
       "type": "header",
       "content": "Team Section"
@@ -257,7 +257,7 @@
       "label": "Team Section Title",
       "info": "Optional title displayed above team members"
     },
-    
+
     {
       "type": "header",
       "content": "Products Section"
@@ -281,7 +281,7 @@
       "default": "Features",
       "info": "Title for the features list"
     },
-    
+
     {
       "type": "header",
       "content": "Product Features"
@@ -308,7 +308,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/made_in_italy.svg?v=1683187137",
       "info": "Used if no icon image is uploaded"
     },
-    
+
     {
       "type": "image_picker",
       "id": "feature_2_icon",
@@ -327,7 +327,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/classic_design.svg?v=1683186411",
       "info": "Used if no icon image is uploaded"
     },
-    
+
     {
       "type": "image_picker",
       "id": "feature_3_icon",
@@ -346,7 +346,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/full_grain.svg?v=1683186410",
       "info": "Used if no icon image is uploaded"
     },
-    
+
     {
       "type": "image_picker",
       "id": "feature_4_icon",
@@ -365,7 +365,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/hand_made.svg?v=1683186411",
       "info": "Used if no icon image is uploaded"
     },
-    
+
     {
       "type": "image_picker",
       "id": "feature_5_icon",
@@ -384,7 +384,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/fashion.svg?v=1683186411",
       "info": "Used if no icon image is uploaded"
     },
-    
+
     {
       "type": "header",
       "content": "Timeline Section"
@@ -401,7 +401,7 @@
       "label": "Timeline Title",
       "info": "Optional title for the timeline section"
     },
-    
+
     {
       "type": "header",
       "content": "International Section"
@@ -413,7 +413,7 @@
       "default": "<p>We serve customers from over 90 countries.</p><p>Time Resistance partners with carefully selected brand ambassadors.</p><p>We exhibit at various trade shows around the world including Liberty Fairs NY (USA), Mipel (Italy), Nordic Shoe and Bag Fair (Sweden), and ILM (Germany).<br>ILM is a trade fair that takes place in Offenbach am Main, Germany. It is one of the largest and most important trade fairs for high-quality leather goods, luggage, bags and accessories.<br>Mipel is another trade show that takes place in Milan, Italy. It is an international event that showcases leather goods and fashion accessories.<br>Nordic Shoe and Bag Fair is a trade show that takes place in Stockholm, Sweden. It is a platform for Scandinavian shoe and bag brands to showcase their products.<br>Liberty Fairs NY is a trade show that takes place in New York City, USA. It is a contemporary fashion trade show that showcases men's and women's apparel, footwear, accessories and lifestyle brands.</p><p>Our participation in trade shows allows us to showcase our products to a wider audience and to connect with other industry professionals. It also gives us an opportunity to stay up-to-date with the latest trends and developments in the industry.</p><p>Time Resistance is registered in the EU, the US, China and Australia.</p>",
       "info": "Rich text content for the international section"
     },
-    
+
     {
       "type": "header",
       "content": "Certificate Images"
@@ -440,7 +440,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/USA_Certificate.jpg?v=1682590950",
       "info": "Used if no certificate image is uploaded"
     },
-    
+
     {
       "type": "image_picker",
       "id": "certificate_2",
@@ -459,7 +459,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/China_Certificate.jpg?v=1682590998",
       "info": "Used if no certificate image is uploaded"
     },
-    
+
     {
       "type": "image_picker",
       "id": "certificate_3",
@@ -478,7 +478,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Lithuania_Certificate.jpg?v=1682591025",
       "info": "Used if no certificate image is uploaded"
     },
-    
+
     {
       "type": "header",
       "content": "Trade Show Images"
@@ -501,7 +501,7 @@
       "default": "https://cdn.shopify.com/s/files/1/0535/4038/9032/files/Mipel_trade_show_1.jpg?v=1682591083",
       "info": "Used if no trade show image is uploaded"
     },
-    
+
     {
       "type": "image_picker",
       "id": "trade_show_image_2",

@@ -10,6 +10,7 @@ import '../scripts/components/';
 import '../scripts/utils/helpers';
 import '../scripts/utils/bot-detector.js';
 import '../scripts/legacy/theme-new.js';
+import '../scripts/utils/hotfixes/jdgm-form.js';
 
 console.log('main.bundle.js loaded');
 

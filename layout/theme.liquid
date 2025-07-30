@@ -106,7 +106,7 @@
     <link rel="stylesheet" href="//cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css">
 
     <script defer src="//www.youtube.com/iframe_api"></script>
-
+    
     <script>
       var head = document.head;
       var script = document.createElement('script');
@@ -116,6 +116,16 @@
         encodeURI(document.URL);
       head.appendChild(script);
     </script>
+    <script>
+document.addEventListener("click", (event) => {
+const button = event.target.closest(".jdgm-write-rev-link");
+const jdgmWriteRevLinks = document.querySelectorAll('.jdgm-write-rev-link');
+const reviewForm = document.querySelector('.jdgm-form-wrapper');
+
+console.log("Click event detected."); console.log("Clicked element:", event.target);
+if (button) { console.log("'.jdgm-write-rev-link' button clicked:", button); event.preventDefault();
+if (!reviewForm) { console.log("Review form not found."); return; }
+if (reviewForm.style.display === 'none') { reviewForm.style.display = 'block'; console.log("Review form shown."); } else { reviewForm.style.display = 'none'; console.log("Review form hidden."); } } else { console.log("Click not on '.jdgm-write-rev-link'"); } });</script>
   </body>
   <link
     rel="preload"

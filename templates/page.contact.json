@@ -21,9 +21,15 @@
     "custom_liquid_HhNUfx": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div contactform-embed='428252'></div>",
+        "custom_liquid": "<div contactform-embed='499351'></div>",
         "full_width": false,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
@@ -80,6 +86,12 @@
         "show_recaptcha_terms": true,
         "enable_animation": true,
         "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "custom",
         "custom_content_width": 700

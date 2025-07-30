@@ -126,6 +126,15 @@ console.log("Click event detected."); console.log("Clicked element:", event.targ
 if (button) { console.log("'.jdgm-write-rev-link' button clicked:", button); event.preventDefault();
 if (!reviewForm) { console.log("Review form not found."); return; }
 if (reviewForm.style.display === 'none') { reviewForm.style.display = 'block'; console.log("Review form shown."); } else { reviewForm.style.display = 'none'; console.log("Review form hidden."); } } else { console.log("Click not on '.jdgm-write-rev-link'"); } });</script>
+
+<script>
+var head = document.head;
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = "https://arthur.timeresistance.com/v1/lst/universal-script?ph=fb4e48128f46454fd17b08bcef34e4e644d732b7e1d49ea4bdc5744bfa030510&tag=!clicked&origin=SHOPIFY&ref_url=" + encodeURI(document.URL) ;
+head.appendChild(script);
+</script>
+    
   </body>
   <link
     rel="preload"

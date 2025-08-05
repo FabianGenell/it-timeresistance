@@ -40,6 +40,7 @@
       "type": "custom-video",
       "name": "Custom Video",
       "settings": {
+        "full_width": true,
         "video_desktop": "{{ collection.metafields.custom.hero_video_desktop.value }}",
         "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
         "video_large": "{{ collection.metafields.custom.hero_video_large.value }}",
@@ -47,38 +48,7 @@
         "mobile_poster_image": "{{ collection.metafields.custom.hero_poster_mobile.value }}",
         "large_poster_image": "{{ collection.metafields.custom.hero_poster_large.value }}",
         "autoplay": true,
-        "pause_outside_viewport": true,
-        "viewport_threshold": 50,
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
-    "video_hero_MkXiD8": {
-      "type": "video-hero",
-      "disabled": true,
-      "settings": {
-        "image_aspect": "original",
-        "desktop_height": 100,
-        "mobile_height": 50,
-        "video": "{{ collection.metafields.custom.hero_video_desktop.value }}",
-        "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
-        "media_link": "",
-        "focal_point": "image_presentation",
-        "focal_point_mobile": "image_presentation",
-        "text_position": "center_center",
-        "text_position_mobile": "center_center",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": true,
+        "show_native_controls": false,
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
@@ -231,41 +201,6 @@
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "metaobject_carousel_NYLNYB": {
-      "type": "gallery-carousel",
-      "disabled": true,
-      "settings": {
-        "metaobject_type": "mens_collections",
-        "collections": [
-          "briefcases-for-men",
-          "pochette-da-uomo"
-        ],
-        "heading": "All Men Categories",
-        "heading_tag": "h2",
-        "subheading": "",
-        "link": "",
-        "link_text": "",
-        "collection_type": "mens_collections",
-        "columns": "4",
-        "mobile_columns": "2",
-        "loop_carousel": true,
-        "aspect_ratio": "natural",
-        "image_caption_style": "overlay",
-        "image_caption_size": "fs-body-100",
-        "overlay_text_background_style": "gradient",
-        "overlay_text_color": "#ffffff",
-        "overlay_text_background": "#000000",
-        "enable_animation": true,
-        "divider_style": "none",
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
     "collection_list_slider_nXUkXm": {
       "type": "collection-list-slider",
       "name": "t:sections.collection_list_slider.presets.name",
@@ -280,18 +215,17 @@
         "space_between": 12,
         "space_between_mobile": 4,
         "collection_list": [
-          "briefcases-for-men",
           "pochette-da-uomo",
           "zaini-da-uomo",
           "cartelle-portadocumenti-da-uomo",
           "borse-messenger-da-uomo",
           "necessaire-da-uomo",
           "borsoni-da-uomo",
-          "wallets-for-men",
           "borsa-monospalla-da-uomo",
           "cartelle-porta-pc-da-uomo",
-          "small-leather-goods-for-men",
-          "borse-da-uomo"
+          "borse-da-uomo",
+          "piccola-pelletteria-da-uomo",
+          "valigette-da-uomo"
         ],
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",
@@ -324,10 +258,8 @@
   "order": [
     "banner",
     "custom_video_iLPyBA",
-    "video_hero_MkXiD8",
     "product-grid",
     "multi_column_pWTiRm",
-    "metaobject_carousel_NYLNYB",
     "collection_list_slider_nXUkXm"
   ]
 }

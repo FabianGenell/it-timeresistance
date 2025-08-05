@@ -36,40 +36,11 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "video_hero_MkXiD8": {
-      "type": "video-hero",
-      "disabled": true,
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 50,
-        "mobile_height": 50,
-        "video": "{{ collection.metafields.custom.hero_video_desktop.value }}",
-        "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
-        "media_link": "",
-        "focal_point": "image_presentation",
-        "focal_point_mobile": "image_presentation",
-        "text_position": "center_center",
-        "text_position_mobile": "center_center",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": true,
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
     "custom_video": {
       "type": "custom-video",
       "name": "Custom Video",
       "settings": {
+        "full_width": true,
         "video_desktop": "{{ collection.metafields.custom.hero_video_desktop.value }}",
         "video_mobile": "{{ collection.metafields.custom.hero_video_mobile.value }}",
         "video_large": "{{ collection.metafields.custom.hero_video_large.value }}",
@@ -77,8 +48,7 @@
         "mobile_poster_image": "{{ collection.metafields.custom.hero_poster_mobile.value }}",
         "large_poster_image": "{{ collection.metafields.custom.hero_poster_large.value }}",
         "autoplay": true,
-        "pause_outside_viewport": true,
-        "viewport_threshold": 50,
+        "show_native_controls": false,
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
@@ -231,38 +201,6 @@
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "metaobject_carousel_NYLNYB": {
-      "type": "gallery-carousel",
-      "disabled": true,
-      "settings": {
-        "metaobject_type": "womens_collections",
-        "collections": [],
-        "heading": "All Women Categories",
-        "heading_tag": "h2",
-        "subheading": "",
-        "link": "",
-        "link_text": "",
-        "collection_type": "mens_collections",
-        "columns": "4",
-        "mobile_columns": "2",
-        "loop_carousel": true,
-        "aspect_ratio": "natural",
-        "image_caption_style": "overlay",
-        "image_caption_size": "fs-body-100",
-        "overlay_text_background_style": "gradient",
-        "overlay_text_color": "#ffffff",
-        "overlay_text_background": "#000000",
-        "enable_animation": true,
-        "divider_style": "none",
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
     "collection_list_slider_aGmKJQ": {
       "type": "collection-list-slider",
       "name": "t:sections.collection_list_slider.presets.name",
@@ -284,8 +222,8 @@
           "borse-a-mano-da-donna-1",
           "cartelle-da-lavoro-da-donna",
           "cofanetto-portagioie-da-donna",
-          "small-leather-goods-for-women",
-          "borse-da-donna"
+          "borse-da-donna",
+          "piccola-pelletteria-da-donna"
         ],
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",
@@ -317,11 +255,9 @@
   },
   "order": [
     "banner",
-    "video_hero_MkXiD8",
     "custom_video",
     "product-grid",
     "multi_column_pWTiRm",
-    "metaobject_carousel_NYLNYB",
     "collection_list_slider_aGmKJQ"
   ]
 }

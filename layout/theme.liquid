@@ -54,7 +54,7 @@
         display: none !important;
       }
     </style>
-    <meta name="google-site-verification" content="aVrZcHVzjCb3qgNvZLlSV1uJKqtpbX8HE1-mUAUp5qA" />
+    <meta name="google-site-verification" content="aVrZcHVzjCb3qgNvZLlSV1uJKqtpbX8HE1-mUAUp5qA">
   </head>
 
   <body class="template-{{ request.page_type | handle }}">
@@ -106,7 +106,7 @@
     <link rel="stylesheet" href="//cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css">
 
     <script defer src="//www.youtube.com/iframe_api"></script>
-    
+
     <script>
       var head = document.head;
       var script = document.createElement('script');
@@ -117,24 +117,42 @@
       head.appendChild(script);
     </script>
     <script>
-document.addEventListener("click", (event) => {
-const button = event.target.closest(".jdgm-write-rev-link");
-const jdgmWriteRevLinks = document.querySelectorAll('.jdgm-write-rev-link');
-const reviewForm = document.querySelector('.jdgm-form-wrapper');
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('.jdgm-write-rev-link');
+        const jdgmWriteRevLinks = document.querySelectorAll('.jdgm-write-rev-link');
+        const reviewForm = document.querySelector('.jdgm-form-wrapper');
 
-console.log("Click event detected."); console.log("Clicked element:", event.target);
-if (button) { console.log("'.jdgm-write-rev-link' button clicked:", button); event.preventDefault();
-if (!reviewForm) { console.log("Review form not found."); return; }
-if (reviewForm.style.display === 'none') { reviewForm.style.display = 'block'; console.log("Review form shown."); } else { reviewForm.style.display = 'none'; console.log("Review form hidden."); } } else { console.log("Click not on '.jdgm-write-rev-link'"); } });</script>
+        console.log('Click event detected.');
+        console.log('Clicked element:', event.target);
+        if (button) {
+          console.log("'.jdgm-write-rev-link' button clicked:", button);
+          event.preventDefault();
+          if (!reviewForm) {
+            console.log('Review form not found.');
+            return;
+          }
+          if (reviewForm.style.display === 'none') {
+            reviewForm.style.display = 'block';
+            console.log('Review form shown.');
+          } else {
+            reviewForm.style.display = 'none';
+            console.log('Review form hidden.');
+          }
+        } else {
+          console.log("Click not on '.jdgm-write-rev-link'");
+        }
+      });
+    </script>
 
-<script>
-var head = document.head;
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = "https://arthur.timeresistance.com/v1/lst/universal-script?ph=fb4e48128f46454fd17b08bcef34e4e644d732b7e1d49ea4bdc5744bfa030510&tag=!clicked&origin=SHOPIFY&ref_url=" + encodeURI(document.URL) ;
-head.appendChild(script);
-</script>
-    
+    <script>
+      var head = document.head;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src =
+        'https://arthur.timeresistance.com/v1/lst/universal-script?ph=fb4e48128f46454fd17b08bcef34e4e644d732b7e1d49ea4bdc5744bfa030510&tag=!clicked&origin=SHOPIFY&ref_url=' +
+        encodeURI(document.URL);
+      head.appendChild(script);
+    </script>
   </body>
   <link
     rel="preload"

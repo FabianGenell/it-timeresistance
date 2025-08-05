@@ -16,6 +16,7 @@
   assign file_extension = 'png'
   assign swatch_options = settings.swatch_options | downcase | split: ', '
   assign sort_by = results.sort_by | default: results.default_sort_by
+  
   if results.url
     assign results_url = results.url
   else
@@ -23,21 +24,23 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
 
-  # custom swatch colors
+  # Parse custom swatch colors
   assign custom_colors = settings.custom_swatch_colors | newline_to_br | split: '<br />'
-  assign custom_color_key_map = ''
-  assign custom_color_value_map = ''
-
+  assign custom_color_keys = ''
+  assign custom_color_values = ''
+  
   for color_value in custom_colors
-    assign custom_color_key = color_value | split: ':' | first | strip
-    assign custom_color_value = color_value | split: ':' | last | strip
-
-    assign custom_color_key_map = custom_color_key_map | append: ',' | append: custom_color_key
-    assign custom_color_value_map = custom_color_value_map | append: ',' | append: custom_color_value
+    assign color_parts = color_value | split: ':'
+    if color_parts.size == 2
+      assign color_key = color_parts[0] | strip
+      assign color_val = color_parts[1] | strip
+      assign custom_color_keys = custom_color_keys | append: color_key | append: ','
+      assign custom_color_values = custom_color_values | append: color_val | append: ','
+    endif
   endfor
-
-  assign custom_color_key_map = custom_color_key_map | remove_first: ',' | split: ','
-  assign custom_color_value_map = custom_color_value_map | remove_first: ',' | split: ','
+  
+  assign custom_color_keys = custom_color_keys | remove_last: ',' | split: ','
+  assign custom_color_values = custom_color_values | remove_last: ',' | split: ','
 -%}
 
 <div class="active-filters" data-active-filters>
@@ -47,7 +50,87 @@
     -%}
 
     {%- for value in filter.active_values -%}
-      {%- assign custom_swatch_image = value.label | handle | append: '.' | append: file_extension -%}
+      {%- liquid
+        # Check if we should show swatch
+        assign show_swatch = false
+        if swatch_options contains group_name and show_swatch_filters == true
+          assign show_swatch = true
+        endif
+        
+        # Initialize swatch style
+        assign swatch_style = blank
+        
+        if show_swatch
+          # Use the same logic as filter-item.liquid for swatch images
+          if value.display
+            if value.display.type == 'colors'
+              # Handle multi-color swatches
+              assign angle = 0
+              assign angle_increment = 360 | divided_by: value.display.value.size
+              
+              capture conic_gradient
+                for color in value.display.value
+                  echo color | append: ' ' | append: angle | append: 'deg'
+                  assign angle = angle | plus: angle_increment
+                  echo ' ' | append: angle | append: 'deg'
+                  unless forloop.last
+                    echo ', '
+                  endunless
+                endfor
+              endcapture
+              
+              assign swatch_style = 'background: conic-gradient(' | append: conic_gradient | append: ');'
+            else
+              # Handle image swatches
+              assign image_url = value.display.value | image_url: width: 24
+              assign swatch_style = 'background-image: url(' | append: image_url | append: ');'
+            endif
+          else
+            # Use custom color or fallback logic
+            assign swatch_color = blank
+            
+            # Check custom colors first
+            if custom_color_keys contains value.label
+              for color_key in custom_color_keys
+                if color_key == value.label
+                  assign swatch_color = custom_color_values[forloop.index0]
+                  break
+                endif
+              endfor
+            endif
+            
+            # Fallback to color name
+            if swatch_color == blank
+              assign swatch_color = value.label | downcase | replace: ' ', ''
+            endif
+            
+            assign swatch_style = 'background-color: ' | append: swatch_color | append: ';'
+            
+            # Check for custom swatch image using the correct naming convention
+            assign handle = value.label | handleize
+            assign parts = handle | split: '-'
+            capture image_name
+              for part in parts
+                echo part | capitalize | append: '_'
+              endfor
+              echo 'swatch-color-product-page.jpg'
+            endcapture
+            
+            assign custom_swatch_image = image_name
+            
+            # Fallback to simple .png if no jpg found
+            if images[custom_swatch_image] == blank
+              assign custom_swatch_image = value.label | handle | append: '.png'
+            endif
+            
+            if images[custom_swatch_image] != blank
+              assign image_url = custom_swatch_image | file_url
+              assign swatch_style = swatch_style | append: ' background-image: url(' | append: image_url | append: ');'
+            endif
+          endif
+        endif
+      -%}
+      
       <a
         href="{{ value.url_to_remove }}"
         class="active-filters__active-filter fs-body-75 no-transition"
@@ -57,24 +140,11 @@
         data-value="{{ value.value }}"
         data-value-escaped="{{ value.value | url_escape }}"
       >
-        {%- if swatch_options contains group_name and show_swatch_filters == true -%}
+        {%- if show_swatch -%}
           <span
             class="active-filters__swatch"
-            style="
-              {% if custom_color_key_map contains value.label %}
-                {% for color_name in custom_color_key_map %}
-                  {% if color_name == value.label %}
-                    background-color: {{ custom_color_value_map[forloop.index0] }};
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
-              {% else %}
-                background-color: {{ value.label | downcase | replace: ' ', '' }};
-              {% endif %}
-              {% if images[custom_swatch_image] != blank %}
-                background-image: url({{ custom_swatch_image | file_url }});
-              {% endif %}
-            "
+            data-shape="{{ settings.swatch_shape }}"
+            style="{{ swatch_style }}"
           >
           </span>
         {%- endif -%}
@@ -88,15 +158,19 @@
       </a>
     {%- endfor -%}
 
-    {% if filter.type == 'price_range' %}
+    {%- if filter.type == 'price_range' -%}
       {%- if filter.min_value.value != null or filter.max_value.value != null -%}
         <a
-          href="{{ value.url_to_remove }}"
+          href="{{ filter.url_to_remove }}"
           class="active-filters__active-filter fs-body-75 no-transition"
           data-remove-range
         >
-          {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}
-          &nbsp;-&nbsp;
+          {%- if filter.min_value.value -%}
+            {{ filter.min_value.value | money }}
+          {%- else -%}
+            {{ 0 | money }}
+          {%- endif -%}
+          &nbsp;–&nbsp;
           {%- if filter.max_value.value -%}
             {{ filter.max_value.value | money }}
           {%- else -%}
@@ -105,7 +179,7 @@
           {%- render 'icon' with icon: 'close-small' -%}
         </a>
       {%- endif -%}
-    {% endif %}
+    {%- endif -%}
   {%- endfor -%}
 
   <a

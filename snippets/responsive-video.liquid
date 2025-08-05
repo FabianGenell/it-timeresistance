@@ -14,6 +14,7 @@
   @param {string} [poster_lazy_type] - The image load type ('dom', 'load', 'manual')
   @param {boolean} [loop_video] - Whether to loop the video
   @param {boolean} [show_controls] - Whether to show the controls
+  @param {boolean} [show_native_controls] - Whether to show the native controls
   @param {string} [class] - The classes to add to the responsive video wrapper
 
   @example
@@ -69,6 +70,12 @@
   assign aspect_ratio = video.aspect_ratio | default: 1.77
   assign mobile_aspect_ratio = mobile_video.aspect_ratio | default: aspect_ratio
   assign large_aspect_ratio = large_video.aspect_ratio | default: aspect_ratio
+
+  if show_native_controls
+    assign show_sound = false
+  else
+    assign show_sound = true
+  endif
 -%}
 
 <responsive-video
@@ -121,12 +128,16 @@
 
         {% if autoplay %}
           autoplay
+          playsinline
+          muted
         {% endif %}
+
+        {%- if show_native_controls -%}
+          controls
+        {%- endif -%}
 
         {{ lazy_attributes }}
 
-        muted
-        playsinline
         class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 opacity-0"
       >
         <template data-sources>
@@ -162,15 +173,14 @@
         </template>
       </video>
 
-      <!-- Video Controls -->
       {%- if show_controls -%}
+        <!-- Video Controls -->
         <div
           class="
             absolute top-0 left-0 w-full h-full flex items-center
-            justify-center z-10 pointer-events-none
+            justify-center z-10
           "
         >
-          <!-- Only play button, no pause button -->
           <div
             class="
               text-white/70 w-16 h-16 flex items-center justify-center
@@ -190,22 +200,24 @@
             </div>
           </div>
 
-          <button
-            class="
-              absolute bottom-3 right-3 text-white
-              rounded-full w-10 h-10 flex items-center justify-center cursor-pointer
-              opacity-70 hover:opacity-100 transition-opacity duration-300 pointer-events-auto
-            "
-            data-sound-toggle
-            aria-label="Toggle sound"
-          >
-            <div data-icon-sound-on class="hidden">
-              {% render 'icon', icon: 'sound' %}
-            </div>
-            <div data-icon-sound-off>
-              {% render 'icon', icon: 'sound-off' %}
-            </div>
-          </button>
+          {%- if show_sound -%}
+            <button
+              class="
+                absolute bottom-3 right-3 text-white
+                rounded-full w-10 h-10 flex items-center justify-center cursor-pointer
+                opacity-70 hover:opacity-100 transition-opacity duration-300 pointer-events-auto
+              "
+              data-sound-toggle
+              aria-label="Toggle sound"
+            >
+              <div data-icon-sound-on class="hidden">
+                {% render 'icon', icon: 'sound' %}
+              </div>
+              <div data-icon-sound-off>
+                {% render 'icon', icon: 'sound-off' %}
+              </div>
+            </button>
+          {%- endif -%}
         </div>
       {%- endif -%}
     {% endif %}

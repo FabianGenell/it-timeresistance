@@ -785,7 +785,7 @@ div#insta-feed .slider-arrow {
     --media-above-1200: (min-width: 1200px);
     --media-below-1400: (max-width: 1399px);
     --media-above-1400: (min-width: 1400px);
-    --max-width: 1400px;
+    --max-width: 1500px;
     --max-width-narrow: 747px;
     --flyout-mobile-gap: var(--spacing-9);
     --flyout-width: calc(375px + var(--flyout-mobile-gap));
@@ -11456,6 +11456,7 @@ button {
     text-transform: var(--font-button-text-transform);
     line-height: var(--line-height-button);
     letter-spacing: var(--button-letter-spacing);
+    text-align: center;
 }
 .btn.btn--small {
     min-height: var(--button-height-small);
@@ -12059,11 +12060,20 @@ html.sticky-header-enabled .filter-bar.filter-bar--sticky {
 .filter-bar__button-count {
     margin-left: calc(4px * 2);
     margin-left: var(--spacing-2);
-    padding: calc(4px * 1);
-    padding: var(--spacing-1);
+    padding: 0;
     background-color: var(--color-text);
     color: var(--color-background);
     font-size: var(--font-size-body-50);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+    font-weight: 500;
+    text-align: center;
 }
 .filter-bar__results-count {
     color: var(--color-text-meta);
@@ -15852,11 +15862,20 @@ body.header-transparent
     margin-bottom: calc(var(--spacing-1) * -1);
     margin-left: calc(4px * 2);
     margin-left: var(--spacing-2);
-    padding: calc(4px * 1);
-    padding: var(--spacing-1);
+    padding: 0;
     background-color: var(--color-text);
     color: var(--color-background);
     font-size: var(--font-size-body-50);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+    font-weight: 500;
+    text-align: center;
 }
 .filter-group__values {
     display: none;
@@ -17831,7 +17850,7 @@ html.theme-editor .popup__tab {
     @apply text-[28px] md:text-[32px];
 }
 .fs-heading-4-base {
-    font-size: var(--font-size-heading-4-base);
+    @apply text-[28px] md:text-[32px];
 }
 .fs-heading-5-base {
     font-size: var(--font-size-heading-5-base);

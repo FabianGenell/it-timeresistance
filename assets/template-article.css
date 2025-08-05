@@ -9,7 +9,7 @@
   --media-above-1200:(min-width: 1200px);
   --media-below-1400:(max-width: 1399px);
   --media-above-1400:(min-width: 1400px);
-  --max-width:1400px;
+  --max-width:1500px;
   --max-width-narrow:747px;
   --flyout-mobile-gap:var(--spacing-9);
   --flyout-width:calc(375px + var(--flyout-mobile-gap));

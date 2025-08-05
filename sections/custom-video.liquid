@@ -12,12 +12,16 @@
 
   assign large_video = section.settings.video_large
   assign large_poster_image = section.settings.large_poster_image
+
+  if section.settings.full_width
+    assign full_width_class = 'section--full-width'
+  endif
 -%}
 
 <div
   class="
-    relative w-full
-    section section--full-width {{ section.settings.section_padding }}
+    relative w-full -my-[1px] md:-my-0
+    section {{full_width_class}} {{ section.settings.section_padding }}
     {% if settings.enable_section_animations and section.settings.enable_animation -%}
       animation animation--custom-video
     {%- endif -%}
@@ -34,8 +38,7 @@
       mobile_poster_image: mobile_poster_image,
       large_poster_image: large_poster_image,
       autoplay: section.settings.autoplay,
-      pause_outside_viewport: section.settings.pause_outside_viewport,
-      viewport_threshold: section.settings.viewport_threshold
+      show_native_controls: section.settings.show_native_controls
     -%}
   </div>
 </div>
@@ -46,6 +49,12 @@
   "tag": "section",
   "class": "shopify-section--full-width",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
     {
       "type": "header",
       "content": "Video sources"
@@ -105,20 +114,9 @@
     },
     {
       "type": "checkbox",
-      "id": "pause_outside_viewport",
-      "label": "Pause video when not in view",
-      "default": true
-    },
-    {
-      "type": "range",
-      "id": "viewport_threshold",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "Viewport threshold",
-      "default": 50,
-      "info": "Percentage of video visible before play/pause occurs"
+      "id": "show_native_controls",
+      "label": "Show native controls",
+      "default": false
     },
     {
       "type": "header",

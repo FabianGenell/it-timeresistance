@@ -75,32 +75,13 @@
 >
   <div class="image-hero__inner">
     <div class="image-hero__image-container">
-      {%- if section.settings.image_mobile != blank -%}
-        {%-
-          render 'legacy-image' with
-          wrapper_class: "image-hero__image image-hero__image--mobile",
-          image: section.settings.image_mobile,
-          sizes: "100vw",
-          focal_point: section.settings.mobile_focal_point,
-          placeholder_name: "lifestyle-2",
-          animate: true,
-          src_set_type: "full-width",
-          prioritize_loading: prioritize_loading
-        -%}
-      {%- endif -%}
-
-      {%-
-        render 'legacy-image' with
-        wrapper_class: "image-hero__image",
+      {%- render 'pictures',
         image: section.settings.image,
-        sizes: "100vw",
-        focal_point: section.settings.focal_point,
-        include_placeholder: true,
-        placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
-        placeholder_name: "lifestyle-2",
-        animate: true,
-        src_set_type: "full-width",
-        prioritize_loading: prioritize_loading
+        image_719: section.settings.image_mobile,
+        sizes: '100vw',
+        widths: '375, 550, 719, 1100, 1500, 1780, 2000, 3000, 3840',
+        breakpoints: '719',
+        class: 'image-hero__image'
       -%}
     </div>
     <div class="image-hero__overlay"></div>

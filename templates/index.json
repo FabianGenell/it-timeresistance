@@ -144,6 +144,7 @@
       "type": "custom-video",
       "custom_css": [],
       "settings": {
+        "full_width": true,
         "video_desktop": "shopify://files/videos/desktop-video-hero-timeresistance.mp4",
         "video_mobile": "shopify://files/videos/mobilevid1.mp4",
         "video_large": "shopify://files/videos/0be0bf80bcee432fb269796b0e65345d.mp4",
@@ -151,8 +152,7 @@
         "mobile_poster_image": "shopify://shop_images/mobile_cover.webp",
         "large_poster_image": "shopify://shop_images/large.webp",
         "autoplay": true,
-        "pause_outside_viewport": true,
-        "viewport_threshold": 50,
+        "show_native_controls": false,
         "enable_section_style": true,
         "section_padding_top": 12,
         "section_padding_bottom": 12,
@@ -501,6 +501,7 @@
     "custom_video_ic4gYR": {
       "type": "custom-video",
       "settings": {
+        "full_width": true,
         "video_desktop": "shopify://files/videos/9ce6d6481af048a48f9baac7766df782.mp4",
         "video_mobile": "shopify://files/videos/cd7586dc84cc41c1b4e0dbafa451962d_f5c043c6-97be-4e00-a968-cd543d4c14e6.mp4",
         "video_large": "shopify://files/videos/e2f93c601afc4d5ebbfde10682dc0c89 (1).mp4",
@@ -508,8 +509,7 @@
         "mobile_poster_image": "shopify://shop_images/cover_2nd_mob.webp",
         "large_poster_image": "shopify://shop_images/large2nd_cover.webp",
         "autoplay": true,
-        "pause_outside_viewport": true,
-        "viewport_threshold": 50,
+        "show_native_controls": false,
         "enable_section_style": true,
         "section_padding_top": 12,
         "section_padding_bottom": 12,
@@ -517,36 +517,6 @@
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "video_hero_hYxzLV": {
-      "type": "video-hero",
-      "disabled": true,
-      "settings": {
-        "image_aspect": "original",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "video": "shopify://files/videos/VID LRG.mp4",
-        "video_mobile": "shopify://files/videos/cd7586dc84cc41c1b4e0dbafa451962d.mp4",
-        "media_link": "",
-        "focal_point": "image_presentation",
-        "focal_point_mobile": "image_presentation",
-        "text_position": "center_center",
-        "text_position_mobile": "center_center",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "rgba(0,0,0,0)",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 40,
-        "enable_animation": true,
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-none"
       }
     },
     "grid_WKBgtN": {
@@ -799,73 +769,6 @@
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "metaobject_carousel_L9YFy4": {
-      "type": "gallery-carousel",
-      "disabled": true,
-      "settings": {
-        "metaobject_type": "mens_collections",
-        "collections": [
-          "all-bags-for-men",
-          "backpacks-for-men"
-        ],
-        "heading": "Men Collection",
-        "heading_tag": "h2",
-        "subheading": "",
-        "link": "",
-        "link_text": "",
-        "collection_type": "mens_collections",
-        "columns": "4",
-        "mobile_columns": "1",
-        "loop_carousel": true,
-        "aspect_ratio": "natural",
-        "image_caption_style": "overlay",
-        "image_caption_size": "fs-body-100",
-        "overlay_text_background_style": "gradient",
-        "overlay_text_color": "#ffffff",
-        "overlay_text_background": "#000000",
-        "enable_animation": true,
-        "divider_style": "none",
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "metaobject_carousel_JkTgJD": {
-      "type": "gallery-carousel",
-      "disabled": true,
-      "settings": {
-        "metaobject_type": "womens_collections",
-        "collections": [],
-        "heading": "Women Collection",
-        "heading_tag": "h2",
-        "subheading": "",
-        "link": "",
-        "link_text": "",
-        "collection_type": "mens_collections",
-        "columns": "4",
-        "mobile_columns": "1",
-        "loop_carousel": true,
-        "aspect_ratio": "natural",
-        "image_caption_style": "overlay",
-        "image_caption_size": "fs-body-100",
-        "overlay_text_background_style": "gradient",
-        "overlay_text_color": "#ffffff",
-        "overlay_text_background": "#000000",
-        "enable_animation": true,
-        "divider_style": "none",
-        "enable_section_style": false,
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "enable_section_style_mobile": false,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 0,
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
     "collection_list_slider_YxQqqa": {
       "type": "collection-list-slider",
       "settings": {
@@ -879,18 +782,18 @@
         "space_between": 12,
         "space_between_mobile": 4,
         "collection_list": [
-          "briefcases-for-men",
-          "clutches-for-men",
-          "backpacks-for-men",
           "cartelle-portadocumenti-da-uomo",
-          "messenger-bags-for-men",
-          "toiletry-bags-for-men",
-          "duffel-bags-for-men",
-          "wallets-for-men",
           "borsa-monospalla-da-uomo",
           "cartelle-porta-pc-da-uomo",
-          "small-leather-goods-for-men",
-          "all-bags-for-men"
+          "borse-da-uomo",
+          "borse-messenger-da-uomo",
+          "borsoni-da-uomo",
+          "necessaire-da-uomo",
+          "piccola-pelletteria-da-uomo",
+          "pochette-da-uomo",
+          "portafogli-da-uomo",
+          "valigette-da-uomo",
+          "zaini-da-uomo"
         ],
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",
@@ -933,14 +836,14 @@
         "space_between_mobile": 4,
         "collection_list": [
           "borse-a-mano-da-donna",
-          "backpacks-for-women",
           "borse-a-tracolla-da-donna",
-          "travel-bags-for-women",
           "borse-a-mano-da-donna-1",
           "cartelle-da-lavoro-da-donna",
           "cofanetto-portagioie-da-donna",
-          "small-leather-goods-for-women",
-          "borse-da-donna"
+          "borse-da-donna",
+          "borse-da-viaggio-da-donna",
+          "piccola-pelletteria-da-donna",
+          "zaini-da-donna"
         ],
         "collection_listing_aspect_ratio": "portrait",
         "label_style": "overlay",
@@ -978,11 +881,8 @@
     "grid_dgc6dg",
     "featured_collection_slider_UWW9F3",
     "custom_video_ic4gYR",
-    "video_hero_hYxzLV",
     "grid_WKBgtN",
     "multi_column_ADfJmX",
-    "metaobject_carousel_L9YFy4",
-    "metaobject_carousel_JkTgJD",
     "collection_list_slider_YxQqqa",
     "collection_list_slider_Tkx4c6"
   ]

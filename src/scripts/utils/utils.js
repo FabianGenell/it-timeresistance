@@ -13,6 +13,43 @@ export function debounce(fn, wait = 300) {
 }
 
 /**
+ * Adds a fast click event listener to an element.
+ * @param {HTMLElement} el - The element to add the event listener to.
+ * @param {Function} handler - The function to call when the event is triggered.
+ * @returns {Function} - A function to remove the event listener.
+ */
+export function addFastClick(el, handler) {
+    let touchFired = false;
+
+    const onTouchStart = (e) => {
+        touchFired = true;
+        handler(e);
+    };
+
+    const onTouchEnd = () => {
+        // Reset after one frame to avoid duplicate mousedown
+        requestAnimationFrame(() => {
+            touchFired = false;
+        });
+    };
+
+    const onMouseDown = (e) => {
+        if (touchFired) return;
+        handler(e);
+    };
+
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchend', onTouchEnd, { passive: true });
+    el.addEventListener('mousedown', onMouseDown);
+
+    return () => {
+        el.removeEventListener('touchstart', onTouchStart);
+        el.removeEventListener('touchend', onTouchEnd);
+        el.removeEventListener('mousedown', onMouseDown);
+    };
+}
+
+/**
  * Transforms a string from kebab-case to PascalCase.
  * @param {string} str - The input string in kebab-case.
  * @returns {string} - The transformed string in PascalCase.

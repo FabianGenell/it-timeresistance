@@ -8,7 +8,7 @@ window.theme = window.theme || {};
 
 import '../scripts/components/';
 import '../scripts/utils/helpers';
-import '../scripts/utils/bot-detector.js';
+import '../scripts/utils/localization-manager.js';
 import '../scripts/legacy/theme-new.js';
 import '../scripts/utils/hotfixes/jdgm-form.js';
 

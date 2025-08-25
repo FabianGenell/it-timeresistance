@@ -593,6 +593,7 @@
       "type": "custom-video",
       "name": "Custom Video",
       "settings": {
+        "full_width": false,
         "video_desktop": "shopify://files/videos/95fa649a365948ba8af56c2634f8f95b.mp4",
         "video_mobile": "shopify://files/videos/153bf8ffcdd446dfa01ac41b59457e76.mp4",
         "video_large": "shopify://files/videos/42ee68a7259e46fd82022e18693a5bec.mp4",
@@ -600,8 +601,7 @@
         "mobile_poster_image": "shopify://shop_images/cover_mobile.webp",
         "large_poster_image": "shopify://shop_images/cover_large_f15a4785-6eee-4a40-8beb-acaf4dcd2fe5.webp",
         "autoplay": true,
-        "pause_outside_viewport": true,
-        "viewport_threshold": 50,
+        "show_native_controls": true,
         "enable_section_style": false,
         "section_padding_top": 0,
         "section_padding_bottom": 0,

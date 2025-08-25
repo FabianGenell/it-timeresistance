@@ -1,52 +1,45 @@
-{%- capture stores -%}
-  spain EUR timeresistance.es,
-  poland PLN timeresistance.pl,
-  italy EUR timeresistance.it,
-  singapore SGD timeresistance.sg,
-  united_kingdom GBP timeresistance.co.uk,
-  united_states USD timeresistance.com,
-  european_union EUR eu.timeresistance.com,
-  germany EUR timeresistance.de,
-  australia AUD au.timeresistance.com,
-  canada CAD ca.timeresistance.com,
-  global USD global.timeresistance.com
-{%- endcapture -%}
-
 {%- liquid
-  assign stores = stores | strip_newlines | split: ','
-  assign current_store = request.host
+  assign redirect_options = shop.metaobjects.geolocation_redirect.values
+  assign current_country_iso = localization.country.iso_code
+  assign current_url = request.host
+  assign current_country_redirect_option = null
+
+  for option in redirect_options
+    if option.redirect_url.value contains current_url
+      assign current_country_redirect_option = option
+      break
+    endif
+  endfor
+
+  unless current_country_redirect_option
+    assign current_country_redirect_option = redirect_options | where: 'is_default', true | first
+  endunless
 
   assign current_path = request.path
+  assign root_path = routes.root_url
+
+  assign path = current_path | remove_first: root_path | prepend: '/'
 -%}
 
 <currency-selector class="{{class}} relative mr-2">
   <select id="marketSelector" class="border-none p-3 cursor-pointer">
-    {%- for store in stores -%}
+    {%- for redirect_option in redirect_options -%}
       {%- liquid
         assign selected = false
 
-        assign store_parts = store | strip | split: ' '
-        assign store_country = store_parts[0]
-        assign store_currency = store_parts[1]
-        assign store_url = store_parts[2]
-
-        assign country_name_locale_key = 'general.countries.' | append: store_country
-        assign country_name = country_name_locale_key | t
-
-        if store_url == current_store
+        if redirect_option.redirect_url == current_country_redirect_option.redirect_url
           assign selected = true
         endif
       -%}
-
       <option
-        value="{{ store_country }}"
+        value="{{ redirect_option.name }}"
         {% if selected %}
           selected
         {%- else -%}
-          data-url="https://{{ store_url }}{{ current_path }}"
+          data-url="{{ redirect_option.redirect_url }}{{ path }}"
         {% endif %}
       >
-        {{ country_name }} / {{ store_currency }}
+        {{ redirect_option.name }} / {{ redirect_option.currency }}
       </option>
     {%- endfor -%}
   </select>

@@ -163,7 +163,6 @@ export async function customLightbox({ childSelector, galerySelector, mainClass,
 }
 
 window.customLightbox = customLightbox;
-console.log('set window lightbox', window.customLightbox);
 
 const createVideoElement = (videoSrc) => {
     const container = document.createElement('div');

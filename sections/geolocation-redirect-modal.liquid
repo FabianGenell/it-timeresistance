@@ -1,0 +1,136 @@
+{% assign redirect_options = shop.metaobjects.geolocation_redirect.values %}
+
+<geolocation-modal
+  id="geolocation-redirect-modal"
+  class="fixed inset-0 z-[9999] hidden open:flex items-center justify-center text-base"
+  data-toggle-attribute="data-toggle-geolocation-modal"
+>
+  <script data-redirect-option-data type="application/json">
+    {
+      "redirect_options": [
+        {% for option in redirect_options %}
+          {
+            "redirect_url": {{ option.redirect_url.value | json }},
+            "countries": {{ option.countries.value | json }},
+            "is_default": {{ option.is_default.value | json }},
+            "image_url": {% if option.image.value %}{{ option.image.value | image_url: width: 32 | json }}{% else %}null{% endif %},
+            "name": {{ option.name.value | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
+  <div class="modal__overlay absolute inset-0 bg-black/50" data-toggle-geolocation-modal></div>
+  <div
+    class="
+      modal__content relative bg-white rounded-lg
+      max-w-[480px] w-[calc(100%-32px)] max-h-[90vh] overflow-y-auto shadow-xl
+    "
+  >
+    <button
+      class="modal__close absolute top-2 right-2 p-2 text-black hover:text-gray-600"
+      data-toggle-geolocation-modal
+      aria-label="Close"
+    >
+      {%- render 'icon', icon: 'close', class: 'size-4' -%}
+    </button>
+    <div class="p-8 text-center">
+      <template data-content-template>
+        <div class="mb-8 text-lg leading-relaxed space-y-2">
+          <p>
+            {{ section.settings.header_text }}
+          </p>
+          <p>
+            {{ section.settings.header_text_2 }}
+          </p>
+          <p>
+            {{ section.settings.body_text }}
+          </p>
+        </div>
+      </template>
+
+      <template data-country-with-flag-template>
+        <span class="inline-flex items-baseline">
+          <img src="[image_url]" alt="[name]" width="24" height="16" class="mr-2 self-center"> [name]
+        </span>
+      </template>
+
+      <template data-url-template>
+        <a href="[url]" class="underline font-bold">[url_clean]</a>
+      </template>
+
+      <div class="flex flex-col gap-3">
+        <button
+          class="btn btn--primary"
+          data-geo-accept
+        >
+          {{ section.settings.accept_button_text }}
+        </button>
+
+        <button
+          class="btn btn--primary"
+          style="--color-background-button: #888888"
+          data-toggle-geolocation-modal
+        >
+          {{ section.settings.decline_button_text }}
+        </button>
+      </div>
+    </div>
+  </div>
+</geolocation-modal>
+
+{% schema %}
+{
+  "name": "Geolocation Modal",
+  "tag": "section",
+  "class": "section-geolocation-modal",
+  "enabled_on": {
+    "groups": ["custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Modal Content"
+    },
+
+    {
+      "type": "textarea",
+      "id": "header_text",
+      "label": "Header Text",
+      "info": "Use [customer_country], [shop_country], [shop_country_w_flag], [redirect_name], [redirect_name_w_flag] and [redirect_url] variables",
+      "default": "It seems you're in [redirect_name_w_flag]"
+    },
+    {
+      "type": "textarea",
+      "id": "header_text_2",
+      "label": "Header Text 2",
+      "info": "Use [customer_country], [shop_country], [shop_country_w_flag], [redirect_name], [redirect_name_w_flag] and [redirect_url] variables",
+      "default": "Redirect to the recommended store:"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body Text",
+      "info": "Use [customer_country], [shop_country], [shop_country_w_flag], [redirect_name], [redirect_name_w_flag] and [redirect_url] variables",
+      "default": "[redirect_url]?"
+    },
+    {
+      "type": "text",
+      "id": "accept_button_text",
+      "label": "Accept Button Text",
+      "default": "Yes, please"
+    },
+    {
+      "type": "text",
+      "id": "decline_button_text",
+      "label": "Decline Button Text",
+      "default": "No, thanks"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Geolocation Redirect Modal"
+    }
+  ]
+}
+{% endschema %}

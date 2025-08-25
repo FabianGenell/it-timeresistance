@@ -1,0 +1,132 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_ajYMyX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_epeNpG": {
+          "type": "heading",
+          "settings": {
+            "title": "Laser Engraving",
+            "heading_tag": "h5",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_6Bgbey": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When placing your order, please leave a note in the Order Special Instructions section in Your Cart with the engraving text and your chosen font style.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "image_NQeWq4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Georgia_regular_504_x_40_px_3.svg",
+            "mobile_image": "shopify://shop_images/gerasss_1.svg",
+            "content_width": "full",
+            "image_size": 200,
+            "image_size_mobile": 200
+          }
+        },
+        "text_jPDHLx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To engrave symbols or a logo, please email PNG file to <a href=\"mailto:care@timeresistance.com\" target=\"_blank\"><strong>care@timeresistance.com</strong></a>.<br/><br/>Watch a short video guide on how to order the laser engraving service.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "video_7RD9jh": {
+          "type": "video",
+          "settings": {
+            "video_desktop": "shopify://files/videos/fd612caa75a942e4bdac9bd1812539cb.mp4",
+            "autoplay": false
+          }
+        },
+        "text_XC7KbN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>More information about personalization services <a href=\"/pages/personalization\" target=\"_blank\" title=\"Personalization\"><strong>here</strong></a>.</p><p>*Personalized items are non-returnable.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_epeNpG",
+        "text_6Bgbey",
+        "image_NQeWq4",
+        "text_jPDHLx",
+        "video_7RD9jh",
+        "text_XC7KbN"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_3weFWf": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jjPatL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This item is not available for personalization.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "text_jjPatL"
+      ],
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_ajYMyX",
+    "rich_text_3weFWf"
+  ]
+}

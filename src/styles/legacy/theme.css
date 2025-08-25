@@ -19938,3 +19938,13 @@ html:not(.no-js):not(.prefers-reduced-motion) .animation.animation--apps .animat
     transition-delay: calc(33ms * 0);
     transition-delay: calc(var(--delay-amount) * var(--delay-offset-multiplier, 0));
 }
+
+@media (min-width: 768px) {
+    .jdgm-review-widget .jdgm-rev-widg__title {
+        font-size: 32px;
+    }
+}
+
+.jdgm-review-widget .jdgm-rev-widg__title {
+    font-size: 28px;
+}

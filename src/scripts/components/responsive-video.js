@@ -155,6 +155,7 @@ class ResponsiveVideo extends HTMLElement {
     }
 
     onClick(e) {
+        console.log('onClick', this);
         if (e.target.closest('[data-sound-toggle]')) {
             this.toggleSound();
         } else {

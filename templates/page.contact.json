@@ -20,6 +20,7 @@
     },
     "custom_liquid_HhNUfx": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<div contactform-embed='499351'></div>",
         "full_width": false,
@@ -39,7 +40,7 @@
         "text_dywyMg": {
           "type": "text",
           "settings": {
-            "title": "Name",
+            "title": "Nome",
             "required": true,
             "width": "half"
           }
@@ -54,7 +55,7 @@
         "telephone_7NgFjg": {
           "type": "telephone",
           "settings": {
-            "title": "Phone",
+            "title": "Numero di telefono",
             "required": false,
             "width": "half"
           }
@@ -62,8 +63,8 @@
         "text_area_jcYXeK": {
           "type": "text_area",
           "settings": {
-            "title": "Message",
-            "placeholder": "Your message",
+            "title": "Messaggio",
+            "placeholder": "",
             "required": true,
             "height": 180,
             "width": "full"
@@ -76,13 +77,12 @@
         "telephone_7NgFjg",
         "text_area_jcYXeK"
       ],
-      "disabled": true,
       "settings": {
         "alignment": "left_left",
-        "heading": "Contact us",
+        "heading": "Contattaci",
         "heading_tag": "h2",
         "heading_font_class": "fs-heading-3-base",
-        "text": "<p>Leave your message here and we will reply to you shortly</p>",
+        "text": "",
         "show_recaptcha_terms": true,
         "enable_animation": true,
         "divider_style": "none",

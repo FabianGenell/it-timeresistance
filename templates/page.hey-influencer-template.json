@@ -76,9 +76,11 @@
       "type": "custom-video",
       "name": "Custom Video",
       "settings": {
+        "full_width": true,
         "video_desktop": "shopify://files/videos/Black Leather backpack -The Sun also Rises - Time Resistance.mp4",
         "video_large": "shopify://files/videos/Black Leather backpack -The Sun also Rises - Time Resistance.mp4",
         "autoplay": true,
+        "show_native_controls": false,
         "enable_section_style": true,
         "section_padding_top": 0,
         "section_padding_bottom": 0,
@@ -210,6 +212,7 @@
     },
     "custom_liquid_QmiVFb": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "custom_liquid": "<div contactform-embed='499353'></div>",
@@ -222,6 +225,70 @@
         "section_padding_top_mobile": 0,
         "section_padding_bottom_mobile": 0,
         "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "contact_form_RiicBg": {
+      "type": "contact-form",
+      "blocks": {
+        "text_cbzAiM": {
+          "type": "text",
+          "settings": {
+            "title": "Nome",
+            "required": true,
+            "width": "half"
+          }
+        },
+        "email_Mk3Qwg": {
+          "type": "email",
+          "settings": {
+            "title": "Email",
+            "width": "half"
+          }
+        },
+        "telephone_Dnjn6x": {
+          "type": "telephone",
+          "settings": {
+            "title": "Numero di telefono",
+            "required": false,
+            "width": "full"
+          }
+        },
+        "text_area_FLDEUT": {
+          "type": "text_area",
+          "settings": {
+            "title": "Messaggio",
+            "placeholder": "",
+            "required": true,
+            "height": 180,
+            "width": "full"
+          }
+        }
+      },
+      "block_order": [
+        "text_cbzAiM",
+        "email_Mk3Qwg",
+        "telephone_Dnjn6x",
+        "text_area_FLDEUT"
+      ],
+      "name": "t:sections.contact_form.presets.name",
+      "settings": {
+        "alignment": "left_left",
+        "heading": "",
+        "heading_tag": "h2",
+        "heading_font_class": "fs-heading-3-base",
+        "text": "",
+        "show_recaptcha_terms": true,
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
       }
     },
     "media_gallery_wg6jUt": {
@@ -577,6 +644,7 @@
     "rich_text_kdwp98",
     "grid_BTzzmJ",
     "custom_liquid_QmiVFb",
+    "contact_form_RiicBg",
     "media_gallery_wg6jUt"
   ]
 }

@@ -29,11 +29,11 @@
       "type": "geolocation-redirect-modal",
       "name": "Geolocation Redirect Modal",
       "settings": {
-        "header_text": "It seems you're in [redirect_name_w_flag]",
-        "header_text_2": "Redirect to the recommended store:",
+        "header_text": "Sembra che tu sia in [redirect_name_w_flag]",
+        "header_text_2": "Vuoi essere reindirizzato al negozio consigliato?",
         "body_text": "[redirect_url]?",
-        "accept_button_text": "Yes, please",
-        "decline_button_text": "No, thanks"
+        "accept_button_text": "Sì, grazie",
+        "decline_button_text": "No, grazie"
       }
     }
   },

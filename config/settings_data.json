@@ -116,9 +116,9 @@
         "disabled": false,
         "settings": {}
       },
-      "1173261918193615741": {
-        "type": "shopify://apps/geo-pro-geolocation/blocks/geopro/16fc5313-7aee-4e90-ac95-f50fc7c8b657",
-        "disabled": true,
+      "12142455316664340074": {
+        "type": "shopify://apps/digital-darts-hreflang-tags/blocks/hreglang_tag/9a38367c-c3ce-4d6e-93ea-48ab8009c8a5",
+        "disabled": false,
         "settings": {}
       }
     }

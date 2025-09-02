@@ -158,6 +158,15 @@
             "fetch_page_content": false,
             "custom_liquid": ""
           }
+        },
+        "rebuy_personalization_engine_rebuy_widget_CFVPVU": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "237089",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
         }
       },
       "block_order": [
@@ -171,7 +180,8 @@
         "accordion-2",
         "accordion_47TTrD",
         "accordion-3",
-        "accordion_WceBNM"
+        "accordion_WceBNM",
+        "rebuy_personalization_engine_rebuy_widget_CFVPVU"
       ],
       "custom_css": [
         ".product__media > :first-child {grid-column: 1 / -1; /* Span across all columns (full-width) */}"
@@ -195,6 +205,21 @@
         "hide_mobile_carousel_dots": false,
         "enable_gift_card_recipient": true,
         "enable_animation": true
+      }
+    },
+    "1756812304ecf38956": {
+      "type": "apps",
+      "settings": {
+        "heading": "",
+        "enable_animation": true,
+        "divider_style": "none",
+        "enable_section_style": false,
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "enable_section_style_mobile": false,
+        "section_padding_top_mobile": 0,
+        "section_padding_bottom_mobile": 0,
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     },
     "rich_text_khQJKx": {
@@ -266,7 +291,10 @@
       "blocks": {
         "judge_me_reviews_review_widget_zMjfMT": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
         }
       },
       "block_order": [
@@ -370,6 +398,7 @@
   },
   "order": [
     "main",
+    "1756812304ecf38956",
     "rich_text_khQJKx",
     "video_3rGkkT",
     "17273399003752b51a",
